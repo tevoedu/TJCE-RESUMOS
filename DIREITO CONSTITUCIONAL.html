@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>Direito Constitucional Aplicado | Apostila Digital</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8f6f2;
+      font-family: 'Georgia', 'Times New Roman', Times, serif;
+      color: #2c2b28;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .apostila {
+      max-width: 820px;
+      width: 100%;
+      background: #fffef9;
+      border-radius: 24px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.07), 0 6px 14px rgba(0, 0, 0, 0.04);
+      padding: 3rem 2.8rem;
+      border: 1px solid #ede8dc;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+      .apostila {
+        padding: 2rem 1.4rem;
+      }
+    }
+
+    /* tipografia */
+    h1 {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #1e3c4f;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+
+    .subtitulo-principal {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #5a6b78;
+      margin-bottom: 3rem;
+      border-bottom: 2px solid #d9cfb0;
+      padding-bottom: 1.4rem;
+    }
+
+    h2 {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.8rem;
+      font-weight: 550;
+      color: #2e4e5c;
+      margin: 2.8rem 0 1.2rem;
+      padding-left: 0.8rem;
+      border-left: 6px solid #b39264;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #3b5a6b;
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1.5px dashed #c7b69b;
+    }
+
+    h4 {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #434c52;
+      margin: 1.5rem 0 0.7rem;
+    }
+
+    p {
+      margin-bottom: 1.3rem;
+      text-align: justify;
+      font-size: 1.08rem;
+    }
+
+    .destaque-texto {
+      background: #fdf3d0;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 500;
+      color: #3d3626;
+    }
+
+    strong, b {
+      color: #1f3b44;
+      font-weight: 600;
+    }
+
+    /* blocos especiais */
+    .box-dica, .box-pegadinha, .box-estudo, .box-macete, .box-exemplo, .box-resumo {
+      margin: 2rem 0;
+      padding: 1.4rem 1.8rem;
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
+      border: 1px solid #ece4d5;
+      position: relative;
+      font-size: 1.05rem;
+    }
+
+    .box-dica {
+      background: #f2f7fc;
+      border-left: 8px solid #4a7c96;
+    }
+
+    .box-dica::before {
+      content: "🎯 DICA DE PROVA";
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.8px;
+      color: #2d5267;
+      display: block;
+      margin-bottom: 0.7rem;
+    }
+
+    .box-pegadinha {
+      background: #fef7f0;
+      border-left: 8px solid #c2784a;
+    }
+
+    .box-pegadinha::before {
+      content: "⚠️ PEGADINHA DE BANCA";
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.8px;
+      color: #965e38;
+      display: block;
+      margin-bottom: 0.7rem;
+    }
+
+    .box-estudo {
+      background: #f4f7f2;
+      border-left: 8px solid #5d7b55;
+    }
+
+    .box-estudo::before {
+      content: "📋 ESTUDO DE CASO";
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.8px;
+      color: #3d5738;
+      display: block;
+      margin-bottom: 0.7rem;
+    }
+
+    .box-macete {
+      background: #f5f1fa;
+      border-left: 8px solid #7b6792;
+    }
+
+    .box-macete::before {
+      content: "🧠 MACETE DE MEMORIZAÇÃO";
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.8px;
+      color: #4f3e63;
+      display: block;
+      margin-bottom: 0.7rem;
+    }
+
+    .box-exemplo {
+      background: #fcf9f1;
+      border: 1px solid #e4d7b8;
+      border-radius: 18px;
+      padding: 1.5rem;
+    }
+
+    .box-exemplo::before {
+      content: "📊 EXEMPLO PRÁTICO";
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #7d6b42;
+      display: block;
+      margin-bottom: 0.7rem;
+    }
+
+    .callout-resumo {
+      background: #fffcf2;
+      border: 1px solid #cfbc92;
+      border-radius: 22px;
+      padding: 1.5rem 2rem;
+      margin: 2.2rem 0;
+      text-align: center;
+      font-style: italic;
+      color: #3e3a2f;
+    }
+
+    /* tabelas */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.98rem;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    th {
+      background: #e8e0cc;
+      color: #2d2b24;
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 600;
+      padding: 0.9rem 1rem;
+      text-align: left;
+      font-size: 0.95rem;
+      letter-spacing: 0.4px;
+    }
+
+    td {
+      padding: 0.85rem 1rem;
+      background: #fefcf8;
+      border-bottom: 1px solid #ebe4d2;
+      color: #35322b;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .tabela-comparativa th {
+      background: #cdc2aa;
+      color: #1f1d18;
+    }
+
+    .tabela-comparativa td:first-child {
+      font-weight: 600;
+      background: #faf7f0;
+    }
+
+    /* listas */
+    ul, ol {
+      margin: 0.8rem 0 1.4rem 1.8rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .lista-limpa {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .lista-limpa li {
+      margin-bottom: 0.8rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #dbd1ba;
+      margin: 3rem 0 2rem;
+      opacity: 0.7;
+    }
+
+    .divisoria-cap {
+      margin: 3rem 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: #b9a886;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .divisoria-cap::before, .divisoria-cap::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #d6cbb3;
+    }
+
+    /* destaques inline */
+    .marca-texto {
+      background: #fbe9b1;
+      padding: 0.05rem 0.3rem;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+
+    .titulo-card {
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 650;
+      color: #1e3c4f;
+      font-size: 1.2rem;
+      margin-top: 1.8rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .badge {
+      background: #e0d5bb;
+      color: #3e3828;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: 'Segoe UI', sans-serif;
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+
+    /* fluxograma simples (SVG inline) */
+    .svg-fluxo {
+      display: block;
+      margin: 2.5rem auto;
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+<div class="apostila">
+
+  <h1>DIREITO CONSTITUCIONAL APLICADO</h1>
+  <div class="subtitulo-principal">Teoria, Jurisprudência e Preparação para Concursos Públicos</div>
+
+  <!-- CAPÍTULO 1 -->
+  <h2>Capítulo 1 – Teoria da Constituição: A Força Normativa e as Classificações Ontológicas</h2>
+  <h3>1.1. A Constituição e a Realidade Social</h3>
+  <p>Caros alunos, a compreensão do Direito Constitucional não se limita à leitura fria dos artigos da Carta Magna. É preciso entender como a Constituição se relaciona com a realidade política e social que pretende regular. Nesse contexto, a doutrina alemã, em especial os estudos do jurista <strong>Karl Loewenstein</strong>, desenvolveu uma <span class="marca-texto">classificação ontológica das Constituições</span> que é extremamente relevante para as provas de concursos públicos, sobretudo as elaboradas pela FCC, FGV e Cebraspe.</p>
+  <p>Loewenstein, analisando a efetividade das normas constitucionais, ou seja, o grau de correspondência entre o texto formal e o poder real, classificou as Constituições em três espécies: <strong>normativas, nominais e semânticas</strong>. O critério central dessa classificação é a <span class="destaque-texto">força normativa do texto constitucional</span>, isto é, a capacidade de a Constituição efetivamente conformar o processo de decisão política.</p>
+
+  <h3>1.2. Constituição Normativa</h3>
+  <p>A <strong>Constituição normativa</strong> é aquela que, de fato, rege o processo político. Nela, há uma simbiose entre o texto escrito e a realidade: as normas constitucionais são respeitadas por todos os detentores de poder, e o exercício da autoridade ocorre estritamente dentro dos limites por ela estabelecidos. A Constituição funciona como uma “veste que serve perfeitamente ao corpo”, limitando e direcionando o poder de forma eficaz. Embora nenhum país alcance esse ideal de forma plena, pode-se afirmar que as democracias consolidadas buscam se aproximar desse modelo.</p>
+
+  <h3>1.3. Constituição Nominal</h3>
+  <p>O ponto central para a sua prova é a <strong>Constituição nominal</strong>. Imagine uma Constituição promulgada com um texto avançado, repleto de direitos e garantias, elaborada para o futuro, mas que, no momento presente, se mostra profundamente incompatível com a realidade social, política e econômica do país. Ela não consegue regular efetivamente o processo de poder. É como uma “veste muito grande”, que ainda não serve ao corpo social. Essa Constituição, segundo Loewenstein, é nominal.</p>
+  <p>Ela possui valor jurídico formal, é um documento válido, mas carece de efetividade, de normatividade. Seu objetivo não é refletir a realidade atual, mas sim educar, apontar um caminho a ser trilhado, moldar o futuro. Por isso, também é chamada de <strong>“Constituição prospectiva” ou “educativa”</strong>.</p>
+
+  <div class="box-dica">
+    <p>A FCC explora essa classificação com uma estratégia muito clara: o enunciado descreverá uma situação de descompasso, de uma Constituição “de papel”, que não é aplicada, que não limita o poder. Quando você ler a descrição de um texto constitucional que não se realiza na prática, a resposta será, invariavelmente, <strong>Constituição nominal</strong>.</p>
+  </div>
+
+  <h3>1.4. Constituição Semântica</h3>
+  <p>Por fim, a <strong>Constituição semântica</strong> é uma farsa. Ela não tem por objetivo limitar o poder, mas sim formalizá-lo e justificá-lo nas mãos dos detentores atuais do poder. Ela é um mero instrumento para conferir aparência de legitimidade a regimes autoritários, como ocorreu com a Constituição Brasileira de 1937 (Polaca). A “veste” aqui não serve para vestir o corpo social, mas para disfarçar o verdadeiro dono do poder.</p>
+
+  <h4>Quadro-Resumo: Classificação Ontológica (Loewenstein)</h4>
+  <table>
+    <thead> <tr><th>Espécie</th><th>Conceito</th><th>Relação com a Realidade</th><th>Objetivo Principal</th><th>Exemplo</th></tr> </thead>
+    <tbody>
+      <tr><td><strong>Normativa</strong></td><td>Rege efetivamente o processo político.</td><td>Simbiose entre texto e realidade.</td><td>Limitar e direcionar o poder.</td><td>Democracias consolidadas (ideal).</td></tr>
+      <tr><td><strong>Nominal</strong></td><td>Não consegue regular a realidade atual.</td><td>Descompasso (texto avançado vs. prática).</td><td>Educar, ser um projeto para o futuro.</td><td>CF de 1988 em seus primeiros anos (para parte da doutrina).</td></tr>
+      <tr><td><strong>Semântica</strong></td><td>Formaliza o poder existente, sem limitá-lo.</td><td>Instrumento de fachada para o poder.</td><td>Legitimar regimes autoritários.</td><td>Constituição Brasileira de 1937.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="divisoria-cap">◆ ◆ ◆</div>
+
+  <!-- CAPÍTULO 2 -->
+  <h2>Capítulo 2 – Direitos e Garantias Fundamentais: O Básico que Define o Cidadão</h2>
+  <h3>2.1. Nacionalidade: A Perda Após a Emenda Constitucional 131/2023</h3>
+  <p>O tema “nacionalidade” é um dos pilares do Direito Constitucional e está em constante evolução. A recente <strong>Emenda Constitucional nº 131, de 2023</strong>, promoveu uma alteração profunda e paradigmática nas hipóteses de perda da nacionalidade brasileira, extinguindo a odiosa figura da “perda-punição” por aquisição de outra nacionalidade. Vamos analisar o instituto em sua configuração atual.</p>
+
+  <h4>2.1.1. As Duas Únicas Hipóteses de Perda da Nacionalidade</h4>
+  <p>Com a nova redação do art. 12, §4º, da CF/88, um brasileiro, seja nato ou naturalizado, só perderá sua nacionalidade em duas situações taxativas:</p>
+  <ol>
+    <li><strong>Cancelamento Judicial da Naturalização (Art. 12, §4º, I, CF/88)</strong><br>
+      Esta hipótese atinge apenas o brasileiro naturalizado. Ocorre quando, por sentença judicial transitada em julgado, fica comprovado que a naturalização foi obtida de forma fraudulenta (ex.: documentos falsos) ou que o indivíduo praticou atividade nociva ao interesse nacional, conceito este que se vincula ao atentado contra a ordem constitucional e o Estado Democrático de Direito.<br>
+      <span class="badge">Natureza Jurídica:</span> É uma sanção judicial. Não é automática e exige o devido processo legal.<br>
+      <span class="badge">Competência:</span> A ação de cancelamento de naturalização é de competência da Justiça Federal, sendo proposta pelo Ministério Público Federal.</li>
+    <li><strong>Pedido Expresso de Renúncia (Art. 12, §5º, CF/88)</strong><br>
+      Qualquer brasileiro (nato ou naturalizado) pode, voluntariamente, abrir mão de sua nacionalidade brasileira. Para tanto, deve realizar um pedido expresso perante a autoridade administrativa brasileira competente. O procedimento administrativo é conduzido pelo Ministério da Justiça e Segurança Pública, e a perda se efetiva com a publicação de Portaria Ministerial.<br>
+      <span class="badge">Condição Essencial:</span> A renúncia jamais poderá acarretar a situação de apatridia (ausência de qualquer nacionalidade). A autoridade brasileira somente homologará o pedido se o cidadão demonstrar possuir outra nacionalidade ou a garantia de adquiri-la. Esta é uma cláusula protetiva fundamental, alinhada aos tratados internacionais de direitos humanos.</li>
+  </ol>
+
+  <h4>2.1.2. O Fim da Perda Automática por Aquisição de Outra Nacionalidade</h4>
+  <p>Antes da EC 131/2023, um brasileiro naturalizado que adquirisse voluntariamente outra nacionalidade perdia, por força de lei e automaticamente, a nacionalidade brasileira. Essa era a clássica hipótese do antigo §4º, II, do art. 12. Com a emenda, essa causa de perda foi <span class="marca-texto">revogada</span>.</p>
+  <p><strong>Na prática atual:</strong> Se você, brasileiro naturalizado, decidir se tornar cidadão italiano, não perderá mais a nacionalidade brasileira. Você passará a ser um cidadão com dupla (ou múltipla) nacionalidade. A mesma regra se aplica ao brasileiro nato, que já gozava dessa proteção (exceto no caso de imposição de naturalização pela lei estrangeira para permanência ou exercício de direitos, que sempre foi exceção). Agora, a proteção é uniformizada: a mera aquisição de outra nacionalidade não é mais causa de perda da brasileira.</p>
+
+  <div class="box-pegadinha">
+    <p>Cuidado com questões antigas ou bancas que ainda não absorveram a EC 131/2023. A afirmativa “o brasileiro naturalizado que adquire voluntariamente outra nacionalidade perderá a nacionalidade brasileira” é <strong>INCORRETA</strong> para provas atuais. A perda agora só se dá por cancelamento judicial ou renúncia expressa.</p>
+  </div>
+
+  <h3>2.2. Princípios Penais Constitucionais: O Escudo Protetor do Art. 5º</h3>
+  <p>O art. 5º da Constituição Federal é um verdadeiro catálogo de direitos e garantias, e seus princípios penais são clássicos absolutos em qualquer prova de concurso. A literalidade do texto é sua maior arma, mas a interpretação precisa dos detalhes é o que separa o candidato aprovado do resto. Analisemos os incisos mais cobrados.</p>
+
+  <h4>2.2.1. Intranscendência da Pena (Art. 5º, XLV)</h4>
+  <p>A regra é cristalina e representa um dos pilares do Direito Penal moderno: <em>“nenhuma pena passará da pessoa do condenado”</em>. A responsabilidade penal é personalíssima. Você não pode ser preso ou sofrer uma sanção penal pelo crime que seu pai cometeu.</p>
+  <p>A complexidade, e a armadilha de prova, reside na segunda parte do inciso. A própria Constituição estabelece exceções para os <strong>efeitos civis</strong> da condenação, que podem, sim, ser estendidos aos sucessores:</p>
+  <ul>
+    <li><strong>A obrigação de reparar o dano:</strong> Pode ser cobrada do espólio ou dos herdeiros, até o limite do patrimônio transferido pela herança (força da herança).</li>
+    <li><strong>O perdimento de bens:</strong> Os bens que seriam confiscados como efeito da condenação podem ser buscados junto aos herdeiros, também até o limite da herança recebida.</li>
+  </ul>
+  <p><span class="destaque-texto">A armadilha da MULTA:</span> A pena de multa, por ser uma <strong>pena</strong> e não um efeito civil da condenação, <strong>NÃO PODE</strong> ser estendida aos sucessores. Este é o erro clássico nas alternativas de prova. Confundir a multa (natureza penal) com a reparação do dano (natureza civil) é fatal. O STF, inclusive, já sumulou o entendimento: “Extingue-se a punibilidade do agente pela morte, no que concerne à pena de multa, que não pode ser cobrada dos herdeiros” (STF, Súmula 693 c/c art. 5º, XLV, CF).</p>
+
+  <h4>2.2.2. Penas Vedadas e a Exceção da Pena de Morte (Art. 5º, XLVII)</h4>
+  <p>O constituinte foi enfático ao proibir, em qualquer circunstância:</p>
+  <ul>
+    <li>Penas de morte, <strong>salvo em caso de guerra declarada</strong>, nos termos do art. 84, XIX;</li>
+    <li>Penas de caráter perpétuo;</li>
+    <li>Penas de trabalhos forçados;</li>
+    <li>Penas de banimento;</li>
+    <li>Penas cruéis.</li>
+  </ul>
+  <p>O ponto focal é a única exceção: a <strong>pena de morte em caso de guerra externa declarada</strong>. Note que a vedação às penas de caráter perpétuo não comporta qualquer exceção. É um erro comum a banca afirmar, por exemplo, que se admite prisão perpétua em caso de guerra. Não! A única exceção é a pena de morte. A prisão perpétua é vedada de forma absoluta em nosso ordenamento.</p>
+
+  <h4>2.2.3. Racismo (Art. 5º, XLII)</h4>
+  <p><em>“A prática do racismo constitui crime inafiançável e imprescritível, sujeito à pena de reclusão, nos termos da lei.”</em> Decore este inciso. O racismo é o único crime na Constituição Federal que é, simultaneamente, <span class="marca-texto">inafiançável e imprescritível</span>. A imprescritibilidade significa que o Estado pode punir o autor a qualquer tempo, mesmo décadas após o fato, pois a lesão é considerada de tal forma gravosa que o decurso do tempo não apaga seu poder ofensivo.</p>
+
+  <h4>2.2.4. Irretroatividade da Lei Penal (Art. 5º, XL)</h4>
+  <p><em>“A lei penal não retroagirá, salvo para beneficiar o réu.”</em> Este princípio garante a segurança jurídica. Uma nova lei que crie um crime ou agrave uma pena (lex gravior) jamais poderá ser aplicada a fatos ocorridos antes de sua vigência. Contudo, se a nova lei for benéfica ao réu (lex mitior), seja descriminalizando uma conduta, seja reduzindo uma pena, ela <strong>deverá retroagir</strong> para alcançar os fatos passados. É a exceção que materializa a justiça.</p>
+
+  <div class="box-estudo">
+    <p><strong>“João foi condenado criminalmente ao pagamento de multa e à reparação de danos à vítima. Após o trânsito em julgado, João faleceu, deixando um único herdeiro, seu filho Pedro. À luz do art. 5º, XLV, da CF, Pedro poderá ser obrigado a pagar a multa e a indenização?”</strong></p>
+    <p><span class="badge">Solução:</span></p>
+    <ul>
+      <li><strong>Indenização (reparação do dano):</strong> SIM. A obrigação civil de reparar o dano transmite-se aos herdeiros, mas o filho Pedro só responderá com o patrimônio que herdou de João (até o limite da herança). Se a dívida de indenização for maior que a herança, Pedro não precisará usar seu próprio patrimônio para quitá-la.</li>
+      <li><strong>Multa (pena):</strong> NÃO. A pena de multa, por ser sanção penal, é personalíssima e se extingue com a morte do condenado. Pedro não pode ser obrigado a pagá-la.</li>
+    </ul>
+  </div>
+
+  <div class="divisoria-cap">◆ ◆ ◆</div>
+
+  <!-- CAPÍTULO 3 -->
+  <h2>Capítulo 3 – Organização do Estado: Estrutura, Território e Competências</h2>
+  <h3>3.1. Formação de Novos Estados: O Complexo Rito do Desmembramento</h3>
+  <p>O Brasil é uma Federação indissolúvel (art. 1º, caput), o que significa que não se admite o direito de secessão, ou seja, um Estado-membro não pode, unilateralmente, declarar sua independência e se separar do país. A forma federativa é uma cláusula pétrea (art. 60, §4º, I, CF/88).</p>
+  <p>Contudo, a própria Constituição prevê a possibilidade de reorganização territorial, permitindo que Estados se subdividam para formar novos. O procedimento, previsto no art. 18, §3º, da CF/88, é rigoroso e se desenvolve em etapas:</p>
+  <ul>
+    <li><strong>Iniciativa:</strong> O processo começa com a apresentação de uma proposta de desmembramento (projeto de lei complementar), que tramitará no Congresso Nacional.</li>
+    <li><strong>Consulta Prévia à População (Plebiscito):</strong> A população diretamente interessada deve ser ouvida. A consulta é feita por meio de plebiscito, que é convocado pelo Congresso Nacional. Note que a aprovação popular é um requisito indispensável para o prosseguimento do feito. A “população diretamente interessada” é tanto a população do território que se pretende desmembrar quanto a do restante do Estado.</li>
+    <li><strong>Oitiva das Assembleias Legislativas:</strong> As Assembleias Legislativas dos Estados envolvidos também devem ser ouvidas. Essa oitiva é apenas opinativa, não vinculando o Congresso Nacional.</li>
+    <li><strong>Edição de Lei Complementar Federal:</strong> Se a população aprovar o desmembramento no plebiscito, o Congresso Nacional poderá, por meio de lei complementar federal, autorizar a criação do novo Estado. Esta lei complementar é o ato formal que aprova a reorganização.</li>
+  </ul>
+
+  <div class="box-pegadinha">
+    <p>É fundamental não confundir o procedimento de criação de Estados com o de criação de Municípios. Para a criação de Municípios (art. 18, §4º), exige-se:<br>
+    • Uma lei complementar federal que estabeleça o período e as regras gerais para o procedimento.<br>
+    • Um estudo de viabilidade municipal (técnico, econômico e social).<br>
+    • Uma consulta prévia por plebiscito às populações envolvidas.<br>
+    • A criação efetiva se dá por <strong>lei ordinária estadual</strong>.<br>
+    A FCC adora trocar o instrumento legal (lei complementar vs. lei estadual) ou confundir a exigência de plebiscito.</p>
+  </div>
+
+  <h4>Quadro Comparativo: Criação de Estados vs. Criação de Municípios</h4>
+  <table class="tabela-comparativa">
+    <thead> <tr><th>Requisito</th><th>Desmembramento de Estado (Art. 18, §3º)</th><th>Criação de Municípios (Art. 18, §4º)</th></tr> </thead>
+    <tbody>
+      <tr><td>Norma Geral</td><td>Procedimento já descrito na Constituição.</td><td>Depende de Lei Complementar Federal que defina o período e o procedimento.</td></tr>
+      <tr><td>Consulta Popular</td><td>Plebiscito das populações diretamente interessadas.</td><td>Plebiscito das populações diretamente interessadas.</td></tr>
+      <tr><td>Estudo Prévio</td><td>Não exigido expressamente pela Constituição.</td><td>Exigência de Estudo de Viabilidade Municipal.</td></tr>
+      <tr><td>Oitiva de Poder Local</td><td>Oitiva das Assembleias Legislativas dos Estados envolvidos.</td><td>Não há.</td></tr>
+      <tr><td>Ato Final de Criação</td><td>Lei Complementar Federal, aprovada pelo Congresso Nacional.</td><td>Lei Ordinária Estadual, aprovada pela Assembleia Legislativa.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3.2. Bens Públicos: O Que é da União e o Que é Apenas Patrimônio Nacional</h3>
+  <p>A distinção entre o rol de bens da União (art. 20, CF) e o conceito de patrimônio nacional (art. 225, §4º, CF) é uma fonte inesgotável de questões em concursos. O erro clássico do candidato é confundir o dever constitucional de proteção ambiental com a titularidade da propriedade.</p>
+
+  <h4>3.2.1. Bens da União (Art. 20 da CF/88)</h4>
+  <p>A União é proprietária de um vasto conjunto de bens estratégicos para a soberania e o desenvolvimento nacional. Dentre os inúmeros incisos, destacam-se os mais cobrados em prova:</p>
+  <ul>
+    <li><strong>Inc. I:</strong> Os que atualmente lhe pertencem e os que lhe vierem a ser atribuídos (cláusula geral).</li>
+    <li><strong>Inc. III:</strong> Lagos, rios e quaisquer correntes de água em terrenos de seu domínio, ou que banhem mais de um Estado, sirvam de limites com outros países, ou se estendam a território estrangeiro ou dele provenham.</li>
+    <li><strong>Inc. IV:</strong> Ilhas fluviais e lacustres nas zonas limítrofes com outros países; as praias marítimas; as ilhas oceânicas e costeiras (com algumas exceções).</li>
+    <li><strong>Inc. V:</strong> Recursos naturais da plataforma continental e da Zona Econômica Exclusiva (ZEE).</li>
+    <li><strong>Inc. IX:</strong> Recursos minerais, inclusive os do subsolo.</li>
+    <li><strong>Inc. X:</strong> Cavidades naturais subterrâneas e os sítios arqueológicos e pré-históricos.</li>
+    <li><strong>Inc. XI:</strong> Terras tradicionalmente ocupadas pelos índios.</li>
+  </ul>
+
+  <h4>3.2.2. Patrimônio Nacional (Art. 225, §4º, CF/88)</h4>
+  <p>A Constituição, em seu capítulo dedicado ao meio ambiente, declara que determinados biomas e ecossistemas são <strong>patrimônio nacional</strong>, conferindo-lhes um regime jurídico de proteção especial. Isso não significa que a União seja a dona dessas terras. A propriedade pode ser pública (federal, estadual ou municipal) ou até mesmo privada. O que a Constituição impõe é um dever de todos (Poder Público e sociedade) de preservá-los. São eles:</p>
+  <ul>
+    <li>A Floresta Amazônica brasileira;</li>
+    <li>A Mata Atlântica;</li>
+    <li>A Serra do Mar;</li>
+    <li>O Pantanal Mato-Grossense;</li>
+    <li>A Zona Costeira.</li>
+  </ul>
+
+  <div class="box-macete">
+    <p>Para lembrar os cinco itens que compõem o patrimônio nacional, grave o mnemônico <strong>APASZ</strong>:</p>
+    <ul>
+      <li><strong>A</strong>mazônia</li>
+      <li><strong>P</strong>antanal</li>
+      <li><strong>A</strong>tlântica (Mata)</li>
+      <li><strong>S</strong>erra do Mar</li>
+      <li><strong>Z</strong>ona Costeira</li>
+    </ul>
+    <p>A pegadinha de banca se materializa assim: a questão pergunta “são bens da União, EXCETO”, e a alternativa a ser marcada é “Terras de Mata Atlântica”. Ela é patrimônio nacional, mas não necessariamente um bem da União. A confusão é instantânea na mente do candidato despreparado.</p>
+  </div>
+
+  <h3>3.3. Repartição de Competências Legislativas: O “X” da Questão entre Arts. 22 e 24</h3>
+  <p>A repartição de competências é a espinha dorsal do federalismo brasileiro. No que tange à competência legislativa, a distinção mais sutil e perigosa reside na diferença entre legislar sobre <strong>direito processual</strong> e sobre <strong>procedimentos em matéria processual</strong>.</p>
+
+  <h4>3.3.1. Direito Processual (Art. 22, I, CF) – Competência Privativa da União</h4>
+  <p>Cabe privativamente à União legislar sobre direito processual. Aqui se incluem as grandes codificações, as normas gerais e estruturantes do processo. Exemplos clássicos são o Código de Processo Civil (CPC), o Código de Processo Penal (CPP) e a Consolidação das Leis do Trabalho (CLT) em sua parte processual. A ideia é garantir uma uniformidade nacional mínima para o exercício do direito de ação e da jurisdição.</p>
+
+  <h4>3.3.2. Procedimentos em Matéria Processual (Art. 24, XI, CF) – Competência Concorrente</h4>
+  <p>A competência para legislar sobre “procedimentos em matéria processual” é <strong>concorrente</strong> entre União, Estados e Distrito Federal. Na competência concorrente, a União edita normas gerais, e os Estados suplementam essas normas para atender às suas peculiaridades locais.</p>
+  <p><span class="badge">Qual a diferença prática?</span> Enquanto o “direito processual” se refere ao núcleo estrutural do processo (prazos processuais para as partes, recursos, tipos de ação, competência jurisdicional), os “procedimentos em matéria processual” tratam de questões organizacionais e operacionais do aparelho judiciário local. Exemplos de matéria concorrente são:</p>
+  <ul>
+    <li>A fixação de custas judiciais e emolumentos;</li>
+    <li>A criação e organização de varas e tribunais estaduais;</li>
+    <li>Normas internas de funcionamento dos cartórios judiciais;</li>
+    <li>Prazos de balcão para prática de atos internos dos servidores da justiça.</li>
+  </ul>
+
+  <div class="box-dica">
+    <p>A FCC formula a questão da seguinte maneira: “É competência privativa da União legislar sobre...” e coloca na alternativa “procedimentos em matéria processual”. Você, de imediato, deve reconhecer que essa afirmativa é <strong>FALSA</strong>, pois é uma competência concorrente. O examinador aposta na confusão do candidato entre a regra do art. 22, I (direito processual) e a do art. 24, XI (procedimentos). O raciocínio é: se fala em “procedimentos”, a competência é concorrente.</p>
+  </div>
+
+  <div class="divisoria-cap">◆ ◆ ◆</div>
+
+  <!-- CAPÍTULO 4 -->
+  <h2>Capítulo 4 – Administração Pública: Princípios, Agentes e Estrutura Remuneratória</h2>
+  <h3>4.1. Os Princípios Constitucionais Expressos (Art. 37, caput) e a Vedação de Vinculação</h3>
+  <p>O art. 37 da Constituição é a “pedra fundamental” do Direito Administrativo brasileiro. A doutrina organizou seus comandos em princípios, e a memorização dos cinco princípios explícitos no caput é o primeiro passo.</p>
+
+  <h4>4.1.1. Mnemônico LIMPE</h4>
+  <p>O caput do art. 37 enuncia que a administração pública direta e indireta obedecerá aos princípios de:</p>
+  <ul>
+    <li><strong>L</strong>egalidade</li>
+    <li><strong>I</strong>mpessoalidade</li>
+    <li><strong>M</strong>oralidade</li>
+    <li><strong>P</strong>ublicidade</li>
+    <li><strong>E</strong>ficiência (incluído pela Emenda Constitucional nº 19/98)</li>
+  </ul>
+  <p>Qualquer outro princípio (razoabilidade, proporcionalidade, supremacia do interesse público, autotutela, segurança jurídica, consensualidade, etc.) é, do ponto de vista da literalidade constitucional, um princípio implícito. A banca FCC, ao questionar sobre os princípios expressos no art. 37, espera de você a exata correspondência com o mnemônico LIMPE.</p>
+
+  <h4>4.1.2. A Vedação de Vinculação e Equiparação (Art. 37, XIII)</h4>
+  <p>Dentro do capítulo da Administração Pública, o art. 37, XIII, estabelece uma proibição de crucial importância orçamentária e administrativa: <em>“é vedada a vinculação ou equiparação de quaisquer espécies remuneratórias para o efeito de remuneração de pessoal do serviço público”</em>.</p>
+  <p><span class="badge">Objetivo da Norma:</span> O dispositivo visa impedir o chamado “efeito cascata” ou “trem da alegria”, em que o aumento concedido a uma carreira desencadeia, por atrelamento automático, o aumento de todas as demais. Imagine que, por lei, os salários dos servidores administrativos fossem fixados em 80% do salário dos auditores fiscais. Um aumento para os auditores geraria, de forma automática e descontrolada, um aumento para todos os administrativos, sem nenhum debate sobre mérito, necessidade ou impacto fiscal. Essa prática é inconstitucional.</p>
+  <p><strong>Diferença entre Vinculação e Equiparação:</strong></p>
+  <ul>
+    <li><strong>Vinculação:</strong> É o atrelamento de uma remuneração a um índice ou a outra carreira específica (ex: “os técnicos ganharão sempre 70% do subsídio dos analistas”).</li>
+    <li><strong>Equiparação:</strong> É o tratamento remuneratório igual para cargos com atribuições e responsabilidades diferentes.</li>
+  </ul>
+  <p>A regra é a vedação absoluta, mas existem exceções previstas pela própria Constituição, como a regra do teto remuneratório que atrela os subsídios nos Estados a um percentual do subsídio de Ministro do STF (art. 37, XI) e a possibilidade do teto único estadual (art. 37, §12).</p>
+
+  <h3>4.2. O Teto Remuneratório nos Estados: A Faculdade do Art. 37, §12</h3>
+  <p>Uma das inovações trazidas pela Reforma da Previdência (EC 41/2003) e posteriormente alterada, o art. 37, §12, da CF/88 faculta aos Estados e ao Distrito Federal a possibilidade de unificar o teto remuneratório do funcionalismo local. Esta é uma regra de exceção e precisa ser entendida em seus detalhes.</p>
+  <p><span class="badge">Regra Geral:</span> O teto remuneratório no âmbito dos Estados é escalonado por Poder:</p>
+  <ul>
+    <li><strong>Poder Executivo:</strong> Subsídio do Governador.</li>
+    <li><strong>Poder Legislativo:</strong> Subsídio dos Deputados Estaduais.</li>
+    <li><strong>Poder Judiciário:</strong> Subsídio dos Desembargadores do Tribunal de Justiça (limitado a 90,25% do subsídio de Ministro do STF).</li>
+    <li><strong>Ministério Público e Defensoria:</strong> Aplicam-se os respectivos tetos por analogia.</li>
+  </ul>
+  <p><span class="badge">A Faculdade do §12:</span> Mediante emenda à Constituição Estadual, o Estado pode estabelecer um <strong>teto único</strong> para todos os Poderes e órgãos autônomos, adotando como referência o subsídio mensal dos Desembargadores do Tribunal de Justiça. Esse teto único, por sua vez, não pode ultrapassar o limite de 90,25% do subsídio mensal dos Ministros do Supremo Tribunal Federal.</p>
+  <p><strong>Quem NÃO ENTRA nesse teto único?</strong><br>
+  O próprio dispositivo é claro: essa unificação <em>“não se aplica aos subsídios dos Deputados Estaduais e Distritais”</em>. A lógica é preservar a autonomia e a isonomia entre as esferas legislativas federal e estadual. O teto do Deputado Estadual está previsto no art. 27, §2º, e é fixado em um percentual do subsídio do Deputado Federal, não podendo ser reduzido por um teto único baseado no Judiciário.</p>
+
+  <div class="box-exemplo">
+    <p>Suponha que o subsídio de um Ministro do STF seja de R$ 40.000,00.</p>
+    <p><strong>Teto do Judiciário Estadual:</strong> 90,25% x R$ 40.000,00 = R$ 36.100,00. Este é o limite do subsídio de um Desembargador e, consequentemente, o teto máximo adotável para o funcionalismo estadual pelo §12.</p>
+    <p>Se o Estado aprovar uma EC estabelecendo o teto único, o subsídio de um Deputado Estadual continuará sendo calculado com base no subsídio do Deputado Federal (até 75% deste, conforme art. 27, §2º), e não será limitado pelos R$ 36.100,00.</p>
+  </div>
+
+  <h3>4.3. Classificação dos Cargos e Agentes Públicos</h3>
+  <p>A doutrina, capitaneada por Hely Lopes Meirelles, fornece classificações essenciais para a compreensão da hierarquia e da autonomia dos agentes e órgãos públicos. Duas delas são objeto frequente de prova.</p>
+
+  <h4>4.3.1. Cargo Efetivo vs. Cargo Vitalício: A Garantia de Permanência</h4>
+  <p>A diferença crucial reside na forma de perda do cargo.</p>
+  
+  <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1.8rem 0;">
+    <div style="flex: 1 1 250px; background: #f6f2e9; border-radius: 18px; padding: 1.3rem;">
+      <span class="titulo-card">🔹 Cargo Efetivo (Estabilidade – Art. 41, CF)</span>
+      <p><strong>Ingresso:</strong> Exige aprovação em concurso público de provas ou de provas e títulos.<br>
+      <strong>Garantia:</strong> Adquire estabilidade após 3 anos de efetivo exercício.<br>
+      <strong>Perda do Cargo:</strong> O servidor estável só perderá o cargo em virtude de: (I) sentença judicial transitada em julgado; (II) processo administrativo em que lhe seja assegurada ampla defesa; (III) procedimento de avaliação periódica de desempenho, na forma de lei complementar, assegurada ampla defesa. Isso significa que um Procurador do Estado, um Analista Judiciário, um Auditor Fiscal, após o estágio probatório, têm sua permanência fortemente protegida, mas ainda podem ser desligados por decisão administrativa (PAD).<br>
+      <strong>Exemplo:</strong> Analista Judiciário do TJCE.</p>
+    </div>
+    <div style="flex: 1 1 250px; background: #f2efe8; border-radius: 18px; padding: 1.3rem;">
+      <span class="titulo-card">🔸 Cargo Vitalício (Vitaliciedade)</span>
+      <p><strong>Ingresso:</strong> Também exige concurso público, mas está vinculado a carreiras constitucionalmente protegidas.<br>
+      <strong>Garantia:</strong> Adquire vitaliciedade. O prazo para a aquisição varia:<br>
+      • Juízes: Após 2 anos de exercício (art. 95, I, CF).<br>
+      • Membros do MP: Após 2 anos de exercício (art. 128, §5º, I, a, CF).<br>
+      • Membros dos Tribunais de Contas: No momento da posse (art. 73, §3º c/c art. 75, CF).<br>
+      <strong>Perda do Cargo:</strong> O agente vitalício SOMENTE perderá o cargo por sentença judicial transitada em julgado. A Administração não pode, em hipótese alguma, demiti-lo por um processo administrativo. Esta é a garantia máxima de independência funcional.<br>
+      <strong>Exemplo:</strong> Juiz Federal, Promotor de Justiça, Conselheiro de Tribunal de Contas.</p>
+    </div>
+  </div>
+
+  <div class="box-pegadinha">
+    <p>Não confunda! A estabilidade do servidor público efetivo permite a perda do cargo por Processo Administrativo Disciplinar (PAD). A vitaliciedade, <strong>NÃO</strong>. O vitalício só sai por decisão judicial. Outro erro comum é achar que todo cargo conquistado por concurso público é vitalício. A regra é a estabilidade; a vitaliciedade é exceção para carreiras específicas.</p>
+  </div>
+
+  <h4>4.3.2. Classificação dos Órgãos Públicos: Posição Estatal</h4>
+  <p>Hely Lopes Meirelles classifica os órgãos públicos, quanto à sua posição estatal (hierarquia), em:</p>
+  <ul>
+    <li><strong>Órgãos Independentes:</strong> São os de cúpula, previstos na Constituição, sem qualquer subordinação hierárquica. Possuem autonomia administrativa, financeira e funcional. Representam os Três Poderes em sua instância máxima. Exemplos: Chefia do Executivo (Presidência, Governadorias), Casas Legislativas (Congresso, Assembleias) e as cúpulas do Judiciário (STF, Tribunais Superiores e os Tribunais de Justiça dos Estados).</li>
+    <li><strong>Órgãos Autônomos:</strong> Estão no topo da hierarquia, mas subordinados aos independentes. Possuem ampla autonomia decisória e orçamentária. Exemplos: Ministérios, Secretarias Estaduais, Ministério Público, Defensoria Pública, Tribunais de Contas.</li>
+    <li><strong>Órgãos Superiores:</strong> Possuem poder de direção, controle e decisão, mas estão sujeitos a uma subordinação hierárquica mais próxima. Não possuem autonomia. Exemplos: Gabinetes, Procuradorias Gerais, Diretorias de Departamento.</li>
+    <li><strong>Órgãos Subalternos:</strong> São órgãos de mera execução, com funções operacionais, sem poder decisório relevante. Exemplos: Seções de expediente, portarias, almoxarifados.</li>
+  </ul>
+  <p>O foco para a sua prova é saber que um <span class="marca-texto">Tribunal de Justiça é um típico órgão independente</span>, situado no ápice da estrutura do Poder Judiciário de um Estado.</p>
+
+  <div class="divisoria-cap">◆ ◆ ◆</div>
+
+  <!-- CAPÍTULO 5 -->
+  <h2>Capítulo 5 – Poder Judiciário: Estrutura, Orçamento e Competências</h2>
+  <h3>5.1. Proposta Orçamentária do Poder Judiciário Estadual: O Fluxo Constitucional</h3>
+  <p>Em um concurso para Técnico Judiciário, compreender o rito de elaboração do orçamento do próprio Poder Judiciário é um diferencial e tanto. A lógica está na autonomia financeira dos Poderes e na necessidade de consolidação do orçamento estadual. Vamos ao passo a passo:</p>
+
+  <!-- Fluxograma SVG simples -->
+  <svg class="svg-fluxo" viewBox="0 0 620 280" xmlns="http://www.w3.org/2000/svg" style="background: #fefdf9; border-radius: 18px; padding: 0.5rem;">
+    <rect x="15" y="30" width="140" height="70" rx="12" fill="#e3dac7" stroke="#b9a172" stroke-width="1.5"/>
+    <text x="85" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#2e2b21" font-weight="bold">1. TJ elabora e</text>
+    <text x="85" y="78" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#2e2b21" font-weight="bold">aprova proposta</text>
+    <line x1="155" y1="65" x2="215" y2="65" stroke="#b39264" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="220" y="30" width="150" height="70" rx="12" fill="#d9cfb2" stroke="#b39264" stroke-width="1.5"/>
+    <text x="295" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#2e2b21" font-weight="bold">2. Encaminha ao</text>
+    <text x="295" y="78" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#2e2b21" font-weight="bold">Governador</text>
+    <line x1="370" y1="65" x2="430" y2="65" stroke="#b39264" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="435" y="30" width="160" height="70" rx="12" fill="#cbbf9c" stroke="#9b8358" stroke-width="1.5"/>
+    <text x="515" y="58" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f1d16" font-weight="bold">3. Governador consolida</text>
+    <text x="515" y="78" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#1f1d16" font-weight="bold">a LOA</text>
+    <line x1="515" y1="100" x2="515" y2="150" stroke="#b39264" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="385" y="155" width="260" height="70" rx="12" fill="#e8dec4" stroke="#b39264" stroke-width="1.5"/>
+    <text x="515" y="183" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#2e2b21" font-weight="bold">4. Envia à Assembleia Legislativa</text>
+    <text x="515" y="203" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" fill="#2e2b21" font-weight="bold">para votação e aprovação</text>
+    <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#b39264"/></marker></defs>
+  </svg>
+
+  <p><span class="badge">Conclusão do Fluxo:</span> TJ aprova → Encaminha ao Governador → Governador consolida e encaminha à Assembleia Legislativa.</p>
+
+  <h3>5.2. Composição dos Tribunais Regionais Federais (TRFs) – Art. 107, CF/88</h3>
+  <p>Os TRFs são os órgãos de segundo grau da Justiça Federal. Sua composição obedece a regras que equilibram experiência técnica e conhecimento acadêmico. A literalidade do art. 107 é essencial para a prova.</p>
+  <ul>
+    <li><strong>Nomeação:</strong> Os membros dos TRFs são nomeados pelo Presidente da República (e não pelo Presidente do STF ou do próprio TRF).</li>
+    <li><strong>Número de Membros:</strong> No mínimo 7 (sete) juízes.</li>
+    <li><strong>Requisitos Pessoais:</strong> Devem ser brasileiros, com mais de 30 e menos de 70 anos de idade.</li>
+  </ul>
+  <p><strong>Origem dos Membros (Duas Classes):</strong></p>
+  <ul>
+    <li><strong>Vagas do Quinto Constitucional (1/5):</strong> Destinadas a Advogados e Membros do Ministério Público Federal, com mais de 10 anos de efetiva atividade profissional. Eles são escolhidos em lista sêxtupla pelas respectivas entidades de classe, que é enviada ao TRF. O Tribunal reduz a lista para uma lista tríplice e envia ao Presidente da República, que nomeia um dos três.</li>
+    <li><strong>Vagas da Classe da Magistratura (4/5):</strong> Preenchidas mediante promoção de Juízes Federais com mais de 5 anos de exercício, alternadamente, por antiguidade e por merecimento. A lista de antiguidade é formada pelos juízes mais antigos; a de merecimento, por aqueles de notável saber jurídico e produtividade.</li>
+  </ul>
+
+  <h3>5.3. Competências Originárias do STF (Art. 102, CF) e a Grande Transferência da EC 45/2004</h3>
+  <p>O Supremo Tribunal Federal possui competências originárias (julga desde o início) e recursais (julga recursos). O rol do art. 102 é extenso, mas a reforma do Judiciário (EC 45/2004) promoveu uma descentralização histórica. Dentre as competências transferidas, a mais cobrada em concursos é a:</p>
+  <div class="callout-resumo">
+    <strong>Homologação de sentenças estrangeiras e a concessão de exequatur às cartas rogatórias.</strong>
+  </div>
+  <p><strong>Antes da EC 45/2004:</strong> Essa era uma competência pesada e burocrática que congestionava o STF. O tribunal precisava dar o “cumpra-se” a decisões de tribunais estrangeiros (ex.: homologar um divórcio realizado no exterior) e autorizar a execução de atos processuais solicitados por autoridades estrangeiras (carta rogatória).</p>
+  <p><strong>Após a EC 45/2004:</strong> Essa competência foi transferida para o <strong>Superior Tribunal de Justiça (STJ)</strong>, nos termos do art. 105, I, “i”, da CF/88. O objetivo foi claro: transformar o STF em uma verdadeira Corte Constitucional, mais focada na guarda da Constituição, e deixar as questões de cunho internacional e infraconstitucional para o STJ.</p>
+  <p><strong>Competências que PERMANECERAM no STF (Art. 102, I, CF):</strong></p>
+  <ul>
+    <li>Ação Direta de Inconstitucionalidade (ADI), Ação Declaratória de Constitucionalidade (ADC), Arguição de Descumprimento de Preceito Fundamental (ADPF) e Ação Direta de Inconstitucionalidade por Omissão (ADO).</li>
+    <li>Mandado de Segurança, Habeas Data e Habeas Corpus contra atos de altas autoridades (Presidente da República, Mesa da Câmara e do Senado, Tribunais Superiores, etc.).</li>
+    <li>Litígios entre Estado estrangeiro ou organismo internacional e a União, o Estado, o Distrito Federal ou o Território.</li>
+    <li>Nas infrações penais comuns, julgar o Presidente da República, o Vice-Presidente, os membros do Congresso Nacional, seus próprios Ministros e o Procurador-Geral da República.</li>
+    <li>Extradição solicitada por Estado estrangeiro.</li>
+  </ul>
+
+  <div class="divisoria-cap">◆ ◆ ◆</div>
+
+  <!-- CAPÍTULO 6 -->
+  <h2>Capítulo 6 – Funções Essenciais à Justiça: O Ministério Público da União</h2>
+  <p>O Ministério Público é uma instituição una e indivisível, mas se organiza nos níveis federal (MPU) e estadual (MPE). Compreender a composição do Ministério Público da União (MPU) é fundamental, e uma armadilha específica é repetida anualmente em dezenas de concursos públicos.</p>
+  
+  <h3>6.1. Composição do MPU (Art. 128, I, CF/88)</h3>
+  <p>Nos termos do art. 128, I, da CF, o Ministério Público da União compreende <strong>APENAS</strong> os seguintes ramos:</p>
+  <ul>
+    <li><strong>Ministério Público Federal (MPF):</strong> Atua perante os órgãos da Justiça Federal (TRFs e juízes federais). Seu chefe é o Procurador-Geral da República (PGR), que é também o chefe do MPU como um todo.</li>
+    <li><strong>Ministério Público do Trabalho (MPT):</strong> Atua perante a Justiça do Trabalho.</li>
+    <li><strong>Ministério Público Militar (MPM):</strong> Atua perante a Justiça Militar da União.</li>
+    <li><strong>Ministério Público do Distrito Federal e Territórios (MPDFT):</strong> Atua perante o Tribunal de Justiça do Distrito Federal e Territórios (TJDFT), que é um tribunal federal mantido pela União, mas que julga matérias típicas da justiça estadual.</li>
+  </ul>
+
+  <h3>6.2. A Grande Pegadinha: O Ministério Público Eleitoral</h3>
+  <p>O <strong>Ministério Público Eleitoral NÃO É UM RAMO do MPU</strong>. Ele não possui uma carreira própria, nem quadro de membros próprio. O MP Eleitoral é uma <span class="marca-texto">função transitória</span> que é exercida, perante a Justiça Eleitoral, por membros que pertencem a outros ramos:</p>
+  <ul>
+    <li><strong>No Tribunal Superior Eleitoral (TSE) e nos Tribunais Regionais Eleitorais (TREs):</strong> A função de Procurador Eleitoral é exercida por membros do Ministério Público Federal.</li>
+    <li><strong>Nas Zonas Eleitorais (1ª instância):</strong> A função de Promotor Eleitoral é exercida por membros do Ministério Público Estadual.</li>
+  </ul>
+  <p>Isso significa que um Promotor de Justiça do Estado de São Paulo pode atuar em sua cidade como Promotor Eleitoral durante o período de eleições, retornando às suas funções normais (crime, família, etc.) após o pleito.</p>
+
+  <div class="box-dica">
+    <p>Pergunta clássica de prova: <em>“Compõem o MPU: MPF, MPT, MPM, MPDFT e MP Eleitoral”</em>. A afirmativa está <strong>ERRADA</strong>, pois o MP Eleitoral não compõe o MPU.</p>
+  </div>
+
+  <div class="divisoria-cap">◆ ◆ ◆</div>
+
+  <!-- CAPÍTULO 7 -->
+  <h2>Capítulo 7 – Macetes, Erros Comuns e Quadros de Síntese para Revisão</h2>
+  <p>Chegamos ao final de nosso percurso. Para consolidar o aprendizado e garantir que as armadilhas de prova não o peguem, apresento uma síntese dos erros mais comuns e macetes de memorização.</p>
+
+  <h3>7.1. Pegadinhas Mais Fatais em Concursos</h3>
+  <table>
+    <thead> <tr><th>Tema</th><th>Armadilha / Erro Comum</th><th>Explicação Correta</th></tr> </thead>
+    <tbody>
+      <tr><td>Perda da Nacionalidade</td><td>Achar que a aquisição de outra nacionalidade ainda gera perda automática para naturalizados.</td><td>A EC 131/2023 revogou essa hipótese. A perda hoje é só por cancelamento judicial ou renúncia.</td></tr>
+      <tr><td>Princípios Penais (Art. 5º)</td><td>Afirmar que a “multa penal” pode ser estendida aos herdeiros.</td><td>A multa é pena, não efeito civil. Só se estendem a reparação do dano e o perdimento de bens.</td></tr>
+      <tr><td>Bens Públicos</td><td>Confundir patrimônio nacional (ex.: Mata Atlântica) com bem da União.</td><td>Patrimônio nacional (art. 225, §4º) é gênero de proteção ambiental; bem da União (art. 20) é título de propriedade.</td></tr>
+      <tr><td>Competências Legislativas</td><td>Achar que legislar sobre “procedimentos processuais” é privativo da União.</td><td>É concorrente (art. 24, XI). O que é privativo da União é legislar sobre “direito processual” (art. 22, I).</td></tr>
+      <tr><td>Teto Remuneratório</td><td>Incluir os subsídios dos Deputados Estaduais no teto único estadual do art. 37, §12.</td><td>O próprio dispositivo exclui os Deputados Estaduais.</td></tr>
+      <tr><td>Competências do STF</td><td>Atribuir ao STF a competência para homologar sentença estrangeira.</td><td>Essa competência é do STJ desde a EC 45/2004.</td></tr>
+      <tr><td>Ministério Público</td><td>Incluir o “Ministério Público Eleitoral” como ramo do MPU.</td><td>Ele não tem carreira própria, sendo uma função exercida por membros do MPF e dos MPEs.</td></tr>
+      <tr><td>Classificação de Cargos</td><td>Achar que um servidor em cargo vitalício pode perder o cargo por PAD.</td><td>Agentes vitalícios só perdem o cargo por sentença judicial transitada em julgado.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>7.2. Mnemônicos para a Prova</h3>
+  <ul>
+    <li><strong>Princípios Expressos:</strong> <span class="marca-texto">LIMPE</span> (Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência).</li>
+    <li><strong>Patrimônio Nacional:</strong> <span class="marca-texto">APASZ</span> (Amazônia, Pantanal, Atlântica, Serra do Mar, Zona Costeira).</li>
+    <li><strong>Ramos do MPU:</strong> <span class="marca-texto">FTPDF</span> (Federal, Trabalho, Militar, Distrito Federal e Territórios). O Eleitoral é um “intruso” sem carreira.</li>
+  </ul>
+
+  <hr>
+  <p style="text-align: right; font-style: italic; color: #5f5b4d;">Este material foi construído para fornecer a você a base teórica necessária, mas, acima de tudo, a visão estratégica para enfrentar as questões de prova. Bons estudos e foco no resultado!</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Administrativo para Concursos — Apostila Completa</title>
+    <style>
+        :root {
+            --bg: #fcfcf9;
+            --surface: #ffffff;
+            --text: #2c2c2c;
+            --text-light: #5e5e5e;
+            --primary: #1e4a6b;
+            --primary-light: #2c6e9c;
+            --accent: #c78c3b;
+            --accent-light: #fdf3e4;
+            --border: #e0dcd2;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 3px 12px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 8px 28px rgba(0, 0, 0, 0.08);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --font-body: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, 'Times New Roman', serif;
+            --font-heading: 'Segoe UI', 'Inter', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+            --font-mono: 'SF Mono', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 0.8rem;
+            --spacing-md: 1.4rem;
+            --spacing-lg: 2.2rem;
+            --spacing-xl: 3.2rem;
+            --max-width: 860px;
+            --reading-width: 90%;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 18px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            background-color: #f4f2eb;
+            color: var(--text);
+            font-family: var(--font-body);
+            line-height: 1.75;
+            letter-spacing: 0.01em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem 4rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: var(--surface);
+            max-width: var(--max-width);
+            width: var(--reading-width);
+            margin: 0 auto;
+            padding: 3rem 2.8rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.4rem;
+                width: 96%;
+                border-radius: var(--radius-md);
+            }
+            html {
+                font-size: 16px;
+            }
+        }
+
+        /* --- HEADER --- */
+        .main-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2.2rem;
+            border-bottom: 2px solid var(--border);
+            position: relative;
+        }
+        .main-header .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            font-family: var(--font-heading);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            padding: 0.35rem 1.4rem;
+            border-radius: 50px;
+            margin-bottom: 1.2rem;
+        }
+        .main-header h1 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.25;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.02em;
+        }
+        .main-header .subtitle {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            font-size: 1rem;
+            color: var(--text-light);
+            letter-spacing: 0.04em;
+        }
+        .main-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+
+        /* --- TOC / SUMÁRIO --- */
+        .toc {
+            background: #fafaf6;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.8rem 2rem;
+            margin-bottom: 3rem;
+        }
+        .toc h2 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .toc li {
+            counter-increment: toc-counter;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        .toc li::before {
+            content: counter(toc-counter) ". ";
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .toc a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted transparent;
+            transition: border 0.2s;
+        }
+        .toc a:hover {
+            border-bottom-color: var(--primary-light);
+        }
+
+        /* --- TIPOGRAFIA GERAL --- */
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 2.4rem 0 1rem;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            border-left: 5px solid var(--accent);
+            padding-left: 1rem;
+        }
+        h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 650;
+            color: #1a3b54;
+            margin: 1.8rem 0 0.8rem;
+            line-height: 1.35;
+        }
+        h4 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2e4a5f;
+            margin: 1.4rem 0 0.5rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+        strong {
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        em {
+            font-style: italic;
+            color: #3d3d3d;
+        }
+
+        /* --- LINKS INTERNOS --- */
+        a.internal-link {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1.5px dotted var(--primary-light);
+        }
+        a.internal-link:hover {
+            border-bottom-style: solid;
+        }
+
+        /* --- CARDS & BOXES --- */
+        .info-box,
+        .tip-box,
+        .warning-box,
+        .danger-box,
+        .highlight-box,
+        .summary-box,
+        .quote-box,
+        .case-study {
+            border-radius: var(--radius-md);
+            padding: 1.3rem 1.6rem;
+            margin: 1.5rem 0;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+            font-size: 0.92rem;
+            line-height: 1.65;
+        }
+        .info-box {
+            background: #f6fafe;
+            border-left: 5px solid #3b82c4;
+        }
+        .tip-box {
+            background: #fefdf6;
+            border-left: 5px solid #e6b422;
+        }
+        .warning-box {
+            background: #fffaf4;
+            border-left: 5px solid #e07b2c;
+        }
+        .danger-box {
+            background: #fef5f5;
+            border-left: 5px solid #c93a3a;
+        }
+        .highlight-box {
+            background: var(--accent-light);
+            border-left: 5px solid var(--accent);
+            font-weight: 500;
+        }
+        .summary-box {
+            background: #f4f8f3;
+            border-left: 5px solid #4a8b3f;
+        }
+        .quote-box {
+            background: #fdfcf8;
+            border: 1px dashed var(--border);
+            font-style: italic;
+            color: #555;
+        }
+        .case-study {
+            background: #f9f7f9;
+            border-left: 5px solid #7b4b8a;
+        }
+
+        .info-box::before,
+        .tip-box::before,
+        .warning-box::before,
+        .danger-box::before,
+        .highlight-box::before,
+        .summary-box::before {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: inherit;
+        }
+        .info-box::before {
+            content: "📘 Informação";
+            color: #3b82c4;
+        }
+        .tip-box::before {
+            content: "📌 Dica de Prova — FCC";
+            color: #b8941f;
+        }
+        .warning-box::before {
+            content: "⚠️ Pegadinha da Banca — FCC";
+            color: #c56d1a;
+        }
+        .danger-box::before {
+            content: "🔥 Cuidado — Afirmação Falsa";
+            color: #b82828;
+        }
+        .highlight-box::before {
+            content: "🔎 Destaque";
+            color: #9e6f23;
+        }
+        .summary-box::before {
+            content: "✅ Resumo";
+            color: #3d6e35;
+        }
+
+        /* --- TABELAS --- */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.6rem 0;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-heading);
+            font-size: 0.82rem;
+            line-height: 1.5;
+            background: #fff;
+        }
+        th {
+            background: var(--primary);
+            color: #fff;
+            font-weight: 600;
+            padding: 0.7rem 1rem;
+            text-align: left;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        td {
+            padding: 0.65rem 1rem;
+            border-bottom: 1px solid #eae7de;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:nth-child(even) td {
+            background: #fcfbf7;
+        }
+
+        /* --- LISTAS --- */
+        ul,
+        ol {
+            margin: 0.8rem 0 1.2rem 1.4rem;
+        }
+        li {
+            margin-bottom: 0.35rem;
+            padding-left: 0.2rem;
+        }
+        ul.checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+        ul.checklist li::before {
+            content: "☐ ";
+            color: var(--primary);
+            font-weight: bold;
+        }
+        ul.checklist li.checked::before {
+            content: "☑ ";
+            color: #3d6e35;
+        }
+
+        /* --- MAPA MENTAL / CÓDIGO --- */
+        .mindmap {
+            background: #1e2a35;
+            color: #d4e6f5;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            line-height: 1.7;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            margin: 1.5rem 0;
+            white-space: pre;
+            overflow-x: auto;
+            box-shadow: var(--shadow-md);
+            letter-spacing: 0;
+        }
+        .mindmap.light {
+            background: #f5f4ef;
+            color: #2c2c2c;
+            border: 1px solid var(--border);
+            font-weight: 500;
+        }
+
+        /* --- DIVIDERS --- */
+        .divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--border), transparent);
+            margin: 2.5rem 0;
+        }
+        .divider.accent {
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+            height: 1.5px;
+        }
+        .chapter-separator {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 3.5rem 0 2.5rem;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+        }
+        .chapter-separator::before,
+        .chapter-separator::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* --- BADGES & TAGS --- */
+        .tag {
+            display: inline-block;
+            background: #eaecef;
+            color: #3d4f5f;
+            font-family: var(--font-heading);
+            font-size: 0.65rem;
+            font-weight: 600;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            letter-spacing: 0.06em;
+            margin-right: 0.3rem;
+            vertical-align: middle;
+        }
+        .tag.true {
+            background: #e0f0df;
+            color: #2d5a2b;
+        }
+        .tag.false {
+            background: #fce4e4;
+            color: #8b2c2c;
+        }
+        .tag.warning-tag {
+            background: #fef0d6;
+            color: #8b5e1a;
+        }
+
+        /* --- BLOCKQUOTE / CITAÇÃO LEGAL --- */
+        .legal-quote {
+            background: #fbfcfd;
+            border: 1px solid #dce3e8;
+            border-left: 6px solid var(--primary);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 1.2rem 1.6rem;
+            margin: 1.4rem 0;
+            font-family: var(--font-heading);
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: #1e3a4f;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            box-shadow: var(--shadow-sm);
+        }
+        .legal-quote .article-ref {
+            display: block;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* --- FLUXO / TIMELINE --- */
+        .flow-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin: 1.2rem 0;
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .flow-steps .step {
+            background: #eef3f7;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+        .flow-steps .arrow {
+            align-self: center;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* --- BACK TO TOP --- */
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin-top: 3rem;
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-light);
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .back-to-top:hover {
+            opacity: 1;
+        }
+
+        /* --- UTILIDADES --- */
+        .text-center {
+            text-align: center;
+        }
+        .mt-0 {
+            margin-top: 0;
+        }
+        .mb-0 {
+            margin-bottom: 0;
+        }
+        .section-anchor {
+            scroll-margin-top: 2rem;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* impressão */
+        @media print {
+            body {
+                background: #fff;
+                font-size: 15px;
+            }
+            .container {
+                box-shadow: none;
+                border: none;
+                max-width: 100%;
+                width: 100%;
+                padding: 1.5rem;
+            }
+            .back-to-top,
+            .toc {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="top">
+
+        <!-- ========== HEADER ========== -->
+        <header class="main-header">
+            <span class="badge">Apostila Premium</span>
+            <h1>Direito Administrativo para Concursos</h1>
+            <p class="subtitle">Apostila Completa — Volume Único</p>
+        </header>
+
+        <!-- ========== SUMÁRIO ========== -->
+        <nav class="toc" aria-label="Sumário">
+            <h2>Sumário</h2>
+            <ol>
+                <li><a href="#cap1">Organização Administrativa, Cargos Públicos e Disciplina Constitucional do Servidor</a></li>
+                <li><a href="#cap2">Poderes Administrativos: Hierárquico, Regulamentar e de Polícia</a></li>
+                <li><a href="#cap3">Atos Administrativos: Motivação, Requisitos e Exceções</a></li>
+                <li><a href="#cap4">Serviços Públicos e Concessões — Lei nº 8.987/1995</a></li>
+                <li><a href="#cap5">Consórcios Públicos — Lei nº 11.107/2005</a></li>
+                <li><a href="#cap6">Licitações e Contratos Administrativos — Lei nº 14.133/2021</a></li>
+                <li><a href="#cap7">Improbidade Administrativa — Lei nº 8.429/1992</a></li>
+                <li><a href="#cap8">Quadros Comparativos e Mapas de Revisão</a></li>
+                <li><a href="#cap9">Pegadinhas Recorrentes em Prova</a></li>
+                <li><a href="#cap10">Roteiro de Estudo e Estratégia de Prova</a></li>
+            </ol>
+        </nav>
+
+        <!-- ================================================================ -->
+        <!-- CAPÍTULO 1 -->
+        <!-- ================================================================ -->
+        <section id="cap1" class="section-anchor">
+            <div class="chapter-separator" aria-hidden="true">Capítulo 1</div>
+            <h2>CAPÍTULO 1<br>Organização Administrativa, Cargos Públicos e Disciplina Constitucional do Servidor</h2>
+
+            <h3>1.1. CARGO, EMPREGO E FUNÇÃO PÚBLICA: DISTINÇÕES FUNDAMENTAIS E REGIME CONSTITUCIONAL</h3>
+            <p>O estudo da organização administrativa brasileira pressupõe a compreensão precisa de três conceitos que, embora frequentemente utilizados de maneira intercambiável no cotidiano, possuem contornos jurídicos rigorosamente distintos: <strong>cargo público</strong>, <strong>emprego público</strong> e <strong>função pública</strong>. A Constituição Federal de 1988, em seu artigo 37, estabelece as bases do regime jurídico aplicável a essas figuras, e as bancas examinadoras — especialmente a FCC, o Cebraspe e a FGV — exploram com frequência as sutilezas que as diferenciam.</p>
+
+            <h4>1.1.1. Cargo Público: Conceito e Características</h4>
+            <p>O cargo público é a unidade de competência criada por lei, com denominação própria, quantidade certa e atribuições específicas, preenchida por servidor submetido ao regime estatutário. Trata-se da forma típica de provimento de pessoal no âmbito da Administração Direta, das autarquias e das fundações públicas de direito público.</p>
+            <div class="info-box">
+                <p><strong>Características essenciais:</strong></p>
+                <ul>
+                    <li>Criação e extinção dependem de lei em sentido formal;</li>
+                    <li>O vínculo é estatutário, ou seja, disciplinado por lei específica do ente federativo, e não pela CLT;</li>
+                    <li>A estabilidade é adquirida após três anos de efetivo exercício, mediante avaliação especial de desempenho (art. 41, CF/88);</li>
+                    <li>A investidura em cargo público depende de aprovação prévia em concurso público, ressalvados os cargos em comissão.</li>
+                </ul>
+            </div>
+
+            <h4>1.1.2. Funções de Confiança e Cargos em Comissão: O Artigo 37, V, da Constituição</h4>
+            <p>O inciso V do artigo 37 da Constituição Federal é uma das disposições mais recorrentes em provas de Direito Administrativo. Seu texto merece memorização literal, pois as bancas costumam alterar palavras para induzir o candidato a erro.</p>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 37, V, CF/88</span>
+                "As funções de confiança, exercidas exclusivamente por servidores ocupantes de cargo efetivo, e os cargos em comissão, a serem preenchidos por servidores de carreira nos casos, condições e percentuais mínimos previstos em lei, destinam-se apenas às atribuições de direção, chefia e assessoramento."
+            </div>
+            <p>Vamos destrinchar esse dispositivo:</p>
+            <div class="summary-box">
+                <p><strong>Funções de Confiança:</strong></p>
+                <ul>
+                    <li>São exercidas exclusivamente por servidores ocupantes de cargo efetivo;</li>
+                    <li>Não se confundem com cargo em comissão: a função de confiança é um acréscimo de responsabilidade conferido a quem já possui cargo efetivo;</li>
+                    <li>Destinam-se apenas às atribuições de direção, chefia e assessoramento;</li>
+                    <li>Não podem ser preenchidas por pessoas estranhas aos quadros da Administração.</li>
+                </ul>
+                <p style="margin-top:1rem;"><strong>Cargos em Comissão:</strong></p>
+                <ul>
+                    <li>São de livre nomeação e exoneração pela autoridade competente;</li>
+                    <li>Devem ser preenchidos, em percentual mínimo, por servidores de carreira;</li>
+                    <li>Destinam-se também apenas às atribuições de direção, chefia e assessoramento;</li>
+                    <li>Admite-se o preenchimento por pessoa estranha ao serviço público, desde que respeitado o percentual mínimo de servidores de carreira.</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <p>A FCC costuma afirmar que <em>"as funções de confiança são exercidas exclusivamente por servidores ocupantes de cargo efetivo, e os cargos em comissão devem ser preenchidos, em percentual mínimo, por servidores de carreira, destinando-se ambos apenas às atribuições de direção, chefia e assessoramento"</em>. Essa afirmativa está <strong>correta</strong>. Cuidado com a inversão: se a questão disser que <em>"as funções de confiança podem ser preenchidas por pessoas estranhas ao serviço público"</em>, a assertiva estará <strong>errada</strong>.</p>
+            </div>
+
+            <h4>1.1.3. Concurso Público: Prazo de Validade (Artigo 37, III, CF/88)</h4>
+            <p>Outra armadilha numérica frequente envolve o prazo de validade do concurso público.</p>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 37, III, CF/88</span>
+                "O prazo de validade do concurso público será de até dois anos, prorrogável uma vez, por igual período."
+            </div>
+            <p><strong>Detalhamento:</strong></p>
+            <ul>
+                <li>Prazo máximo inicial: <strong>dois anos</strong> (e não três);</li>
+                <li>Prorrogação: <strong>uma única vez</strong>, por igual período;</li>
+                <li>Prazo total máximo possível: <strong>quatro anos</strong> (dois anos iniciais + dois anos de prorrogação);</li>
+                <li>A prorrogação é ato discricionário da Administração, mas deve ocorrer dentro do prazo de validade original ainda em vigor.</li>
+            </ul>
+            <div class="warning-box">
+                <p>A FCC frequentemente insere a alternativa <em>"três anos, prorrogável uma vez por igual período"</em> como prazo de validade do concurso. Está <strong>errada</strong>. O prazo constitucional é de <strong>até dois anos</strong>, prorrogável uma única vez. Memorize: concurso público = <strong>2 + 2 = 4 anos</strong> no máximo.</p>
+            </div>
+
+            <h3>1.2. SERVIDOR PÚBLICO E MANDATO ELETIVO: O ARTIGO 38 DA CONSTITUIÇÃO FEDERAL</h3>
+            <p>O artigo 38 da Constituição Federal disciplina as consequências jurídicas da investidura de servidor público em mandato eletivo. Este é um dos temas mais complexos e repleto de sutilezas para o candidato. Vamos analisar cada hipótese de forma sistemática.</p>
+
+            <h4>1.2.1. Mandato Eletivo Federal, Estadual ou Distrital</h4>
+            <p><strong>Regra geral (art. 38, I, CF/88):</strong> O servidor público investido em mandato eletivo federal, estadual ou distrital <strong>será afastado</strong> do cargo, emprego ou função, <strong>sem direito de opção</strong>. O afastamento é automático e obrigatório.</p>
+            <ul>
+                <li>O afastamento opera de pleno direito;</li>
+                <li>O servidor não pode optar por permanecer no cargo;</li>
+                <li>Durante o mandato, receberá apenas a remuneração do cargo eletivo;</li>
+                <li>Não há possibilidade de acumulação de remunerações.</li>
+            </ul>
+
+            <h4>1.2.2. Mandato de Prefeito</h4>
+            <p><strong>Regra (art. 38, II, CF/88):</strong> O servidor público investido no mandato de Prefeito será afastado do cargo, emprego ou função.</p>
+            <p><strong>Diferencial fundamental:</strong> Neste caso, ao contrário do que ocorre no mandato federal, estadual ou distrital, o servidor <strong>pode optar pela remuneração</strong>. Ou seja:</p>
+            <ul>
+                <li>Pode escolher receber a remuneração do cargo público; ou</li>
+                <li>Pode escolher receber a remuneração do mandato de Prefeito;</li>
+                <li>Não pode acumular as duas remunerações.</li>
+            </ul>
+            <div class="case-study">
+                <p><strong>Estudo de caso:</strong> Um Auditor Fiscal da Receita Federal é eleito Prefeito de determinado município. Ele será afastado do cargo de Auditor. Quanto à remuneração, poderá optar entre os vencimentos de Auditor (que podem ser superiores) ou o subsídio de Prefeito. Se optar pelos vencimentos do cargo público, receberá como Auditor, e não como Prefeito. Se optar pelo subsídio de Prefeito, deixará de receber os vencimentos do cargo público.</p>
+            </div>
+
+            <h4>1.2.3. Mandato de Vereador: A Distinção Crucial — Compatibilidade de Horários</h4>
+            <p>O inciso III do artigo 38 é, sem dúvida, o mais cobrado em provas. Ele estabelece duas situações distintas:</p>
+
+            <div class="highlight-box">
+                <p><strong>SITUAÇÃO 1: HAVENDO COMPATIBILIDADE DE HORÁRIOS</strong><br>
+                    <em>Art. 38, III, primeira parte, CF/88:</em> "Havendo compatibilidade de horários, perceberá as vantagens de seu cargo, emprego ou função, sem prejuízo da remuneração do cargo eletivo."</p>
+                <ul>
+                    <li>O servidor <strong>não é afastado</strong> do cargo;</li>
+                    <li>Continua exercendo normalmente suas funções públicas;</li>
+                    <li><strong>Acumula</strong> a remuneração do cargo público com a remuneração do mandato de vereador;</li>
+                    <li>Esta é a <strong>única hipótese</strong> no artigo 38 em que se permite a acumulação de remunerações.</li>
+                </ul>
+            </div>
+            <p><strong>Exemplo prático:</strong> Um professor de universidade pública federal é eleito vereador em município próximo. As sessões da Câmara Municipal ocorrem no período noturno, e suas aulas são no período diurno. Havendo compatibilidade de horários, ele continuará lecionando e receberá tanto os vencimentos de professor quanto o subsídio de vereador.</p>
+
+            <div class="highlight-box">
+                <p><strong>SITUAÇÃO 2: NÃO HAVENDO COMPATIBILIDADE DE HORÁRIOS</strong><br>
+                    <em>Art. 38, III, segunda parte, CF/88:</em> "Não havendo compatibilidade de horários, será afastado do cargo, emprego ou função, sendo-lhe facultado optar pela sua remuneração."</p>
+                <ul>
+                    <li>O servidor <strong>será afastado</strong> do cargo;</li>
+                    <li>Não pode acumular as remunerações;</li>
+                    <li>Deve <strong>optar</strong> por uma das remunerações (cargo público ou mandato eletivo);</li>
+                    <li>O afastamento é obrigatório.</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <p>A FCC adora afirmar que <em>"havendo compatibilidade de horários, o servidor investido no mandato de vereador deve optar por uma das remunerações"</em>. Isso está <strong>ERRADO</strong>. Havendo compatibilidade, ele <strong>acumula</strong> ambas as remunerações. A opção por uma das remunerações ocorre apenas na hipótese de <strong>incompatibilidade</strong> de horários.</p>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <caption style="caption-side:bottom;text-align:center;font-size:0.7rem;color:#777;margin-top:0.5rem;">QUADRO-RESUMO: ARTIGO 38 DA CF/88</caption>
+                    <thead>
+                        <tr><th>Hipótese de Mandato</th><th>Afastamento do Cargo</th><th>Remuneração</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Mandato Federal, Estadual ou Distrital</td><td>Obrigatório, sem opção</td><td>Recebe apenas a do mandato</td></tr>
+                        <tr><td>Mandato de Prefeito</td><td>Obrigatório</td><td>Opta por uma das duas</td></tr>
+                        <tr><td>Mandato de Vereador <strong>COM</strong> compatibilidade de horários</td><td>NÃO é afastado</td><td><strong>Acumula</strong> as duas</td></tr>
+                        <tr><td>Mandato de Vereador <strong>SEM</strong> compatibilidade de horários</td><td>É afastado</td><td>Opta por uma das duas</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>1.2.4. Contagem do Tempo de Serviço para Todos os Efeitos Legais</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 38, IV, CF/88</span>
+                "O tempo de serviço será contado para todos os efeitos legais, exceto para promoção por merecimento."
+            </div>
+            <ul>
+                <li>Durante o afastamento, o tempo continua sendo contado como tempo de serviço público;</li>
+                <li>Vale para: adicional por tempo de serviço, aposentadoria, disponibilidade, etc.;</li>
+                <li><strong>Exceção expressa:</strong> não vale para fins de promoção por merecimento;</li>
+                <li>Para fins de promoção por antiguidade, o tempo é contado normalmente.</li>
+            </ul>
+            <div class="danger-box">
+                <p>A FCC costuma inserir: <em>"O tempo de serviço do servidor afastado para exercício de mandato eletivo conta para todos os efeitos legais, inclusive para promoção por merecimento."</em> Esta assertiva está <strong>ERRADA</strong>. A exceção da promoção por merecimento está expressa no texto constitucional.</p>
+            </div>
+
+            <h4>1.2.5. Efeitos da Investidura em Mandato Eletivo para Fins Previdenciários</h4>
+            <p>O §1º do artigo 38 estabelece que o servidor público investido em mandato eletivo <strong>permanecerá filiado ao seu regime previdenciário de origem</strong>, como se em exercício estivesse, desde que:</p>
+            <ul>
+                <li>Seja mandato eletivo federal, estadual ou distrital; ou</li>
+                <li>Seja mandato de Prefeito; ou</li>
+                <li>Seja mandato de Vereador, quando afastado do cargo (sem compatibilidade de horários).</li>
+            </ul>
+            <p>Quando houver compatibilidade de horários no mandato de Vereador, o servidor continua vinculado ao regime próprio, pois sequer será afastado.</p>
+        </section>
+
+        <!-- ================================================================ -->
+        <!-- CAPÍTULO 2 -->
+        <!-- ================================================================ -->
+        <section id="cap2" class="section-anchor">
+            <div class="chapter-separator" aria-hidden="true">Capítulo 2</div>
+            <h2>CAPÍTULO 2<br>Poderes Administrativos: Hierárquico, Regulamentar e de Polícia</h2>
+
+            <h3>2.1. PODER HIERÁRQUICO: CONCEITO, CARACTERÍSTICAS E DISTINÇÕES</h3>
+            <p>O poder hierárquico é um dos instrumentos de organização interna da Administração Pública. Compreender sua natureza e seus limites é essencial, especialmente para diferenciá-lo de outros poderes.</p>
+
+            <h4>2.1.1. Definição e Fundamentos</h4>
+            <p>O poder hierárquico é a prerrogativa conferida à Administração Pública para organizar seus órgãos e agentes em estrutura escalonada, estabelecendo relações de coordenação e subordinação entre eles.</p>
+            <div class="info-box">
+                <p><strong>Características essenciais:</strong></p>
+                <ul>
+                    <li>Atua <strong>internamente</strong>, na relação entre órgãos e agentes administrativos;</li>
+                    <li>Pressupõe vínculo de subordinação hierárquica;</li>
+                    <li>Permite ao superior: dar ordens, fiscalizar, rever atos, delegar e avocar competências;</li>
+                    <li>É inerente à organização administrativa, independentemente de previsão legal específica.</li>
+                </ul>
+            </div>
+
+            <h4>2.1.2. Manifestações do Poder Hierárquico</h4>
+            <ul>
+                <li><strong>a) Delegação de competência:</strong> O superior transfere a subordinado o exercício de determinada atribuição que originariamente lhe competia.</li>
+                <li><strong>b) Avocação de competência:</strong> O superior atrai para si o exercício de competência originariamente atribuída a subordinado. É medida excepcional, que depende de motivação e deve ser temporária.</li>
+                <li><strong>c) Revisão de atos:</strong> O superior pode rever os atos praticados por subordinados, seja para confirmá-los, anulá-los (quando ilegais) ou revogá-los (quando inconvenientes ou inoportunos).</li>
+                <li><strong>d) Fiscalização e controle:</strong> O superior fiscaliza as atividades dos subordinados, podendo aplicar sanções disciplinares quando cabíveis.</li>
+            </ul>
+
+            <h4>2.1.3. Distinção Fundamental: Poder Hierárquico vs. Poder de Polícia</h4>
+            <p>Esta é uma das distinções conceituais mais importantes para provas de concurso.</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Critério</th><th>Poder Hierárquico</th><th>Poder de Polícia</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Âmbito de atuação</td><td>Relação interna da Administração</td><td>Relação externa com os administrados</td></tr>
+                        <tr><td>Vínculo</td><td>Subordinação hierárquica</td><td>Supremacia geral do Estado</td></tr>
+                        <tr><td>Exemplos</td><td>Delegação, avocação, revisão de atos, penalidades disciplinares</td><td>Fiscalização, licenças, multas de trânsito, interdição</td></tr>
+                        <tr><td>Natureza</td><td>Instrumento de organização administrativa</td><td>Instrumento de limitação de direitos em prol do interesse público</td></tr>
+                        <tr><td>Definição legal</td><td>Não há definição legal específica</td><td>Art. 78 do Código Tributário Nacional (CTN)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tip-box">
+                <p>A FCC costuma apresentar a seguinte definição e perguntar qual poder administrativo ela representa: <em>"Atividade da administração pública que, limitando ou disciplinando direito, interesse ou liberdade, regula a prática de ato ou abstenção de fato, em razão de interesse público."</em> Essa é a definição de <strong>PODER DE POLÍCIA</strong>, conforme artigo 78 do CTN. Não se confunde com poder hierárquico.</p>
+            </div>
+
+            <div class="mindmap light" aria-label="Mapa mental textual: Poder Hierárquico vs. Poder de Polícia">
+                PODER HIERÁRQUICO
+                ├── Relação INTERNA (órgãos e agentes)
+                ├── Vínculo de SUBORDINAÇÃO
+                ├── Manifestações:
+                │   ├── Delegação
+                │   ├── Avocação
+                │   ├── Revisão de atos
+                │   └── Fiscalização hierárquica
+                └── NÃO alcança particulares
+
+                PODER DE POLÍCIA
+                ├── Relação EXTERNA (Administração vs. administrados)
+                ├── Vínculo de SUPREMACIA GERAL
+                ├── Manifestações:
+                │   ├── Fiscalização
+                │   ├── Licenças e autorizações
+                │   ├── Sanções de polícia (multas, interdições)
+                │   └── Limitação de direitos individuais
+                └── Definição legal: Art. 78 do CTN
+            </div>
+
+            <h3>2.2. PODER REGULAMENTAR: CONCEITO, LIMITES E EXCEÇÃO DO DECRETO AUTÔNOMO</h3>
+
+            <h4>2.2.1. Regra Geral: O Poder Regulamentar como Poder Derivado</h4>
+            <p>Em regra, o poder regulamentar é um poder <strong>derivado ou secundário</strong>, ou seja, está subordinado à lei. Sua função típica é complementar, detalhar e viabilizar a execução da lei, sem inovar na ordem jurídica.</p>
+            <ul>
+                <li>O Chefe do Executivo expede decretos e regulamentos para a fiel execução da lei (art. 84, IV, CF/88);</li>
+                <li>Não pode criar direitos, obrigações, proibições ou restrições que não estejam previstos em lei;</li>
+                <li>Não pode contrariar a lei;</li>
+                <li>Os decretos regulamentares (ou de execução) são atos normativos secundários.</li>
+            </ul>
+
+            <h4>2.2.2. Exceção: O Decreto Autônomo (Art. 84, VI, CF/88)</h4>
+            <p>A Emenda Constitucional nº 32/2001 introduziu no ordenamento jurídico brasileiro a figura do <strong>decreto autônomo</strong>, que constitui exceção à regra geral do poder regulamentar.</p>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 84, VI, CF/88 (com redação da EC 32/2001)</span>
+                "Compete privativamente ao Presidente da República dispor, mediante decreto, sobre:<br>
+                a) organização e funcionamento da administração federal, quando não implicar aumento de despesa nem criação ou extinção de órgãos públicos;<br>
+                b) extinção de funções ou cargos públicos, quando vagos."
+            </div>
+
+            <h4>2.2.3. Análise das Hipóteses de Decreto Autônomo</h4>
+            <div class="summary-box">
+                <p><strong>HIPÓTESE 1: Organização e Funcionamento da Administração Federal</strong></p>
+                <ul>
+                    <li>O decreto deve tratar de organização e funcionamento da administração federal;</li>
+                    <li>Não pode implicar aumento de despesa;</li>
+                    <li>Não pode criar nem extinguir órgãos públicos;</li>
+                    <li>Nestas condições, o decreto <strong>inova</strong> na ordem jurídica, prescindindo de lei prévia.</li>
+                </ul>
+                <p><strong>HIPÓTESE 2: Extinção de Funções ou Cargos Públicos Vagos</strong></p>
+                <ul>
+                    <li>O decreto pode extinguir funções ou cargos públicos;</li>
+                    <li>Apenas aqueles que estejam <strong>vagos</strong>;</li>
+                    <li>Se o cargo estiver ocupado, sua extinção depende de lei;</li>
+                    <li>Trata-se de medida de racionalização administrativa.</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <p>Em provas objetivas, a FCC costuma apresentar resoluções, portarias e instruções normativas como supostas exceções à regra de que o poder regulamentar não inova. Isso está <strong>ERRADO</strong>. A <strong>única exceção</strong> é o decreto autônomo, previsto no art. 84, VI, da CF/88. Resoluções, portarias, instruções normativas e outros atos administrativos normativos são atos infralegais que <strong>não inovam</strong> na ordem jurídica.</p>
+            </div>
+        </section>
+
+        <!-- ================================================================ -->
+        <!-- CAPÍTULO 3 -->
+        <!-- ================================================================ -->
+        <section id="cap3" class="section-anchor">
+            <div class="chapter-separator" aria-hidden="true">Capítulo 3</div>
+            <h2>CAPÍTULO 3<br>Atos Administrativos: Motivação, Requisitos e Exceções</h2>
+
+            <h3>3.1. A MOTIVAÇÃO DOS ATOS ADMINISTRATIVOS NA LEI 9.784/1999</h3>
+            <p>A Lei Federal de Processo Administrativo (Lei nº 9.784/1999) estabelece a motivação como um dos princípios expressos do processo administrativo federal. O artigo 50 da referida lei enumera os atos que exigem motivação obrigatória.</p>
+
+            <h4>3.1.1. Atos que Exigem Motivação (Art. 50, Lei 9.784/99)</h4>
+            <p>Segundo o artigo 50, devem ser motivados os atos administrativos que:</p>
+            <ul>
+                <li>Neguem, limitem ou afetem direitos ou interesses;</li>
+                <li>Imponham ou agravem deveres, encargos ou sanções;</li>
+                <li>Decidam processos administrativos de concurso ou seleção pública;</li>
+                <li>Dispensem ou declarem a inexigibilidade de processo licitatório;</li>
+                <li>Decidam recursos administrativos;</li>
+                <li>Decorram de reexame de ofício;</li>
+                <li>Deixem de aplicar jurisprudência firmada sobre a questão ou discrepem de pareceres, laudos, propostas e relatórios oficiais;</li>
+                <li>Importem anulação, revogação, suspensão ou convalidação de ato administrativo.</li>
+            </ul>
+
+            <h4>3.1.2. A Exceção: Atos de Mero Expediente ou Ordinatórios</h4>
+            <p>A <strong>única exceção</strong> à obrigatoriedade de motivação reside nos chamados <strong>atos de mero expediente</strong> (ou atos ordinatórios).</p>
+            <ul>
+                <li>Não possuem carga decisória;</li>
+                <li>Destinam-se apenas ao andamento processual;</li>
+                <li>Exemplos: encaminhar processo, abrir prazo, solicitar documentos, juntar petições;</li>
+                <li>Dispensam motivação porque não afetam direitos ou interesses dos administrados.</li>
+            </ul>
+            <div class="tip-box">
+                <p>Em questões da FCC, a alternativa que afirma que <em>"atos que impulsionam o processo administrativo, como encaminhar um processo ou solicitar documentos, dispensam motivação"</em> geralmente está <strong>CORRETA</strong>. A exceção aos atos ordinatórios é pacífica na doutrina e na jurisprudência.</p>
+            </div>
+
+            <h4>3.1.3. A Distinção entre Motivação e Motivo</h4>
+            <p>É fundamental não confundir:</p>
+            <ul>
+                <li><strong>Motivo:</strong> É a situação de fato e de direito que autoriza ou determina a prática do ato administrativo. É um dos elementos do ato.</li>
+                <li><strong>Motivação:</strong> É a exposição, no próprio ato, das razões que o justificam. É a demonstração da existência do motivo e da adequação do ato.</li>
+            </ul>
+            <p>A motivação é a <strong>exteriorização</strong> do motivo. Um ato pode ter motivo, mas se não for motivado (quando exigida a motivação), será inválido por vício de forma.</p>
+        </section>
+
+        <!-- ================================================================ -->
+        <!-- CAPÍTULO 4 -->
+        <!-- ================================================================ -->
+        <section id="cap4" class="section-anchor">
+            <div class="chapter-separator" aria-hidden="true">Capítulo 4</div>
+            <h2>CAPÍTULO 4<br>Serviços Públicos e Concessões — Lei nº 8.987/1995</h2>
+
+            <h3>4.1. REGIME JURÍDICO DAS CONCESSÕES DE SERVIÇOS PÚBLICOS</h3>
+            <p>A Lei nº 8.987/1995 (Lei de Concessões) disciplina o regime de concessão e permissão da prestação de serviços públicos, em consonância com o artigo 175 da Constituição Federal.</p>
+
+            <h4>4.1.1. Fiscalização pelo Poder Concedente com Cooperação dos Usuários</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 3º, Lei 8.987/95</span>
+                "As concessões e permissões sujeitar-se-ão à fiscalização pelo poder concedente responsável pela delegação, com a cooperação dos usuários."
+            </div>
+            <ul>
+                <li>A fiscalização não é exclusiva do poder concedente;</li>
+                <li>Os usuários participam do processo fiscalizatório;</li>
+                <li>A cooperação dos usuários é uma manifestação do princípio da participação social.</li>
+            </ul>
+
+            <h4>4.1.2. Direitos dos Usuários: Comunicação de Irregularidades</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 7º, IV, Lei 8.987/95</span>
+                "Levar ao conhecimento do poder público e da concessionária as irregularidades de que tenham conhecimento, referentes ao serviço prestado."
+            </div>
+            <ul>
+                <li>O usuário pode comunicar irregularidades tanto ao poder público quanto à própria concessionária;</li>
+                <li>Esta comunicação é um direito do usuário;</li>
+                <li>É também um instrumento de controle social da prestação do serviço.</li>
+            </ul>
+
+            <h4>4.1.3. Dever de Divulgação da Tabela de Tarifas (Art. 9º, §5º)</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 9º, §5º, Lei 8.987/95</span>
+                "A concessionária deverá divulgar em seu sítio eletrônico, de forma clara e compreensível, a tabela com o valor das tarifas e a evolução das revisões ou reajustes realizados nos últimos cinco anos."
+            </div>
+            <div class="warning-box">
+                <p>A FCC pode afirmar que <em>"a concessionária deve divulgar a tabela de tarifas e a evolução dos reajustes dos últimos três anos"</em>. Está <strong>ERRADO</strong>. O período exigido é de <strong>cinco anos</strong>, conforme o §5º do art. 9º.</p>
+            </div>
+
+            <h4>4.1.4. Responsabilidade da Concessionária: Inexistência de Atenuação pela Fiscalização</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 25, Lei 8.987/95</span>
+                "Incumbe à concessionária a execução do serviço concedido, cabendo-lhe responder por todos os prejuízos causados ao poder concedente, aos usuários ou a terceiros, sem que a fiscalização exercida pelo órgão competente exclua ou atenue essa responsabilidade."
+            </div>
+
+            <h4>4.1.5. Fundamentos da Responsabilidade da Concessionária</h4>
+            <p>A responsabilidade da concessionária de serviço público assenta-se em dois fundamentos:</p>
+            <ul>
+                <li><strong>a) Responsabilidade Objetiva Constitucional (Art. 37, §6º, CF/88):</strong> "As pessoas jurídicas de direito público e as de direito privado prestadoras de serviços públicos responderão pelos danos que seus agentes, nessa qualidade, causarem a terceiros..."</li>
+                <li><strong>b) Disposição expressa da Lei de Concessões (Art. 25):</strong> A concessionária responde por todos os prejuízos; a fiscalização não exclui nem atenua a responsabilidade; a responsabilidade é objetiva.</li>
+            </ul>
+            <div class="warning-box">
+                <p>A FCC costuma afirmar que <em>"a responsabilidade da concessionária por danos causados aos usuários é atenuada pelo fato de a concessionária se submeter à fiscalização do poder concedente"</em>. Esta assertiva está <strong>ERRADA</strong>. A fiscalização <strong>não exclui nem atenua</strong> a responsabilidade. A palavra <em>"atenuação"</em> é o gatilho da pegadinha.</p>
+            </div>
+        </section>
+
+        <!-- ================================================================ -->
+        <!-- CAPÍTULO 5 -->
+        <!-- ================================================================ -->
+        <section id="cap5" class="section-anchor">
+            <div class="chapter-separator" aria-hidden="true">Capítulo 5</div>
+            <h2>CAPÍTULO 5<br>Consórcios Públicos — Lei nº 11.107/2005</h2>
+
+            <h3>5.1. REGIME JURÍDICO DOS CONSÓRCIOS PÚBLICOS</h3>
+            <p>Os consórcios públicos, disciplinados pela Lei nº 11.107/2005, constituem importante instrumento de gestão associada entre entes federativos.</p>
+
+            <h4>5.1.1. Contrato de Programa: Instrumento de Transferência de Encargos</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 13, Lei 11.107/05</span>
+                "Deverão ser constituídas e reguladas por contrato de programa, como condição de validade, as obrigações que um ente da Federação, inclusive sua administração indireta, tenha para com outro ente da Federação, ou para com consórcio público, no âmbito de prestação de serviços públicos por meio de cooperação federativa."
+            </div>
+            <div class="tip-box">
+                <p>A FCC costuma afirmar que as obrigações do ente federativo para com o consórcio público devem ser constituídas e reguladas por <strong>contrato de programa</strong>. Esta afirmativa está <strong>CORRETA</strong>, especialmente quando há transferência de bens necessários à continuidade dos serviços.</p>
+            </div>
+
+            <h4>5.1.2. Exercício de Atividades de Arrecadação pelo Consórcio Público</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 2º, §2º, Lei 11.107/05</span>
+                "Os consórcios públicos poderão emitir documentos de cobrança e exercer atividades de arrecadação de tarifas e outros preços públicos pela prestação de serviços ou pelo uso ou outorga de uso de bens públicos por eles administrados ou, mediante autorização específica, pelo ente da Federação consorciado."
+            </div>
+            <div class="tip-box">
+                <p>A afirmativa de que <em>"o consórcio público pode exercer atividades de arrecadação de tarifas e outros preços públicos pelo uso de bens públicos por ele administrado"</em> está <strong>CORRETA</strong>. A FCC pode tentar induzir o candidato a erro afirmando o contrário.</p>
+            </div>
+
+            <h4>5.1.3. Retirada de Ente Consorciado e Destinação dos Bens</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 11, §1º, Lei 11.107/05</span>
+                "Os bens destinados ao consórcio público pelo consorciado que se retira somente serão revertidos ou retrocedidos no caso de expressa previsão no contrato de consórcio público ou no instrumento de transferência ou de alienação."
+            </div>
+            <div class="warning-box">
+                <p>A FCC pode afirmar que <em>"se um ente federativo se retira do consórcio público, os bens que destinou ao consórcio são automaticamente revertidos"</em>. Esta afirmativa está <strong>ERRADA</strong>. A reversão <strong>não é automática</strong>; depende de <strong>expressa previsão contratual</strong>. Esta é uma pegadinha recorrente.</p>
+            </div>
+        </section>
+
+        <!-- ================================================================ -->
+        <!-- CAPÍTULO 6 -->
+        <!-- ================================================================ -->
+        <section id="cap6" class="section-anchor">
+            <div class="chapter-separator" aria-hidden="true">Capítulo 6</div>
+            <h2>CAPÍTULO 6<br>Licitações e Contratos Administrativos — Lei nº 14.133/2021</h2>
+
+            <h3>6.1. CONCEITOS FUNDAMENTAIS DA NOVA LEI DE LICITAÇÕES</h3>
+            <p>A Lei nº 14.133/2021 trouxe significativas inovações conceituais e procedimentais.</p>
+
+            <h4>6.1.1. Bens e Serviços Comuns (Art. 6º, XIII)</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 6º, XIII, Lei 14.133/21</span>
+                "Bens e serviços comuns: aqueles cujos padrões de desempenho e qualidade podem ser objetivamente definidos pelo edital, por meio de especificações usuais de mercado."
+            </div>
+
+            <h4>6.1.2. Termo de Referência vs. Estudo Técnico Preliminar</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Estudo Técnico Preliminar (ETP)</th><th>Termo de Referência (TR)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Documento constitutivo da primeira etapa do planejamento</td><td>Documento necessário para a contratação de bens e serviços</td></tr>
+                        <tr><td>Caracteriza o interesse público envolvido</td><td>Deve conter: definição do objeto, fundamentação, requisitos, modelo de execução, critérios de medição e pagamento</td></tr>
+                        <tr><td>Fundamenta a necessidade da contratação</td><td>É posterior ao ETP na linha do planejamento</td></tr>
+                        <tr><td>Avalia a viabilidade técnica e econômica</td><td>Detalha a execução contratual</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tip-box">
+                <p>A FCC costuma inverter os conceitos: <em>"O termo de referência é o documento constitutivo da primeira etapa do planejamento que caracteriza o interesse público"</em>. Isso está <strong>ERRADO</strong>. Essa definição corresponde ao <strong>Estudo Técnico Preliminar</strong>, e não ao Termo de Referência. Cuidado com a inversão!</p>
+            </div>
+
+            <h4>6.1.3. Contratação Integrada (Art. 6º, XXXII)</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 6º, XXXII, Lei 14.133/21</span>
+                "Contratação integrada: regime de contratação de obras e serviços de engenharia em que o contratado é responsável por elaborar e desenvolver os projetos básico e executivo, executar obras e serviços, fornecer bens ou prestar serviços especiais e realizar montagem, teste, pré-operação e demais operações para a entrega final do objeto."
+            </div>
+
+            <h3>6.2. SISTEMA DE REGISTRO DE PREÇOS (ARTS. 82 A 86)</h3>
+
+            <h4>6.2.1. Prazo de Vigência da Ata de Registro de Preços</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 84, Lei 14.133/21</span>
+                "O prazo de vigência da ata de registro de preços será de 1 (um) ano, podendo ser prorrogado, por igual período, desde que comprovado o preço vantajoso."
+            </div>
+            <div class="warning-box">
+                <p>A FCC costuma afirmar que <em>"o edital pode prever vigência inicial da ata de registro de preços de 24 meses"</em>. Isso está <strong>ERRADO</strong>. A vigência inicial é de <strong>1 ano</strong>, prorrogável por igual período. O edital que prevê vigência inicial de 24 meses é ilegal.</p>
+            </div>
+
+            <h4>6.2.2. Preços Diferenciados e Quantitativos Inferiores ao Máximo (Art. 82, III e IV)</h4>
+            <p><strong>Art. 82, III:</strong> "Possibilidade de prever preços diferentes quando o objeto for realizado ou entregue em locais diferentes."<br>
+                <strong>Art. 82, IV:</strong> "Possibilidade de o licitante oferecer proposta em quantitativo inferior ao máximo previsto."</p>
+            <div class="tip-box">
+                <p>A afirmativa de que <em>"é permitido no edital de registro de preços prever preços diferentes para o mesmo objeto quando a entrega for em locais diferentes, bem como permitir que o licitante ofereça proposta em quantitativo inferior ao máximo previsto"</em> está <strong>CORRETA</strong>.</p>
+            </div>
+
+            <h4>6.2.3. Caráter Não Vinculante da Ata de Registro de Preços (Art. 83)</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 83, Lei 14.133/21</span>
+                "A existência de preços registrados implica compromisso de fornecimento nas condições estabelecidas, mas não obriga a Administração a contratar, facultada a realização de licitação específica para a aquisição pretendida, desde que devidamente motivada."
+            </div>
+            <div class="warning-box">
+                <p>A FCC pode afirmar que <em>"a existência de preços registrados obriga a Administração a contratar, sendo vedada a realização de licitação específica"</em>. Isso está <strong>ERRADO</strong>. A ata <strong>não obriga</strong> a Administração a contratar, e a licitação específica é facultada, desde que motivada.</p>
+            </div>
+
+            <h3>6.3. INFRAÇÕES E SANÇÕES ADMINISTRATIVAS (ARTS. 155 E 156)</h3>
+
+            <h4>6.3.1. Infrações Administrativas (Art. 155)</h4>
+            <ul>
+                <li><strong>Art. 155, I:</strong> Dar causa à inexecução parcial do contrato.</li>
+                <li><strong>Art. 155, VI:</strong> Não celebrar o contrato ou não entregar a documentação exigida quando convocado.</li>
+                <li><strong>Art. 155, XI:</strong> Praticar atos ilícitos com vistas a frustrar os objetivos da licitação.</li>
+            </ul>
+
+            <h4>6.3.2. Sanções Administrativas (Art. 156)</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 156, Lei 14.133/21</span>
+                "Serão aplicadas ao responsável pelas infrações administrativas previstas nesta Lei as seguintes sanções:<br>
+                I - advertência;<br>
+                II - multa;<br>
+                III - impedimento de licitar e contratar;<br>
+                IV - declaração de inidoneidade para licitar ou contratar."
+            </div>
+
+            <h4>6.3.3. Advertência: Aplicação Exclusiva para Inexecução Parcial (Art. 156, §2º)</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 156, §2º, Lei 14.133/21</span>
+                "A sanção de advertência será aplicada exclusivamente pela infração administrativa prevista no inciso I do caput do art. 155 desta Lei (inexecução parcial do contrato), quando não se justificar a imposição de penalidade mais grave."
+            </div>
+            <div class="tip-box">
+                <p>A FCC costuma afirmar que <em>"a sanção de advertência é aplicada exclusivamente para a infração de inexecução parcial do contrato, quando não se justificar a imposição de penalidade mais grave"</em>. Esta afirmativa está <strong>CORRETA</strong>.</p>
+            </div>
+
+            <h4>6.3.4. Conduta de Não Celebrar o Contrato: Sanção Aplicável (Art. 156, §4º)</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 156, §4º, Lei 14.133/21</span>
+                "Nas hipóteses dos incisos II a XII do caput do art. 155, aplica-se a sanção de impedimento de licitar e contratar, salvo quando for o caso de aplicação da sanção de declaração de inidoneidade."
+            </div>
+            <div class="warning-box">
+                <p>A FCC pode afirmar que <em>"a conduta de não celebrar o contrato quando convocado justifica a aplicação imediata da sanção de declaração de inidoneidade"</em>. Isso está <strong>ERRADO</strong>. A regra é o <strong>impedimento de licitar e contratar</strong>. A declaração de inidoneidade é exceção.</p>
+            </div>
+
+            <h4>6.3.5. Sanções de Natureza Distinta: Improbidade Administrativa</h4>
+            <p>A conduta de "praticar atos ilícitos com vistas a frustrar os objetivos da licitação" (art. 155, XI) pode ensejar:</p>
+            <ul>
+                <li><strong>Na esfera administrativa da Lei 14.133/21:</strong> multa, impedimento de licitar e contratar, declaração de inidoneidade;</li>
+                <li><strong>Na esfera da improbidade administrativa (Lei 8.429/92):</strong> suspensão dos direitos políticos, perda da função pública, multa civil, proibição de contratar.</li>
+            </ul>
+            <div class="warning-box">
+                <p>A FCC pode afirmar que <em>"a conduta de praticar atos ilícitos com vistas a frustrar os objetivos da licitação justifica a aplicação de suspensão dos direitos políticos e perda do cargo público no âmbito administrativo da Lei 14.133/21"</em>. Isso está <strong>ERRADO</strong>. Suspensão dos direitos políticos e perda do cargo público são sanções de <strong>improbidade administrativa (natureza cível)</strong>, não aplicáveis na esfera administrativa da Lei de Licitações.</p>
+            </div>
+
+            <h4>6.3.6. Desconto da Garantia: Execução Administrativa (Art. 156, §8º)</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 156, §8º, Lei 14.133/21</span>
+                "Se o valor da multa aplicada e das indenizações cabíveis for superior ao valor devido pela Administração ao contratado, a diferença será descontada da garantia prestada, sem necessidade de decisão judicial."
+            </div>
+            <div class="tip-box">
+                <p>A afirmativa de que <em>"se o valor da multa aplicada e das indenizações for superior ao valor devido pela Administração ao contratado, a diferença pode ser descontada da garantia prestada independentemente de decisão judicial"</em> está <strong>CORRETA</strong>.</p>
+            </div>
+        </section>
+
+        <!-- ================================================================ -->
+        <!-- CAPÍTULO 7 -->
+        <!-- ================================================================ -->
+        <section id="cap7" class="section-anchor">
+            <div class="chapter-separator" aria-hidden="true">Capítulo 7</div>
+            <h2>CAPÍTULO 7<br>Improbidade Administrativa — Lei nº 8.429/1992 (Reformada pela Lei nº 14.230/2021)</h2>
+
+            <h3>7.1. PRESCRIÇÃO NA AÇÃO DE IMPROBIDADE ADMINISTRATIVA</h3>
+            <p>A Lei nº 14.230/2021 promoveu profundas alterações na Lei de Improbidade Administrativa.</p>
+
+            <h4>7.1.1. Prazo Prescricional Geral (Art. 23, caput)</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 23, caput, Lei 8.429/92 (redação da Lei 14.230/2021)</span>
+                "A ação para a aplicação das sanções previstas nesta Lei prescreve em 8 (oito) anos, contados a partir da ocorrência do fato ou, no caso de infrações permanentes, do dia em que cessou a permanência."
+            </div>
+            <div class="warning-box">
+                <p>A FCC pode manter em provas a referência ao prazo antigo de <strong>5 anos</strong>. Está <strong>ERRADO</strong>. O prazo atual é de <strong>8 anos</strong>, conforme a Lei 14.230/2021. Fique atento à atualização legislativa.</p>
+            </div>
+
+            <h4>7.1.2. Suspensão do Prazo Prescricional pelo Inquérito Civil (Art. 23, §1º)</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 23, §1º, Lei 8.429/92</span>
+                "A instauração de inquérito civil ou processo administrativo para apuração dos ilícitos previstos nesta Lei suspende o curso do prazo prescricional por, no máximo, 180 (cento e oitenta) dias corridos."
+            </div>
+            <div class="warning-box">
+                <p>A FCC pode afirmar que a suspensão é de <strong>90 dias</strong>. Está <strong>ERRADO</strong>. O prazo é de <strong>180 dias corridos</strong>, conforme o §1º do art. 23.</p>
+            </div>
+
+            <h4>7.1.3. Prazo para Conclusão do Inquérito Civil (Art. 23, §2º)</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 23, §2º, Lei 8.429/92</span>
+                "O inquérito civil para apuração do ato de improbidade será concluído no prazo de 365 (trezentos e sessenta e cinco) dias corridos, prorrogável uma única vez por igual período, mediante ato fundamentado."
+            </div>
+            <div class="tip-box">
+                <p>Esta afirmativa é recorrente: <em>"O inquérito civil deve ser concluído no prazo de 365 dias corridos, prorrogável uma única vez por igual período, mediante ato fundamentado"</em>. Está <strong>CORRETA</strong>.</p>
+            </div>
+
+            <h4>7.1.4. Propositura da Ação de Improbidade (Art. 23, §3º)</h4>
+            <div class="legal-quote">
+                <span class="article-ref">Art. 23, §3º, Lei 8.429/92</span>
+                "Encerrado o inquérito civil, a ação de improbidade será proposta no prazo de 30 (trinta) dias, se não for o caso de arquivamento."
+            </div>
+            <div class="warning-box">
+                <p>A FCC pode afirmar que o prazo é de <strong>45 dias</strong>. Está <strong>ERRADO</strong>. O prazo é de <strong>30 dias</strong>, conforme o §3º do art. 23.</p>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <caption style="caption-side:bottom;text-align:center;font-size:0.7rem;color:#777;">QUADRO-RESUMO: PRESCRIÇÃO NA LEI DE IMPROBIDADE (APÓS LEI 14.230/2021)</caption>
+                    <thead>
+                        <tr><th>Aspecto</th><th>Regra</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Prazo prescricional geral</td><td>8 anos</td></tr>
+                        <tr><td>Termo inicial</td><td>Ocorrência do fato (ou cessação da permanência)</td></tr>
+                        <tr><td>Suspensão pelo inquérito civil</td><td>Até 180 dias corridos</td></tr>
+                        <tr><td>Prazo para conclusão do inquérito</td><td>365 dias, prorrogável por mais 365</td></tr>
+                        <tr><td>Prazo para propor ação após inquérito</td><td>30 dias</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ================================================================ -->
+        <!-- CAPÍTULO 8 -->
+        <!-- ================================================================ -->
+        <section id="cap8" class="section-anchor">
+            <div class="chapter-separator" aria-hidden="true">Capítulo 8</div>
+            <h2>CAPÍTULO 8<br>Quadros Comparativos e Mapas de Revisão</h2>
+
+            <h3>8.1. COMPARAÇÃO ENTRE REGIMES: CARGO EFETIVO, FUNÇÃO DE CONFIANÇA E CARGO EM COMISSÃO</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Característica</th><th>Cargo Efetivo</th><th>Função de Confiança</th><th>Cargo em Comissão</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Provimento</td><td>Concurso público</td><td>Exclusivamente servidores efetivos</td><td>Livre nomeação</td></tr>
+                        <tr><td>Estabilidade</td><td>Sim (3 anos)</td><td>Não (é acréscimo ao cargo)</td><td>Não</td></tr>
+                        <tr><td>Destinação</td><td>Atividades permanentes</td><td>Direção, chefia e assessoramento</td><td>Direção, chefia e assessoramento</td></tr>
+                        <tr><td>Exoneração</td><td>Processo administrativo ou sentença</td><td>Livre exoneração da função (retorna ao cargo)</td><td>Livre exoneração</td></tr>
+                        <tr><td>Percentual de carreira</td><td>100% (concursados)</td><td>100% (efetivos)</td><td>Percentual mínimo legal</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>8.2. RESUMO ESQUEMÁTICO: ARTIGO 38 DA CF/88</h3>
+            <div class="mindmap light" aria-label="Resumo esquemático do artigo 38 da CF/88">
+                SERVIDOR PÚBLICO INVESTIDO EM MANDATO ELETIVO
+
+                ├── Mandato Federal, Estadual ou Distrital
+                │   ├── Afastamento: OBRIGATÓRIO
+                │   ├── Remuneração: SOMENTE A DO MANDATO
+                │   └── Acumulação: NÃO PERMITE
+
+                ├── Mandato de Prefeito
+                │   ├── Afastamento: OBRIGATÓRIO
+                │   ├── Remuneração: OPTA por uma das duas
+                │   └── Acumulação: NÃO PERMITE
+
+                ├── Mandato de Vereador COM compatibilidade
+                │   ├── Afastamento: NÃO
+                │   ├── Remuneração: ACUMULA as duas
+                │   └── Acumulação: PERMITE
+
+                └── Mandato de Vereador SEM compatibilidade
+                    ├── Afastamento: OBRIGATÓRIO
+                    ├── Remuneração: OPTA por uma das duas
+                    └── Acumulação: NÃO PERMITE
+
+                CONTAGEM DE TEMPO (art. 38, IV)
+                └── Conta para TODOS os efeitos legais, EXCETO promoção por merecimento
+            </div>
+
+            <h3>8.3. RESUMO ESQUEMÁTICO: SANÇÕES DA LEI 14.133/2021</h3>
+            <div class="mindmap light" aria-label="Resumo esquemático das sanções da Lei 14.133/2021">
+                INFRAÇÃO → SANÇÃO APLICÁVEL
+
+                ├── Inexecução parcial do contrato (art. 155, I)
+                │   └── ADVERTÊNCIA (exclusiva, se não justificar sanção mais grave)
+
+                ├── Não celebrar contrato/entregar documentação (art. 155, VI)
+                │   └── IMPEDIMENTO DE LICITAR E CONTRATAR (regra geral)
+                │       └── Declaração de inidoneidade apenas em casos graves
+
+                ├── Frustrar objetivos da licitação (art. 155, XI)
+                │   ├── Esfera Lei 14.133/21: Multa, impedimento, inidoneidade
+                │   └── Esfera Improbidade (Lei 8.429/92): Suspensão direitos políticos, perda cargo
+                │       └── NÃO são aplicadas na esfera administrativa da Lei 14.133/21
+
+                └── Multa + Indenizações > valor devido ao contratado
+                    └── Desconto da garantia: INDEPENDE de decisão judicial (art. 156, §8º)
+            </div>
+
+            <h3>8.4. DISTINÇÃO CONCEITUAL: PODER HIERÁRQUICO × PODER DE POLÍCIA</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Critério</th><th>Poder Hierárquico</th><th>Poder de Polícia</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Âmbito</td><td>Interno (órgãos e agentes)</td><td>Externo (Administração × particulares)</td></tr>
+                        <tr><td>Vínculo</td><td>Subordinação</td><td>Supremacia geral</td></tr>
+                        <tr><td>Finalidade</td><td>Organizar a Administração</td><td>Limitar direitos em prol do interesse público</td></tr>
+                        <tr><td>Exemplos</td><td>Delegar, avocar, rever atos, punir servidores</td><td>Fiscalizar, licenciar, multar, interditar</td></tr>
+                        <tr><td>Definição legal</td><td>Não há definição legal específica</td><td>Art. 78 do CTN</td></tr>
+                        <tr><td>Inovação normativa</td><td>Não cria obrigações a particulares</td><td>Pode impor obrigações de não fazer ou deixar de fazer</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>8.5. PRAZOS IMPORTANTES PARA MEMORIZAÇÃO</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Tema</th><th>Prazo</th><th>Fundamento</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Validade do concurso público</td><td>Até 2 anos (+ 2 de prorrogação)</td><td>Art. 37, III, CF/88</td></tr>
+                        <tr><td>Prescrição da ação de improbidade</td><td>8 anos</td><td>Art. 23, Lei 8.429/92</td></tr>
+                        <tr><td>Suspensão da prescrição pelo inquérito civil</td><td>Até 180 dias</td><td>Art. 23, §1º, Lei 8.429/92</td></tr>
+                        <tr><td>Conclusão do inquérito civil</td><td>365 dias (+ 365 de prorrogação)</td><td>Art. 23, §2º, Lei 8.429/92</td></tr>
+                        <tr><td>Propositura da ação de improbidade</td><td>30 dias</td><td>Art. 23, §3º, Lei 8.429/92</td></tr>
+                        <tr><td>Vigência da ata de registro de preços</td><td>1 ano (+ 1 de prorrogação)</td><td>Art. 84, Lei 14.133/21</td></tr>
+                        <tr><td>Divulgação da tabela de tarifas</td><td>Últimos 5 anos</td><td>Art. 9º, §5º, Lei 8.987/95</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- ================================================================ -->
+        <!-- CAPÍTULO 9 -->
+        <!-- ================================================================ -->
+        <section id="cap9" class="section-anchor">
+            <div class="chapter-separator" aria-hidden="true">Capítulo 9</div>
+            <h2>CAPÍTULO 9<br>Pegadinhas Recorrentes em Prova</h2>
+
+            <h3>9.1. LISTA DE AFIRMATIVAS FALSAS (FCC E BANCAS SIMILARES)</h3>
+            <ul style="list-style:none;padding-left:0;">
+                <li><span class="tag false">❌ FALSO</span> "Havendo compatibilidade de horários, o servidor eleito vereador deve optar por uma das remunerações." → Acumula as duas.</li>
+                <li><span class="tag false">❌ FALSO</span> "Não havendo compatibilidade de horários, o servidor eleito vereador pode acumular as duas remunerações." → Deve optar por uma.</li>
+                <li><span class="tag false">❌ FALSO</span> "O tempo de serviço do servidor afastado para mandato eletivo conta para promoção por merecimento." → A promoção por merecimento é a exceção.</li>
+                <li><span class="tag false">❌ FALSO</span> "O prazo de validade do concurso público é de até três anos, prorrogável uma vez." → São dois anos, prorrogável uma vez.</li>
+                <li><span class="tag false">❌ FALSO</span> "A responsabilidade da concessionária é atenuada pela fiscalização do poder concedente." → A fiscalização não exclui nem atenua.</li>
+                <li><span class="tag false">❌ FALSO</span> "A concessionária deve divulgar a tabela de tarifas dos últimos três anos." → São cinco anos.</li>
+                <li><span class="tag false">❌ FALSO</span> "A existência de preços registrados obriga a Administração a contratar." → A ata não obriga a Administração.</li>
+                <li><span class="tag false">❌ FALSO</span> "O edital de registro de preços pode prever vigência inicial de 24 meses." → A vigência inicial é de 1 ano.</li>
+                <li><span class="tag false">❌ FALSO</span> "A advertência pode ser aplicada para qualquer infração da Lei 14.133/21." → É exclusiva para inexecução parcial do contrato.</li>
+                <li><span class="tag false">❌ FALSO</span> "A conduta de não celebrar o contrato justifica declaração imediata de inidoneidade." → A regra é o impedimento de licitar.</li>
+                <li><span class="tag false">❌ FALSO</span> "A suspensão dos direitos políticos é sanção administrativa da Lei 14.133/21." → É sanção de improbidade administrativa.</li>
+                <li><span class="tag false">❌ FALSO</span> "O inquérito civil suspende a prescrição por até 90 dias." → São 180 dias.</li>
+                <li><span class="tag false">❌ FALSO</span> "O prazo prescricional para improbidade é de 5 anos." → Após a Lei 14.230/2021, é de 8 anos.</li>
+                <li><span class="tag false">❌ FALSO</span> "Os bens destinados ao consórcio pelo ente que se retira são automaticamente revertidos." → Depende de expressa previsão contratual.</li>
+                <li><span class="tag false">❌ FALSO</span> "Resoluções, portarias e instruções normativas são exceções à regra de que o poder regulamentar não inova." → Apenas o decreto autônomo é exceção.</li>
+            </ul>
+
+            <h3>9.2. LISTA DE AFIRMATIVAS VERDADEIRAS (FCC E BANCAS SIMILARES)</h3>
+            <ul style="list-style:none;padding-left:0;">
+                <li><span class="tag true">✅ VERDADEIRO</span> "As funções de confiança são exercidas exclusivamente por servidores ocupantes de cargo efetivo."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "Os cargos em comissão e as funções de confiança destinam-se apenas às atribuições de direção, chefia e assessoramento."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "O servidor investido em mandato de vereador, havendo compatibilidade de horários, acumula as remunerações."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "O servidor investido em mandato de prefeito deve optar por uma das remunerações."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "O tempo de serviço do servidor afastado para mandato eletivo conta para todos os efeitos legais, exceto promoção por merecimento."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "Bens e serviços comuns são aqueles cujos padrões de desempenho e qualidade podem ser objetivamente definidos pelo edital."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "A contratação integrada é o regime em que o contratado elabora os projetos básico e executivo e entrega o objeto pronto para operação."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "É permitido prever preços diferentes no edital de registro de preços quando o objeto for entregue em locais diferentes."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "A advertência é aplicada exclusivamente para inexecução parcial do contrato, quando não se justificar penalidade mais grave."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "Se a multa e as indenizações superarem o valor devido ao contratado, a diferença pode ser descontada da garantia sem decisão judicial."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "Os consórcios públicos podem exercer atividades de arrecadação de tarifas e preços públicos."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "A motivação é dispensada para atos de mero expediente que impulsionam o processo administrativo."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "O decreto autônomo pode dispor sobre organização e funcionamento da administração federal, quando não implicar aumento de despesa nem criação ou extinção de órgãos."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "O inquérito civil deve ser concluído em 365 dias, prorrogável uma vez por igual período."</li>
+                <li><span class="tag true">✅ VERDADEIRO</span> "A ação de improbidade deve ser proposta em 30 dias após o encerramento do inquérito civil não arquivado."</li>
+            </ul>
+        </section>
+
+        <!-- ================================================================ -->
+        <!-- CAPÍTULO 10 -->
+        <!-- ================================================================ -->
+        <section id="cap10" class="section-anchor">
+            <div class="chapter-separator" aria-hidden="true">Capítulo 10</div>
+            <h2>CAPÍTULO 10<br>Roteiro de Estudo e Estratégia de Prova</h2>
+
+            <h3>10.1. PRIORIZAÇÃO DE TEMAS PARA REVISÃO</h3>
+            <div class="highlight-box">
+                <p><strong>NÍVEL 1 — MÁXIMA PRIORIDADE (maior incidência)</strong></p>
+                <ul>
+                    <li>Artigo 38 da CF/88 (servidor público e mandato eletivo) — especialmente vereador</li>
+                    <li>Lei de Improbidade Administrativa — prescrição e prazos</li>
+                    <li>Lei 14.133/2021 — infrações e sanções</li>
+                    <li>Poderes administrativos — distinção entre hierárquico e de polícia</li>
+                </ul>
+                <p><strong>NÍVEL 2 — ALTA PRIORIDADE</strong></p>
+                <ul>
+                    <li>Artigo 37, V, CF/88 (funções de confiança e cargos em comissão)</li>
+                    <li>Poder regulamentar — decreto autônomo</li>
+                    <li>Lei 8.987/95 — responsabilidade da concessionária</li>
+                    <li>Sistema de registro de preços — vigência da ata</li>
+                </ul>
+                <p><strong>NÍVEL 3 — MÉDIA PRIORIDADE</strong></p>
+                <ul>
+                    <li>Prazo de validade do concurso público</li>
+                    <li>Consórcios públicos — retirada de ente consorciado e bens</li>
+                    <li>Motivação dos atos administrativos</li>
+                </ul>
+            </div>
+
+            <h3>10.2. MACETES PARA MEMORIZAÇÃO</h3>
+            <div class="info-box">
+                <ul>
+                    <li><strong>Macete do VEReador com compatibilidade:</strong> VEReador com compatibilidade = <strong>V</strong>antagens do cargo + <strong>R</strong>emuneração do mandato (acumula as duas).</li>
+                    <li><strong>Macete do Prefeito:</strong> Prefeito = <strong>P</strong>ode <strong>o</strong>ptar pela remuneração.</li>
+                    <li><strong>Macete do Federal/Estadual/Distrital:</strong> Mandato <strong>FED</strong>eral = <strong>F</strong>ica <strong>E</strong>xcluído e <strong>D</strong>esliga (afastamento sem opção, recebe só o mandato).</li>
+                    <li><strong>Macete do prazo do concurso:</strong> 2 + 2 (dois anos, prorrogável por mais dois).</li>
+                    <li><strong>Macete da ata de registro de preços:</strong> 1 + 1 (um ano, prorrogável por mais um).</li>
+                    <li><strong>Macete da prescrição da improbidade:</strong> Antes era 5 (Lei 8.429), agora é <strong>8</strong> (Lei 8.429 com 14.230). O número 8 aparece na lei e no prazo.</li>
+                    <li><strong>Macete do inquérito civil — prazos:</strong> Suspensão da prescrição: 180 dias (metade de 360) | Conclusão: 365 dias (um ano) | Propositura da ação: 30 dias (um mês).</li>
+                    <li><strong>Macete do poder de polícia:</strong> Definição no CTN = <strong>C</strong>omo <strong>T</strong>rata <strong>N</strong>egócios (atividade que limita direito, interesse ou liberdade).</li>
+                </ul>
+            </div>
+
+            <h3>10.3. COMO AS BANCAS COBRAM — PADRÕES DE QUESTÕES</h3>
+            <p><strong>PADRÃO FCC — PALAVRAS-GATILHO</strong></p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Palavra-gatilho</th><th>Sentido na FCC</th><th>Cuidado</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>"Exclusivamente"</td><td>Geralmente torna a assertiva correta quando a lei realmente usa esse termo</td><td>Verificar se a lei é restritiva</td></tr>
+                        <tr><td>"Sempre"</td><td>Tende a tornar a assertiva falsa</td><td>Exceções existem</td></tr>
+                        <tr><td>"Nunca"</td><td>Tende a tornar a assertiva falsa</td><td>Exceções existem</td></tr>
+                        <tr><td>"Atenuação"</td><td>No contexto da Lei 8.987/95, torna a assertiva falsa</td><td>Responsabilidade não é atenuada</td></tr>
+                        <tr><td>"Automática"</td><td>No contexto de consórcios, torna a assertiva falsa</td><td>Reversão não é automática</td></tr>
+                        <tr><td>"Obriga a Administração"</td><td>No contexto de registro de preços, torna a assertiva falsa</td><td>A ata não obriga a contratar</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>10.4. RECOMENDAÇÕES FINAIS DE ESTUDO</h3>
+            <ul class="checklist">
+                <li class="checked">Leia a literalidade dos dispositivos: A FCC cobra o texto da lei com frequência.</li>
+                <li class="checked">Atenção às exceções: Grande parte das questões explora as exceções às regras gerais.</li>
+                <li class="checked">Memorize prazos: Os prazos são alterados com frequência pelas bancas para induzir ao erro.</li>
+                <li class="checked">Faça distinções conceituais: Saber diferenciar institutos próximos é essencial.</li>
+                <li class="checked">Estude os artigos 37, 38 e 84 da CF/88 com atenção redobrada.</li>
+                <li>Mantenha-se atualizado: A Lei 14.133/2021 e a Lei 14.230/2021 trouxeram alterações recentes.</li>
+            </ul>
+        </section>
+
+        <hr class="divider accent" aria-hidden="true">
+        <div class="text-center" style="margin:3rem 0 1rem;font-family:var(--font-heading);font-size:0.85rem;color:var(--text-light);">
+            <p><strong>FIM DA APOSTILA</strong></p>
+            <p style="font-size:0.75rem;">Material elaborado para preparação em concursos públicos de alto nível, com foco em cargos de Técnico Judiciário — Área Judiciária, considerando o padrão de cobrança das bancas FCC, FGV, Cebraspe e similares.</p>
+        </div>
+
+        <a href="#top" class="back-to-top" title="Voltar ao topo">↑ VOLTAR AO TOPO</a>
+    </div>
+</body>
+</html>

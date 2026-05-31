@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Administrativo e Constitucional para Concursos – Apostila Técnico Judiciário</title>
+    <style>
+        :root {
+            --bg-page: #f9f7f3;
+            --bg-container: #ffffff;
+            --text-primary: #2d2d2d;
+            --text-secondary: #4a4a4a;
+            --text-muted: #5e5e5e;
+            --color-accent: #2c5545;
+            --color-accent-light: #e8f0ec;
+            --color-highlight: #fff3b0;
+            --color-tip-bg: #ecf5fb;
+            --color-tip-border: #2980b9;
+            --color-warning-bg: #fef9e7;
+            --color-warning-border: #d4ac0d;
+            --color-important-bg: #fdedec;
+            --color-important-border: #c0392b;
+            --color-card-bg: #f7f9fc;
+            --color-table-border: #d5dbdb;
+            --color-table-header: #eaecef;
+            --color-divider: #e0e0e0;
+            --font-body: 'Segoe UI', system-ui, -apple-system, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            --font-heading: 'Georgia', 'Times New Roman', serif;
+            --font-code: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+            --max-width: 860px;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.08);
+            --spacing-xs: 0.4rem;
+            --spacing-sm: 0.8rem;
+            --spacing-md: 1.4rem;
+            --spacing-lg: 2.2rem;
+            --spacing-xl: 3rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 1.2rem;
+            display: flex;
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .apostila {
+            max-width: var(--max-width);
+            width: 100%;
+            background: var(--bg-container);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 2.4rem 2.8rem;
+            margin: 1rem 0 2.5rem;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 0.4rem;
+            }
+            .apostila {
+                padding: 1.6rem 1.3rem;
+                border-radius: var(--radius-md);
+            }
+        }
+
+        /* Títulos */
+        .main-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e2b24;
+            text-align: center;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+        }
+
+        .main-subtitle {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 1.25rem;
+            color: #4f5b54;
+            text-align: center;
+            margin-bottom: 1.8rem;
+            border-bottom: 2px solid var(--color-accent-light);
+            padding-bottom: 1.4rem;
+        }
+
+        .chapter-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e2b24;
+            margin-top: 2.8rem;
+            margin-bottom: 0.6rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 3px solid var(--color-accent);
+            display: inline-block;
+            letter-spacing: -0.2px;
+        }
+
+        .chapter-subtitle {
+            font-family: var(--font-heading);
+            font-size: 1.55rem;
+            font-weight: 600;
+            color: #2d3e35;
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.1px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c5545;
+            margin-top: 1.5rem;
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title .num {
+            background: var(--color-accent);
+            color: white;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            font-family: var(--font-body);
+        }
+
+        .paragraph {
+            margin-bottom: 1rem;
+            text-align: justify;
+            hyphens: auto;
+            color: var(--text-secondary);
+        }
+
+        strong, b {
+            color: #1e2b24;
+            font-weight: 600;
+        }
+
+        /* Marca-texto */
+        .highlight {
+            background-color: var(--color-highlight);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            font-weight: 600;
+            color: #2d2d2d;
+        }
+
+        /* Cards para conceitos */
+        .card {
+            background: var(--color-card-bg);
+            border-radius: var(--radius-md);
+            padding: 1.3rem 1.5rem;
+            margin: 1.2rem 0;
+            box-shadow: var(--shadow-sm);
+            border-left: 5px solid var(--color-accent);
+            transition: background 0.15s;
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: #1e2b24;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Dica, Aviso, Importante */
+        .callout {
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.4rem;
+            margin: 1.2rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 0.98rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .callout-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            min-width: 1.8rem;
+            text-align: center;
+        }
+
+        .tip {
+            background: var(--color-tip-bg);
+            border-left: 5px solid var(--color-tip-border);
+        }
+
+        .warning {
+            background: var(--color-warning-bg);
+            border-left: 5px solid var(--color-warning-border);
+        }
+
+        .important {
+            background: var(--color-important-bg);
+            border-left: 5px solid var(--color-important-border);
+        }
+
+        .tip .callout-icon { color: var(--color-tip-border); }
+        .warning .callout-icon { color: var(--color-warning-border); }
+        .important .callout-icon { color: var(--color-important-border); }
+
+        .callout-content {
+            flex: 1;
+        }
+        .callout-content p {
+            margin-bottom: 0.3rem;
+        }
+
+        /* Tabelas */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--color-table-border);
+            background: white;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 500px;
+        }
+
+        th {
+            background: var(--color-table-header);
+            font-weight: 700;
+            color: #1e2b24;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid #b0b8b9;
+            font-size: 0.95rem;
+        }
+
+        td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid var(--color-table-border);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) td {
+            background: #fcfcfc;
+        }
+
+        /* Listas */
+        ul, ol {
+            margin: 1rem 0 1rem 1.4rem;
+            padding-left: 0.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        li strong {
+            color: #2d3e35;
+        }
+
+        .custom-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .custom-list li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .custom-list li::before {
+            content: "◆";
+            color: var(--color-accent);
+            font-size: 0.9rem;
+            position: absolute;
+            left: 0.2rem;
+            top: 0.1rem;
+        }
+
+        /* Citações estilizadas */
+        blockquote.legal-quote {
+            background: #f4f6f5;
+            border-left: 4px solid #2c5545;
+            padding: 1rem 1.4rem;
+            margin: 1.2rem 0;
+            font-style: italic;
+            color: #2d3e35;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 0.98rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        blockquote.legal-quote footer {
+            margin-top: 0.6rem;
+            font-style: normal;
+            font-weight: 600;
+            color: #4a4a4a;
+            font-size: 0.9rem;
+        }
+
+        /* Exemplo prático */
+        .example-box {
+            background: #f7f5f0;
+            padding: 1rem 1.4rem;
+            border-radius: var(--radius-sm);
+            margin: 1.2rem 0;
+            border: 1px dashed #b9b0a0;
+            font-size: 0.96rem;
+        }
+
+        .example-box .example-label {
+            font-weight: 700;
+            color: #6b5e4a;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Comparação visual (cards lado a lado) */
+        .comparison-grid {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .comparison-card {
+            flex: 1;
+            min-width: 220px;
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 1.3rem 1.3rem;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--color-accent);
+        }
+
+        .comparison-card.alt {
+            border-top-color: #8e6f3e;
+        }
+
+        .comparison-card h4 {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.7rem;
+            color: #1e2b24;
+        }
+
+        /* Diagramas SVG */
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        svg.diagram {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Linha divisória elegante */
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #c0c8c4, #c0c8c4, transparent);
+            margin: 2.2rem 0 1.8rem;
+        }
+
+        .small-divider {
+            border: none;
+            height: 1px;
+            background: #e0e4e1;
+            margin: 1.3rem 0;
+        }
+
+        /* Pegadinha / Armadilha */
+        .trap-box {
+            background: #fffaf0;
+            border: 1px solid #e6c260;
+            border-radius: var(--radius-sm);
+            padding: 0.9rem 1.2rem;
+            margin: 1rem 0;
+            font-size: 0.96rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .trap-box .trap-icon {
+            font-size: 1.6rem;
+            color: #c99c1a;
+        }
+
+        /* Resumo final */
+        .final-summary {
+            background: #eef3f0;
+            border-radius: var(--radius-md);
+            padding: 1.4rem 1.8rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .final-summary h3 {
+            font-family: var(--font-heading);
+            color: #1e2b24;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Ajustes para tablet (768px - 1024px) */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .apostila {
+                padding: 2rem 2.2rem;
+            }
+            .main-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .comparison-grid {
+                flex-direction: column;
+            }
+            .main-title {
+                font-size: 1.9rem;
+            }
+            .chapter-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* Links internos (caso use) */
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Impressão */
+        @media print {
+            body {
+                background: white;
+            }
+            .apostila {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="apostila">
+        <!-- Título principal -->
+        <h1 class="main-title">DIREITO ADMINISTRATIVO E CONSTITUCIONAL PARA CONCURSOS PÚBLICOS</h1>
+        <p class="main-subtitle">Apostila Completa para Técnico Judiciário – Área Judiciária</p>
+
+        <!-- CAPÍTULO 1 -->
+        <h2 class="chapter-title">CAPÍTULO 1<br><span style="font-size:1.5rem;">AGENTES PÚBLICOS: CLASSIFICAÇÃO E GARANTIAS CONSTITUCIONAIS</span></h2>
+
+        <h3 class="section-title"><span class="num">1</span> Quem são os agentes públicos?</h3>
+        <p class="paragraph">O Estado atua por meio de pessoas físicas que manifestam sua vontade. Essas pessoas são genericamente denominadas <strong>agentes públicos</strong>. A expressão abrange todos aqueles que desempenham função pública, independentemente do vínculo, da natureza da função ou da forma de investidura.</p>
+        <p class="paragraph">Para o concurso de técnico judiciário, interessa especialmente a distinção entre as espécies de agentes públicos conforme a Constituição Federal, sobretudo os servidores estatutários ocupantes de cargo efetivo e os ocupantes de cargo em comissão, além dos membros de Poder que gozam de vitaliciedade.</p>
+
+        <!-- Diagrama SVG: classificação simplificada -->
+        <div class="diagram-container">
+            <svg class="diagram" width="600" height="180" viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+                <rect x="180" y="10" width="240" height="36" rx="10" fill="#2c5545" />
+                <text x="300" y="33" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Segoe UI, sans-serif">AGENTES PÚBLICOS</text>
+                <line x1="300" y1="46" x2="300" y2="70" stroke="#2c5545" stroke-width="2"/>
+                <rect x="40" y="70" width="200" height="30" rx="8" fill="#e8f0ec" stroke="#2c5545" stroke-width="1.5"/>
+                <text x="140" y="90" text-anchor="middle" fill="#1e2b24" font-size="12" font-weight="600" font-family="Segoe UI, sans-serif">Cargo Efetivo (estabilidade)</text>
+                <rect x="340" y="70" width="200" height="30" rx="8" fill="#f7f5f0" stroke="#8e6f3e" stroke-width="1.5"/>
+                <text x="440" y="90" text-anchor="middle" fill="#1e2b24" font-size="12" font-weight="600" font-family="Segoe UI, sans-serif">Cargo Vitalício (magistrados/MP)</text>
+                <line x1="140" y1="100" x2="140" y2="125" stroke="#2c5545" stroke-width="1.5"/>
+                <rect x="30" y="125" width="220" height="26" rx="6" fill="white" stroke="#2c5545" stroke-width="1"/>
+                <text x="140" y="143" text-anchor="middle" fill="#2d2d2d" font-size="11" font-family="Segoe UI, sans-serif">art. 41 CF – 3 anos efetivo exercício</text>
+                <line x1="440" y1="100" x2="440" y2="125" stroke="#8e6f3e" stroke-width="1.5"/>
+                <rect x="330" y="125" width="220" height="26" rx="6" fill="white" stroke="#8e6f3e" stroke-width="1"/>
+                <text x="440" y="143" text-anchor="middle" fill="#2d2d2d" font-size="11" font-family="Segoe UI, sans-serif">art. 95, I, CF – 2 anos exercício</text>
+                <line x1="300" y1="46" x2="300" y2="158" stroke="#ccc" stroke-width="1" stroke-dasharray="4,3"/>
+            </svg>
+        </div>
+
+        <h3 class="section-title"><span class="num">2</span> Cargo efetivo e estabilidade</h3>
+        <p class="paragraph">O ingresso nos quadros do serviço público, em regra, depende de aprovação em <strong>concurso público</strong> (art. 37, II, CF/88). Aquele que ingressa por concurso público e toma posse em cargo de provimento efetivo adquire, após três anos de efetivo exercício, a garantia da <span class="highlight">estabilidade</span> (art. 41 da CF).</p>
+        
+        <blockquote class="legal-quote">
+            <p>Artigo 41, <em>caput</em>, CF: “São estáveis após três anos de efetivo exercício os servidores nomeados para cargo de provimento efetivo em virtude de concurso público.”</p>
+        </blockquote>
+
+        <p class="paragraph">A estabilidade não é automática nem absoluta. Ela protege o servidor contra exonerações arbitrárias, mas não o torna imune a sanções disciplinares ou à perda do cargo em certas hipóteses constitucionais (sentença judicial transitada em julgado, processo administrativo com ampla defesa, insuficiência de desempenho, excesso de gastos com pessoal – art. 169).</p>
+
+        <div class="example-box">
+            <div class="example-label">Exemplo prático</div>
+            <p>Um técnico judiciário recém-empossado, aprovado em concurso público, ainda não é estável. Durante o estágio probatório (também de três anos), a Administração avaliará sua aptidão e, se for o caso, poderá exonerá-lo por não preencher os requisitos de desempenho. Somente após o triênio de efetivo exercício ele se torna estável.</p>
+        </div>
+
+        <div class="trap-box">
+            <span class="trap-icon">⚠️</span>
+            <div><strong>Pegadinha de banca:</strong> A estabilidade é própria do servidor público ocupante de cargo efetivo. O ocupante de cargo em comissão não adquire estabilidade – sua exoneração é <em>ad nutum</em>, ou seja, independe de motivação. Questões da FGV costumam misturar as figuras para confundir o candidato.</div>
+        </div>
+
+        <div class="callout tip">
+            <span class="callout-icon">💡</span>
+            <div class="callout-content"><strong>Dica de prova:</strong> Memorize o binômio: <span class="highlight">cargo efetivo ↔ estabilidade</span>; <span class="highlight">cargo em comissão ↔ livre exoneração</span>.</div>
+        </div>
+
+        <h3 class="section-title"><span class="num">3</span> Cargo vitalício: magistrados e membros do Ministério Público</h3>
+        <p class="paragraph">Além da estabilidade, existe a garantia da <strong>vitaliciedade</strong>, aplicável a determinadas carreiras previstas na Constituição. O art. 95, I, CF, prevê que os juízes adquirem a vitaliciedade após dois anos de exercício no cargo, dependendo a perda do cargo, nesse período, de deliberação do tribunal a que o juiz estiver vinculado e, nos demais casos, de sentença judicial transitada em julgado.</p>
+        <p class="paragraph">Assim, um Juiz Federal, embora ingresse mediante concurso público de provas e títulos, não se submete à estabilidade do art. 41. Após dois anos de exercício, torna-se vitalício, o que significa que só perderá o cargo por decisão judicial transitada em julgado. A vitaliciedade é uma garantia ainda mais robusta que a estabilidade.</p>
+
+        <div class="card">
+            <div class="card-title">🔍 Comparação importante para a prova</div>
+            <div class="table-wrapper" style="margin:0.8rem 0 0 0;">
+                <table>
+                    <thead>
+                        <tr><th>Garantia</th><th>Destinatários</th><th>Tempo para aquisição</th><th>Perda do cargo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Estabilidade</strong></td><td>Servidores públicos efetivos (art. 41)</td><td>3 anos de efetivo exercício</td><td>Sentença judicial, processo administrativo, avaliação de desempenho, limite de gastos</td></tr>
+                        <tr><td><strong>Vitaliciedade</strong></td><td>Magistrados (art. 95, I), membros do MP (art. 128, §5º, I)</td><td>2 anos de exercício</td><td>Apenas por sentença judicial transitada em julgado</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="comparison-card">
+                <h4>🧑‍⚖️ Analista Judiciário</h4>
+                <p>Ingresso por concurso → cargo efetivo → <strong>estabilidade após 3 anos</strong>.</p>
+            </div>
+            <div class="comparison-card alt">
+                <h4>⚖️ Juiz Federal</h4>
+                <p>Ingresso por concurso → cargo vitalício → <strong>vitaliciedade após 2 anos</strong>.</p>
+            </div>
+        </div>
+        <p style="text-align:center; font-style:italic; color:#5e5e5e;">É essencial não confundir.</p>
+
+        <h3 class="section-title"><span class="num">4</span> Regime remuneratório e vedação à equiparação</h3>
+        <p class="paragraph">A Constituição, em seu art. 37, inciso XIII, veda a <strong>vinculação ou equiparação</strong> de quaisquer espécies remuneratórias para o efeito de remuneração de pessoal do serviço público. Isso significa que não é possível estabelecer, por lei, que o vencimento de uma carreira corresponda a um percentual do vencimento de outra carreira, ou que haja reajuste automático atrelado a outra categoria.</p>
+        <p class="paragraph">Essa vedação foi fortalecida pela Emenda Constitucional n.º 19/1998, que revogou o antigo §1º do art. 39, o qual permitia a fixação de padrões de vencimento escalonados. O Supremo Tribunal Federal consolidou esse entendimento na <strong>ADPF 328</strong>, rechaçando qualquer pretensão de reajuste automático baseado em equiparação.</p>
+        
+        <div class="card">
+            <div class="card-title">🧠 Raciocínio jurídico</div>
+            <p>O objetivo é preservar a autonomia de cada carreira e impedir o efeito cascata de reajustes, que poderia gerar desequilíbrio fiscal. Ainda que pareça justo equiparar cargos com atribuições semelhantes, a regra constitucional veda expressamente essa prática.</p>
+        </div>
+
+        <div class="example-box">
+            <div class="example-label">Exemplo hipotético</div>
+            <p>Seria inconstitucional uma lei estadual que determinasse que o vencimento dos técnicos judiciários será sempre igual a 70% do subsídio de juiz. Tal vinculação viola o art. 37, XIII.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- CAPÍTULO 2 -->
+        <h2 class="chapter-title">CAPÍTULO 2<br><span style="font-size:1.5rem;">ORGANIZAÇÃO ADMINISTRATIVA E DESCENTRALIZAÇÃO</span></h2>
+
+        <h3 class="section-title"><span class="num">1</span> Administração Direta e Indireta: noções fundamentais</h3>
+        <p class="paragraph">A Administração Pública é estruturada em dois grandes blocos: a <strong>Administração Direta</strong>, composta pelos entes federativos (União, Estados, Distrito Federal e Municípios) e seus órgãos; e a <strong>Administração Indireta</strong>, formada por entidades criadas pelos entes para exercer funções administrativas de forma descentralizada.</p>
+        <p class="paragraph">A descentralização administrativa ocorre quando o Estado transfere a titularidade e a execução de certas atividades a outras pessoas jurídicas, distintas do ente central. Essas entidades possuem personalidade jurídica própria, patrimônio próprio e autonomia administrativa e financeira, embora estejam submetidas à supervisão do ente instituidor.</p>
+
+        <!-- Diagrama SVG: estrutura Adm Direta e Indireta -->
+        <div class="diagram-container">
+            <svg class="diagram" width="500" height="260" viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg">
+                <rect x="140" y="10" width="220" height="36" rx="10" fill="#2c5545"/>
+                <text x="250" y="33" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="Segoe UI, sans-serif">ADMINISTRAÇÃO PÚBLICA</text>
+                <line x1="250" y1="46" x2="250" y2="70" stroke="#2c5545" stroke-width="2"/>
+                <rect x="60" y="70" width="160" height="30" rx="8" fill="#e8f0ec" stroke="#2c5545" stroke-width="1.5"/>
+                <text x="140" y="90" text-anchor="middle" fill="#1e2b24" font-size="12" font-weight="600" font-family="Segoe UI, sans-serif">Direta (entes e órgãos)</text>
+                <rect x="290" y="70" width="160" height="30" rx="8" fill="#f7f5f0" stroke="#8e6f3e" stroke-width="1.5"/>
+                <text x="370" y="90" text-anchor="middle" fill="#1e2b24" font-size="12" font-weight="600" font-family="Segoe UI, sans-serif">Indireta (entidades)</text>
+                <line x1="140" y1="100" x2="140" y2="125" stroke="#2c5545" stroke-width="1.5"/>
+                <rect x="30" y="125" width="220" height="26" rx="6" fill="white" stroke="#2c5545" stroke-width="1"/>
+                <text x="140" y="143" text-anchor="middle" fill="#2d2d2d" font-size="11" font-family="Segoe UI, sans-serif">União, Estados, DF, Municípios + órgãos</text>
+                <line x1="370" y1="100" x2="370" y2="125" stroke="#8e6f3e" stroke-width="1.5"/>
+                <rect x="280" y="125" width="180" height="26" rx="6" fill="white" stroke="#8e6f3e" stroke-width="1"/>
+                <text x="370" y="143" text-anchor="middle" fill="#2d2d2d" font-size="11" font-family="Segoe UI, sans-serif">Autarquias, Fundações, EP, SEM</text>
+                <!-- Linhas de supervisão -->
+                <path d="M 250 150 Q 250 190 140 190" stroke="#999" stroke-width="1.2" fill="none" stroke-dasharray="5,3"/>
+                <path d="M 250 150 Q 250 190 370 190" stroke="#999" stroke-width="1.2" fill="none" stroke-dasharray="5,3"/>
+                <text x="195" y="185" text-anchor="middle" fill="#777" font-size="10" font-family="Segoe UI, sans-serif">supervisão</text>
+                <text x="310" y="185" text-anchor="middle" fill="#777" font-size="10" font-family="Segoe UI, sans-serif">supervisão</text>
+                <rect x="90" y="195" width="120" height="22" rx="6" fill="#f0f0f0" stroke="#aaa" stroke-width="1"/>
+                <text x="150" y="211" text-anchor="middle" fill="#444" font-size="10" font-family="Segoe UI, sans-serif">Sem hierarquia</text>
+                <rect x="300" y="195" width="120" height="22" rx="6" fill="#f0f0f0" stroke="#aaa" stroke-width="1"/>
+                <text x="360" y="211" text-anchor="middle" fill="#444" font-size="10" font-family="Segoe UI, sans-serif">Sem hierarquia</text>
+            </svg>
+        </div>
+
+        <h3 class="section-title"><span class="num">2</span> Entidades da Administração Indireta</h3>
+        <p class="paragraph">O art. 37, XIX, da CF estabelece que somente por lei específica poderá ser criada autarquia e autorizada a instituição de empresa pública, de sociedade de economia mista e de fundação, cabendo à lei complementar, neste último caso, definir as áreas de atuação. As características principais de cada entidade são:</p>
+
+        <ul class="custom-list">
+            <li><strong>a) Autarquias:</strong> pessoas jurídicas de direito público, criadas por lei, para atividades típicas de Estado (ex.: INSS, IBAMA). Submetem-se a controle finalístico, mas não hierárquico, pelo ente criador.</li>
+            <li><strong>b) Fundações públicas:</strong> podem ser de direito público (criadas por lei, equivalem a autarquias) ou de direito privado (autorizadas por lei). Prestam serviços de utilidade pública.</li>
+            <li><strong>c) Empresas públicas:</strong> pessoas jurídicas de direito privado, autorizadas por lei, com capital 100% público, podendo adotar qualquer forma societária. Exemplo: Caixa Econômica Federal (embora atualmente seja sociedade de economia mista, a conceituação histórica é didática). Empresa pública explora atividade econômica ou presta serviço público.</li>
+            <li><strong>d) Sociedades de economia mista:</strong> pessoas jurídicas de direito privado, autorizadas por lei, sob a forma de sociedade anônima, cujas ações com direito a voto pertencem em sua maioria à União, ao Estado ou ao Município. Exemplos: Petrobras, Banco do Brasil.</li>
+        </ul>
+
+        <div class="card">
+            <div class="card-title">🎯 Foco para identificação em provas</div>
+            <p>A sociedade de economia mista apresenta três características marcantes: (i) forma obrigatória de S/A; (ii) controle acionário estatal (maioria das ações com direito a voto); (iii) exploração de atividade econômica de relevante interesse público ou prestação de serviço público.</p>
+        </div>
+
+        <div class="callout tip">
+            <span class="callout-icon">🧩</span>
+            <div class="callout-content"><strong>Dica mnemônica:</strong> <em>SEM – Sociedade de Economia Mista = S/A com maioria de votos do Estado. EP – Empresa Pública = capital 100% público, forma societária livre.</em></div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Entidade</th><th>Natureza jurídica</th><th>Capital</th><th>Forma societária</th><th>Exemplos</th></tr></thead>
+                <tbody>
+                    <tr><td>Autarquia</td><td>Direito público</td><td>Público</td><td>Não se aplica</td><td>INSS, IBAMA</td></tr>
+                    <tr><td>Empresa Pública</td><td>Direito privado</td><td>100% público</td><td>Qualquer</td><td>Correios, BNDES</td></tr>
+                    <tr><td>Soc. Economia Mista</td><td>Direito privado</td><td>Misto (controle estatal)</td><td>S/A</td><td>Petrobras, Banco do Brasil</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="section-title"><span class="num">3</span> Supervisão finalística: ausência de hierarquia</h3>
+        <p class="paragraph">Um ponto crucial e recorrentemente cobrado em concursos é a <strong>inexistência de hierarquia</strong> entre a Administração Direta e as entidades da Administração Indireta. A relação é de <span class="highlight">vinculação e controle finalístico</span> (também chamado de tutela administrativa ou supervisão ministerial).</p>
+        <p class="paragraph">Não há subordinação hierárquica porque as entidades da Administração Indireta possuem personalidade jurídica própria, ao contrário dos órgãos da Administração Direta, que são centros de competência desprovidos de personalidade jurídica. Entretanto, o ente criador exerce controle para verificar se a entidade está cumprindo suas finalidades legais, sem interferir indevidamente na gestão interna.</p>
+
+        <div class="example-box">
+            <div class="example-label">Casos práticos para fixação</div>
+            <p>Um Ministério não pode revogar ato administrativo praticado por uma autarquia vinculada, salvo se houver previsão legal de recurso hierárquico impróprio (revisão vertical por força de lei, não por hierarquia natural).</p>
+            <p style="margin-top:0.5rem;">O controle exercido por Tribunal de Contas sobre entidades da Administração Indireta é externo, mas a relação entre a autarquia e o ente que a criou não deixa de ser de supervisão.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- CAPÍTULO 3 -->
+        <h2 class="chapter-title">CAPÍTULO 3<br><span style="font-size:1.5rem;">ATOS ADMINISTRATIVOS</span></h2>
+
+        <h3 class="section-title"><span class="num">1</span> Conceito e classificação</h3>
+        <p class="paragraph"><strong>Ato administrativo</strong> é toda manifestação unilateral de vontade da Administração Pública que, agindo nessa qualidade, tenha por fim imediato adquirir, resguardar, transferir, modificar, extinguir e declarar direitos, ou impor obrigações aos administrados ou a si própria.</p>
+        <p class="paragraph">Os atos administrativos classificam-se em várias categorias. Para a prova, destacamos:</p>
+        <ul class="custom-list">
+            <li><strong>Atos normativos:</strong> contêm comandos gerais e abstratos, aplicáveis a um número indeterminado de pessoas. Não são leis, mas derivam do poder normativo da Administração. Exemplos: decretos regulamentares, resoluções, regimentos internos, portarias de conteúdo geral.</li>
+            <li><strong>Atos ordinatórios:</strong> disciplinam a organização e o funcionamento interno da Administração, sem efeito externo direto. Dirigem-se a subordinados, no âmbito da hierarquia. Exemplo: ordens de serviço, instruções internas, portarias de organização de setores.</li>
+            <li><strong>Atos negociais:</strong> correspondem à manifestação de vontade da Administração coincidente com a pretensão do particular, gerando efeitos jurídicos específicos. Exemplos: licenças, autorizações, permissões.</li>
+            <li><strong>Atos enunciativos:</strong> declaram uma situação preexistente, sem constituir propriamente um direito. Exemplos: certidões, atestados, pareceres (quando não vinculantes).</li>
+            <li><strong>Atos punitivos:</strong> impõem sanções a servidores ou particulares que descumpram normas administrativas. Exemplo: multas, suspensões, demissões.</li>
+        </ul>
+
+        <h3 class="section-title"><span class="num">2</span> Regimento Interno de Tribunal: ato normativo ou ordinatório?</h3>
+        <p class="paragraph">A dúvida entre ato normativo e ordinatório é uma armadilha clássica de provas, especialmente da FGV. O <strong>Regimento Interno</strong> de um Tribunal de Justiça é elaborado pelo próprio Tribunal no exercício de sua autonomia administrativa, com força de lei em sentido material, pois estabelece regras gerais e abstratas que vinculam não apenas servidores e magistrados, mas também as partes, advogados e o próprio procedimento judicial.</p>
+        <p class="paragraph">Portanto, o Regimento Interno é <span class="highlight">ato normativo</span>. Ainda que discipline o funcionamento interno do órgão, sua amplitude ultrapassa os limites de mera organização de subordinados, alcançando terceiros e criando normas processuais e procedimentais. Assim, não se confunde com o ato ordinatório, de alcance meramente intracoorporativo.</p>
+
+        <div class="trap-box">
+            <span class="trap-icon">⚠️</span>
+            <div><strong>Pegadinha da banca:</strong> A questão pode afirmar que “o Regimento Interno de um Tribunal é ato ordinatório, pois trata do funcionamento da entidade”. Cuidado! Sua natureza normativa decorre do conteúdo geral e abstrato e dos destinatários indeterminados. O ato ordinatório é restrito a subordinados.</div>
+        </div>
+
+        <h3 class="section-title"><span class="num">3</span> Elementos do ato administrativo</h3>
+        <p class="paragraph">Os elementos (ou requisitos) de validade do ato administrativo são:</p>
+        <ul class="custom-list">
+            <li><strong>Competência:</strong> poder legal conferido ao agente para a prática do ato. É sempre vinculada.</li>
+            <li><strong>Finalidade:</strong> resultado mediato que o ato deve atingir, sempre o interesse público. É sempre vinculada.</li>
+            <li><strong>Forma:</strong> modo pelo qual o ato se exterioriza. Deve observar a lei (forma vinculada), mas o ordenamento pode admitir certa flexibilidade (ex.: forma não solene para determinados atos).</li>
+            <li><strong>Motivo:</strong> situação de fato e de direito que autoriza ou determina a prática do ato. Pode ser vinculado ou discricionário, conforme a lei.</li>
+            <li><strong>Objeto:</strong> efeito jurídico imediato do ato, aquilo que o ato dispõe. Pode ser vinculado ou discricionário.</li>
+        </ul>
+        <p class="paragraph">A discricionariedade reside apenas no <strong>motivo</strong> e no <strong>objeto</strong>. Competência, finalidade e forma são sempre vinculados.</p>
+
+        <div class="card">
+            <div class="card-title">📌 Mnemônico clássico: CoFiFoMOb</div>
+            <p><strong>Co</strong>mpetência, <strong>Fi</strong>nalidade, <strong>Fo</strong>rma, <strong>Mo</strong>tivo, <strong>Ob</strong>jeto. Discricionários: <strong>MOb</strong> (Motivo e Objeto).</p>
+        </div>
+
+        <div class="example-box">
+            <div class="example-label">Aplicação prática</div>
+            <p>Suponha a edição de uma licença para construir. A competência (órgão emissor), a finalidade (atender ao interesse urbanístico) e a forma (alvará) são vinculadas. Já os motivos (conveniência e oportunidade na análise dos requisitos) e o objeto (o que se permite edificar, exatamente) podem envolver juízo de valor. Porém, se a lei especificar todos os critérios, o motivo e o objeto serão vinculados, não havendo discricionariedade.</p>
+        </div>
+
+        <div class="callout warning">
+            <span class="callout-icon">❗</span>
+            <div class="callout-content"><strong>Erro comum:</strong> Achar que a forma nunca pode ser discricionária. Na verdade, a forma é vinculada, mas o conteúdo pode ser discricionário. A forma em si (como o ato se apresenta) é definida em lei. A discricionariedade formal é exceção.</div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- CAPÍTULO 4 -->
+        <h2 class="chapter-title">CAPÍTULO 4<br><span style="font-size:1.5rem;">PODERES ADMINISTRATIVOS</span></h2>
+        <p class="paragraph">Os poderes administrativos são prerrogativas conferidas à Administração para a persecução do interesse público. Entre eles, destacam-se o poder hierárquico, o poder disciplinar, o poder de polícia e o poder normativo. Conhecer sua identificação prática é fundamental.</p>
+
+        <h3 class="section-title"><span class="num">1</span> Poder hierárquico</h3>
+        <p class="paragraph">É o poder que a Administração possui para distribuir e escalonar as funções de seus órgãos e agentes, estabelecendo relações de subordinação e coordenação. Dele decorrem as faculdades de dar ordens, fiscalizar, delegar e avocar competências, rever atos de subordinados (autotutela), entre outras.</p>
+        <p class="paragraph"><strong>Avocação:</strong> é a chamada temporária de uma competência atribuída a um órgão inferior, feita por órgão superior, por motivos de relevante interesse público. Deve ser excepcional, temporária e fundamentada, jamais podendo avocar competências exclusivas de outro agente.</p>
+        <div class="example-box">
+            <div class="example-label">Exemplo</div>
+            <p>Um chefe de repartição que, diante de atraso na análise de processos, avoca para si a decisão de casos específicos por determinado período.</p>
+        </div>
+        <div class="callout important">
+            <span class="callout-icon">🚫</span>
+            <div class="callout-content"><strong>Não confundir:</strong> A avocação só existe dentro da mesma estrutura hierárquica. O ente da Administração Direta não pode “avocar” competência de uma autarquia, pois não há hierarquia entre eles.</div>
+        </div>
+
+        <h3 class="section-title"><span class="num">2</span> Poder disciplinar</h3>
+        <p class="paragraph">O poder disciplinar é a faculdade de punir internamente as infrações cometidas por pessoas sujeitas à disciplina administrativa. Aplica-se a servidores públicos e também a particulares que possuem um vínculo específico com a Administração (contratados, detentos, alunos de escolas públicas, etc.), desde que estejam em relação de sujeição especial.</p>
+        <p class="paragraph"><strong>Natureza jurídica:</strong> Não se trata de um privilégio pessoal do superior hierárquico, mas de um poder-dever vinculado ao interesse público. A Administração tem o dever de apurar irregularidades e, comprovada a infração, aplicar a penalidade cabível, respeitado o devido processo legal, a ampla defesa e o contraditório.</p>
+        <p class="paragraph"><strong>Importante:</strong> A aplicação de multa contratual durante a execução de um contrato administrativo decorre do poder disciplinar, em sua vertente contratual, pois o contratado se submete a um regime jurídico específico que inclui penalidades por descumprimento. Contudo, se a sanção for aplicada a um particular que não possui vínculo contratual (ex.: multa de trânsito), a base é o poder de polícia.</p>
+        <div class="callout tip">
+            <span class="callout-icon">💡</span>
+            <div class="callout-content"><strong>Dica de prova:</strong> O poder disciplinar supõe uma relação de sujeição especial (funcional, contratual ou de internação). Sem esse vínculo, as sanções ao particular derivam do poder de polícia.</div>
+        </div>
+        <p class="paragraph"><strong>Procedimento disciplinar:</strong> A imposição de sanção disciplinar exige a instauração de processo administrativo, com garantia de defesa técnica, produção de provas e decisão motivada. A falta de processo ou a violação do devido processo legal torna a penalidade nula.</p>
+
+        <h3 class="section-title"><span class="num">3</span> Poder de polícia</h3>
+        <p class="paragraph">O poder de polícia é a atividade da Administração que, limitando ou disciplinando direito, interesse ou liberdade, regula a prática de ato ou a abstenção de fato, em razão de interesse público concernente à segurança, à higiene, à ordem, aos costumes, à disciplina da produção e do mercado, ao exercício de atividades econômicas dependentes de concessão ou autorização do Poder Público, à tranquilidade pública ou ao respeito à propriedade e aos direitos individuais ou coletivos (art. 78 do CTN, conceito aplicado ao direito administrativo).</p>
+        <p class="paragraph">Ele se manifesta em quatro fases:</p>
+        <ul class="custom-list">
+            <li><strong>Legislativa:</strong> edição de leis e atos normativos que criam limitações.</li>
+            <li><strong>Consentimento:</strong> atos de anuência, como licenças e autorizações (ex.: licença para construir, alvará de funcionamento).</li>
+            <li><strong>Fiscalização:</strong> verificação do cumprimento das regras.</li>
+            <li><strong>Sanção:</strong> aplicação de penalidades por infrações.</li>
+        </ul>
+
+        <div class="card">
+            <div class="card-title">📋 Correlação prática</div>
+            <p>Concessão de licença mediante requisitos legais é exercício do <strong>poder de polícia</strong>, na fase de consentimento. Já a multa contratual após processo administrativo insere-se no <strong>poder disciplinar</strong>, e a avocação temporária de competência, no <strong>poder hierárquico</strong>.</p>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Situação</th><th>Poder envolvido</th><th>Fundamento</th></tr></thead>
+                <tbody>
+                    <tr><td>Multa aplicada a fornecedor por descumprimento contratual</td><td>Disciplinar (relação contratual)</td><td>Sujeição especial decorrente do contrato</td></tr>
+                    <tr><td>Concessão de licença para construir</td><td>Polícia (fase de consentimento)</td><td>Limitação de direito em prol do interesse público</td></tr>
+                    <tr><td>Chefe que assume função de subordinado para decidir</td><td>Hierárquico</td><td>Relação de subordinação, avocação</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider">
+
+        <!-- CAPÍTULO 5 -->
+        <h2 class="chapter-title">CAPÍTULO 5<br><span style="font-size:1.5rem;">LICITAÇÕES E CONTRATOS ADMINISTRATIVOS NA LEI N.º 14.133/2021</span></h2>
+
+        <h3 class="section-title"><span class="num">1</span> Modalidades de licitação</h3>
+        <p class="paragraph">A nova Lei de Licitações (14.133/2021) trouxe um rol de modalidades de licitação que deve ser conhecido para provas. São elas:</p>
+        <ul class="custom-list">
+            <li><strong>Pregão:</strong> obrigatório para aquisição de bens e serviços comuns, assim considerados aqueles cujos padrões de desempenho e qualidade possam ser objetivamente definidos pelo edital, por meio de especificações usuais de mercado. O critério de julgamento é o menor preço ou o maior desconto.</li>
+            <li><strong>Concorrência:</strong> modalidade utilizada para contratações de obras, serviços de engenharia, serviços técnicos especializados, e para alienação de bens, quando não se enquadrar nos casos de leilão.</li>
+            <li><strong>Concurso:</strong> destinado à escolha de trabalho técnico, científico ou artístico, mediante a instituição de prêmios ou remuneração aos vencedores, conforme critérios constantes de edital. O julgamento cabe a uma comissão especializada.</li>
+            <li><strong>Leilão:</strong> modalidade para alienação de bens móveis inservíveis, bens imóveis adquiridos em procedimento judicial ou dação em pagamento, entre outros. O critério é o maior lance.</li>
+            <li><strong>Diálogo competitivo:</strong> nova modalidade para contratações complexas em que a Administração não consegue definir a solução técnica mais adequada, conduzindo diálogos com licitantes previamente selecionados.</li>
+        </ul>
+
+        <h3 class="section-title"><span class="num">2</span> Aplicação prática: identificação da modalidade correta</h3>
+        <div class="example-box">
+            <div class="example-label">Caso concreto 1</div>
+            <p>Um Tribunal de Justiça precisa adquirir material de escritório (canetas, papéis, toners). Trata-se de bens comuns, de especificação padronizada e disponíveis no mercado. Qual a modalidade de licitação adequada?</p>
+            <p><strong>Resposta:</strong> Pregão, preferencialmente eletrônico, com critério de menor preço. A concorrência seria inadequada para tal simplicidade.</p>
+        </div>
+        <div class="example-box">
+            <div class="example-label">Caso concreto 2</div>
+            <p>O mesmo Tribunal deseja selecionar projeto arquitetônico para sua nova sede, oferecendo prêmio aos melhores classificados. Há necessidade de avaliação de cunho técnico e artístico.</p>
+            <p><strong>Resposta:</strong> Concurso, com comissão especializada de julgamento. Não cabe pregão, pois o objeto não é comum, nem leilão (alienação).</p>
+        </div>
+
+        <div class="trap-box">
+            <span class="trap-icon">⚠️</span>
+            <div><strong>Pegadinha de prova:</strong> Pode-se afirmar que “para serviços técnicos de engenharia é obrigatória a concorrência”. Mas se o serviço for comum, hipoteticamente, o pregão poderia ser usado. Contudo, a Lei 14.133/2021 reserva o pregão apenas para bens e serviços comuns, e o concurso para trabalhos técnicos, científicos ou artísticos. Serviços técnicos especializados de natureza predominantemente intelectual geralmente são contratados por concorrência ou, se couber, por diálogo competitivo, mas o concurso é reservado para a escolha de trabalho mediante premiação.</div>
+        </div>
+
+        <h3 class="section-title"><span class="num">3</span> Nulidade do contrato administrativo</h3>
+        <p class="paragraph">A nulidade do contrato administrativo decorre da existência de irregularidade insanável no procedimento licitatório ou na própria execução contratual. No entanto, a Lei 14.133/2021 introduziu um regime que impede a anulação automática e impõe uma análise de consequências.</p>
+        <p class="paragraph">O art. 147 dispõe que a declaração de nulidade do contrato administrativo opera retroativamente (<em>ex tunc</em>), impedindo os efeitos que ainda não se produziram e desconstituindo os já produzidos, mas há requisitos cumulativos para sua decretação:</p>
+        <ul class="custom-list">
+            <li>A irregularidade deve ser <strong>insanável</strong>.</li>
+            <li>A anulação deve ser medida de interesse público, após avaliação dos aspectos jurídicos, do impacto socioeconômico da decisão e do custo da realização de nova licitação ou contratação.</li>
+        </ul>
+        <p class="paragraph">Além disso, o art. 148 prevê hipóteses em que o contrato, mesmo eivado de vício, pode ser mantido (convalidação ou declaração de continuidade) por razões de interesse público, como no caso de risco de desabastecimento, segurança, ou quando os custos de uma nova contratação superarem os benefícios da anulação.</p>
+
+        <div class="card">
+            <div class="card-title">🧠 Raciocínio prático</div>
+            <p>Imagine um contrato para fornecimento de medicamentos essenciais em que se descobre uma falha na habilitação do licitante, mas a anulação causaria desabastecimento e risco à saúde pública. A administração pode, fundamentadamente, optar pela manutenção do contrato até o fim da emergência, sem prejuízo da responsabilização dos envolvidos.</p>
+        </div>
+
+        <p class="paragraph"><strong>Efeitos da nulidade:</strong> Em regra, a nulidade opera <em>ex tunc</em>, o que significa que as partes devem retornar ao estado anterior, mas há proteção ao contratado de boa-fé que não concorreu para a irregularidade, assegurando-lhe o pagamento pelos serviços prestados até a data da declaração, além de indenização por investimentos autorizados.</p>
+
+        <hr class="divider">
+
+        <!-- CAPÍTULO 6 -->
+        <h2 class="chapter-title">CAPÍTULO 6<br><span style="font-size:1.5rem;">IMPROBIDADE ADMINISTRATIVA – LEI N.º 8.429/92 ATUALIZADA</span></h2>
+
+        <h3 class="section-title"><span class="num">1</span> Elemento subjetivo: o fim da culpa</h3>
+        <p class="paragraph">A Lei de Improbidade Administrativa sofreu profundas alterações pela Lei 14.230/2021. A mais impactante foi a redefinição do elemento subjetivo necessário à configuração dos atos de improbidade.</p>
+        <p class="paragraph">A partir da nova redação, o art. 1º, §1º, é categórico: <em>“Considera-se dolo a vontade livre e consciente de alcançar o resultado ilícito tipificado nos arts. 9º, 10 e 11 desta Lei, não bastando a voluntariedade do agente.”</em> Ainda, o §3º reforça: “O mero exercício da função ou desempenho de competências públicas, sem comprovação de ato doloso com fim ilícito, afasta a responsabilidade por improbidade administrativa.”</p>
+        <p class="paragraph">Portanto, <span class="highlight">não mais se admite a responsabilização por ato de improbidade na modalidade culposa</span> (negligência, imprudência ou imperícia). Todos os tipos (enriquecimento ilícito – art. 9º, prejuízo ao erário – art. 10, e violação a princípios – art. 11) passaram a exigir <strong>dolo específico</strong>, isto é, a intenção deliberada de praticar o ilícito e alcançar o resultado ilegal.</p>
+
+        <div class="example-box">
+            <div class="example-label">Análise de cenário</div>
+            <p>Antes da reforma, um agente público que, por desídia, causasse lesão ao patrimônio público poderia ser enquadrado no art. 10, na modalidade culposa. Atualmente, a ausência de dolo exclui a improbidade, restando, se for o caso, a responsabilização civil e administrativa por outras vias.</p>
+        </div>
+
+        <h3 class="section-title"><span class="num">2</span> Consequências práticas para o técnico judiciário</h3>
+        <p class="paragraph">O profissional que atua em processos de improbidade deve estar atento ao momento da prova do dolo. A petição inicial deve descrever, com precisão, a conduta dolosa e o especial fim de agir. A mera irregularidade formal, sem demonstração de má-fé, não sustenta ação de improbidade.</p>
+        <p class="paragraph"><strong>Jurisprudência relevante:</strong> O STJ já consolidou o entendimento de que a Lei 14.230/2021 possui aplicação imediata, inclusive para processos em curso, em virtude de sua natureza mais benéfica ao acusado, conforme o princípio da retroatividade da lei penal mais benigna, estendido ao direito sancionador (Tema 1.199 do STJ). Isso significa que processos por improbidade culposa iniciados antes da reforma podem ser extintos se não houver comprovação de dolo.</p>
+
+        <div class="callout tip">
+            <span class="callout-icon">📌</span>
+            <div class="callout-content"><strong>Dica de memorização:</strong> Improbidade = Dolo. Sem dolo, não há ímprobo.</div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- CAPÍTULO 7 -->
+        <h2 class="chapter-title">CAPÍTULO 7<br><span style="font-size:1.5rem;">CONTROLE DA ADMINISTRAÇÃO PÚBLICA</span></h2>
+
+        <h3 class="section-title"><span class="num">1</span> Controle interno e controle externo</h3>
+        <p class="paragraph">O controle da Administração Pública é classificado, quanto ao órgão que o exerce, em interno e externo.</p>
+        <ul class="custom-list">
+            <li><strong>Controle interno:</strong> é aquele exercido pela própria Administração sobre seus atos e agentes. Funda-se no princípio da <span class="highlight">autotutela</span>, que permite à Administração anular seus atos ilegais e revogar os inconvenientes ou inoportunos, sem necessidade de provocação judicial (Súmulas 346 e 473 do STF). Exemplos: revisão de atos pelo superior hierárquico, correição interna, auditorias dos órgãos de controle interno.</li>
+            <li><strong>Controle externo:</strong> é o exercido por órgãos ou Poderes estranhos à estrutura do órgão controlado. Inclui o controle judicial (anulação de atos ilegais pelo Poder Judiciário), o controle legislativo (sustação de atos do Executivo, aprovação de contas) e o controle pelos Tribunais de Contas (apreciação de legalidade e economicidade das contas).</li>
+        </ul>
+
+        <h3 class="section-title"><span class="num">2</span> A autotutela como expressão do controle interno</h3>
+        <p class="paragraph">Um exemplo clássico de controle interno é a <strong>revogação</strong> de um ato administrativo que, embora lícito, deixou de atender ao interesse público. A revogação é ato discricionário e opera efeitos <em>ex nunc</em> (da decisão para frente). A <strong>anulação</strong>, por sua vez, decorre de ilegalidade e opera efeitos <em>ex tunc</em>.</p>
+
+        <div class="example-box">
+            <div class="example-label">Questão de prova</div>
+            <p>A revogação de ato administrativo que não mais atende ao interesse público, realizada pela própria autoridade que o editou ou pelo superior hierárquico, configura hipótese de controle interno. Já a anulação determinada pelo Judiciário, mediante provocação, é controle externo.</p>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead><tr><th>Tipo de controle</th><th>Origem</th><th>Exemplos</th><th>Efeito</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Interno</strong></td><td>Autotutela, hierarquia</td><td>Revogação de ato, anulação de ofício, auditoria interna</td><td>Ex nunc (revogação); Ex tunc (anulação)</td></tr>
+                    <tr><td><strong>Externo</strong></td><td>Judiciário, Legislativo, TCU/TCE</td><td>Ação popular, ação civil pública, sustação de contrato, julgamento de contas</td><td>Diversos, conforme o caso</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider">
+
+        <!-- CONCLUSÃO -->
+        <h2 class="chapter-title" style="border-bottom-color:#8e6f3e;">CONCLUSÃO E ORIENTAÇÕES FINAIS</h2>
+        <p class="paragraph">Esta apostila percorreu temas fundamentais do Direito Administrativo e Constitucional, sempre com a profundidade exigida pelas bancas de alto nível (FCC, FGV, Cebraspe) e voltada para o cargo de Técnico Judiciário. Reforçamos a necessidade de compreender não apenas o texto legal, mas a lógica que o sustenta e as armadilhas recorrentes nas provas.</p>
+
+        <div class="final-summary">
+            <h3>📝 Resumo dos principais macetes</h3>
+            <ul style="margin-top:0.5rem;">
+                <li><strong>Estabilidade</strong> → 3 anos, cargo efetivo. <strong>Vitaliciedade</strong> → 2 anos, magistrados/MP.</li>
+                <li><strong>Vedação à equiparação remuneratória</strong> (art. 37, XIII) → ADPF 328.</li>
+                <li><strong>Administração Indireta:</strong> SEM = S/A com controle estatal; EP = 100% público.</li>
+                <li><strong>Não há hierarquia</strong> entre entes da Adm. Direta e Indireta, só supervisão.</li>
+                <li><strong>Regimento Interno de Tribunal</strong> é ato normativo, não ordinatório.</li>
+                <li><strong>Elementos do ato:</strong> CoFiFoMOb; discricionários só Mo (motivo) e Ob (objeto).</li>
+                <li><strong>Poder disciplinar</strong> → relação de sujeição especial; <strong>P. de polícia</strong> → consentimento (licenças); <strong>P. hierárquico</strong> → avocação.</li>
+                <li><strong>Lei 14.133/2021:</strong> pregão para bens e serviços comuns; concurso para trabalhos técnicos/artísticos.</li>
+                <li><strong>Nulidade contratual</strong> → irregularidade insanável + interesse público na anulação; efeitos ex tunc.</li>
+                <li><strong>Improbidade (pós-Lei 14.230/2021)</strong> → apenas dolo específico, nunca culpa.</li>
+                <li><strong>Revogação na autotutela</strong> → controle interno.</li>
+            </ul>
+        </div>
+
+        <p style="text-align:center; margin-top:2.5rem; font-weight:600; font-size:1.2rem; color:#2c5545;">Bons estudos e sucesso na sua preparação!</p>
+    </div>
+</body>
+</html>

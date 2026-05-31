@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Processual Penal – Apostila para Concursos</title>
+    <style>
+        :root {
+            --bg: #faf9f7;
+            --surface: #ffffff;
+            --text: #2c2c2c;
+            --text-light: #4a4a4a;
+            --accent: #1e4a6b;
+            --accent-light: #e3edf5;
+            --accent-soft: #c5d9e8;
+            --gold: #b68b40;
+            --gold-light: #fdf6ea;
+            --red: #b13e3e;
+            --red-light: #fce9e9;
+            --green: #3b6e4f;
+            --green-light: #eaf5ee;
+            --blue: #2c5f8a;
+            --blue-light: #ebf3fa;
+            --orange: #b0621a;
+            --orange-light: #fef4ea;
+            --purple: #5e3b6e;
+            --purple-light: #f5edf8;
+            --border: #e0dbd4;
+            --radius: 8px;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+            --font-body: 'Georgia', 'Times New Roman', 'Palatino Linotype', 'Book Antiqua', 'Palatino', serif;
+            --font-heading: 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+            --font-mono: 'Cascadia Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+            --max-width: 860px;
+            --line-height: 1.75;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eae6df;
+            background-image: linear-gradient(180deg, #f0ede7 0%, #e6e2da 100%);
+            font-family: var(--font-body);
+            color: var(--text);
+            line-height: var(--line-height);
+            font-size: 17px;
+            padding: 30px 20px 60px;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .book {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+            padding: 50px 55px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 700px) {
+            .book {
+                padding: 30px 24px 40px;
+                border-radius: 10px;
+            }
+            body {
+                padding: 14px 8px 40px;
+                font-size: 15.5px;
+            }
+        }
+
+        /* ---------- TITLES ---------- */
+        .main-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 2.4em;
+            line-height: 1.2;
+            color: #1a2e3b;
+            text-align: center;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.15em;
+        }
+        .subtitle {
+            font-family: var(--font-heading);
+            font-weight: 500;
+            font-size: 1.25em;
+            color: #4a5b66;
+            text-align: center;
+            margin-bottom: 0.5em;
+            letter-spacing: 0.3px;
+        }
+        .subtitle-small {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            font-size: 1em;
+            color: #5e6f7a;
+            text-align: center;
+            margin-bottom: 1.8em;
+            line-height: 1.5;
+        }
+
+        .chapter-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.7em;
+            color: #1e3b4c;
+            margin: 2em 0 0.7em 0;
+            padding-bottom: 0.35em;
+            border-bottom: 2px solid var(--accent-soft);
+            position: relative;
+        }
+        .chapter-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.3em;
+            color: #2c4b5e;
+            margin: 1.7em 0 0.6em 0;
+        }
+        .subsection-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #34576b;
+            margin: 1.4em 0 0.5em 0;
+        }
+
+        /* ---------- PARAGRAPHS ---------- */
+        p {
+            margin: 0.8em 0;
+            text-indent: 1.2em;
+            color: var(--text);
+        }
+        p.no-indent {
+            text-indent: 0;
+        }
+
+        /* ---------- HIGHLIGHTS ---------- */
+        .highlight {
+            background: #fff3b8;
+            padding: 0.1em 0.3em;
+            border-radius: 3px;
+            font-weight: 600;
+            color: #5c3d0e;
+        }
+        .highlight-blue {
+            background: #dceefb;
+            padding: 0.1em 0.3em;
+            border-radius: 3px;
+            font-weight: 600;
+            color: #1e4a6b;
+        }
+        .highlight-pink {
+            background: #fde2e8;
+            padding: 0.1em 0.3em;
+            border-radius: 3px;
+            font-weight: 600;
+            color: #7a2e3d;
+        }
+
+        /* ---------- CALLOUTS / BOXES ---------- */
+        .callout {
+            margin: 1.5em 0;
+            padding: 18px 22px;
+            border-radius: var(--radius);
+            position: relative;
+            box-shadow: var(--shadow);
+            border-left: 5px solid transparent;
+        }
+        .callout.tip {
+            background: #fefdf6;
+            border-left-color: #e0b84c;
+            border: 1px solid #f0e7cc;
+            border-left-width: 5px;
+        }
+        .callout.warning {
+            background: #fff7f5;
+            border-left-color: #d14b4b;
+            border: 1px solid #f7dcd6;
+            border-left-width: 5px;
+        }
+        .callout.info {
+            background: #f6fafe;
+            border-left-color: #5b8db5;
+            border: 1px solid #dae9f5;
+            border-left-width: 5px;
+        }
+        .callout.summary {
+            background: #f7faf6;
+            border-left-color: #5d8a5f;
+            border: 1px solid #d5e8d4;
+            border-left-width: 5px;
+        }
+        .callout .callout-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1em;
+            margin-bottom: 0.4em;
+            letter-spacing: 0.3px;
+        }
+        .callout.tip .callout-title {
+            color: #8b6914;
+        }
+        .callout.warning .callout-title {
+            color: #a63232;
+        }
+        .callout.info .callout-title {
+            color: #2b5b80;
+        }
+        .callout.summary .callout-title {
+            color: #3b5c3d;
+        }
+        .callout p {
+            text-indent: 0;
+            margin: 0.3em 0;
+            color: #3a3a3a;
+        }
+
+        /* ---------- CARDS ---------- */
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin: 1.5em 0;
+            box-shadow: var(--shadow);
+        }
+        .card-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.05em;
+            color: var(--accent);
+            margin-bottom: 0.6em;
+        }
+
+        /* ---------- TABLES ---------- */
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5em 0;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+            min-width: 500px;
+            background: #fff;
+        }
+        thead th {
+            background: #f5f3ef;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: #3a3a3a;
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 2px solid #d9d3ca;
+            font-size: 0.9em;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+        tbody td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #ece8e1;
+            color: var(--text-light);
+            vertical-align: top;
+        }
+        tbody tr:nth-child(even) {
+            background: #fdfdfc;
+        }
+        tbody tr:hover {
+            background: #f9f7f3;
+        }
+        .table-note {
+            font-size: 0.85em;
+            color: #777;
+            margin-top: 0.3em;
+            font-style: italic;
+        }
+
+        /* ---------- MNEMONIC ---------- */
+        .mnemonic {
+            background: #fef9ea;
+            border: 2px dashed #d4b56c;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin: 1.4em 0;
+            text-align: center;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.15em;
+            letter-spacing: 0.5px;
+            color: #5c4200;
+        }
+        .mnemonic span {
+            display: inline-block;
+            margin: 0 4px;
+            background: #ffe7a3;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        /* ---------- SVG DIAGRAM ---------- */
+        .diagram-box {
+            margin: 1.8em 0;
+            text-align: center;
+        }
+        .diagram-box svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ---------- QUOTES ---------- */
+        blockquote {
+            margin: 1.5em 0;
+            padding: 16px 22px;
+            background: #fbfcf9;
+            border-left: 4px solid #b0b8a8;
+            font-style: italic;
+            color: #4e5747;
+            border-radius: 0 6px 6px 0;
+            quotes: "“" "”" "‘" "’";
+        }
+        blockquote p {
+            text-indent: 0;
+        }
+
+        /* ---------- LISTS ---------- */
+        ul,
+        ol {
+            margin: 0.8em 0 0.8em 1.8em;
+            padding-left: 0.5em;
+        }
+        li {
+            margin: 0.45em 0;
+        }
+        .styled-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .styled-list li {
+            position: relative;
+            padding-left: 1.6em;
+            margin: 0.5em 0;
+        }
+        .styled-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* ---------- SEPARATOR ---------- */
+        .divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d5cfc6, transparent);
+            margin: 2em 0;
+        }
+        .divider-small {
+            border: 0;
+            height: 1px;
+            background: #e8e4dd;
+            margin: 1.2em 0;
+        }
+
+        /* ---------- PRESENTATION ---------- */
+        .apresentacao {
+            background: #f9f8f5;
+            border-radius: 10px;
+            padding: 22px 26px;
+            margin: 1.5em 0;
+            font-style: italic;
+            color: #4a453a;
+            border: 1px solid #e2ddd3;
+            line-height: 1.8;
+        }
+        .apresentacao p {
+            text-indent: 0;
+        }
+
+        /* ---------- RESPONSIVE TWEAKS ---------- */
+        @media (max-width: 600px) {
+            .main-title {
+                font-size: 1.9em;
+            }
+            .chapter-title {
+                font-size: 1.35em;
+            }
+            .book {
+                padding: 20px 15px 30px;
+            }
+        }
+
+        /* ---------- UTILS ---------- */
+        .text-center {
+            text-align: center;
+        }
+        .mb-0 {
+            margin-bottom: 0;
+        }
+        .mt-0 {
+            margin-top: 0;
+        }
+        .bold {
+            font-weight: 700;
+        }
+        .italic {
+            font-style: italic;
+        }
+        .small {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="book">
+
+        <!-- ============ TÍTULO PRINCIPAL ============ -->
+        <h1 class="main-title">DIREITO PROCESSUAL PENAL</h1>
+        <p class="subtitle">Apostila Completa para Concursos de Técnico Judiciário – Área Judiciária</p>
+        <p class="subtitle-small">Foco nas bancas FCC, FGV, Cebraspe e similares – Atualizada conforme o CPP e a jurisprudência dominante</p>
+
+        <hr class="divider">
+
+        <!-- ============ APRESENTAÇÃO ============ -->
+        <div class="apresentacao">
+            <p><strong>Caro aluno,</strong> esta apostila foi concebida para ser a sua principal ferramenta de estudo teórico em Direito Processual Penal, especialmente voltada para os certames de Técnico Judiciário – Área Judiciária de tribunais como o TJCE, que tradicionalmente exigem elevado conhecimento da literalidade do Código de Processo Penal e a compreensão aprofundada dos institutos. A metodologia adotada parte da experiência das melhores preparações de elite, transformando a fragmentação dos tradicionais flashcards em um texto contínuo, didático e repleto de exemplos práticos, macetes, esquemas comparativos e alertas de pegadinhas. Aqui você encontrará a explicação minuciosa do “o quê”, do “porquê”, do “como” e do “quando” de cada tema, sempre com o olhar clínico de quem conhece as armadilhas que as bancas costumam preparar.</p>
+            <p>O material foi estruturado para que você não apenas decore o texto legal, mas entenda a lógica do sistema processual penal, saiba aplicar os conceitos a casos concretos, diferencie institutos semelhantes e, acima de tudo, acerte as questões mais complexas. As remissões aos artigos do CPP são constantes, seguidas de explicações claras e, quando relevante, de transcrições literais dos dispositivos mais cobrados. Ao final de cada tópico, quadros-resumo e dicas estratégicas consolidam o conteúdo, preparando você para a revisão eficiente.</p>
+            <p>Sugerimos que o estudo seja feito com o <strong>Código de Processo Penal ao lado</strong>, para que você se habitue à leitura da lei seca – hábito indispensável para a prova. Bons estudos!</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 1 – INQUÉRITO POLICIAL ============ -->
+        <h2 class="chapter-title">CAPÍTULO 1 – INQUÉRITO POLICIAL</h2>
+
+        <h3 class="section-title">1.1. Conceito, finalidade e características</h3>
+        <p>O inquérito policial é o procedimento administrativo, pré-processual, de caráter inquisitivo, conduzido pela autoridade policial (delegado de polícia) com o objetivo de colher elementos de informação acerca da materialidade e da autoria de uma infração penal, a fim de subsidiar a formação da <span class="highlight">opinio delicti</span> do titular da ação penal. Trata-se de peça informativa, não havendo contraditório ou ampla defesa em sua fase de tramitação, justamente porque não se destina a impor sanção, mas a preparar eventual acusação.</p>
+        <p>Diferentemente do processo judicial, o inquérito é <span class="highlight-blue">dispensável</span> – se o Ministério Público ou o ofendido (na ação privada) já dispuser de elementos suficientes para a propositura da ação, pode oferecer a denúncia ou a queixa sem a necessidade de prévia investigação policial. Contudo, na prática forense e nas provas, o inquérito é a via mais comum para a reunião desses elementos.</p>
+
+        <h3 class="section-title">1.2. Instauração: notícia do crime e poderes da autoridade policial</h3>
+        <p>A instauração do inquérito tem início, em regra, com a <span class="highlight">notitia criminis</span> – a ciência da prática de um fato aparentemente delituoso. Essa notícia pode chegar à autoridade policial de diversas formas:</p>
+        <ul>
+            <li><strong>Comunicação de qualquer pessoa do povo (art. 5º, §3º, CPP):</strong> qualquer indivíduo que tenha conhecimento de uma infração penal pode comunicá-la à polícia. A banca FCC frequentemente explora essa possibilidade com a seguinte armadilha: afirmar que, diante da comunicação, a autoridade está obrigada a instaurar o inquérito. Isso não é verdade. A autoridade policial deve, antes, realizar um <span class="highlight">juízo de delibação</span>, verificando se há indícios mínimos da existência de crime. Se a narrativa for evidentemente atípica, fantasiosa ou impossível, o delegado não está obrigado a determinar a abertura do inquérito. Esse é o primeiro grande erro comum que você deve eliminar do seu raciocínio: a mera comunicação não gera instauração automática.</li>
+            <li><strong>Requerimento do ofendido ou de seu representante legal (art. 5º, §1º, CPP):</strong> nos crimes de ação penal pública incondicionada ou condicionada, a vítima pode requerer formalmente a instauração do inquérito. A lei exige que esse requerimento contenha, <span class="highlight">sempre que possível</span>, a individualização do indiciado. O termo “sempre que possível” é a chave: se o suspeito for desconhecido, o requerente deve apresentar os motivos da impossibilidade de individualizá-lo, o que não obsta a abertura da investigação. Logo, não é obrigatória a indicação precisa do autor.</li>
+            <li><strong>Representação da vítima (art. 5º, §4º, CPP):</strong> nos crimes de ação penal pública condicionada à representação (ex.: ameaça, crimes contra a dignidade sexual em regra, etc.), o inquérito não pode ser iniciado sem a representação do ofendido ou de quem tenha qualidade para representá-lo. Trata-se de <span class="highlight">condição de procedibilidade</span>, e a banca cobra a literalidade do dispositivo. Se uma questão trouxer um crime de ação pública condicionada e afirmar que o inquérito pode ser instaurado independentemente de representação, a assertiva estará incorreta, salvo se a lei admitir a representação suprida pelo Ministério Público (em casos excepcionais), mas essa não é a regra e não consta do CPP.</li>
+            <li><strong>Requisição do Ministério Público ou do juiz:</strong> nas ações penais públicas incondicionadas, o MP e o juiz podem requisitar a instauração do inquérito. Entretanto, nos crimes de ação penal privada, o CPP é categórico: a autoridade policial somente pode proceder a inquérito a requerimento do ofendido ou de quem tenha qualidade para representá-lo (art. 5º, §5º). Não há previsão de requisição pelo MP ou pelo Poder Judiciário nesses casos. Isso é clássico nas provas da FCC.</li>
+        </ul>
+
+        <div class="callout tip">
+            <div class="callout-title">📌 Dica de prova</div>
+            <p>A FCC adora inverter os legitimados para provocar a instauração do inquérito. Decore:</p>
+            <p><span class="highlight-blue">Crime de ação pública incondicionada</span> → instauração por portaria, requerimento, requisição, notícia anônima (com ressalvas), de ofício.</p>
+            <p><span class="highlight-blue">Crime de ação pública condicionada</span> → depende de representação; sem ela, inquérito não pode começar.</p>
+            <p><span class="highlight-blue">Crime de ação privada</span> → somente a requerimento do ofendido; MP e juiz não podem requisitar.</p>
+        </div>
+
+        <h3 class="section-title">1.3. Prazo e encerramento do inquérito</h3>
+        <p>Os prazos para conclusão do inquérito variam conforme a situação do indiciado (solto ou preso) e a natureza da infração, mas a regra geral está no art. 10 do CPP. Para o indiciado solto, o prazo é de <strong>30 dias</strong>; para o preso, <strong>10 dias</strong> (ambos prorrogáveis). O mais importante para sua prova é a compreensão de que esses prazos são <span class="highlight">máximos, não mínimos</span>. A autoridade policial pode encerrar o inquérito antes de esgotado o prazo legal se todas as diligências necessárias já tiverem sido realizadas. A FCC costuma formular assertivas insinuando que o inquérito só pode ser concluído quando o prazo se exaurir, o que está errado. O raciocínio inverso também é comum: afirmar que, exaurido o prazo, a autoridade é obrigada a concluir imediatamente, ignorando a possibilidade de prorrogação. Fique atento.</p>
+
+        <h3 class="section-title">1.4. Quadro-resumo: Inquérito Policial</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Regra</th>
+                        <th>Pegadinha FCC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Instauração automática após notícia</td>
+                        <td>Não; exige verificação de indícios mínimos (delibação)</td>
+                        <td>“Qualquer pessoa comunica crime → autoridade deve instaurar inquérito” – falso</td>
+                    </tr>
+                    <tr>
+                        <td>Requerimento de instauração (ação pública)</td>
+                        <td>Deve conter a individualização do indiciado sempre que possível (art. 5º, §1º)</td>
+                        <td>Trocar por “obrigatoriamente” torna a alternativa errada</td>
+                    </tr>
+                    <tr>
+                        <td>Crimes de ação privada</td>
+                        <td>Só a requerimento do ofendido; não cabe requisição do MP ou juiz (art. 5º, §5º)</td>
+                        <td>Afirmar que MP pode requisitar nesses crimes é incorreto</td>
+                    </tr>
+                    <tr>
+                        <td>Ação pública condicionada</td>
+                        <td>Inquérito não pode ser iniciado sem representação (art. 5º, §4º)</td>
+                        <td>A banca omite a necessidade de representação para testar o conhecimento da condição de procedibilidade</td>
+                    </tr>
+                    <tr>
+                        <td>Encerramento antes do prazo</td>
+                        <td>Possível se diligências concluídas (prazo máximo)</td>
+                        <td>A FCC diz que o inquérito deve aguardar o prazo legal – errado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 2 – AÇÃO PENAL: QUEIXA, RENÚNCIA, PERDÃO E INDIVISIBILIDADE ============ -->
+        <h2 class="chapter-title">CAPÍTULO 2 – AÇÃO PENAL: QUEIXA, RENÚNCIA, PERDÃO E INDIVISIBILIDADE</h2>
+
+        <h3 class="section-title">2.1. Classificação e princípios aplicáveis à ação penal privada</h3>
+        <p>Nas ações penais de iniciativa privada, o Estado transfere ao ofendido (ou seu representante legal) a titularidade da ação, por opção de política criminal. Tais ações são regidas por princípios próprios, como a <span class="highlight">oportunidade</span> (o ofendido exerce a ação se quiser) e a <span class="highlight">disponibilidade</span> (pode dela desistir após o início). O CPP disciplina minuciosamente institutos que são frequentemente cobrados: renúncia, perdão, indivisibilidade e aditamento da queixa pelo Ministério Público.</p>
+
+        <h3 class="section-title">2.2. A queixa e a intervenção do Ministério Público</h3>
+        <p>A peça inicial da ação penal privada é a <span class="highlight">queixa-crime</span>, oferecida pelo ofendido ou seu representante legal, com os mesmos requisitos formais da denúncia. Uma peculiaridade importante: o Ministério Público, embora não seja parte principal, atua como fiscal da lei (<em>custos legis</em>) e deve intervir em todos os termos do processo (art. 45 do CPP). Por isso, mesmo na ação penal privativa do ofendido, a queixa pode ser aditada pelo MP, que também poderá requerer diligências, oferecer alegações finais, interpor recursos, tudo em prol da correta aplicação da lei.</p>
+        <p>Esse aditamento, contudo, não transforma a ação em pública; o MP apenas supre eventuais omissões que possam comprometer a pretensão punitiva, sem se tornar titular da ação. A afirmativa “a queixa só pode ser aditada pelo querelante” é, portanto, falsa.</p>
+
+        <h3 class="section-title">2.3. Renúncia ao direito de queixa (art. 49, CPP)</h3>
+        <p>A renúncia é ato unilateral do ofendido, manifestado <span class="highlight">antes do oferecimento da queixa</span>, pelo qual ele abre mão do direito de processar criminalmente o autor do crime. É uma causa extintiva da punibilidade. O princípio da indivisibilidade da ação penal privada determina que a renúncia em relação a um dos autores do crime se estende obrigatoriamente a todos os demais. Assim, se o ofendido perdoa extrajudicialmente um dos três corréus antes de ingressar com a ação, todos ficam eximidos, não podendo o querelante prosseguir contra os outros.</p>
+        <p><strong>Exemplo prático:</strong> Maria, vítima de difamação praticada por João e Pedro, declara, em documento escrito, que renuncia ao direito de queixa contra João. Antes de ajuizar a queixa, essa renúncia beneficia automaticamente Pedro, impedindo o prosseguimento da ação contra qualquer dos dois.</p>
+
+        <h3 class="section-title">2.4. Perdão do querelante (art. 51, CPP)</h3>
+        <p>Diferentemente da renúncia, o perdão é concedido <span class="highlight">após o oferecimento da queixa</span>. É ato bilateral, pois o querelado pode aceitá-lo ou recusá-lo. A regra geral do art. 51 estabelece que o perdão concedido a um dos querelados aproveitará a todos, mas <span class="highlight-pink">não produzirá efeito em relação àquele que o recusar expressamente</span>. Portanto, a extensão não é obrigatória diante da recusa formal do coautor. O perdão aceito ou não recusado gera a extinção da punibilidade, ao passo que a recusa mantém o processo em relação ao recusante, mas os demais são beneficiados.</p>
+        <p><strong>Cenário hipotético:</strong> Após o ajuizamento da queixa, a vítima perdoa o querelado A. O querelado B, porém, manifesta expressamente que não aceita o perdão. Nesse caso, o processo prossegue apenas contra B; A e eventuais outros querelados que silenciaram são beneficiados. Esse detalhe da recusa expressa é uma constante em provas da FCC.</p>
+
+        <h3 class="section-title">2.5. Princípio da indivisibilidade na queixa (art. 48, CPP)</h3>
+        <p>A indivisibilidade opera no polo passivo da ação penal privada. O art. 48 determina que a queixa contra qualquer um dos autores do crime obrigará ao processo de todos. O Ministério Público, como fiscal da lei, velará pela observância dessa indivisibilidade. Isso significa que o querelante não pode escolher processar apenas alguns dos envolvidos; se o fizer, o MP intervém para que todos sejam incluídos. A inobservância desse princípio acarreta a renúncia tácita em relação aos não incluídos, com a consequente extinção da punibilidade para todos (por força da indivisibilidade da renúncia).</p>
+
+        <h3 class="section-title">2.6. Quadro comparativo: Renúncia vs. Perdão</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Renúncia (art. 49)</th>
+                        <th>Perdão (art. 51)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Momento</td>
+                        <td>Antes do oferecimento da queixa</td>
+                        <td>Após o oferecimento da queixa</td>
+                    </tr>
+                    <tr>
+                        <td>Natureza</td>
+                        <td>Ato unilateral do ofendido</td>
+                        <td>Ato bilateral (depende de aceitação; a recusa expressa impede o efeito em relação ao recusante)</td>
+                    </tr>
+                    <tr>
+                        <td>Efeito em relação aos coautores</td>
+                        <td>Estende-se obrigatoriamente a todos (indivisibilidade)</td>
+                        <td>Aproveita a todos, exceto ao que recusar expressamente</td>
+                    </tr>
+                    <tr>
+                        <td>Forma</td>
+                        <td>Pode ser expressa ou tácita (ex.: quando o querelante deixa de incluir um dos autores)</td>
+                        <td>Expresso, nos autos ou em documento</td>
+                    </tr>
+                    <tr>
+                        <td>Consequência</td>
+                        <td>Extinção da punibilidade de todos os querelados</td>
+                        <td>Extinção da punibilidade apenas para os que aceitarem ou não recusarem; o recusante prossegue no processo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="callout warning">
+            <div class="callout-title">⚠️ Pegadinha da banca</div>
+            <p>A FCC frequentemente tenta confundir os dois institutos, perguntando se a renúncia perdoa seletivamente algum autor, ou se o perdão se estende obrigatoriamente mesmo com recusa. Memorize: <strong>renúncia antes da queixa → todos atingidos; perdão depois da queixa → não atinge quem recusa expressamente.</strong></p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 3 – PRISÃO EM FLAGRANTE ============ -->
+        <h2 class="chapter-title">CAPÍTULO 3 – PRISÃO EM FLAGRANTE</h2>
+
+        <h3 class="section-title">3.1. Conceito, natureza jurídica e espécies</h3>
+        <p>A prisão em flagrante é medida pré-cautelar ou administrativa (dependendo da corrente), cuja finalidade é cessar a prática delituosa, colocar o agente à disposição da Justiça e permitir a colheita de elementos iniciais de convicção. Embora executada por particulares ou autoridades policiais, somente se completa com a lavratura do auto e sua comunicação ao juiz, que, na audiência de custódia, decidirá sobre a legalidade e a necessidade da manutenção da prisão.</p>
+        <p>O art. 302 do CPP elenca as quatro modalidades de flagrante, que devem estar na ponta da língua. A banca FCC é rigorosa na cobrança literal dos verbos nucleares de cada inciso. Para ajudá-lo, construímos o mnemônico <span class="highlight-blue">PEGA</span>, que resume as hipóteses:</p>
+
+        <div class="mnemonic">
+            <span>P</span> – está cometendo a infração (flagrante próprio, real ou verdadeiro – inciso I)<br>
+            <span>E</span> – acaba de cometê-la (flagrante próprio – inciso II)<br>
+            <span>G</span> – é perseguido logo após o fato, em situação que faça presumir ser o autor (flagrante impróprio, irreal ou quase-flagrante – inciso III)<br>
+            <span>A</span> – é encontrado, logo depois, com instrumentos, armas, objetos ou papéis que façam presumir ser ele o autor (flagrante presumido, ficto ou assimilado – inciso IV)
+        </div>
+        <p>A literalidade é crucial. Não invente sinônimos: “está cometendo”, “acaba de cometer”, “é perseguido”, “é encontrado”. Se a questão trocar “logo depois” por “dias depois”, estará incorreta. Da mesma forma, o flagrante presumido exige uma relação de imediatidade entre o fato e o encontro do agente com os objetos que o incriminam.</p>
+
+        <h3 class="section-title">3.2. Flagrante nos crimes permanentes</h3>
+        <p>Nos crimes permanentes (ex.: sequestro, cárcere privado, tráfico de drogas na forma de guardar), a consumação se protrai no tempo, e o agente está em flagrante delito enquanto não cessar a permanência (art. 303, CPP). Isso significa que, mesmo que a ação criminosa tenha se iniciado horas ou dias antes, a polícia pode efetuar a prisão em flagrante a qualquer momento, desde que a situação de ilicitude ainda esteja ocorrendo. Cessada a permanência (por libertação da vítima, abandono da droga, etc.), cessa o flagrante.</p>
+        <p>Tal regra possui grande repercussão em questões de concurso, que adoram afirmar: “Nos crimes permanentes, o agente continua em flagrante mesmo após cessada a permanência” – falso. O estado de flagrância está diretamente vinculado à manutenção da situação criminosa.</p>
+
+        <h3 class="section-title">3.3. Lavratura do auto de prisão em flagrante e a questão das testemunhas</h3>
+        <p>O auto de prisão em flagrante (APF) é o documento formal que relata a prisão, lavrado pela autoridade policial. O art. 304 do CPP estabelece as formalidades, e dois aspectos são extremamente cobrados:</p>
+        <p><strong>a) Falta de testemunhas presenciais do crime</strong><br>
+            Se não houver testemunhas que tenham presenciado a infração, isso não impede a lavratura do APF. Nesse caso, assinam o auto o condutor e, ao menos, duas testemunhas que tenham presenciado a apresentação do preso à autoridade (art. 304, §2º). Ou seja, a ausência de testemunhas do fato não gera nulidade, bastando que pessoas idôneas assistam ao ato de entrega do conduzido à polícia.</p>
+        <p><strong>b) Recusa do acusado em assinar o auto</strong><br>
+            Se o preso se recusar a assinar, não souber ou não puder fazê-lo, o auto será assinado por duas testemunhas que tenham ouvido sua leitura na presença dele (art. 304, §3º). A recusa não invalida o ato; o importante é que a leitura seja feita e que terceiros certifiquem que o conteúdo foi dado a conhecer ao autuado.</p>
+
+        <div class="callout tip">
+            <div class="callout-title">📌 Dica de memorização</div>
+            <p>Lembre-se: <strong>testemunhas da infração ausentes</strong> → servem as testemunhas de apresentação (condutor + duas). <strong>Recusa do preso em assinar</strong> → duas testemunhas que ouviram a leitura na presença dele. Essas regras salvam a legalidade do auto, e a FCC gosta de inverter os personagens.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 4 – AUDIÊNCIA DE CUSTÓDIA ============ -->
+        <h2 class="chapter-title">CAPÍTULO 4 – AUDIÊNCIA DE CUSTÓDIA E DECISÕES DO ART. 310, CPP</h2>
+        <p>Após a lavratura do auto de prisão em flagrante, o preso deve ser conduzido, em até 24 horas, à presença do juiz competente para a realização da audiência de custódia (introduzida no CPP pela Lei 13.964/2019, com respaldo constitucional). Nessa audiência, o juiz ouvirá o preso sobre as circunstâncias da prisão, examinará a legalidade do flagrante e a necessidade de sua manutenção.</p>
+        <p>O art. 310 do CPP delimita <strong>três</strong> possíveis decisões fundamentadas, e não apenas duas, como muitos candidatos imaginam:</p>
+        <ol>
+            <li><strong>Relaxar a prisão ilegal</strong> (inciso I) – se constatar que a prisão em flagrante foi efetuada com violação a direitos ou formalidades legais, o juiz a relaxa, colocando o indivíduo em liberdade imediatamente.</li>
+            <li><strong>Converter a prisão em flagrante em preventiva</strong> (inciso II) – quando a prisão é legal, mas estão presentes os requisitos do art. 312 (garantia da ordem pública, conveniência da instrução criminal, etc.) e se mostrarem inadequadas ou insuficientes as medidas cautelares diversas da prisão.</li>
+            <li><strong>Conceder liberdade provisória, com ou sem fiança</strong> (inciso III) – se a prisão for legal, porém desnecessária a preventiva, o juiz concederá a liberdade provisória, eventualmente aplicando medidas cautelares (arts. 319 e 320) e/ou fiança.</li>
+        </ol>
+        <p>É comum a FCC apresentar alternativas que restringem as opções do juiz a apenas duas (ex.: “o juiz decide exclusivamente entre relaxar a prisão ou decretar a preventiva”). Isso é falso, porque há a terceira via da liberdade provisória. O termo “exclusivamente” deve acender seu alerta.</p>
+
+        <!-- Diagrama SVG das três decisões -->
+        <div class="diagram-box">
+            <svg width="500" height="200" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxograma: três decisões do art. 310 do CPP">
+                <defs>
+                    <filter id="shadow" x="-3%" y="-3%" width="106%" height="106%">
+                        <feDropShadow dx="1" dy="1" stdDeviation="1.5" flood-color="#00000020"/>
+                    </filter>
+                </defs>
+                <rect x="180" y="10" width="140" height="40" rx="8" fill="#1e4a6b" filter="url(#shadow)"/>
+                <text x="250" y="35" text-anchor="middle" fill="#fff" font-family="Segoe UI, sans-serif" font-size="14" font-weight="bold">Audiência de Custódia</text>
+
+                <rect x="40" y="100" width="120" height="55" rx="8" fill="#fce9e9" stroke="#b13e3e" stroke-width="2" filter="url(#shadow)"/>
+                <text x="100" y="125" text-anchor="middle" fill="#b13e3e" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold">Relaxar</text>
+                <text x="100" y="143" text-anchor="middle" fill="#b13e3e" font-family="Segoe UI, sans-serif" font-size="11">(prisão ilegal)</text>
+
+                <rect x="190" y="100" width="120" height="55" rx="8" fill="#fef4ea" stroke="#b0621a" stroke-width="2" filter="url(#shadow)"/>
+                <text x="250" y="125" text-anchor="middle" fill="#b0621a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold">Converter em</text>
+                <text x="250" y="143" text-anchor="middle" fill="#b0621a" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold">Preventiva</text>
+
+                <rect x="340" y="100" width="130" height="55" rx="8" fill="#eaf5ee" stroke="#3b6e4f" stroke-width="2" filter="url(#shadow)"/>
+                <text x="405" y="125" text-anchor="middle" fill="#3b6e4f" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold">Liberdade</text>
+                <text x="405" y="143" text-anchor="middle" fill="#3b6e4f" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold">Provisória</text>
+
+                <line x1="250" y1="50" x2="100" y2="95" stroke="#777" stroke-width="1.5" marker-end="url(#arrow)"/>
+                <line x1="250" y1="50" x2="250" y2="95" stroke="#777" stroke-width="1.5" marker-end="url(#arrow)"/>
+                <line x1="250" y1="50" x2="405" y2="95" stroke="#777" stroke-width="1.5" marker-end="url(#arrow)"/>
+                <defs>
+                    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M0,0 L10,5 L0,10 z" fill="#777"/>
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 5 – PRISÃO PREVENTIVA ============ -->
+        <h2 class="chapter-title">CAPÍTULO 5 – PRISÃO PREVENTIVA</h2>
+
+        <h3 class="section-title">5.1. Natureza e requisitos</h3>
+        <p>A prisão preventiva é a principal medida cautelar pessoal de natureza processual, decretada pelo juiz em qualquer fase do inquérito ou do processo, desde que preenchidos os requisitos do art. 312 (<em>fumus commissi delicti</em> + <em>periculum libertatis</em>) e observados os pressupostos do art. 313 (condições de admissibilidade). Não se confunde com cumprimento antecipado de pena, sendo vedada sua utilização como tal.</p>
+
+        <h3 class="section-title">5.2. Casos em que NÃO se admite a decretação da prisão preventiva</h3>
+        <p>A doutrina e a jurisprudência, com base no CPP, consolidaram um rol de situações de inadmissibilidade, que você deve dominar:</p>
+        <ul>
+            <li><strong>Crimes culposos</strong> (não há dolo, não se justifica o risco à ordem pública, salvo situações absolutamente excepcionais envolvendo reiteração – mas a regra é a inadmissibilidade).</li>
+            <li><strong>Como antecipação de cumprimento de pena</strong> (art. 313, §2º, expressamente veda).</li>
+            <li><strong>De ofício pelo juiz na fase de investigação</strong> (art. 311: a prisão preventiva somente pode ser decretada mediante representação da autoridade policial, requerimento do MP, do querelante ou do assistente, jamais de ofício pelo juiz na fase pré-processual; na fase processual, admite-se de ofício).</li>
+            <li><strong>Quando o juiz verificar excludentes de ilicitude</strong> (art. 314: se houver prova da existência de causa excludente da ilicitude – legítima defesa, estado de necessidade, etc. –, o juiz não decretará a preventiva, salvo se persistirem dúvidas).</li>
+            <li><strong>Em crimes dolosos cuja pena máxima em abstrato seja igual ou inferior a 4 anos</strong>, ressalvadas as exceções legais (art. 313, I: se o réu for reincidente em crime doloso, ou se o crime envolver violência doméstica e familiar contra a mulher, criança, adolescente, idoso, enfermo ou pessoa com deficiência, para garantir a execução de medidas protetivas, permite-se a preventiva). Essa exceção é batida em provas.</li>
+        </ul>
+
+        <h3 class="section-title">5.3. Prisão preventiva para identificação duvidosa</h3>
+        <p>O art. 313, §1º, traz uma hipótese específica: é admitida a decretação da prisão preventiva quando houver dúvida sobre a identidade civil da pessoa ou quando ela não fornecer elementos suficientes para esclarecê-la. Contudo, o parágrafo é claro: <span class="highlight">identificado o preso, ele deve ser posto imediatamente em liberdade</span>, a menos que outra hipótese legal recomende a manutenção da medida. Trata-se de uma prisão de caráter instrumental, com prazo de eficácia limitado ao esclarecimento da identidade. Se, após a identificação, ainda houver fundamento diverso (como risco de fuga), a preventiva pode continuar, mas por outro fundamento.</p>
+
+        <div class="callout warning">
+            <div class="callout-title">⚠️ Atenção para a literalidade</div>
+            <p>A FCC gosta de afirmar que a prisão preventiva é cabível “quando houver dúvida sobre a identidade civil” e <strong>não mencionar a necessidade de liberação imediata após a identificação</strong>. A omissão do desfecho torna a assertiva incompleta, potencialmente incorreta.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 6 – LIBERDADE PROVISÓRIA ============ -->
+        <h2 class="chapter-title">CAPÍTULO 6 – LIBERDADE PROVISÓRIA E DISTINÇÕES CONCEITUAIS</h2>
+
+        <h3 class="section-title">6.1. Conceito e finalidade</h3>
+        <p>A liberdade provisória é o instituto que permite ao acusado aguardar o desenrolar do processo em liberdade, mediante o cumprimento de certas condições (fiança, medidas cautelares), quando a prisão for legal, porém desnecessária. Está prevista no art. 310, III, do CPP e encontra assento constitucional no art. 5º, LXVI: “ninguém será levado à prisão ou nela mantido, quando a lei admitir a liberdade provisória, com ou sem fiança”. Sua finalidade precípua é evitar que prisões desnecessárias violem o estado de inocência e o direito à liberdade.</p>
+
+        <h3 class="section-title">6.2. Distinção entre liberdade provisória, relaxamento e revogação</h3>
+        <p>Para não cair em ciladas conceituais, é imprescindível distinguir os três institutos:</p>
+        <ul>
+            <li><strong>Relaxamento da prisão</strong> → combate a prisão ilegal. Se a prisão em flagrante desrespeitou a lei, o juiz a relaxa na audiência de custódia (art. 310, I). Não se condiciona a fiança ou medida cautelar; o preso é solto imediatamente porque a constrição jamais deveria ter ocorrido.</li>
+            <li><strong>Liberdade provisória</strong> → a prisão é legal, mas não há necessidade de mantê-la. O juiz concede a liberdade, podendo (ou não) impor fiança e medidas cautelares (art. 319). Aqui, o vínculo com o processo permanece.</li>
+            <li><strong>Revogação da prisão preventiva</strong> → ocorre quando a preventiva, que era legal e necessária, deixa de ser necessária (cessam os motivos que a justificavam). O juiz revoga a medida, nos termos do art. 316, CPP. A revogação não se confunde com o relaxamento: este fulmina a ilegalidade originária; aquela reconhece que uma prisão válida perdeu sua razão de ser.</li>
+        </ul>
+
+        <div class="callout info">
+            <div class="callout-title">📊 Quadro comparativo</div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Instituto</th>
+                            <th>Pressuposto</th>
+                            <th>Natureza</th>
+                            <th>Exemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Relaxamento</td>
+                            <td>Prisão ilegal</td>
+                            <td>Reconhecimento de nulidade</td>
+                            <td>Flagrante sem testemunhas e sem justificativa legal</td>
+                        </tr>
+                        <tr>
+                            <td>Liberdade provisória</td>
+                            <td>Prisão legal, mas desnecessária</td>
+                            <td>Substituto à prisão com medidas</td>
+                            <td>Flagrante de furto simples, réu primário, pequeno valor</td>
+                        </tr>
+                        <tr>
+                            <td>Revogação da preventiva</td>
+                            <td>Prisão legal e inicialmente necessária que se tornou desnecessária</td>
+                            <td>Cessação da medida cautelar</td>
+                            <td>Réu que cumpriu todas as medidas cautelares e desapareceu o risco de fuga</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 7 – COMPETÊNCIA ============ -->
+        <h2 class="chapter-title">CAPÍTULO 7 – COMPETÊNCIA</h2>
+
+        <h3 class="section-title">7.1. Regra geral: lugar da infração (art. 70, CPP) e regras subsidiárias</h3>
+        <p>A competência penal é, em primeiro lugar, determinada pelo lugar onde se consumou a infração (<em>forum delicti commissi</em>). Se o crime é tentado, o local do último ato de execução. Entretanto, quando o lugar da infração não for conhecido (ex.: não se sabe onde o crime ocorreu, ou o corpo foi encontrado em local incerto), o art. 72 do CPP manda que a competência se regule pelo domicílio ou residência do réu (<em>forum domicilii</em>). Essa é uma regra subsidiária importantíssima, pois a FCC frequentemente a cobra em questões de competência territorial.</p>
+
+        <h3 class="section-title">7.2. Ação penal privada: foro de eleição (art. 73, CPP)</h3>
+        <p>Nas ações penais exclusivamente privadas, o querelante tem a prerrogativa de optar pelo foro do domicílio ou residência do réu, mesmo quando conhecido o lugar da infração. O art. 73 é expresso: “poderá preferir o foro de domicílio ou residência do réu, ainda quando conhecido o lugar da infração”. É o chamado <span class="highlight">foro de eleição</span>, que se sobrepõe ao foro geral. Essa opção não se estende à ação penal pública, e a FCC adora misturar os regimes para testar o candidato.</p>
+
+        <h3 class="section-title">7.3. Conexão e continência – regras especiais</h3>
+        <p><strong>a) Conexão entre crime comum e crime militar</strong><br>
+            Nos termos do art. 79, I, do CPP, a conexão entre a jurisdição comum e a militar importa separação obrigatória dos processos. Ou seja, mesmo que haja vínculo entre os delitos, cada um será processado perante a sua justiça competente. A separação é impositiva, e não facultativa.</p>
+        <p><strong>b) Conexão com competência do Tribunal do Júri</strong><br>
+            A competência do Júri é especial e prevalece sobre a dos órgãos comuns da jurisdição quando há conexão (art. 78, I, CPP). Se um crime doloso contra a vida (competência do Júri) estiver conectado a outro crime de competência do juiz singular comum, ambos serão julgados pelo Tribunal do Júri. Exemplo clássico: homicídio qualificado e ocultação de cadáver praticados pelo mesmo agente, em contexto de conexão. Embora a ocultação não seja dolosa contra a vida, será atraída para o Júri pela força atrativa da competência constitucional.</p>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 8 – PROCEDIMENTOS ============ -->
+        <h2 class="chapter-title">CAPÍTULO 8 – PROCEDIMENTOS: DIFERENÇAS ENTRE O RITO DO JÚRI E O SUMÁRIO</h2>
+        <p>O CPP estabelece prazos diferenciados para a realização da audiência de instrução e julgamento, conforme o rito aplicável ao caso. É essencial conhecer a distinção entre o procedimento dos crimes dolosos contra a vida (rito do Júri, primeira fase) e o procedimento sumário.</p>
+        <ul>
+            <li><strong>Procedimento do Júri (primeira fase):</strong> após o recebimento da denúncia e a citação do réu, a audiência de instrução deverá ser realizada no prazo máximo de <span class="highlight">10 dias</span>, conforme art. 410 do CPP. Esse prazo reduzido visa à rápida formação da culpa para eventual submissão ao Conselho de Sentença.</li>
+            <li><strong>Procedimento sumário:</strong> aplicável a crimes cuja pena máxima não exceda 4 anos (art. 394, §1º, II, e art. 531). Aqui, a audiência de instrução e julgamento deve ser realizada no prazo de <span class="highlight">30 dias</span> a contar do recebimento da denúncia.</li>
+        </ul>
+        <p>Essa diferença de prazos (10 x 30 dias) é a principal característica cobrada pela FCC. Questões que tratam da primeira fase do Júri tentam confundir o candidato com o prazo do sumário, e vice-versa.</p>
+
+        <h3 class="section-title">8.1. Desaforamento no Tribunal do Júri</h3>
+        <p>O art. 427 do CPP prevê o desaforamento do julgamento para outra comarca quando o interesse da ordem pública o reclamar ou houver dúvida sobre a imparcialidade do júri ou a segurança pessoal do acusado. Trata-se de medida excepcional, requerida pelo MP, assistente de acusação, querelante ou réu, ou determinada de ofício pelo tribunal competente. A FCC explora a literalidade dos fundamentos: “interesse da ordem pública” e “dúvida sobre a imparcialidade ou segurança do acusado”.</p>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 9 – PROVAS ============ -->
+        <h2 class="chapter-title">CAPÍTULO 9 – PROVAS</h2>
+
+        <h3 class="section-title">9.1. Prova testemunhal</h3>
+        <p>A colheita de depoimentos testemunhais é regulada por regras que garantem a fidedignidade da narrativa e a participação das partes. Alguns dispositivos merecem atenção redobrada:</p>
+        <ul>
+            <li><strong>Art. 215, CPP:</strong> na redação do depoimento, o juiz deverá cingir-se, tanto quanto possível, às expressões usadas pelas testemunhas, reproduzindo fielmente as suas frases. Isso não significa transcrição literal absoluta, mas a lei exige a maior aproximação possível da linguagem do depoente. É comum a banca afirmar que o juiz deve “resumir” ou “traduzir” o depoimento – errado.</li>
+            <li><strong>Art. 204, parágrafo único, CPP:</strong> a testemunha deve prestar depoimento oralmente, não lhe sendo permitido trazê-lo por escrito. Contudo, é lícita uma breve consulta a apontamentos, para auxiliar a memória sobre datas, valores, nomes etc. O que se veda é a leitura de um depoimento pré-redigido. Questões que falam em “vedação total a apontamentos” estão incorretas.</li>
+            <li><strong>Art. 220, CPP:</strong> pessoas impossibilitadas, por enfermidade ou velhice, de comparecer ao fórum devem ser inquiridas onde estiverem, garantindo-se a produção da prova sem deslocamento penoso. Não há dispensa do depoimento; a testemunha será ouvida no hospital, residência, etc., com a presença das partes.</li>
+        </ul>
+
+        <h3 class="section-title">9.2. Cadeia de custódia da prova</h3>
+        <p>A Lei 13.964/2019 (Pacote Anticrime) introduziu os arts. 158-A a 158-F, sistematizando a cadeia de custódia da prova. O objetivo é assegurar a idoneidade dos vestígios desde a coleta até o descarte, evitando contaminações ou adulterações que comprometam o valor probatório.</p>
+
+        <h4 class="subsection-title">9.2.1. Responsabilidade pela preservação</h4>
+        <p>O art. 158-A, §2º, estabelece que o agente público que reconhecer um elemento como de potencial interesse para a produção da prova pericial fica responsável por sua preservação. É uma responsabilidade individual, que recai sobre o policial, perito ou qualquer servidor que identifique o vestígio. Essa pessoa deverá adotar as medidas necessárias para evitar a perda ou deterioração.</p>
+
+        <h4 class="subsection-title">9.2.2. Coleta dos vestígios</h4>
+        <p>O art. 158-C dispõe que a coleta de vestígios deve ser realizada <span class="highlight">preferencialmente</span> por perito oficial. O termo “preferencialmente” indica que a atuação do perito é a regra ideal, mas, na impossibilidade, outros agentes podem fazê-lo, desde que habilitados e observados os protocolos. A assertiva “a coleta deve ser feita obrigatoriamente por perito oficial” é falsa, pois a lei não impõe exclusividade absoluta.</p>
+
+        <h4 class="subsection-title">9.2.3. Descarte de vestígios</h4>
+        <p>O descarte é o procedimento final da cadeia de custódia (art. 158-B, X) e consiste na liberação do vestígio, respeitada a legislação vigente e, quando pertinente, mediante autorização judicial. Nem sempre é necessária autorização judicial; a lei a exige apenas nos casos em que o vestígio ainda seja relevante para o processo ou haja risco de prejuízo à defesa. É uma hipótese que varia conforme o caso concreto.</p>
+
+        <h3 class="section-title">9.3. Restituição de coisas apreendidas</h3>
+        <p>As coisas apreendidas no curso da investigação ou do processo (instrumentos do crime, objetos, valores) podem ser reclamadas por quem demonstre ser o legítimo proprietário ou possuidor, desde que não interessem mais à persecução penal. O CPP estabelece regras claras:</p>
+        <ul>
+            <li><strong>Art. 118:</strong> antes de transitar em julgado a sentença final, as coisas não podem ser restituídas enquanto interessarem ao processo. Se ainda puderem servir como prova, a restituição é vedada.</li>
+            <li><strong>Art. 120, §3º:</strong> sobre qualquer pedido de restituição, será <span class="highlight">sempre</span> ouvido o Ministério Público. A oitiva é obrigatória, e a FCC gosta de insinuar que é facultativa. O “sempre” do artigo deve ser lembrado.</li>
+            <li><strong>Art. 120, §4º:</strong> se houver dúvida sobre quem é o verdadeiro dono, o juiz remeterá as partes para o juízo cível, ordenando o depósito das coisas em mãos de depositário idôneo. O juízo criminal não resolve questões de alta indagação sobre propriedade.</li>
+        </ul>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 10 – SENTENÇA PENAL ============ -->
+        <h2 class="chapter-title">CAPÍTULO 10 – SENTENÇA PENAL</h2>
+
+        <h3 class="section-title">10.1. Requisitos formais e a “exposição sucinta”</h3>
+        <p>O art. 381 do CPP enumera os elementos essenciais da sentença. Entre eles, a alínea c exige a “<span class="highlight">exposição sucinta</span> da acusação e da defesa”. A FCC tem predileção por trocar “sucinta” por “detalhada”, e o candidato desatento marca como correta. A sentença não precisa detalhar exaustivamente os argumentos das partes, basta um resumo claro e objetivo. Decore: exposição sucinta, nunca detalhada.</p>
+
+        <h3 class="section-title">10.2. Emendatio libelli (art. 383, CPP)</h3>
+        <p>O juiz pode, na sentença, atribuir ao fato narrado na denúncia ou queixa definição jurídica diversa, ainda que isso resulte em pena mais grave. Essa é a chamada <em>emendatio libelli</em>, que não implica alteração dos fatos, mas apenas a correta adequação típica. O acusado se defendeu dos fatos, não da capitulação legal. Assim, se a denúncia descreve uma conduta de subtração mediante violência e o juiz entende que, na realidade, os fatos configuram roubo, e não furto, pode condenar por roubo, mesmo com pena mais alta. A FCC explora essa possibilidade, afirmando que a nova definição mais grave viola a correlação ou a imparcialidade – o que é incorreto.</p>
+
+        <h3 class="section-title">10.3. Independência judicial e manifestação do Ministério Público</h3>
+        <p>Nos crimes de ação penal pública, o juiz não está vinculado ao pedido de absolvição formulado pelo Ministério Público em alegações finais. Com fulcro no princípio do livre convencimento motivado (ou persuasão racional), se houver prova suficiente de autoria e materialidade, o juiz pode proferir sentença condenatória, mesmo contra a manifestação do <em>parquet</em>. Isso é consequência da indisponibilidade da ação penal pública. A FCC costuma indagar se o juiz pode condenar se o MP pediu absolvição; a resposta é sim.</p>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 11 – NULIDADES ============ -->
+        <h2 class="chapter-title">CAPÍTULO 11 – NULIDADES</h2>
+
+        <h3 class="section-title">11.1. Falta do recurso de ofício</h3>
+        <p>O art. 564, III, alínea <em>n</em>, do CPP, estabelece que haverá nulidade quando faltar o recurso de ofício nos casos em que a lei o tenha estabelecido. São hipóteses raras no sistema atual, mas ainda previstas (ex.: decisão que conceder a reabilitação – art. 746). Essa nulidade é absoluta, e o tribunal deve suprir a omissão, podendo anular o processo se a falha causar prejuízo.</p>
+
+        <h3 class="section-title">11.2. Incompetência do juízo e seus efeitos</h3>
+        <p>Se o juízo se declarar incompetente, os efeitos dessa declaração são limitados: a incompetência anula somente os atos decisórios (sentenças e decisões interlocutórias), nos termos do art. 567 do CPP. Os despachos de mero expediente, atos ordinatórios e instrutórios mantêm-se válidos, e o processo é remetido ao juiz competente. A FCC já questionou se a incompetência anula também os despachos – a resposta é negativa.</p>
+
+        <h3 class="section-title">11.3. Nulidade de citação e seu saneamento</h3>
+        <p>A citação é ato essencial para a validade do processo. Contudo, se houver falta ou nulidade de citação, o art. 570 do CPP dispõe que a irregularidade estará sanada se o acusado comparecer em juízo antes de o ato consumar-se, ainda que declare que o faz para o único fim de arguir a nulidade. Comparecendo, o juiz pode, entretanto, suspender ou adiar o ato se a falha puder prejudicar direito da parte. Ou seja, o comparecimento voluntário supre o vício, mas o magistrado tem o poder-dever de garantir o contraditório efetivo, postergando o ato se necessário.</p>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 12 – RECURSOS ============ -->
+        <h2 class="chapter-title">CAPÍTULO 12 – RECURSOS</h2>
+
+        <h3 class="section-title">12.1. Recurso em sentido estrito (RESE)</h3>
+        <p>O RESE é recurso de fundamentação vinculada, cabível apenas nas hipóteses taxativas do art. 581 do CPP. Duas hipóteses são especialmente cobradas:</p>
+        <ul>
+            <li><strong>Inciso II</strong> – decisão que concluir pela incompetência do juízo: a declaração de incompetência desafia RESE. Porém, a decisão que conclui pela competência não está no rol; logo, não cabe RESE, podendo a questão ser impugnada apenas por habeas corpus (se houver coação ilegal) ou mandado de segurança.</li>
+            <li><strong>Inciso XV</strong> – decisão que denegar a apelação ou a julgar deserta: se o juiz de primeiro grau não recebe a apelação ou a considera deserta, o recurso cabível é o RESE, para que o tribunal reaprecie o juízo de admissibilidade.</li>
+        </ul>
+
+        <h3 class="section-title">12.2. Apelação e a subsidiariedade</h3>
+        <p>A apelação é o recurso residual contra as decisões definitivas ou com força de definitivas (art. 593). O §4º do mesmo artigo é categórico: quando cabível a apelação, não poderá ser usado o recurso em sentido estrito, ainda que somente de parte da decisão se recorra. Isso significa que, se a sentença condenatória é passível de apelação, a parte não pode “fatiar” o recurso, utilizando RESE para um capítulo e apelação para outro. A regra é de exclusividade: a apelação absorve todo o conteúdo impugnável da decisão.</p>
+
+        <h3 class="section-title">12.3. Efeito extensivo no concurso de agentes</h3>
+        <p>O art. 580 do CPP consagra o princípio do efeito extensivo dos recursos: no caso de concurso de agentes, a decisão do recurso interposto por um dos réus aproveitará aos outros, desde que fundada em motivos que não sejam de caráter exclusivamente pessoal. Exemplo: se um réu recorre alegando que o fato é atípico e o tribunal acolhe, todos os corréus são beneficiados. Mas se o recorrente obtém redução de pena por ter confessado, esse benefício é personalíssimo e não se comunica aos demais. A FCC explora essa distinção com frequência.</p>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 13 – HABEAS CORPUS ============ -->
+        <h2 class="chapter-title">CAPÍTULO 13 – HABEAS CORPUS</h2>
+
+        <h3 class="section-title">13.1. Hipóteses de cabimento e coação ilegal</h3>
+        <p>O habeas corpus é a garantia constitucional por excelência para proteger a liberdade de locomoção. O art. 648 do CPP enumera hipóteses em que a coação se considera ilegal. Entre elas, o inciso II é recorrente: quando quem ordenar a coação não tiver competência para fazê-lo. A decisão emanada de autoridade incompetente vicia a prisão, autorizando o habeas corpus.</p>
+
+        <h3 class="section-title">13.2. Legitimidade ativa ampla</h3>
+        <p>O art. 654 do CPP confere legitimidade para impetrar habeas corpus a qualquer pessoa, nacional ou estrangeira, independentemente de capacidade postulatória, em seu favor ou de outrem. O Ministério Público também pode impetrar. É célebre a armadilha de afirmar que o habeas corpus pode ser impetrado por qualquer pessoa, exceto em seu próprio favor. Isso é falso; o habeas corpus é impetrável em benefício próprio, ainda que quem o impetre seja leigo.</p>
+
+        <h3 class="section-title">13.3. Concessão de ofício</h3>
+        <p>O art. 654, §2º, estabelece que os juízes e tribunais, dentro de sua competência, podem conceder habeas corpus de ofício, ao verificarem que alguém sofre ou está na iminência de sofrer violência ou coação ilegal. Essa possibilidade não viola a imparcialidade, pois o habeas corpus é remédio heroico de proteção à liberdade.</p>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 14 – INTERVENIENTES PROCESSUAIS ============ -->
+        <h2 class="chapter-title">CAPÍTULO 14 – INTERVENIENTES PROCESSUAIS</h2>
+
+        <h3 class="section-title">14.1. Assistente de acusação</h3>
+        <p>O ofendido, nos crimes de ação penal pública, pode intervir no processo como assistente do Ministério Público, reforçando a acusação (art. 268). É crucial notar que o assistente só existe na ação penal pública; na ação privativa do ofendido, o próprio ofendido é o titular, não havendo que se falar em assistência ao MP, que ali atua apenas como fiscal da lei.</p>
+        <p>O art. 269 estabelece que o assistente será admitido <span class="highlight">a qualquer tempo</span>, desde que antes do trânsito em julgado da sentença. Não há limite temporal mínimo ou fase específica para ingresso, ao contrário do que algumas questões insinuam (ex.: “somente até o recebimento da denúncia”). Isso o difere de outras figuras interventivas.</p>
+
+        <h3 class="section-title">14.2. Suspeição de peritos, assistentes técnicos e auxiliares</h3>
+        <p>As causas de suspeição e impedimento previstas no CPP para juízes (arts. 112 e 254), serventuários e peritos oficiais não se aplicam aos assistentes técnicos contratados pelas partes. Como estes atuam como auxiliares da parte, não exercem função pública nem estão sujeitos à imparcialidade exigida dos órgãos estatais. Questões que estendem a suspeição aos assistentes técnicos estão incorretas.</p>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 15 – ATOS PROCESSUAIS: CITAÇÃO POR EDITAL ============ -->
+        <h2 class="chapter-title">CAPÍTULO 15 – ATOS PROCESSUAIS: CITAÇÃO POR EDITAL</h2>
+
+        <h3 class="section-title">15.1. Citação por edital e seus efeitos (art. 366, CPP)</h3>
+        <p>Se o réu, citado por edital, não comparecer ao processo nem constituir advogado, o art. 366 determina a <span class="highlight-blue">suspensão do processo e do curso do prazo prescricional</span>. Essa suspensão é condicionada à produção antecipada das provas urgentes que não possam aguardar. Além disso, o juiz pode decretar a prisão preventiva, se presentes os requisitos. Trata-se de medida excepcional, que visa compatibilizar o direito de defesa com a necessidade de evitar a impunidade. O prazo prescricional fica suspenso enquanto durar a inatividade processual, mas há limitações temporais impostas pela jurisprudência (o STJ entende que a suspensão não pode superar o tempo máximo da pena abstrata, entre outras nuances). Para a prova objetiva, o que importa é a literalidade do dispositivo: processo e prescrição suspensos, provas urgentes antecipadas e possibilidade de preventiva.</p>
+
+        <hr class="divider">
+
+        <!-- ============ CAPÍTULO 16 – MACETES, DICAS FINAIS E PEGADINHAS DA FCC ============ -->
+        <h2 class="chapter-title">CAPÍTULO 16 – MACETES, DICAS FINAIS E PEGADINHAS DA FCC</h2>
+
+        <h3 class="section-title">16.1. Mnemônico PEGA para os incisos do art. 302</h3>
+        <p>Já mencionado, mas vale reforçar:</p>
+        <div class="mnemonic">
+            <span>P</span> – está cometendo<br>
+            <span>E</span> – acaba de cometer<br>
+            <span>G</span> – é perseguido logo após<br>
+            <span>A</span> – é encontrado logo depois com objetos que presumem autoria
+        </div>
+
+        <h3 class="section-title">16.2. Os erros mais frequentes nas provas da FCC</h3>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tema</th>
+                        <th>Afirmação incorreta típica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Inquérito</td>
+                        <td>“A autoridade deve instaurar inquérito diante de qualquer notícia de crime.” (falso – exige juízo de delibação)</td>
+                    </tr>
+                    <tr>
+                        <td>Inquérito</td>
+                        <td>“Nos crimes de ação privada, o MP pode requisitar a instauração do inquérito.” (falso – só requerimento do ofendido)</td>
+                    </tr>
+                    <tr>
+                        <td>Prisão em flagrante</td>
+                        <td>“A falta de testemunhas presenciais impede a lavratura do auto.” (falso – assinam o condutor e duas testemunhas de apresentação)</td>
+                    </tr>
+                    <tr>
+                        <td>Audiência de custódia</td>
+                        <td>“O juiz só pode relaxar a prisão ou decretar preventiva.” (falso – há a terceira via da liberdade provisória)</td>
+                    </tr>
+                    <tr>
+                        <td>Sentença</td>
+                        <td>“A sentença deve conter exposição detalhada da acusação e da defesa.” (falso – exposição sucinta)</td>
+                    </tr>
+                    <tr>
+                        <td>Renúncia vs. Perdão</td>
+                        <td>“O perdão se estende a todos mesmo com recusa expressa.” (falso – o art. 51 ressalva o que recusar)</td>
+                    </tr>
+                    <tr>
+                        <td>Cadeia de custódia</td>
+                        <td>“A coleta de vestígios deve ser feita obrigatoriamente por perito oficial.” (falso – preferencialmente)</td>
+                    </tr>
+                    <tr>
+                        <td>Recursos</td>
+                        <td>“Cabe RESE da decisão que concluir pela competência do juízo.” (falso – somente da que conclui pela incompetência)</td>
+                    </tr>
+                    <tr>
+                        <td>Competência</td>
+                        <td>“Na ação penal privada, o querelante não pode optar pelo domicílio do réu se conhecido o lugar da infração.” (falso – art. 73 permite)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="section-title">16.3. Revisão de última hora: esquema mental</h3>
+        <div class="card">
+            <div class="card-title">🔁 Roteiro de Revisão Rápida</div>
+            <ul class="styled-list">
+                <li><strong>Inquérito:</strong> instauração condicionada ou não; prazos máximos; individualização “sempre que possível”.</li>
+                <li><strong>Ação privada:</strong> renúncia (pré-queixa, indivisível), perdão (pós-queixa, recusa obsta), queixa aditável pelo MP, indivisibilidade.</li>
+                <li><strong>Flagrante:</strong> 4 hipóteses (PEGA), crimes permanentes (enquanto não cessar), testemunhas de apresentação, recusa de assinatura.</li>
+                <li><strong>Custódia:</strong> três opções; liberdade provisória como alternativa à preventiva.</li>
+                <li><strong>Preventiva:</strong> não cabe em culposos, antecipação de pena, de ofício na investigação, excludentes de ilicitude, crimes com pena ≤ 4 anos (com exceções); identidade duvidosa com liberação após.</li>
+                <li><strong>Provas:</strong> testemunha enferma ouvida no local; breve consulta a apontamentos; juiz reproduz frases; cadeia de custódia: responsável é o agente público que reconhece o vestígio, coleta preferencial de perito, descarte às vezes com autorização judicial.</li>
+                <li><strong>Sentença:</strong> emendatio libelli, juiz não vinculado ao MP, exposição sucinta.</li>
+                <li><strong>Nulidades:</strong> incompetência anula só atos decisórios; citação nula sanada com comparecimento; falta de recurso de ofício gera nulidade.</li>
+                <li><strong>Recursos:</strong> apelação exclui RESE; RESE só nas hipóteses do art. 581; efeito extensivo se motivo não pessoal.</li>
+                <li><strong>Habeas corpus:</strong> qualquer pessoa pode impetrar, inclusive em favor próprio; juiz pode conceder de ofício.</li>
+            </ul>
+        </div>
+
+        <p class="text-center" style="margin-top: 2em;">Guarde este roteiro para uma revisão rápida antes da prova. Aplicando esses conhecimentos com segurança, você eliminará a maioria das questões de processo penal da FCC.</p>
+
+        <hr class="divider">
+        <p class="text-center small italic" style="color: #999; margin-top: 2em;">&copy; Material de estudo – Direito Processual Penal. Apostila preparatória para concursos. Fim do conteúdo.</p>
+
+    </div><!-- fim .book -->
+</body>
+</html>

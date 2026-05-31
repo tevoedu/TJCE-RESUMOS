@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Civil e LINDB para Concursos | Apostila Digital</title>
+    <style>
+        /* ========== RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            background: #f8f6f2;
+            color: #2c2c2c;
+            line-height: 1.7;
+            padding: 2.5rem 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: 0.01em;
+        }
+
+        /* ========== TIPOGRAFIA ========== */
+        h1, h2, h3, h4 {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 600;
+            color: #1e3a4d;
+            margin-top: 2.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            text-align: center;
+            color: #1b2e3b;
+            border-bottom: 3px solid #d4b68a;
+            padding-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .subtitulo-principal {
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 400;
+            font-size: 1.15rem;
+            color: #5c6b73;
+            margin-top: 0.2rem;
+            margin-bottom: 2.8rem;
+            letter-spacing: 0.02em;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            background: #ffffff;
+            padding: 0.7rem 1.2rem;
+            border-left: 8px solid #c9a87c;
+            border-radius: 0 10px 10px 0;
+            margin-top: 2.8rem;
+            margin-bottom: 1.4rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #2a4b5e;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.2rem;
+            border-bottom: 1px dashed #c9a87c;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #3d5a6e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        /* ========== COMPONENTES ESPECIAIS ========== */
+        .box-destaque {
+            background: #fffbf5;
+            border: 1px solid #e7d7b8;
+            border-radius: 14px;
+            padding: 1.3rem 1.8rem;
+            margin: 1.8rem 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .dica-prova {
+            background: #f0f6fa;
+            border-left: 6px solid #316c8a;
+            padding: 1rem 1.5rem;
+            margin: 1.6rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: normal;
+        }
+
+        .dica-prova::before {
+            content: "📌 DICA DE PROVA";
+            display: block;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: #1e4b63;
+            margin-bottom: 0.4rem;
+        }
+
+        .armadilha {
+            background: #fef4f0;
+            border-left: 6px solid #b8573a;
+            padding: 1rem 1.5rem;
+            margin: 1.6rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .armadilha::before {
+            content: "⚠️ ARMADILHA DA BANCA";
+            display: block;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.03em;
+            color: #9e432a;
+            margin-bottom: 0.4rem;
+        }
+
+        .caso-pratico {
+            background: #f7faf7;
+            border: 1px solid #cbdcc2;
+            border-radius: 16px;
+            padding: 1.3rem 1.8rem;
+            margin: 1.8rem 0;
+        }
+
+        .caso-pratico .titulo-caso {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            color: #2d5a2d;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .solucao {
+            background: #ffffff;
+            border: 1px dashed #8aa87d;
+            border-radius: 10px;
+            padding: 0.9rem 1.4rem;
+            margin-top: 0.8rem;
+        }
+
+        .callout {
+            background: #f9f5ec;
+            border-radius: 12px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.5rem 0;
+            font-size: 0.98rem;
+            border: 1px solid #e2d2b5;
+        }
+
+        blockquote {
+            background: #fcfaf7;
+            border-left: 4px solid #bfa27b;
+            margin: 1.5rem 0;
+            padding: 1rem 1.8rem;
+            font-style: italic;
+            color: #3f3a33;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* ========== TABELAS ========== */
+        .tabela-moderna {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.8rem 0;
+            font-size: 0.95rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+
+        .tabela-moderna thead th {
+            background: #2e4350;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+
+        .tabela-moderna tbody td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #e2dcd1;
+            background: #ffffff;
+            vertical-align: top;
+        }
+
+        .tabela-moderna tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tabela-moderna tbody tr:nth-child(even) td {
+            background: #fdfaf5;
+        }
+
+        /* ========== LISTAS ========== */
+        ul, ol {
+            margin: 1rem 0 1.2rem 1.8rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            padding-left: 0.2rem;
+        }
+
+        ul li::marker {
+            color: #b08b5c;
+        }
+
+        /* ========== DIVISORIAS ========== */
+        .divisoria {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #d4b68a, transparent);
+            margin: 2.2rem 0 1.8rem;
+        }
+
+        .divisoria-leve {
+            border: none;
+            height: 1px;
+            background: #e4d7c1;
+            margin: 1.8rem 0;
+        }
+
+        /* ========== MARCADORES DE SEÇÃO ========== */
+        .numero-artigo {
+            display: inline-block;
+            background: #e7dece;
+            color: #2e3b42;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 700;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 0.3rem;
+        }
+
+        .tag-lei {
+            font-family: 'Courier New', monospace;
+            background: #eae3d7;
+            color: #3b3b3b;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.88rem;
+            letter-spacing: -0.02em;
+        }
+
+        /* ========== RESPONSIVO TABLET ========== */
+        @media (max-width: 700px) {
+            body {
+                padding: 1.5rem 0.8rem;
+                font-size: 0.95rem;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+                padding: 0.5rem 0.8rem;
+            }
+        }
+
+        /* ========== SUMÁRIO ========== */
+        .sumario-lista {
+            list-style: none;
+            margin-left: 0;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 1.3rem 2rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+        }
+
+        .sumario-lista li {
+            padding: 0.4rem 0;
+            border-bottom: 1px dotted #d9cdb8;
+        }
+
+        .sumario-lista li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DIREITO CIVIL E LINDB PARA CONCURSOS</h1>
+    <div class="subtitulo-principal">Apostila Teórica Completa – Foco em Técnico Judiciário (FCC, FGV, Cebraspe e similares)</div>
+
+    <!-- SUMÁRIO -->
+    <h2 style="background: none; border-left: none; box-shadow: none; padding-left: 0; margin-top: 0.5rem;">SUMÁRIO</h2>
+    <ul class="sumario-lista">
+        <li><strong>PARTE I – LEI DE INTRODUÇÃO ÀS NORMAS DO DIREITO BRASILEIRO (LINDB)</strong></li>
+        <li style="padding-left: 1.5rem;">Direito adquirido, ato jurídico perfeito e coisa julgada (art. 6º)</li>
+        <li style="padding-left: 1.5rem;">Interpretação de normas sobre gestão pública (art. 22)</li>
+        <li style="padding-left: 1.5rem;">Segurança jurídica na aplicação de novas normas (art. 24)</li>
+        <li><strong>PARTE II – DIREITO CIVIL – PARTE GERAL</strong></li>
+        <li style="padding-left: 1.5rem;"><strong>Das Pessoas Naturais</strong></li>
+        <li style="padding-left: 2.5rem;">1.1 Domicílio da pessoa natural (art. 70)</li>
+        <li style="padding-left: 2.5rem;">1.2 Domicílio profissional e pluralidade de domicílios (art. 72)</li>
+        <li style="padding-left: 2.5rem;">1.3 Emancipação e capacidade</li>
+        <li style="padding-left: 1.5rem;"><strong>Das Pessoas Jurídicas</strong></li>
+        <li style="padding-left: 2.5rem;">2.1 Domicílio da pessoa jurídica e pluralidade (art. 75)</li>
+        <li style="padding-left: 2.5rem;">2.2 Associações × Sociedades (art. 53)</li>
+        <li style="padding-left: 1.5rem;"><strong>Dos Bens</strong></li>
+        <li style="padding-left: 2.5rem;">3.1 Bens imóveis e móveis (arts. 79, 82, 93)</li>
+        <li style="padding-left: 2.5rem;">3.2 Bens fungíveis e consumíveis (arts. 85 e 86)</li>
+        <li style="padding-left: 1.5rem;"><strong>Dos Fatos Jurídicos</strong></li>
+        <li style="padding-left: 2.5rem;">4.1 Negócio jurídico: requisitos de validade (art. 104)</li>
+        <li style="padding-left: 2.5rem;">4.2 Atos ilícitos e excludentes de ilicitude (arts. 186, 187, 188)</li>
+        <li style="padding-left: 1.5rem;"><strong>Da Responsabilidade Civil</strong></li>
+        <li style="padding-left: 2.5rem;">5.1 Responsabilidade extracontratual e contratual (arts. 186 e 927)</li>
+        <li style="padding-left: 1.5rem;"><strong>Dos Direitos da Personalidade</strong></li>
+        <li style="padding-left: 2.5rem;">6.1 Características: irrenunciabilidade e intransmissibilidade (art. 11)</li>
+        <li style="padding-left: 1.5rem;"><strong>Das Incapacidades e Institutos Protetivos</strong></li>
+        <li style="padding-left: 2.5rem;">7.1 Curatela, tomada de decisão apoiada e tutela (art. 1.783-A e outros)</li>
+    </ul>
+
+    <hr class="divisoria">
+
+    <!-- PARTE I – LINDB -->
+    <h2>PARTE I – LEI DE INTRODUÇÃO ÀS NORMAS DO DIREITO BRASILEIRO</h2>
+    <p>A LINDB (Decreto-Lei nº 4.657/1942) não é um corpo estranho ao ordenamento jurídico, mas uma norma de sobredireito, que estabelece critérios de aplicação, interpretação e integração de todas as leis. Em concursos, principalmente FCC, a cobrança se concentra nos arts. 6º, 22 e 24, com ênfase em segurança jurídica e proteção da confiança legítima.</p>
+
+    <!-- 1. DIREITO ADQUIRIDO -->
+    <h3>1. Direito Adquirido, Ato Jurídico Perfeito e Coisa Julgada (Art. 6º)</h3>
+    <div class="box-destaque">
+        <p><strong>O que diz a lei?</strong><br>
+        <span class="tag-lei">Art. 6º, LINDB:</span> “A Lei em vigor terá efeito imediato e geral, respeitados o ato jurídico perfeito, o direito adquirido e a coisa julgada.”</p>
+    </div>
+    <p><strong>Interpretação didática:</strong><br>
+    A regra geral é que as leis novas se aplicam a situações presentes e futuras, sendo imediatamente eficazes (efeito imediato). Contudo, o ordenamento constitucional (art. 5º, XXXVI, CF) e infraconstitucional protege três categorias que constituem o núcleo da segurança jurídica:</p>
+    <ul>
+        <li><strong>Ato jurídico perfeito:</strong> aquele já consumado segundo a lei vigente ao tempo em que se efetuou. Exemplo: contrato celebrado sob a égide de determinada lei; uma licença de construção já concedida e com obra iniciada.</li>
+        <li><strong>Direito adquirido:</strong> direito que já se incorporou definitivamente ao patrimônio do titular, por terem sido preenchidos todos os requisitos legais exigidos à sua aquisição sob a lei anterior.</li>
+        <li><strong>Coisa julgada:</strong> decisão judicial de que já não caiba recurso.</li>
+    </ul>
+
+    <div class="caso-pratico">
+        <span class="titulo-caso">📌 Caso prático (adaptado do flashcard):</span>
+        <p>João obteve licença para construir e iniciou a obra em dezembro de 2022. Em janeiro de 2023, nova lei municipal estabelece recuo mínimo maior, entrando em vigor 90 dias depois. A obra já estava em estágio avançado. A nova lei deve ser aplicada à obra?</p>
+        <div class="solucao">
+            <strong>Solução:</strong> Não. A licença concedida e a obra iniciada configuram <strong>ato jurídico perfeito</strong> (e, em relação ao direito de construir nos termos da licença, <strong>direito adquirido</strong>). A aplicação da nova lei violaria a segurança jurídica. A jurisprudência do STF é pacífica no sentido de que obras em andamento amparadas por licenças válidas não podem ser atingidas por normas supervenientes que alteram parâmetros urbanísticos, salvo se houver risco grave e iminente (o que não é o caso).
+        </div>
+    </div>
+
+    <div class="dica-prova">
+        <p>A FCC adora inverter a lógica: afirmar que a nova lei se aplica automaticamente a todas as situações em curso, inclusive atos já consumados. O examinador conta com a confusão entre “efeito imediato” e “retroatividade”. Lembre-se: efeito imediato respeita o ato jurídico perfeito; retroatividade alcançaria o passado.</p>
+    </div>
+
+    <!-- 2. SEGURANÇA JURÍDICA -->
+    <h3>2. Segurança Jurídica e Mudança de Lei (Art. 24, LINDB)</h3>
+    <p><strong>Previsão legal:</strong><br>
+    <span class="tag-lei">Art. 24, LINDB:</span> “A revisão, nas esferas administrativa, controladora ou judicial, quanto à validade de ato, contrato, ajuste, processo ou norma administrativa cuja produção já se houver completado levará em conta as orientações gerais da época, sendo vedado que, com base em mudança posterior de orientação geral, se declarem inválidas situações plenamente constituídas.”</p>
+    <p><strong>Tradução jurídica:</strong> O administrador público (e o juiz) não pode, ao reavaliar atos passados, julgar com os olhos do presente. Deve considerar o contexto normativo e fático da época. Isso impede o “anacronismo interpretativo”, que transformaria o passado em um cemitério de atos inválidos.</p>
+    <p><strong>Exemplo prático:</strong> Uma licitação feita em 2015 sob determinada interpretação de um decreto. Em 2023, o Tribunal de Contas muda seu entendimento. Não se pode anular a licitação de 2015 com base na nova interpretação se o ato estava conforme as orientações gerais da época. Aqui se aplica o art. 22 (gestor real) combinado com o art. 24.</p>
+    <div class="armadilha">
+        <p>A FCC coloca que o art. 24 permite desconsiderar circunstâncias práticas e aplicar retroativamente novo entendimento. Falso. A regra é exatamente o oposto: proteger a confiança legítima e a estabilidade das relações.</p>
+    </div>
+
+    <!-- 3. INTERPRETAÇÃO GESTÃO PÚBLICA -->
+    <h3>3. Interpretação de Normas sobre Gestão Pública (Art. 22, LINDB)</h3>
+    <p><strong>Dispositivo essencial:</strong><br>
+    <span class="tag-lei">Art. 22, caput:</span> “Na interpretação de normas sobre gestão pública, serão considerados os obstáculos e as dificuldades reais do gestor e as exigências das políticas públicas a seu cargo, sem prejuízo dos direitos dos administrados.”<br>
+    <span class="tag-lei">§1º:</span> Em decisão sobre regularidade de conduta ou validade de ato, serão consideradas as circunstâncias práticas que houverem imposto, limitado ou condicionado a ação do agente.<br>
+    <span class="tag-lei">§3º:</span> As sanções aplicadas ao agente serão levadas em conta na dosimetria de outras sanções de mesma natureza e relativas ao mesmo fato.</p>
+    <p><strong>Desdobramento didático:</strong><br>
+    A LINDB, com as alterações trazidas pela Lei nº 13.655/2018, introduziu o “realismo jurídico” na gestão pública. O foco não é mais apenas a subsunção formal da lei, mas a análise das circunstâncias concretas que cercaram a decisão do gestor.</p>
+    <ul>
+        <li><strong>Obstáculos e dificuldades reais:</strong> falta de recursos, pessoal, informações incompletas, pressões legítimas. Não se exige conduta heroica, mas sim diligente dentro do possível.</li>
+        <li><strong>Circunstâncias práticas:</strong> o julgador deve se perguntar: “O que esse gestor tinha diante de si naquele momento?”</li>
+        <li><strong>Dosimetria sancionatória:</strong> evita-se o bis in idem punitivo, exigindo que sanções cumulativas sobre o mesmo fato sejam proporcionais.</li>
+    </ul>
+    <div class="armadilha">
+        <p>Afirmar que, na interpretação de normas sobre gestão pública, devem ser desconsideradas as circunstâncias práticas. Isso é totalmente contrário ao art. 22. O erro é tão frequente que a FCC insiste nessa inversão.</p>
+    </div>
+    <div class="caso-pratico">
+        <span class="titulo-caso">📌 Caso concreto:</span>
+        <p>Prefeito autoriza contratação emergencial durante enchente sem licitação formal. Posteriormente, o Tribunal de Contas analisa o ato. Ao interpretar a norma (Lei 8.666/93 ou nova Lei 14.133/21), o órgão de controle deve considerar os obstáculos reais (a calamidade, a urgência, a impossibilidade material de cumprir prazos). O §1º do art. 22 protege o gestor que agiu de boa-fé diante de circunstâncias limitantes, sem excluir a responsabilidade por excessos dolosos.</p>
+    </div>
+
+    <hr class="divisoria">
+
+    <!-- PARTE II – DIREITO CIVIL -->
+    <h2>PARTE II – DIREITO CIVIL – PARTE GERAL</h2>
+
+    <!-- 1. PESSOAS NATURAIS -->
+    <h3>1. DAS PESSOAS NATURAIS</h3>
+    <h4>1.1 Domicílio da Pessoa Natural (Art. 70)</h4>
+    <p><strong>Conceito legal:</strong><br>
+    <span class="tag-lei">Art. 70, CC:</span> “O domicílio da pessoa natural é o lugar onde ela estabelece a sua residência com ânimo definitivo.”</p>
+    <p><strong>Três elementos na definição:</strong></p>
+    <ul>
+        <li><strong>Residência:</strong> elemento objetivo, o local de moradia, a habitação.</li>
+        <li><strong>Ânimo definitivo:</strong> elemento subjetivo, a intenção de permanecer naquele local, de fixar aí o centro de sua vida.</li>
+        <li><strong>Domicílio:</strong> resulta da união dos dois anteriores. Note que residência + ânimo definitivo = domicílio.</li>
+    </ul>
+    <p><strong>Distinção essencial para concursos:</strong></p>
+    <table class="tabela-moderna">
+        <thead>
+            <tr><th>Conceito</th><th>Definição</th><th>Exemplo</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Residência</td><td>Local de moradia habitual, mesmo sem ânimo definitivo. Pode ser temporária.</td><td>Casa de praia alugada por um mês para temporada.</td></tr>
+            <tr><td>Domicílio</td><td>Residência com ânimo definitivo. Centro dos interesses e negócios da pessoa.</td><td>Cidade onde a pessoa mora, trabalha, tem família e vota.</td></tr>
+            <tr><td>Habitação</td><td>Moradia meramente eventual, com ânimo transitório.</td><td>Quarto de hotel durante viagem de negócios.</td></tr>
+        </tbody>
+    </table>
+    <div class="dica-prova">
+        <p>Questões frequentemente trazem a frase: “Residência é o local de moradia, não se confundindo com domicílio, que exige ânimo definitivo.” A banca testa se o candidato sabe que toda pessoa tem domicílio, mesmo que este seja plural ou incerto (art. 73 – domicílio da pessoa sem residência fixa). Já a residência pode ser eventual ou múltipla sem ânimo definitivo.</p>
+    </div>
+
+    <h4>1.2 Domicílio Profissional e Pluralidade de Domicílios (Art. 72)</h4>
+    <p><strong>Regra do art. 72:</strong><br>
+    “É também domicílio da pessoa natural, quanto às relações concernentes à profissão, o lugar onde esta é exercida.”<br>
+    Parágrafo único: “Se a pessoa exercer profissão em lugares diversos, cada um deles constituirá domicílio para as relações que lhe corresponderem.”</p>
+    <p><strong>Significado prático:</strong> Uma pessoa pode ter domicílio profissional distinto de seu domicílio residencial. E, se trabalha em várias cidades, terá tantos domicílios profissionais quantos locais de exercício da profissão, cada um atrelado às relações específicas daquele lugar.</p>
+    <div class="caso-pratico">
+        <span class="titulo-caso">📌 Estudo de caso – Adaptado do flashcard:</span>
+        <p>Júlio, 17 anos, emancipado, exerce atividade empresarial em São Paulo, mas reside com os pais em Belo Horizonte. Onde é seu domicílio para as relações profissionais?</p>
+        <div class="solucao">
+            <strong>Análise:</strong> Júlio é emancipado (capacidade civil plena, art. 5º, parágrafo único, CC). Para os negócios que realiza em São Paulo, aquele é seu domicílio profissional. Ele pode ser demandado judicialmente tanto em São Paulo (domicílio profissional) quanto em Belo Horizonte (domicílio voluntário/residencial), conforme a natureza da relação. A pluralidade de domicílios facilita o acesso à justiça e a segurança jurídica dos terceiros que contratam com ele.
+        </div>
+    </div>
+    <div class="armadilha">
+        <p>Afirmar que a pessoa só pode ter um domicílio, confundindo com residência. Ou que o domicílio profissional prevalece sobre o residencial para qualquer ato da vida civil (na verdade, só para relações concernentes à profissão).</p>
+    </div>
+
+    <h4>1.3 Emancipação e Capacidade</h4>
+    <p><strong>Conexão importante:</strong> a emancipação, voluntária ou judicial, confere capacidade civil plena antes dos 18 anos, permitindo que o menor tenha domicílio próprio e pratique todos os atos da vida civil sem assistência. Porém, não altera a idade para fins penais e eleitorais (ressalvas constitucionais).</p>
+
+    <!-- 2. PESSOAS JURÍDICAS -->
+    <h3>2. DAS PESSOAS JURÍDICAS</h3>
+    <h4>2.1 Domicílio da Pessoa Jurídica (Art. 75 e §1º)</h4>
+    <p><strong>Dispositivo:</strong><br>
+    <span class="tag-lei">Art. 75, CC:</span> “Quanto às pessoas jurídicas, o domicílio é:<br>
+    I – da União, o Distrito Federal;<br>
+    II – dos Estados e Territórios, as respectivas capitais;<br>
+    III – do Município, o lugar onde funcione a administração municipal;<br>
+    IV – das demais pessoas jurídicas, o lugar onde funcionarem as respectivas diretorias e administrações, ou onde elegerem domicílio especial nos seus estatutos ou atos constitutivos.”<br>
+    <span class="tag-lei">§1º:</span> “Tendo a pessoa jurídica diversos estabelecimentos em lugares diferentes, cada um deles será considerado domicílio para os atos nele praticados.”</p>
+    <p><strong>Explanação didática:</strong><br>
+    O art. 75, §1º, cria o que a doutrina chama de domicílio plúrimo das pessoas jurídicas de direito privado. A lei facilita a defesa do consumidor e a efetividade da jurisdição, permitindo que a empresa seja demandada no local da filial onde ocorreu o fato ou o contrato.</p>
+    <div class="caso-pratico">
+        <span class="titulo-caso">📌 Caso concreto – Adaptado do flashcard:</span>
+        <p>Empresa com sede em São Paulo e filiais no Rio de Janeiro e Belo Horizonte. Um serviço foi prestado exclusivamente pela filial do Rio. Onde a empresa pode ser acionada judicialmente em relação a esse serviço?</p>
+        <div class="solucao">
+            <strong>Solução:</strong> O domicílio para esse ato é a filial do Rio de Janeiro, conforme art. 75, §1º. O consumidor lesado pode ajuizar ação no Rio, sem precisar se deslocar à sede em São Paulo. A FCC explora exatamente essa pluralidade, confrontando com a ideia equivocada de que a sede é o único foro competente.
+        </div>
+    </div>
+    <div class="armadilha">
+        <p>Colocar que o domicílio da pessoa jurídica é sempre o da sede estatutária, independentemente de onde o ato foi praticado. Isso viola o §1º e prejudica a parte hipossuficiente.</p>
+    </div>
+
+    <h4>2.2 Associações e Sociedades: Finalidade Não Econômica (Art. 53)</h4>
+    <p><strong>Definição legal:</strong><br>
+    <span class="tag-lei">Art. 53, CC:</span> “Constituem-se as associações pela união de pessoas que se organizem para fins não econômicos.”</p>
+    <p><strong>Desdobramento:</strong><br>
+    <strong>Fins não econômicos:</strong> significa que a associação não tem objetivo de lucro a ser distribuído entre os associados. Pode, sim, realizar atividades econômicas para gerar receita (venda de produtos, serviços), mas o superávit deve ser integralmente reinvestido em suas finalidades institucionais (culturais, assistenciais, esportivas etc.).<br>
+    <strong>Vedação à distribuição de lucros:</strong> se houver distribuição de sobras aos associados, a entidade desnatura-se, podendo ser qualificada como sociedade e perder benefícios fiscais.</p>
+    <p><strong>Diferença essencial:</strong></p>
+    <table class="tabela-moderna">
+        <thead>
+            <tr><th>Tipo de Pessoa Jurídica</th><th>Finalidade</th><th>Destinação do superávit</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Associação</td><td>Fins não econômicos (culturais, recreativos, assistenciais etc.)</td><td>Reinvestimento obrigatório nas finalidades estatutárias</td></tr>
+            <tr><td>Sociedade</td><td>Fins econômicos (lucrativos)</td><td>Distribuição entre os sócios</td></tr>
+        </tbody>
+    </table>
+    <div class="caso-pratico">
+        <span class="titulo-caso">📌 Caso do flashcard:</span>
+        <p>Associação cultural sem fins lucrativos quer alterar estatuto para defender interesses econômicos com retorno financeiro direto aos associados.</p>
+        <div class="solucao"><strong>Impossibilidade.</strong> Isso desnaturaria a associação, violando o art. 53. Seria necessária a dissolução e constituição de uma sociedade empresária.</div>
+    </div>
+    <div class="dica-prova">
+        <p>A banca cobra a literalidade: “associações não têm fins econômicos” ou “não podem distribuir lucros”. Qualquer exceção é nula. Não confundir com “não podem realizar atividades econômicas” – elas podem, desde que o resultado seja todo reinvestido.</p>
+    </div>
+
+    <!-- 3. DOS BENS -->
+    <h3>3. DOS BENS</h3>
+    <p>A classificação dos bens é tópico clássico e frequentemente associado a casos práticos. Veremos os principais aspectos cobrados.</p>
+    <h4>3.1 Bens Imóveis e Móveis (arts. 79, 82, 93)</h4>
+    <p><strong>Definições basilares:</strong></p>
+    <ul>
+        <li><strong>Bens imóveis:</strong> o solo e tudo quanto se lhe incorporar natural ou artificialmente (art. 79, CC). Incluem o solo, as edificações, árvores (enquanto não cortadas), materiais provisoriamente separados para alienação de imóvel, mas que ainda integram o bem (art. 81), e as acessões artificiais (construções, plantações).</li>
+        <li><strong>Bens móveis:</strong> os suscetíveis de movimento próprio ou de remoção por força alheia, sem alteração da substância ou da destinação econômico-social (art. 82). São os semoventes, veículos, máquinas, utensílios etc.</li>
+    </ul>
+    <p><strong>Distinção importante – Pertenças (art. 93):</strong><br>
+    São bens que, não constituindo partes integrantes, se destinam, de modo duradouro, ao uso, ao serviço ou ao aformoseamento de outro bem. Ex.: colheitadeira em uma fazenda, mobiliário de uma casa. Pertences são móveis e não seguem a sorte do principal em regra, salvo disposição em contrário ou circunstâncias do caso.</p>
+    <div class="caso-pratico">
+        <span class="titulo-caso">📌 Caso concreto – Sistema de irrigação fixo:</span>
+        <p>Um sistema de irrigação fixo, ligado ao solo de uma fazenda.</p>
+        <div class="solucao"><strong>Classificação:</strong> Bem imóvel, por acessão artificial. Incorpora-se ao solo de forma permanente (art. 79). Diferentemente, uma colheitadeira (pertence) é bem móvel. A árvore frutífera também é imóvel enquanto não cortada.</div>
+    </div>
+    <div class="armadilha">
+        <p>Confundir benfeitorias com pertenças. Benfeitorias são obras realizadas em bem já existente, que podem ser voluptuárias, úteis ou necessárias. Pertenças são bens acessórios autônomos que auxiliam o principal. Outra armadilha: considerar que tudo que está fixado ao solo é imóvel; algumas coisas são temporariamente fixadas e podem ser removidas sem dano, mantendo-se como móveis. A FCC adora um caso de “guindaste sobre trilhos fixado ao solo” – classificado como móvel porque a fixação é temporária.</p>
+    </div>
+
+    <h4>3.2 Bens Fungíveis e Consumíveis (arts. 85 e 86)</h4>
+    <p><strong>Definições:</strong></p>
+    <ul>
+        <li><strong>Fungíveis:</strong> bens móveis que podem ser substituídos por outros da mesma espécie, qualidade e quantidade (art. 85). Ex.: dinheiro, mercadorias padronizadas, grãos de mesma variedade, ações de mesma classe.</li>
+        <li><strong>Consumíveis:</strong> bens móveis cujo uso importa destruição imediata da própria substância (art. 86). Ex.: alimentos, combustível, produtos de limpeza.</li>
+    </ul>
+    <p><strong>Relação entre os conceitos:</strong><br>
+    Não são sinônimos. Um bem pode ser fungível e não consumível (uma moeda rara, fungível por outra moeda, mas seu uso normal não a destrói) e vice-versa (um vinho de safra limitada: consumível, mas infungível, pois não pode ser substituído por outro idêntico). Contudo, na prática, muitos bens fungíveis são também consumíveis.</p>
+    <div class="dica-prova">
+        <p>A banca apresenta situações como: “gêneros alimentícios” – são consumíveis e fungíveis. Já “obras de arte” são infungíveis e inconsumíveis. O erro comum é afirmar que tudo que é fungível é consumível, ou que imóveis podem ser fungíveis (imóveis são infungíveis por natureza, cada um é único em localização). A fungibilidade é exclusiva para bens móveis.</p>
+    </div>
+    <div class="armadilha">
+        <p>“São bens consumíveis aqueles que podem ser substituídos por outros da mesma espécie, qualidade e quantidade.” Falso – isso é definição de fungibilidade. Consumibilidade é a destruição imediata da substância pelo uso.</p>
+    </div>
+
+    <!-- 4. FATOS JURÍDICOS -->
+    <h3>4. DOS FATOS JURÍDICOS</h3>
+    <h4>4.1 Negócio Jurídico: Requisitos de Validade (Art. 104)</h4>
+    <p><strong>Literalidade da lei:</strong><br>
+    <span class="tag-lei">Art. 104, CC:</span> “A validade do negócio jurídico requer:<br>
+    I – agente capaz;<br>
+    II – objeto lícito, possível, determinado ou determinável;<br>
+    III – forma prescrita ou não defesa em lei.”</p>
+    <p><strong>Explicação pedagógica:</strong><br>
+    Esses três requisitos formam o plano da validade do negócio jurídico (teoria tripartida de Pontes de Miranda). Não se confundem com o plano da existência (agente, objeto, forma, vontade) nem com o plano da eficácia (condições, termos). O art. 104 aponta o que é necessário para que um negócio existente não seja considerado nulo ou anulável.</p>
+    <p><strong>Desdobramento:</strong></p>
+    <ul>
+        <li><strong>Agente capaz:</strong> capacidade plena (absolutamente capaz) ou capacidade relativa assistida, conforme o caso. Menor de 16 anos não pode ser agente de negócio jurídico válido; menor entre 16 e 18 precisa de assistente, salvo se emancipado.</li>
+        <li><strong>Objeto:</strong>
+            <ul>
+                <li><strong>Lícito:</strong> não contrário à lei, à moral, aos bons costumes.</li>
+                <li><strong>Possível:</strong> física e juridicamente possível. Ex.: vender herança de pessoa viva é objeto ilícito (art. 426); vender algo impossível materialmente (um terreno submerso inexistente) é nulo.</li>
+                <li><strong>Determinado ou determinável:</strong> deve ser possível identificar o objeto. Se for incerto, mas puder ser determinado pelo gênero, pela quantidade e pela qualidade, é válido (ex.: venda de 100 sacas de café tipo X, sem indicar qual saca específica). O gênero não perece.</li>
+            </ul>
+        </li>
+        <li><strong>Forma:</strong>
+            <ul>
+                <li><strong>“Prescrita em lei”:</strong> se a lei exige forma especial (escritura pública, registro), a não observância gera nulidade (art. 166, IV).</li>
+                <li><strong>“Não defesa em lei”:</strong> se a lei não exige forma, a forma é livre (art. 107). Contudo, se as partes escolherem forma proibida, o negócio é nulo.</li>
+            </ul>
+        </li>
+    </ul>
+    <p><strong>Consequências da ausência:</strong><br>
+    A falta de qualquer dos requisitos do art. 104 pode gerar nulidade (art. 166, I a IV, quando o ato for contrário a norma cogente) ou anulabilidade (art. 171, I, no caso de incapacidade relativa, por exemplo). A FCC explora a associação direta: art. 104 → validade → vícios. Não basta decorar os incisos; é preciso saber o regime de invalidade correspondente.</p>
+    <p><strong>Exemplo prático:</strong></p>
+    <ul>
+        <li>Contrato de compra e venda de drogas: objeto ilícito (nulidade).</li>
+        <li>Contrato de doação de imóvel por menor de 16 anos sem representante: agente absolutamente incapaz (nulidade).</li>
+        <li>Contrato verbal de fiança: exige forma escrita (art. 819 CC), logo, se verbal, é nulo.</li>
+    </ul>
+    <div class="dica-prova">
+        <p>A banca adora colocar “forma prescrita ou não defesa em lei” e trocar por “forma livre sempre”. Falso, porque a forma é livre quando a lei não exigir forma especial, mas se a lei prescrever forma, ela é essencial à validade.</p>
+    </div>
+
+    <h4>4.2 Atos Ilícitos e Excludentes de Ilicitude (Arts. 186, 187 e 188)</h4>
+    <p><strong>Conceito de ato ilícito (art. 186 c/c 927):</strong><br>
+    Ato ilícito é a conduta humana voluntária (ação ou omissão) que viola direito e causa dano a outrem, por negligência, imprudência ou imperícia (culpa) ou por dolo. Mas o sistema não para aí: há atos que, embora causem dano, não são considerados ilícitos.</p>
+    <p><strong>4.2.1 Excludentes de ilicitude (art. 188)</strong></p>
+    <p><strong>Texto da lei:</strong><br>
+    <span class="tag-lei">Art. 188, CC:</span> “Não constituem atos ilícitos:<br>
+    I – os praticados em legítima defesa ou no exercício regular de um direito reconhecido;<br>
+    II – a deterioração ou destruição da coisa alheia, ou a lesão a pessoa, a fim de remover perigo iminente (estado de necessidade).”<br>
+    Parágrafo único: “No caso do inciso II, o ato será legítimo somente quando as circunstâncias o tornarem absolutamente necessário, não excedendo os limites do indispensável para a remoção do perigo.”</p>
+    <p><strong>Explicação:</strong></p>
+    <ul>
+        <li><strong>Legítima defesa:</strong> reação proporcional a agressão injusta, atual ou iminente, contra direito próprio ou alheio. Deve haver moderação. O excesso torna o ato ilícito.</li>
+        <li><strong>Exercício regular de direito reconhecido:</strong> quando a pessoa atua dentro dos limites do direito que a lei lhe confere. Ex.: protesto legítimo, penhora judicial, autotutela excepcional. Não se pode usar o direito de forma abusiva (art. 187).</li>
+        <li><strong>Estado de necessidade:</strong> dano causado a bem alheio para remover perigo iminente, desde que absolutamente necessário e sem excesso. Ex.: cortar árvores de vizinho para impedir propagação de incêndio.</li>
+    </ul>
+    <div class="armadilha">
+        <p>Questão clássica: “Em estado de necessidade, a conduta é considerada ato ilícito, porém isenta de indenização.” Errado. A conduta no estado de necessidade não constitui ato ilícito (art. 188, II). Se não há ilícito, não há, em regra, dever de indenizar. Porém, se o perigo foi provocado por culpa do agente, ou se a lesão foi desproporcional, pode haver responsabilidade civil.</p>
+    </div>
+    <p><strong>4.2.2 Abuso de Direito (Art. 187)</strong></p>
+    <p><strong>Definição:</strong><br>
+    “Também comete ato ilícito o titular de um direito que, ao exercê-lo, excede manifestamente os limites impostos pelo seu fim econômico ou social, pela boa-fé ou pelos bons costumes.”</p>
+    <p><strong>Interpretação:</strong> O abuso de direito é uma cláusula geral de ilicitude que não depende de dolo ou culpa específicos, bastando o exercício disfuncional do direito. Ex.: empresa que, por vingança, instala câmeras em seu muro que invadem a privacidade do vizinho; credor que protesta título já pago; locador que despeja locatário adimplente sem motivo legítimo.</p>
+    <div class="dica-prova">
+        <p>Exercício regular de direito × abuso de direito: no primeiro, o agente está contido nos limites; no segundo, transborda, causando dano injusto. A FCC pode descrever uma situação e perguntar se configura exercício regular ou abuso. A chave está no excesso manifesto.</p>
+    </div>
+    <p><strong>Quadro-resumo:</strong></p>
+    <table class="tabela-moderna">
+        <thead>
+            <tr><th>Hipótese</th><th>Natureza</th><th>Exemplo</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Legítima defesa</td><td>Excludente de ilicitude</td><td>Reagir a assalto causando lesão no agressor.</td></tr>
+            <tr><td>Estado de necessidade</td><td>Excludente de ilicitude</td><td>Destruir porta de casa vizinha para salvar criança em incêndio.</td></tr>
+            <tr><td>Exercício regular de direito</td><td>Excludente de ilicitude</td><td>Cobrar dívida judicialmente.</td></tr>
+            <tr><td>Abuso de direito</td><td>Ato ilícito (art. 187)</td><td>Cobrar dívida já paga para constranger o devedor.</td></tr>
+        </tbody>
+    </table>
+
+    <!-- 5. RESPONSABILIDADE CIVIL -->
+    <h3>5. RESPONSABILIDADE CIVIL</h3>
+    <h4>5.1 Independência de Vínculo Contratual (Arts. 186 e 927)</h4>
+    <p><strong>Princípio fundamental:</strong><br>
+    A responsabilidade civil no Brasil pode ser contratual (descumprimento de contrato) ou extracontratual (aquiliana). O dever de indenizar por ato ilícito não exige prévio contrato entre as partes.</p>
+    <p><strong>Dispositivos:</strong></p>
+    <ul>
+        <li><span class="tag-lei">Art. 186:</span> define o ato ilícito como causador de dano por ação ou omissão voluntária, negligência ou imprudência.</li>
+        <li><span class="tag-lei">Art. 927, caput:</span> “Aquele que, por ato ilícito (arts. 186 e 187), causar dano a outrem, fica obrigado a repará-lo.”</li>
+        <li><span class="tag-lei">Art. 927, parágrafo único:</span> responsabilidade objetiva quando a lei o determinar ou quando a atividade do agente implicar risco para os direitos de outrem.</li>
+    </ul>
+    <p><strong>Aplicação prática:</strong><br>
+    Um motorista que atropela pedestre na calçada pratica ato ilícito (art. 186) e deve indenizar (art. 927), mesmo que não tenha qualquer relação contratual prévia com a vítima. A responsabilidade extracontratual nasce da violação de um dever legal (dever genérico de não lesar – neminem laedere).</p>
+    <p><strong>Diferença importante para FCC:</strong><br>
+    Na responsabilidade contratual, a culpa é presumida e o ônus da prova se inverte; na extracontratual, em regra, a vítima deve provar a culpa do agente (com exceções de responsabilidade objetiva). A FCC cobra essa distinção para confundir o candidato, afirmando, por exemplo, que “a responsabilidade extracontratual exige prévio contrato”. Falso.</p>
+    <div class="armadilha">
+        <p>“Para que haja dever de indenizar, é imprescindível a existência de relação contratual entre ofensor e vítima.” Incorreto, pois a responsabilidade aquiliana prescinde de contrato.</p>
+    </div>
+
+    <!-- 6. DIREITOS DA PERSONALIDADE -->
+    <h3>6. DIREITOS DA PERSONALIDADE</h3>
+    <h4>6.1 Irrenunciabilidade e Intransmissibilidade (Art. 11)</h4>
+    <p><strong>Literalidade:</strong><br>
+    <span class="tag-lei">Art. 11, CC:</span> “Com exceção dos casos previstos em lei, os direitos da personalidade são intransmissíveis e irrenunciáveis, não podendo o seu exercício sofrer limitação voluntária.”</p>
+    <p><strong>Significado jurídico:</strong><br>
+    Direitos da personalidade (vida, honra, nome, imagem, privacidade, integridade física, etc.) são inerentes à pessoa humana, extrapatrimoniais e dotados das seguintes características:</p>
+    <ul>
+        <li><strong>Intransmissibilidade:</strong> não podem ser transferidos para outrem, a título gratuito ou oneroso. Ex.: uma pessoa não pode “doar” sua honra.</li>
+        <li><strong>Irrenunciabilidade:</strong> o titular não pode abrir mão definitivamente de tais direitos. Admite-se, em alguns casos, disposição temporária e limitada (ex.: cessão de imagem para campanha publicitária específica), mas nunca renúncia permanente e genérica.</li>
+        <li><strong>Impossibilidade de limitação voluntária do exercício:</strong> não se pode, por contrato, suprimir o núcleo essencial de um direito da personalidade.</li>
+    </ul>
+    <div class="caso-pratico">
+        <span class="titulo-caso">📌 Caso emblemático do flashcard – Contrato de namoro:</span>
+        <p>“Contrato de namoro que renuncia aos efeitos de uma união estável”</p>
+        <div class="solucao">A doutrina e jurisprudência majoritárias (inclusive STJ) consideram nulo tal contrato, porque ele implica renúncia antecipada a um direito da personalidade (direito ao estado familiar, dignidade, liberdade de constituir família). A cláusula que afasta efeitos de eventual união estável viola o art. 11, por irrenunciabilidade. A FCC explora o fundamento: não é a intransmissibilidade, mas a irrenunciabilidade que fulmina a cláusula.</div>
+    </div>
+    <div class="dica-prova">
+        <p>A banca troca os atributos: afirma que os direitos da personalidade são renunciáveis, ou apenas intransmissíveis, mas não irrenunciáveis. O examinador também gosta de citar exceções previstas em lei (ex.: doação de órgãos duplos, art. 9º CC e Lei 9.434/97) como regra geral, o que é falso – a regra é a irrenunciabilidade.</p>
+    </div>
+
+    <!-- 7. INCAPACIDADES E INSTITUTOS PROTETIVOS -->
+    <h3>7. INCAPACIDADES E INSTITUTOS PROTETIVOS</h3>
+    <h4>7.1 Curatela, Tomada de Decisão Apoiada e Tutela</h4>
+    <p>A proteção das pessoas que não possuem plena capacidade de exercício pessoal é feita por institutos distintos, cada um com finalidade específica. A confusão entre eles é armadilha certa em concursos.</p>
+    <p><strong>1. Tutela</strong><br>
+    <strong>Destinatário:</strong> menores de idade (crianças e adolescentes) que não estão sob poder familiar.<br>
+    <strong>Finalidade:</strong> suprir a falta dos pais, nomeando um tutor para cuidar da pessoa e administrar seus bens (art. 1.728 e ss. CC).<br>
+    <strong>Capacidade do tutelado:</strong> Absolutamente incapaz (menor de 16) ou relativamente incapaz (16 a 18), mas sempre menor.</p>
+    <p><strong>2. Curatela</strong><br>
+    <strong>Destinatários:</strong> Maiores incapazes (arts. 1.767 e ss. CC). São os que, por causa transitória ou permanente, não puderem exprimir sua vontade; ébrios habituais e viciados em tóxico; pródigos; pessoas com deficiência mental ou intelectual que as impossibilite de reger sua vida civil.<br>
+    <strong>Finalidade:</strong> Proteger e administrar os interesses do curatelado, que é considerado relativamente incapaz (art. 4º, III, CC, com redação do Estatuto da Pessoa com Deficiência). A curatela é medida excepcional e proporcional às necessidades do caso.<br>
+    <strong>Observação atualizada:</strong> O Código Civil, após a Lei 13.146/2015 (EPD), determina que a curatela afeta apenas atos de natureza patrimonial e negocial, sem restringir direitos existenciais (casamento, voto, etc.).</p>
+    <p><strong>3. Tomada de Decisão Apoiada (TDA)</strong><br>
+    <strong>Previsão:</strong> Art. 1.783-A, introduzido pelo EPD.<br>
+    <strong>Destinatários:</strong> Pessoa com deficiência que possui capacidade de fato, mas precisa de apoio para tomar decisões sobre atos da vida civil. É uma medida voluntária, requerida pela própria pessoa.<br>
+    <strong>Finalidade:</strong> Apoio sem substituição de vontade. O apoiador auxilia, mas não decide pela pessoa.<br>
+    <strong>Diferença da curatela:</strong> Na curatela, o curador representa ou assiste o curatelado (substitui a vontade nos limites fixados pelo juiz). Na TDA, a pessoa preserva sua autonomia, apenas tem apoio formalizado.</p>
+    <div class="caso-pratico">
+        <span class="titulo-caso">📌 Caso concreto (flashcard Sueli):</span>
+        <p>Sueli tem Alzheimer precoce, faculdades parcialmente preservadas, mas precisa de representante para gerir patrimônio.</p>
+        <div class="solucao"><strong>Aplicação:</strong> A curatela é a medida adequada, pois ela não tem plena capacidade para os atos patrimoniais, necessitando de representante legal. A TDA seria insuficiente, pois pressupõe que a pessoa, mesmo com deficiência, quer e pode decidir, precisando apenas de apoio. A tutela é para menores. A FCC explora a diferenciação: TDA para quem deseja manter autonomia; curatela para quem não pode manifestar vontade plenamente.</div>
+    </div>
+    <p><strong>Quadro comparativo:</strong></p>
+    <table class="tabela-moderna">
+        <thead>
+            <tr><th>Instituto</th><th>Destinatário</th><th>Efeito na capacidade</th><th>Representação</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Tutela</td><td>Menores sem poder familiar</td><td>Incapaz (absoluta ou relativa)</td><td>Tutor representa ou assiste</td></tr>
+            <tr><td>Curatela</td><td>Maiores com incapacidade para atos da vida civil</td><td>Relativamente incapaz</td><td>Curador representa/assiste nos limites da sentença</td></tr>
+            <tr><td>Tomada de Decisão Apoiada</td><td>Pessoa com deficiência, capaz, mas que quer apoio</td><td>Capaz</td><td>Apoiador auxilia, não substitui vontade</td></tr>
+        </tbody>
+    </table>
+    <div class="armadilha">
+        <p>Confundir os institutos em casos práticos ou afirmar que a TDA é para incapazes (só é para quem é capaz e deseja apoio). Outra: dizer que a tutela se aplica a idosos. Idosos podem estar sujeitos à curatela se incapacitados, não à tutela.</p>
+    </div>
+
+    <hr class="divisoria">
+
+    <!-- ENCERRAMENTO -->
+    <h2 style="background: none; border-left: none; box-shadow: none; padding-left: 0;">ENCERRAMENTO E ORIENTAÇÕES FINAIS</h2>
+    <p>Esta apostila cobriu, de forma aprofundada, os temas extraídos dos flashcards, organizados em uma sequência lógica que mescla a LINDB e a Parte Geral do Código Civil. Em cada tópico, você encontrou não apenas a letra da lei, mas o raciocínio jurídico necessário para interpretar situações novas e evitar as armadilhas clássicas da FCC e outras bancas de alto nível.</p>
+    <div class="box-destaque">
+        <p><strong>Recomendações de estudo:</strong></p>
+        <ul>
+            <li>Leia cada seção com atenção, fazendo pausas para refletir sobre os casos práticos.</li>
+            <li>Após a leitura, tente responder às questões de concursos anteriores sobre os assuntos. A FCC é previsível em suas armadilhas – agora você as conhece.</li>
+            <li>Utilize os quadros comparativos e mapas textuais para fixação.</li>
+            <li>Reforce a memorização com associações: “art. 22 LINDB – gestor real”; “art. 11 CC – personalidade não se renuncia”; “art. 104 CC – três requisitos da validade”; “art. 188 CC – excludentes de ilicitude sem punição”.</li>
+        </ul>
+    </div>
+    <p style="text-align: center; margin-top: 2rem; font-style: italic;">Bons estudos e sucesso na sua preparação!</p>
+    <hr class="divisoria-leve">
+    <p style="text-align: center; font-size: 0.9rem; color: #5c6b73;">Material elaborado com base em padrão de excelência de cursos preparatórios de elite, adaptado especificamente para concursos jurídicos de Técnico Judiciário – Área Judiciária.</p>
+
+</body>
+</html>

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>Capítulo I – Execução Orçamentária e Financeira: Restos a Pagar e Classificações da Despesa Pública</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-page: #f7f5f0;
+            --bg-card: #ffffff;
+            --text-primary: #2c2c2a;
+            --text-secondary: #4a4a47;
+            --text-muted: #6b6b65;
+            --accent-primary: #3b5e6b;
+            --accent-secondary: #5f7d8c;
+            --accent-soft: #e8f0f3;
+            --accent-highlight: #f0e6d5;
+            --border-light: #e0dbd2;
+            --border-medium: #c9c3b8;
+            --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.04);
+            --shadow-float: 0 8px 28px rgba(0, 0, 0, 0.07), 0 3px 10px rgba(0, 0, 0, 0.05);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --font-serif: 'Georgia', 'Times New Roman', 'Palatino Linotype', 'Book Antiqua', serif;
+            --font-sans: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+            --font-mono: 'SF Mono', 'Cascadia Code', 'Consolas', 'Monaco', 'Andale Mono', monospace;
+            --fs-base: 1.1rem;
+            --fs-h1: 2.3rem;
+            --fs-h2: 1.8rem;
+            --fs-h3: 1.4rem;
+            --fs-h4: 1.2rem;
+            --fs-small: 0.95rem;
+            --fs-xsmall: 0.85rem;
+            --line-height-relaxed: 1.75;
+            --line-height-normal: 1.6;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 0.8rem;
+            --spacing-md: 1.4rem;
+            --spacing-lg: 2.2rem;
+            --spacing-xl: 3.2rem;
+            --spacing-xxl: 4.5rem;
+        }
+
+        html {
+            font-size: 17px;
+            scroll-behavior: smooth;
+            background-color: var(--bg-page);
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-page);
+            color: var(--text-primary);
+            line-height: var(--line-height-relaxed);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xxl);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        .main-container {
+            max-width: 840px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xl);
+        }
+
+        /* CARD PRINCIPAL */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg) var(--spacing-xl);
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-light);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-float);
+        }
+
+        /* TÍTULOS */
+        h1 {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: var(--fs-h1);
+            line-height: 1.3;
+            color: #1e2b32;
+            letter-spacing: -0.3px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        h2 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: var(--fs-h2);
+            line-height: 1.35;
+            color: #1e2b32;
+            border-bottom: 2px solid var(--accent-soft);
+            padding-bottom: var(--spacing-xs);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+            letter-spacing: -0.2px;
+        }
+
+        h3 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: var(--fs-h3);
+            line-height: 1.4;
+            color: var(--accent-primary);
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        h4 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: var(--fs-h4);
+            color: #2c3a40;
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* PARÁGRAFOS */
+        p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
+            font-weight: 400;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        /* DESTAQUE MARCA-TEXTO */
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, #fae0b0 60%);
+            padding: 0 2px;
+            font-weight: 500;
+            color: #2c2a22;
+        }
+
+        .highlight-blue {
+            background: linear-gradient(180deg, transparent 60%, #d4e7f0 60%);
+            padding: 0 3px;
+            font-weight: 500;
+            color: #1a3b44;
+        }
+
+        .highlight-soft {
+            background-color: #f5efe2;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* CITAÇÃO LEGAL */
+        .legal-quote {
+            background: #fafaf8;
+            border-left: 6px solid var(--accent-primary);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: #3a3a35;
+            box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.02);
+            position: relative;
+        }
+
+        .legal-quote::before {
+            content: "§";
+            position: absolute;
+            top: -18px;
+            left: 16px;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            opacity: 0.25;
+            font-family: var(--font-serif);
+        }
+
+        /* BLOCOS DE DESTAQUE */
+        .info-box {
+            background: #f6f9fb;
+            border: 1px solid #dce8ef;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: flex-start;
+        }
+
+        .info-box .icon {
+            font-size: 1.6rem;
+            line-height: 1.2;
+            color: var(--accent-primary);
+            flex-shrink: 0;
+        }
+
+        .warning-box {
+            background: #fffbf2;
+            border: 1px solid #f0d89c;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: flex-start;
+        }
+
+        .warning-box .icon {
+            font-size: 1.6rem;
+            line-height: 1.2;
+            color: #b68b2c;
+            flex-shrink: 0;
+        }
+
+        .danger-box {
+            background: #fff5f5;
+            border: 1px solid #f4b8b8;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: flex-start;
+        }
+
+        .danger-box .icon {
+            font-size: 1.6rem;
+            line-height: 1.2;
+            color: #b53b3b;
+            flex-shrink: 0;
+        }
+
+        /* CARDS DE CONCEITO */
+        .concept-card {
+            background: #fdfdfc;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        .concept-card h4 {
+            margin-top: 0;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* TABELAS */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: var(--spacing-lg) 0;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+            background: white;
+            box-shadow: var(--shadow-card);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--fs-base);
+            min-width: 600px;
+        }
+
+        thead th {
+            background: #edf3f6;
+            color: #1e2b32;
+            font-weight: 700;
+            padding: 16px 18px;
+            text-align: left;
+            border-bottom: 2px solid #ccd7dd;
+            font-family: var(--font-sans);
+            letter-spacing: 0.2px;
+        }
+
+        tbody td {
+            padding: 14px 18px;
+            border-bottom: 1px solid #eae6df;
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background-color: #fbfbf9;
+        }
+
+        .table-caption {
+            font-size: var(--fs-small);
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-style: italic;
+            padding: 0 4px;
+        }
+
+        /* LISTAS */
+        ul, ol {
+            margin: 0 0 var(--spacing-md) 1.4rem;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            padding-left: 0.2rem;
+        }
+
+        ul li::marker {
+            color: var(--accent-primary);
+        }
+
+        /* LINHA DIVISÓRIA */
+        .divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #d9d3c7 30%, #d9d3c7 70%, transparent 100%);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .divider-light {
+            border: none;
+            height: 1px;
+            background: #eae6df;
+            margin: var(--spacing-lg) 0;
+        }
+
+        /* SVG DIAGRAMAS */
+        .diagram-container {
+            background: #fafaf9;
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            display: flex;
+            justify-content: center;
+            border: 1px solid var(--border-light);
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* MAPA MENTAL */
+        .mindmap-box {
+            background: #faf8f2;
+            border: 1px solid #e0d7c4;
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg) var(--spacing-xl);
+            margin-top: var(--spacing-lg);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+        }
+
+        .mindmap-box h3 {
+            margin-top: 0;
+            border-bottom: 1px dashed #d1c7b0;
+            padding-bottom: 8px;
+            color: #5a4e38;
+        }
+
+        /* BADGE */
+        .badge {
+            display: inline-block;
+            background: #e4edf2;
+            color: #2c4b58;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            margin-right: 6px;
+        }
+
+        .badge-warning {
+            background: #fae3b6;
+            color: #5c4318;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 700px) {
+            html {
+                font-size: 15px;
+            }
+            .card {
+                padding: var(--spacing-md);
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            body {
+                padding: var(--spacing-md) var(--spacing-sm);
+            }
+        }
+
+        /* ESTILO PARA STRONG */
+        strong {
+            color: #1e2b32;
+            font-weight: 650;
+        }
+
+        /* CALLOUT */
+        .callout {
+            background: #fefefe;
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+
+        <!-- CABEÇALHO -->
+        <div class="card" style="text-align: center; padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);">
+            <span class="badge">DIREITO FINANCEIRO</span>
+            <span class="badge badge-warning">ADMINISTRAÇÃO ORÇAMENTÁRIA</span>
+            <h1 style="margin-top: var(--spacing-sm);">CAPÍTULO I – DA EXECUÇÃO ORÇAMENTÁRIA E FINANCEIRA: RESTOS A PAGAR E CLASSIFICAÇÕES DA DESPESA PÚBLICA</h1>
+            <p style="text-align: center; color: var(--text-muted); margin-top: var(--spacing-sm); font-style: italic;">Apostila Digital Premium · Estudo para Concursos · FCC · FGV · Cebraspe</p>
+        </div>
+
+        <!-- INTRODUÇÃO -->
+        <div class="card">
+            <p>Bem-vindos a um dos capítulos mais estratégicos do Direito Financeiro e da Administração Orçamentária para o seu concurso. Não se enganem com a aparente simplicidade dos tópicos. <strong>“Restos a Pagar” e “Classificação Institucional da Despesa”</strong> são temas certos em provas das bancas FCC, FGV e Cebraspe, e o erro mora nos detalhes que vamos dissecar aqui. Prepare-se para uma aula completa, do zero até as armadilhas mais sofisticadas, estruturada como as melhores apostilas de cursinhos de elite.</p>
+            <p>Dominar estes institutos significa dominar a própria mecânica de encerramento do exercício financeiro e a lógica por trás da organização dos gastos públicos. Vamos construir juntos esse conhecimento.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- SEÇÃO 1 -->
+        <div class="card">
+            <h2>SEÇÃO 1 – RESTOS A PAGAR (RAP): A PONTE ENTRE OS EXERCÍCIOS FINANCEIROS</h2>
+            <p>A execução orçamentária é regida por um ciclo temporal rígido, o chamado <strong>exercício financeiro</strong>, que no Brasil coincide com o ano civil (1º de janeiro a 31 de dezembro), conforme o art. 34 da Lei nº 4.320/64. É o princípio da <strong>Anualidade Orçamentária</strong>. Contudo, a realidade administrativa não se encerra magicamente à meia-noite do dia 31 de dezembro. Obras se estendem, serviços são prestados de forma continuada e contratos de fornecimento atravessam o ano. Como conciliar a rigidez do princípio da anualidade com a necessidade de continuidade da ação estatal?</p>
+            <p>A resposta é o instituto dos <strong>Restos a Pagar (RAP)</strong>. Eles são o mecanismo contábil e financeiro que permite que despesas legitimamente iniciadas em um exercício possam ter sua execução orçamentária e financeira concluída nos exercícios seguintes. Em essência, o RAP é a <span class="highlight">“ponte” que transporta para o ano seguinte o saldo de despesas que foram *empenhadas*, mas que, por algum motivo, não chegaram a ser *pagas* até o fim do exercício.</span></p>
+
+            <!-- DIAGRAMA 1: LINHA DO TEMPO RAP -->
+            <div class="diagram-container">
+                <svg width="700" height="190" viewBox="0 0 700 190" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                            <polygon points="0 0, 8 3, 0 6" fill="#3b5e6b" />
+                        </marker>
+                    </defs>
+                    <rect x="20" y="20" width="660" height="140" rx="12" fill="#f6f9fb" stroke="#c8d9e3" stroke-width="1.5" />
+                    <text x="350" y="48" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="700" fill="#1e2b32">CICLO DO EXERCÍCIO FINANCEIRO</text>
+                    <line x1="70" y1="85" x2="630" y2="85" stroke="#3b5e6b" stroke-width="2.5" marker-end="url(#arrowhead)" />
+                    <circle cx="70" cy="85" r="8" fill="#3b5e6b" />
+                    <text x="70" y="110" text-anchor="middle" font-size="12" fill="#2c2c2a" font-weight="600">1º Jan</text>
+                    <circle cx="350" cy="85" r="8" fill="#5f7d8c" />
+                    <text x="350" y="110" text-anchor="middle" font-size="12" fill="#2c2c2a" font-weight="600">Empenho</text>
+                    <circle cx="560" cy="85" r="8" fill="#b68b2c" />
+                    <text x="560" y="110" text-anchor="middle" font-size="12" fill="#2c2c2a" font-weight="600">31 Dez</text>
+                    <text x="560" y="130" text-anchor="middle" font-size="11" fill="#4a4a47">(não pago → RAP)</text>
+                    <rect x="580" y="140" width="80" height="24" rx="6" fill="#fae0b0" stroke="#d4b87a" stroke-width="1" />
+                    <text x="620" y="157" text-anchor="middle" font-size="10" font-weight="700" fill="#5c4318">RAP</text>
+                </svg>
+            </div>
+
+            <h3>1.1 Conceito e Fundamento Legal</h3>
+            <p>O conceito base está cristalino no <strong>art. 36 da Lei nº 4.320/64</strong>, que precisamos conhecer com precisão cirúrgica:</p>
+
+            <div class="legal-quote">
+                <p style="margin-bottom: 0;"><strong>Art. 36.</strong> Consideram-se Restos a Pagar as despesas empenhadas mas não pagas até o dia 31 de dezembro distinguindo-se as processadas das não processadas.</p>
+            </div>
+
+            <p>Destrinchemos cada elemento deste dispositivo:</p>
+            <ul>
+                <li><strong>“Despesas empenhadas”</strong>: Não há RAP sem o prévio e formal <strong>empenho</strong>, que é o ato emanado de autoridade competente que cria para o Estado a obrigação de pagamento, pendente ou não de implemento de condição (art. 58, Lei 4.320/64). O empenho é a garantia de que o crédito orçamentário está reservado para aquela despesa. É o ponto de partida inegociável.</li>
+                <li><strong>“mas não pagas”</strong>: A despesa pode ter sido liquidada ou não. O que importa é que a ordem bancária (pagamento) não foi efetivada até o dia 31 de dezembro. O pagamento extingue a obrigação e, consequentemente, a possibilidade de inscrição em RAP.</li>
+                <li><strong>“até o dia 31 de dezembro”</strong>: O marco temporal é o encerramento do exercício financeiro. A simples passagem da data, com a obrigação empenhada e não paga, gera a necessidade de inscrição.</li>
+                <li><strong>“distinguindo-se as processadas das não processadas”</strong>: Esta é a chave de toda a lógica do RAP, que detalharemos a seguir.</li>
+            </ul>
+
+            <div class="info-box">
+                <span class="icon">💡</span>
+                <div>
+                    <strong>Por que isso existe?</strong> Imagine que a Administração contrata uma obra complexa em outubro. O empenho é feito, garantindo o recurso. Em novembro, a construtora conclui uma etapa e o fiscal atesta a realização do serviço (liquidação). Contudo, por um atraso na burocracia bancária, a ordem de pagamento não é processada a tempo. Seria uma violação ao princípio da moralidade e à vedação do enriquecimento sem causa do Estado simplesmente “cancelar” essa dívida porque o ano virou. O RAP assegura a continuidade do pagamento dessa obrigação já liquidada. Da mesma forma, para uma despesa empenhada cujo serviço ainda está em andamento (não liquidada), o RAP garante a preservação do crédito orçamentário para que a despesa seja concluída no ano seguinte.
+                </div>
+            </div>
+
+            <h3>1.2 O Coração do Conceito: RAP Processados vs. RAP Não Processados</h3>
+            <p>A distinção feita pelo art. 36 é a espinha dorsal deste assunto. O <strong>Manual de Contabilidade Aplicada ao Setor Público (MCASP)</strong>, editado pela Secretaria do Tesouro Nacional, pormenoriza essa classificação, que é cobrada à exaustão em provas.</p>
+
+            <div class="concept-card">
+                <h4>🔵 Restos a Pagar Processados (RPP)</h4>
+                <p>São as despesas empenhadas que já percorreram o segundo estágio da despesa: a <strong>liquidação</strong>. A liquidação (art. 63, Lei 4.320/64) consiste na verificação do direito adquirido pelo credor, tendo por base títulos e documentos comprobatórios do respectivo crédito. Ou seja, o credor já cumpriu sua parte. A obra foi concluída, o material foi entregue, o serviço foi prestado. O Estado reconheceu formalmente que o objeto da despesa foi satisfeito.</p>
+                <p>Nesse caso, a dívida é líquida e certa. O Estado deve e tem plena consciência do que deve, a quem deve e o valor exato. O único estágio que não se completou foi o pagamento.</p>
+                <ul>
+                    <li><strong>Situação em 31/12:</strong> Despesa <span class="highlight-blue">Empenhada + Liquidada</span>, mas <strong>Não Paga</strong>.</li>
+                    <li><strong>Requisito:</strong> A liquidação foi atestada formalmente. O credor tem um direito líquido e certo contra a Fazenda Pública.</li>
+                    <li><strong>Natureza Jurídica:</strong> É uma obrigação líquida e certa, um passivo efetivamente constituído.</li>
+                </ul>
+            </div>
+
+            <div class="concept-card">
+                <h4>🟠 Restos a Pagar Não Processados (RPNP)</h4>
+                <p>São as despesas empenhadas que ainda não alcançaram o estágio da liquidação. Aqui, a execução contratual ou o implemento da condição ainda não foi verificada pelo Estado. O credor pode não ter entregue o bem ou serviço, ou, se o fez, o processo de liquidação ainda não foi formalmente concluído (fase de liquidação em curso).</p>
+                <p>A dívida ainda não é exigível. O Estado tem uma reserva orçamentária (o empenho), mas ainda não sabe com certeza se a obrigação será definitivamente constituída e, em alguns casos, qual será o valor exato final (embora o empenho estime um valor). A condição contratual ainda não se implementou.</p>
+                <ul>
+                    <li><strong>Situação em 31/12:</strong> Despesa <strong>Empenhada</strong>, mas <strong>Não Liquidada</strong> (ou em fase de liquidação, que é o mesmo que não liquidada formalmente para este fim).</li>
+                    <li><strong>Requisito:</strong> Basta o empenho válido e a não liquidação.</li>
+                    <li><strong>Natureza Jurídica:</strong> Não é uma dívida líquida e certa, mas uma expectativa de dívida, condicionada ao implemento do objeto contratado.</li>
+                </ul>
+            </div>
+
+            <h3>QUADRO-RESUMO COMPARATIVO ESSENCIAL</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Restos a Pagar Processados (RPP)</th>
+                            <th>Restos a Pagar Não Processados (RPNP)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Estágios Atingidos em 31/12</strong></td>
+                            <td>Empenho + Liquidação</td>
+                            <td>Apenas Empenho</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Estágio Faltante</strong></td>
+                            <td>Pagamento</td>
+                            <td>Liquidação e Pagamento</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Situação da Obrigação</strong></td>
+                            <td>Direito líquido e certo do credor. O Estado reconheceu que deve.</td>
+                            <td>Obrigação em formação. O Estado tem uma reserva, mas não reconheceu a dívida definitiva.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Execução no Exercício Seguinte</strong></td>
+                            <td>Pode ser pago imediatamente, pois já liquidado.</td>
+                            <td>Precisa primeiro ser liquidado (após o implemento da condição/cumprimento do contrato) para só então ser pago.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exemplo Prático</strong></td>
+                            <td>Contrato de limpeza: serviço de dezembro prestado e atestado pelo fiscal no dia 20/12, mas nota fiscal não foi paga até 31/12.</td>
+                            <td>Contrato de obra: etapa de R$ 500 mil foi empenhada em novembro. A construtora terminará a etapa só em fevereiro do ano seguinte. Em 31/12, o serviço não foi entregue, logo, não foi liquidado.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="table-caption">Comparação essencial entre RAP Processados e Não Processados — memorize os estágios.</p>
+            </div>
+
+            <!-- DIAGRAMA 2: FLUXO RAP PROCESSADO VS NÃO PROCESSADO -->
+            <div class="diagram-container">
+                <svg width="700" height="280" viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="30" y="20" width="300" height="230" rx="14" fill="#edf5f8" stroke="#b8cfdb" stroke-width="1.8" />
+                    <text x="180" y="52" text-anchor="middle" font-weight="700" font-size="14" fill="#1e3b44">RAP PROCESSADO</text>
+                    <circle cx="80" cy="100" r="22" fill="#3b5e6b" />
+                    <text x="80" y="106" text-anchor="middle" fill="white" font-size="12" font-weight="700">E</text>
+                    <text x="80" y="140" text-anchor="middle" font-size="11" fill="#2c2c2a">Empenho</text>
+                    <line x1="105" y1="100" x2="155" y2="100" stroke="#3b5e6b" stroke-width="2.5" marker-end="url(#arrowhead)" />
+                    <circle cx="180" cy="100" r="22" fill="#5f7d8c" />
+                    <text x="180" y="106" text-anchor="middle" fill="white" font-size="12" font-weight="700">L</text>
+                    <text x="180" y="140" text-anchor="middle" font-size="11" fill="#2c2c2a">Liquidação</text>
+                    <line x1="205" y1="100" x2="255" y2="100" stroke="#b0b0b0" stroke-width="2" stroke-dasharray="5,4" />
+                    <circle cx="280" cy="100" r="22" fill="#d4d4d4" stroke="#999" stroke-width="1.5" />
+                    <text x="280" y="106" text-anchor="middle" fill="#555" font-size="12" font-weight="700">P</text>
+                    <text x="280" y="140" text-anchor="middle" font-size="11" fill="#555">Pagamento ❌</text>
+                    <text x="180" y="185" text-anchor="middle" font-size="12" fill="#b68b2c" font-weight="700">✓ Pronto para pagar em X1</text>
+
+                    <rect x="370" y="20" width="300" height="230" rx="14" fill="#fef9f0" stroke="#e0cfa0" stroke-width="1.8" />
+                    <text x="520" y="52" text-anchor="middle" font-weight="700" font-size="14" fill="#5c4318">RAP NÃO PROCESSADO</text>
+                    <circle cx="420" cy="100" r="22" fill="#b68b2c" />
+                    <text x="420" y="106" text-anchor="middle" fill="white" font-size="12" font-weight="700">E</text>
+                    <text x="420" y="140" text-anchor="middle" font-size="11" fill="#2c2c2a">Empenho</text>
+                    <line x1="445" y1="100" x2="495" y2="100" stroke="#b0b0b0" stroke-width="2" stroke-dasharray="5,4" />
+                    <circle cx="520" cy="100" r="22" fill="#e8e8e8" stroke="#aaa" stroke-width="1.5" />
+                    <text x="520" y="106" text-anchor="middle" fill="#777" font-size="12" font-weight="700">L</text>
+                    <text x="520" y="140" text-anchor="middle" font-size="11" fill="#777">Liquidação ❌</text>
+                    <circle cx="590" cy="100" r="22" fill="#e8e8e8" stroke="#aaa" stroke-width="1.5" />
+                    <text x="590" y="106" text-anchor="middle" fill="#777" font-size="12" font-weight="700">P</text>
+                    <text x="590" y="140" text-anchor="middle" font-size="11" fill="#777">Pagamento ❌</text>
+                    <text x="520" y="185" text-anchor="middle" font-size="12" fill="#b68b2c" font-weight="700">⚠ Aguarda liquidação em X1</text>
+                </svg>
+            </div>
+
+            <h3>1.3 Estudo de Caso Prático – A Armadilha Clássica de Prova</h3>
+            <p>Vamos a um cenário típico de prova, construído exatamente para confundir o candidato desatento:</p>
+            <div class="callout">
+                <p><strong>Situação Hipotética:</strong><br>A Secretaria de Educação empenha R$ 100.000,00 em 15 de dezembro do ano X0 para a aquisição de 1.000 carteiras escolares. Em 28 de dezembro, a empresa entrega todas as carteiras na escola, conforme contrato. O fiscal do contrato, servidor público, inicia a conferência dos bens e dos documentos fiscais, mas, devido ao recesso de fim de ano, o processo de liquidação formal (atestação no sistema e assinatura) só é concluído em 10 de janeiro do ano X1. O pagamento é efetuado em 20 de janeiro de X1.</p>
+            </div>
+            <p><strong>Pergunta de concurso:</strong> Como essa despesa deve ser classificada para fins de encerramento do exercício X0 e inscrição em Restos a Pagar?</p>
+            <p><strong>Raciocínio Jurídico:</strong><br>A banca quer testar sua precisão conceitual sobre o que é “liquidação”. A liquidação não é o mero ato físico de entrega do bem; é o <strong>ato formal da Administração que reconhece a adequação da entrega</strong>. Se o ato formal (assinatura eletrônica, carimbo, registro no sistema) não foi praticado até 31/12/X0, para o mundo jurídico-orçamentário, a despesa não está liquidada. O fato de o bem já estar em posse do Estado configura o que chamamos de “liquidação implícita” para outros fins (direito do credor ao pagamento), mas para a contabilidade orçamentária, a regra é clara: <span class="highlight">considera-se liquidada a despesa formalmente reconhecida como tal até o dia 31 de dezembro</span>.</p>
+            <p>Portanto, a resposta é: a despesa de R$ 100.000,00 será inscrita em <strong>Restos a Pagar Não Processados (RPNP)</strong>, pois, embora os bens tenham sido entregues, o processo formal de liquidação não estava concluído no encerramento do exercício X0. Em X1, o primeiro ato será a liquidação, que “processará” o RAP (transformando-o de não processado para processado), e então se efetuará o pagamento.</p>
+
+            <div class="danger-box">
+                <span class="icon">⚠️</span>
+                <div>
+                    <strong>PEGADINHA DE PROVA:</strong> Cuidado com enunciados que dizem “o bem foi entregue, mas não liquidado”. Isso é Restos a Pagar <strong>Não Processado</strong>. A liquidação que importa é a <strong>formal</strong>. Não “invente” liquidação em prova. Se a banca disse que não foi liquidado, é RPNP, mesmo que intuitivamente pareça que o serviço foi prestado.
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- SEÇÃO 2 -->
+        <div class="card">
+            <h2>SEÇÃO 2 – CLASSIFICAÇÕES DA DESPESA ORÇAMENTÁRIA: UMA VISÃO ESTRUTURADA</h2>
+            <p>Agora que entendemos o “final da vida” de uma despesa, precisamos voltar à sua “certidão de nascimento”. Toda despesa pública, para ser executada, precisa ser classificada. Classificar uma despesa significa enquadrá-la em diversas categorias que respondem a perguntas específicas, formando uma matriz multidimensional que permite o planejamento, a execução, o controle e a transparência dos gastos. A Lei 4.320/64 e as portarias federais subsequentes criaram um sistema complexo de classificações. Vamos nos aprofundar em uma delas, a Institucional, e contrastá-la com outra fundamental: a Programática.</p>
+
+            <h3>2.1 Classificação Institucional: O “Quem” da Despesa</h3>
+            <p>A Classificação Institucional responde a uma pergunta primordial: <strong>Quem é o agente público que executará a despesa?</strong> A qual estrutura da Administração Pública pertence o gestor responsável por aquele crédito orçamentário?</p>
+            <p>Conforme a estrutura normativa, a Classificação Institucional é composta por dois níveis hierárquicos:</p>
+            <ol>
+                <li><strong>Órgão Orçamentário:</strong> É o nível mais agregador. Corresponde a uma estrutura administrativa de alto nível, geralmente um Ministério, uma Secretaria de Estado com status de Ministério, a Presidência da República, ou órgãos equivalentes nos estados e municípios (ex: Ministério da Educação, Secretaria Municipal de Saúde).</li>
+                <li><strong>Unidade Orçamentária (UO):</strong> É o nível de detalhamento dentro do Órgão. Representa uma unidade administrativa com autonomia orçamentária relativa, que recebe dotações próprias. Exemplos: Universidade Federal Fluminense (UO dentro do Órgão Ministério da Educação), Hospital Municipal Souza Aguiar (UO dentro do Órgão Secretaria Municipal de Saúde).</li>
+            </ol>
+            <p><strong>Portanto, a pergunta que a Classificação Institucional responde é: “Qual é o centro de custo responsável?”</strong></p>
+
+            <!-- DIAGRAMA 3: ESTRUTURA CLASSIFICAÇÃO INSTITUCIONAL -->
+            <div class="diagram-container">
+                <svg width="620" height="200" viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="60" y="30" width="180" height="70" rx="10" fill="#3b5e6b" />
+                    <text x="150" y="60" text-anchor="middle" fill="white" font-size="14" font-weight="700">ÓRGÃO</text>
+                    <text x="150" y="80" text-anchor="middle" fill="#dce8ef" font-size="11">Ministério / Secretaria</text>
+                    <line x1="240" y1="65" x2="320" y2="65" stroke="#3b5e6b" stroke-width="2" marker-end="url(#arrowhead)" />
+                    <rect x="330" y="30" width="200" height="70" rx="10" fill="#5f7d8c" />
+                    <text x="430" y="60" text-anchor="middle" fill="white" font-size="14" font-weight="700">UNIDADE ORÇAMENTÁRIA</text>
+                    <text x="430" y="80" text-anchor="middle" fill="#e0edf3" font-size="11">UO (autonomia relativa)</text>
+                    <text x="310" y="140" text-anchor="middle" font-size="13" fill="#2c3a40" font-weight="600">Pergunta-chave: QUEM executa?</text>
+                </svg>
+            </div>
+
+            <h4>2.1.1 Características Inerentes e suas Consequências (O Ouro para a FCC/FGV)</h4>
+            <p>Aqui reside o ponto mais profundo e explorado pelas bancas de alto nível. As bancas não cobram apenas o conceito, mas as <strong>consequências práticas</strong> de se adotar uma classificação centrada na estrutura administrativa. Anote estas três características típicas, pois elas são a chave para não errar:</p>
+
+            <div class="info-box">
+                <span class="icon">🔹</span>
+                <div>
+                    <strong>A) Ponto de Partida para um Programa de Contabilização de Custos:</strong><br>
+                    A lógica é intuitiva. Para se calcular o custo de uma política pública, você precisa saber “quem gastou” e com “o quê”. A Classificação Institucional, ao identificar o órgão e a unidade orçamentária que executaram o gasto, fornece a base primária para a alocação de custos. É o primeiro passo. Você imputa os gastos de pessoal, material, etc., à UO “Hospital X”. A partir dessa identificação, você pode, então, trabalhar com uma matriz de custos, alocando-os por programas ou atividades.
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <span class="icon">⚠️</span>
+                <div>
+                    <strong>B) Visão Fragmentada e Impedimento da Visão Global dos Gastos:</strong><br>
+                    Esta é a <strong>crítica fatal</strong> e o ponto mais cobrado pela FGV. A classificação que foca no “quem” tem uma falha estrutural: ela fragmenta a informação. Se você consolidar as despesas por Órgão, verá que o Ministério da Educação gastou R$ 10 bilhões, o Ministério da Saúde gastou R$ 12 bilhões, e assim por diante. Mas <strong>nenhum problema público se resolve dentro de um único ministério</strong>.
+                </div>
+            </div>
+
+            <p>Imagine o programa de “Redução da Mortalidade Infantil”. Ele envolve gastos do Ministério da Saúde (postos de saúde), do Ministério do Desenvolvimento Social (transferência de renda) e do Ministério das Cidades (saneamento básico). Uma classificação puramente institucional jogaria esses gastos em “caixas” separadas, impedindo o gestor e o controlador de enxergarem o esforço financeiro total alocado a um problema ou programa específico. A visão é perdida. Você sabe quanto cada órgão gastou, mas não sabe quanto se gastou, de forma global, com a “proteção social da criança”.</p>
+
+            <div class="danger-box">
+                <span class="icon">🔴</span>
+                <div>
+                    <strong>C) Tendência a Gerar Rivalidades Interorganizacionais:</strong><br>
+                    Esta é uma consequência política e administrativa derivada da fragmentação. Quando o foco do orçamento está rigidamente vinculado às estruturas burocráticas, cada Órgão ou Unidade lutará, na fase de elaboração do orçamento, para maximizar sua própria “fatia” de recursos. A lógica não é “qual a necessidade do programa X”, mas “quanto o meu ministério precisa para manter e expandir sua estrutura”. Gera-se uma competição predatória entre órgãos, uma “guerra de dotações”, que desvia o foco das necessidades da sociedade para a perpetuação e o fortalecimento das próprias unidades administrativas.
+                </div>
+            </div>
+
+            <h3>QUADRO-RESUMO: CLASSIFICAÇÃO INSTITUCIONAL</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pergunta-Chave</th>
+                            <th>Estrutura</th>
+                            <th>Característica 1 (Aspecto Gerencial)</th>
+                            <th>Característica 2 (Crítica Central)</th>
+                            <th>Característica 3 (Consequência Política)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Quem é o responsável pela execução?</strong></td>
+                            <td>Órgão Orçamentário → Unidade Orçamentária</td>
+                            <td>Ponto de partida para um sistema de contabilidade de custos, pois identifica o centro de acumulação do gasto.</td>
+                            <td><strong>Impede a visão global dos gastos governamentais</strong>, pois foca na estrutura administrativa, e não nos problemas ou programas.</td>
+                            <td>Tende a gerar <strong>rivalidades interorganizacionais</strong> na luta por dotações orçamentárias.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>2.2 Diferenciação Essencial: Classificação Institucional vs. Classificação Programática</h3>
+            <p>Aqui está o contraste que precisa ficar visceralmente claro. A banca adora misturá-las.</p>
+            <ul>
+                <li><strong>Classificação Institucional</strong>: Foco no “<strong>QUEM</strong>”. Órgão e Unidade Orçamentária. Visão organizacional e fragmentada.</li>
+                <li><strong>Classificação Programática</strong>: Foco no “<strong>PARA QUÊ</strong>”. Organiza as despesas segundo os <strong>programas de governo</strong>, que integram um conjunto de ações (projetos, atividades, operações especiais) voltadas para a solução de um problema ou o atendimento de uma demanda da sociedade. É uma visão finalística e integradora.</li>
+            </ul>
+            <p>A Classificação Programática é a grande resposta à crítica feita à Institucional. Ela rompe com a visão fragmentada. Um programa, como “Educação Básica de Qualidade”, vai congregar gastos de diferentes órgãos (MEC, estados via transferências, etc.) sob um mesmo objetivo. A visão global dos gastos, antes perdida, é agora restaurada pela lógica programática. A função-programa não pergunta "qual órgão gastou?", mas "em que programa o dinheiro foi aplicado?".</p>
+
+            <!-- DIAGRAMA 4: INSTITUCIONAL VS PROGRAMÁTICA -->
+            <div class="diagram-container">
+                <svg width="680" height="240" viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="20" y="20" width="290" height="200" rx="12" fill="#f2f6f9" stroke="#b0c8d3" stroke-width="1.5" />
+                    <text x="165" y="55" text-anchor="middle" font-weight="700" font-size="15" fill="#1e3b44">CLASSIFICAÇÃO INSTITUCIONAL</text>
+                    <text x="165" y="80" text-anchor="middle" font-size="22" fill="#3b5e6b">👤 QUEM?</text>
+                    <text x="165" y="115" text-anchor="middle" font-size="12" fill="#4a4a47">Órgão → Unidade Orçamentária</text>
+                    <text x="165" y="145" text-anchor="middle" font-size="12" fill="#8a4530">⚠ Visão fragmentada</text>
+                    <text x="165" y="170" text-anchor="middle" font-size="12" fill="#8a4530">⚠ Rivalidade entre órgãos</text>
+
+                    <rect x="370" y="20" width="290" height="200" rx="12" fill="#f0f5f0" stroke="#b8cfb8" stroke-width="1.5" />
+                    <text x="515" y="55" text-anchor="middle" font-weight="700" font-size="15" fill="#2c4a2c">CLASSIFICAÇÃO PROGRAMÁTICA</text>
+                    <text x="515" y="80" text-anchor="middle" font-size="22" fill="#4a6b4a">🎯 PARA QUÊ?</text>
+                    <text x="515" y="115" text-anchor="middle" font-size="12" fill="#4a4a47">Programas de governo</text>
+                    <text x="515" y="145" text-anchor="middle" font-size="12" fill="#2c5a2c">✓ Visão integradora</text>
+                    <text x="515" y="170" text-anchor="middle" font-size="12" fill="#2c5a2c">✓ Foco no problema público</text>
+                </svg>
+            </div>
+
+            <h4>2.2.1 Armadilha de Prova: O Erro Clássico</h4>
+            <p>Uma questão da FCC pode apresentar o seguinte raciocínio: <em>"Uma classificação que, se utilizada de forma predominante, resulta em perda da visão global dos gastos e rivalidade entre órgãos. Trata-se da..."</em>.</p>
+            <p>A resposta é sempre <strong>Classificação Institucional</strong>. Candidatos menos preparados podem marcar "abertura de créditos adicionais", "descentralização de créditos" ou "regionalização de programas no PPA". Analisemos por que esses itens são <strong>completamente incorretos</strong> para este contexto específico:</p>
+
+            <div class="callout">
+                <p><strong>▪ Abertura de Créditos Adicionais</strong>: São mecanismos de <strong>flexibilidade orçamentária</strong> (suplementares, especiais, extraordinários) que alteram a Lei Orçamentária Anual (LOA). Eles servem para reforçar dotações ou criar novas. Não são uma forma de classificar a despesa, e sim uma forma de alterar a programação ao longo do exercício. Jamais geram, por si sós, rivalidade interorganizacional ou perda de visão global. A rivalidade se dá na briga <em>por</em> esses créditos, mas não <em>por causa</em> da técnica em si. A técnica de classificação que causa a rivalidade é a institucional.</p>
+                            </div>
+            <div class="callout">
+                <p><strong>▪ Descentralização de Créditos</strong>: É a <strong>movimentação de recursos orçamentários</strong> de uma unidade gestora para outra. Pode ser interna (dentro do mesmo órgão, chamada de provisão) ou externa (entre órgãos diferentes, chamada de destaque). O objetivo é operacionalizar a execução, não classificar a despesa. O foco é executar o recurso onde o gasto efetivamente ocorre. Não tem o condão de gerar a rivalidade ou a perda de visão, pois a lógica é exatamente a de cooperação para a execução.</p>
+            </div>
+            <div class="callout">
+                <p><strong>▪ Regionalização de Programas no PPA</strong>: É um princípio de planejamento que diz que as metas e os investimentos do Plano Plurianual (PPA) devem ser distribuídos geograficamente por região (macroprocesso) ou território. É uma forma de visualizar o gasto no espaço, de territorializar a política pública, seguindo critérios populacionais, de demanda ou de desenvolvimento. Não é uma classificação da despesa, e sim um recorte de planejamento. Confundir isso com a classificação institucional é um erro grosseiro.</p>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- MAPA MENTAL TEXTUAL -->
+        <div class="mindmap-box">
+            <h3>🗺️ MAPA MENTAL TEXTUAL – TÓPICOS DO CAPÍTULO</h3>
+            <ul style="list-style-type: none; margin-left: 0;">
+                <li style="margin-bottom: 1.2rem;">
+                    <strong>🔷 RESTOS A PAGAR (RAP)</strong>
+                    <ul style="margin-top: 0.4rem;">
+                        <li><strong>Fundamento</strong>: Art. 36, Lei 4.320/64.</li>
+                        <li><strong>Conceito-Chave</strong>: Despesas empenhadas, mas não pagas até 31/12.</li>
+                        <li><strong>Tipos</strong>:
+                            <ul>
+                                <li><strong>RAP Processados</strong>: Empenhado + Liquidado (Dívida líquida e certa).</li>
+                                <li><strong>RAP Não Processados</strong>: Apenas Empenhado (Liquidação ou condição pendente).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Macete</strong>: RPP = Processado = Pagamento Pendente. RPNP = Não Processado = Nada (Liquidação e Pagamento) Pendentes.</li>
+                        <li><strong>Armadilha</strong>: Entrega do bem ≠ Liquidação formal. Liquidação é ato administrativo. Sem ele até 31/12, a despesa é RPNP.</li>
+                    </ul>
+                </li>
+                <li style="margin-bottom: 1.2rem;">
+                    <strong>🔷 CLASSIFICAÇÃO INSTITUCIONAL</strong>
+                    <ul style="margin-top: 0.4rem;">
+                        <li><strong>Pergunta</strong>: Quem executa?</li>
+                        <li><strong>Estrutura</strong>: Órgão → Unidade Orçamentária.</li>
+                        <li><strong>Três Características-Chave (Foco FCC/FGV)</strong>:
+                            <ol>
+                                <li>Base para custos (centro de acumulação).</li>
+                                <li><strong>Perda da visão global</strong> (fragmentação pela estrutura).</li>
+                                <li><strong>Rivalidade interorganizacional</strong> (briga por dotações).</li>
+                            </ol>
+                        </li>
+                        <li><strong>Diferenciação Essencial</strong>:
+                            <ul>
+                                <li>Institucional (Quem) vs. Programática (Para Quê/Qual o objetivo final).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>🔷 PEGADINHAS E ERROS COMUNS</strong>
+                    <ul style="margin-top: 0.4rem;">
+                        <li>Confundir “Descentralização de Créditos” (execução) com classificação.</li>
+                        <li>Confundir “Créditos Adicionais” (alteração da LOA) com classificação.</li>
+                        <li>Confundir “Regionalização do PPA” (planejamento territorial) com classificação.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ENCERRAMENTO -->
+        <div class="card" style="text-align: center; background: linear-gradient(135deg, #fafaf8 0%, #f2f0ea 100%);">
+            <p style="margin-bottom: 0; font-style: italic; color: #4a4a47;">Com este arcabouço, você não apenas memorizou, mas internalizou a lógica que rege Restos a Pagar e a Classificação Institucional. Você entendeu o “porquê” por trás dos conceitos, identificou as pegadinhas e está apto a resolver tanto questões literais quanto casos práticos complexos. Prossiga seus estudos com a confiança de um especialista.</p>
+        </div>
+
+    </div>
+</body>
+</html>

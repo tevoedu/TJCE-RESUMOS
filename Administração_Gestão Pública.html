@@ -1,0 +1,2438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração Geral para Concursos Jurídicos | Apostila Premium</title>
+    <style>
+        :root {
+            --bg: #fdfbf7;
+            --bg-card: #ffffff;
+            --text: #2c2c2c;
+            --text-light: #555;
+            --heading: #1a365d;
+            --accent: #2c5282;
+            --accent-light: #ebf4ff;
+            --border: #e2e0dd;
+            --border-light: #ece9e3;
+            --highlight-yellow: #fefcbf;
+            --highlight-blue: #dbeafe;
+            --highlight-green: #d1fae5;
+            --tip-bg: #f0fdf4;
+            --tip-border: #4ade80;
+            --warning-bg: #fffbeb;
+            --warning-border: #f59e0b;
+            --example-bg: #eff6ff;
+            --example-border: #3b82f6;
+            --mnemonic-bg: #faf5ff;
+            --mnemonic-border: #a855f7;
+            --table-header: #f1f5f9;
+            --table-border: #dde1e6;
+            --table-stripe: #f8fafc;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 8px;
+            --radius-lg: 12px;
+            --font-heading: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+            --font-body: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+            --font-code: "SF Mono", "Consolas", "Monaco", "Liberation Mono", monospace;
+            --font-size-base: 18px;
+            --line-height-base: 1.75;
+            --max-width: 860px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: var(--font-size-base);
+        }
+
+        body {
+            background-color: #f5f1ec;
+            color: var(--text);
+            font-family: var(--font-body);
+            line-height: var(--line-height-base);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .page-container {
+            width: 100%;
+            max-width: var(--max-width);
+            background: var(--bg);
+            box-shadow: var(--shadow-md);
+            padding: 2.5em 2.2em 3em;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        @media (min-width: 768px) {
+            .page-container {
+                margin: 1.2em auto;
+                border-radius: var(--radius-lg);
+                padding: 2.8em 3em 3.5em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-container {
+                padding: 1.4em 1em 2em;
+            }
+            body {
+                font-size: 16px;
+            }
+        }
+
+        /* HEADER */
+        .main-header {
+            text-align: center;
+            padding-bottom: 2em;
+            margin-bottom: 2.5em;
+            border-bottom: 3px double var(--border);
+            position: relative;
+        }
+        .main-header .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.75em;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.3em 1em;
+            border-radius: 20px;
+            margin-bottom: 1em;
+        }
+        .main-header h1 {
+            font-family: var(--font-heading);
+            font-size: 2.2em;
+            color: var(--heading);
+            line-height: 1.25;
+            margin-bottom: 0.3em;
+            letter-spacing: -0.01em;
+        }
+        .main-header .subtitle {
+            font-size: 1.05em;
+            color: var(--text-light);
+            font-weight: 400;
+            margin-bottom: 0.4em;
+        }
+        .main-header .focus {
+            font-size: 0.85em;
+            color: #6b7280;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        /* TABLE OF CONTENTS */
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.8em 2em;
+            margin-bottom: 2.8em;
+            box-shadow: var(--shadow-sm);
+        }
+        .toc h2 {
+            font-family: var(--font-heading);
+            font-size: 1.3em;
+            color: var(--heading);
+            margin-bottom: 1em;
+            text-align: center;
+            letter-spacing: 0.02em;
+        }
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+            columns: 1;
+            column-gap: 2em;
+        }
+        @media (min-width: 600px) {
+            .toc ol {
+                columns: 2;
+            }
+        }
+        .toc ol li {
+            counter-increment: toc-counter;
+            margin-bottom: 0.5em;
+            break-inside: avoid;
+        }
+        .toc ol li a {
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.9em;
+            display: flex;
+            align-items: baseline;
+            gap: 0.4em;
+            transition: color 0.2s;
+        }
+        .toc ol li a:hover {
+            color: #1a4971;
+            text-decoration: underline;
+        }
+        .toc ol li a::before {
+            content: "Cap." counter(toc-counter);
+            font-weight: 700;
+            font-size: 0.78em;
+            color: #94a3b8;
+            min-width: 3.2em;
+        }
+
+        /* SECTIONS */
+        .chapter {
+            margin-bottom: 2.8em;
+            padding-top: 1em;
+        }
+        .chapter:not(:last-of-type) {
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 1.5em;
+        }
+        .chapter h2 {
+            font-family: var(--font-heading);
+            font-size: 1.7em;
+            color: var(--heading);
+            margin-bottom: 0.6em;
+            line-height: 1.3;
+            position: relative;
+        }
+        .chapter h2 .chap-num {
+            display: block;
+            font-size: 0.5em;
+            font-weight: 400;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.3em;
+            font-family: var(--font-body);
+        }
+        .chapter h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25em;
+            color: #2d4a6e;
+            margin-top: 1.6em;
+            margin-bottom: 0.5em;
+        }
+        .chapter h4 {
+            font-family: var(--font-heading);
+            font-size: 1.08em;
+            color: #374151;
+            margin-top: 1.3em;
+            margin-bottom: 0.4em;
+            font-weight: 600;
+        }
+        .chapter p {
+            margin-bottom: 1.1em;
+            text-align: justify;
+        }
+        .chapter ul,
+        .chapter ol {
+            margin-bottom: 1.2em;
+            padding-left: 1.6em;
+        }
+        .chapter li {
+            margin-bottom: 0.4em;
+        }
+        .chapter strong {
+            color: #1a365d;
+            font-weight: 600;
+        }
+
+        /* DIVIDER */
+        .section-divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+            margin: 2.5em 0;
+        }
+        .subsection-divider {
+            border: none;
+            height: 1px;
+            background: var(--border-light);
+            margin: 1.8em 0;
+        }
+
+        /* CALLOUT BOXES */
+        .callout {
+            border-radius: var(--radius);
+            padding: 1.2em 1.5em;
+            margin: 1.5em 0;
+            position: relative;
+            font-size: 0.95em;
+            box-shadow: var(--shadow-sm);
+            border-left: 5px solid transparent;
+        }
+        .callout .callout-title {
+            font-weight: 700;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.5em;
+            display: block;
+        }
+        .callout-tip {
+            background: var(--tip-bg);
+            border-left-color: var(--tip-border);
+        }
+        .callout-tip .callout-title {
+            color: #166534;
+        }
+        .callout-warning {
+            background: var(--warning-bg);
+            border-left-color: var(--warning-border);
+        }
+        .callout-warning .callout-title {
+            color: #92400e;
+        }
+        .callout-example {
+            background: var(--example-bg);
+            border-left-color: var(--example-border);
+        }
+        .callout-example .callout-title {
+            color: #1e40af;
+        }
+        .callout-mnemonic {
+            background: var(--mnemonic-bg);
+            border-left-color: var(--mnemonic-border);
+        }
+        .callout-mnemonic .callout-title {
+            color: #6b21a8;
+        }
+
+        /* HIGHLIGHT / MARKER */
+        .highlight {
+            background: var(--highlight-yellow);
+            padding: 0.15em 0.4em;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        .highlight-blue {
+            background: var(--highlight-blue);
+            padding: 0.15em 0.4em;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        .highlight-green {
+            background: var(--highlight-green);
+            padding: 0.15em 0.4em;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        .trigger-word {
+            background: #fef3c7;
+            padding: 0.1em 0.35em;
+            border-radius: 3px;
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.5em;
+            margin: 1.5em 0;
+            box-shadow: var(--shadow-sm);
+        }
+        .card h4 {
+            margin-top: 0;
+            color: var(--heading);
+        }
+
+        /* TABLES */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5em 0;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            -webkit-overflow-scrolling: touch;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88em;
+            min-width: 500px;
+        }
+        table thead th {
+            background: var(--table-header);
+            color: #374151;
+            font-weight: 700;
+            padding: 0.8em 0.9em;
+            text-align: left;
+            border-bottom: 2px solid #cbd5e1;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+        table tbody td {
+            padding: 0.7em 0.9em;
+            border-bottom: 1px solid var(--table-border);
+            vertical-align: top;
+        }
+        table tbody tr:nth-child(even) {
+            background: var(--table-stripe);
+        }
+        table tbody tr:hover {
+            background: #f1f5f9;
+        }
+        .table-caption {
+            font-size: 0.85em;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 0.4em;
+            font-style: italic;
+        }
+
+        /* COMPARISON TABLE */
+        .comparison-table thead th:first-child {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #6b7280;
+        }
+        .comparison-table tbody td:first-child {
+            font-weight: 600;
+            color: #374151;
+            background: #fafbfc;
+        }
+
+        /* MNEMONIC ROW */
+        .mnemonic-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6em;
+            margin: 1em 0;
+            justify-content: center;
+        }
+        .mnemonic-item {
+            background: var(--mnemonic-bg);
+            border: 1px solid var(--mnemonic-border);
+            border-radius: 20px;
+            padding: 0.4em 1em;
+            font-weight: 600;
+            font-size: 0.9em;
+            color: #6b21a8;
+            white-space: nowrap;
+        }
+
+        /* DIAGRAM CARDS (Mintzberg) */
+        .diagram-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            margin: 1.5em 0;
+        }
+        .diagram-col {
+            flex: 1;
+            min-width: 150px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius);
+            padding: 1.2em;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .diagram-col .col-icon {
+            font-size: 2em;
+            margin-bottom: 0.3em;
+        }
+        .diagram-col h4 {
+            font-size: 0.95em;
+            color: var(--heading);
+            margin-bottom: 0.5em;
+        }
+        .diagram-col ul {
+            list-style: none;
+            padding: 0;
+            font-size: 0.85em;
+            color: var(--text-light);
+        }
+        .diagram-col ul li {
+            padding: 0.25em 0;
+            border-bottom: 1px dotted var(--border-light);
+        }
+        .diagram-col ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* STEP FLOW (Processo Decisório) */
+        .step-flow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
+            margin: 1.5em 0;
+            justify-content: center;
+            align-items: center;
+        }
+        .step-item {
+            background: var(--accent-light);
+            border-radius: var(--radius);
+            padding: 0.7em 1em;
+            font-weight: 600;
+            font-size: 0.85em;
+            color: var(--accent);
+            text-align: center;
+            position: relative;
+        }
+        .step-arrow {
+            color: #94a3b8;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        /* SVG PIRAMIDE CONTAINER */
+        .svg-container {
+            text-align: center;
+            margin: 2em 0;
+        }
+        .svg-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* BLOCKQUOTE / CITATION */
+        blockquote {
+            border-left: 4px solid #cbd5e1;
+            background: #f9fafb;
+            padding: 1em 1.5em;
+            margin: 1.3em 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            font-style: italic;
+            color: #4b5563;
+        }
+
+        /* INLINE CODE */
+        code {
+            font-family: var(--font-code);
+            background: #f1f5f9;
+            padding: 0.15em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+            color: #1e3a5f;
+            white-space: nowrap;
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin-top: 2em;
+            padding: 0.8em;
+            text-decoration: none;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9em;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: background 0.2s;
+        }
+        .back-to-top:hover {
+            background: var(--accent-light);
+        }
+
+        /* PRINT OPTIMIZATION */
+        @media print {
+            body {
+                background: #fff;
+                font-size: 12pt;
+            }
+            .page-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 1em;
+                max-width: 100%;
+            }
+            .callout {
+                break-inside: avoid;
+            }
+            table {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container" id="topo">
+
+        <!-- ============ HEADER ============ -->
+        <header class="main-header">
+            <span class="badge">Apostila Premium</span>
+            <h1>Administração Geral para Concursos Jurídicos</h1>
+            <p class="subtitle">Apostila Teórica Completa – Técnico Judiciário Área Judiciária</p>
+            <p class="focus">Foco: FCC, FGV, Cebraspe e Bancas de Alto Nível</p>
+        </header>
+
+        <!-- ============ SUMÁRIO ============ -->
+        <nav class="toc" aria-label="Sumário">
+            <h2>📚 Sumário</h2>
+            <ol>
+                <li><a href="#cap1">Os Papéis do Administrador segundo Henry Mintzberg</a></li>
+                <li><a href="#cap2">Motivação e a Hierarquia das Necessidades de Maslow</a></li>
+                <li><a href="#cap3">O Processo Decisório e o Modelo Racional de Tomada de Decisão</a></li>
+                <li><a href="#cap4">Ferramentas da Qualidade – O Histograma</a></li>
+                <li><a href="#cap5">Estrutura Organizacional</a></li>
+                <li><a href="#cap6">Liderança – As Teorias Comportamentais e os Estudos de Ohio</a></li>
+                <li><a href="#cap7">O Processo Administrativo – A Função Planejamento</a></li>
+                <li><a href="#cap8">Treinamento e Desenvolvimento de Competências</a></li>
+                <li><a href="#cap9">Gestão da Mudança Organizacional</a></li>
+            </ol>
+        </nav>
+
+        <!-- ============ CAPÍTULO 1 ============ -->
+        <section class="chapter" id="cap1">
+            <h2><span class="chap-num">Capítulo 1</span>OS PAPÉIS DO ADMINISTRADOR SEGUNDO HENRY MINTZBERG</h2>
+
+            <h3>1.1. Introdução ao Estudo dos Papéis Gerenciais</h3>
+            <p>O exercício da função administrativa não pode ser compreendido como um conjunto amorfo e indistinto de atribuições. Ao contrário, a atividade gerencial é composta por condutas específicas, padronizadas e classificáveis, que permitem ao administrador atuar com eficiência em múltiplas frentes simultâneas.</p>
+            <p>A contribuição mais relevante para a sistematização dessas condutas é atribuída a <strong>Henry Mintzberg</strong>, pesquisador canadense que, na década de 1970, realizou estudos empíricos observando diretamente a rotina de executivos. O resultado desse trabalho foi a identificação de <strong>dez papéis gerenciais</strong>, agrupados em três grandes categorias: <span class="highlight">papéis interpessoais, papéis informacionais e papéis decisoriais</span>.</p>
+            <p>Compreender essa classificação é essencial para o candidato, pois as bancas examinadoras — em especial a FGV e a FCC — exploram exaustivamente a identificação de atividades concretas e sua correspondência com cada papel específico. A literalidade da descrição de Mintzberg é frequentemente exigida, bem como a capacidade de distinguir papéis que, à primeira vista, podem parecer semelhantes.</p>
+
+            <h4>1.1.1. Por que Estudar os Papéis de Mintzberg para Concursos?</h4>
+            <p>O estudo dos papéis de Mintzberg é relevante para provas de Técnico Judiciário – Área Judiciária porque o cargo exige, em sua essência, a compreensão de como o administrador público deve atuar na coordenação de equipes, na gestão de informações processuais e na tomada de decisões administrativas. Além disso, a gestão judiciária moderna demanda profissionais capazes de identificar qual papel gerencial está sendo exercido em cada situação concreta.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>1.2. As Três Categorias de Papéis Gerenciais</h3>
+            <p>Antes de adentrarmos cada papel individualmente, é fundamental fixar a estrutura hierárquica da classificação. Mintzberg agrupou os dez papéis em três famílias, conforme sua natureza predominante:</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CATEGORIA</th>
+                            <th>FUNÇÃO PRINCIPAL</th>
+                            <th>PAPÉIS QUE A COMPÕEM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Interpessoal</strong></td>
+                            <td>Relacionamento com pessoas dentro e fora da organização</td>
+                            <td>Representação (símbolo), Liderança, Ligação</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Informacional</strong></td>
+                            <td>Obtenção, processamento e transmissão de informações</td>
+                            <td>Monitor, Disseminador, Porta-voz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Decisorial</strong></td>
+                            <td>Tomada de decisões e alocação de recursos</td>
+                            <td>Empreendedor, Solucionador de Conflitos, Alocador de Recursos, Negociador</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Diagrama visual das três categorias -->
+            <div class="diagram-row">
+                <div class="diagram-col">
+                    <div class="col-icon">🤝</div>
+                    <h4>Interpessoal</h4>
+                    <ul>
+                        <li>Representação</li>
+                        <li>Liderança</li>
+                        <li>Ligação</li>
+                    </ul>
+                </div>
+                <div class="diagram-col">
+                    <div class="col-icon">📡</div>
+                    <h4>Informacional</h4>
+                    <ul>
+                        <li>Monitor</li>
+                        <li>Disseminador</li>
+                        <li>Porta-voz</li>
+                    </ul>
+                </div>
+                <div class="diagram-col">
+                    <div class="col-icon">⚡</div>
+                    <h4>Decisorial</h4>
+                    <ul>
+                        <li>Empreendedor</li>
+                        <li>Solucionador de Conflitos</li>
+                        <li>Alocador de Recursos</li>
+                        <li>Negociador</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>1.3. Análise Detalhada de Cada Papel Decisorial</h3>
+            <p>Embora todos os dez papéis sejam relevantes, as bancas concentram sua atenção — e suas pegadinhas — nos <strong>papéis decisoriais</strong>, por serem aqueles que mais diretamente se relacionam com o exercício do poder gerencial e com a obtenção de resultados organizacionais. Vamos analisar cada um deles com profundidade.</p>
+
+            <h4>1.3.1. Empreendedor</h4>
+            <p>O papel de <strong>empreendedor</strong> é exercido quando o administrador atua como iniciador e planejador de mudanças controladas na organização. Não se trata de empreender no sentido de abrir um negócio, mas sim de identificar oportunidades, conceber projetos de melhoria e implementar inovações na estrutura ou nos processos organizacionais.</p>
+            <p><strong>Características essenciais:</strong></p>
+            <ul>
+                <li>O administrador age voluntariamente, por iniciativa própria.</li>
+                <li>As mudanças são planejadas e controladas, não reativas.</li>
+                <li>Há um componente de risco calculado.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo Prático no Judiciário</span>
+                <p>Um diretor de vara que identifica a necessidade de digitalizar o acervo físico e elabora um projeto de migração para o processo eletrônico está exercendo o papel de <strong>empreendedor</strong>. Ele não está reagindo a uma crise, mas iniciando proativamente uma melhoria.</p>
+            </div>
+
+            <div class="callout callout-mnemonic">
+                <span class="callout-title">🧠 Macete de Memorização</span>
+                <p><strong>"Empreendedor = EMPREENDE projetos"</strong>. Sempre que a questão mencionar <em>"iniciar novos projetos"</em>, <em>"identificar oportunidades"</em>, <em>"promover inovação"</em>, o papel é de <strong>empreendedor</strong>.</p>
+            </div>
+
+            <h4>1.3.2. Solucionador de Conflitos (Controlador de Distúrbios)</h4>
+            <p>O papel de <strong>solucionador de conflitos</strong> é acionado quando o administrador é chamado a agir <strong>reativamente</strong> diante de situações imprevistas, crises, conflitos internos ou perturbações que fogem ao controle da organização. Diferentemente do empreendedor, que age por iniciativa, o solucionador de conflitos age por imposição das circunstâncias.</p>
+            <p><strong>Características essenciais:</strong></p>
+            <ul>
+                <li>Atuação reativa, não planejada.</li>
+                <li>Foco em conflitos internos ou crises que ameaçam a estabilidade.</li>
+                <li>O administrador age como mediador, árbitro ou gestor de crise.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo Prático</span>
+                <p>Dois servidores de um cartório judicial entram em conflito aberto sobre a divisão de tarefas, prejudicando o andamento processual. O chefe do cartório intervém para mediar a situação e restabelecer a normalidade. Ele está exercendo o papel de <strong>solucionador de conflitos</strong>.</p>
+            </div>
+
+            <div class="callout callout-warning">
+                <span class="callout-title">⚠ ATENÇÃO – PEGADINHA DE BANCA</span>
+                <p>A FGV adora confundir o candidato entre <strong>Solucionador de Conflitos</strong> e <strong>Negociador</strong>. A diferença fundamental é o <strong>alcance do problema</strong>:</p>
+                <ul>
+                    <li><strong>Solucionador de Conflitos:</strong> resolve disputas <em>internas</em> à organização (entre subordinados, entre departamentos, crises internas).</li>
+                    <li><strong>Negociador:</strong> representa a organização em negociações <em>externas</em> (sindicatos, fornecedores, outras instituições).</li>
+                </ul>
+                <p><strong>Dica de prova:</strong> Se a questão fala em <em>"greve de servidores"</em>, <em>"conflito entre departamentos"</em>, <em>"crise interna inesperada"</em>, a resposta é <strong>Solucionador de Conflitos</strong>. Se fala em <em>"negociação com sindicato"</em>, <em>"compra de equipamentos com fornecedor externo"</em>, <em>"acordo com outro órgão público"</em>, a resposta é <strong>Negociador</strong>.</p>
+            </div>
+
+            <h4>1.3.3. Alocador de Recursos</h4>
+            <p>O papel de <strong>alocador de recursos</strong> é central na atividade administrativa. Consiste em decidir <strong>quem receberá quais recursos</strong>, sejam eles financeiros, materiais, humanos ou de tempo. O administrador, nesse papel, define prioridades, distribui orçamento, designa pessoas para tarefas e aprova ou rejeita solicitações de alocação.</p>
+            <p><strong>Características essenciais:</strong></p>
+            <ul>
+                <li>Decisão sobre a distribuição de recursos escassos.</li>
+                <li>Envolve planejamento orçamentário, programação de trabalho e autorização de gastos.</li>
+                <li>Está diretamente relacionado à função administrativa de organização e planejamento de recursos.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplos Práticos no Judiciário</span>
+                <p>O diretor do fórum precisa decidir quantos computadores novos serão destinados a cada vara, considerando o orçamento disponível e a demanda de cada unidade. Essa atividade caracteriza o papel de <strong>alocador de recursos</strong>.</p>
+                <p>Programar o orçamento da equipe, definindo quanto cada setor receberá para suas atividades no próximo ano, também é exercício típico do papel de alocador de recursos.</p>
+            </div>
+            <p><strong>Relação com as funções administrativas:</strong> O alocador de recursos atua predominantemente na função <em>planejamento</em> (quando define antecipadamente a distribuição) e na função <em>organização</em> (quando distribui efetivamente os recursos entre os órgãos e cargos).</p>
+
+            <h4>1.3.4. Negociador</h4>
+            <p>O papel de <strong>negociador</strong> é exercido quando o administrador representa a organização em negociações com terceiros, sejam eles internos ou externos. O administrador atua como porta-voz qualificado da organização em acordos, transações, contratos e ajustes de interesses.</p>
+            <p><strong>Características essenciais:</strong></p>
+            <ul>
+                <li>Representação institucional em processos de negociação.</li>
+                <li>Envolve barganha, acordo e compromisso.</li>
+                <li>Pode ocorrer com agentes externos (fornecedores, sindicatos, outras organizações) ou internos (negociação de condições de trabalho, por exemplo).</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo Prático</span>
+                <p>O administrador do tribunal negocia com o sindicato dos servidores as condições para o reajuste salarial e o plano de carreira. Também exerce o papel de <strong>negociador</strong> quando discute com uma empresa de tecnologia o contrato de manutenção dos sistemas informatizados.</p>
+            </div>
+
+            <div class="callout callout-warning">
+                <span class="callout-title">⚠ Exemplo Contextualizado – FGV</span>
+                <p>A banca FGV costuma apresentar situações como <em>"negociar com sindicatos"</em> justamente para testar se o candidato identifica corretamente o papel de <strong>Negociador</strong>, e não o de Solucionador de Conflitos. A diferença, como já vimos, está na natureza da atividade: negociar é buscar um acordo; solucionar conflito é apaziguar uma crise.</p>
+            </div>
+
+            <h4>1.3.5. Quadro Síntese dos Papéis Decisoriais</h4>
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>PAPEL</th>
+                            <th>GATILHO DE ATUAÇÃO</th>
+                            <th>FOCO DA AÇÃO</th>
+                            <th>EXEMPLO TÍPICO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Empreendedor</td>
+                            <td>Iniciativa própria</td>
+                            <td>Inovação, projetos, melhorias</td>
+                            <td>Criar projeto de digitalização processual</td>
+                        </tr>
+                        <tr>
+                            <td>Solucionador de Conflitos</td>
+                            <td>Reação a crises</td>
+                            <td>Apaziguar disputas internas</td>
+                            <td>Mediar conflito entre servidores</td>
+                        </tr>
+                        <tr>
+                            <td>Alocador de Recursos</td>
+                            <td>Necessidade de distribuir</td>
+                            <td>Orçamento, pessoal, equipamentos</td>
+                            <td>Programar orçamento da equipe</td>
+                        </tr>
+                        <tr>
+                            <td>Negociador</td>
+                            <td>Necessidade de acordo</td>
+                            <td>Negociação externa ou institucional</td>
+                            <td>Negociar com sindicato</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-mnemonic">
+                <span class="callout-title">🧠 Associação Mnemônica – os 4 "A" dos papéis decisoriais</span>
+                <div class="mnemonic-row">
+                    <span class="mnemonic-item">Empreendedor → Emp<strong>ree</strong>nde (inicia)</span>
+                    <span class="mnemonic-item">Solucionador de Conflitos → S<strong>o</strong>corre (apaga incêndio)</span>
+                    <span class="mnemonic-item">Alocador de Recursos → <strong>A</strong>loca (distribui)</span>
+                    <span class="mnemonic-item">Negociador → <strong>N</strong>egocia (barganha)</span>
+                </div>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>1.4. O Papel Informacional de Monitor</h3>
+            <p>Dentre os papéis informacionais, aquele que mais aparece em questões de prova é o de <strong>Monitor</strong>. Esse papel consiste em buscar, receber, coletar e analisar informações relevantes sobre o ambiente interno e externo da organização. O administrador, como monitor, está permanentemente "escutando" o que acontece ao seu redor para formar a base de informações que utilizará em suas decisões e comunicações.</p>
+            <p><strong>Características essenciais:</strong></p>
+            <ul>
+                <li>Coleta sistemática ou assistemática de informações.</li>
+                <li>Abrange o ambiente interno (desempenho, clima organizacional) e externo (mercado, legislação, concorrência).</li>
+                <li>Alimenta os outros papéis informacionais (disseminador e porta-voz) e os papéis decisoriais.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo Contextualizado</span>
+                <p>Um chefe de secretaria judicial que analisa relatórios de produtividade, consulta o Diário da Justiça para verificar novas orientações do CNJ e participa de reuniões para se inteirar das mudanças legislativas está exercendo o papel de <strong>monitor</strong>.</p>
+            </div>
+
+            <div class="callout callout-tip">
+                <span class="callout-title">💡 Dica de Prova – FGV</span>
+                <p>A FGV cobrou expressamente a associação entre <em>"analisar informações do ambiente"</em> e o papel de <strong>Monitor</strong>. É comum a banca apresentar uma lista de atividades e solicitar a correspondência com os papéis. Fique atento: sempre que houver menção a <em>"coletar"</em>, <em>"receber"</em>, <em>"analisar informações do ambiente"</em>, <em>"manter-se informado"</em>, o papel é <strong>Monitor</strong>.</p>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>1.5. Integração dos Papéis na Atividade Gerencial – Caso Prático Completo</h3>
+            <p>Vamos consolidar o aprendizado com um caso prático que ilustra como, no dia a dia, um administrador transita entre os diferentes papéis:</p>
+
+            <div class="card">
+                <h4>Situação Hipotética</h4>
+                <p><strong>Maria</strong> é diretora de uma vara judicial federal. Em uma mesma semana, ela realiza as seguintes atividades:</p>
+                <ul>
+                    <li><strong>Segunda-feira:</strong> Analisa os relatórios estatísticos de produtividade dos servidores e as novas resoluções do CNJ publicadas no Diário Oficial.</li>
+                    <li><strong>Terça-feira:</strong> Com base nos dados analisados, elabora um projeto de reorganização do fluxo de trabalho para aumentar a eficiência.</li>
+                    <li><strong>Quarta-feira:</strong> Distribui as novas atribuições entre os servidores e define quanto cada setor receberá de material de expediente para o trimestre.</li>
+                    <li><strong>Quinta-feira:</strong> Dois servidores entram em conflito por causa da nova distribuição de tarefas, e Maria precisa intervir para mediar.</li>
+                    <li><strong>Sexta-feira:</strong> Representa a vara em reunião com o sindicato para negociar as condições de implementação do novo fluxo de trabalho.</li>
+                </ul>
+            </div>
+
+            <p><strong>Identificação dos papéis exercidos:</strong></p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>DIA</th>
+                            <th>ATIVIDADE</th>
+                            <th>PAPEL EXERCIDO</th>
+                            <th>CATEGORIA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Segunda</td>
+                            <td>Analisar relatórios e resoluções</td>
+                            <td><strong>Monitor</strong></td>
+                            <td>Informacional</td>
+                        </tr>
+                        <tr>
+                            <td>Terça</td>
+                            <td>Elaborar projeto de melhoria</td>
+                            <td><strong>Empreendedor</strong></td>
+                            <td>Decisorial</td>
+                        </tr>
+                        <tr>
+                            <td>Quarta</td>
+                            <td>Distribuir recursos e tarefas</td>
+                            <td><strong>Alocador de Recursos</strong></td>
+                            <td>Decisorial</td>
+                        </tr>
+                        <tr>
+                            <td>Quinta</td>
+                            <td>Mediar conflito entre servidores</td>
+                            <td><strong>Solucionador de Conflitos</strong></td>
+                            <td>Decisorial</td>
+                        </tr>
+                        <tr>
+                            <td>Sexta</td>
+                            <td>Negociar com sindicato</td>
+                            <td><strong>Negociador</strong></td>
+                            <td>Decisorial</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Este caso demonstra como um administrador, em uma única semana, pode exercer múltiplos papéis, transitando entre as categorias informacional e decisorial conforme as demandas se apresentam.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>1.6. Pegadinhas de Banca e Erros Comuns</h3>
+            <p>As bancas examinadoras exploram determinadas confusões recorrentes. Conhecer esses pontos frágeis é meio caminho andado para acertar a questão.</p>
+
+            <h4>1.6.1. Solucionador de Conflitos x Negociador</h4>
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>CRITÉRIO</th>
+                            <th>SOLUCIONADOR DE CONFLITOS</th>
+                            <th>NEGOCIADOR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Natureza da situação</td>
+                            <td>Crise, distúrbio, conflito interno</td>
+                            <td>Processo negocial regular</td>
+                        </tr>
+                        <tr>
+                            <td>Atitude do administrador</td>
+                            <td>Reativa (apaga incêndio)</td>
+                            <td>Pode ser proativa ou reativa</td>
+                        </tr>
+                        <tr>
+                            <td>Interlocutores</td>
+                            <td>Membros internos</td>
+                            <td>Terceiros (externos ou internos em contexto negocial)</td>
+                        </tr>
+                        <tr>
+                            <td>Palavras-gatilho em prova</td>
+                            <td><em>"conflito"</em>, <em>"crise"</em>, <em>"disputa"</em>, <em>"distúrbio"</em></td>
+                            <td><em>"negociar"</em>, <em>"acordo"</em>, <em>"compra/venda"</em>, <em>"sindicato"</em></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>1.6.2. Empreendedor x Alocador de Recursos</h4>
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>CRITÉRIO</th>
+                            <th>EMPREENDEDOR</th>
+                            <th>ALOCADOR DE RECURSOS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Objeto da ação</td>
+                            <td>Projetos, mudanças, inovações</td>
+                            <td>Recursos financeiros, materiais, humanos</td>
+                        </tr>
+                        <tr>
+                            <td>Pergunta-chave respondida</td>
+                            <td><em>"O que podemos melhorar?"</em></td>
+                            <td><em>"Quem recebe o quê?"</em></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>1.6.3. Monitor x Disseminador x Porta-voz</h4>
+            <p>Os três papéis informacionais são frequentemente testados em conjunto. A distinção está no <strong>fluxo da informação</strong>:</p>
+            <ul>
+                <li><strong>Monitor:</strong> <span class="highlight-blue">RECEBE</span> informações do ambiente (captação externa → interna).</li>
+                <li><strong>Disseminador:</strong> <span class="highlight-green">TRANSMITE</span> informações dentro da organização (fluxo interno).</li>
+                <li><strong>Porta-voz:</strong> <span class="highlight">TRANSMITE</span> informações da organização para fora (fluxo interno → externo).</li>
+            </ul>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ============ CAPÍTULO 2 ============ -->
+        <section class="chapter" id="cap2">
+            <h2><span class="chap-num">Capítulo 2</span>MOTIVAÇÃO E A HIERARQUIA DAS NECESSIDADES DE MASLOW</h2>
+
+            <h3>2.1. Introdução à Teoria Motivacional de Maslow</h3>
+            <p>A compreensão do comportamento humano nas organizações passa, inevitavelmente, pelo estudo das teorias motivacionais. Entre elas, a <strong>Teoria da Hierarquia das Necessidades</strong>, desenvolvida pelo psicólogo americano <strong>Abraham Maslow</strong>, é a mais cobrada em concursos públicos, figurando em editais de todas as principais bancas.</p>
+            <p>Maslow propôs que as necessidades humanas estão organizadas em uma hierarquia de importância e influência. Essa hierarquia é frequentemente representada como uma <strong>pirâmide</strong>, com as necessidades mais básicas e prementes na base e as mais elevadas e complexas no topo.</p>
+
+            <!-- SVG Pirâmide de Maslow -->
+            <div class="svg-container">
+                <svg viewBox="0 0 600 400" width="550" height="360" aria-label="Pirâmide da Hierarquia das Necessidades de Maslow" role="img">
+                    <defs>
+                        <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+                            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#00000020"/>
+                        </filter>
+                    </defs>
+                    <title>Pirâmide de Maslow: 5 níveis - Fisiológicas, Segurança, Sociais, Estima, Autorrealização</title>
+                    <!-- Nível 1 - Fisiológicas (base) -->
+                    <polygon points="50,350 550,350 490,290 110,290" fill="#fca5a5" stroke="#f87171" stroke-width="1.5" filter="url(#shadow)"/>
+                    <text x="300" y="328" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#7f1d1d">1. FISIOLÓGICAS</text>
+                    <text x="300" y="344" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="10" fill="#991b1b">Salário, descanso, alimentação</text>
+                    <!-- Nível 2 - Segurança -->
+                    <polygon points="110,290 490,290 430,230 170,230" fill="#fdba74" stroke="#fb923c" stroke-width="1.5" filter="url(#shadow)"/>
+                    <text x="300" y="268" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#7c2d12">2. SEGURANÇA</text>
+                    <text x="300" y="284" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="10" fill="#9a3412">Estabilidade, proteção, benefícios</text>
+                    <!-- Nível 3 - Sociais -->
+                    <polygon points="170,230 430,230 370,170 230,170" fill="#86efac" stroke="#4ade80" stroke-width="1.5" filter="url(#shadow)"/>
+                    <text x="300" y="208" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#14532d">3. SOCIAIS</text>
+                    <text x="300" y="224" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="10" fill="#166534">Amizade, pertencimento, integração</text>
+                    <!-- Nível 4 - Estima -->
+                    <polygon points="230,170 370,170 310,110 290,110" fill="#93c5fd" stroke="#60a5fa" stroke-width="1.5" filter="url(#shadow)"/>
+                    <text x="300" y="148" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" fill="#1e3a5f">4. ESTIMA</text>
+                    <text x="300" y="164" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="10" fill="#1e40af">Reconhecimento, status, orgulho</text>
+                    <!-- Nível 5 - Autorrealização (topo) -->
+                    <polygon points="290,110 310,110 300,55" fill="#c4b5fd" stroke="#a78bfa" stroke-width="1.5" filter="url(#shadow)"/>
+                    <text x="300" y="92" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="12" font-weight="700" fill="#4c1d95">5. AUTORREALIZAÇÃO</text>
+                    <text x="300" y="106" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="9" fill="#5b21b6">Criatividade, desafio, autonomia</text>
+                    <!-- Seta ao lado -->
+                    <text x="560" y="200" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="11" fill="#6b7280" transform="rotate(90,560,200)">CRESCIMENTO ↑</text>
+                </svg>
+                <p class="table-caption">Representação visual da Pirâmide da Hierarquia das Necessidades de Maslow</p>
+            </div>
+
+            <h4>2.1.1. Premissas Fundamentais da Teoria de Maslow</h4>
+            <p>Antes de analisarmos cada nível, é importante compreender as premissas que sustentam a teoria:</p>
+            <ul>
+                <li><strong>Hierarquia de prepotência:</strong> As necessidades dos níveis inferiores precisam ser satisfeitas antes que as necessidades dos níveis superiores se tornem motivadoras. Uma pessoa com fome (necessidade fisiológica) não se preocupa com reconhecimento (necessidade de estima).</li>
+                <li><strong>Motivação pelo próximo nível insatisfeito:</strong> O que motiva o comportamento é sempre a necessidade do nível seguinte àquele já satisfeito. Uma vez atendida uma necessidade, ela deixa de ser fonte de motivação.</li>
+                <li><strong>Universalidade relativa:</strong> A hierarquia aplica-se à generalidade das pessoas, embora existam variações individuais.</li>
+            </ul>
+
+            <hr class="subsection-divider">
+
+            <h3>2.2. Os Cinco Níveis da Pirâmide de Maslow</h3>
+            <p>Vamos examinar cada nível, suas manifestações no ambiente de trabalho e as palavras-gatilho que as bancas utilizam.</p>
+
+            <h4>2.2.1. Necessidades Fisiológicas (Base da Pirâmide)</h4>
+            <p>São as necessidades mais básicas, ligadas à sobrevivência do indivíduo. Constituem o ponto de partida da teoria.</p>
+            <p><strong>Exemplos:</strong> Alimentação, sono, abrigo, vestuário, sexo.</p>
+            <p><strong>No contexto organizacional:</strong> Salário suficiente para subsistência, condições físicas adequadas de trabalho (temperatura, iluminação), intervalos para descanso e alimentação.</p>
+            <p><strong>Palavras-gatilho em prova:</strong> <span class="trigger-word">"condições físicas de trabalho"</span>, <span class="trigger-word">"intervalos de descanso"</span>, <span class="trigger-word">"salário básico"</span>, <span class="trigger-word">"horário de almoço"</span>.</p>
+
+            <h4>2.2.2. Necessidades de Segurança</h4>
+            <p>Uma vez satisfeitas as necessidades fisiológicas, emergem as necessidades de segurança. O indivíduo busca proteção contra ameaças, estabilidade e previsibilidade.</p>
+            <p><strong>Exemplos:</strong> Segurança física, estabilidade no emprego, plano de saúde, seguro de vida, previdência.</p>
+            <p><strong>No contexto organizacional:</strong> Estabilidade no cargo, planos de benefícios, ambiente de trabalho seguro, regras claras e previsíveis.</p>
+
+            <div class="callout callout-warning">
+                <span class="callout-title">⚠ ATENÇÃO – PEGADINHA DE BANCA</span>
+                <p>A palavra <strong>"estabilidade"</strong> é o grande marcador das necessidades de segurança. A FCC e a FGV costumam associar <em>"estabilidade no emprego"</em>, <em>"segurança no cargo"</em>, <em>"ambiente previsível"</em> a esse nível. Cuidado para não confundir com necessidades sociais ou de estima.</p>
+            </div>
+            <p><strong>Palavras-gatilho em prova:</strong> <span class="trigger-word">"estabilidade"</span>, <span class="trigger-word">"segurança"</span>, <span class="trigger-word">"proteção"</span>, <span class="trigger-word">"benefícios previdenciários"</span>, <span class="trigger-word">"plano de saúde"</span>, <span class="trigger-word">"previsibilidade"</span>.</p>
+
+            <h4>2.2.3. Necessidades Sociais (de Afiliação ou de Amor)</h4>
+            <p>Superadas as necessidades de segurança, o indivíduo busca pertencimento, aceitação, amizade e afeto. É o nível das relações interpessoais.</p>
+            <p><strong>Exemplos:</strong> Amizade, amor, pertencimento a grupos, aceitação social.</p>
+            <p><strong>No contexto organizacional:</strong> Bom relacionamento com colegas, espírito de equipe, ambiente de trabalho amistoso, eventos sociais da organização.</p>
+            <p><strong>Palavras-gatilho em prova:</strong> <span class="trigger-word">"amizade"</span>, <span class="trigger-word">"relacionamento"</span>, <span class="trigger-word">"integração"</span>, <span class="trigger-word">"pertencimento"</span>, <span class="trigger-word">"clima de equipe"</span>, <span class="trigger-word">"aceitação pelo grupo"</span>.</p>
+
+            <h4>2.2.4. Necessidades de Estima</h4>
+            <p>Este nível é um dos mais cobrados em provas e merece atenção redobrada. As necessidades de estima dizem respeito ao desejo de ser <strong>reconhecido, valorizado e respeitado</strong> — tanto por si mesmo (autoestima) quanto pelos outros (reconhecimento social).</p>
+            <p><strong>Desdobramento:</strong></p>
+            <ul>
+                <li><strong>Autoestima:</strong> Autoconfiança, competência, realização pessoal.</li>
+                <li><strong>Heteroestima (reconhecimento pelos outros):</strong> Status, prestígio, reconhecimento, valorização.</li>
+            </ul>
+            <p><strong>No contexto organizacional:</strong></p>
+            <ul>
+                <li><span class="highlight">Responsabilidade por resultados</span> (palavra-gatilho clássica da FCC);</li>
+                <li>Reconhecimento público pelo trabalho;</li>
+                <li>Oportunidades de promoção;</li>
+                <li>Orgulho pelo trabalho realizado;</li>
+                <li>Títulos honoríficos;</li>
+                <li>Elogios formais.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo Prático</span>
+                <p>Um tribunal que implementa um programa de <strong>"Servidor Destaque do Mês"</strong>, no qual os profissionais com melhor desempenho recebem certificado em cerimônia pública e têm seu nome divulgado no site institucional, está atendendo às <strong>necessidades de estima</strong>.</p>
+            </div>
+
+            <div class="callout callout-tip">
+                <span class="callout-title">💡 Dica de Prova – FCC</span>
+                <p>A FCC considera <strong>"responsabilidade por resultados"</strong> como um marcador clássico de necessidades de estima. Quando a questão mencionar essa expressão, a resposta correta será <strong>necessidades de estima</strong>.</p>
+            </div>
+            <p><strong>Palavras-gatilho em prova:</strong> <span class="trigger-word">"reconhecimento"</span>, <span class="trigger-word">"status"</span>, <span class="trigger-word">"promoção"</span>, <span class="trigger-word">"orgulho"</span>, <span class="trigger-word">"prestígio"</span>, <span class="trigger-word">"responsabilidade por resultados"</span>, <span class="trigger-word">"valorização"</span>, <span class="trigger-word">"destaque"</span>.</p>
+
+            <h4>2.2.5. Necessidades de Autorrealização (Topo da Pirâmide)</h4>
+            <p>É o nível mais elevado da hierarquia. Refere-se ao desejo do indivíduo de realizar seu potencial máximo, tornar-se tudo o que é capaz de ser. É a necessidade de crescimento pessoal e autodesenvolvimento.</p>
+            <p><strong>Exemplos:</strong> Criatividade, desenvolvimento de talentos, superação pessoal, trabalho desafiador e significativo.</p>
+            <p><strong>No contexto organizacional:</strong></p>
+            <ul>
+                <li>Trabalho criativo e desafiador;</li>
+                <li>Diversidade e autonomia de tarefas;</li>
+                <li>Participação nas decisões;</li>
+                <li>Oportunidade de desenvolver novas habilidades;</li>
+                <li>Ambiente que estimule a inovação.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo Prático</span>
+                <p>Um servidor que recebe autonomia para desenvolver um novo método de trabalho, podendo experimentar e inovar, está tendo suas necessidades de <strong>autorrealização</strong> atendidas. O mesmo se aplica a um ambiente que permite ao profissional participar ativamente das decisões que afetam seu trabalho.</p>
+            </div>
+            <p><strong>Palavras-gatilho em prova:</strong> <span class="trigger-word">"criatividade"</span>, <span class="trigger-word">"desafio"</span>, <span class="trigger-word">"autonomia"</span>, <span class="trigger-word">"participação"</span>, <span class="trigger-word">"desenvolvimento pessoal"</span>, <span class="trigger-word">"trabalho significativo"</span>, <span class="trigger-word">"potencial máximo"</span>.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>2.3. Quadro Síntese – Hierarquia das Necessidades de Maslow</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NÍVEL</th>
+                            <th>NECESSIDADE</th>
+                            <th>PALAVRAS-GATILHO EM PROVA</th>
+                            <th>EXEMPLO NO TRABALHO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>5º (topo)</td>
+                            <td><strong>Autorrealização</strong></td>
+                            <td>Criatividade, desafio, autonomia, participação nas decisões, diversidade de tarefas</td>
+                            <td>Trabalho criativo, autonomia para inovar</td>
+                        </tr>
+                        <tr>
+                            <td>4º</td>
+                            <td><strong>Estima</strong></td>
+                            <td>Reconhecimento, status, responsabilidade por resultados, promoção, orgulho</td>
+                            <td>Programa de reconhecimento, promoção</td>
+                        </tr>
+                        <tr>
+                            <td>3º</td>
+                            <td><strong>Sociais</strong></td>
+                            <td>Amizade, pertencimento, integração, aceitação</td>
+                            <td>Bom clima de equipe, eventos sociais</td>
+                        </tr>
+                        <tr>
+                            <td>2º</td>
+                            <td><strong>Segurança</strong></td>
+                            <td>Estabilidade, proteção, benefícios, previsibilidade</td>
+                            <td>Estabilidade no cargo, plano de saúde</td>
+                        </tr>
+                        <tr>
+                            <td>1º (base)</td>
+                            <td><strong>Fisiológicas</strong></td>
+                            <td>Salário, descanso, alimentação, condições físicas</td>
+                            <td>Intervalos, ambiente confortável</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>2.4. Diferenciação Crítica: Necessidades de Estima x Autorrealização</h3>
+            <p>A confusão entre esses dois níveis é a fonte mais comum de erros em provas. Vamos a uma diferenciação definitiva.</p>
+
+            <h4>2.4.1. Estima</h4>
+            <p><strong>Foco:</strong> Reconhecimento externo e autoimagem ligada ao status.<br>
+                <strong>O que o indivíduo busca:</strong> Ser valorizado, admirado, reconhecido.<br>
+                <strong>Pergunta interna:</strong> <em>"Os outros me valorizam?"</em> / <em>"Eu me sinto competente?"</em><br>
+                <strong>Exemplo organizacional:</strong> Receber uma promoção, ser elogiado em público, ter seu nome destacado.</p>
+
+            <h4>2.4.2. Autorrealização</h4>
+            <p><strong>Foco:</strong> Desenvolvimento interno do potencial.<br>
+                <strong>O que o indivíduo busca:</strong> Crescer, criar, superar-se, realizar seu potencial.<br>
+                <strong>Pergunta interna:</strong> <em>"Estou me tornando tudo que posso ser?"</em><br>
+                <strong>Exemplo organizacional:</strong> Receber um projeto desafiador, ter liberdade para inovar, participar ativamente das decisões.</p>
+
+            <h4>2.4.3. Quadro Comparativo</h4>
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>CRITÉRIO</th>
+                            <th>ESTIMA</th>
+                            <th>AUTORREALIZAÇÃO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Orientação</td>
+                            <td>Externa (reconhecimento) e interna (autoestima)</td>
+                            <td>Interna (crescimento)</td>
+                        </tr>
+                        <tr>
+                            <td>Palavra-chave</td>
+                            <td>Reconhecimento</td>
+                            <td>Realização</td>
+                        </tr>
+                        <tr>
+                            <td>Exemplo típico de prova</td>
+                            <td>"Responsabilidade por resultados" (FCC)</td>
+                            <td>"Trabalho criativo e desafiador" (FGV)</td>
+                        </tr>
+                        <tr>
+                            <td>Pergunta do indivíduo</td>
+                            <td>"Sou valorizado?"</td>
+                            <td>"Estou me superando?"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-mnemonic">
+                <span class="callout-title">🧠 Macete Definitivo para Provas</span>
+                <p><strong>Estima = EGO</strong> (status, reconhecimento, aplauso).<br>
+                    <strong>Autorrealização = POTENCIAL</strong> (crescimento, criação, autonomia).</p>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>2.5. Caso Prático – Aplicação da Pirâmide de Maslow no Judiciário</h3>
+            <p><strong>Situação:</strong> O Tribunal de Justiça decide implementar uma política de gestão de pessoas. Analise cada iniciativa proposta e identifique a qual necessidade de Maslow ela atende:</p>
+            <ol>
+                <li><strong>Aumento do auxílio-alimentação e melhoria da ergonomia das estações de trabalho.</strong><br>
+                    <em>Resposta:</em> Necessidades <strong>fisiológicas</strong> (alimentação e condições físicas adequadas).</li>
+                <li><strong>Criação de plano de carreira com estabilidade após três anos e previsibilidade de progressão.</strong><br>
+                    <em>Resposta:</em> Necessidades de <strong>segurança</strong> (estabilidade e previsibilidade).</li>
+                <li><strong>Realização de confraternização mensal e criação de grupos de corrida entre servidores.</strong><br>
+                    <em>Resposta:</em> Necessidades <strong>sociais</strong> (integração e pertencimento).</li>
+                <li><strong>Instituição de prêmio "Servidor Excelência" e entrega de certificados de reconhecimento.</strong><br>
+                    <em>Resposta:</em> Necessidades de <strong>estima</strong> (reconhecimento e status).</li>
+                <li><strong>Criação de um programa de inovação em que servidores podem propor e liderar projetos de melhoria.</strong><br>
+                    <em>Resposta:</em> Necessidades de <strong>autorrealização</strong> (criatividade, desafio, autonomia).</li>
+            </ol>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ============ CAPÍTULO 3 ============ -->
+        <section class="chapter" id="cap3">
+            <h2><span class="chap-num">Capítulo 3</span>O PROCESSO DECISÓRIO E O MODELO RACIONAL DE TOMADA DE DECISÃO</h2>
+
+            <h3>3.1. Introdução ao Processo Decisório</h3>
+            <p>Decidir é a essência da atividade administrativa. A todo momento, administradores são chamados a escolher entre alternativas, alocando recursos e definindo rumos. O estudo do processo decisório busca compreender como as decisões são tomadas, quais modelos orientam essas escolhas e quais armadilhas podem comprometer sua qualidade.</p>
+            <p>Para os concursos jurídicos, o conhecimento do processo decisório é fundamental porque o Técnico Judiciário participa ativamente de decisões administrativas — desde a escolha de materiais de consumo até a proposição de rotinas de trabalho mais eficientes.</p>
+
+            <h4>3.1.1. Os Modelos de Tomada de Decisão</h4>
+            <p>A literatura especializada apresenta diversos modelos de tomada de decisão. Os principais são:</p>
+            <ul>
+                <li><strong>Modelo Racional (Clássico):</strong> O decisor tem informação perfeita, conhece todas as alternativas e escolhe aquela que maximiza os resultados.</li>
+                <li><strong>Modelo da Racionalidade Limitada (Simon):</strong> O decisor tem limitações cognitivas e informacionais, buscando uma solução satisfatória, não ótima.</li>
+                <li><strong>Modelo Incremental (Lindblom):</strong> As decisões são pequenos ajustes a partir do status quo.</li>
+                <li><strong>Modelo da Lata de Lixo (Cohen, March e Olsen):</strong> As decisões resultam do encontro casual entre problemas, soluções, participantes e oportunidades de escolha.</li>
+            </ul>
+            <p>Dentre esses, o <strong>Modelo Racional</strong> é o mais cobrado em questões objetivas, especialmente pela FGV, que explora a aplicação de critérios quantitativos de escolha.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>3.2. O Modelo Racional em Detalhe</h3>
+            <h4>3.2.1. Pressupostos do Modelo Racional</h4>
+            <p>O modelo racional, também chamado de modelo clássico ou econômico, baseia-se nos seguintes pressupostos ideais:</p>
+            <ul>
+                <li><strong>Informação completa:</strong> O decisor conhece todas as alternativas possíveis.</li>
+                <li><strong>Critérios claros e estáveis:</strong> As preferências são definidas e não mudam durante o processo.</li>
+                <li><strong>Capacidade de cálculo ilimitada:</strong> O decisor pode processar todas as informações e calcular os resultados.</li>
+                <li><strong>Objetivo de maximização:</strong> Busca-se a melhor decisão possível (ótima), não apenas uma decisão boa.</li>
+            </ul>
+
+            <h4>3.2.2. Etapas do Processo Decisório Racional</h4>
+            <p>O modelo racional segue uma sequência lógica:</p>
+            <div class="step-flow">
+                <span class="step-item">1. Definição do problema (diagnóstico)</span>
+                <span class="step-arrow">→</span>
+                <span class="step-item">2. Identificação dos critérios de decisão</span>
+                <span class="step-arrow">→</span>
+                <span class="step-item">3. Atribuição de pesos aos critérios</span>
+                <span class="step-arrow">→</span>
+                <span class="step-item">4. Levantamento das alternativas</span>
+                <span class="step-arrow">→</span>
+                <span class="step-item">5. Avaliação das alternativas (cálculo ponderado)</span>
+                <span class="step-arrow">→</span>
+                <span class="step-item">6. Escolha da melhor alternativa (decisão ótima)</span>
+                <span class="step-arrow">→</span>
+                <span class="step-item">7. Implementação e monitoramento</span>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>3.3. Matriz de Ponderação – Ferramenta do Modelo Racional</h3>
+            <p>Uma das ferramentas mais importantes do modelo racional é a <strong>matriz de ponderação</strong> (ou matriz de decisão ponderada). Ela permite comparar alternativas com base em múltiplos critérios, cada um com seu peso relativo. A FGV explora exaustivamente esse cálculo em provas.</p>
+
+            <h4>3.3.1. Estrutura da Matriz de Ponderação</h4>
+            <p>A matriz é construída com:</p>
+            <ul>
+                <li><strong>Alternativas</strong> (nas linhas).</li>
+                <li><strong>Critérios</strong> (nas colunas).</li>
+                <li><strong>Pesos</strong> (importância relativa de cada critério).</li>
+                <li><strong>Notas</strong> (avaliação de cada alternativa em cada critério).</li>
+            </ul>
+            <p>A pontuação final é obtida pela soma dos produtos da nota pelo peso em cada critério.</p>
+
+            <h4>3.3.2. Exemplo Prático Resolvido Passo a Passo</h4>
+            <div class="card">
+                <h4>Caso Concreto – FGV</h4>
+                <p>Um gerente precisa escolher uma impressora para o setor. Ele definiu quatro critérios com pesos específicos e avaliou quatro fabricantes (F1, F2, F3, F4). As notas (de 0 a 10) estão na tabela a seguir. <strong>Qual fabricante deve ser escolhido?</strong></p>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CRITÉRIO (PESO)</th>
+                            <th>F1</th>
+                            <th>F2</th>
+                            <th>F3</th>
+                            <th>F4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Preço (peso 10)</td>
+                            <td>10</td>
+                            <td>7</td>
+                            <td>5</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Custo do Toner (peso 10)</td>
+                            <td>8</td>
+                            <td>6</td>
+                            <td>7</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Durabilidade (peso 7)</td>
+                            <td>6</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Qualidade de Impressão (peso 8)</td>
+                            <td>9</td>
+                            <td>7</td>
+                            <td>10</td>
+                            <td>8</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>PASSO A PASSO DO CÁLCULO:</strong></p>
+            <div class="card">
+                <p><strong>Fabricante F1:</strong><br>
+                    Preço: <code>10 × 10 = 100</code><br>
+                    Toner: <code>8 × 10 = 80</code><br>
+                    Durabilidade: <code>6 × 7 = 42</code><br>
+                    Qualidade: <code>9 × 8 = 72</code><br>
+                    <strong>Total F1: 100 + 80 + 42 + 72 = 294</strong></p>
+                <p><strong>Fabricante F2:</strong><br>
+                    Preço: <code>7 × 10 = 70</code><br>
+                    Toner: <code>6 × 10 = 60</code><br>
+                    Durabilidade: <code>8 × 7 = 56</code><br>
+                    Qualidade: <code>7 × 8 = 56</code><br>
+                    <strong>Total F2: 70 + 60 + 56 + 56 = 242</strong></p>
+                <p><strong>Fabricante F3:</strong><br>
+                    Preço: <code>5 × 10 = 50</code><br>
+                    Toner: <code>7 × 10 = 70</code><br>
+                    Durabilidade: <code>9 × 7 = 63</code><br>
+                    Qualidade: <code>10 × 8 = 80</code><br>
+                    <strong>Total F3: 50 + 70 + 63 + 80 = 263</strong></p>
+                <p><strong>Fabricante F4:</strong><br>
+                    Preço: <code>8 × 10 = 80</code><br>
+                    Toner: <code>6 × 10 = 60</code><br>
+                    Durabilidade: <code>10 × 7 = 70</code><br>
+                    Qualidade: <code>8 × 8 = 64</code><br>
+                    <strong>Total F4: 80 + 60 + 70 + 64 = 274</strong></p>
+            </div>
+
+            <p><strong>Resultado:</strong> A maior pontuação é a de <strong>F1 (294 pontos)</strong>, seguida de F4 (274), F3 (263) e F2 (242). Portanto, pelo modelo racional, a escolha ótima é o <strong>Fabricante F1</strong>.</p>
+
+            <div class="callout callout-warning">
+                <span class="callout-title">⚠ ATENÇÃO – Revisão do Cálculo</span>
+                <p>O flashcard original menciona F4 como resposta com 274 pontos. Contudo, refazendo o cálculo passo a passo, <strong>F1 atinge 294 pontos</strong>, sendo a melhor escolha. Isso ilustra um ponto crucial para provas: <strong>refazer sempre o cálculo com calma</strong>, sem confiar cegamente em gabaritos preliminares. A banca pode alterar os números e exigir que o candidato domine o método.</p>
+            </div>
+
+            <h4>3.3.3. Cuidados na Aplicação da Matriz de Ponderação</h4>
+            <ul>
+                <li>Verificar se os pesos estão corretos.</li>
+                <li>Multiplicar cada nota pelo respectivo peso.</li>
+                <li>Somar todos os produtos para cada alternativa.</li>
+                <li>Comparar os totais e identificar o maior valor (maximização).</li>
+                <li>Lembrar que o modelo racional pressupõe que a alternativa com maior pontuação é a "ótima".</li>
+            </ul>
+
+            <hr class="subsection-divider">
+
+            <h3>3.4. O Processo Decisório no Contexto do Judiciário</h3>
+            <p>O Técnico Judiciário frequentemente participa de processos decisórios administrativos. Vejamos exemplos práticos:</p>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo 1 – Compra de material de escritório</span>
+                <p>O tribunal precisa adquirir papel A4. Três fornecedores apresentam propostas. O administrador define critérios (preço, prazo de entrega, qualidade do papel) e pesos. Usando a matriz de ponderação, identifica a melhor proposta.</p>
+            </div>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo 2 – Escolha de sistema informatizado</span>
+                <p>O setor de tecnologia apresenta três opções de software de gestão processual. Os critérios são: funcionalidades (peso 10), facilidade de uso (peso 8), custo de licença (peso 9) e suporte técnico (peso 7). Aplica-se a matriz para decidir.</p>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ============ CAPÍTULO 4 ============ -->
+        <section class="chapter" id="cap4">
+            <h2><span class="chap-num">Capítulo 4</span>FERRAMENTAS DA QUALIDADE – O HISTOGRAMA</h2>
+
+            <h3>4.1. Introdução às Ferramentas da Qualidade</h3>
+            <p>A gestão da qualidade utiliza um conjunto de ferramentas estatísticas e gráficas para coleta, análise e interpretação de dados sobre processos. Essas ferramentas permitem identificar problemas, analisar causas e monitorar resultados. São conhecidas como as <strong>"Sete Ferramentas da Qualidade"</strong> e incluem:</p>
+            <ul>
+                <li>Folha de Verificação</li>
+                <li>Diagrama de Pareto</li>
+                <li>Diagrama de Ishikawa (Espinha de Peixe)</li>
+                <li><strong>Histograma</strong></li>
+                <li>Gráfico de Dispersão</li>
+                <li>Fluxograma</li>
+                <li>Gráfico de Controle</li>
+            </ul>
+            <p>Dentre essas, o <strong>Histograma</strong> e o <strong>Diagrama de Pareto</strong> são os mais frequentes em provas, e a confusão entre eles é uma fonte fértil de pegadinhas.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>4.2. O Histograma – Conceito e Finalidade</h3>
+            <p>O histograma é um <strong>gráfico de barras verticais</strong> que representa a <strong>distribuição de frequência</strong> de um conjunto de dados. Em linguagem simples, é uma <em>"fotografia"</em> que mostra com que frequência cada valor ou faixa de valores ocorre em um processo.</p>
+
+            <h4>4.2.1. Para que serve o Histograma?</h4>
+            <ul>
+                <li>Visualizar a distribuição dos dados (se são simétricos, assimétricos, concentrados, dispersos).</li>
+                <li>Identificar padrões de variação em um processo.</li>
+                <li>Verificar se um processo está centralizado no valor-alvo.</li>
+                <li>Comparar a variabilidade real com os limites de especificação.</li>
+            </ul>
+
+            <blockquote>
+                <strong>Analogia didática:</strong> Imagine fotografar a altura dos servidores de um tribunal. O histograma mostraria, em barras, quantos servidores têm altura entre 1,50m e 1,55m, quantos entre 1,56m e 1,60m, e assim por diante. A "fotografia" revela a distribuição das alturas na população.
+            </blockquote>
+
+            <hr class="subsection-divider">
+
+            <h3>4.3. Etapas para Construção de um Histograma</h3>
+            <p>A construção de um histograma segue passos técnicos definidos. A FGV e a FCC costumam cobrar quais operações são necessárias, excluindo aquelas típicas de outras ferramentas.</p>
+
+            <h4>4.3.1. Passo a Passo da Construção</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ETAPA</th>
+                            <th>DESCRIÇÃO</th>
+                            <th>EXEMPLO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Coleta de dados</td>
+                            <td>Obter um conjunto de dados (no mínimo 30 observações)</td>
+                            <td>Tempo de espera para atendimento, em minutos</td>
+                        </tr>
+                        <tr>
+                            <td>2. Cálculo da amplitude total</td>
+                            <td>Subtrair o menor valor do maior valor (Amplitude = Máx – Mín)</td>
+                            <td>Tempo máximo: 45 min; Tempo mínimo: 5 min; Amplitude = 40</td>
+                        </tr>
+                        <tr>
+                            <td>3. Definição do número de classes</td>
+                            <td>Escolher quantas barras o gráfico terá (usar fórmula ou bom senso)</td>
+                            <td>Para 50 dados, usar 6 a 8 classes</td>
+                        </tr>
+                        <tr>
+                            <td>4. Cálculo do intervalo de classe</td>
+                            <td>Dividir a amplitude total pelo número de classes</td>
+                            <td>40 ÷ 8 = 5 minutos por classe</td>
+                        </tr>
+                        <tr>
+                            <td>5. Construção da tabela de frequências</td>
+                            <td>Contar quantos dados caem em cada intervalo</td>
+                            <td>5-10 min: 8 ocorrências; 10-15 min: 12 ocorrências; etc.</td>
+                        </tr>
+                        <tr>
+                            <td>6. Desenho do gráfico</td>
+                            <td>Eixo X: classes (intervalos); Eixo Y: frequências</td>
+                            <td>Barras justapostas representando cada classe</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.3.2. Operações Necessárias x Desnecessárias</h4>
+            <p>A banca costuma apresentar alternativas misturando operações do histograma com operações de outras ferramentas. Vamos distinguir:</p>
+            <p><strong>Operações típicas do histograma:</strong></p>
+            <ul>
+                <li>Calcular a amplitude total dos dados.</li>
+                <li>Construir tabela de frequências.</li>
+                <li>Definir número de classes.</li>
+                <li>Calcular intervalo de classe.</li>
+            </ul>
+            <p><strong>Operações que NÃO pertencem ao histograma:</strong></p>
+            <ul>
+                <li>Calcular desvio padrão (embora possa complementar a análise, não é etapa de construção).</li>
+                <li>Listar categorias em ordem decrescente de frequência (essa é operação típica do <strong>Diagrama de Pareto</strong>).</li>
+                <li>Identificar causas (isso é do <strong>Diagrama de Ishikawa</strong>).</li>
+            </ul>
+
+            <hr class="subsection-divider">
+
+            <h3>4.4. Histograma x Diagrama de Pareto – Diferenciação Essencial</h3>
+            <p>A confusão entre essas duas ferramentas é a armadilha mais comum nas provas. Vamos a uma diferenciação definitiva:</p>
+
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>CRITÉRIO</th>
+                            <th>HISTOGRAMA</th>
+                            <th>DIAGRAMA DE PARETO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>O que representa</td>
+                            <td>Distribuição de frequência de dados quantitativos contínuos</td>
+                            <td>Frequência de categorias (qualitativas ou discretas)</td>
+                        </tr>
+                        <tr>
+                            <td>Formato</td>
+                            <td>Barras justapostas (sem espaçamento)</td>
+                            <td>Barras separadas, em ordem decrescente</td>
+                        </tr>
+                        <tr>
+                            <td>Ordenação</td>
+                            <td>Classes em ordem crescente (da menor para a maior)</td>
+                            <td>Categorias em ordem decrescente de frequência</td>
+                        </tr>
+                        <tr>
+                            <td>Linha adicional</td>
+                            <td>Não tem</td>
+                            <td>Possui linha de frequência acumulada</td>
+                        </tr>
+                        <tr>
+                            <td>Objetivo principal</td>
+                            <td>Entender a distribuição e variação dos dados</td>
+                            <td>Identificar as causas mais frequentes (80/20)</td>
+                        </tr>
+                        <tr>
+                            <td>Palavras-gatilho</td>
+                            <td>"Distribuição", "frequência", "amplitude", "fotografia do processo"</td>
+                            <td>"Ordem decrescente", "poucas causas vitais", "80/20"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-mnemonic">
+                <span class="callout-title">🧠 Macete de Memorização</span>
+                <p><strong>Histograma = HISTOria</strong> da distribuição (como os dados se espalham).<br>
+                    <strong>Pareto = PRIORIZAÇÃO</strong> (ordem decrescente, do mais importante ao menos importante).</p>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>4.5. Exemplo Prático – Construção de Histograma no Judiciário</h3>
+            <div class="card">
+                <h4>Situação</h4>
+                <p>O diretor de uma vara quer analisar o tempo de tramitação dos processos conclusos para sentença. Ele coleta os dados de 50 processos (em dias):</p>
+                <p><strong>Dados (dias):</strong> 12, 15, 8, 10, 22, 18, 14, 9, 11, 16, 20, 13, 7, 19, 17, 10, 21, 14, 15, 12, 9, 23, 16, 11, 18, 13, 8, 20, 14, 10, 17, 22, 15, 12, 19, 9, 16, 21, 11, 13, 18, 14, 7, 20, 10, 15, 17, 22, 12, 8</p>
+            </div>
+            <p><strong>Passo 1 – Amplitude total:</strong> Máximo = 23 dias; Mínimo = 7 dias; Amplitude = 23 – 7 = <strong>16 dias</strong>.</p>
+            <p><strong>Passo 2 – Número de classes:</strong> Para 50 dados, podemos usar <strong>6 classes</strong>.</p>
+            <p><strong>Passo 3 – Intervalo de classe:</strong> 16 ÷ 6 ≈ 2,67 → arredondar para <strong>3 dias por classe</strong>.</p>
+            <p><strong>Passo 4 – Classes:</strong> 7-9; 10-12; 13-15; 16-18; 19-21; 22-24.</p>
+            <p><strong>Passo 5 – Frequências (contagem):</strong></p>
+            <ul>
+                <li>7-9: <strong>7</strong> processos</li>
+                <li>10-12: <strong>11</strong> processos</li>
+                <li>13-15: <strong>10</strong> processos</li>
+                <li>16-18: <strong>9</strong> processos</li>
+                <li>19-21: <strong>8</strong> processos</li>
+                <li>22-24: <strong>5</strong> processos</li>
+            </ul>
+            <p><strong>Passo 6 – Histograma:</strong> Barras justapostas com alturas proporcionais às frequências.</p>
+            <p>Este histograma permite visualizar que a maioria dos processos é sentenciada entre 10 e 15 dias, e que há uma cauda à direita com processos que demoram mais.</p>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ============ CAPÍTULO 5 ============ -->
+        <section class="chapter" id="cap5">
+            <h2><span class="chap-num">Capítulo 5</span>ESTRUTURA ORGANIZACIONAL</h2>
+
+            <h3>5.1. Introdução – O que é Estrutura Organizacional</h3>
+            <p>A estrutura organizacional é o arcabouço que define como as atividades da organização são formalmente divididas, agrupadas e coordenadas. É o "esqueleto" sobre o qual a organização funciona. A estrutura está representada graficamente no <strong>organograma</strong> e define:</p>
+            <ul>
+                <li>A hierarquia (cadeia de comando);</li>
+                <li>Os departamentos (agrupamentos de atividades);</li>
+                <li>As relações de autoridade e responsabilidade;</li>
+                <li>Os canais de comunicação formal.</li>
+            </ul>
+
+            <h4>5.1.1. Por que Estudar Estrutura Organizacional?</h4>
+            <p>Para concursos de Técnico Judiciário, o estudo da estrutura organizacional é essencial porque:</p>
+            <ul>
+                <li>O Judiciário é uma organização complexa, com múltiplas unidades e instâncias.</li>
+                <li>Compreender os tipos de estrutura ajuda a entender o funcionamento de varas, tribunais e órgãos administrativos.</li>
+                <li>As bancas exploram a adequação de cada tipo estrutural a diferentes contextos.</li>
+            </ul>
+
+            <hr class="subsection-divider">
+
+            <h3>5.2. Estrutura Funcional</h3>
+            <h4>5.2.1. Características</h4>
+            <p>A estrutura funcional agrupa as atividades de acordo com a <strong>especialização técnica</strong> ou função organizacional. É a estrutura mais tradicional e comum em organizações de médio porte.</p>
+            <p><strong>Principais características:</strong></p>
+            <ul>
+                <li>Departamentalização por funções (Finanças, Recursos Humanos, Produção, Marketing).</li>
+                <li>Cada departamento reúne especialistas na mesma área.</li>
+                <li>Cadeia de comando única (cada subordinado reporta a um chefe).</li>
+                <li>Foco na eficiência técnica e na especialização.</li>
+            </ul>
+            <p><strong>Vantagens:</strong></p>
+            <ul>
+                <li>Excelência técnica em cada área.</li>
+                <li>Clareza na carreira dos especialistas.</li>
+                <li>Economia de escala nos recursos especializados.</li>
+            </ul>
+            <p><strong>Desvantagens:</strong></p>
+            <ul>
+                <li>Visão fragmentada; cada departamento enxerga apenas sua função.</li>
+                <li>Lentidão na resposta a mudanças.</li>
+                <li>Dificuldade de coordenação entre áreas.</li>
+            </ul>
+            <p><strong>No Judiciário:</strong> Uma vara judicial pode ser vista como uma estrutura predominantemente funcional, com setores especializados (cível, criminal, família) e servidores alocados por competência.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>5.3. Estrutura Divisional</h3>
+            <h4>5.3.1. Características</h4>
+            <p>A estrutura divisional agrupa as atividades com base nos <strong>produtos, serviços, clientes ou áreas geográficas</strong> da organização. Cada divisão opera como uma unidade quase autônoma, com seus próprios recursos funcionais (cada divisão tem seu RH, seu financeiro, etc.).</p>
+            <p><strong>Principais características:</strong></p>
+            <ul>
+                <li>Divisões autossuficientes e relativamente autônomas.</li>
+                <li>Cada divisão funciona como um centro de resultados (centro de lucro, centro de custo).</li>
+                <li>Foco no resultado final (produto, mercado, região).</li>
+                <li>Descentralização das decisões operacionais.</li>
+            </ul>
+            <p><strong>Vantagens:</strong></p>
+            <ul>
+                <li>Foco claro nos resultados de cada linha de produto ou mercado.</li>
+                <li>Maior agilidade e adaptação.</li>
+                <li>Desenvolvimento de gestores generalistas.</li>
+            </ul>
+            <p><strong>Desvantagens:</strong></p>
+            <ul>
+                <li>Duplicação de recursos (cada divisão tem seu próprio RH, financeiro, etc.).</li>
+                <li>Risco de conflito entre divisões.</li>
+                <li>Perda de economia de escala.</li>
+            </ul>
+
+            <h4>5.3.2. Quando Utilizar a Estrutura Divisional?</h4>
+            <p>A estrutura divisional é especialmente adequada quando a organização:</p>
+            <ul>
+                <li>Possui múltiplas linhas de produto ou atua em mercados distintos.</li>
+                <li>Precisa de foco no cliente ou no produto final.</li>
+                <li>Opera em ambientes dinâmicos que exigem respostas rápidas.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo Prático – FGV</span>
+                <p>Uma empresa que fabrica eletrodomésticos e também produz equipamentos industriais pode se organizar em duas divisões independentes, cada uma focada em seu mercado.</p>
+            </div>
+            <p><strong>Palavra-gatilho em prova:</strong> <span class="trigger-word">"Maximizar o foco nos resultados das linhas de produtos"</span> → a resposta é <strong>estrutura divisional</strong>.</p>
+            <p><strong>No Judiciário:</strong> O Tribunal de Justiça pode ser visto como uma estrutura divisional por área geográfica (comarcas) ou por especialização (câmaras cíveis, criminais, etc.), cada uma com relativa autonomia.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>5.4. Estrutura Matricial</h3>
+            <h4>5.4.1. Características</h4>
+            <p>A estrutura matricial <strong>combina a estrutura funcional e a estrutura divisional</strong> simultaneamente. Os funcionários têm <strong>dupla subordinação</strong>: reportam a um chefe funcional e a um gerente de projeto ou produto.</p>
+            <p><strong>Principais características:</strong></p>
+            <ul>
+                <li>Dupla linha de autoridade (funcional e por projeto/produto).</li>
+                <li>Equipes temporárias ou semipermanentes para projetos.</li>
+                <li>Flexibilidade para alocar especialistas em diferentes projetos.</li>
+                <li>Quebra do princípio clássico da unidade de comando.</li>
+            </ul>
+            <p><strong>Vantagens:</strong></p>
+            <ul>
+                <li>Uso eficiente dos especialistas (compartilhados entre projetos).</li>
+                <li>Flexibilidade e adaptabilidade.</li>
+                <li>Comunicação intensa e integração entre áreas.</li>
+            </ul>
+            <p><strong>Desvantagens:</strong></p>
+            <ul>
+                <li>Conflitos de autoridade (dois chefes).</li>
+                <li>Complexidade administrativa.</li>
+                <li>Potencial de estresse e ambiguidade para os funcionários.</li>
+            </ul>
+
+            <h4>5.4.2. Quando Utilizar a Estrutura Matricial?</h4>
+            <p>A estrutura matricial é indicada para:</p>
+            <ul>
+                <li>Organizações que realizam projetos complexos e temporários.</li>
+                <li>Ambientes que exigem inovação constante.</li>
+                <li>Situações que demandam integração intensa entre especialidades.</li>
+            </ul>
+            <p><strong>Exemplo prático:</strong> Uma empresa de tecnologia que desenvolve vários softwares simultaneamente mantém uma estrutura funcional (programadores, designers, testadores) e aloca esses profissionais em equipes de projeto, cada uma com um gerente de projeto.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>5.5. Quadro Comparativo – Estruturas Organizacionais</h3>
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>CRITÉRIO</th>
+                            <th>FUNCIONAL</th>
+                            <th>DIVISIONAL</th>
+                            <th>MATRICIAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Critério de agrupamento</td>
+                            <td>Função / especialidade</td>
+                            <td>Produto / mercado / região</td>
+                            <td>Função + Projeto</td>
+                        </tr>
+                        <tr>
+                            <td>Autoridade</td>
+                            <td>Única (chefe funcional)</td>
+                            <td>Única (chefe da divisão)</td>
+                            <td>Dupla (chefe funcional + gerente de projeto)</td>
+                        </tr>
+                        <tr>
+                            <td>Foco</td>
+                            <td>Eficiência técnica</td>
+                            <td>Resultado do produto</td>
+                            <td>Flexibilidade e inovação</td>
+                        </tr>
+                        <tr>
+                            <td>Autonomia</td>
+                            <td>Baixa (centralizada)</td>
+                            <td>Alta (descentralizada nas divisões)</td>
+                            <td>Intermediária</td>
+                        </tr>
+                        <tr>
+                            <td>Palavra-gatilho em prova</td>
+                            <td>"Especialização"</td>
+                            <td>"Maximizar foco nos resultados das linhas de produtos"</td>
+                            <td>"Dupla subordinação"</td>
+                        </tr>
+                        <tr>
+                            <td>Principal desvantagem</td>
+                            <td>Visão fragmentada</td>
+                            <td>Duplicação de recursos</td>
+                            <td>Conflitos de autoridade</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>5.6. Pegadinhas de Banca – Estrutura Divisional</h3>
+            <p>A FCC e a FGV costumam explorar duas confusões principais:</p>
+
+            <h4>5.6.1. Estrutura Divisional x Estrutura Matricial</h4>
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>DIVISIONAL</th>
+                            <th>MATRICIAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cada divisão tem seus próprios recursos</td>
+                            <td>Recursos são compartilhados entre projetos</td>
+                        </tr>
+                        <tr>
+                            <td>Subordinação única (ao chefe da divisão)</td>
+                            <td>Dupla subordinação</td>
+                        </tr>
+                        <tr>
+                            <td>Foco em produtos/mercados</td>
+                            <td>Foco em projetos</td>
+                        </tr>
+                        <tr>
+                            <td>Estrutura permanente</td>
+                            <td>Pode ser temporária</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>5.6.2. Estrutura Divisional x Estrutura Funcional</h4>
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>DIVISIONAL</th>
+                            <th>FUNCIONAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Agrupada por resultado (produto)</td>
+                            <td>Agrupada por especialidade (função)</td>
+                        </tr>
+                        <tr>
+                            <td>Foco no "para quê"</td>
+                            <td>Foco no "como"</td>
+                        </tr>
+                        <tr>
+                            <td>Gestores generalistas</td>
+                            <td>Gestores especialistas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-tip">
+                <span class="callout-title">💡 Dica de Prova</span>
+                <p>Quando a questão pedir <em>"foco nos resultados das linhas de produto"</em>, <em>"centros de resultado autônomos"</em> ou <em>"unidades autossuficientes"</em>, a resposta é <strong>estrutura divisional</strong>. A funcional é a "especialista", a matricial é a "dupla".</p>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ============ CAPÍTULO 6 ============ -->
+        <section class="chapter" id="cap6">
+            <h2><span class="chap-num">Capítulo 6</span>LIDERANÇA – AS TEORIAS COMPORTAMENTAIS E OS ESTUDOS DE OHIO</h2>
+
+            <h3>6.1. Introdução às Teorias de Liderança</h3>
+            <p>O estudo da liderança passou por diferentes fases. Inicialmente, buscou-se identificar traços universais de líderes eficazes (teoria dos traços). Em seguida, os pesquisadores voltaram sua atenção para os comportamentos observáveis dos líderes (teorias comportamentais), e, posteriormente, para as variáveis situacionais (teorias contingenciais ou situacionais).</p>
+            <p>As <strong>teorias comportamentais</strong> são especialmente relevantes para concursos porque descrevem estilos de liderança de forma objetiva e mensurável. Dois estudos clássicos dominam as provas: os <strong>Estudos da Universidade de Ohio</strong> e os Estudos da Universidade de Michigan.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>6.2. Os Estudos da Universidade de Ohio</h3>
+            <h4>6.2.1. A Pesquisa Original</h4>
+            <p>No final da década de 1940, pesquisadores da Ohio State University realizaram um amplo estudo para identificar as dimensões básicas do comportamento de liderança. Aplicaram questionários (Leader Behavior Description Questionnaire – LBDQ) a centenas de subordinados, analisando milhares de comportamentos.</p>
+            <p>O resultado revelou <strong>duas dimensões independentes e fundamentais</strong> que explicam a maior parte da variação no comportamento dos líderes:</p>
+            <ul>
+                <li><strong>Estrutura de Iniciação</strong> (Initiating Structure)</li>
+                <li><strong>Consideração</strong> (Consideration)</li>
+            </ul>
+
+            <h4>6.2.2. Estrutura de Iniciação – Definição e Aplicação</h4>
+            <p>A <strong>estrutura de iniciação</strong> refere-se ao grau em que o líder define e estrutura seu próprio papel e o papel dos subordinados para alcançar os objetivos organizacionais. É a dimensão voltada para a <strong>tarefa</strong>.</p>
+            <p><strong>Comportamentos típicos do líder com alta estrutura de iniciação:</strong></p>
+            <ul>
+                <li>Delega tarefas específicas aos subordinados.</li>
+                <li>Define padrões de desempenho claros.</li>
+                <li>Enfatiza o cumprimento de prazos.</li>
+                <li>Estabelece procedimentos e rotinas.</li>
+                <li>Comunica expectativas de forma explícita.</li>
+                <li>Monitora o andamento do trabalho.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo Prático no Judiciário</span>
+                <p>Um chefe de cartório que define exatamente quantos processos cada servidor deve analisar por dia, estabelece prazos para cada etapa e cobra rigorosamente o cumprimento está exibindo <strong>alta estrutura de iniciação</strong>.</p>
+            </div>
+            <p><strong>Palavras-gatilho em prova:</strong> <span class="trigger-word">"delega tarefas específicas"</span>, <span class="trigger-word">"enfatiza prazos"</span>, <span class="trigger-word">"define padrões de desempenho"</span>, <span class="trigger-word">"estrutura o trabalho"</span>.</p>
+
+            <h4>6.2.3. Consideração – Definição e Aplicação</h4>
+            <p>A <strong>consideração</strong> refere-se ao grau em que o líder demonstra confiança, respeito, amizade e cuidado com os sentimentos dos subordinados. É a dimensão voltada para as <strong>pessoas</strong>.</p>
+            <p><strong>Comportamentos típicos do líder com alta consideração:</strong></p>
+            <ul>
+                <li>Demonstra preocupação com o bem-estar dos subordinados.</li>
+                <li>Cria um clima de confiança e respeito mútuo.</li>
+                <li>É acessível e amigável.</li>
+                <li>Escuta ativamente os problemas dos funcionários.</li>
+                <li>Trata todos com igualdade.</li>
+                <li>Valoriza as contribuições individuais.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo Prático no Judiciário</span>
+                <p>Um diretor de vara que se preocupa com as condições de trabalho, ouve as sugestões dos servidores, reconhece publicamente o bom trabalho e mantém um relacionamento cordial está exibindo <strong>alta consideração</strong>.</p>
+            </div>
+            <p><strong>Palavras-gatilho em prova:</strong> <span class="trigger-word">"confiança"</span>, <span class="trigger-word">"respeito"</span>, <span class="trigger-word">"cuidado"</span>, <span class="trigger-word">"amizade"</span>, <span class="trigger-word">"preocupação com os subordinados"</span>, <span class="trigger-word">"relacionamento"</span>.</p>
+
+            <h4>6.2.4. Independência das Dimensões</h4>
+            <p>Uma descoberta fundamental dos estudos de Ohio é que <strong>estrutura de iniciação e consideração são dimensões independentes</strong>, não polos opostos de um mesmo contínuo. Isso significa que um líder pode apresentar:</p>
+            <ul>
+                <li>Alta estrutura de iniciação e alta consideração (líder ideal para muitos contextos);</li>
+                <li>Alta estrutura de iniciação e baixa consideração (foco extremo na tarefa);</li>
+                <li>Baixa estrutura de iniciação e alta consideração (foco extremo nas pessoas);</li>
+                <li>Baixa estrutura de iniciação e baixa consideração (liderança ausente ou laissez-faire).</li>
+            </ul>
+            <p><strong>Atenção:</strong> Isso diferencia os estudos de Ohio de outras teorias comportamentais, como a Grade Gerencial de Blake e Mouton, que também trabalha com duas dimensões (preocupação com a produção e preocupação com as pessoas).</p>
+
+            <hr class="subsection-divider">
+
+            <h3>6.3. Os Estudos da Universidade de Michigan (Contraponto)</h3>
+            <p>Para fins de prova, é importante distinguir os estudos de Ohio dos estudos contemporâneos da Universidade de Michigan. Enquanto Ohio identificou Estrutura de Iniciação e Consideração, Michigan identificou:</p>
+            <ul>
+                <li><strong>Liderança centrada no trabalho (produção):</strong> Ênfase em aspectos técnicos, cumprimento de metas, supervisão próxima.</li>
+                <li><strong>Liderança centrada no empregado:</strong> Ênfase nas relações interpessoais, necessidades dos subordinados, autonomia.</li>
+            </ul>
+            <p><strong>Diferença fundamental:</strong> Michigan tratava as dimensões como <strong>polos de um contínuo</strong> (ou se é centrado no trabalho, ou no empregado). Ohio demonstrou que são <strong>dimensões independentes</strong> (o líder pode ser alto em ambas).</p>
+
+            <hr class="subsection-divider">
+
+            <h3>6.4. Quadro Síntese – Dimensões da Liderança (Estudos de Ohio)</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>DIMENSÃO</th>
+                            <th>FOCO</th>
+                            <th>COMPORTAMENTOS TÍPICOS</th>
+                            <th>PALAVRAS-GATILHO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Estrutura de Iniciação</strong></td>
+                            <td>Tarefa / Objetivos</td>
+                            <td>Delegar, definir padrões, enfatizar prazos, estruturar papéis</td>
+                            <td>"Define e estrutura seu papel e o dos funcionários para alcançar objetivos"</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Consideração</strong></td>
+                            <td>Pessoas / Relacionamento</td>
+                            <td>Confiança, respeito, cuidado, amizade, escuta</td>
+                            <td>"Confiança mútua", "respeito pelas ideias", "cuidado com sentimentos"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>6.5. Caso Prático – Identificando as Dimensões no Judiciário</h3>
+            <p><strong>Situação:</strong> Dois juízes gestores de varas apresentam estilos distintos:</p>
+            <div class="card">
+                <p><strong>Juiz A:</strong> Reúne-se semanalmente com os servidores, preocupa-se com a qualidade de vida no trabalho, elogia o bom desempenho, está sempre acessível para ouvir problemas pessoais.</p>
+                <p><em>Diagnóstico:</em> <strong>Alta consideração.</strong></p>
+            </div>
+            <div class="card">
+                <p><strong>Juíza B:</strong> Distribui as tarefas de forma precisa, fixa metas mensais de sentenças e despachos, cobra resultados e exige cumprimento rigoroso dos prazos processuais.</p>
+                <p><em>Diagnóstico:</em> <strong>Alta estrutura de iniciação.</strong></p>
+            </div>
+            <div class="card">
+                <p><strong>Juiz C:</strong> Faz as duas coisas: preocupa-se com o bem-estar da equipe e, ao mesmo tempo, define metas claras e cobra resultados.</p>
+                <p><em>Diagnóstico:</em> <strong>Alto em ambas as dimensões</strong> — é possível, pois são independentes.</p>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ============ CAPÍTULO 7 ============ -->
+        <section class="chapter" id="cap7">
+            <h2><span class="chap-num">Capítulo 7</span>O PROCESSO ADMINISTRATIVO – A FUNÇÃO PLANEJAMENTO</h2>
+
+            <h3>7.1. Introdução ao Processo Administrativo</h3>
+            <p>A administração pode ser compreendida como um processo dinâmico composto por funções interligadas. A formulação clássica, baseada em Henri Fayol e desenvolvida pela escola neoclássica, identifica quatro funções essenciais:</p>
+            <ul>
+                <li><strong>Planejamento</strong> (definir objetivos e meios)</li>
+                <li><strong>Organização</strong> (estruturar recursos e atividades)</li>
+                <li><strong>Direção</strong> (conduzir e motivar pessoas)</li>
+                <li><strong>Controle</strong> (monitorar e corrigir)</li>
+            </ul>
+            <p>A sigla mnemônica <strong>PODC</strong> ajuda a memorizar a sequência lógica dessas funções. Para concursos, é fundamental saber distinguir cada função e identificar exemplos práticos.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>7.2. A Função Planejamento – Conceito e Abrangência</h3>
+            <p><strong>Planejar</strong> significa definir antecipadamente os objetivos, as metas e os meios para alcançá-los. É a função que estabelece o "norte" da organização, respondendo às perguntas: <em>"Onde queremos chegar?"</em>, <em>"O que vamos fazer?"</em> e <em>"Como vamos fazer?"</em>.</p>
+            <p>O planejamento é a função primordial, que precede logicamente as demais. Sem planejamento, a organização age sem rumo, a direção conduz sem destino e o controle não tem parâmetros para avaliar.</p>
+
+            <h4>7.2.1. Características da Função Planejamento</h4>
+            <ul>
+                <li><strong>Prospectiva:</strong> Olha para o futuro.</li>
+                <li><strong>Racional:</strong> Baseia-se em análise, não em improviso.</li>
+                <li><strong>Sistêmica:</strong> Considera a interação das partes.</li>
+                <li><strong>Flexível:</strong> Deve ser adaptável a mudanças.</li>
+            </ul>
+
+            <hr class="subsection-divider">
+
+            <h3>7.3. Atividades de Planejamento por Área Funcional</h3>
+            <p>As bancas costumam apresentar atividades específicas e perguntar a qual função do processo administrativo elas pertencem. Vamos analisar duas áreas frequentes: Recursos Humanos e Finanças.</p>
+
+            <h4>7.3.1. Planejamento em Recursos Humanos</h4>
+            <p>No âmbito dos Recursos Humanos, a função planejamento envolve atividades como:</p>
+            <ul>
+                <li><span class="highlight">Estabelecimento de metas de desempenho aos funcionários:</span> Definir antecipadamente o que se espera que cada servidor alcance é atividade típica de planejamento.</li>
+                <li>Dimensionamento da força de trabalho.</li>
+                <li>Previsão de necessidades de treinamento.</li>
+                <li>Planejamento de carreira e sucessão.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo Prático no Judiciário</span>
+                <p>O diretor de RH define que, no próximo ano, cada servidor deverá participar de pelo menos 40 horas de capacitação em sua área de atuação. Isso é <strong>planejamento</strong>.</p>
+            </div>
+
+            <h4>7.3.2. Planejamento em Finanças</h4>
+            <p>Na área financeira, planejar inclui:</p>
+            <ul>
+                <li><span class="highlight">Elaboração de projetos de investimento:</span> Analisar a viabilidade, o retorno esperado e o prazo de um investimento antes de comprometer recursos é planejamento.</li>
+                <li>Elaboração do orçamento anual.</li>
+                <li>Projeção de receitas e despesas.</li>
+                <li>Planejamento tributário.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo Prático</span>
+                <p>O tribunal decide analisar a viabilidade de construir um novo fórum, realizando estudos de custo, prazo e retorno social do investimento. Isso é <strong>planejamento financeiro</strong>.</p>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>7.4. Diferenciando Planejamento das Demais Funções</h3>
+            <p>A principal habilidade exigida em prova é distinguir corretamente um exemplo de atividade conforme a função do processo administrativo. Vamos a uma diferenciação prática:</p>
+
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>FUNÇÃO</th>
+                            <th>PERGUNTA-CHAVE</th>
+                            <th>EXEMPLOS TÍPICOS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Planejamento</strong></td>
+                            <td>O que fazer? Como fazer?</td>
+                            <td>Definir metas, elaborar projetos, estabelecer objetivos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organização</strong></td>
+                            <td>Quem faz? Com quais recursos?</td>
+                            <td>Definir organograma, distribuir tarefas, alocar recursos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Direção</strong></td>
+                            <td>Como conduzir? Como motivar?</td>
+                            <td>Liderar equipes, comunicar, motivar, treinar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Controle</strong></td>
+                            <td>Está conforme o planejado?</td>
+                            <td>Avaliar desempenho, comparar resultados, corrigir desvios</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>7.4.1. Pegadinhas Comuns</h4>
+            <ul>
+                <li><strong>"Definir organograma"</strong> → Não é planejamento! É <strong>organização</strong>. Organizar é estruturar, distribuir autoridade.</li>
+                <li><strong>"Implementar políticas"</strong> → Não é planejamento! É <strong>direção</strong>. Implementar é executar, conduzir.</li>
+                <li><strong>"Avaliar desempenho"</strong> → Não é planejamento! É <strong>controle</strong>. Avaliar é comparar resultados com padrões.</li>
+            </ul>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ============ CAPÍTULO 8 ============ -->
+        <section class="chapter" id="cap8">
+            <h2><span class="chap-num">Capítulo 8</span>TREINAMENTO E DESENVOLVIMENTO DE COMPETÊNCIAS</h2>
+
+            <h3>8.1. Introdução – Competências e Aprendizagem</h3>
+            <p>A gestão moderna de pessoas baseia-se no conceito de <strong>competências</strong>, compreendidas como a integração de três dimensões:</p>
+            <ul>
+                <li><strong>Conhecimento (CH):</strong> Saber teórico, informações e conceitos (ex.: conhecer a língua portuguesa, as normas processuais).</li>
+                <li><strong>Habilidade (H):</strong> Saber fazer, capacidade técnica e prática (ex.: redigir uma sentença, operar um sistema).</li>
+                <li><strong>Atitude (A):</strong> Querer fazer, disposição, postura, valores (ex.: disposição para dar feedback, atenção ao interlocutor).</li>
+            </ul>
+            <p>A sigla <strong>CHA</strong> é um macete consolidado em provas. As ações de treinamento e desenvolvimento devem ser desenhadas conforme a dimensão da competência que se deseja fortalecer.</p>
+
+            <div class="mnemonic-row" style="justify-content: flex-start;">
+                <span class="mnemonic-item">C = Conhecimento (Saber)</span>
+                <span class="mnemonic-item">H = Habilidade (Fazer)</span>
+                <span class="mnemonic-item">A = Atitude (Querer)</span>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>8.2. Formas de Treinamento e Adequação às Dimensões da Competência</h3>
+            <p>Nem toda forma de treinamento é adequada para desenvolver qualquer dimensão da competência. A escolha da metodologia depende do que se pretende desenvolver: conhecimento, habilidade ou atitude.</p>
+
+            <h4>8.2.1. Treinamento para Desenvolver Conhecimento (Saber)</h4>
+            <p>Quando o objetivo é transmitir informações, teorias, conceitos ou normas, as metodologias mais indicadas são aquelas que permitem exposição estruturada de conteúdo.</p>
+            <p><strong>Metodologias adequadas:</strong></p>
+            <ul>
+                <li><strong>Treinamento em sala de aula</strong> (presencial ou virtual): Aulas expositivas, leituras dirigidas, estudo de manuais. Ideal para transmitir conhecimento teórico, como língua portuguesa, legislação, normas internas.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo</span>
+                <p>Para desenvolver a competência <em>"comunicação"</em> no que se refere ao <strong>conhecimento de língua portuguesa</strong>, a forma mais adequada é o <strong>treinamento em sala de aula</strong>, com instrutor especializado que apresente regras gramaticais, técnicas de redação e exemplos.</p>
+            </div>
+
+            <h4>8.2.2. Treinamento para Desenvolver Atitude (Querer Fazer)</h4>
+            <p>Mudar atitudes envolve trabalhar valores, crenças, disposição interna. Não se muda atitude apenas com exposição teórica; são necessárias metodologias que envolvam reflexão, acompanhamento e prática orientada.</p>
+            <p><strong>Metodologias adequadas:</strong></p>
+            <ul>
+                <li><strong>Coaching:</strong> Processo de acompanhamento individualizado em que um coach ajuda o profissional a desenvolver competências específicas, incluindo aspectos atitudinais como disposição para dar e receber feedback. O coaching trabalha com metas, reflexão e prática supervisionada.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo</span>
+                <p>Para desenvolver a <strong>disposição para dar feedback</strong>, a metodologia de <strong>coaching</strong> é especialmente indicada, pois permite que o profissional, com o suporte do coach, pratique dar feedback, receba orientação e reflita sobre suas resistências.</p>
+            </div>
+
+            <h4>8.2.3. Treinamento para Desenvolver Habilidade (Saber Fazer)</h4>
+            <p>Habilidades são capacidades práticas, que se aperfeiçoam com a prática. As metodologias experienciais, que colocam o profissional em situações simuladas ou reais de aplicação, são as mais eficazes.</p>
+            <p><strong>Metodologias adequadas:</strong></p>
+            <ul>
+                <li><strong>Treinamentos experienciais</strong> (vivências, dinâmicas, simulações, role-playing): Colocam o profissional para praticar a habilidade em ambiente controlado, recebendo feedback imediato.</li>
+            </ul>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo</span>
+                <p>Para desenvolver a habilidade de <strong>atenção ao interlocutor</strong> (saber escutar ativamente), os <strong>treinamentos experienciais</strong> são ideais. Pode-se realizar uma dinâmica em que os participantes precisam ouvir atentamente e reproduzir o que foi dito, praticando a escuta ativa.</p>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>8.3. Caso Prático Integrado – Desenvolvendo a Competência "Comunicação"</h3>
+            <p><strong>Situação:</strong> O tribunal identifica que os servidores precisam desenvolver a competência <strong>"comunicação"</strong>, que se desdobra em três capacidades específicas:</p>
+            <ul>
+                <li><strong>Capacidade de conhecimento:</strong> Domínio da língua portuguesa (saber regras gramaticais, concordância, clareza).</li>
+                <li><strong>Capacidade de atitude:</strong> Disposição para dar feedback (querer comunicar-se de forma franca e construtiva).</li>
+                <li><strong>Capacidade de habilidade:</strong> Atenção ao interlocutor (saber escutar, praticar escuta ativa).</li>
+            </ul>
+
+            <p><strong>Plano de desenvolvimento proposto:</strong></p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CAPACIDADE</th>
+                            <th>DIMENSÃO (CHA)</th>
+                            <th>METODOLOGIA ADEQUADA</th>
+                            <th>JUSTIFICATIVA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Língua Portuguesa</td>
+                            <td><span class="highlight-blue">Conhecimento</span></td>
+                            <td>Treinamento em sala de aula</td>
+                            <td>Exposição teórica estruturada</td>
+                        </tr>
+                        <tr>
+                            <td>Disposição para feedback</td>
+                            <td><span class="highlight-green">Atitude</span></td>
+                            <td>Coaching</td>
+                            <td>Acompanhamento individualizado, reflexão e prática</td>
+                        </tr>
+                        <tr>
+                            <td>Atenção ao interlocutor</td>
+                            <td><span class="highlight">Habilidade</span></td>
+                            <td>Treinamento experiencial</td>
+                            <td>Prática em situações simuladas com feedback</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Este caso ilustra como uma mesma competência (comunicação) pode exigir metodologias distintas para cada uma de suas dimensões. A FGV já cobrou exatamente essa lógica em prova.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>8.4. Quadro Síntese – Metodologias x Dimensões da Competência</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>METODOLOGIA</th>
+                            <th>DIMENSÃO PRINCIPALMENTE DESENVOLVIDA</th>
+                            <th>QUANDO UTILIZAR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Treinamento em sala de aula</td>
+                            <td><span class="highlight-blue">Conhecimento (Saber)</span></td>
+                            <td>Transmitir teorias, normas, conceitos</td>
+                        </tr>
+                        <tr>
+                            <td>Coaching</td>
+                            <td><span class="highlight-green">Atitude (Querer)</span></td>
+                            <td>Mudar posturas, desenvolver disposição</td>
+                        </tr>
+                        <tr>
+                            <td>Treinamento experiencial</td>
+                            <td><span class="highlight">Habilidade (Fazer)</span></td>
+                            <td>Praticar capacidades técnicas ou comportamentais</td>
+                        </tr>
+                        <tr>
+                            <td>E-learning / Ensino a distância</td>
+                            <td><span class="highlight-blue">Conhecimento (Saber)</span></td>
+                            <td>Transmissão de informação em escala</td>
+                        </tr>
+                        <tr>
+                            <td>Mentoring</td>
+                            <td><span class="highlight-green">Atitude</span> e <span class="highlight-blue">Conhecimento</span></td>
+                            <td>Desenvolvimento de carreira e visão ampla</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ============ CAPÍTULO 9 ============ -->
+        <section class="chapter" id="cap9">
+            <h2><span class="chap-num">Capítulo 9</span>GESTÃO DA MUDANÇA ORGANIZACIONAL</h2>
+
+            <h3>9.1. Introdução – A Mudança nas Organizações</h3>
+            <p>A mudança organizacional é uma constante na administração contemporânea. No Judiciário, a implantação do processo eletrônico, a adoção de novos sistemas de gestão e as reformas administrativas são exemplos de processos de mudança que impactam profundamente a rotina dos servidores.</p>
+            <p>Gerenciar a mudança significa conduzir a transição do estado atual para um estado desejado, minimizando resistências e maximizando a adesão. Um dos modelos mais influentes nesse campo é o de <strong>Kurt Lewin</strong>, com suas três fases: <span class="highlight">descongelamento, mudança e recongelamento</span>.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>9.2. A Resistência à Mudança</h3>
+            <p>A resistência à mudança é um fenômeno natural. As pessoas tendem a resistir ao desconhecido, ao que ameaça seu status quo ou ao que percebem como perda (de poder, de controle, de segurança). Identificar a causa da resistência é o primeiro passo para escolher a tática adequada para superá-la.</p>
+
+            <h4>9.2.1. Principais Causas de Resistência</h4>
+            <ul>
+                <li><strong>Falta de informação:</strong> As pessoas não sabem o que vai mudar ou como serão afetadas.</li>
+                <li><strong>Medo do desconhecido:</strong> Incerteza gera ansiedade.</li>
+                <li><strong>Hábito e inércia:</strong> Apego à rotina conhecida.</li>
+                <li><strong>Perda de poder ou status:</strong> Percepção de que a mudança reduzirá sua influência.</li>
+                <li><strong>Falta de confiança:</strong> Descrédito nos agentes da mudança.</li>
+            </ul>
+
+            <hr class="subsection-divider">
+
+            <h3>9.3. As Seis Táticas para Superar a Resistência à Mudança</h3>
+            <p>John Kotter e Leonard Schlesinger identificaram seis táticas que os gestores podem utilizar para lidar com a resistência à mudança. A escolha da tática depende da causa da resistência, da urgência da mudança e do poder dos resistentes.</p>
+
+            <h4>9.3.1. Comunicação e Educação</h4>
+            <p><strong>Descrição:</strong> Informar os envolvidos sobre a mudança, seus motivos, seus impactos positivos esperados e como ela será implementada. Pode incluir treinamentos, reuniões, informativos, palestras.</p>
+            <p><strong>Quando é mais adequada:</strong> Quando a resistência se baseia em <strong>falta de informação</strong> ou informação incorreta. Se as pessoas entendem a mudança e seus benefícios, a resistência tende a diminuir.</p>
+
+            <div class="callout callout-example">
+                <span class="callout-title">📋 Exemplo Prático</span>
+                <p>O tribunal vai implantar um novo sistema processual. Muitos servidores resistem porque não sabem como funciona nem quais serão os ganhos. A direção promove uma série de workshops demonstrativos, mostrando como o sistema reduzirá o retrabalho e agilizará os processos.</p>
+            </div>
+
+            <div class="callout callout-warning">
+                <span class="callout-title">⚠ Atenção para Prova – FGV</span>
+                <p>A FGV cobrou exatamente esse cenário: resistência por <strong>falta de conhecimento sobre o impacto positivo</strong> → tática de <strong>comunicação e educação</strong>.</p>
+            </div>
+
+            <h4>9.3.2. Participação e Envolvimento</h4>
+            <p><strong>Descrição:</strong> Envolver os potenciais resistentes no planejamento e na implementação da mudança. Quem participa tende a se comprometer.</p>
+            <p><strong>Quando é mais adequada:</strong> Quando os resistentes têm informações ou expertise que podem melhorar a mudança, ou quando seu apoio é crucial.</p>
+            <p><strong>Exemplo:</strong> Convidar os servidores mais experientes para testar o novo sistema e sugerir ajustes antes da implantação geral.</p>
+
+            <h4>9.3.3. Facilitação e Apoio</h4>
+            <p><strong>Descrição:</strong> Oferecer suporte emocional, técnico e material aos afetados pela mudança. Inclui aconselhamento, treinamento, folgas compensatórias, escuta ativa.</p>
+            <p><strong>Quando é mais adequada:</strong> Quando a resistência deriva de <strong>medo, ansiedade, insegurança</strong> ou dificuldades de adaptação.</p>
+            <p><strong>Exemplo:</strong> Disponibilizar uma equipe de suporte técnico durante as primeiras semanas de uso do novo sistema.</p>
+
+            <h4>9.3.4. Negociação e Acordo</h4>
+            <p><strong>Descrição:</strong> Oferecer compensações, benefícios ou concessões em troca da aceitação da mudança.</p>
+            <p><strong>Quando é mais adequada:</strong> Quando a resistência parte de grupos com poder de bloquear a mudança e que sofrerão perdas reais.</p>
+            <p><strong>Exemplo:</strong> Negociar com o sindicato um adicional de produtividade para os servidores que operarem o novo sistema.</p>
+
+            <h4>9.3.5. Manipulação e Cooptação</h4>
+            <p><strong>Descrição:</strong> Usar táticas sutis para influenciar a aceitação, como divulgar apenas informações favoráveis (manipulação) ou dar aos líderes da resistência um papel simbólico na mudança (cooptação).</p>
+            <p><strong>Quando é mais adequada:</strong> Quando outras táticas não funcionam ou são muito custosas. É uma tática arriscada, que pode gerar desconfiança se descoberta.</p>
+
+            <h4>9.3.6. Coerção</h4>
+            <p><strong>Descrição:</strong> Impor a mudança por meio de ameaças, punições ou uso da autoridade formal.</p>
+            <p><strong>Quando é mais adequada:</strong> Em situações de crise ou quando a mudança é urgente e não há tempo para consenso.</p>
+            <p><strong>Exemplo:</strong> Determinar que o uso do novo sistema é obrigatório, sob pena de sanção administrativa.</p>
+
+            <hr class="subsection-divider">
+
+            <h3>9.4. Fluxo Decisório – Qual Tática Utilizar?</h3>
+            <p>Para questões de prova, siga este raciocínio:</p>
+            <ol>
+                <li>Identifique a <strong>causa da resistência</strong> (a questão costuma indicar).</li>
+                <li>Relacione a causa à tática mais adequada:</li>
+            </ol>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CAUSA DA RESISTÊNCIA</th>
+                            <th>TÁTICA RECOMENDADA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Falta de informação ou informação incorreta</td>
+                            <td><strong>Comunicação e Educação</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Medo, ansiedade, insegurança</td>
+                            <td><strong>Facilitação e Apoio</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Necessidade de expertise ou compromisso</td>
+                            <td><strong>Participação e Envolvimento</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Perda de poder ou benefícios por grupo forte</td>
+                            <td><strong>Negociação e Acordo</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Situação de urgência, outras táticas inviáveis</td>
+                            <td><strong>Coerção</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Necessidade de influência sutil e rápida</td>
+                            <td><strong>Manipulação e Cooptação</strong> (cuidado ético)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-tip">
+                <span class="callout-title">💡 Dica de Prova – FGV</span>
+                <p>A banca costuma apresentar um cenário claro de <strong>falta de informação</strong> e perguntar qual tática deve ser adotada. A resposta é <strong>"comunicação e educação"</strong>. Fique atento a palavras como <em>"falta de conhecimento"</em>, <em>"informação imprecisa"</em>, <em>"desconhecimento"</em> no enunciado.</p>
+            </div>
+
+            <hr class="subsection-divider">
+
+            <h3>9.5. Caso Prático – Implantação de Sistema no Judiciário</h3>
+            <p><strong>Situação:</strong> O Tribunal de Justiça decide implantar um novo sistema unificado de gestão processual. Após o anúncio, identifica diferentes focos de resistência entre os servidores:</p>
+            <ul>
+                <li><strong>Grupo A:</strong> Servidores que não sabem usar computador e têm medo de errar.</li>
+                <li><strong>Grupo B:</strong> Servidores que acham que o novo sistema vai aumentar o trabalho em vez de reduzir, com base em boatos.</li>
+                <li><strong>Grupo C:</strong> Líderes sindicais que exigem compensação financeira pela mudança de rotina.</li>
+                <li><strong>Grupo D:</strong> Servidores experientes que dominam o sistema antigo e têm sugestões valiosas.</li>
+            </ul>
+
+            <p><strong>Análise e táticas recomendadas:</strong></p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>GRUPO</th>
+                            <th>CAUSA DA RESISTÊNCIA</th>
+                            <th>TÁTICA ADEQUADA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Grupo A</td>
+                            <td>Medo, insegurança</td>
+                            <td><strong>Facilitação e Apoio</strong> (treinamento, suporte)</td>
+                        </tr>
+                        <tr>
+                            <td>Grupo B</td>
+                            <td>Falta de informação (boatos)</td>
+                            <td><strong>Comunicação e Educação</strong> (esclarecimentos)</td>
+                        </tr>
+                        <tr>
+                            <td>Grupo C</td>
+                            <td>Interesses de poder, perda percebida</td>
+                            <td><strong>Negociação e Acordo</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Grupo D</td>
+                            <td>Expertise não aproveitada</td>
+                            <td><strong>Participação e Envolvimento</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ============ QUADRO-RESUMO GERAL ============ -->
+        <section class="chapter" id="resumo">
+            <h2><span class="chap-num">Resumo Geral</span>QUADRO-RESUMO GERAL DA APOSTILA</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>TEMA</th>
+                            <th>CONCEITO-CHAVE</th>
+                            <th>PRINCIPAL PEGADINHA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Papéis de Mintzberg</strong></td>
+                            <td>3 categorias, 10 papéis. Decisoriais: Empreendedor, Solucionador, Alocador, Negociador</td>
+                            <td>Solucionador (interno) x Negociador (externo, sindicato)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maslow</strong></td>
+                            <td>5 níveis: Fisiológicas, Segurança, Sociais, Estima, Autorrealização</td>
+                            <td>Estima (reconhecimento) x Autorrealização (crescimento)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Modelo Racional</strong></td>
+                            <td>Matriz de ponderação: nota × peso, soma, compara</td>
+                            <td>Refazer cálculos; não confiar em gabarito preliminar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Histograma</strong></td>
+                            <td>Gráfico de barras de distribuição de frequência</td>
+                            <td>Histograma (amplitude, tabela de frequências) x Pareto (ordem decrescente)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Estrutura Organizacional</strong></td>
+                            <td>Funcional (especialização), Divisional (produtos), Matricial (dupla subordinação)</td>
+                            <td>Divisional (autonomia por produto) x Matricial (projetos, dupla chefia)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Liderança – Ohio</strong></td>
+                            <td>Estrutura de Iniciação (tarefa) e Consideração (pessoas) – dimensões independentes</td>
+                            <td>Não são polos opostos; líder pode ser alto em ambas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Processo Administrativo</strong></td>
+                            <td>Planejamento = definir antecipadamente</td>
+                            <td>Planejar ≠ Organizar (organograma) ≠ Dirigir (implementar) ≠ Controlar (avaliar)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Treinamento e Desenvolvimento</strong></td>
+                            <td>CHA: Conhecimento (sala de aula), Habilidade (experiencial), Atitude (coaching)</td>
+                            <td>Cada dimensão exige metodologia específica</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gestão da Mudança</strong></td>
+                            <td>6 táticas: Comunicação, Participação, Facilitação, Negociação, Manipulação, Coerção</td>
+                            <td>Falta de informação → Comunicação e Educação</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-tip" style="margin-top: 2em;">
+                <p><strong>Este material foi elaborado com foco na preparação para concursos de Técnico Judiciário – Área Judiciária</strong>, considerando o padrão de cobrança das bancas FCC, FGV e Cebraspe. A revisão periódica dos quadros-resumo, a resolução de questões anteriores e a aplicação dos macetes em situações práticas são estratégias complementares indispensáveis para a fixação do conteúdo e o sucesso na prova.</p>
+            </div>
+        </section>
+
+        <!-- Back to top -->
+        <a href="#topo" class="back-to-top">↑ Voltar ao Topo</a>
+
+    </div>
+</body>
+</html>

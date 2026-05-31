@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Penal – Parte Geral e Especial | Apostila para Concursos</title>
+    <style>
+        :root {
+            --bg-page: #fdfaf3;
+            --bg-card: #ffffff;
+            --text-primary: #1e1c18;
+            --text-secondary: #4a453d;
+            --heading-color: #1a3c34;
+            --accent-teal: #2c6e5c;
+            --accent-teal-light: #e8f2ee;
+            --accent-teal-lighter: #f3f8f6;
+            --accent-gold: #8b6914;
+            --accent-gold-light: #fef9e7;
+            --accent-gold-border: #e8d89a;
+            --accent-red-light: #fef3f2;
+            --accent-red-border: #e8c8c5;
+            --accent-red-text: #8b1a1a;
+            --accent-blue-light: #eef4fa;
+            --accent-blue-border: #c5d5e8;
+            --accent-blue-text: #1a3a5c;
+            --border-subtle: #e0dcd0;
+            --border-medium: #d0cbc0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.10);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --font-body: 'Segoe UI', 'Noto Sans', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            --font-heading: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
+            --font-mono: 'SF Mono', 'Cascadia Code', 'Consolas', 'Menlo', monospace;
+            --max-width: 760px;
+            --line-height-body: 1.75;
+            --line-height-heading: 1.3;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 17px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: var(--line-height-body);
+            min-height: 100vh;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ── COVER / HEADER ── */
+        .cover {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 36px 20px 28px 20px;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            padding: 48px 40px 40px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+        }
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #1a3c34 0%, #2c6e5c 35%, #8b6914 65%, #c9a84c 100%);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        }
+        .cover .badge {
+            display: inline-block;
+            background: var(--accent-teal-light);
+            color: var(--heading-color);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 18px;
+            border: 1px solid #c8ddd6;
+        }
+        .cover h1 {
+            font-family: var(--font-heading);
+            font-size: 2.15rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            line-height: var(--line-height-heading);
+            letter-spacing: -0.01em;
+            margin-bottom: 8px;
+        }
+        .cover .subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        .cover .subtitle2 {
+            font-size: 0.9rem;
+            color: #6b6358;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+        .cover .divider-cover {
+            width: 60px;
+            height: 2px;
+            background: var(--accent-gold);
+            margin: 0 auto 14px auto;
+            border-radius: 1px;
+            opacity: 0.7;
+        }
+        .cover .bancas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 6px;
+        }
+        .cover .bancas span {
+            background: #f5f2e8;
+            color: #5c4a1f;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 13px;
+            border-radius: 16px;
+            letter-spacing: 0.03em;
+            border: 1px solid #e0d8c0;
+        }
+
+        /* ── MAIN CONTENT ── */
+        .main-container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 20px 60px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        /* ── SECTIONS & CARDS ── */
+        .content-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 34px 36px;
+            border: 1px solid var(--border-subtle);
+            transition: box-shadow 0.2s ease;
+        }
+        .content-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ── HEADINGS ── */
+        .chapter-heading {
+            font-family: var(--font-heading);
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            line-height: var(--line-height-heading);
+            margin-bottom: 6px;
+            letter-spacing: -0.005em;
+        }
+        .chapter-number {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-teal);
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-family: var(--font-body);
+        }
+        .section-heading {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2a4a3e;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1.5px solid var(--accent-teal-light);
+            line-height: var(--line-height-heading);
+        }
+        .subsection-heading {
+            font-family: var(--font-heading);
+            font-size: 1.08rem;
+            font-weight: 700;
+            color: #2a4a3e;
+            margin-top: 22px;
+            margin-bottom: 8px;
+            line-height: var(--line-height-heading);
+        }
+        .sub-subsection-heading {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #3a5048;
+            margin-top: 16px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* ── PARAGRAPHS ── */
+        p {
+            margin-bottom: 12px;
+            color: var(--text-primary);
+            text-align: justify;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+        }
+
+        /* ── HIGHLIGHT / MARCA-TEXTO ── */
+        .highlight {
+            background: linear-gradient(180deg, transparent 55%, #fdf0b8 55%);
+            padding: 0 2px;
+            font-weight: 500;
+        }
+        .highlight-strong {
+            background: linear-gradient(180deg, transparent 55%, #fde68a 55%);
+            padding: 0 3px;
+            font-weight: 600;
+        }
+
+        /* ── CALLOUT BOXES ── */
+        .info-box {
+            background: var(--accent-teal-lighter);
+            border-left: 4px solid var(--accent-teal);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 16px 20px;
+            margin: 18px 0;
+            font-size: 0.93rem;
+            color: #1e3d34;
+            box-shadow: var(--shadow-sm);
+        }
+        .info-box strong {
+            color: var(--heading-color);
+        }
+
+        .dica-box {
+            background: var(--accent-gold-light);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 16px 20px;
+            margin: 18px 0;
+            font-size: 0.93rem;
+            color: #4a3a14;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        .dica-box::before {
+            content: '💡 DICA DE PROVA';
+            display: block;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #8b6914;
+            margin-bottom: 6px;
+            font-family: var(--font-body);
+        }
+
+        .pegadinha-box {
+            background: var(--accent-red-light);
+            border-left: 4px solid #c0392b;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 16px 20px;
+            margin: 18px 0;
+            font-size: 0.93rem;
+            color: #5c1a1a;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        .pegadinha-box::before {
+            content: '⚠️ PEGADINHA DA BANCA';
+            display: block;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #8b1a1a;
+            margin-bottom: 6px;
+            font-family: var(--font-body);
+        }
+
+        .case-study {
+            background: var(--accent-blue-light);
+            border-left: 4px solid #3a6d9c;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 18px 20px;
+            margin: 18px 0;
+            font-size: 0.93rem;
+            color: #1a3048;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        .case-study::before {
+            content: '📋 CASO CONCRETO';
+            display: block;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #3a6d9c;
+            margin-bottom: 6px;
+            font-family: var(--font-body);
+        }
+
+        .macete-box {
+            background: #f9f6ff;
+            border-left: 4px solid #6b4ca0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 0.93rem;
+            color: #2d1a4a;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        .macete-box::before {
+            content: '🧠 MACETE';
+            display: block;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #6b4ca0;
+            margin-bottom: 6px;
+            font-family: var(--font-body);
+        }
+
+        .important-note {
+            background: #fffdf5;
+            border: 1.5px solid #e8d89a;
+            border-radius: var(--radius-md);
+            padding: 18px 22px;
+            margin: 18px 0;
+            font-size: 0.93rem;
+            color: #4a3a14;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        .important-note::before {
+            content: '📌 OBSERVAÇÃO IMPORTANTE';
+            display: block;
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #8b6914;
+            margin-bottom: 6px;
+            font-family: var(--font-body);
+        }
+
+        /* ── QUOTE BLOCK ── */
+        .quote-block {
+            background: #fafaf7;
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-md);
+            padding: 18px 22px;
+            margin: 18px 0;
+            font-style: italic;
+            color: #3a352d;
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            position: relative;
+            quotes: "«" "»";
+        }
+        .quote-block::before {
+            content: '«';
+            font-size: 2.5rem;
+            color: #c9c4b8;
+            position: absolute;
+            top: -8px;
+            left: 10px;
+            font-style: normal;
+            line-height: 1;
+        }
+        .quote-block .quote-text {
+            padding-left: 18px;
+        }
+
+        /* ── TABLES ── */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 18px 0;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+            -webkit-overflow-scrolling: touch;
+        }
+        table.modern-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            background: #fff;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            min-width: 600px;
+        }
+        table.modern-table thead th {
+            background: #1a3c34;
+            color: #f5f2e8;
+            font-weight: 600;
+            padding: 13px 14px;
+            text-align: left;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-family: var(--font-body);
+        }
+        table.modern-table tbody td {
+            padding: 11px 14px;
+            border-bottom: 1px solid #ece8dd;
+            color: #2a2419;
+            vertical-align: top;
+        }
+        table.modern-table tbody tr:nth-child(even) {
+            background: #faf8f2;
+        }
+        table.modern-table tbody tr:hover {
+            background: #f3f0e6;
+        }
+        table.modern-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .table-caption {
+            font-size: 0.8rem;
+            color: #6b6358;
+            text-align: center;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        /* ── DIVIDERS ── */
+        .elegant-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 24px 0;
+            color: #c9c4b8;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        .elegant-divider::before,
+        .elegant-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #d8d4c8;
+        }
+        .simple-divider {
+            border: none;
+            height: 1px;
+            background: #e0dcd0;
+            margin: 20px 0;
+        }
+
+        /* ── CONCEPT CARDS ── */
+        .concept-card {
+            background: #faf8f2;
+            border: 1.5px solid #e0dcd0;
+            border-radius: var(--radius-md);
+            padding: 20px 22px;
+            margin: 16px 0;
+            box-shadow: var(--shadow-sm);
+        }
+        .concept-card .concept-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--heading-color);
+            margin-bottom: 8px;
+        }
+
+        /* ── LISTS ── */
+        ul.styled-list,
+        ol.styled-list {
+            padding-left: 22px;
+            margin: 10px 0 14px 0;
+        }
+        ul.styled-list li,
+        ol.styled-list li {
+            margin-bottom: 7px;
+            padding-left: 4px;
+            color: var(--text-primary);
+        }
+        ul.styled-list li::marker {
+            color: var(--accent-teal);
+        }
+        ol.styled-list li::marker {
+            color: var(--heading-color);
+            font-weight: 600;
+        }
+
+        /* ── BADGE / TAG ── */
+        .inline-tag {
+            display: inline-block;
+            background: #e8f2ee;
+            color: #1a3c34;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 12px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin: 0 2px;
+            border: 1px solid #c8ddd6;
+        }
+
+        /* ── SVG CONTAINER ── */
+        .svg-diagram {
+            display: flex;
+            justify-content: center;
+            margin: 22px 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .svg-diagram svg {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 820px) {
+            html {
+                font-size: 15.5px;
+            }
+            .cover {
+                padding: 32px 22px 28px 22px;
+                margin: 20px 14px 20px 14px;
+            }
+            .cover h1 {
+                font-size: 1.7rem;
+            }
+            .content-card {
+                padding: 24px 20px;
+            }
+            .main-container {
+                margin: 0 14px 40px 14px;
+                gap: 20px;
+            }
+            .chapter-heading {
+                font-size: 1.4rem;
+            }
+            .section-heading {
+                font-size: 1.12rem;
+            }
+            table.modern-table {
+                font-size: 0.78rem;
+                min-width: 500px;
+            }
+            table.modern-table thead th,
+            table.modern-table tbody td {
+                padding: 9px 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+            .cover {
+                padding: 24px 14px 20px 14px;
+                margin: 12px 8px 14px 8px;
+            }
+            .cover h1 {
+                font-size: 1.4rem;
+            }
+            .content-card {
+                padding: 18px 14px;
+                border-radius: var(--radius-sm);
+            }
+            .main-container {
+                margin: 0 8px 30px 8px;
+                gap: 14px;
+            }
+            .chapter-heading {
+                font-size: 1.2rem;
+            }
+            .section-heading {
+                font-size: 1rem;
+            }
+            table.modern-table {
+                font-size: 0.7rem;
+                min-width: 400px;
+            }
+            table.modern-table thead th,
+            table.modern-table tbody td {
+                padding: 7px 8px;
+            }
+            .info-box,
+            .dica-box,
+            .pegadinha-box,
+            .case-study,
+            .macete-box,
+            .important-note {
+                padding: 12px 14px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ── PRINT STYLES ── */
+        @media print {
+            body {
+                background: #fff;
+            }
+            .content-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+            .cover {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════ COVER / HEADER ═══════════════ -->
+    <header class="cover">
+        <span class="badge">Apostila Teórica</span>
+        <h1>Direito Penal<br>Parte Geral e Especial</h1>
+        <p class="subtitle">Concursos de Técnico Judiciário – Área Judiciária</p>
+        <p class="subtitle2">Foco: TJCE, FCC, FGV, Cebraspe e Bancas de Alto Nível</p>
+        <div class="divider-cover"></div>
+        <div class="bancas">
+            <span>FCC</span><span>FGV</span><span>Cebraspe</span><span>TJCE</span><span>VUNESP</span>
+        </div>
+    </header>
+
+    <!-- ═══════════════ MAIN CONTENT ═══════════════ -->
+    <main class="main-container">
+
+        <!-- ───── CHAPTER 1 ───── -->
+        <article class="content-card">
+            <span class="chapter-number">Capítulo 1</span>
+            <h2 class="chapter-heading">Princípios Fundamentais do Direito Penal</h2>
+            <div class="simple-divider"></div>
+
+            <!-- 1.1 -->
+            <h3 class="section-heading">1.1. O Princípio da Legalidade e seus Desdobramentos</h3>
+            <p>O Direito Penal moderno se estrutura sobre um pilar inegociável: o <strong>princípio da legalidade</strong>, consagrado no art. 5º, XXXIX, da Constituição Federal e no art. 1º do Código Penal, por meio da célebre fórmula <span class="highlight-strong">nullum crimen, nulla poena sine lege</span> (não há crime, não há pena, sem lei).</p>
+            <p>Este princípio funciona como uma <strong>garantia do cidadão contra o arbítrio estatal</strong>. Ninguém pode ser punido por fato que, à época de sua prática, não era definido como crime, nem sofrer sanção não prevista em lei.</p>
+            <p>Para compreender a profundidade desse princípio, é essencial conhecer seus subprincípios ou desdobramentos, que são cobrados com frequência em provas da FCC e de outras bancas exigentes. Dois deles merecem destaque especial: a <strong>irretroatividade da lei penal maléfica</strong> (<em>lex praevia</em>) e a <strong>taxatividade</strong> (<em>lex certa</em>).</p>
+
+            <!-- Diagrama SVG: Árvore da Legalidade -->
+            <div class="svg-diagram">
+                <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                    <defs>
+                        <filter id="shadow1" x="-5%" y="-5%" width="115%" height="115%">
+                            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1a3c34" flood-opacity="0.15"/>
+                        </filter>
+                    </defs>
+                    <!-- Tronco principal -->
+                    <rect x="260" y="15" width="180" height="44" rx="8" fill="#1a3c34" filter="url(#shadow1)"/>
+                    <text x="350" y="43" text-anchor="middle" fill="#f5f2e8" font-size="13" font-weight="700" font-family="Georgia,serif">PRINCÍPIO DA</text>
+                    <text x="350" y="56" text-anchor="middle" fill="#f5f2e8" font-size="13" font-weight="700" font-family="Georgia,serif">LEGALIDADE</text>
+                    <!-- Linhas do tronco -->
+                    <line x1="350" y1="59" x2="350" y2="82" stroke="#1a3c34" stroke-width="2"/>
+                    <line x1="120" y1="82" x2="580" y2="82" stroke="#1a3c34" stroke-width="1.5"/>
+                    <line x1="120" y1="82" x2="120" y2="100" stroke="#1a3c34" stroke-width="1.5"/>
+                    <line x1="270" y1="82" x2="270" y2="100" stroke="#1a3c34" stroke-width="1.5"/>
+                    <line x1="430" y1="82" x2="430" y2="100" stroke="#1a3c34" stroke-width="1.5"/>
+                    <line x1="580" y1="82" x2="580" y2="100" stroke="#1a3c34" stroke-width="1.5"/>
+                    <!-- Ramos -->
+                    <rect x="30" y="100" width="180" height="52" rx="6" fill="#e8f2ee" stroke="#2c6e5c" stroke-width="1.5" filter="url(#shadow1)"/>
+                    <text x="120" y="122" text-anchor="middle" fill="#1a3c34" font-size="11" font-weight="700" font-family="Georgia,serif">Lex Praevia</text>
+                    <text x="120" y="140" text-anchor="middle" fill="#2a4a3e" font-size="9.5" font-family="Segoe UI,sans-serif">Irretroatividade</text>
+                    <rect x="190" y="100" width="160" height="52" rx="6" fill="#fef9e7" stroke="#8b6914" stroke-width="1.5" filter="url(#shadow1)"/>
+                    <text x="270" y="122" text-anchor="middle" fill="#4a3a14" font-size="11" font-weight="700" font-family="Georgia,serif">Lex Certa</text>
+                    <text x="270" y="140" text-anchor="middle" fill="#4a3a14" font-size="9.5" font-family="Segoe UI,sans-serif">Taxatividade</text>
+                    <rect x="350" y="100" width="160" height="52" rx="6" fill="#e8f2ee" stroke="#2c6e5c" stroke-width="1.5" filter="url(#shadow1)"/>
+                    <text x="430" y="122" text-anchor="middle" fill="#1a3c34" font-size="11" font-weight="700" font-family="Georgia,serif">Lex Scripta</text>
+                    <text x="430" y="140" text-anchor="middle" fill="#2a4a3e" font-size="9.5" font-family="Segoe UI,sans-serif">Reserva Legal</text>
+                    <rect x="510" y="100" width="160" height="52" rx="6" fill="#e8f2ee" stroke="#2c6e5c" stroke-width="1.5" filter="url(#shadow1)"/>
+                    <text x="590" y="122" text-anchor="middle" fill="#1a3c34" font-size="11" font-weight="700" font-family="Georgia,serif">Lex Stricta</text>
+                    <text x="590" y="140" text-anchor="middle" fill="#2a4a3e" font-size="9.5" font-family="Segoe UI,sans-serif">Vedação à Analogia</text>
+                    <!-- Destinatários -->
+                    <text x="120" y="175" text-anchor="middle" fill="#6b6358" font-size="8.5" font-family="Segoe UI,sans-serif">Destinatário: Juiz</text>
+                    <text x="270" y="175" text-anchor="middle" fill="#6b6358" font-size="8.5" font-family="Segoe UI,sans-serif">Destinatário: Legislador</text>
+                    <text x="430" y="175" text-anchor="middle" fill="#6b6358" font-size="8.5" font-family="Segoe UI,sans-serif">Destinatário: Legislador</text>
+                    <text x="590" y="175" text-anchor="middle" fill="#6b6358" font-size="8.5" font-family="Segoe UI,sans-serif">Destinatário: Juiz</text>
+                    <!-- Fundamento -->
+                    <rect x="160" y="200" width="380" height="30" rx="14" fill="#faf8f2" stroke="#d0cbc0" stroke-width="1"/>
+                    <text x="350" y="220" text-anchor="middle" fill="#4a453d" font-size="10" font-weight="600" font-family="Segoe UI,sans-serif">Art. 5º, XXXIX, CF · Art. 1º, CP · Garantia Fundamental</text>
+                    <!-- Seta ligando -->
+                    <line x1="350" y1="195" x2="350" y2="200" stroke="#d0cbc0" stroke-width="1"/>
+                </svg>
+            </div>
+
+            <!-- 1.1.1 -->
+            <h4 class="subsection-heading">1.1.1. Irretroatividade da Lei Penal Maléfica (Lex Praevia)</h4>
+            <p>O postulado da <em>lex praevia</em> determina que a <strong>lei penal incriminadora não pode retroagir</strong> para alcançar fatos praticados antes de sua vigência. Em outras palavras, a lei que define um crime ou aumenta uma pena só produz efeitos para o futuro (<em>ex nunc</em>).</p>
+            <p><strong>Fundamento Constitucional:</strong> Art. 5º, XL, CF: <em>“a lei penal não retroagirá, salvo para beneficiar o réu.”</em></p>
+            <p>A interpretação <em>a contrario sensu</em> deste dispositivo revela que a <span class="highlight">retroatividade da lei penal benigna é um direito fundamental</span>. Se uma lei posterior deixar de considerar o fato como crime, reduzir a pena ou beneficiar o réu de qualquer modo, ela retroagirá para alcançar fatos anteriores, ainda que já tenha havido condenação transitada em julgado.</p>
+
+            <div class="pegadinha-box">
+                <p><strong>A FCC adora confundir o candidato afirmando que</strong> <em>“a lei penal não retroage em hipótese alguma”</em>. <strong>Isso é falso.</strong> A lei penal só não retroage se for <strong>maléfica</strong> (<em>novatio legis in pejus</em>). Se for <strong>benéfica</strong> (<em>novatio legis in mellius</em> ou <em>abolitio criminis</em>), a retroatividade é obrigatória e automática.</p>
+            </div>
+
+            <!-- 1.1.2 -->
+            <h4 class="subsection-heading">1.1.2. Taxatividade (Lex Certa)</h4>
+            <p>O princípio da <strong>taxatividade</strong>, ou <em>lex certa</em>, impõe ao legislador o dever de elaborar normas penais <strong>claras, precisas e inequívocas</strong>. A lei penal não pode conter expressões vagas, dúbias, imprecisas ou que permitam interpretações excessivamente amplas, sob pena de violar a segurança jurídica e abrir espaço para o subjetivismo judicial.</p>
+            <p><strong>Exemplo prático de violação da taxatividade:</strong> Imagine uma lei que definisse como crime <em>“comportar-se de modo inadequado em local público”</em>. O que é “inadequado”? Para um juiz, pode ser usar roupas curtas; para outro, falar alto. Essa vagueza é <strong>inaceitável no Direito Penal</strong>.</p>
+            <p>A exigência de taxatividade se dirige principalmente ao <strong>legislador</strong>, mas também vincula o <strong>julgador</strong>, que está proibido de realizar interpretações que ampliem o alcance da norma penal para além de seu sentido literal possível (proibição da <strong>analogia in malam partem</strong>).</p>
+
+            <!-- Quadro-Resumo Table -->
+            <div class="table-wrapper">
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>Subprincípio</th>
+                            <th>Conteúdo</th>
+                            <th>Destinatário Principal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Lex Praevia</strong><br>(Irretroatividade)</td>
+                            <td>A lei penal não pode retroagir, salvo para beneficiar o réu.</td>
+                            <td>Juiz (aplicador da lei no tempo)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lex Certa</strong><br>(Taxatividade)</td>
+                            <td>A lei penal deve ser clara e precisa, vedando termos vagos.</td>
+                            <td>Legislador (elaborador da norma)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lex Scripta</strong><br>(Reserva Legal)</td>
+                            <td>Somente lei em sentido formal pode criar crimes e penas.</td>
+                            <td>Legislador (fonte normativa)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lex Stricta</strong><br>(Vedação à Analogia)</td>
+                            <td>Proibição de usar analogia para punir fato não previsto em lei.</td>
+                            <td>Juiz (interpretação da norma)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="table-caption">Quadro-Resumo: Legalidade e seus Desdobramentos</p>
+            </div>
+
+            <div class="dica-box">
+                <p>A FCC frequentemente pergunta a qual princípio corresponde a proibição de termos vagos ou a irretroatividade da lei prejudicial. A resposta será, respectivamente, <strong>taxatividade</strong> e <strong>lex praevia</strong> (ou irretroatividade), ambos corolários do princípio maior da legalidade.</p>
+            </div>
+        </article>
+
+        <!-- ───── CHAPTER 2 ───── -->
+        <article class="content-card">
+            <span class="chapter-number">Capítulo 2</span>
+            <h2 class="chapter-heading">Teoria Geral do Crime</h2>
+            <div class="simple-divider"></div>
+
+            <!-- 2.1 -->
+            <h3 class="section-heading">2.1. A Conduta: Coação Física Irresistível vs. Coação Moral Irresistível</h3>
+            <p>O primeiro elemento do conceito analítico de crime é a <strong>conduta</strong>, entendida como ação ou omissão humana, consciente e voluntária, dirigida a uma finalidade.</p>
+            <p>No estudo da conduta, surge uma distinção fundamental e extremamente cobrada em concursos: a diferença entre a <strong>coação física irresistível</strong> (<em>vis absoluta</em>) e a <strong>coação moral irresistível</strong> (<em>vis compulsiva</em>).</p>
+
+            <!-- SVG: Comparação Visual Coação -->
+            <div class="svg-diagram">
+                <svg viewBox="0 0 680 190" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                    <defs>
+                        <filter id="shadow2" x="-3%" y="-3%" width="108%" height="112%">
+                            <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.10"/>
+                        </filter>
+                    </defs>
+                    <!-- Lado Esquerdo: Vis Absoluta -->
+                    <rect x="10" y="10" width="320" height="168" rx="10" fill="#fef3f2" stroke="#c0392b" stroke-width="1.5" filter="url(#shadow2)"/>
+                    <text x="170" y="38" text-anchor="middle" fill="#8b1a1a" font-size="13" font-weight="700" font-family="Georgia,serif">Vis Absoluta</text>
+                    <text x="170" y="55" text-anchor="middle" fill="#5c1a1a" font-size="10" font-family="Segoe UI,sans-serif">Coação Física Irresistível</text>
+                    <line x1="40" y1="65" x2="300" y2="65" stroke="#e8c8c5" stroke-width="1"/>
+                    <text x="170" y="85" text-anchor="middle" fill="#5c1a1a" font-size="10.5" font-family="Segoe UI,sans-serif">Vontade do agente: <tspan font-weight="700" fill="#8b1a1a">ELIMINADA</tspan></text>
+                    <text x="170" y="105" text-anchor="middle" fill="#5c1a1a" font-size="10.5" font-family="Segoe UI,sans-serif">Agente é mero <tspan font-weight="700">instrumento</tspan></text>
+                    <text x="170" y="125" text-anchor="middle" fill="#5c1a1a" font-size="10.5" font-family="Segoe UI,sans-serif">Exclui a <tspan font-weight="700" fill="#8b1a1a">CONDUTA</tspan> → Fato <tspan font-weight="700">ATÍPICO</tspan></text>
+                    <rect x="70" y="140" width="200" height="26" rx="13" fill="#c0392b" opacity="0.12"/>
+                    <text x="170" y="158" text-anchor="middle" fill="#8b1a1a" font-size="10" font-weight="700" font-family="Segoe UI,sans-serif">Não há crime</text>
+
+                    <!-- Lado Direito: Vis Compulsiva -->
+                    <rect x="350" y="10" width="320" height="168" rx="10" fill="#eef4fa" stroke="#3a6d9c" stroke-width="1.5" filter="url(#shadow2)"/>
+                    <text x="510" y="38" text-anchor="middle" fill="#1a3a5c" font-size="13" font-weight="700" font-family="Georgia,serif">Vis Compulsiva</text>
+                    <text x="510" y="55" text-anchor="middle" fill="#1a3048" font-size="10" font-family="Segoe UI,sans-serif">Coação Moral Irresistível</text>
+                    <line x1="380" y1="65" x2="640" y2="65" stroke="#c5d5e8" stroke-width="1"/>
+                    <text x="510" y="85" text-anchor="middle" fill="#1a3048" font-size="10.5" font-family="Segoe UI,sans-serif">Vontade do agente: <tspan font-weight="700" fill="#3a6d9c">VICIADA</tspan></text>
+                    <text x="510" y="105" text-anchor="middle" fill="#1a3048" font-size="10.5" font-family="Segoe UI,sans-serif">Age para <tspan font-weight="700">evitar mal maior</tspan></text>
+                    <text x="510" y="125" text-anchor="middle" fill="#1a3048" font-size="10.5" font-family="Segoe UI,sans-serif">Exclui a <tspan font-weight="700" fill="#3a6d9c">CULPABILIDADE</tspan> → Inexigibilidade</text>
+                    <rect x="400" y="140" width="220" height="26" rx="13" fill="#3a6d9c" opacity="0.12"/>
+                    <text x="510" y="158" text-anchor="middle" fill="#1a3a5c" font-size="10" font-weight="700" font-family="Segoe UI,sans-serif">Art. 22, 1ª parte, CP</text>
+                </svg>
+            </div>
+
+            <!-- 2.1.1 -->
+            <h4 class="subsection-heading">2.1.1. Coação Física Irresistível (Vis Absoluta)</h4>
+            <p>Na <em>vis absoluta</em>, o agente <strong>não tem qualquer liberdade de ação</strong>. Ele é utilizado como um mero instrumento material da vontade de outrem. Sua vontade é completamente anulada, substituída pela força física de um terceiro.</p>
+            <p><strong>Exemplo Clássico:</strong> Um homem forte agarra o braço de uma pessoa e, usando força, a obriga a desferir um golpe em um terceiro. Quem foi compelido <strong>não agiu, foi movido</strong>.</p>
+            <p><strong>Consequência Jurídica:</strong> A coação física irresistível <span class="highlight">exclui a própria conduta</span>. Se não há conduta (ação ou omissão com vontade), o fato é <strong>atípico</strong>. Não há crime.</p>
+
+            <!-- 2.1.2 -->
+            <h4 class="subsection-heading">2.1.2. Coação Moral Irresistível (Vis Compulsiva)</h4>
+            <p>Na <em>vis compulsiva</em>, a vontade do agente <strong>não é eliminada, mas sim viciada</strong>. Ele sofre uma grave ameaça (promessa de mal futuro e injusto) que o leva a optar pela prática do crime como forma de evitar um mal maior.</p>
+            <p><strong>Exemplo Clássico:</strong> Um gerente de banco, sob a ameaça de ter sua família morta, abre o cofre e entrega o dinheiro aos assaltantes. Ele agiu voluntariamente, quis entregar o dinheiro, mas sua vontade estava viciada pela ameaça irresistível.</p>
+            <p><strong>Consequência Jurídica:</strong> A conduta existe, é típica e ilícita. No entanto, a coação moral irresistível, quando configurada, atua como <span class="highlight">causa de exclusão da culpabilidade</span>, mais especificamente, da <strong>inexigibilidade de conduta diversa</strong> (art. 22, 1ª parte, CP).</p>
+
+            <!-- 2.1.3 Tabela -->
+            <h4 class="subsection-heading">2.1.3. Tabela Comparativa para Memorização</h4>
+            <div class="table-wrapper">
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>Critério</th>
+                            <th>Coação Física Irresistível<br>(Vis Absoluta)</th>
+                            <th>Coação Moral Irresistível<br>(Vis Compulsiva)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Natureza</strong></td>
+                            <td>Física (força bruta)</td>
+                            <td>Moral (grave ameaça)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vontade do Agente</strong></td>
+                            <td>Eliminada (atua como instrumento)</td>
+                            <td>Viciada (age para evitar mal maior)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Elemento Excluído</strong></td>
+                            <td><span class="highlight">Conduta</span> (fato atípico)</td>
+                            <td><span class="highlight">Culpabilidade</span> (inexigibilidade)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dispositivo Legal</strong></td>
+                            <td>Interpretação do art. 13 (ausência de conduta)</td>
+                            <td>Art. 22, 1ª parte, CP</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pegadinha-box">
+                <p>A banca adora trocar as consequências. Afirmar que a <strong>coação moral irresistível torna o fato atípico</strong> ou que a <strong>coação física exclui a culpabilidade</strong> são erros comuns. <strong>Grave: física exclui conduta (atipicidade); moral exclui culpabilidade.</strong></p>
+            </div>
+
+            <div class="elegant-divider">Seção seguinte</div>
+
+            <!-- 2.2 -->
+            <h3 class="section-heading">2.2. Inimputabilidade Penal: O Caso da Absolvição Imprópria</h3>
+            <p>A <strong>culpabilidade</strong>, como terceiro elemento do crime, pressupõe a <strong>imputabilidade</strong>, ou seja, a capacidade do agente de entender o caráter ilícito do fato e de determinar-se de acordo com esse entendimento ao tempo da ação ou omissão.</p>
+
+            <!-- 2.2.1 -->
+            <h4 class="subsection-heading">2.2.1. O Sistema Biopsicológico do Código Penal</h4>
+            <p>O art. 26, <em>caput</em>, do CP adota um critério <strong>biopsicológico</strong> para aferir a inimputabilidade. Não basta possuir uma doença mental; é preciso que, em razão dela, o agente fosse, ao tempo do fato, <strong>inteiramente incapaz</strong> de entender o caráter ilícito do fato ou de determinar-se conforme esse entendimento.</p>
+            <ul class="styled-list">
+                <li><strong>Elemento Biológico</strong> (ou psiquiátrico): Doença mental, desenvolvimento mental incompleto ou retardado.</li>
+                <li><strong>Elemento Psicológico</strong> (ou normativo): A consequência do elemento biológico: a perda total da capacidade de entendimento ou autodeterminação.</li>
+                <li><strong>Elemento Cronológico:</strong> Essa incapacidade deve existir <em>ao tempo da ação ou omissão</em>.</li>
+            </ul>
+
+            <!-- 2.2.2 -->
+            <h4 class="subsection-heading">2.2.2. Consequência: Absolvição Imprópria e Medida de Segurança</h4>
+            <p>Se o juiz, no processo, conclui que o réu é inimputável nos termos do art. 26, a sentença <strong>não será uma simples absolvição</strong>.</p>
+            <div class="concept-card">
+                <p class="concept-title">Absolvição Própria vs. Absolvição Imprópria</p>
+                <p><strong>Absolvição Própria:</strong> Ocorre quando o fato é atípico ou quando há uma excludente de ilicitude ou de culpabilidade. O réu é absolvido e colocado em liberdade.</p>
+                <p><strong>Absolvição Imprópria (Art. 97, CP):</strong> Ocorre quando o réu é inimputável, ou seja, sua conduta foi <strong>típica e ilícita</strong>, mas ele é isento de pena por ausência de culpabilidade (inimputabilidade). Contudo, se ele demonstra <strong>periculosidade</strong>, o juiz aplicará <strong>medida de segurança</strong>, que pode ser internação em hospital de custódia e tratamento psiquiátrico ou tratamento ambulatorial.</p>
+            </div>
+
+            <div class="case-study">
+                <p><strong>Gustavo</strong>, portador de transtorno mental grave que o tornava inteiramente incapaz de entender o caráter ilícito do fato ao tempo da ação, praticou lesão corporal em contexto de violência doméstica. O juiz o absolveu, mas aplicou medida de segurança. Essa decisão está correta?</p>
+                <p><strong>Análise:</strong> Sim, a decisão é perfeitamente correta. Estamos diante de um caso de <strong>absolvição imprópria</strong>.</p>
+                <ul class="styled-list">
+                    <li><strong>Típica e Ilícita:</strong> A conduta de Gustavo (lesão corporal) é típica e ilícita. A inimputabilidade não torna o fato lícito.</li>
+                    <li><strong>Isento de Pena:</strong> Em razão do art. 26, <em>caput</em>, do CP, Gustavo é isento de pena, pois é inimputável.</li>
+                    <li><strong>Medida de Segurança:</strong> Diante da gravidade do fato e da periculosidade demonstrada pelo laudo pericial, o juiz aplica a medida de segurança, nos termos do art. 97 do CP. A sentença é absolutória imprópria, pois absolve da pena, mas impõe uma sanção penal (medida de segurança).</li>
+                </ul>
+                <p><strong>Incomunicabilidade das Agravantes/Qualificadoras:</strong> Diferente do que ocorre com as elementares do crime, as circunstâncias de caráter pessoal (como a inimputabilidade) <strong>não se comunicam</strong> em caso de concurso de agentes (art. 30, CP).</p>
+            </div>
+
+            <div class="dica-box">
+                <p>A FCC explora o termo <strong>“absolvição imprópria”</strong> e suas consequências. Decore: <strong>inimputável que pratica fato típico e ilícito não é condenado</strong> (não recebe pena), mas pode receber <strong>medida de segurança</strong> (absolvição imprópria).</p>
+            </div>
+
+            <div class="elegant-divider">Seção seguinte</div>
+
+            <!-- 2.3 -->
+            <h3 class="section-heading">2.3. Concurso de Pessoas: A Cooperação Dolosamente Distinta</h3>
+            <p>O concurso de pessoas (coautoria e participação) é tratado no art. 29 do Código Penal, que adota a <strong>teoria monista ou unitária</strong>: todos que concorrem para o crime respondem por ele, na medida de sua culpabilidade.</p>
+            <p>Entretanto, para abarcar situações de desvio subjetivo entre os agentes, o Código prevê, no §2º do art. 29, uma importante exceção: a <strong>cooperação dolosamente distinta</strong>.</p>
+
+            <!-- 2.3.1 -->
+            <h4 class="subsection-heading">2.3.1. Fundamento e Análise do Art. 29, §2º, CP</h4>
+            <div class="quote-block">
+                <p class="quote-text"><em>“Se algum dos concorrentes quis participar de crime menos grave, ser-lhe-á aplicada a pena deste; essa pena será aumentada até a metade, na hipótese de ter sido previsível o resultado mais grave.”</em></p>
+            </div>
+            <p>Este dispositivo é a consagração da <strong>teoria monista mitigada</strong>. Vamos destrinchá-lo em suas partes essenciais:</p>
+            <ul class="styled-list">
+                <li><strong>Desvio Subjetivo:</strong> Um dos agentes desejava participar de um crime (crime-meio), mas outro agente, extrapolando o plano original, pratica um crime mais grave (crime-fim).</li>
+                <li><strong>Exemplo Clássico:</strong> “A” e “B” combinam um furto (crime menos grave). “B” fica vigiando do lado de fora (participação no furto). “A” entra na casa, é surpreendido pelo morador e, para garantir o êxito do furto, o mata (latrocínio – crime mais grave).</li>
+            </ul>
+            <p><strong>Consequência para o Coautor/Participante que não quis o resultado mais grave:</strong></p>
+            <ul class="styled-list">
+                <li><strong>Regra Geral:</strong> Ele responde apenas pelo crime menos grave que quis participar. No exemplo, “B” responde por furto, e não por latrocínio.</li>
+                <li><strong>Exceção – Resultado Mais Grave Previsível:</strong> Se o resultado mais grave (a morte, no caso do latrocínio) era <strong>previsível</strong> para o agente que não o quis, sua pena pelo crime menos grave será <strong>aumentada até a metade</strong>.</li>
+            </ul>
+
+            <!-- 2.3.2 -->
+            <h4 class="subsection-heading">2.3.2. A Importância do Juízo de Previsibilidade</h4>
+            <p>A <strong>previsibilidade</strong> é o elemento-chave para a aplicação do aumento de pena. Vejamos como isso funciona na prática e nas provas:</p>
+
+            <div class="case-study">
+                <p><strong>Cenário 1: Resultado Imprevisível</strong></p>
+                <p>Pedro e João combinam um furto em uma residência que acreditam estar vazia. João fica do lado de fora vigiando. Pedro entra e, ao deparar-se com um vigia armado que inesperadamente estava no local, trava uma luta corporal e o mata com a própria arma da vítima.</p>
+                <p><strong>Análise:</strong> A morte <strong>não era previsível</strong> para João, pois o plano era um simples furto em local supostamente vazio. Ele não poderia imaginar que ali havia um vigia armado. Portanto, João responderá apenas por <strong>furto, sem aumento de pena</strong>. Pedro responderá por latrocínio.</p>
+            </div>
+
+            <div class="case-study">
+                <p><strong>Cenário 2: Resultado Previsível</strong></p>
+                <p>Os mesmos Pedro e João combinam um roubo a um carro-forte, ambos armados. João fica no carro de fuga. Pedro e outros comparsas abordam os seguranças e, durante a troca de tiros, um segurança é morto.</p>
+                <p><strong>Análise:</strong> Em um roubo planejado com emprego de armas de fogo, a morte de alguém é um resultado <strong>altamente previsível</strong>. Ainda que João não quisesse a morte, era plenamente previsível. Ele responderá por roubo (crime menos grave que o latrocínio que foi o resultado efetivo), mas <strong>com a pena aumentada até a metade</strong>.</p>
+            </div>
+
+            <div class="macete-box">
+                <p>A questão quase sempre dirá se o resultado era ou não previsível. A <strong>ausência de previsibilidade afasta o aumento</strong>. A mera ocorrência do resultado mais grave <strong>não gera o aumento automático</strong>; a lei exige previsibilidade.</p>
+            </div>
+
+            <!-- Quadro-Resumo -->
+            <div class="table-wrapper">
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>Situação do Concorrente</th>
+                            <th>Resultado Mais Grave (Ex: Morte)</th>
+                            <th>Crime pelo qual Responde</th>
+                            <th>Aumento da Pena (Art. 29, §2º)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Quis o crime menos grave</td>
+                            <td><strong>Imprevisível</strong></td>
+                            <td>Apenas pelo crime menos grave</td>
+                            <td>Não se aplica</td>
+                        </tr>
+                        <tr>
+                            <td>Quis o crime menos grave</td>
+                            <td><strong>Previsível</strong></td>
+                            <td>Apenas pelo crime menos grave</td>
+                            <td><span class="highlight">Sim</span>, pena aumentada até a metade</td>
+                        </tr>
+                        <tr>
+                            <td>Quis o resultado mais grave</td>
+                            <td>–</td>
+                            <td>Responde pelo crime mais grave (regra do <em>caput</em>)</td>
+                            <td>Não se aplica este parágrafo</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="table-caption">Quadro-Resumo: Cooperação Dolosamente Distinta</p>
+            </div>
+
+            <div class="elegant-divider">Seção seguinte</div>
+
+            <!-- 2.4 -->
+            <h3 class="section-heading">2.4. Excludentes de Ilicitude: A Legítima Defesa</h3>
+            <p>O art. 23 do Código Penal enumera as causas que excluem a ilicitude do fato: estado de necessidade, legítima defesa, estrito cumprimento do dever legal e exercício regular de direito. Uma das mais cobradas é a <strong>legítima defesa</strong>, prevista no art. 25.</p>
+
+            <!-- 2.4.1 -->
+            <h4 class="subsection-heading">2.4.1. Requisitos da Legítima Defesa (Art. 25, CP)</h4>
+            <div class="quote-block">
+                <p class="quote-text"><em>“Entende-se em legítima defesa quem, usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente, a direito seu ou de outrem.”</em></p>
+            </div>
+            <p>Vamos analisar cada requisito para aplicação em casos concretos:</p>
+            <ul class="styled-list">
+                <li><strong>Agressão Injusta:</strong> Ação humana que ataca ou põe em perigo bens juridicamente tutelados. Deve ser ilícita, ou seja, não amparada pelo ordenamento jurídico. A agressão de um animal, por exemplo, não se enquadra em legítima defesa (salvo se for instrumento de agressão humana), mas sim em estado de necessidade.</li>
+                <li><strong>Atual ou Iminente:</strong> A agressão deve estar acontecendo ou prestes a acontecer. Não cabe legítima defesa contra agressão passada (vingança) ou futura e incerta.</li>
+                <li><strong>Direito Próprio ou de Outrem:</strong> Pode-se defender a própria vida, integridade física, patrimônio, honra, etc., ou esses mesmos bens em relação a terceiros.</li>
+                <li><strong>Meios Necessários:</strong> O agente deve empregar os meios disponíveis e suficientes para repelir a agressão, dentro das circunstâncias do caso concreto.</li>
+                <li><strong>Moderação:</strong> O uso dos meios deve ser moderado, ou seja, limitado ao necessário para fazer cessar a agressão. O excesso é punível (art. 23, parágrafo único, CP), podendo ser doloso ou culposo.</li>
+            </ul>
+
+            <!-- 2.4.2 -->
+            <h4 class="subsection-heading">2.4.2. Caso Concreto para Análise</h4>
+            <div class="case-study">
+                <p><strong>Nino</strong>, ao ser vítima de uma tentativa de roubo com arma de fogo, desfere dois socos no agressor e o desarma, usando moderadamente os meios necessários. Por qual causa de exclusão de ilicitude ele age?</p>
+                <p><strong>Análise Detalhada:</strong></p>
+                <ul class="styled-list">
+                    <li><strong>Agressão Injusta:</strong> A tentativa de roubo com arma de fogo configura uma agressão grave e ilícita ao patrimônio e à integridade física/psíquica de Nino.</li>
+                    <li><strong>Atual:</strong> A agressão estava em curso (tentativa de roubo).</li>
+                    <li><strong>Direito Próprio:</strong> Nino defendia seu patrimônio e sua segurança.</li>
+                    <li><strong>Meio Necessário e Moderado:</strong> Desferir socos e desarmar o agressor armado é um meio proporcional e moderado para repelir a ameaça letal. Ele não chutou a cabeça do agressor já caído, nem efetuou disparos; apenas o dominou.</li>
+                </ul>
+                <p><strong>Conclusão:</strong> A conduta de Nino é perfeitamente amparada pela <strong>legítima defesa</strong>, excluindo a ilicitude do fato. Ele não cometeu crime de lesão corporal, pois sua ação era autorizada pelo ordenamento.</p>
+            </div>
+
+            <div class="dica-box">
+                <p><strong>Dica para Diferenciação:</strong> O examinador pode tentar confundir com:</p>
+                <ul class="styled-list">
+                    <li><strong>Estrito cumprimento do dever legal:</strong> Agiria sob este amparo um policial, por exemplo, cumprindo o dever de ofício.</li>
+                    <li><strong>Exercício regular de direito:</strong> Exemplo clássico é o do lutador de boxe que, dentro das regras do esporte, lesiona o adversário.</li>
+                    <li><strong>Inexigibilidade de conduta diversa:</strong> Esta é uma <strong>excludente de culpabilidade</strong>, não de ilicitude. É a "legítima defesa" do inimputável, mas aplicada àqueles que, por circunstâncias humanas, não poderiam agir de outro modo.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ───── CHAPTER 3 ───── -->
+        <article class="content-card">
+            <span class="chapter-number">Capítulo 3</span>
+            <h2 class="chapter-heading">Crimes em Espécie</h2>
+            <div class="simple-divider"></div>
+
+            <!-- 3.1 -->
+            <h3 class="section-heading">3.1. Crimes Contra a Administração Pública: Três Figuras que se Confundem</h3>
+            <p>Os crimes contra a Administração Pública, previstos no Título XI do Código Penal, são de altíssima incidência em concursos. Dentro dos crimes praticados por particular contra a Administração em geral (Capítulo II), três tipos penais são frequentemente testados em conjunto, exigindo do candidato uma distinção precisa: <strong>resistência</strong> (art. 329), <strong>desobediência</strong> (art. 330) e <strong>desacato</strong> (art. 331).</p>
+
+            <!-- 3.1.1 -->
+            <h4 class="subsection-heading">3.1.1. Resistência (Art. 329, CP)</h4>
+            <div class="quote-block">
+                <p class="quote-text"><em>“Opor-se à execução de ato legal, mediante violência ou ameaça a funcionário competente para executá-lo ou a quem lhe esteja prestando auxílio.”</em></p>
+            </div>
+            <ul class="styled-list">
+                <li><strong>Elemento Central:</strong> A oposição ao ato funcional se dá por meio de <strong>violência</strong> (física) ou <strong>ameaça</strong> (grave, moral). O agente não quer apenas descumprir a ordem, ele quer <strong>impedir ativamente</strong> que o funcionário a execute.</li>
+                <li><strong>Conduta Ativa:</strong> Exige uma ação de enfrentamento. Não é um crime omissivo.</li>
+                <li><strong>Sujeito Passivo:</strong> O Estado e, secundária e imediatamente, o funcionário público ou quem lhe presta auxílio, que sofre a violência ou ameaça.</li>
+            </ul>
+
+            <!-- 3.1.2 -->
+            <h4 class="subsection-heading">3.1.2. Desobediência (Art. 330, CP)</h4>
+            <div class="quote-block">
+                <p class="quote-text"><em>“Desobedecer a ordem legal de funcionário público.”</em></p>
+            </div>
+            <ul class="styled-list">
+                <li><strong>Elemento Central:</strong> O <strong>simples descumprimento</strong> de uma ordem legal. O agente não emprega violência ou ameaça; ele simplesmente não faz o que lhe foi ordenado (conduta omissiva) ou faz o que lhe foi proibido (conduta ativa de desatendimento).</li>
+                <li><strong>Resistência Passiva:</strong> A desobediência é tratada pela doutrina como uma forma de <em>“resistência passiva”</em>.</li>
+                <li><strong>Ordem Legal:</strong> É pressuposto do crime que a ordem seja emanada de funcionário público competente e que seja <strong>legal</strong>. Uma ordem manifestamente ilegal não configura o crime.</li>
+            </ul>
+
+            <!-- 3.1.3 -->
+            <h4 class="subsection-heading">3.1.3. Desacato (Art. 331, CP)</h4>
+            <div class="quote-block">
+                <p class="quote-text"><em>“Desacatar funcionário público no exercício da função ou em razão dela.”</em></p>
+            </div>
+            <ul class="styled-list">
+                <li><strong>Elemento Central:</strong> A conduta consiste em <strong>ofender, humilhar, menosprezar</strong> a dignidade ou o decoro do funcionário público. O que se atinge aqui não é a execução de um ato específico, mas o <strong>prestígio e a honra da função pública</strong>.</li>
+                <li><strong>No Exercício da Função ou em Razão Dela:</strong> Se a ofensa ocorrer no momento do exercício funcional ou por causa dele, o crime se configura, ainda que o funcionário não esteja, naquele exato minuto, praticando um ato de ofício.</li>
+            </ul>
+
+            <!-- 3.1.4 -->
+            <h4 class="subsection-heading">3.1.4. Análise de Caso Concreto e Distinção</h4>
+            <div class="case-study">
+                <p>Um motociclista, ao receber ordem de parada de um policial em uma blitz, aumenta a velocidade e foge do local, sem, contudo, jogar o veículo contra o agente ou ameaçá-lo.</p>
+                <p><strong>Pergunta:</strong> Qual crime o motociclista cometeu?</p>
+                <p><strong>Análise:</strong></p>
+                <ul class="styled-list">
+                    <li><strong>Não é Resistência (Art. 329):</strong> Faltam os elementos essenciais da violência ou ameaça. A mera fuga não se confunde com enfrentamento violento ao ato de fiscalização.</li>
+                    <li><strong>Não é Desacato (Art. 331):</strong> O condutor não proferiu ofensas ou humilhou o policial. A conduta não atinge a honra funcional.</li>
+                    <li><strong>É Desobediência (Art. 330):</strong> O policial emitiu uma ordem legal e competente (parar o veículo). O motociclista, deliberadamente, descumpriu essa ordem, sem usar de violência. A conduta se amolda perfeitamente ao tipo da desobediência.</li>
+                </ul>
+            </div>
+
+            <div class="case-study">
+                <p><strong>Caso dos Ativistas (Situação Hipotética Avançada):</strong></p>
+                <p>Um grupo de ativistas se acorrenta a árvores em uma praça como forma de protesto, sem esboçar qualquer reação violenta ou ameaçadora. A polícia isola o local e negocia, mas em momento algum expede uma ordem direta de desocupação ou prisão.</p>
+                <p><strong>Análise:</strong></p>
+                <ul class="styled-list">
+                    <li><strong>Não é Resistência:</strong> Não há violência ou ameaça contra os funcionários públicos.</li>
+                    <li><strong>Não é Desobediência:</strong> Não houve uma ordem legal específica dirigida a eles para que se retirassem. A inexistência de uma determinação do funcionário público faz com que o tipo penal da desobediência não se complete.</li>
+                </ul>
+                <p><strong>Conclusão:</strong> A conduta é <strong>penalmente atípica</strong>. Fato atípico é aquele que não encontra correspondência em nenhum tipo penal. A mera presença passiva, sem ordem descumprida e sem violência, não constitui crime.</p>
+            </div>
+
+            <!-- Tabela Comparativa -->
+            <div class="table-wrapper">
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>Crime</th>
+                            <th>Conduta Nuclear</th>
+                            <th>Elemento Essencial</th>
+                            <th>Exemplo Claro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Resistência</strong> (329)</td>
+                            <td>Opor-se à execução de ato</td>
+                            <td><span class="highlight">Violência ou ameaça</span></td>
+                            <td>Empurrar o oficial de justiça para impedir penhora.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Desobediência</strong> (330)</td>
+                            <td>Desobedecer ordem</td>
+                            <td>Descumprimento de ordem</td>
+                            <td>Motorista que se recusa a assoprar o bafômetro.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Desacato</strong> (331)</td>
+                            <td>Desacatar funcionário</td>
+                            <td>Ofensa à dignidade/decoro</td>
+                            <td>Chamar o fiscal da prefeitura de “ladrão” e “incompetente”.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="table-caption">Tabela Comparativa Definitiva para Provas</p>
+            </div>
+
+            <div class="elegant-divider">Seção seguinte</div>
+
+            <!-- 3.2 -->
+            <h3 class="section-heading">3.2. Corrupção Ativa e Passiva: A Diferença Essencial</h3>
+            <p>Nos crimes de corrupção (arts. 317 e 333), a relação entre o particular e o funcionário público é o foco. A principal distinção para provas reside em identificar <strong>quem toma a iniciativa</strong> no “negócio ilícito”.</p>
+
+            <!-- 3.2.1 -->
+            <h4 class="subsection-heading">3.2.1. Corrupção Passiva (Art. 317, CP)</h4>
+            <div class="quote-block">
+                <p class="quote-text"><em>“Solicitar ou receber, para si ou para outrem, direta ou indiretamente, ainda que fora da função ou antes de assumi-la, mas em razão dela, vantagem indevida, ou aceitar promessa de tal vantagem.”</em></p>
+            </div>
+            <ul class="styled-list">
+                <li><strong>Sujeito Ativo:</strong> <span class="highlight">Funcionário público</span> (crime próprio).</li>
+                <li><strong>Iniciativa:</strong> A ação parte do funcionário, que <strong>solicita</strong> (pede, exige) a vantagem, ou do particular que oferece e o funcionário <strong>recebe ou aceita promessa</strong>. A <em>passividade</em> no nome do crime não se refere a uma conduta passiva, mas à posição do funcionário público como receptor da corrupção.</li>
+            </ul>
+
+            <!-- 3.2.2 -->
+            <h4 class="subsection-heading">3.2.2. Corrupção Ativa (Art. 333, CP)</h4>
+            <div class="quote-block">
+                <p class="quote-text"><em>“Oferecer ou prometer vantagem indevida a funcionário público, para determiná-lo a praticar, omitir ou retardar ato de ofício.”</em></p>
+            </div>
+            <ul class="styled-list">
+                <li><strong>Sujeito Ativo:</strong> <span class="highlight">Particular</span> (pode ser qualquer pessoa, inclusive outro funcionário público, desde que não aja em razão de suas próprias funções).</li>
+                <li><strong>Iniciativa:</strong> A ação parte do particular, que <strong>oferece ou promete</strong> a vantagem indevida. O crime se consuma com o mero oferecimento, <strong>independentemente de o funcionário aceitar ou não</strong>.</li>
+            </ul>
+
+            <!-- 3.2.3 -->
+            <h4 class="subsection-heading">3.2.3. Caso Concreto e Macete de Prova</h4>
+            <div class="case-study">
+                <p><strong>Luiz</strong>, um empresário, é parado em uma blitz. Para evitar ser multado, oferece R$ 500,00 ao policial, que, indignado, recusa a oferta e prende Luiz em flagrante.</p>
+                <p><strong>Análise:</strong> Luiz, na qualidade de particular, tomou a iniciativa de oferecer vantagem indevida ao policial. O crime se consuma no exato momento do oferecimento. É um <strong>crime formal</strong>, que não exige resultado naturalístico para sua consumação. Portanto, Luiz cometeu o crime de <strong>corrupção ativa</strong> (art. 333).</p>
+            </div>
+
+            <div class="macete-box">
+                <p><strong>Macete da "Ação":</strong></p>
+                <ul class="styled-list">
+                    <li><strong>Corrupção ATIVA:</strong> O particular <strong>AGE, OFERECE</strong>. (Pense em <strong>"A"</strong> de <strong>A</strong>tiva e de <strong>A</strong>gir).</li>
+                    <li><strong>Corrupção PASSIVA:</strong> O funcionário <strong>PEDE ou RECEBE</strong>. (Pense no funcionário como <strong>alvo da propina</strong>).</li>
+                </ul>
+            </div>
+
+            <div class="elegant-divider">Seção seguinte</div>
+
+            <!-- 3.3 -->
+            <h3 class="section-heading">3.3. Peculato-Apropriação (Art. 312, Caput, 1ª figura, CP)</h3>
+            <p>O peculato, em suas várias modalidades, é o crime funcional por excelência. A figura mais básica e importante para a carreira de Técnico Judiciário é a do <em>caput</em> do art. 312, na modalidade apropriação.</p>
+            <div class="quote-block">
+                <p class="quote-text"><em>“Apropriar-se o funcionário público de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo, ou desviá-lo, em proveito próprio ou alheio: Pena - reclusão, de 2 (dois) a 12 (doze) anos, e multa.”</em></p>
+            </div>
+
+            <!-- 3.3.1 -->
+            <h4 class="subsection-heading">3.3.1. Elementares do Tipo</h4>
+            <ul class="styled-list">
+                <li><strong>Sujeito Ativo:</strong> <span class="highlight">Funcionário público</span> (crime próprio).</li>
+                <li><strong>Conduta Nuclear:</strong> <strong>Apropriar-se</strong>, ou seja, inverter o ânimo da posse, passando a agir como se dono fosse de coisa que estava legitimamente sob sua posse.</li>
+                <li><strong>Objeto Material:</strong> Dinheiro, valor ou qualquer outro bem móvel (público ou particular).</li>
+                <li><strong>Elemento Normativo Essencial:</strong> <em>“de que tem a posse em razão do cargo”</em>. A posse do bem deve ser um atributo, uma facilidade decorrente do exercício do cargo público.</li>
+            </ul>
+
+            <!-- 3.3.2 -->
+            <h4 class="subsection-heading">3.3.2. Caso Concreto para Fixação</h4>
+            <div class="case-study">
+                <p><strong>Caio</strong>, funcionário público, é responsável pelo pátio de veículos apreendidos. Ele pega um automóvel que estava sob sua guarda em razão do cargo e tenta vendê-lo no mercado paralelo.</p>
+                <p><strong>Análise:</strong> Caio, sendo funcionário público, tinha a posse legítima do veículo em decorrência de suas atribuições funcionais (zelar pelos bens apreendidos). Ao tentar vendê-lo, ele passa a agir como se fosse o proprietário, configurando a <strong>inversão do ânimo da posse</strong>. Sua conduta se amolda perfeitamente ao crime de <strong>peculato na modalidade apropriação</strong> (art. 312, <em>caput</em>, 1ª parte).</p>
+            </div>
+
+            <div class="important-note">
+                <p><strong>Distinção Importante:</strong> Não confundir com:</p>
+                <ul class="styled-list">
+                    <li><strong>Apropriação Indébita (art. 168):</strong> O sujeito ativo é qualquer pessoa (crime comum), e a posse do bem decorre de outra relação jurídica (depósito, comodato, etc.), e não do cargo público.</li>
+                    <li><strong>Peculato-Furto (art. 312, §1º):</strong> O funcionário público <strong>não tem a posse</strong> do bem. Ele se utiliza da facilidade do cargo para <strong>subtraí-lo</strong>. Ex: um servidor administrativo que, usando sua senha, subtrai valores de uma conta da prefeitura.</li>
+                </ul>
+            </div>
+
+            <div class="elegant-divider">Seção seguinte</div>
+
+            <!-- 3.4 -->
+            <h3 class="section-heading">3.4. Crimes Contra a Fé Pública: Falsa Identidade vs. Falsidade Ideológica</h3>
+            <p>A fé pública é a confiança que a sociedade deposita em certos objetos, documentos e declarações. Dois crimes que tutelam esse bem jurídico e são constantemente confundidos em provas são a <strong>falsa identidade</strong> e a <strong>falsidade ideológica</strong>.</p>
+
+            <!-- 3.4.1 -->
+            <h4 class="subsection-heading">3.4.1. Falsa Identidade (Art. 307, CP)</h4>
+            <div class="quote-block">
+                <p class="quote-text"><em>“Atribuir-se ou atribuir a terceiro falsa identidade para obter vantagem, em proveito próprio ou alheio, ou para causar dano a outrem.”</em></p>
+            </div>
+            <ul class="styled-list">
+                <li><strong>Conduta:</strong> Ato de se passar por outra pessoa (verbalmente ou por gestos), declarando um nome ou condição pessoal que não é a verdadeira.</li>
+                <li><strong>Finalidade Especial (Dolo Específico):</strong> A atribuição da falsa identidade deve visar a obtenção de vantagem (qualquer tipo) ou a causar dano a outrem, ou ainda, conforme entendimento consolidado, para evadir-se de responsabilidade penal (como se identificar por outro nome ao ser abordado pela polícia). A <strong>Súmula 522 do STJ</strong> sumulou o entendimento de que a conduta de atribuir-se falsa identidade perante autoridade policial é típica, ainda que em situação de alegada autodefesa.</li>
+                <li><strong>Ausência de Documento:</strong> O núcleo do tipo <strong>não exige</strong> a fabricação ou uso de documento falso. A declaração verbal já consuma o crime.</li>
+            </ul>
+
+            <!-- 3.4.2 -->
+            <h4 class="subsection-heading">3.4.2. Falsidade Ideológica (Art. 299, CP)</h4>
+            <div class="quote-block">
+                <p class="quote-text"><em>“Omitir, em documento público ou particular, declaração que dele devia constar, ou nele inserir ou fazer inserir declaração falsa ou diversa da que devia ser escrita, com o fim de criar obrigação ou alterar a verdade sobre fato juridicamente relevante.”</em></p>
+            </div>
+            <ul class="styled-list">
+                <li><strong>Conduta:</strong> O vício está no <strong>conteúdo intelectual</strong> do documento. O documento em si é verdadeiro (papel, formulário, etc.), mas as <strong>informações nele inseridas são falsas</strong> ou foram omitidas.</li>
+                <li><strong>Finalidade:</strong> O fim é alterar a verdade sobre <strong>fato juridicamente relevante</strong> (aquele que produz efeitos no mundo do Direito).</li>
+            </ul>
+
+            <!-- 3.4.3 -->
+            <h4 class="subsection-heading">3.4.3. Distinção Prática e Caso Concreto</h4>
+            <div class="case-study">
+                <p><strong>José Bonifácio</strong>, ao ser abordado por policiais que investigavam um furto, identifica-se verbalmente como “Pedro de Alcântara”, com o objetivo de não ser descoberto, pois contra si havia um mandado de prisão em aberto.</p>
+                <p><strong>Análise:</strong> José não apresentou um documento falso de identidade. Ele simplesmente, de forma verbal, atribuiu a si uma identidade falsa para se evadir de sua responsabilidade penal. Esta conduta se enquadra no crime de <strong>falsa identidade</strong> (art. 307).</p>
+                <p>Se, por outro lado, José tivesse apresentado uma carteira de identidade materialmente falsa (falsificação grosseira ou sofisticada), a conduta poderia ser de <strong>uso de documento falso</strong> (art. 304). E se, ao ser contratado, ele preenchesse uma ficha cadastral com dados falsos sobre sua escolaridade (fato juridicamente relevante para o contrato de trabalho), estaria cometendo <strong>falsidade ideológica</strong> (art. 299).</p>
+            </div>
+
+            <div class="macete-box">
+                <p><strong>Macete de Diferenciação:</strong></p>
+                <ul class="styled-list">
+                    <li><strong>Falsa Identidade:</strong> <em>“Quem EU sou?”</em> – Ato de se passar por outra pessoa, <strong>verbalmente, sem documento</strong>.</li>
+                    <li><strong>Falsidade Ideológica:</strong> <em>“O que ESTOU DECLARANDO POR ESCRITO?”</em> – <strong>Conteúdo falso</strong> em documento verdadeiro.</li>
+                </ul>
+            </div>
+
+            <div class="elegant-divider">Seção seguinte</div>
+
+            <!-- 3.5 -->
+            <h3 class="section-heading">3.5. Crimes Contra a Pessoa e a Liberdade Pessoal</h3>
+
+            <!-- 3.5.1 -->
+            <h4 class="subsection-heading">3.5.1. Homicídio Qualificado (Art. 121, §2º, CP)</h4>
+            <p>O homicídio qualificado é crime hediondo (Lei 8.072/90) e suas circunstâncias qualificadoras, previstas em rol taxativo nos incisos do §2º do art. 121, podem coexistir. É plenamente possível um <strong>homicídio triplamente qualificado</strong>, desde que as qualificadoras não sejam incompatíveis entre si e pertençam a categorias diferentes (ex: motivo, meio e conexão).</p>
+
+            <div class="case-study">
+                <p><strong>Caso Concreto para Análise de Cumulação:</strong></p>
+                <p>João mata um policial militar por razão de suas funções, usando arma de fogo de uso restrito e recurso que impossibilitou a defesa da vítima.</p>
+                <p>Vamos enquadrar cada conduta nas qualificadoras correspondentes:</p>
+                <ul class="styled-list">
+                    <li><strong>Recurso que dificultou ou tornou impossível a defesa da vítima:</strong> O enunciado é claro ao afirmar que a vítima não teve chance de defesa. Isso caracteriza a qualificadora do <strong>inciso IV</strong>. Pode ser por emboscada, traição, surpresa, etc.</li>
+                    <li><strong>Contra agente de segurança pública (art. 144 da CF) em razão das funções:</strong> O policial militar é um agente de segurança pública, e a motivação do crime foi sua função. Enquadramento perfeito no <strong>inciso VII</strong> (incluído pela Lei 13.142/2015). Atenção: não basta ser contra policial; deve ser <em>em razão das funções</em>.</li>
+                    <li><strong>Com emprego de arma de fogo de uso restrito ou proibido:</strong> O instrumento do crime é uma arma de fogo de uso restrito ou proibido. Esta é a qualificadora do <strong>inciso VIII</strong>.</li>
+                </ul>
+                <p><strong>Conclusão:</strong> O crime será de <strong>homicídio qualificado pelos incisos IV, VII e VIII</strong>, todos do §2º do art. 121, com pena de reclusão de 12 a 30 anos.</p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>Observação sobre Qualificadoras Subjetivas e Objetivas:</strong> As do inciso IV (meio) e VIII (modo) são <strong>objetivas</strong>. A do inciso VII é <strong>subjetiva</strong> (motivo). É perfeitamente possível cumulá-las. O que não se pode é, por exemplo, qualificar o mesmo crime por motivo fútil (II) e torpe (I) ao mesmo tempo, se forem contraditórios.</p>
+            </div>
+
+            <!-- 3.5.2 -->
+            <h4 class="subsection-heading">3.5.2. Extorsão Mediante Sequestro Qualificada (Art. 159, §1º, CP)</h4>
+            <p>O crime do art. 159 é um dos mais graves do Código Penal. A forma simples (<em>caput</em>) tem pena de 8 a 15 anos. O §1º traz hipóteses que qualificam o crime, elevando a pena para o patamar de <strong>12 a 20 anos</strong>. As qualificadoras são independentes; basta a presença de uma delas para o crime ser considerado qualificado.</p>
+            <p><strong>São três as qualificadoras:</strong></p>
+            <ul class="styled-list">
+                <li><strong>A) Temporal:</strong> Se o sequestro dura <strong>mais de 24 horas</strong>.</li>
+                <li><strong>B) Etária:</strong> Se a vítima é <strong>menor de 18 anos ou maior de 60 anos</strong>. (Atenção à redação correta, que não inclui "maior de 65 anos").</li>
+                <li><strong>C) Plurissubjetiva:</strong> Se o crime é cometido por <strong>bando ou quadrilha</strong> (hoje, "associação criminosa" ou grupo com três ou mais pessoas).</li>
+            </ul>
+
+            <div class="case-study">
+                <p><strong>Aplicação em Caso Concreto:</strong></p>
+                <p>Um empresário de <strong>62 anos</strong> é sequestrado e mantido em cativeiro por <strong>12 horas</strong>. O resgate é pago e a vítima é liberada. O crime foi cometido por <strong>apenas duas pessoas</strong>.</p>
+                <p><strong>Análise:</strong> O sequestro durou apenas 12 horas (não incide a qualificadora "A"). Foi cometido por duas pessoas (não incide a qualificadora "C"). Contudo, a vítima tinha 62 anos, ou seja, é <strong>maior de 60 anos</strong>. Incide, portanto, a <strong>qualificadora etária</strong>, prevista na alínea "B" do §1º do art. 159. O crime é, portanto, <strong>extorsão mediante sequestro qualificada</strong>, com pena de 12 a 20 anos.</p>
+            </div>
+
+            <!-- 3.5.3 -->
+            <h4 class="subsection-heading">3.5.3. Intimidação Sistemática (Bullying e Cyberbullying) – Art. 146-A, CP</h4>
+            <p>Este crime, inserido pela Lei 14.811/2024, tutela a liberdade pessoal e a integridade psíquica, especialmente de crianças e adolescentes, mas não limitado a eles. O artigo possui duas figuras com naturezas jurídicas distintas:</p>
+
+            <div class="concept-card">
+                <p class="concept-title">Forma Básica (caput) – Bullying</p>
+                <p><em>“Intimidar sistematicamente, materiais ou virtuais...”</em></p>
+                <p><strong>Pena:</strong> Multa. Por ter pena de multa, a doutrina e a literalidade da lei a classificam como <strong>contravenção penal</strong>, não como crime. (Art. 1º da LCP).</p>
+            </div>
+
+            <div class="concept-card">
+                <p class="concept-title">Forma Qualificada (parágrafo único) – Cyberbullying</p>
+                <p><em>“Se a conduta é realizada por meio da rede de computadores, de rede social, aplicativos, de jogos on-line ou por qualquer outro meio ou ambiente digital, ou transmitida em tempo real: Pena - reclusão, de 2 (dois) anos a 4 (quatro) anos, e multa.”</em></p>
+                <p><strong>Pena:</strong> Reclusão de 2 a 4 anos e multa. Pela pena cominada (reclusão e multa), a conduta é um <strong>crime</strong>.</p>
+            </div>
+
+            <div class="case-study">
+                <p><strong>Caso Concreto (Análise Típica):</strong></p>
+                <p>Um grupo de alunos cria um perfil falso em uma rede social para postar diariamente montagens humilhantes de um colega de classe, com o intuito de envergonhá-lo e isolá-lo.</p>
+                <p><strong>Análise:</strong> A conduta é de intimidar sistematicamente (humilhar, ridicularizar) por meio de <strong>rede social (ambiente digital)</strong>. Isso se enquadra perfeitamente no <strong>art. 146-A, parágrafo único (cyberbullying)</strong>, que é <strong>crime</strong>, com pena de reclusão.</p>
+            </div>
+        </article>
+
+        <!-- ───── APÊNDICE ───── -->
+        <article class="content-card">
+            <span class="chapter-number">Apêndice</span>
+            <h2 class="chapter-heading">Macetes e Dicas de Prova (FCC e Similares)</h2>
+            <div class="simple-divider"></div>
+
+            <!-- 1. Macetes -->
+            <h3 class="section-heading">1. Macetes de Memorização Rápida</h3>
+            <div class="macete-box">
+                <p><strong>Princípio da Legalidade:</strong> É o <strong>“NÃO”</strong> que protege. Não há crime sem lei, não há pena sem lei. (<em>Nullum crimen, nulla poena sine lege</em>).</p>
+            </div>
+            <div class="macete-box">
+                <p><strong>Coação:</strong> <strong>FÍ</strong>sica <strong>F</strong>az o <strong>F</strong>ato ser atípico (exclui conduta). <strong>M</strong>oral <strong>M</strong>antém o fato típico, mas exclui a culpabilidade.</p>
+            </div>
+            <div class="macete-box">
+                <p><strong>Corrupção:</strong> <strong>A</strong>tiva é do <strong>A</strong>gente (particular) que <strong>A</strong>ge. <strong>P</strong>assiva é do <strong>P</strong>úblico (funcionário) que <strong>P</strong>ede.</p>
+            </div>
+            <div class="macete-box">
+                <p><strong>Resistência vs. Desobediência:</strong> Resistência tem <strong>R</strong>ixa (violência/ameaça). Desobediência é mero <strong>D</strong>escumprimento.</p>
+            </div>
+            <div class="macete-box">
+                <p><strong>Falsa Identidade x Falsidade Ideológica:</strong> <strong>Id</strong>entidade está ligada ao <strong>id</strong>ivíduo (quem sou? – verbal). <strong>Id</strong>eológica está ligada à <strong>id</strong>eia (o que escrevo? – documento).</p>
+            </div>
+            <div class="macete-box">
+                <p><strong>Extorsão Mediante Sequestro Qualificada:</strong> Decore as três alíneas: <strong>24H</strong> (tempo), <strong>18/60</strong> (idade), <strong>Bando/Quadrilha</strong> (grupo).</p>
+            </div>
+
+            <!-- 2. Pegadinhas -->
+            <h3 class="section-heading">2. Pegadinhas Recorrentes de Banca</h3>
+            <div class="pegadinha-box">
+                <p><em>“A lei penal nunca retroage.”</em> <strong>(ERRADO)</strong> – A lei penal <strong>maléfica</strong> nunca retroage. A <strong>benigna</strong>, sempre retroage.</p>
+            </div>
+            <div class="pegadinha-box">
+                <p><em>“A coação moral irresistível torna o fato atípico.”</em> <strong>(ERRADO)</strong> – Ela exclui a <strong>culpabilidade</strong>.</p>
+            </div>
+            <div class="pegadinha-box">
+                <p><em>“Na cooperação dolosamente distinta, a pena do crime menos grave sempre é aumentada quando ocorre resultado mais grave.”</em> <strong>(ERRADO)</strong> – O aumento só ocorre se o resultado mais grave for <strong>previsível</strong>.</p>
+            </div>
+            <div class="pegadinha-box">
+                <p><em>“O crime de desobediência exige violência ou ameaça.”</em> <strong>(ERRADO)</strong> – Isso é resistência. Desobediência é o mero descumprimento.</p>
+            </div>
+            <div class="pegadinha-box">
+                <p><em>“A tentativa de suborno feita por um particular a um funcionário público é corrupção passiva.”</em> <strong>(ERRADO)</strong> – O particular que oferece comete <strong>corrupção ativa</strong>. A passiva é quando o funcionário pede/recebe.</p>
+            </div>
+            <div class="pegadinha-box">
+                <p><em>“O bullying, por ser crime, tem pena de multa.”</em> <strong>(ERRADO)</strong> – A forma com pena de multa (<em>caput</em>) é <strong>contravenção penal</strong>. A forma com reclusão (cyberbullying) é <strong>crime</strong>.</p>
+            </div>
+
+            <!-- 3. Raciocínio -->
+            <h3 class="section-heading">3. Raciocínio para Questões Complexas</h3>
+            <p>Diante de uma questão que misture vários conceitos, como a do protesto acorrentado, siga um <strong>passo a passo mental</strong>:</p>
+            <ol class="styled-list">
+                <li><strong>Identifique</strong> qual crime está sendo sugerido pela banca (ex: resistência, desobediência).</li>
+                <li><strong>Verifique se TODAS as elementares do tipo</strong> estão presentes no enunciado. A banca frequentemente omite uma elementar essencial para tornar o fato atípico.</li>
+                <li>Ex: Menciona “oposição a ato legal”, mas <strong>não menciona “violência ou ameaça”</strong>. Logo, <strong>não é resistência</strong>.</li>
+                <li>Ex: Menciona “descumprir algo”, mas <strong>não menciona que houve uma “ordem de funcionário público”</strong>. Logo, <strong>não é desobediência</strong>.</li>
+                <li>Se nenhum tipo penal se encaixa perfeitamente, a resposta provavelmente será <strong>fato atípico</strong>.</li>
+            </ol>
+
+            <div class="elegant-divider">Mensagem final</div>
+
+            <div class="info-box" style="text-align:center;font-size:0.95rem;">
+                <p style="margin-bottom:0;">Este material visa fornecer a você, candidato, as ferramentas necessárias para uma compreensão aprofundada do Direito Penal, indo muito além da decoreba. O domínio desses conceitos, interligado à capacidade de análise de casos concretos e ao conhecimento das armadilhas das bancas, é o que <strong>diferencia o aprovado</strong>.</p>
+                <p style="margin-top:8px;margin-bottom:0;"><strong>Mantenha o foco, revise este material periodicamente e resolva muitas questões. O sucesso é construído com preparação de elite.</strong></p>
+            </div>
+        </article>
+
+    </main>
+</body>
+</html>
