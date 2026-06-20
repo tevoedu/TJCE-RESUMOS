@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>Apostila de Processo Penal – Técnico Judiciário</title>
+    <style>
+        /* RESET & BASE */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0f1724;
+            color: #e2e8f0;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar {
+            width: 8px;
+            background: #1a2638;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b4b66;
+            border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5a6f8f;
+        }
+
+        /* TIPOGRAFIA */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 2.2rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.01em;
+            color: #f0f4fa;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-bottom: 0.2rem;
+            background: linear-gradient(135deg, #90caf9, #4fc3f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .subhead {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-top: -0.2rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            border-bottom: 1px solid #2a3a50;
+            padding-bottom: 1.8rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 2.8rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #2a3a50;
+            color: #b3d9ff;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #b0c9e8;
+            margin-top: 2rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #c8daf0;
+            margin-top: 1.6rem;
+        }
+
+        h5 {
+            font-size: 1.05rem;
+            color: #d0def0;
+            margin-top: 1.4rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #7fc9ff;
+            text-decoration: none;
+            border-bottom: 1px dotted #3b5a7a;
+        }
+        a:hover {
+            color: #b0defa;
+            border-bottom-color: #7fc9ff;
+        }
+
+        /* LAYOUT DE LEITURA */
+        .content-block {
+            background: #162033;
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #25344a;
+        }
+
+        .content-block:last-child {
+            margin-bottom: 0;
+        }
+
+        /* SUMÁRIO */
+        .toc {
+            background: #0d1727;
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #25344a;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .toc h2 {
+            border-bottom: 2px solid #2a3a50;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 0.6rem 1.8rem;
+            margin-top: 1rem;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #1f2e42;
+            font-size: 0.95rem;
+        }
+
+        .toc-item .num {
+            color: #6a8bb0;
+            font-weight: 500;
+            min-width: 1.8rem;
+            font-size: 0.85rem;
+        }
+
+        .toc-item a {
+            color: #c8daf0;
+            border: none;
+            transition: color 0.2s;
+        }
+        .toc-item a:hover {
+            color: #8fcbff;
+        }
+
+        /* LISTAS */
+        ul,
+        ol {
+            padding-left: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* TABELAS */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.8rem 0;
+            border-radius: 14px;
+            border: 1px solid #2a3a50;
+            background: #0f1929;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 480px;
+        }
+
+        th {
+            background: #1e2f47;
+            color: #c8e0ff;
+            font-weight: 600;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid #2f4562;
+        }
+
+        td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #1f3147;
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: #1a2a3f;
+        }
+
+        /* BOXES */
+        .box {
+            border-radius: 16px;
+            padding: 1.4rem 1.8rem;
+            margin: 1.8rem 0;
+            border-left: 6px solid;
+            background: #111e30;
+        }
+
+        .box-tip {
+            border-left-color: #4fc3f7;
+            background: #0d1d30;
+        }
+        .box-tip .box-title {
+            color: #4fc3f7;
+        }
+
+        .box-important {
+            border-left-color: #ffb74d;
+            background: #1f1d12;
+        }
+        .box-important .box-title {
+            color: #ffb74d;
+        }
+
+        .box-warning {
+            border-left-color: #ef5350;
+            background: #201517;
+        }
+        .box-warning .box-title {
+            color: #ef5350;
+        }
+
+        .box-info {
+            border-left-color: #81c784;
+            background: #122216;
+        }
+        .box-info .box-title {
+            color: #81c784;
+        }
+
+        .box-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .box-title svg {
+            flex-shrink: 0;
+        }
+
+        /* CITAÇÕES */
+        .quote {
+            background: #0d1a2b;
+            border-radius: 16px;
+            padding: 1.6rem 2rem;
+            margin: 1.8rem 0;
+            border-left: 4px solid #4a7a9e;
+            font-style: italic;
+            color: #ccddef;
+            position: relative;
+        }
+        .quote::before {
+            content: "“";
+            font-size: 3.5rem;
+            color: #3b5a7a;
+            position: absolute;
+            top: -0.2rem;
+            left: 0.8rem;
+            opacity: 0.5;
+            font-style: normal;
+        }
+        .quote p {
+            margin: 0 0 0.4rem 0;
+            padding-left: 2rem;
+        }
+        .quote .source {
+            font-style: normal;
+            font-weight: 500;
+            color: #8db4d4;
+            padding-left: 2rem;
+        }
+
+        /* CARDS DE CONCEITOS */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin: 1.6rem 0;
+        }
+
+        .card-concept {
+            background: #0f1b2e;
+            border-radius: 16px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #263a54;
+            transition: 0.15s;
+        }
+        .card-concept:hover {
+            background: #16263d;
+            border-color: #3b5f83;
+        }
+        .card-concept .title {
+            font-weight: 700;
+            color: #b3d9ff;
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .card-concept .desc {
+            color: #bccde0;
+            font-size: 0.95rem;
+        }
+
+        /* DIVISÓRIAS */
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #2f4562, #4a7a9e, #2f4562, transparent);
+            margin: 2.8rem 0;
+            border: 0;
+            opacity: 0.5;
+        }
+
+        /* MARCA-TEXTO */
+        .hl {
+            background: linear-gradient(120deg, rgba(79, 195, 247, 0.25) 0%, rgba(79, 195, 247, 0.1) 100%);
+            padding: 0 0.2rem;
+            border-radius: 4px;
+            color: #c8e6ff;
+            font-weight: 500;
+        }
+
+        .hl-yellow {
+            background: linear-gradient(120deg, rgba(255, 183, 77, 0.3) 0%, rgba(255, 183, 77, 0.1) 100%);
+            padding: 0 0.2rem;
+            border-radius: 4px;
+            color: #ffddb0;
+            font-weight: 500;
+        }
+
+        .hl-green {
+            background: linear-gradient(120deg, rgba(129, 199, 132, 0.25) 0%, rgba(129, 199, 132, 0.08) 100%);
+            padding: 0 0.2rem;
+            border-radius: 4px;
+            color: #b8e6b8;
+            font-weight: 500;
+        }
+
+        /* SVG FIGURES */
+        .fig-svg {
+            background: #0e192b;
+            border-radius: 18px;
+            padding: 1.8rem 1.2rem;
+            margin: 1.8rem 0;
+            border: 1px solid #263a54;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: auto;
+        }
+
+        .fig-svg svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fig-caption {
+            text-align: center;
+            color: #8aa4c0;
+            font-size: 0.9rem;
+            margin-top: 0.6rem;
+            font-style: italic;
+        }
+
+        /* MACETES */
+        .mnemonic {
+            background: #0d1b2d;
+            border-radius: 18px;
+            padding: 1.6rem 2rem;
+            margin: 1.8rem 0;
+            border: 1px solid #2e4a6a;
+            border-left: 6px solid #4fc3f7;
+        }
+
+        .mnemonic .word {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #7fc9ff;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.2rem;
+        }
+
+        .mnemonic .explain {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.8rem;
+            margin-top: 0.5rem;
+        }
+
+        .mnemonic .explain span {
+            background: #14273f;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            color: #bcd4ec;
+        }
+
+        .mnemonic .explain strong {
+            color: #ffb74d;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.8rem 2.5rem;
+            }
+            .content-block,
+            .toc {
+                padding: 1.2rem 1.2rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .fig-svg {
+                padding: 1rem 0.5rem;
+            }
+            .quote {
+                padding: 1.2rem 1.2rem;
+            }
+            .quote p {
+                padding-left: 1.2rem;
+            }
+            .quote .source {
+                padding-left: 1.2rem;
+            }
+            .box {
+                padding: 1rem 1.2rem;
+            }
+            .mnemonic {
+                padding: 1.2rem 1.2rem;
+            }
+            .mnemonic .word {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 0.95rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .content-block,
+            .toc {
+                padding: 0.8rem 0.8rem;
+            }
+            table {
+                font-size: 0.85rem;
+                min-width: 320px;
+            }
+            th,
+            td {
+                padding: 0.5rem 0.6rem;
+            }
+        }
+
+        /* IMPRESSÃO */
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+                padding: 0.5in;
+            }
+            .content-block,
+            .toc {
+                background: #f8fafc;
+                border-color: #ccc;
+                box-shadow: none;
+            }
+            .fig-svg {
+                background: #f0f4f8;
+                border-color: #ccc;
+            }
+            .box {
+                background: #f0f4f8;
+                border-left-color: #333;
+            }
+            .quote {
+                background: #f0f4f8;
+                border-left-color: #666;
+            }
+            .mnemonic {
+                background: #f0f4f8;
+                border-color: #999;
+            }
+            .card-concept {
+                background: #f0f4f8;
+                border-color: #aaa;
+            }
+            .table-wrap {
+                border-color: #999;
+                background: #f8fafc;
+            }
+            th {
+                background: #e0e8f0;
+                color: #111;
+                border-bottom-color: #999;
+            }
+            td {
+                border-bottom-color: #ccc;
+            }
+            tr:hover td {
+                background: #f0f4f8;
+            }
+            h1 {
+                -webkit-text-fill-color: #0b2a4a;
+                background: none;
+                color: #0b2a4a;
+            }
+            .subhead {
+                color: #333;
+                border-bottom-color: #aaa;
+            }
+            .hl,
+            .hl-yellow,
+            .hl-green {
+                background: #e6f0fa;
+                color: #0b2a4a;
+            }
+            .toc-item a {
+                color: #0b2a4a;
+            }
+            .toc-item .num {
+                color: #444;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header style="text-align:center; margin-bottom:1.2rem;">
+        <h1>APOSTILA DE PROCESSO PENAL</h1>
+        <div class="subhead">TÉCNICO JUDICIÁRIO – ÁREA JUDICIÁRIA &bull; Material para TJCE, FCC, FGV e Cebraspe</div>
+    </header>
+
+    <!-- SUMÁRIO -->
+    <nav class="toc" aria-label="Sumário">
+        <h2>Sumário</h2>
+        <div class="toc-grid">
+            <div class="toc-item"><span class="num">1.</span><a href="#cap1">Competência Penal</a></div>
+            <div class="toc-item"><span class="num">2.</span><a href="#cap2">Princípios Fundamentais</a></div>
+            <div class="toc-item"><span class="num">3.</span><a href="#cap3">Inquérito Policial</a></div>
+            <div class="toc-item"><span class="num">4.</span><a href="#cap4">Prisões e Medidas Cautelares</a></div>
+            <div class="toc-item"><span class="num">5.</span><a href="#cap5">Citação no Processo Penal</a></div>
+            <div class="toc-item"><span class="num">6.</span><a href="#cap6">Tribunal do Júri</a></div>
+            <div class="toc-item"><span class="num">7.</span><a href="#cap7">Crimes Funcionais</a></div>
+            <div class="toc-item"><span class="num">8.</span><a href="#cap8">Ação Penal</a></div>
+            <div class="toc-item"><span class="num">9.</span><a href="#cap9">Habeas Corpus</a></div>
+            <div class="toc-item"><span class="num">10.</span><a href="#cap10">Ordem da Audiência</a></div>
+            <div class="toc-item"><span class="num">11.</span><a href="#cap11">Emendatio &amp; Mutatio</a></div>
+            <div class="toc-item"><span class="num">12.</span><a href="#cap12">Macetes e Estratégias</a></div>
+        </div>
+    </nav>
+
+    <!-- ==================== CAPÍTULO 1 ==================== -->
+    <section class="content-block" id="cap1">
+        <h2>1. Competência Penal no Sistema Judiciário Brasileiro</h2>
+
+        <h3>1.1. Introdução ao Sistema de Competência Penal</h3>
+        <p>A competência penal, prevista na Constituição Federal de 1988, estabelece qual órgão do Poder Judiciário será responsável por julgar determinada pessoa em razão do crime que cometeu. Trata-se de matéria de extrema relevância para concursos públicos, pois as bancas costumam explorar exaustivamente as diferenças entre as competências do STF, STJ, TRFs e TJs.</p>
+        <p>Para compreender adequadamente, precisamos visualizar a estrutura do Poder Judiciário brasileiro:</p>
+        <ul>
+            <li><strong>Supremo Tribunal Federal (STF)</strong> – ápice do Judiciário</li>
+            <li><strong>Superior Tribunal de Justiça (STJ)</strong> – guardião da legislação federal infraconstitucional</li>
+            <li><strong>Tribunais Regionais Federais (TRFs)</strong> e <strong>Tribunais de Justiça (TJs)</strong> – segundo grau</li>
+            <li><strong>Juízos de primeira instância</strong> – juízes federais e juízes estaduais</li>
+        </ul>
+
+        <h3>1.2. Competência do Superior Tribunal de Justiça (STJ)</h3>
+        <p>O STJ possui competência penal originária para julgar determinadas autoridades, conforme o <strong>art. 105, I, da CF/88</strong>. É fundamental memorizar este rol, pois é um dos temas mais cobrados em provas.</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Autoridade</th><th>Fundamento</th></tr></thead>
+                <tbody>
+                    <tr><td>Desembargadores dos Tribunais de Justiça</td><td>Art. 105, I, "a"</td></tr>
+                    <tr><td>Desembargadores dos Tribunais Regionais Federais</td><td>Art. 105, I, "a"</td></tr>
+                    <tr><td>Juízes de Tribunais Regionais Eleitorais</td><td>Art. 105, I, "a"</td></tr>
+                    <tr><td>Juízes de Tribunais Regionais do Trabalho</td><td>Art. 105, I, "a"</td></tr>
+                    <tr><td>Juízes de Tribunais Regionais Militares</td><td>Art. 105, I, "a"</td></tr>
+                    <tr><td>Membros do MP da União que oficiem perante tribunais</td><td>Art. 105, I, "a"</td></tr>
+                    <tr><td>Membros do MP dos Estados que oficiem perante tribunais</td><td>Art. 105, I, "a"</td></tr>
+                    <tr><td>Governadores dos Estados e do DF (crime comum)</td><td>Art. 105, I, "a"</td></tr>
+                    <tr><td>Conselheiros dos Tribunais de Contas</td><td>Art. 105, I, "a"</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-warning">
+            <div class="box-title">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ef5350" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7v10l10 5 10-5V7l-10-5z"/><path d="M2 7l10 5 10-5"/><path d="M12 22v-10"/></svg>
+                ATENÇÃO À PEGADINHA CLÁSSICA DA FCC
+            </div>
+            <p>Quando a questão menciona um <strong>desembargador</strong> e pergunta qual tribunal é competente para julgá-lo por crime comum, a resposta correta é o <strong>STJ</strong> (art. 105, I, "a").</p>
+            <p>Muitos candidatos erram ao responder "Tribunal de Justiça" ou "STF". A lógica: Desembargador → integra o Tribunal de Justiça (segundo grau estadual). Para julgar seus membros, a CF estabeleceu que o STJ é o tribunal competente, pois seria inadequado que o próprio tribunal julgasse seus integrantes (princípio do juiz natural e da imparcialidade).</p>
+        </div>
+
+        <h3>1.3. Competência do Supremo Tribunal Federal (STF)</h3>
+        <p>O STF julga originariamente as autoridades previstas no <strong>art. 102, I, da CF/88</strong>:</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Autoridade</th><th>Crime</th></tr></thead>
+                <tbody>
+                    <tr><td>Presidente da República</td><td>Comum e de responsabilidade</td></tr>
+                    <tr><td>Vice-Presidente da República</td><td>Comum e de responsabilidade</td></tr>
+                    <tr><td>Ministros de Estado</td><td>Comum e de responsabilidade</td></tr>
+                    <tr><td>Comandantes da Marinha, Exército e Aeronáutica</td><td>Comum e de responsabilidade</td></tr>
+                    <tr><td>Ministros do STF</td><td>Comum e de responsabilidade</td></tr>
+                    <tr><td>Procurador-Geral da República</td><td>Comum e de responsabilidade</td></tr>
+                    <tr><td>Membros do Conselho Nacional de Justiça</td><td>Comum e de responsabilidade</td></tr>
+                    <tr><td>Membros do Conselho Nacional do Ministério Público</td><td>Comum e de responsabilidade</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box box-important">
+            <div class="box-title">Ponto crucial para provas</div>
+            <ul>
+                <li><strong>Ministros do STF</strong> → respondem perante o próprio STF (art. 102, I, "b" e "c")</li>
+                <li><strong>Membros do Ministério Público que oficiem perante o STF</strong> → respondem no STF</li>
+                <li><strong>Advogado-Geral da União</strong> → responde no STF</li>
+            </ul>
+        </div>
+
+        <h3>1.4. Competência dos Tribunais Regionais Federais (TRFs)</h3>
+        <p>Os TRFs possuem competência originária para julgar:</p>
+        <ul>
+            <li><strong>Juízes federais</strong> (em crime comum e de responsabilidade) – art. 108, I, "a" da CF/88</li>
+            <li>Membros do Ministério Público Federal que oficiem perante o TRF</li>
+            <li>Juízes do Trabalho (em crime comum e de responsabilidade)</li>
+        </ul>
+
+        <h3>1.5. Competência dos Tribunais de Justiça (TJs)</h3>
+        <p>Os TJs julgam originariamente:</p>
+        <ul>
+            <li><strong>Juízes de direito</strong> (juízes estaduais de primeira instância) – art. 96, III da CF/88</li>
+            <li>Membros do Ministério Público Estadual que oficiem perante o TJ</li>
+        </ul>
+
+        <h3>1.6. Quadro Comparativo de Competência Penal Originária</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Autoridade</th><th>Tribunal Competente (Crime Comum)</th><th>Fundamento</th></tr></thead>
+                <tbody>
+                    <tr><td>Ministro do STF</td><td>STF</td><td>Art. 102, I, "b" e "c"</td></tr>
+                    <tr><td>Procurador-Geral da República</td><td>STF</td><td>Art. 102, I, "b" e "c"</td></tr>
+                    <tr><td>Desembargador de TJ</td><td>STJ</td><td>Art. 105, I, "a"</td></tr>
+                    <tr><td>Desembargador de TRF</td><td>STJ</td><td>Art. 105, I, "a"</td></tr>
+                    <tr><td>Governador de Estado</td><td>STJ</td><td>Art. 105, I, "a"</td></tr>
+                    <tr><td>Juiz Federal</td><td>TRF</td><td>Art. 108, I, "a"</td></tr>
+                    <tr><td>Juiz de Direito</td><td>TJ</td><td>Art. 96, III</td></tr>
+                    <tr><td>Juiz do Trabalho</td><td>TRF</td><td>Art. 108, I, "a"</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>1.7. Estudo de Caso: Competência Penal</h3>
+        <div class="box box-info">
+            <div class="box-title">CASO 1</div>
+            <p><strong>Desembargador João</strong>, do TJ-CE, é acusado de peculato (art. 312 do CP). Qual tribunal deve processá-lo?</p>
+            <p><strong>RESPOSTA:</strong> STJ, com base no art. 105, I, "a" da CF/88.</p>
+        </div>
+        <div class="box box-info">
+            <div class="box-title">CASO 2</div>
+            <p><strong>Juiz Federal Pedro</strong>, da 5ª Vara Federal do Ceará, acusado de concussão (art. 316 do CP). Quem o julgará?</p>
+            <p><strong>RESPOSTA:</strong> TRF da 5ª Região (TRF-5), com base no art. 108, I, "a" da CF/88.</p>
+        </div>
+        <div class="box box-info">
+            <div class="box-title">CASO 3</div>
+            <p><strong>Juiz de Direito Carlos</strong>, da Comarca de Fortaleza, acusado de prevaricação (art. 319 do CP). Qual tribunal é competente?</p>
+            <p><strong>RESPOSTA:</strong> TJ-CE, com base no art. 96, III da CF/88.</p>
+        </div>
+
+        <h3>1.8. Armadilhas Comuns em Provas</h3>
+        <div class="box box-warning">
+            <div class="box-title">ARMADILHA 1: Confundir Crime Comum com Crime de Responsabilidade</div>
+            <ul>
+                <li><strong>Crime comum</strong>: qualquer crime previsto no CP ou legislação especial.</li>
+                <li><strong>Crime de responsabilidade</strong>: infrações político-administrativas (ex: Presidente da República).</li>
+                <li>Para <strong>desembargadores</strong>, tanto crime comum quanto crime de responsabilidade são julgados pelo <strong>STJ</strong> (art. 105, I, "a").</li>
+                <li>Para <strong>ministros do STF</strong>, tanto crime comum quanto crime de responsabilidade são julgados pelo <strong>STF</strong> (art. 102, I, "c").</li>
+            </ul>
+        </div>
+        <div class="box box-warning">
+            <div class="box-title">ARMADILHA 2: Desembargador × Juiz de Primeira Instância</div>
+            <ul>
+                <li>Desembargador → STJ</li>
+                <li>Juiz de Direito (estadual) → TJ</li>
+                <li>Juiz Federal → TRF</li>
+            </ul>
+        </div>
+        <div class="box box-warning">
+            <div class="box-title">ARMADILHA 3: Membros do Ministério Público</div>
+            <ul>
+                <li>MP que oficia perante o STF → responde no STF</li>
+                <li>MP que oficia perante o STJ → responde no STJ</li>
+                <li>MP que oficia perante TRF → responde no TRF</li>
+                <li>MP que oficia perante TJ → responde no TJ</li>
+            </ul>
+        </div>
+
+        <!-- SVG: Hierarquia da Competência Penal -->
+        <div class="fig-svg">
+            <svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama de competência penal">
+                <defs>
+                    <style>
+                        .box-comp { fill: #162033; stroke: #3b5f83; stroke-width: 2; rx: 10; }
+                        .box-comp-title { fill: #7fc9ff; font-weight: 600; font-size: 14px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; }
+                        .box-comp-text { fill: #bccde0; font-size: 12px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; }
+                        .arrow { stroke: #4a7a9e; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+                        .label { fill: #b0c9e8; font-size: 11px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; }
+                    </style>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#4a7a9e" />
+                    </marker>
+                </defs>
+
+                <!-- STF -->
+                <rect x="260" y="20" width="200" height="60" class="box-comp" />
+                <text x="360" y="42" class="box-comp-title">STF – Supremo Tribunal Federal</text>
+                <text x="360" y="62" class="box-comp-text">Ministros do STF · PGR · Presidente</text>
+
+                <!-- STJ -->
+                <rect x="260" y="120" width="200" height="60" class="box-comp" />
+                <text x="360" y="142" class="box-comp-title">STJ – Superior Tribunal de Justiça</text>
+                <text x="360" y="162" class="box-comp-text">Desembargadores · Governadores</text>
+
+                <!-- TRF -->
+                <rect x="60" y="240" width="180" height="60" class="box-comp" />
+                <text x="150" y="262" class="box-comp-title">TRF – Tribunal Regional Federal</text>
+                <text x="150" y="282" class="box-comp-text">Juízes Federais · Juízes do Trabalho</text>
+
+                <!-- TJ -->
+                <rect x="480" y="240" width="180" height="60" class="box-comp" />
+                <text x="570" y="262" class="box-comp-title">TJ – Tribunal de Justiça</text>
+                <text x="570" y="282" class="box-comp-text">Juízes de Direito (estaduais)</text>
+
+                <!-- setas -->
+                <path d="M360 80 L360 115" class="arrow" />
+                <path d="M260 150 L235 235" class="arrow" />
+                <path d="M460 150 L485 235" class="arrow" />
+
+                <!-- rótulos -->
+                <text x="375" y="100" class="label">art. 105, I, "a"</text>
+                <text x="220" y="200" class="label">art. 108, I, "a"</text>
+                <text x="500" y="200" class="label">art. 96, III</text>
+            </svg>
+            <div class="fig-caption">Estrutura da competência penal originária no Brasil</div>
+        </div>
+
+        <hr class="divider">
+    </section>
+
+    <!-- ==================== CAPÍTULO 2 ==================== -->
+    <section class="content-block" id="cap2">
+        <h2>2. Princípios Fundamentais do Processo Penal</h2>
+
+        <h3>2.1. Panorama Geral</h3>
+        <p>Os princípios do processo penal são as diretrizes que orientam todo o sistema processual penal brasileiro. Eles não são meros ornamentos teóricos; têm aplicação prática direta, servindo como limites à atuação estatal e como garantias fundamentais ao acusado.</p>
+
+        <h3>2.2. Princípios Fundamentais</h3>
+
+        <h4>2.2.1. Devido Processo Legal (Due Process of Law)</h4>
+        <p><strong>O que é:</strong> Ninguém será privado da liberdade ou de seus bens sem o devido processo legal (art. 5º, LIV, CF/88).</p>
+        <ul>
+            <li>Todo processo deve observar as formalidades legais</li>
+            <li>O acusado deve ter ciência do processo e da acusação</li>
+            <li>O processo deve ser conduzido por juiz competente e imparcial</li>
+            <li>As partes devem ter oportunidade de se manifestar</li>
+        </ul>
+        <div class="box box-important"><p><strong>Em prova:</strong> Qualquer ato que viole o devido processo legal é nulo. Exemplo: sentença proferida sem oportunidade de defesa.</p></div>
+
+        <h4>2.2.2. Ampla Defesa e Contraditório</h4>
+        <p><strong>Ampla Defesa (art. 5º, LV, CF/88):</strong> O acusado tem direito a se defender de forma plena, podendo utilizar todos os meios legais disponíveis. Inclui autodefesa (direito de comparecer e falar) e defesa técnica (por advogado).</p>
+        <p><strong>Contraditório:</strong> As partes devem ser ouvidas antes de qualquer decisão, com possibilidade de impugnar alegações e provas da parte contrária. "Ciência e possibilidade de reação".</p>
+        <p><span class="hl">Ponto importante:</span> A ampla defesa é garantida durante todo o processo, desde o inquérito policial (embora de forma atenuada, pois não há contraditório pleno no IP).</p>
+
+        <h4>2.2.3. Presunção de Inocência (ou Não Culpabilidade)</h4>
+        <p><strong>O que é:</strong> Ninguém será considerado culpado até o trânsito em julgado de sentença penal condenatória (art. 5º, LVII, CF/88).</p>
+        <ul>
+            <li>O ônus da prova é da acusação</li>
+            <li>Em caso de dúvida, decide-se em favor do réu (in dubio pro reo)</li>
+            <li>O acusado não pode ser tratado como culpado antes da condenação definitiva</li>
+            <li>A prisão antes do trânsito em julgado é exceção</li>
+        </ul>
+        <div class="box box-warning">
+            <div class="box-title">STF e a condução coercitiva</div>
+            <p>O STF declarou inconstitucional a condução coercitiva de réu ou investigado para interrogatório. Essa prática viola:</p>
+            <ol>
+                <li><strong>Presunção de não culpabilidade</strong> – pois antecipa a culpa</li>
+                <li><strong>Direito à não autoincriminação (nemo tenetur se detegere)</strong> – pois obriga o indivíduo a produzir prova contra si mesmo</li>
+            </ol>
+            <p><strong>Súmula Vinculante não numerada do STF:</strong> a condução coercitiva para interrogatório, quando o investigado ou réu não comparece voluntariamente, viola a garantia contra a autoincriminação e a presunção de inocência.</p>
+        </div>
+
+        <h4>2.2.4. Juiz Natural</h4>
+        <p><strong>O que é:</strong> Ninguém será processado nem sentenciado senão pela autoridade competente (art. 5º, LIII, CF/88).</p>
+        <ul>
+            <li><strong>Juiz pré-constituído:</strong> o juiz deve ser aquele previsto em lei antes da prática do fato</li>
+            <li><strong>Proibição de tribunais de exceção:</strong> não se pode criar um tribunal especial para julgar um caso específico</li>
+        </ul>
+
+        <h4>2.2.5. Legalidade</h4>
+        <p><strong>O que é:</strong> A administração pública e o Judiciário só podem agir de acordo com a lei (art. 5º, II, CF/88).</p>
+        <ul>
+            <li>As medidas restritivas de direitos só podem ser aplicadas quando autorizadas por lei</li>
+            <li>Nenhuma prisão pode ser decretada sem fundamentação legal</li>
+            <li>A prova ilegal é inadmissível</li>
+        </ul>
+
+        <h4>2.2.6. Publicidade</h4>
+        <p><strong>O que é:</strong> Os atos processuais são públicos (art. 5º, LX, CF/88).</p>
+        <p><strong>Exceções:</strong> quando a intimidade ou o interesse social exigirem sigilo; proteção à vítima e testemunhas (ex: crimes sexuais); interesse da investigação (fase inquisitorial). Mesmo nos casos de sigilo, o acesso aos autos é garantido ao defensor do acusado.</p>
+
+        <h4>2.2.7. Verdade Real</h4>
+        <p><strong>O que é:</strong> O processo penal busca a verdade real dos fatos, não apenas a verdade formal (aquela que resulta das provas produzidas).</p>
+        <ul>
+            <li><strong>Processo civil:</strong> verdade formal (as partes decidem o que provar)</li>
+            <li><strong>Processo penal:</strong> verdade real (o juiz pode determinar provas de ofício)</li>
+        </ul>
+
+        <h4>2.2.8. In Dubio Pro Reo</h4>
+        <p><strong>O que é:</strong> Na dúvida, deve-se decidir em favor do réu.</p>
+        <ul>
+            <li>Se há dúvida sobre a autoria: absolve-se</li>
+            <li>Se há dúvida sobre a materialidade: absolve-se</li>
+            <li>Se há dúvida sobre a causa de extinção da punibilidade: aplica-se em favor do réu</li>
+        </ul>
+        <p><span class="hl-yellow">Importante:</span> Aplica-se apenas à dúvida sobre fato e prova, não sobre a interpretação da lei.</p>
+
+        <h4>2.2.9. Duplo Grau de Jurisdição</h4>
+        <p><strong>O que é:</strong> O direito de recorrer das decisões judiciais desfavoráveis. Não é garantia constitucional expressa no Brasil (diferente de tratados internacionais), mas é princípio implícito no sistema recursal. Para decisões do STF, não há duplo grau (é a última instância).</p>
+
+        <h4>2.2.10. Proporcionalidade e Razoabilidade</h4>
+        <p><strong>O que é:</strong> As medidas restritivas de direitos devem ser proporcionais à gravidade do fato e razoáveis diante das circunstâncias concretas.</p>
+        <ul>
+            <li>Uma prisão preventiva só é cabível se necessária e proporcional ao crime</li>
+            <li>A medida cautelar deve ser a menos gravosa possível</li>
+        </ul>
+
+        <h4>2.2.11. Economia e Celeridade</h4>
+        <p><strong>O que é:</strong> O processo deve ser conduzido de forma eficiente, evitando atos desnecessários (art. 3º do CPP). Atos inúteis podem ser dispensados; prioridade para a solução do mérito.</p>
+
+        <h4>2.2.12. Indelegabilidade da Jurisdição</h4>
+        <p><strong>O que é:</strong> A função jurisdicional é indelegável; apenas o juiz pode julgar. Embora a investigação possa ser delegada à polícia (inquérito policial), o julgamento é privativo do juiz.</p>
+
+        <h4>2.2.13. Oficialidade (ou Iniciativa Oficial)</h4>
+        <p><strong>O que é:</strong> O Estado tem o dever de promover a ação penal pública (seja incondicionada ou condicionada à representação).</p>
+        <ul>
+            <li>Na ação penal pública, o Ministério Público tem o monopólio da ação</li>
+            <li>O juiz não pode iniciar a ação penal de ofício</li>
+        </ul>
+
+        <h3>2.3. Quadro Resumo dos Princípios Processuais Penais</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Princípio</th><th>Resumo</th><th>Fundamento</th></tr></thead>
+                <tbody>
+                    <tr><td>Devido processo legal</td><td>Processo com todas as formalidades</td><td>Art. 5º, LIV</td></tr>
+                    <tr><td>Ampla defesa</td><td>Defesa plena e contraditório</td><td>Art. 5º, LV</td></tr>
+                    <tr><td>Presunção de inocência</td><td>Culpa só após trânsito em julgado</td><td>Art. 5º, LVII</td></tr>
+                    <tr><td>Juiz natural</td><td>Juiz competente pré-definido</td><td>Art. 5º, LIII</td></tr>
+                    <tr><td>Legalidade</td><td>Só agir conforme a lei</td><td>Art. 5º, II</td></tr>
+                    <tr><td>Publicidade</td><td>Atos processuais públicos</td><td>Art. 5º, LX</td></tr>
+                    <tr><td>Verdade real</td><td>Buscar a verdade material</td><td>Doutrina</td></tr>
+                    <tr><td>In dubio pro reo</td><td>Dúvida favorece o réu</td><td>Doutrina</td></tr>
+                    <tr><td>Duplo grau</td><td>Direito de recorrer</td><td>Sistema recursal</td></tr>
+                    <tr><td>Proporcionalidade</td><td>Medidas proporcionais</td><td>Doutrina</td></tr>
+                    <tr><td>Economia</td><td>Evitar atos desnecessários</td><td>Doutrina</td></tr>
+                    <tr><td>Oficialidade</td><td>MP promove a ação</td><td>Art. 129, I</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>2.4. Estudo de Caso: Princípios em Situações Práticas</h3>
+        <div class="box box-info">
+            <div class="box-title">CASO 1 – Nemo tenetur se detegere</div>
+            <p>Delegado determina condução coercitiva do investigado para reconstituição do crime. O investigado se recusa a participar ativamente, sendo então conduzido à força e forçado a realizar os movimentos.</p>
+            <p><strong>ANÁLISE:</strong> Viola o princípio <strong>nemo tenetur se detegere</strong> (direito à não autoincriminação). O indiciado pode ser conduzido ao local, mas não pode ser obrigado a participar ativamente da reconstituição. A prova obtida seria ilícita.</p>
+        </div>
+        <div class="box box-info">
+            <div class="box-title">CASO 2 – Contraditório</div>
+            <p>Juiz, antes de ouvir a defesa, decreta prisão preventiva.</p>
+            <p><strong>ANÁLISE:</strong> Viola o <strong>contraditório</strong>. A prisão preventiva deve ser precedida de manifestação do MP, mas a defesa também deve ser ouvida antes da decisão (salvo urgência). A ausência de contraditório macula a decisão.</p>
+        </div>
+        <div class="box box-info">
+            <div class="box-title">CASO 3 – Duplo Grau</div>
+            <p>Réu condenado interpõe apelação; tribunal nega provimento.</p>
+            <p><strong>ANÁLISE:</strong> Garantido o <strong>duplo grau de jurisdição</strong>. O réu pode recorrer da decisão desfavorável.</p>
+        </div>
+        <div class="box box-info">
+            <div class="box-title">CASO 4 – Obrigatoriedade da Ação Penal</div>
+            <p>Em ação penal pública incondicionada, o MP decide arquivar o inquérito por falta de interesse.</p>
+            <p><strong>ANÁLISE:</strong> Viola o princípio da <strong>obrigatoriedade</strong> da ação penal pública. O MP não pode arquivar por falta de interesse; deve oferecer denúncia se houver provas. O arquivamento só é cabível por falta de justa causa.</p>
+        </div>
+
+        <hr class="divider">
+    </section>
+
+    <!-- ==================== CAPÍTULO 3 ==================== -->
+    <section class="content-block" id="cap3">
+        <h2>3. Inquérito Policial e suas Nuances</h2>
+
+        <h3>3.1. Natureza Jurídica do Inquérito Policial</h3>
+        <p>O inquérito policial (IP) é um procedimento administrativo, preparatório e inquisitorial, presidido pela autoridade policial (delegado de polícia), destinado a apurar a existência de uma infração penal e sua autoria.</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Característica</th><th>Explicação</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Administrativo</strong></td><td>Não é processo judicial; é procedimento administrativo</td></tr>
+                    <tr><td><strong>Preparatório</strong></td><td>Serve de base para a ação penal</td></tr>
+                    <tr><td><strong>Inquisitorial</strong></td><td>Não há contraditório pleno (é fase de investigação)</td></tr>
+                    <tr><td><strong>Escrito</strong></td><td>Todos os atos devem ser documentados</td></tr>
+                    <tr><td><strong>Discricionário</strong></td><td>A autoridade policial tem certa margem de decisão</td></tr>
+                    <tr><td><strong>Indisponível</strong></td><td>O delegado não pode arquivar o IP por falta de interesse</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>3.2. Reconstituição Simulada (Reprodução Simulada dos Fatos)</h3>
+        <p><strong>O que é:</strong> A reprodução simulada dos fatos, prevista no <strong>art. 7º do CPP</strong>, é a reconstituição do crime no local onde ocorreu, para verificar a dinâmica dos fatos e auxiliar na elucidação da autoria.</p>
+        <div class="box box-important">
+            <div class="box-title">Questão central para provas</div>
+            <p><strong>A autoridade policial pode determinar a reprodução simulada dos fatos? Pode o indiciado ser obrigado a participar?</strong></p>
+            <ul>
+                <li>A reprodução simulada <strong>pode</strong> ser determinada pela autoridade policial.</li>
+                <li>O indiciado <strong>não pode</strong> ser obrigado a participar contra sua vontade, em respeito ao princípio <strong>nemo tenetur se detegere</strong> (direito ao silêncio e à não autoincriminação).</li>
+            </ul>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>O que pode</th><th>O que não pode</th></tr></thead>
+                <tbody>
+                    <tr><td>O indiciado pode ser conduzido coercitivamente ao local da reconstituição</td><td>O indiciado não pode ser obrigado a participar ativamente</td></tr>
+                    <tr><td>A autoridade pode determinar a reconstituição</td><td>O indiciado não pode ser forçado a realizar movimentos</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><span class="hl">Súmula Vinculante não numerada do STF:</span> a condução coercitiva para interrogatório viola a presunção de inocência e o direito à não autoincriminação. O mesmo raciocínio se aplica à reconstituição simulada.</p>
+
+        <h3>3.3. Inquérito Policial e o Princípio Nemo Tenetur Se Detegere</h3>
+        <p><strong>O que é:</strong> Ninguém é obrigado a produzir prova contra si mesmo.</p>
+        <ul>
+            <li>Direito ao silêncio (art. 186 do CPP)</li>
+            <li>Proibição de condução coercitiva para interrogatório</li>
+            <li>Proibição de obrigar o indiciado a participar de reconstituição ativa</li>
+            <li>Proibição de obrigar o suspeito a fornecer material genético para prova</li>
+        </ul>
+        <p><strong>Exceções:</strong> Exame de corpo de delito (provas objetivas, não dependem da vontade do acusado); reconhecimento de pessoa (desde que observadas as formalidades legais).</p>
+
+        <h3>3.4. Quadro Resumo: Atos no Inquérito Policial</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Ato</th><th>Pode ser determinado?</th><th>Pode o indiciado ser obrigado?</th></tr></thead>
+                <tbody>
+                    <tr><td>Reconstituição simulada</td><td>Sim</td><td>Não, só pode comparecer ao local</td></tr>
+                    <tr><td>Interrogatório</td><td>Sim</td><td>Não pode ser conduzido coercitivamente</td></tr>
+                    <tr><td>Exame de corpo de delito</td><td>Sim</td><td>Sim, se necessário</td></tr>
+                    <tr><td>Reconhecimento</td><td>Sim</td><td>Sim, desde que legal</td></tr>
+                    <tr><td>Perícia</td><td>Sim</td><td>Sim, se necessária</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider">
+    </section>
+
+    <!-- ==================== CAPÍTULO 4 ==================== -->
+    <section class="content-block" id="cap4">
+        <h2>4. Prisões e Medidas Cautelares</h2>
+
+        <h3>4.1. Prisão em Flagrante</h3>
+        <h4>Conceito e Espécies</h4>
+        <p>A prisão em flagrante é a prisão realizada no momento da prática do crime ou logo após, com base na evidência da autoria.</p>
+        <p><strong>Espécies de Flagrante (art. 302 do CPP):</strong></p>
+
+        <h5>4.1.1. Flagrante Próprio (ou Real)</h5>
+        <ul>
+            <li><strong>Inciso I:</strong> Quando o agente está <strong>cometendo</strong> o crime</li>
+            <li><strong>Inciso II:</strong> Quando o agente <strong>acabou de cometer</strong> o crime</li>
+        </ul>
+
+        <h5>4.1.2. Flagrante Impróprio (ou Quase-Flagrante)</h5>
+        <ul>
+            <li><strong>Inciso III:</strong> O agente é <strong>perseguido logo após</strong> o crime, sem interrupção</li>
+        </ul>
+        <p><span class="hl-yellow">Requisiito:</span> Perseguição imediata e sem interrupção. Se houver interrupção (o agente consegue fugir e depois é encontrado), não é flagrante impróprio.</p>
+
+        <h5>4.1.3. Flagrante Presumido (ou Ficto)</h5>
+        <ul>
+            <li><strong>Inciso IV:</strong> O agente é <strong>encontrado logo depois</strong> com instrumentos, armas, objetos ou papéis que façam presumir que é o autor do crime</li>
+        </ul>
+
+        <h5>4.1.4. Flagrante Preparado (ou Provocado)</h5>
+        <ul>
+            <li>A autoridade ou o agente provocador <strong>induz</strong> o agente a cometer o crime para prendê-lo em flagrante</li>
+            <li>É crime impossível (art. 17 do CP) → não há crime</li>
+        </ul>
+
+        <h5>4.1.5. Flagrante Prorrogado (ou Retardado)</h5>
+        <ul>
+            <li>Previsto na Lei 11.343/06 (Lei de Drogas) e em outras leis</li>
+            <li>A autoridade <strong>retarda</strong> a prisão para continuar a investigação e identificar toda a organização criminosa</li>
+        </ul>
+
+        <h5>4.1.6. Flagrante Forjado</h5>
+        <ul>
+            <li>Situação falsa criada para incriminar inocente</li>
+            <li>Crime praticado pela autoridade que forja o flagrante</li>
+        </ul>
+
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Espécie</th><th>Fundamento</th><th>Exemplo</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Próprio</strong></td><td>Art. 302, I e II</td><td>Cometendo ou acabou de cometer</td></tr>
+                    <tr><td><strong>Impróprio</strong></td><td>Art. 302, III</td><td>Perseguido logo após</td></tr>
+                    <tr><td><strong>Presumido</strong></td><td>Art. 302, IV</td><td>Encontrado com objetos do crime</td></tr>
+                    <tr><td><strong>Preparado</strong></td><td>Doutrina</td><td>Indução ao crime (crime impossível)</td></tr>
+                    <tr><td><strong>Prorrogado</strong></td><td>Lei 11.343/06</td><td>Ação controlada</td></tr>
+                    <tr><td><strong>Forjado</strong></td><td>Doutrina</td><td>Falsa situação para incriminar</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>4.2. Comunicação da Prisão em Flagrante</h3>
+        <p><strong>Obrigações da autoridade policial (art. 306 do CPP):</strong></p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Obrigação</th><th>Prazo</th><th>Destinatário</th></tr></thead>
+                <tbody>
+                    <tr><td>Comunicar a prisão e o local onde o preso se encontra</td><td>Imediatamente</td><td>Juiz, MP e família/pessoa indicada</td></tr>
+                    <tr><td>Enviar o auto de prisão em flagrante</td><td>Até 24 horas</td><td>Juiz competente</td></tr>
+                    <tr><td>Entregar a nota de culpa</td><td>Até 24 horas</td><td>Preso (com fundamento, nome do condutor e testemunhas)</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box box-warning">
+            <div class="box-title">ATENÇÃO ÀS PEGADINHAS</div>
+            <ul>
+                <li><strong>"Imediatamente"</strong>: para juiz, MP e família</li>
+                <li><strong>"Até 24 horas"</strong>: para remessa do auto ao juiz e entrega da nota de culpa ao preso</li>
+                <li>Não confundir com o prazo para a audiência de custódia (24 horas para apresentar o preso ao juiz)</li>
+            </ul>
+        </div>
+
+        <!-- SVG: Fluxograma Comunicação da Prisão em Flagrante -->
+        <div class="fig-svg">
+            <svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxograma da comunicação da prisão em flagrante">
+                <defs>
+                    <style>
+                        .flow-box { fill: #162033; stroke: #3b5f83; stroke-width: 2; rx: 8; }
+                        .flow-text { fill: #c8daf0; font-size: 13px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; }
+                        .flow-arrow { stroke: #4a7a9e; stroke-width: 2; fill: none; marker-end: url(#arrow2); }
+                        .flow-label { fill: #8aa4c0; font-size: 11px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; }
+                    </style>
+                    <marker id="arrow2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#4a7a9e" />
+                    </marker>
+                </defs>
+                <rect x="220" y="10" width="200" height="45" class="flow-box" />
+                <text x="320" y="38" class="flow-text">PRISÃO EM FLAGRANTE</text>
+
+                <rect x="220" y="80" width="200" height="45" class="flow-box" />
+                <text x="320" y="108" class="flow-text">COMUNICAÇÃO IMEDIATA (art. 306)</text>
+
+                <path d="M320 55 L320 75" class="flow-arrow" />
+
+                <!-- ramos -->
+                <rect x="40" y="155" width="110" height="45" class="flow-box" />
+                <text x="95" y="183" class="flow-text">Juiz</text>
+
+                <rect x="180" y="155" width="110" height="45" class="flow-box" />
+                <text x="235" y="183" class="flow-text">MP</text>
+
+                <rect x="320" y="155" width="130" height="45" class="flow-box" />
+                <text x="385" y="176" class="flow-text">Família ou</text>
+                <text x="385" y="193" class="flow-text">pessoa indicada</text>
+
+                <rect x="490" y="155" width="120" height="45" class="flow-box" />
+                <text x="550" y="176" class="flow-text">Auto (24h) → Juiz</text>
+                <text x="550" y="193" class="flow-text">Nota de Culpa (24h) → Preso</text>
+
+                <path d="M200 125 L95 150" class="flow-arrow" />
+                <path d="M260 125 L235 150" class="flow-arrow" />
+                <path d="M320 125 L385 150" class="flow-arrow" />
+                <path d="M440 125 L550 150" class="flow-arrow" />
+
+                <text x="120" y="148" class="flow-label">art. 306, caput</text>
+            </svg>
+            <div class="fig-caption">Fluxo da comunicação da prisão em flagrante</div>
+        </div>
+
+        <h3>4.3. Prisão Temporária (Lei 7.960/89)</h3>
+        <p><strong>Finalidade:</strong> impedir a fuga, garantir a investigação, evitar a destruição de provas.</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Requisito</th><th>Explicação</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Indispensabilidade</strong></td><td>Necessária para a investigação ou instrução criminal</td></tr>
+                    <tr><td><strong>Indícios de autoria</strong></td><td>Indícios suficientes de que o investigado praticou o crime</td></tr>
+                    <tr><td><strong>Crime hediondo ou tráfico</strong></td><td>Ou crimes previstos no rol do art. 1º da Lei 7.960/89</td></tr>
+                    <tr><td><strong>Prazo determinado</strong></td><td>5 dias (prorrogável por mais 5) ou 30/60 dias para crimes hediondos</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><strong>Quem pode requerer:</strong> Representação da autoridade policial ou requerimento do Ministério Público.</p>
+        <div class="box box-warning">
+            <div class="box-title">ATENÇÃO À PEGADINHA DA FCC</div>
+            <p>A FCC adora perguntar se o juiz pode decretar a prisão temporária de ofício.</p>
+            <p><strong>RESPOSTA CORRETA:</strong> Não. O juiz não pode agir de ofício. É necessária provocação (representação policial ou requerimento do MP).</p>
+        </div>
+
+        <h3>4.4. Prisão Preventiva</h3>
+        <h4>Requisitos (art. 313 do CPP)</h4>
+        <p><strong>Requisitos gerais:</strong></p>
+        <ul>
+            <li>Crime doloso com pena máxima superior a 4 anos, ou crime hediondo, ou equiparado, ou crime contra o Estado Democrático de Direito</li>
+            <li>Reincidência em crime doloso (se a pena máxima for inferior a 4 anos, é possível se o agente for reincidente)</li>
+        </ul>
+        <p><strong>Requisitos específicos (art. 312 do CPP):</strong> garantia da ordem pública, conveniência da instrução criminal ou assegurar a aplicação da lei penal.</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Fundamento</th><th>Significado</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Garantia da ordem pública</strong></td><td>Periculosidade do agente; risco de reiteração</td></tr>
+                    <tr><td><strong>Conveniência da instrução</strong></td><td>Risco de destruição de provas, intimidação de testemunhas</td></tr>
+                    <tr><td><strong>Aplicação da lei penal</strong></td><td>Risco de fuga</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><strong>Limitação (art. 313, I, CPP):</strong> A prisão preventiva <strong>não pode ser decretada</strong> se a pena máxima do crime for <strong>inferior a 4 anos</strong> e o agente <strong>não for reincidente</strong> em crime doloso.</p>
+
+        <div class="box box-info">
+            <div class="box-title">Estudo de Caso: Prisão Preventiva</div>
+            <p><strong>CASO:</strong> Maria, primária, indiciada por furto simples (pena máxima de 4 anos), com endereço fixo, mas com risco de reiteração delitiva. MP requer preventiva.</p>
+            <p><strong>ANÁLISE:</strong> A pena máxima do furto simples é de 4 anos. Maria é primária (não reincidente). Art. 313, I, CPP: não cabe preventiva se a pena máxima não superar 4 anos e o agente não for reincidente. <strong>Não cabe preventiva.</strong></p>
+            <p><strong>Alternativa:</strong> O MP pode requerer medida cautelar alternativa, como proibição de frequentar o estabelecimento lesado (art. 319, II, CPP).</p>
+        </div>
+
+        <h3>4.5. Prisão Domiciliar Substitutiva</h3>
+        <p><strong>O que é:</strong> Substituição da prisão preventiva pela prisão domiciliar (art. 318 do CPP).</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Hipótese</th><th>Fundamento</th></tr></thead>
+                <tbody>
+                    <tr><td>Agente com <strong>mais de 80 anos</strong></td><td>Art. 318, I</td></tr>
+                    <tr><td>Agente <strong>extremamente debilitado por doença grave</strong></td><td>Art. 318, II</td></tr>
+                    <tr><td>Agente <strong>imprescindível aos cuidados de pessoa menor de 6 anos</strong></td><td>Art. 318, III</td></tr>
+                    <tr><td>Agente <strong>imprescindível aos cuidados de pessoa com deficiência</strong></td><td>Art. 318, III</td></tr>
+                    <tr><td><strong>Gestante</strong></td><td>Art. 318, IV</td></tr>
+                    <tr><td><strong>Mulher com filho até 12 anos incompletos</strong></td><td>Art. 318-A</td></tr>
+                    <tr><td><strong>Homem único responsável por filho até 12 anos incompletos</strong></td><td>Art. 318-A</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><strong>Requisitos do art. 318-A (mulher com filho até 12 anos):</strong> Crime sem violência ou grave ameaça; crime não cometido contra o filho.</p>
+
+        <h3>4.6. Medidas Cautelares Diversas da Prisão (art. 319 do CPP)</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Medida</th><th>Explicação</th></tr></thead>
+                <tbody>
+                    <tr><td>Comparecimento periódico</td><td>Comparecer ao juízo para informar atividades</td></tr>
+                    <tr><td>Proibição de saída da comarca</td><td>Sem autorização judicial</td></tr>
+                    <tr><td>Proibição de frequentar determinados lugares</td><td>Ex: frequentar o estabelecimento lesado</td></tr>
+                    <tr><td>Proibição de manter contato</td><td>Com vítima, testemunhas</td></tr>
+                    <tr><td>Suspensão de função pública</td><td>Ou atividade econômica</td></tr>
+                    <tr><td>Recolhimento domiciliar</td><td>Com monitoramento</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>4.7. Quadro Comparativo: Espécies de Prisão</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Característica</th><th>Flagrante</th><th>Temporária</th><th>Preventiva</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Natureza</strong></td><td>Cautelar</td><td>Cautelar</td><td>Cautelar</td></tr>
+                    <tr><td><strong>Prazo máximo</strong></td><td>Até 24h (apresentação)</td><td>5 dias (prorrogável)</td><td>Indeterminado</td></tr>
+                    <tr><td><strong>Quem decreta</strong></td><td>Autoridade policial / Juiz</td><td>Juiz (mediante requerimento)</td><td>Juiz</td></tr>
+                    <tr><td><strong>Motivação</strong></td><td>Evidência de autoria</td><td>Investigação</td><td>Garantia da ordem, instrução, lei penal</td></tr>
+                    <tr><td><strong>Crime</strong></td><td>Qualquer crime</td><td>Rol específico</td><td>Pena máxima &gt; 4 anos ou reincidente</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider">
+    </section>
+
+    <!-- ==================== CAPÍTULO 5 ==================== -->
+    <section class="content-block" id="cap5">
+        <h2>5. Citação no Processo Penal</h2>
+
+        <h3>5.1. Conceito de Citação</h3>
+        <p>Citação é o ato pelo qual o réu é chamado a integrar a relação processual, tomando ciência da ação penal movida contra ele e sendo convocado para apresentar defesa.</p>
+        <p><span class="hl-yellow">Importância:</span> Sem citação válida, o processo é nulo. O réu precisa ter ciência da acusação para exercer seu direito de defesa.</p>
+
+        <h3>5.2. Carta Precatória x Carta Rogatória</h3>
+        <h4>5.2.1. Carta Precatória</h4>
+        <p><strong>Definição:</strong> Instrumento utilizado para a prática de atos processuais entre <strong>juízos do mesmo país</strong> (dentro do território nacional). Fundamento: art. 353 do CPP.</p>
+
+        <h4>5.2.2. Carta Rogatória</h4>
+        <p><strong>Definição:</strong> Instrumento utilizado para a prática de atos processuais entre <strong>países diferentes</strong> (território estrangeiro). Fundamento: art. 222 do CPP.</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Carta Precatória</th><th>Carta Rogatória</th></tr></thead>
+                <tbody>
+                    <tr><td>Mesmo país</td><td>Países diferentes</td></tr>
+                    <tr><td>Juiz → Juiz (dentro do Brasil)</td><td>Juiz → Juiz (Brasil → exterior)</td></tr>
+                    <tr><td>Art. 353 do CPP</td><td>Art. 222 do CPP</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box box-warning">
+            <div class="box-title">ATENÇÃO À PEGADINHA</div>
+            <ul>
+                <li>Réu <strong>fora do território da jurisdição do juiz</strong>, mas <strong>no mesmo país</strong> → carta precatória</li>
+                <li>Réu <strong>em país estrangeiro</strong> → carta rogatória</li>
+            </ul>
+        </div>
+
+        <h3>5.3. Citação no Processo Penal: Modalidades</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Modalidade</th><th>Fundamento</th><th>Quando usar</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Pessoal (mandado)</strong></td><td>Art. 351</td><td>Réu localizado</td></tr>
+                    <tr><td><strong>Por edital</strong></td><td>Art. 361</td><td>Réu não encontrado</td></tr>
+                    <tr><td><strong>Por hora certa</strong></td><td>Art. 362</td><td>Réu se oculta</td></tr>
+                    <tr><td><strong>Carta precatória</strong></td><td>Art. 353</td><td>Réu em outra comarca/estado</td></tr>
+                    <tr><td><strong>Carta rogatória</strong></td><td>Art. 222</td><td>Réu em país estrangeiro</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider">
+    </section>
+
+    <!-- ==================== CAPÍTULO 6 ==================== -->
+    <section class="content-block" id="cap6">
+        <h2>6. Procedimento do Tribunal do Júri</h2>
+
+        <h3>6.1. Introdução</h3>
+        <p>O Tribunal do Júri é previsto no art. 5º, XXXVIII da CF/88 e regulado pelos arts. 406 a 497 do CPP. É composto por um juiz togado (presidente) e 25 jurados (dos quais 7 formarão o Conselho de Sentença).</p>
+        <p><strong>Competência:</strong> Julgar crimes dolosos contra a vida (homicídio, infanticídio, aborto, instigação/auxílio ao suicídio).</p>
+        <p><strong>Fases do procedimento:</strong></p>
+        <ol>
+            <li><strong>Judicium accusationis</strong> (fase de acusação): juiz decide se o acusado será submetido ao Júri</li>
+            <li><strong>Judicium causae</strong> (fase de plenário): julgamento pelo Júri</li>
+        </ol>
+
+        <h3>6.2. Pronúncia (art. 413 do CPP)</h3>
+        <p><strong>Conceito:</strong> Decisão que submete o acusado ao Tribunal do Júri.</p>
+        <p><strong>Requisitos:</strong> materialidade do crime comprovada e indícios suficientes de autoria (ou participação).</p>
+        <p><strong>Efeitos:</strong> O acusado é submetido a julgamento pelo Júri; não analisa o mérito da culpabilidade.</p>
+
+        <h3>6.3. Impronúncia (art. 414 do CPP)</h3>
+        <p><strong>Conceito:</strong> Decisão que <strong>não</strong> submete o acusado ao Tribunal do Júri.</p>
+        <p><strong>Fundamento:</strong> O juiz reconhece a <strong>materialidade</strong> do crime, mas entende que <strong>não há indícios suficientes de autoria</strong>.</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Pronúncia</th><th>Impronúncia</th></tr></thead>
+                <tbody>
+                    <tr><td>Materialidade + indícios de autoria</td><td>Materialidade + <strong>falta</strong> de indícios de autoria</td></tr>
+                    <tr><td>Submete ao Júri</td><td>Não submete ao Júri</td></tr>
+                    <tr><td>Art. 413 do CPP</td><td>Art. 414 do CPP</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>6.4. Absolvição Sumária (art. 415 do CPP)</h3>
+        <p><strong>Conceito:</strong> Decisão que <strong>absolve</strong> o acusado, reconhecendo a inexistência do fato ou que o acusado não é o autor.</p>
+        <ul>
+            <li>Provada a <strong>inexistência do fato</strong></li>
+            <li>Provado que o acusado <strong>não é o autor</strong> (ou não participou)</li>
+            <li>O fato <strong>não constitui crime</strong> (ou é atípico)</li>
+            <li>Causa de <strong>extinção da punibilidade</strong> reconhecida</li>
+        </ul>
+        <p><strong>Efeitos:</strong> O acusado é absolvido; não é submetido ao Júri; a decisão tem força de coisa julgada.</p>
+
+        <div class="box box-info">
+            <div class="box-title">Estudo de Caso: Procedimento do Júri</div>
+            <p><strong>CASO:</strong> Em um processo do Tribunal do Júri, o juiz reconhece a materialidade do crime (homicídio), mas entende que as provas da autoria são frágeis e insuficientes para submeter o acusado ao Júri.</p>
+            <p><strong>ANÁLISE:</strong> O juiz deve proferir decisão de <strong>impronúncia</strong> (art. 414 do CPP), pois há materialidade, mas faltam indícios suficientes de autoria.</p>
+        </div>
+
+        <hr class="divider">
+    </section>
+
+    <!-- ==================== CAPÍTULO 7 ==================== -->
+    <section class="content-block" id="cap7">
+        <h2>7. Procedimento dos Crimes Funcionais</h2>
+
+        <h3>7.1. Crimes Funcionais: Definição</h3>
+        <p>São crimes praticados por <strong>funcionário público</strong> contra a administração pública (ex: peculato, concussão, prevaricação, corrupção passiva).</p>
+        <p><strong>Procedimento especial:</strong> arts. 513 a 518 do CPP (crimes de responsabilidade dos funcionários públicos).</p>
+
+        <h3>7.2. Fases do Procedimento dos Crimes Funcionais</h3>
+        <h4>7.2.1. Fase 1: Notificação Preliminar (art. 514 do CPP)</h4>
+        <p><strong>O que é:</strong> O juiz, ao receber a denúncia, notifica o acusado para apresentar <strong>defesa preliminar</strong> ("contrarrazões" ou "manifestação preliminar").</p>
+        <p><strong>Prazo:</strong> <strong>15 dias</strong> (art. 514 do CPP).</p>
+        <p><strong>Conteúdo:</strong> O acusado pode alegar tudo o que entender relevante, juntar documentos e arrolar testemunhas (para a defesa final).</p>
+
+        <h4>7.2.2. Fase 2: Decisão do Juiz</h4>
+        <ul>
+            <li><strong>Recebe a denúncia:</strong> o acusado é citado para apresentar resposta à acusação (prazo de 10 dias)</li>
+            <li><strong>Rejeita a denúncia:</strong> o processo é arquivado</li>
+        </ul>
+
+        <h4>7.2.3. Fase 3: Citação e Resposta à Acusação</h4>
+        <p>Prazo para resposta: <strong>10 dias</strong> (art. 396 do CPP, aplicado por analogia).</p>
+
+        <h3>7.3. Súmula 330 do STJ e a Notificação Preliminar</h3>
+        <div class="quote">
+            <p><strong>Súmula 330 do STJ:</strong> "A ausência da defesa preliminar, prevista no art. 514 do Código de Processo Penal, não acarreta nulidade quando o inquérito policial tenha instruído a denúncia."</p>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Situação</th><th>Notificação preliminar é obrigatória?</th></tr></thead>
+                <tbody>
+                    <tr><td>Denúncia baseada em <strong>inquérito policial</strong></td><td><strong>Não</strong> (facultativa)</td></tr>
+                    <tr><td>Denúncia baseada em <strong>procedimento administrativo disciplinar</strong></td><td><strong>Sim</strong> (obrigatória)</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><strong>Consequência da ausência:</strong></p>
+        <ul>
+            <li>Se houve inquérito policial → falta da notificação preliminar configura <strong>nulidade relativa</strong> (depende de comprovação de prejuízo e sujeita à preclusão)</li>
+            <li>Se houve apenas procedimento administrativo → falta configura <strong>nulidade absoluta</strong></li>
+        </ul>
+        <div class="box box-warning">
+            <div class="box-title">ATENÇÃO À PEGADINHA</div>
+            <p>A FCC costuma perguntar se a notificação preliminar é obrigatória em todos os casos de crime funcional.</p>
+            <p><strong>Resposta:</strong> Não. Se houve inquérito policial, a notificação preliminar é facultativa (Súmula 330 do STJ).</p>
+        </div>
+
+        <hr class="divider">
+    </section>
+
+    <!-- ==================== CAPÍTULO 8 ==================== -->
+    <section class="content-block" id="cap8">
+        <h2>8. Ação Penal: Espécies e Características</h2>
+
+        <h3>8.1. Conceito de Ação Penal</h3>
+        <p>Ação penal é o direito de provocar o Poder Judiciário para que exerça a função jurisdicional, julgando a pretensão punitiva do Estado.</p>
+        <ul>
+            <li><strong>Ação penal pública:</strong> Ministério Público</li>
+            <li><strong>Ação penal privada:</strong> Ofendido (vítima)</li>
+        </ul>
+
+        <h3>8.2. Ação Penal Pública</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Característica</th><th>Explicação</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Oficialidade</strong></td><td>Iniciativa do MP (monopólio)</td></tr>
+                    <tr><td><strong>Obrigatoriedade</strong></td><td>O MP é obrigado a oferecer denúncia se houver provas</td></tr>
+                    <tr><td><strong>Indisponibilidade</strong></td><td>O MP não pode desistir da ação</td></tr>
+                    <tr><td><strong>Divisibilidade</strong></td><td>A ação deve ser proposta contra todos os envolvidos</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><strong>Ação Penal Pública Incondicionada:</strong> O MP deve agir independentemente da vontade da vítima.</p>
+        <p><strong>Ação Penal Pública Condicionada:</strong> Depende de <strong>representação</strong> da vítima (ou requerimento do ofendido).</p>
+
+        <h3>8.3. Ação Penal Privada</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Característica</th><th>Explicação</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Oportunidade (ou conveniência)</strong></td><td>A vítima decide se oferece ou não a queixa-crime</td></tr>
+                    <tr><td><strong>Disponibilidade</strong></td><td>A vítima pode desistir (perempção)</td></tr>
+                    <tr><td><strong>Indivisibilidade</strong></td><td>A queixa deve ser oferecida contra todos os autores</td></tr>
+                    <tr><td><strong>Decadência</strong></td><td>Prazo de 6 meses para oferecer a queixa</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><strong>Princípios da Ação Penal Privada:</strong></p>
+        <ul>
+            <li><strong>Princípio da oportunidade:</strong> a vítima não tem obrigação de processar</li>
+            <li><strong>Princípio da discricionariedade regulada:</strong> a vítima pode escolher processar ou não</li>
+            <li>Se a vítima ficar inerte, ocorre a <strong>perempção</strong> (extinção da punibilidade)</li>
+        </ul>
+
+        <h3>8.4. Comparação: Ação Pública x Ação Privada</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Característica</th><th>Ação Pública</th><th>Ação Privada</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Titular</strong></td><td>MP</td><td>Vítima</td></tr>
+                    <tr><td><strong>Iniciativa</strong></td><td>Oficial</td><td>Vítima oferece queixa</td></tr>
+                    <tr><td><strong>Obrigação</strong></td><td>Obrigatória</td><td>Oportunidade (não obrigatória)</td></tr>
+                    <tr><td><strong>Desistência</strong></td><td>Indisponível</td><td>Disponível (perempção)</td></tr>
+                    <tr><td><strong>Divisibilidade</strong></td><td>Indivisível</td><td>Indivisível</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>8.5. Macete de Memorização: "DÓI" e "ÓDIO"</h3>
+        <div class="mnemonic">
+            <div class="word">Ação Privada: DÓI</div>
+            <div class="explain">
+                <span><strong>D</strong>isponibilidade</span>
+                <span><strong>Ó</strong>portunidade</span>
+                <span><strong>I</strong>ndivisibilidade</span>
+            </div>
+        </div>
+        <div class="mnemonic">
+            <div class="word">Ação Pública: ÓDIO</div>
+            <div class="explain">
+                <span><strong>Ó</strong>brigatoriedade</span>
+                <span><strong>D</strong>ivisibilidade</span>
+                <span><strong>I</strong>ndisponibilidade</span>
+                <span><strong>O</strong>ficialidade</span>
+            </div>
+        </div>
+        <p><strong>Explicação:</strong> Na ação <strong>privada</strong>, a vítima tem o poder de <strong>decidir</strong> (oportunidade) e pode <strong>desistir</strong> (disponibilidade). Na ação <strong>pública</strong>, o MP é <strong>obrigado</strong> a agir (obrigatoriedade) e <strong>não pode desistir</strong> (indisponibilidade).</p>
+
+        <div class="box box-info">
+            <div class="box-title">Estudo de Caso: Ação Penal</div>
+            <p><strong>CASO 1:</strong> José comete crime de dano simples contra Pedro. A vítima decide não oferecer queixa-crime. Qual princípio rege essa faculdade?</p>
+            <p><strong>ANÁLISE:</strong> Princípio da <strong>oportunidade</strong> (ou conveniência), típico da ação penal privada. A vítima pode escolher processar ou não. O MP não pode suprir a omissão.</p>
+            <p><strong>CASO 2:</strong> A vítima oferece queixa-crime contra três pessoas, mas depois quer excluir uma delas do processo.</p>
+            <p><strong>ANÁLISE:</strong> Não pode, pois a ação penal privada é <strong>indivisível</strong>. Se a queixa foi oferecida contra todos, a vítima não pode excluir um dos autores.</p>
+        </div>
+
+        <hr class="divider">
+    </section>
+
+    <!-- ==================== CAPÍTULO 9 ==================== -->
+    <section class="content-block" id="cap9">
+        <h2>9. Habeas Corpus e suas Limitações</h2>
+
+        <h3>9.1. Conceito de Habeas Corpus</h3>
+        <p>Habeas corpus é o remédio constitucional (art. 5º, LXVIII, CF/88) destinado a proteger o direito de locomoção (liberdade de ir e vir) quando ameaçado ou violado por ilegalidade ou abuso de poder.</p>
+        <ul>
+            <li><strong>Quem pode impetrar:</strong> Qualquer pessoa (física ou jurídica), independentemente de advogado.</li>
+            <li><strong>Objetivo:</strong> Fazer cessar a ilegalidade na prisão ou ameaça à liberdade.</li>
+        </ul>
+
+        <h3>9.2. Espécies de Habeas Corpus</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Espécie</th><th>Finalidade</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Preventivo</strong></td><td>Impedir a ocorrência de ilegalidade (antes da prisão)</td></tr>
+                    <tr><td><strong>Repressivo</strong></td><td>Fazer cessar a ilegalidade (depois da prisão)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>9.3. Súmula 693 do STF</h3>
+        <div class="quote">
+            <p><strong>Súmula 693 do STF:</strong> "Não cabe habeas corpus contra decisão condenatória a pena de multa, ou relativo a processo em curso por infração penal a que a pena pecuniária seja a única cominada."</p>
+        </div>
+        <ul>
+            <li><strong>Pena de multa:</strong> não cabe HC contra decisão condenatória a pena de multa</li>
+            <li><strong>Crime com pena pecuniária única:</strong> não cabe HC relativo a processo em curso por infração penal que tenha apenas multa como pena</li>
+        </ul>
+        <p><span class="hl-yellow">Justificativa:</span> O HC visa proteger a liberdade de locomoção. Se a única sanção é pecuniária (multa), não há risco à liberdade, portanto não cabe HC.</p>
+
+        <div class="box box-info">
+            <div class="box-title">Estudo de Caso: Habeas Corpus</div>
+            <p><strong>CASO 1:</strong> Maria condenada a 2 anos de reclusão e multa. Impetra HC contra a condenação. Cabe?</p>
+            <p><strong>ANÁLISE:</strong> Sim, pois há pena privativa de liberdade (reclusão), mesmo que também haja multa.</p>
+            <p><strong>CASO 2:</strong> José condenado apenas a pena de multa por crime de dano. Impetra HC. Cabe?</p>
+            <p><strong>ANÁLISE:</strong> Não. Súmula 693 do STF.</p>
+            <p><strong>CASO 3:</strong> Pedro está sendo processado por crime que tem apenas pena de multa. Impetra HC para trancar a ação. Cabe?</p>
+            <p><strong>ANÁLISE:</strong> Não. Súmula 693 do STF.</p>
+        </div>
+
+        <hr class="divider">
+    </section>
+
+    <!-- ==================== CAPÍTULO 10 ==================== -->
+    <section class="content-block" id="cap10">
+        <h2>10. Ordem da Audiência de Instrução e Julgamento</h2>
+
+        <h3>10.1. Ordem Legal (art. 400 do CPP)</h3>
+        <p>A ordem da colheita da prova oral em audiência de instrução e julgamento no procedimento comum é:</p>
+        <ol>
+            <li><strong>Declarações do Ofendido (Vítima)</strong> – art. 400, I, CPP</li>
+            <li><strong>Inquirição das Testemunhas de Acusação</strong> – art. 400, II</li>
+            <li><strong>Inquirição das Testemunhas de Defesa</strong> – art. 400, III</li>
+            <li><strong>Interrogatório do Acusado</strong> – art. 400, IV</li>
+        </ol>
+
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Ordem</th><th>Ato</th><th>Fundamento</th></tr></thead>
+                <tbody>
+                    <tr><td>1º</td><td>Declarações do ofendido (vítima)</td><td>Art. 400, I</td></tr>
+                    <tr><td>2º</td><td>Inquirição das testemunhas de acusação</td><td>Art. 400, II</td></tr>
+                    <tr><td>3º</td><td>Inquirição das testemunhas de defesa</td><td>Art. 400, III</td></tr>
+                    <tr><td>4º</td><td>Interrogatório do acusado</td><td>Art. 400, IV</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-warning">
+            <div class="box-title">Caso Prático</div>
+            <p><strong>CENÁRIO:</strong> Juiz inicia a audiência de instrução e julgamento colhendo o interrogatório do réu primeiro e depois ouvindo as testemunhas.</p>
+            <p><strong>ANÁLISE:</strong> Isso é <strong>irregular</strong>. A ordem legal (art. 400 do CPP) exige que primeiro sejam ouvidas a vítima, depois as testemunhas de acusação, depois as de defesa e, por fim, o réu. A inversão da ordem sem justificativa válida pode acarretar nulidade do ato.</p>
+        </div>
+
+        <!-- SVG: Ordem da Audiência -->
+        <div class="fig-svg">
+            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ordem da audiência">
+                <defs>
+                    <style>
+                        .ord-box { fill: #162033; stroke: #3b5f83; stroke-width: 2; rx: 10; }
+                        .ord-text { fill: #c8daf0; font-size: 14px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; }
+                        .ord-sub { fill: #8aa4c0; font-size: 11px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; }
+                        .ord-arrow { stroke: #4a7a9e; stroke-width: 2; fill: none; marker-end: url(#arrow3); }
+                    </style>
+                    <marker id="arrow3" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#4a7a9e" />
+                    </marker>
+                </defs>
+                <rect x="80" y="10" width="240" height="48" class="ord-box" />
+                <text x="200" y="32" class="ord-text">1º – Declarações do Ofendido</text>
+                <text x="200" y="50" class="ord-sub">Art. 400, I</text>
+
+                <rect x="80" y="80" width="240" height="48" class="ord-box" />
+                <text x="200" y="102" class="ord-text">2º – Testemunhas de Acusação</text>
+                <text x="200" y="120" class="ord-sub">Art. 400, II</text>
+
+                <rect x="80" y="150" width="240" height="48" class="ord-box" />
+                <text x="200" y="172" class="ord-text">3º – Testemunhas de Defesa</text>
+                <text x="200" y="190" class="ord-sub">Art. 400, III</text>
+
+                <rect x="80" y="220" width="240" height="48" class="ord-box" />
+                <text x="200" y="242" class="ord-text">4º – Interrogatório do Acusado</text>
+                <text x="200" y="260" class="ord-sub">Art. 400, IV</text>
+
+                <path d="M200 58 L200 75" class="ord-arrow" />
+                <path d="M200 128 L200 145" class="ord-arrow" />
+                <path d="M200 198 L200 215" class="ord-arrow" />
+            </svg>
+            <div class="fig-caption">Ordem da audiência de instrução e julgamento (art. 400 do CPP)</div>
+        </div>
+
+        <hr class="divider">
+    </section>
+
+    <!-- ==================== CAPÍTULO 11 ==================== -->
+    <section class="content-block" id="cap11">
+        <h2>11. Emendatio Libelli e Mutatio Libelli</h2>
+
+        <h3>11.1. Conceitos Fundamentais</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Instituto</th><th>Art.</th><th>Definição</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Emendatio libelli</strong></td><td>383</td><td>O juiz atribui definição jurídica diversa aos fatos <strong>já narrados</strong></td></tr>
+                    <tr><td><strong>Mutatio libelli</strong></td><td>384</td><td>Surge <strong>fato novo</strong> ou circunstância não contida na denúncia, exigindo prova não produzida</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>11.2. Emendatio Libelli (art. 383 do CPP)</h3>
+        <p><strong>Conceito:</strong> O juiz, ao sentenciar, pode aplicar definição jurídica diversa da contida na denúncia ou queixa, mesmo que resulte em pena mais grave, <strong>sem</strong> necessidade de reabertura da instrução.</p>
+        <ul>
+            <li>A nova definição jurídica deve basear-se nos mesmos fatos narrados na inicial.</li>
+            <li>Não há necessidade de reabertura da instrução.</li>
+            <li>O juiz pode aplicar pena mais grave.</li>
+            <li>A defesa deve ser ouvida previamente (contraditório).</li>
+        </ul>
+
+        <h3>11.3. Mutatio Libelli (art. 384 do CPP)</h3>
+        <p><strong>Conceito:</strong> Ocorre quando, durante a instrução, surgem <strong>fatos novos</strong> ou circunstâncias <strong>não contidas</strong> na denúncia, que exigem prova não produzida.</p>
+        <p><strong>Procedimento:</strong></p>
+        <ol>
+            <li>O juiz constata fato novo que modifica a definição jurídica do crime</li>
+            <li>O juiz deve dar vista ao <strong>Ministério Público</strong> para aditamento da denúncia</li>
+            <li>Se o MP aditar, o juiz deve <strong>reabrir a instrução</strong> para produção de provas</li>
+            <li>Garantir o <strong>contraditório</strong> à defesa</li>
+            <li>Caso o MP não adite, o juiz aplica a emendatio libelli (se possível)</li>
+        </ol>
+
+        <h3>11.4. Quadro Comparativo: Emendatio x Mutatio</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Característica</th><th>Emendatio Libelli</th><th>Mutatio Libelli</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Base</strong></td><td>Mesmos fatos narrados</td><td>Fato novo / circunstância nova</td></tr>
+                    <tr><td><strong>Exige prova nova?</strong></td><td>Não</td><td>Sim</td></tr>
+                    <tr><td><strong>Reabertura da instrução?</strong></td><td>Não</td><td>Sim</td></tr>
+                    <tr><td><strong>Vista ao MP?</strong></td><td>Não</td><td>Sim (para aditamento)</td></tr>
+                    <tr><td><strong>Contraditório</strong></td><td>Sim (ouvir a defesa)</td><td>Sim (reabrir instrução)</td></tr>
+                    <tr><td><strong>Pode resultar em pena mais grave?</strong></td><td>Sim</td><td>Sim</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-info">
+            <div class="box-title">Estudo de Caso: Emendatio e Mutatio</div>
+            <p><strong>CASO 1:</strong> Denúncia narra: "O acusado subtraiu, para si, uma televisão da vítima, mediante violência e grave ameaça." Juiz condena por roubo majorado (com emprego de arma de fogo).</p>
+            <p><strong>ANÁLISE:</strong> O juiz aplicou definição jurídica diversa (roubo majorado) baseado nos mesmos fatos narrados (roubo). É <strong>emendatio libelli</strong> (art. 383). Não há fato novo; a qualificadora é extraída da narrativa.</p>
+            <p><strong>CASO 2:</strong> Denúncia narra apenas a subtração da televisão (furto). Durante a instrução, descobre-se que houve violência e grave ameaça. Juiz condena por roubo.</p>
+            <p><strong>ANÁLISE:</strong> A violência e grave ameaça são fatos novos, não narrados na denúncia. É <strong>mutatio libelli</strong> (art. 384). O juiz deve dar vista ao MP para aditamento e reabrir a instrução.</p>
+        </div>
+
+        <hr class="divider">
+    </section>
+
+    <!-- ==================== CAPÍTULO 12 ==================== -->
+    <section class="content-block" id="cap12">
+        <h2>12. Memorização Inteligente: Macetes e Estratégias</h2>
+
+        <h3>12.1. Macetes para Competência Penal</h3>
+        <div class="mnemonic">
+            <div class="word">"Desembargador é STJ, Juiz de Primeiro é TJ, Juiz Federal é TRF"</div>
+            <div class="explain">
+                <span>Desembargador → <strong>STJ</strong></span>
+                <span>Juiz de Direito (estadual) → <strong>TJ</strong></span>
+                <span>Juiz Federal → <strong>TRF</strong></span>
+                <span>Ministro do STF → <strong>STF</strong></span>
+                <span>Governador → <strong>STJ</strong></span>
+                <span>PGR → <strong>STF</strong></span>
+            </div>
+        </div>
+        <p><strong>Associação mental:</strong></p>
+        <ul>
+            <li><span class="hl">"D"</span> de Desembargador → <span class="hl">"S"</span> de Superior (STJ)</li>
+            <li><span class="hl">"J"</span> de Juiz Estadual → <span class="hl">"T"</span> de Tribunal de Justiça (TJ)</li>
+            <li><span class="hl">"F"</span> de Juiz Federal → <span class="hl">"F"</span> de TRF (Federal)</li>
+        </ul>
+
+        <h3>12.2. Macetes para Ação Penal</h3>
+        <div class="mnemonic">
+            <div class="word">Ação Privada: DÓI</div>
+            <div class="explain">
+                <span><strong>D</strong>isponibilidade</span>
+                <span><strong>Ó</strong>portunidade</span>
+                <span><strong>I</strong>ndivisibilidade</span>
+            </div>
+        </div>
+        <div class="mnemonic">
+            <div class="word">Ação Pública: ÓDIO</div>
+            <div class="explain">
+                <span><strong>Ó</strong>brigatoriedade</span>
+                <span><strong>D</strong>ivisibilidade</span>
+                <span><strong>I</strong>ndisponibilidade</span>
+                <span><strong>O</strong>ficialidade</span>
+            </div>
+        </div>
+
+        <h3>12.3. Macetes para Ordem da Audiência</h3>
+        <div class="mnemonic">
+            <div class="word">"VITAD"</div>
+            <div class="explain">
+                <span><strong>V</strong> → Vítima (declarações do ofendido)</span>
+                <span><strong>I</strong> → Investigação (testemunhas de acusação)</span>
+                <span><strong>T</strong> → Testemunhas de defesa</span>
+                <span><strong>A</strong> → Acusado (interrogatório)</span>
+                <span><strong>D</strong> → Decisão (sentença)</span>
+            </div>
+        </div>
+
+        <h3>12.4. Macetes para Espécies de Flagrante</h3>
+        <div class="mnemonic">
+            <div class="word">"PIPPPF"</div>
+            <div class="explain">
+                <span><strong>P</strong>róprio (cometendo ou acabou de cometer)</span>
+                <span><strong>I</strong>mpróprio (perseguido logo após)</span>
+                <span><strong>P</strong>resumido (encontrado com objetos)</span>
+                <span><strong>P</strong>reparado (induzido)</span>
+                <span><strong>P</strong>rorrogado (ação controlada)</span>
+                <span><strong>F</strong>orjado (falsificado)</span>
+            </div>
+        </div>
+
+        <h3>12.5. Resumo Visual: Principais Diferenças</h3>
+        <div class="card-grid">
+            <div class="card-concept">
+                <span class="title">Emendatio Libelli</span>
+                <span class="desc">Mesmos fatos · Não reabre instrução · Juiz modifica definição · Pode agravar a pena</span>
+            </div>
+            <div class="card-concept">
+                <span class="title">Mutatio Libelli</span>
+                <span class="desc">Fato novo · Reabre instrução · MP deve aditar · Contraditório amplo</span>
+            </div>
+            <div class="card-concept">
+                <span class="title">Competência STF</span>
+                <span class="desc">Ministros do STF · PGR · Presidente da República</span>
+            </div>
+            <div class="card-concept">
+                <span class="title">Competência STJ</span>
+                <span class="desc">Desembargadores · Governadores · Membros do MP que oficiem perante tribunais</span>
+            </div>
+            <div class="card-concept">
+                <span class="title">Competência TRF</span>
+                <span class="desc">Juízes Federais · Juízes do Trabalho</span>
+            </div>
+            <div class="card-concept">
+                <span class="title">Competência TJ</span>
+                <span class="desc">Juízes de Direito (estaduais)</span>
+            </div>
+        </div>
+
+        <div class="box box-tip">
+            <div class="box-title">Dicas finais para a prova</div>
+            <ul>
+                <li>Atenção aos detalhes: a FCC é conhecida por cobrar literalidade da lei</li>
+                <li>Não confunda <span class="hl">emendatio</span> com <span class="hl">mutatio libelli</span></li>
+                <li>Memorize a ordem da audiência (<strong>art. 400</strong>)</li>
+                <li>Lembre-se da <strong>Súmula 330 do STJ</strong> (notificação preliminar facultativa)</li>
+                <li><strong>Súmula 693 do STF</strong> (HC para pena de multa não cabe)</li>
+                <li>Competência: desembargador = <strong>STJ</strong>, juiz estadual = <strong>TJ</strong>, juiz federal = <strong>TRF</strong></li>
+            </ul>
+        </div>
+
+        <hr class="divider">
+    </section>
+
+    <!-- CONSIDERAÇÕES FINAIS -->
+    <section class="content-block" style="border-left: 6px solid #4fc3f7; background: #0d1d30;">
+        <h2 style="border-bottom: none; margin-top:0;">Considerações Finais</h2>
+        <p>Esta apostila foi elaborada para proporcionar uma compreensão aprofundada dos principais temas de Processo Penal cobrados em concursos públicos de alto nível, especialmente para o cargo de Técnico Judiciário – Área Judiciária.</p>
+        <p><strong>Recomendações para o estudo:</strong></p>
+        <ol>
+            <li>Leitura atenta de cada seção, com foco na compreensão dos conceitos</li>
+            <li>Estudo dos quadros comparativos para fixar as diferenças</li>
+            <li>Resolução de questões de provas anteriores da FCC, FGV e Cebraspe</li>
+            <li>Revisão periódica utilizando os macetes e resumos</li>
+            <li>Aplicação prática dos casos concretos e situações hipotéticas</li>
+        </ol>
+        <p style="margin-top:1.2rem; font-weight:500; color:#b3d9ff;">Bons estudos e sucesso na aprovação!</p>
+    </section>
+
+</body>
+</html>

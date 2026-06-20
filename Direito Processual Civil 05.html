@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila de Direito Processual Civil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #1a1714;
+            color: #ece4d9;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            padding: 0 1.5rem 4rem;
+            min-height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 0.5rem;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        .chapter-title,
+        .section-title {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            color: #f0e6d8;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.04em;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            color: #f0e6d8;
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #d4b86a;
+            display: inline-block;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #e8ddd0;
+            margin-top: 2.2rem;
+            margin-bottom: 0.9rem;
+        }
+
+        h4 {
+            font-size: 1.15rem;
+            color: #e0d4c6;
+            margin-top: 1.6rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #c5bdb0;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #e0d4c6;
+        }
+
+        strong,
+        b {
+            color: #f0e6d8;
+            font-weight: 600;
+        }
+
+        em,
+        i {
+            color: #d4b86a;
+            font-style: italic;
+        }
+
+        a {
+            color: #d4b86a;
+            text-decoration: none;
+            transition: color 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        a:hover {
+            color: #e8c97a;
+            border-bottom-color: #d4b86a;
+        }
+
+        /* --- Cover / Presentation --- */
+        .cover {
+            padding: 3rem 0 2.5rem;
+            text-align: center;
+            border-bottom: 2px solid #3d3530;
+            margin-bottom: 2.5rem;
+        }
+
+        .cover .badge {
+            display: inline-block;
+            background: #d4b86a;
+            color: #1a1714;
+            padding: 0.3rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.2rem;
+        }
+
+        .cover h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cover .subtitle {
+            font-size: 1.2rem;
+            color: #c5bdb0;
+            margin-bottom: 0.5rem;
+            font-style: normal;
+        }
+
+        .cover .meta {
+            color: #9a8f82;
+            font-size: 0.95rem;
+            border-top: 1px solid #3d3530;
+            padding-top: 1.2rem;
+            margin-top: 1.2rem;
+        }
+
+        .presentation-box {
+            background: #2d2822;
+            border-left: 4px solid #d4b86a;
+            padding: 1.8rem 2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .presentation-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- Table of Contents --- */
+        .toc {
+            background: #2d2822;
+            border-radius: 12px;
+            padding: 2rem 2.2rem;
+            margin: 2.5rem 0 3rem;
+            border: 1px solid #3f3730;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border-bottom: none;
+            display: block;
+            padding-bottom: 0;
+            font-size: 1.6rem;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 2rem;
+            margin-top: 1.2rem;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            font-size: 0.95rem;
+        }
+
+        .toc-item .num {
+            color: #d4b86a;
+            font-weight: 700;
+            font-family: 'Georgia', serif;
+            min-width: 1.8rem;
+        }
+
+        .toc-item a {
+            color: #e0d4c6;
+            border-bottom: none;
+            transition: color 0.2s;
+        }
+
+        .toc-item a:hover {
+            color: #d4b86a;
+        }
+
+        .toc-sub {
+            padding-left: 2.2rem;
+            font-size: 0.85rem;
+            color: #b0a598;
+        }
+
+        .toc-sub .num {
+            min-width: 1.2rem;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
+            }
+            .toc {
+                padding: 1.5rem;
+            }
+            .cover h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* --- Sections --- */
+        .section {
+            margin-top: 2.5rem;
+            padding-top: 0.5rem;
+        }
+
+        .section-anchor {
+            display: block;
+            position: relative;
+            top: -1rem;
+            visibility: hidden;
+        }
+
+        /* Cards / Boxes */
+        .card {
+            background: #2d2822;
+            border-radius: 10px;
+            padding: 1.6rem 2rem;
+            margin: 1.6rem 0;
+            border: 1px solid #3f3730;
+        }
+
+        .card-accent {
+            border-left: 4px solid #d4b86a;
+            background: #2d2822;
+        }
+
+        .card-teal {
+            border-left: 4px solid #6d9b8a;
+            background: #2d2822;
+        }
+
+        .card-coral {
+            border-left: 4px solid #c47a6a;
+            background: #2d2822;
+        }
+
+        .card-purple {
+            border-left: 4px solid #8a7a9e;
+            background: #2d2822;
+        }
+
+        .card-title {
+            font-family: 'Georgia', serif;
+            font-weight: 700;
+            color: #f0e6d8;
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .card-title .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+        }
+
+        .card p:last-child,
+        .card ul:last-child,
+        .card ol:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Dica / Observação / Importante */
+        .callout {
+            padding: 1.4rem 1.8rem;
+            border-radius: 8px;
+            margin: 1.6rem 0;
+            border: 1px solid;
+        }
+
+        .callout-tip {
+            background: #2d2822;
+            border-color: #6d9b8a;
+            border-left: 5px solid #6d9b8a;
+        }
+
+        .callout-tip .callout-label {
+            color: #6d9b8a;
+        }
+
+        .callout-important {
+            background: #2d2822;
+            border-color: #d4b86a;
+            border-left: 5px solid #d4b86a;
+        }
+
+        .callout-important .callout-label {
+            color: #d4b86a;
+        }
+
+        .callout-warning {
+            background: #2d2822;
+            border-color: #c47a6a;
+            border-left: 5px solid #c47a6a;
+        }
+
+        .callout-warning .callout-label {
+            color: #c47a6a;
+        }
+
+        .callout-label {
+            font-weight: 700;
+            font-family: 'Georgia', serif;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.04em;
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Quotes */
+        .quote {
+            background: #2d2822;
+            border-radius: 8px;
+            padding: 1.6rem 2rem;
+            margin: 1.6rem 0;
+            border-left: 4px solid #d4b86a;
+            font-style: italic;
+            color: #e0d4c6;
+            font-size: 1.05rem;
+            position: relative;
+        }
+
+        .quote::before {
+            content: '"';
+            font-size: 2.8rem;
+            color: #d4b86a;
+            font-family: 'Georgia', serif;
+            line-height: 1;
+            position: absolute;
+            left: 0.6rem;
+            top: 0.2rem;
+            opacity: 0.4;
+        }
+
+        .quote p {
+            margin-bottom: 0.4rem;
+            padding-left: 1.6rem;
+        }
+
+        .quote .source {
+            font-style: normal;
+            font-size: 0.9rem;
+            color: #b0a598;
+            padding-left: 1.6rem;
+        }
+
+        /* Tables */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.6rem 0;
+            border-radius: 10px;
+            border: 1px solid #3f3730;
+        }
+
+        table.modern {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: #2d2822;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        table.modern thead {
+            background: #3d3530;
+        }
+
+        table.modern th {
+            text-align: left;
+            padding: 0.9rem 1.2rem;
+            font-weight: 700;
+            color: #f0e6d8;
+            font-family: 'Georgia', serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            border-bottom: 2px solid #d4b86a;
+        }
+
+        table.modern td {
+            padding: 0.8rem 1.2rem;
+            border-bottom: 1px solid #3f3730;
+            color: #e0d4c6;
+            vertical-align: top;
+        }
+
+        table.modern tr:last-child td {
+            border-bottom: none;
+        }
+
+        table.modern tr:hover td {
+            background: #383028;
+        }
+
+        table.modern .highlight-row td {
+            background: rgba(212, 184, 106, 0.08);
+        }
+
+        @media (max-width: 600px) {
+            table.modern th,
+            table.modern td {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Lists */
+        ul.modern,
+        ol.modern {
+            margin: 1rem 0 1.4rem 1.6rem;
+            color: #e0d4c6;
+        }
+
+        ul.modern li,
+        ol.modern li {
+            margin-bottom: 0.4rem;
+            padding-left: 0.2rem;
+        }
+
+        ul.modern li::marker {
+            color: #d4b86a;
+        }
+
+        ol.modern li::marker {
+            color: #d4b86a;
+            font-weight: 600;
+        }
+
+        ul.clean {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        ul.clean li {
+            padding: 0.4rem 0 0.4rem 1.8rem;
+            position: relative;
+        }
+
+        ul.clean li::before {
+            content: "▸";
+            color: #d4b86a;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        /* Inline highlight */
+        .hl {
+            background: rgba(212, 184, 106, 0.18);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            color: #f0e6d8;
+            font-weight: 500;
+        }
+
+        .hl-gold {
+            background: rgba(212, 184, 106, 0.15);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            color: #d4b86a;
+            font-weight: 500;
+        }
+
+        .hl-teal {
+            background: rgba(109, 155, 138, 0.15);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            color: #8fc0b0;
+            font-weight: 500;
+        }
+
+        .hl-coral {
+            background: rgba(196, 122, 106, 0.15);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            color: #d49a8a;
+            font-weight: 500;
+        }
+
+        /* Divider */
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #3f3730, transparent);
+            margin: 2.8rem 0;
+        }
+
+        .divider-thick {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #d4b86a, transparent);
+            margin: 3rem 0 2.5rem;
+            opacity: 0.4;
+        }
+
+        /* Tags / Labels inline */
+        .tag {
+            display: inline-block;
+            background: #3d3530;
+            color: #e0d4c6;
+            padding: 0.1rem 0.7rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border: 1px solid #4d453e;
+        }
+
+        .tag-gold {
+            background: rgba(212, 184, 106, 0.15);
+            color: #d4b86a;
+            border-color: rgba(212, 184, 106, 0.25);
+        }
+
+        .tag-teal {
+            background: rgba(109, 155, 138, 0.15);
+            color: #8fc0b0;
+            border-color: rgba(109, 155, 138, 0.25);
+        }
+
+        .tag-coral {
+            background: rgba(196, 122, 106, 0.15);
+            color: #d49a8a;
+            border-color: rgba(196, 122, 106, 0.25);
+        }
+
+        /* SVG container */
+        .diagram-container {
+            background: #2d2822;
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            margin: 1.8rem 0;
+            border: 1px solid #3f3730;
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .diagram-container svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .diagram-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #9a8f82;
+            margin-top: 0.4rem;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 1rem 3rem;
+            }
+            .container {
+                padding: 0;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            .cover h1 {
+                font-size: 2.1rem;
+            }
+            .card,
+            .callout,
+            .quote {
+                padding: 1.2rem 1.4rem;
+            }
+            .presentation-box {
+                padding: 1.2rem 1.4rem;
+            }
+            .toc {
+                padding: 1.2rem;
+            }
+            .diagram-container {
+                padding: 1rem 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0 0.6rem 2rem;
+                font-size: 0.95rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            h2 {
+                font-size: 1.35rem;
+            }
+            h3 {
+                font-size: 1.05rem;
+            }
+            .cover h1 {
+                font-size: 1.7rem;
+            }
+            .card,
+            .callout,
+            .quote {
+                padding: 1rem 1.1rem;
+            }
+            .table-wrap {
+                font-size: 0.8rem;
+            }
+            table.modern th,
+            table.modern td {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.78rem;
+            }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1714;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3f3730;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4d453e;
+        }
+
+        /* Print-friendly */
+        @media print {
+            body {
+                background: #fff;
+                color: #222;
+                padding: 0.5in;
+            }
+            .container {
+                max-width: 100%;
+            }
+            .cover,
+            .toc,
+            .card,
+            .callout,
+            .quote,
+            .diagram-container,
+            .presentation-box {
+                background: #f5f0eb !important;
+                border-color: #ccc !important;
+                color: #222 !important;
+            }
+            .cover h1,
+            h1,
+            h2,
+            h3,
+            h4,
+            p,
+            .subtitle,
+            .card-title,
+            .callout-label,
+            .quote p {
+                color: #222 !important;
+            }
+            .hl,
+            .hl-gold,
+            .hl-teal,
+            .hl-coral {
+                background: #e8e0d8 !important;
+                color: #222 !important;
+            }
+            .tag {
+                background: #ddd !important;
+                color: #222 !important;
+                border-color: #bbb !important;
+            }
+            .toc-item a {
+                color: #333 !important;
+            }
+            .divider,
+            .divider-thick {
+                background: #ccc !important;
+            }
+            .diagram-container svg text {
+                fill: #222 !important;
+            }
+            .diagram-container svg rect,
+            .diagram-container svg path {
+                stroke: #555 !important;
+                fill: #eee !important;
+            }
+            .quote::before {
+                color: #999 !important;
+            }
+            .table-wrap {
+                border-color: #ccc !important;
+            }
+            table.modern {
+                background: #f5f0eb !important;
+            }
+            table.modern thead {
+                background: #e0d8d0 !important;
+            }
+            table.modern th {
+                color: #222 !important;
+                border-bottom-color: #888 !important;
+            }
+            table.modern td {
+                color: #222 !important;
+                border-bottom-color: #ddd !important;
+            }
+            table.modern tr:hover td {
+                background: #f0ebe5 !important;
+            }
+            .card-accent,
+            .card-teal,
+            .card-coral,
+            .card-purple {
+                border-left-color: #888 !important;
+            }
+            .callout-tip {
+                border-left-color: #6d9b8a !important;
+            }
+            .callout-important {
+                border-left-color: #d4b86a !important;
+            }
+            .callout-warning {
+                border-left-color: #c47a6a !important;
+            }
+        }
+
+        /* Extra spacing utilities */
+        .mt-1 {
+            margin-top: 1rem;
+        }
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        /* Flex for badges inline */
+        .inline-flex {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Small text */
+        .text-small {
+            font-size: 0.9rem;
+            color: #b0a598;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ==================== COVER ==================== -->
+        <div class="cover">
+            <div class="badge">Material de Aprofundamento</div>
+            <h1>DIREITO PROCESSUAL CIVIL</h1>
+            <p class="subtitle" style="font-size:1.3rem; font-weight:300;">Tópicos Selecionados</p>
+            <p style="color:#b0a598; font-size:1rem; margin-top:0.2rem;">Para Concursos de Técnico Judiciário</p>
+            <div class="meta">
+                <span>CESPE • CEBRASPE • FCC • FGV</span>
+            </div>
+        </div>
+
+        <!-- ==================== APRESENTAÇÃO ==================== -->
+        <div class="presentation-box">
+            <p style="font-size:1.1rem; font-weight:600; color:#f0e6d8; font-family:'Georgia',serif; margin-bottom:0.5rem;">Caro(a) candidato(a),</p>
+            <p>Este material foi desenvolvido especialmente para você que almeja uma vaga no cargo de <strong>Técnico Judiciário – Área Judiciária</strong>, com foco no padrão de cobrança das bancas CESPE/CEBRASPE, FCC, FGV e similares.</p>
+            <p>A apostila que você tem em mãos não é um simples resumo ou coleção de perguntas e respostas. Trata-se de um material didático aprofundado, construído a partir da experiência de quem conhece as armadilhas, os pontos cegos e as sutilezas que as bancas examinadoras adoram explorar.</p>
+            <p>Cada tópico aqui abordado foi extraído de questões reais de concurso e transformado em uma explicação teórica completa, com:</p>
+            <ul class="modern" style="margin-top:0.4rem;">
+                <li>Fundamentação legal precisa</li>
+                <li>Explicações didáticas e progressivas</li>
+                <li>Quadros comparativos para fixação</li>
+                <li>Exemplos práticos e casos concretos</li>
+                <li>Dicas de prova e pegadinhas comuns</li>
+                <li>Macetes de memorização</li>
+            </ul>
+            <p style="margin-top:0.8rem;">Prepare-se para uma imersão nos institutos processuais mais cobrados, com o nível de profundidade que fará a diferença no dia da prova.</p>
+            <p style="margin-top:0.5rem;"><strong>Bons estudos!</strong></p>
+        </div>
+
+        <!-- ==================== SUMÁRIO ==================== -->
+        <div class="toc" id="sumario">
+            <h2>Sumário</h2>
+            <div class="toc-grid">
+                <div>
+                    <div class="toc-item"><span class="num">1.</span> <a href="#reclamacao">Reclamação Constitucional</a></div>
+                    <div class="toc-item toc-sub"><span class="num">1.1</span> <a href="#reclamacao-natureza">Natureza Jurídica</a></div>
+                    <div class="toc-item toc-sub"><span class="num">1.2</span> <a href="#reclamacao-legitimidade">Legitimidade para Propositura</a></div>
+                    <div class="toc-item toc-sub"><span class="num">1.3</span> <a href="#reclamacao-cabimento">Hipóteses de Cabimento</a></div>
+                    <div class="toc-item toc-sub"><span class="num">1.4</span> <a href="#reclamacao-diferencas">Diferenças entre Reclamação e Recursos</a></div>
+                    <div class="toc-item toc-sub"><span class="num">1.5</span> <a href="#reclamacao-pegadinhas">Pegadinhas de Prova</a></div>
+
+                    <div class="toc-item"><span class="num">2.</span> <a href="#pedido-alternativo">Pedido Alternativo</a></div>
+                    <div class="toc-item toc-sub"><span class="num">2.1</span> <a href="#pedido-conceito">Conceito e Previsão Legal</a></div>
+                    <div class="toc-item toc-sub"><span class="num">2.2</span> <a href="#pedido-distancias">Distinções Cruciais</a></div>
+                    <div class="toc-item toc-sub"><span class="num">2.3</span> <a href="#pedido-efeitos">Efeitos Práticos</a></div>
+
+                    <div class="toc-item"><span class="num">3.</span> <a href="#expressoes-ofensivas">Expressões Ofensivas no Processo</a></div>
+                    <div class="toc-item toc-sub"><span class="num">3.1</span> <a href="#expressoes-sujeitos">Sujeitos Abrangidos</a></div>
+                    <div class="toc-item toc-sub"><span class="num">3.2</span> <a href="#expressoes-consequencias">Consequências e Procedimento</a></div>
+
+                    <div class="toc-item"><span class="num">4.</span> <a href="#principios">Princípios Processuais</a></div>
+                    <div class="toc-item toc-sub"><span class="num">4.1</span> <a href="#principio-inevitabilidade">Inevitabilidade</a></div>
+                    <div class="toc-item toc-sub"><span class="num">4.2</span> <a href="#principio-juiz-natural">Juiz Natural</a></div>
+                    <div class="toc-item toc-sub"><span class="num">4.3</span> <a href="#principio-investidura">Investidura</a></div>
+                    <div class="toc-item toc-sub"><span class="num">4.4</span> <a href="#principios-comparativo">Quadro Comparativo</a></div>
+                </div>
+                <div>
+                    <div class="toc-item"><span class="num">5.</span> <a href="#cartas">Cartas Processuais</a></div>
+                    <div class="toc-item toc-sub"><span class="num">5.1</span> <a href="#carta-precatoria">Carta Precatória</a></div>
+                    <div class="toc-item toc-sub"><span class="num">5.2</span> <a href="#carta-ordem">Carta de Ordem</a></div>
+                    <div class="toc-item toc-sub"><span class="num">5.3</span> <a href="#carta-rogatoria">Carta Rogatória</a></div>
+                    <div class="toc-item toc-sub"><span class="num">5.4</span> <a href="#carta-arbitral">Carta Arbitral</a></div>
+                    <div class="toc-item toc-sub"><span class="num">5.5</span> <a href="#cartas-comparativo">Quadro Comparativo e Macete</a></div>
+
+                    <div class="toc-item"><span class="num">6.</span> <a href="#mandado-seguranca">Mandado de Segurança — Autoridade Coatora</a></div>
+                    <div class="toc-item toc-sub"><span class="num">6.1</span> <a href="#ms-conceito">Conceito</a></div>
+                    <div class="toc-item toc-sub"><span class="num">6.2</span> <a href="#ms-requisitos">Requisitos</a></div>
+
+                    <div class="toc-item"><span class="num">7.</span> <a href="#prazos">Prazos Processuais</a></div>
+                    <div class="toc-item toc-sub"><span class="num">7.1</span> <a href="#prazos-contagem">Contagem de Prazos</a></div>
+                    <div class="toc-item toc-sub"><span class="num">7.2</span> <a href="#prazos-defensoria">Prazo em Dobro para a Defensoria</a></div>
+                    <div class="toc-item toc-sub"><span class="num">7.3</span> <a href="#prazos-pratico">Exercício Prático</a></div>
+
+                    <div class="toc-item"><span class="num">8.</span> <a href="#incompetencia">Incompetência Absoluta</a></div>
+                    <div class="toc-item toc-sub"><span class="num">8.1</span> <a href="#incompetencia-conceito">Conceito</a></div>
+                    <div class="toc-item toc-sub"><span class="num">8.2</span> <a href="#incompetencia-regras">Regras Processuais</a></div>
+
+                    <div class="toc-item"><span class="num">9.</span> <a href="#sintese">Síntese Estratégica para Provas</a></div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider-thick">
+
+        <!-- ============================================================ -->
+        <!-- 1. RECLAMAÇÃO CONSTITUCIONAL                                   -->
+        <!-- ============================================================ -->
+        <div class="section" id="reclamacao">
+            <span class="section-anchor" id="reclamacao"></span>
+            <h2>1. Reclamação Constitucional</h2>
+            <p>A reclamação constitucional é um dos institutos mais cobrados em provas de Direito Processual Civil, especialmente pelas bancas CESPE/CEBRASPE e FCC. Compreender seus contornos é essencial para não cair nas armadilhas comuns.</p>
+
+            <!-- ===== 1.1 ===== -->
+            <span class="section-anchor" id="reclamacao-natureza"></span>
+            <h3>1.1. Natureza Jurídica</h3>
+
+            <div class="card card-accent">
+                <div class="card-title">
+                    <span class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4b86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </span>
+                    O que é a reclamação constitucional?
+                </div>
+                <p>A reclamação constitucional é um mecanismo processual vocacionado para a tutela específica da competência e da autoridade das decisões proferidas por certos tribunais, com destaque para o <strong>Supremo Tribunal Federal (STF)</strong>.</p>
+                <p><strong>Ponto fundamental:</strong> Prevalece no STF o entendimento de que a reclamação possui <span class="hl">natureza jurídica de ação</span>, e não de recurso.</p>
+            </div>
+
+            <div class="quote">
+                <p><strong>JURISPRUDÊNCIA:</strong> STF, Rcl 38889 AgR, Rel. Min. Rosa Weber: <em>"A reclamação constitucional é ação vocacionada para a tutela específica da competência e autoridade das decisões proferidas por este Supremo Tribunal Federal."</em></p>
+            </div>
+
+            <div class="card card-teal">
+                <div class="card-title">
+                    <span class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d9b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 8v4l3 3"/>
+                        </svg>
+                    </span>
+                    Por que isso importa?
+                </div>
+                <p>Se a reclamação é ação autônoma:</p>
+                <ul class="modern">
+                    <li>Não está sujeita às regras recursais</li>
+                    <li>Tem procedimento próprio</li>
+                    <li>Pode ser proposta independentemente de esgotamento de instâncias</li>
+                    <li>Não se confunde com os recursos previstos no Código de Processo Civil</li>
+                </ul>
+            </div>
+
+            <!-- ===== 1.2 ===== -->
+            <span class="section-anchor" id="reclamacao-legitimidade"></span>
+            <h3>1.2. Legitimidade para Propositura</h3>
+            <p>A <strong>legitimidade ativa</strong> para propor reclamação constitucional é um dos pontos mais explorados pelas bancas, com pegadinhas frequentes.</p>
+
+            <div class="card card-accent">
+                <div class="card-title">
+                    <span class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4b86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </span>
+                    A regra do art. 988, caput, do CPC
+                </div>
+                <p>O artigo 988 do Código de Processo Civil estabelece que a reclamação pode ser proposta por:</p>
+                <ol class="modern" style="font-weight:500;">
+                    <li><span class="hl">A parte interessada</span></li>
+                    <li><span class="hl">O Ministério Público</span></li>
+                </ol>
+                <p><strong>Importante:</strong> A legitimação é <span class="hl-gold">concorrente</span> (ou seja, ambos podem propor, independentemente um do outro).</p>
+            </div>
+
+            <div class="card card-teal">
+                <div class="card-title">
+                    <span class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d9b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                    </span>
+                    A atuação do Ministério Público
+                </div>
+                <p>O MP pode atuar na reclamação em duas qualidades:</p>
+                <table class="modern">
+                    <thead>
+                        <tr><th>Qualidade</th><th>Descrição</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Como parte</strong></td>
+                            <td>Quando o próprio MP for o interessado direto na preservação da competência ou autoridade da decisão</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Como fiscal da lei e ordem jurídica</strong></td>
+                            <td>Atuando como <em>custos legis</em>, mesmo não sendo parte no processo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-warning">
+                <span class="callout-label">⚠️ Pegadinha clássica das bancas</span>
+                <p>✅ <strong>CERTO:</strong> "A reclamação pode ser proposta pelo Ministério Público."</p>
+                <p>✅ <strong>CERTO:</strong> "A reclamação pode ser proposta pela parte interessada."</p>
+                <p>❌ <strong>ERRADO:</strong> "Apenas o Ministério Público pode propor reclamação constitucional."</p>
+                <p>❌ <strong>ERRADO:</strong> "A parte interessada não tem legitimidade para propor reclamação."</p>
+            </div>
+
+            <div class="callout callout-tip">
+                <span class="callout-label">💡 DICA DE PROVA</span>
+                <p>A banca CESPE/CEBRASPE adora apresentar alternativas limitando a legitimidade apenas ao MP. A literalidade do caput do art. 988 é clara: a parte interessada tem legitimidade concorrente com o Ministério Público. Atenção redobrada!</p>
+            </div>
+
+            <!-- Diagrama 1: Legitimidade -->
+            <div class="diagram-container">
+                <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" style="max-width:600px; width:100%;">
+                    <defs>
+                        <style>
+                            .d-text { font-family: 'Georgia', serif; font-size: 14px; fill: #ece4d9; }
+                            .d-title { font-family: 'Georgia', serif; font-size: 16px; font-weight: 700; fill: #d4b86a; }
+                            .d-box { fill: #2d2822; stroke: #4d453e; stroke-width: 1.5; rx: 8; }
+                            .d-box-gold { fill: rgba(212,184,106,0.08); stroke: #d4b86a; stroke-width: 1.5; rx: 8; }
+                            .d-arrow { stroke: #6d9b8a; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+                            .d-arrow-gold { stroke: #d4b86a; stroke-width: 2; fill: none; marker-end: url(#arrow-gold); }
+                            .d-label { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; fill: #b0a598; }
+                            .d-highlight { fill: rgba(212,184,106,0.12); }
+                        </style>
+                        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M0,0 L10,5 L0,10 Z" fill="#6d9b8a"/>
+                        </marker>
+                        <marker id="arrow-gold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M0,0 L10,5 L0,10 Z" fill="#d4b86a"/>
+                        </marker>
+                    </defs>
+
+                    <!-- título -->
+                    <text x="300" y="28" text-anchor="middle" class="d-title">Legitimidade para Propositura da Reclamação</text>
+
+                    <!-- caixa principal: art. 988 -->
+                    <rect x="180" y="50" width="240" height="42" class="d-box-gold"/>
+                    <text x="300" y="74" text-anchor="middle" class="d-text" font-weight="700" fill="#d4b86a">Art. 988, caput — CPC</text>
+
+                    <!-- setas descendentes -->
+                    <path d="M 220 92 L 220 120" class="d-arrow-gold"/>
+                    <path d="M 380 92 L 380 120" class="d-arrow-gold"/>
+
+                    <!-- caixas: Parte interessada e MP -->
+                    <rect x="100" y="124" width="240" height="44" class="d-box"/>
+                    <text x="220" y="150" text-anchor="middle" class="d-text" font-weight="700">Parte interessada</text>
+
+                    <rect x="260" y="124" width="240" height="44" class="d-box"/>
+                    <text x="380" y="150" text-anchor="middle" class="d-text" font-weight="700">Ministério Público</text>
+
+                    <!-- label concorrente -->
+                    <text x="300" y="200" text-anchor="middle" class="d-label" fill="#6d9b8a">Legitimação concorrente</text>
+                    <line x1="160" y1="190" x2="440" y2="190" stroke="#6d9b8a" stroke-width="1" stroke-dasharray="4 4"/>
+                </svg>
+                <div class="diagram-caption">Legitimidade concorrente: parte interessada e Ministério Público</div>
+            </div>
+
+            <!-- ===== 1.3 ===== -->
+            <span class="section-anchor" id="reclamacao-cabimento"></span>
+            <h3>1.3. Hipóteses de Cabimento</h3>
+            <p>A reclamação constitucional tem cabimento para preservar:</p>
+
+            <div class="table-wrap">
+                <table class="modern">
+                    <thead>
+                        <tr><th>Hipótese</th><th>Explicação</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Competência do tribunal</strong></td>
+                            <td>Quando ato de outro juízo ou tribunal usurpa a competência do STF, STJ, TSE etc.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Autoridade de suas decisões</strong></td>
+                            <td>Quando decisão de outro órgão jurisdicional desrespeita decisão do tribunal superior</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Súmula vinculante</strong></td>
+                            <td>Quando decisão judicial ou ato administrativo viola enunciado de súmula vinculante</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Decisão do STF em controle concentrado</strong></td>
+                            <td>Quando decisão de mérito em ADI, ADC ou ADPF é desrespeitada</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Acórdão em IRDR ou IAC</strong></td>
+                            <td>Quando decisão proferida em Incidente de Resolução de Demandas Repetitivas ou Incidente de Assunção de Competência é violada</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===== 1.4 ===== -->
+            <span class="section-anchor" id="reclamacao-diferencas"></span>
+            <h3>1.4. Diferenças entre Reclamação e Recursos</h3>
+
+            <div class="table-wrap">
+                <table class="modern">
+                    <thead>
+                        <tr><th>Aspecto</th><th>Reclamação</th><th>Recurso</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Natureza jurídica</strong></td>
+                            <td><span class="hl">Ação autônoma</span></td>
+                            <td>Remédio processual</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Finalidade</strong></td>
+                            <td>Preservar competência e autoridade</td>
+                            <td>Reformar, invalidar ou esclarecer decisão</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cabimento</strong></td>
+                            <td>Hipóteses taxativas do art. 988</td>
+                            <td>Hipóteses variadas (apelação, agravo, etc.)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Dependência de decisão anterior</strong></td>
+                            <td>Pode ser proposta mesmo contra decisão de primeira instância</td>
+                            <td>Pressupõe decisão a ser impugnada</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-tip">
+                <span class="callout-label">💡 DICA DE PROVA</span>
+                <p>A banca costuma afirmar que reclamação é recurso para confundir o candidato. Fique atento: <strong>é ação autônoma</strong>, conforme entendimento pacífico do STF.</p>
+            </div>
+
+            <!-- ===== 1.5 ===== -->
+            <span class="section-anchor" id="reclamacao-pegadinhas"></span>
+            <h3>1.5. Pegadinhas de Prova — Resumo</h3>
+
+            <div class="table-wrap">
+                <table class="modern">
+                    <thead>
+                        <tr><th>Afirmação</th><th>Está correta?</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"A reclamação constitucional é recurso interposto contra decisão do STF"</td>
+                            <td><span class="hl-coral">❌ Errado</span> — é ação autônoma</td>
+                        </tr>
+                        <tr>
+                            <td>"Apenas o Ministério Público pode propor reclamação"</td>
+                            <td><span class="hl-coral">❌ Errado</span> — parte interessada também</td>
+                        </tr>
+                        <tr>
+                            <td>"A parte interessada tem legitimidade para propor reclamação"</td>
+                            <td><span class="hl-teal">✅ Certo</span></td>
+                        </tr>
+                        <tr>
+                            <td>"A reclamação visa preservar a competência do tribunal"</td>
+                            <td><span class="hl-teal">✅ Certo</span></td>
+                        </tr>
+                        <tr>
+                            <td>"A reclamação visa garantir a autoridade das decisões do tribunal"</td>
+                            <td><span class="hl-teal">✅ Certo</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="divider">
+
+            <!-- ============================================================ -->
+            <!-- 2. PEDIDO ALTERNATIVO                                         -->
+            <!-- ============================================================ -->
+            <div class="section" id="pedido-alternativo">
+                <span class="section-anchor" id="pedido-alternativo"></span>
+                <h2>2. Pedido Alternativo</h2>
+                <p>O pedido alternativo, previsto no artigo 325 do CPC, é outro instituto que gera confusão entre os candidatos, especialmente na distinção com outras modalidades de pedido.</p>
+
+                <!-- ===== 2.1 ===== -->
+                <span class="section-anchor" id="pedido-conceito"></span>
+                <h3>2.1. Conceito e Previsão Legal</h3>
+
+                <div class="quote">
+                    <p><strong>O que diz o art. 325 do CPC?</strong></p>
+                    <p><em>"Art. 325. O pedido será alternativo quando, pela natureza da obrigação, o devedor puder cumprir a prestação de mais de um modo."</em></p>
+                </div>
+
+                <p><strong>Traduzindo:</strong> O autor do processo formula pedido alternativo quando a obrigação que está sendo cobrada pode ser cumprida de mais de uma maneira, e a escolha do modo de cumprimento cabe ao devedor.</p>
+
+                <div class="card card-teal">
+                    <div class="card-title">
+                        <span class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d9b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                        </span>
+                        Exemplo prático
+                    </div>
+                    <p>João celebra contrato com Maria para entrega de 100 sacas de café. O contrato prevê que Maria pode entregar:</p>
+                    <ul class="modern">
+                        <li>Opção A: café arábica; <strong>ou</strong></li>
+                        <li>Opção B: café robusto (de igual qualidade)</li>
+                    </ul>
+                    <p>João, ao processar Maria, formula pedido alternativo: a entrega do café arábica <strong>ou</strong> do café robusto. A escolha é de Maria (devedora).</p>
+                </div>
+
+                <!-- ===== 2.2 ===== -->
+                <span class="section-anchor" id="pedido-distancias"></span>
+                <h3>2.2. Distinções Cruciais</h3>
+                <p>Esta é a parte que as bancas adoram cobrar. É essencial dominar as diferenças.</p>
+
+                <div class="table-wrap">
+                    <table class="modern">
+                        <thead>
+                            <tr><th>Tipo de Pedido</th><th>Descrição</th><th>Exemplo</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Alternativo</strong> (art. 325)</td>
+                                <td>Autor indica mais de um modo de cumprimento; a escolha cabe ao devedor (pela natureza da obrigação)</td>
+                                <td>"Entregue o carro <strong>ou</strong> o valor equivalente em dinheiro, conforme sua escolha"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Subsidiário</strong></td>
+                                <td>Autor formula pedido principal e, se não acolhido, formula outro pedido em segundo plano</td>
+                                <td>"Condene o réu a pagar R$ 10.000. Se não, condene a pagar R$ 5.000"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sucessivo</strong></td>
+                                <td>Autor indica ordem de preferência entre pedidos, mas quer todos (ordem de execução)</td>
+                                <td>"Que o réu seja condenado, preferencialmente, a entregar o imóvel; subsidiariamente, a pagar indenização"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cumulativo</strong></td>
+                                <td>Autor formula dois ou mais pedidos distintos e quer todos</td>
+                                <td>"Condene o réu a pagar R$ 10.000 de danos materiais e R$ 5.000 de danos morais"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout callout-warning">
+                    <span class="callout-label">⚠️ "Pedido facultativo" — Termo informal!</span>
+                    <p><strong>ATENÇÃO:</strong> "Pedido facultativo" <strong>NÃO</strong> é uma categoria técnica prevista no CPC. Este termo é usado informalmente para confundir o candidato, fazendo-o pensar que a escolha do devedor torna o pedido "facultativo".</p>
+                    <p>✅ <strong>O correto é pedido alternativo.</strong></p>
+                    <p>❌ <strong>Pedido facultativo não existe tecnicamente.</strong></p>
+                </div>
+
+                <!-- Diagrama 2: Comparação de Pedidos -->
+                <div class="diagram-container">
+                    <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="max-width:700px; width:100%;">
+                        <defs>
+                            <style>
+                                .d-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; fill: #ece4d9; }
+                                .d-title { font-family: 'Georgia', serif; font-size: 14px; font-weight: 700; fill: #d4b86a; }
+                                .d-box { fill: #2d2822; stroke: #4d453e; stroke-width: 1.5; rx: 6; }
+                                .d-box-gold { fill: rgba(212,184,106,0.08); stroke: #d4b86a; stroke-width: 1.5; rx: 6; }
+                                .d-label { font-size: 11px; fill: #b0a598; }
+                            </style>
+                        </defs>
+
+                        <text x="350" y="24" text-anchor="middle" class="d-title" style="font-size:16px;">Modalidades de Pedido</text>
+
+                        <!-- Alternativo -->
+                        <rect x="30" y="50" width="140" height="60" class="d-box-gold"/>
+                        <text x="100" y="74" text-anchor="middle" class="d-text" font-weight="700" fill="#d4b86a">Alternativo</text>
+                        <text x="100" y="94" text-anchor="middle" class="d-label">Escolha do devedor</text>
+
+                        <!-- Subsidiário -->
+                        <rect x="190" y="50" width="140" height="60" class="d-box"/>
+                        <text x="260" y="74" text-anchor="middle" class="d-text" font-weight="700">Subsidiário</text>
+                        <text x="260" y="94" text-anchor="middle" class="d-label">Pedido em 2º plano</text>
+
+                        <!-- Sucessivo -->
+                        <rect x="350" y="50" width="140" height="60" class="d-box"/>
+                        <text x="420" y="74" text-anchor="middle" class="d-text" font-weight="700">Sucessivo</text>
+                        <text x="420" y="94" text-anchor="middle" class="d-label">Ordem de preferência</text>
+
+                        <!-- Cumulativo -->
+                        <rect x="510" y="50" width="140" height="60" class="d-box"/>
+                        <text x="580" y="74" text-anchor="middle" class="d-text" font-weight="700">Cumulativo</text>
+                        <text x="580" y="94" text-anchor="middle" class="d-label">Todos os pedidos</text>
+
+                        <!-- Linha de legenda -->
+                        <line x1="30" y1="140" x2="650" y2="140" stroke="#3f3730" stroke-width="1"/>
+
+                        <text x="100" y="170" text-anchor="middle" class="d-label" fill="#6d9b8a">Art. 325 CPC</text>
+                        <text x="260" y="170" text-anchor="middle" class="d-label" fill="#b0a598">Sem previsão específica</text>
+                        <text x="420" y="170" text-anchor="middle" class="d-label" fill="#b0a598">Sem previsão específica</text>
+                        <text x="580" y="170" text-anchor="middle" class="d-label" fill="#b0a598">Art. 327 CPC</text>
+
+                        <!-- linhas de conexão -->
+                        <line x1="170" y1="80" x2="190" y2="80" stroke="#3f3730" stroke-width="1"/>
+                        <line x1="330" y1="80" x2="350" y2="80" stroke="#3f3730" stroke-width="1"/>
+                        <line x1="490" y1="80" x2="510" y2="80" stroke="#3f3730" stroke-width="1"/>
+
+                        <text x="350" y="215" text-anchor="middle" class="d-label" fill="#c47a6a" style="font-weight:600;">"Pedido facultativo" não existe tecnicamente</text>
+                    </svg>
+                    <div class="diagram-caption">Comparação entre as modalidades de pedido</div>
+                </div>
+
+                <!-- ===== 2.3 ===== -->
+                <span class="section-anchor" id="pedido-efeitos"></span>
+                <h3>2.3. Regra Especial</h3>
+                <p>O § único do art. 325 traz uma regra importante:</p>
+
+                <div class="quote">
+                    <p><em>"Se, pela lei ou pelo contrato, a escolha couber ao devedor, o juiz lhe assegurará o direito de optar, ainda que o autor não tenha formulado pedido alternativo."</em></p>
+                </div>
+
+                <p><strong>Efeito prático:</strong> Mesmo que o autor não tenha formulado pedido alternativo, se a lei ou o contrato conferem ao devedor o direito de escolha, o juiz deve assegurar esse direito.</p>
+
+                <div class="card card-coral">
+                    <div class="card-title">
+                        <span class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c47a6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </span>
+                        Exemplo
+                    </div>
+                    <p>No contrato de café mencionado acima, se o autor (João) esquecer de formular pedido alternativo, o juiz ainda assim assegurará a Maria o direito de optar por qual tipo de café entregar, porque o contrato lhe confere essa escolha.</p>
+                </div>
+
+                <hr class="divider">
+
+                <!-- ============================================================ -->
+                <!-- 3. EXPRESSÕES OFENSIVAS                                       -->
+                <!-- ============================================================ -->
+                <div class="section" id="expressoes-ofensivas">
+                    <span class="section-anchor" id="expressoes-ofensivas"></span>
+                    <h2>3. Expressões Ofensivas no Processo</h2>
+                    <p>Este é um tópico de literalidade pura, e as bancas adoram cobrar exatamente a extensão subjetiva da vedação.</p>
+
+                    <!-- ===== 3.1 ===== -->
+                    <span class="section-anchor" id="expressoes-sujeitos"></span>
+                    <h3>3.1. Sujeitos Abrangidos</h3>
+                    <p>O art. 78 do CPC veda o emprego de expressões ofensivas nos escritos apresentados no processo. A vedação se aplica a:</p>
+
+                    <div class="table-wrap">
+                        <table class="modern">
+                            <thead>
+                                <tr><th>Sujeito</th><th>Base Legal</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Partes</td><td>Art. 78, caput</td></tr>
+                                <tr><td>Procuradores</td><td>Art. 78, caput</td></tr>
+                                <tr><td>Juízes</td><td>Art. 78, caput</td></tr>
+                                <tr><td>Membros do Ministério Público</td><td>Art. 78, caput</td></tr>
+                                <tr><td>Membros da Defensoria Pública</td><td>Art. 78, caput</td></tr>
+                                <tr><td><strong>Qualquer pessoa que participe do processo</strong></td><td>Art. 78, caput</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="callout callout-important">
+                        <span class="callout-label">📌 Interpretação ampliativa</span>
+                        <p>A vedação não se limita às partes e seus advogados. Ela alcança <strong>todos</strong> os sujeitos que, de alguma forma, participam do processo e apresentam escritos.</p>
+                    </div>
+
+                    <div class="callout callout-tip">
+                        <span class="callout-label">💡 DICA DE PROVA</span>
+                        <p>A CESPE já cobrou questão em que a alternativa correta foi aquela que abrangia todos esses sujeitos (letra E). Fique atento: a abrangência é ampla.</p>
+                    </div>
+
+                    <!-- ===== 3.2 ===== -->
+                    <span class="section-anchor" id="expressoes-consequencias"></span>
+                    <h3>3.2. Consequências</h3>
+                    <p>O art. 78, §1º, estabelece que o juiz pode:</p>
+
+                    <div class="card card-accent">
+                        <div class="card-title">
+                            <span class="icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4b86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                    <path d="M2 17l10 5 10-5"/>
+                                    <path d="M2 12l10 5 10-5"/>
+                                </svg>
+                            </span>
+                            "mandar riscar as expressões ofensivas"
+                        </div>
+                    </div>
+                    <p><strong>Quanto à certidão:</strong> o juiz pode determinar a expedição de certidão ao ofendido, para que este tome as providências cabíveis (inclusive na esfera cível ou penal).</p>
+
+                    <hr class="divider">
+
+                    <!-- ============================================================ -->
+                    <!-- 4. PRINCÍPIOS PROCESSUAIS                                    -->
+                    <!-- ============================================================ -->
+                    <div class="section" id="principios">
+                        <span class="section-anchor" id="principios"></span>
+                        <h2>4. Princípios Processuais</h2>
+                        <p>Os princípios processuais são a alma do Direito Processual. Dominá-los é essencial para interpretar corretamente as normas e, principalmente, para acertar as questões que exploram a diferença entre eles.</p>
+
+                        <!-- ===== 4.1 ===== -->
+                        <span class="section-anchor" id="principio-inevitabilidade"></span>
+                        <h3>4.1. Princípio da Inevitabilidade</h3>
+
+                        <div class="card card-accent">
+                            <div class="card-title">
+                                <span class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4b86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    </svg>
+                                </span>
+                                O que significa?
+                            </div>
+                            <p>O princípio da inevitabilidade significa que a <strong>jurisdição é inevitável</strong>. Uma vez que a parte tenha buscado o Poder Judiciário, não poderá:</p>
+                            <ul class="modern">
+                                <li>Escusar-se ao cumprimento da decisão judicial</li>
+                                <li>Aceitar a decisão apenas se lhe for conveniente</li>
+                            </ul>
+                            <p>A autoridade dos órgãos jurisdicionais impõe-se independentemente da vontade das partes.</p>
+                        </div>
+
+                        <div class="card card-teal">
+                            <div class="card-title">
+                                <span class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d9b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M12 8v4l3 3"/>
+                                    </svg>
+                                </span>
+                                Exemplo prático
+                            </div>
+                            <p>Maria move ação contra João. O juiz decide contra João. João não pode simplesmente ignorar a decisão ou dizer que só a cumprirá se for do seu interesse. A decisão se impõe pela força da jurisdição.</p>
+                        </div>
+
+                        <div class="callout callout-important">
+                            <span class="callout-label">📌 Frase-chave para memorizar</span>
+                            <p><strong>"A jurisdição se impõe independentemente da vontade das partes."</strong></p>
+                        </div>
+
+                        <!-- ===== 4.2 ===== -->
+                        <span class="section-anchor" id="principio-juiz-natural"></span>
+                        <h3>4.2. Princípio do Juiz Natural</h3>
+
+                        <div class="quote">
+                            <p><strong>O que diz a CF/88?</strong></p>
+                            <p><em>Art. 5º, LIII: "ninguém será processado nem sentenciado senão pela autoridade competente."</em></p>
+                        </div>
+
+                        <div class="table-wrap">
+                            <table class="modern">
+                                <thead>
+                                    <tr><th>Elemento</th><th>Explicação</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Autoridade competente</strong></td>
+                                        <td>Apenas o juiz que tem competência constitucional e legal para julgar a causa pode fazê-lo</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Previamente estabelecida</strong></td>
+                                        <td>A competência deve ser definida antes do fato, não pode ser criada "sob medida"</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="card card-coral">
+                            <div class="card-title">
+                                <span class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c47a6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                        <path d="M2 17l10 5 10-5"/>
+                                        <path d="M2 12l10 5 10-5"/>
+                                    </svg>
+                                </span>
+                                Consequências práticas
+                            </div>
+                            <ul class="modern">
+                                <li>Incompetência absoluta (em razão da matéria, da pessoa ou da função) deve ser reconhecida de ofício pelo juiz</li>
+                                <li>Decisão proferida por juiz absolutamente incompetente é nula</li>
+                                <li>Prevalece sobre a celeridade e a economia processual</li>
+                            </ul>
+                        </div>
+
+                        <div class="card card-teal">
+                            <div class="card-title">
+                                <span class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d9b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                                    </svg>
+                                </span>
+                                Exemplo prático
+                            </div>
+                            <p>João ajuíza ação trabalhista na Justiça Federal. O juiz federal, mesmo incompetente (a competência seria da Justiça do Trabalho), julga improcedente o pedido. A conduta é <strong>incorreta</strong>, pois viola o princípio do juiz natural. O juiz deveria ter reconhecido a incompetência de ofício e remetido os autos ao juízo competente.</p>
+                        </div>
+
+                        <!-- ===== 4.3 ===== -->
+                        <span class="section-anchor" id="principio-investidura"></span>
+                        <h3>4.3. Princípio da Investidura</h3>
+
+                        <div class="card card-accent">
+                            <div class="card-title">
+                                <span class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4b86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="12" cy="7" r="4"/>
+                                    </svg>
+                                </span>
+                                O que significa?
+                            </div>
+                            <p>A jurisdição só pode ser exercida por quem foi <strong>regularmente investido</strong> na autoridade de juiz.</p>
+                        </div>
+
+                        <div class="card card-teal">
+                            <div class="card-title">
+                                <span class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d9b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M12 8v4l3 3"/>
+                                    </svg>
+                                </span>
+                                Requisitos para a investidura
+                            </div>
+                            <p>Em regra, a investidura ocorre por:</p>
+                            <ul class="modern">
+                                <li>Concurso público de provas ou de provas e títulos</li>
+                                <li>Nomeação pelo Presidente da República (após aprovação no concurso)</li>
+                            </ul>
+                        </div>
+
+                        <!-- ===== 4.4 ===== -->
+                        <span class="section-anchor" id="principios-comparativo"></span>
+                        <h3>4.4. Quadro Comparativo dos Três Princípios</h3>
+
+                        <div class="table-wrap">
+                            <table class="modern">
+                                <thead>
+                                    <tr><th>Princípio</th><th>Foco Principal</th><th>Frase de Memorização</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Juiz Natural</strong></td>
+                                        <td>Competência para julgar o caso</td>
+                                        <td><span class="hl">"Quem pode julgar?"</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Inevitabilidade</strong></td>
+                                        <td>Submissão à decisão</td>
+                                        <td><span class="hl">"Não pode escolher cumprir"</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Investidura</strong></td>
+                                        <td>Requisitos para ser juiz</td>
+                                        <td><span class="hl">"Como se torna juiz?"</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Diagrama 3: Princípios -->
+                        <div class="diagram-container">
+                            <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="max-width:700px; width:100%;">
+                                <defs>
+                                    <style>
+                                        .d-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; fill: #ece4d9; }
+                                        .d-title { font-family: 'Georgia', serif; font-size: 16px; font-weight: 700; fill: #d4b86a; }
+                                        .d-box { fill: #2d2822; stroke: #4d453e; stroke-width: 1.5; rx: 8; }
+                                        .d-box-gold { fill: rgba(212,184,106,0.08); stroke: #d4b86a; stroke-width: 1.5; rx: 8; }
+                                        .d-box-teal { fill: rgba(109,155,138,0.08); stroke: #6d9b8a; stroke-width: 1.5; rx: 8; }
+                                        .d-box-coral { fill: rgba(196,122,106,0.08); stroke: #c47a6a; stroke-width: 1.5; rx: 8; }
+                                        .d-label { font-size: 11px; fill: #b0a598; }
+                                    </style>
+                                </defs>
+
+                                <text x="350" y="26" text-anchor="middle" class="d-title">Princípios Processuais Fundamentais</text>
+
+                                <!-- Juiz Natural -->
+                                <rect x="30" y="54" width="190" height="80" class="d-box-gold"/>
+                                <text x="125" y="80" text-anchor="middle" class="d-text" font-weight="700" fill="#d4b86a">Juiz Natural</text>
+                                <text x="125" y="100" text-anchor="middle" class="d-label">Competência para julgar</text>
+                                <text x="125" y="118" text-anchor="middle" class="d-label" fill="#6d9b8a">"Quem pode julgar?"</text>
+
+                                <!-- Inevitabilidade -->
+                                <rect x="250" y="54" width="190" height="80" class="d-box-teal"/>
+                                <text x="345" y="80" text-anchor="middle" class="d-text" font-weight="700" fill="#6d9b8a">Inevitabilidade</text>
+                                <text x="345" y="100" text-anchor="middle" class="d-label">Submissão à decisão</text>
+                                <text x="345" y="118" text-anchor="middle" class="d-label" fill="#6d9b8a">"Não pode escolher cumprir"</text>
+
+                                <!-- Investidura -->
+                                <rect x="470" y="54" width="190" height="80" class="d-box-coral"/>
+                                <text x="565" y="80" text-anchor="middle" class="d-text" font-weight="700" fill="#c47a6a">Investidura</text>
+                                <text x="565" y="100" text-anchor="middle" class="d-label">Requisitos para ser juiz</text>
+                                <text x="565" y="118" text-anchor="middle" class="d-label" fill="#c47a6a">"Como se torna juiz?"</text>
+
+                                <!-- Bases legais -->
+                                <rect x="30" y="158" width="190" height="36" class="d-box" stroke="#3f3730"/>
+                                <text x="125" y="181" text-anchor="middle" class="d-label" fill="#b0a598">Art. 5º, LIII, CF/88</text>
+
+                                <rect x="250" y="158" width="190" height="36" class="d-box" stroke="#3f3730"/>
+                                <text x="345" y="181" text-anchor="middle" class="d-label" fill="#b0a598">Doutrina / Jurisprudência</text>
+
+                                <rect x="470" y="158" width="190" height="36" class="d-box" stroke="#3f3730"/>
+                                <text x="565" y="181" text-anchor="middle" class="d-label" fill="#b0a598">CF/88 + Concurso Público</text>
+
+                                <!-- Legenda -->
+                                <text x="350" y="238" text-anchor="middle" class="d-label" fill="#6d9b8a">Cada princípio tem foco e fundamento próprios — não confundir!</text>
+                            </svg>
+                            <div class="diagram-caption">Comparação entre os princípios do Juiz Natural, Inevitabilidade e Investidura</div>
+                        </div>
+
+                        <div class="table-wrap">
+                            <table class="modern">
+                                <thead>
+                                    <tr><th>Situação</th><th>Princípio Violado (se houver)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Juiz sem concurso público julga processo</td>
+                                        <td><span class="hl-coral">Investidura</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Juiz incompetente (matéria previdenciária) julga causa trabalhista</td>
+                                        <td><span class="hl-gold">Juiz Natural</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Parte se recusa a cumprir decisão sob alegação de que não concorda</td>
+                                        <td><span class="hl-teal">Inevitabilidade</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <hr class="divider">
+
+                        <!-- ============================================================ -->
+                        <!-- 5. CARTAS PROCESSUAIS                                       -->
+                        <!-- ============================================================ -->
+                        <div class="section" id="cartas">
+                            <span class="section-anchor" id="cartas"></span>
+                            <h2>5. Cartas Processuais</h2>
+                            <p>As cartas processuais são instrumentos de cooperação judiciária. A confusão entre elas é uma das principais pegadinhas em provas.</p>
+
+                            <!-- ===== 5.1 ===== -->
+                            <span class="section-anchor" id="carta-precatoria"></span>
+                            <h3>5.1. Carta Precatória</h3>
+                            <div class="card card-accent">
+                                <div class="card-title">
+                                    <span class="icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4b86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                            <path d="M2 17l10 5 10-5"/>
+                                            <path d="M2 12l10 5 10-5"/>
+                                        </svg>
+                                    </span>
+                                    O que é?
+                                </div>
+                                <p>É expedida para <strong>juízo brasileiro diverso</strong>, para a prática de ato fora da competência territorial do juízo deprecante.</p>
+                            </div>
+                            <ul class="modern">
+                                <li><strong>Previsão Legal:</strong> Art. 237, inciso III, do CPC</li>
+                                <li><strong>Características:</strong> Cooperação entre juízos brasileiros; destinatário: juízo de competência territorial diversa</li>
+                                <li><strong>Quando se usa?</strong> Quando o juízo que preside o processo precisa praticar um ato em localidade fora de sua competência territorial. Ele "depreca" (solicita) a outro juízo que pratique o ato.</li>
+                            </ul>
+
+                            <!-- ===== 5.2 ===== -->
+                            <span class="section-anchor" id="carta-ordem"></span>
+                            <h3>5.2. Carta de Ordem</h3>
+                            <div class="card card-teal">
+                                <div class="card-title">
+                                    <span class="icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d9b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                                        </svg>
+                                    </span>
+                                    O que é?
+                                </div>
+                                <p>Expedida por <strong>tribunal para juízo inferior a ele vinculado</strong>.</p>
+                            </div>
+                            <ul class="modern">
+                                <li><strong>Previsão Legal:</strong> Art. 236, §2º, do CPC</li>
+                                <li><strong>Características:</strong> Relação hierárquica; destinatário: juízo inferior e vinculado ao tribunal expedidor</li>
+                                <li><strong>Exemplo:</strong> Tribunal de Justiça expede carta de ordem para Juiz de Direito da comarca para cumprir uma determinação.</li>
+                            </ul>
+
+                            <!-- ===== 5.3 ===== -->
+                            <span class="section-anchor" id="carta-rogatoria"></span>
+                            <h3>5.3. Carta Rogatória</h3>
+                            <div class="card card-coral">
+                                <div class="card-title">
+                                    <span class="icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c47a6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <path d="M2 12h20"/>
+                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                        </svg>
+                                    </span>
+                                    O que é?
+                                </div>
+                                <p>Expedida para <strong>órgão jurisdicional estrangeiro</strong>.</p>
+                            </div>
+                            <ul class="modern">
+                                <li><strong>Características:</strong> Cooperação internacional; destinatário: juízo estrangeiro</li>
+                                <li><strong>Procedimento:</strong> Especial, com tramitação pelo STJ</li>
+                            </ul>
+
+                            <!-- ===== 5.4 ===== -->
+                            <span class="section-anchor" id="carta-arbitral"></span>
+                            <h3>5.4. Carta Arbitral</h3>
+                            <div class="card card-purple">
+                                <div class="card-title">
+                                    <span class="icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8a7a9e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                            <path d="M2 17l10 5 10-5"/>
+                                            <path d="M2 12l10 5 10-5"/>
+                                        </svg>
+                                    </span>
+                                    O que é?
+                                </div>
+                                <p>Expedida para <strong>cooperação com juízo arbitral</strong>.</p>
+                            </div>
+                            <ul class="modern">
+                                <li><strong>Previsão Legal:</strong> Art. 237, inciso IV, do CPC</li>
+                                <li><strong>Características:</strong> Cooperação entre Justiça estatal e arbitragem; destinatário: juízo arbitral</li>
+                            </ul>
+
+                            <!-- ===== 5.5 ===== -->
+                            <span class="section-anchor" id="cartas-comparativo"></span>
+                            <h3>5.5. Quadro Comparativo e Macete</h3>
+
+                            <div class="table-wrap">
+                                <table class="modern">
+                                    <thead>
+                                        <tr><th>Tipo</th><th>Destinatário</th><th>Relação</th><th>Dispositivo</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Carta Precatória</strong></td>
+                                            <td>Juízo brasileiro diverso</td>
+                                            <td>Cooperação entre juízos</td>
+                                            <td>Art. 237, III</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Carta de Ordem</strong></td>
+                                            <td>Juízo inferior vinculado</td>
+                                            <td>Hierárquica (superior-inferior)</td>
+                                            <td>Art. 236, §2º</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Carta Rogatória</strong></td>
+                                            <td>Órgão jurisdicional estrangeiro</td>
+                                            <td>Internacional</td>
+                                            <td>Art. 237 (implícito)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Carta Arbitral</strong></td>
+                                            <td>Juízo arbitral</td>
+                                            <td>Cooperação</td>
+                                            <td>Art. 237, IV</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Diagrama 4: Cartas -->
+                            <div class="diagram-container">
+                                <svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" style="max-width:720px; width:100%;">
+                                    <defs>
+                                        <style>
+                                            .d-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; fill: #ece4d9; }
+                                            .d-title { font-family: 'Georgia', serif; font-size: 16px; font-weight: 700; fill: #d4b86a; }
+                                            .d-box { fill: #2d2822; stroke: #4d453e; stroke-width: 1.5; rx: 6; }
+                                            .d-box-gold { fill: rgba(212,184,106,0.08); stroke: #d4b86a; stroke-width: 1.5; rx: 6; }
+                                            .d-box-teal { fill: rgba(109,155,138,0.08); stroke: #6d9b8a; stroke-width: 1.5; rx: 6; }
+                                            .d-box-coral { fill: rgba(196,122,106,0.08); stroke: #c47a6a; stroke-width: 1.5; rx: 6; }
+                                            .d-box-purple { fill: rgba(138,122,158,0.08); stroke: #8a7a9e; stroke-width: 1.5; rx: 6; }
+                                            .d-label { font-size: 11px; fill: #b0a598; }
+                                            .d-arrow { stroke: #6d9b8a; stroke-width: 1.5; fill: none; marker-end: url(#arrow-sm); }
+                                        </style>
+                                        <marker id="arrow-sm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                                            <path d="M0,0 L10,5 L0,10 Z" fill="#6d9b8a"/>
+                                        </marker>
+                                    </defs>
+
+                                    <text x="360" y="26" text-anchor="middle" class="d-title">Cartas Processuais — Destinatários</text>
+
+                                    <!-- Precatória -->
+                                    <rect x="30" y="50" width="150" height="70" class="d-box-gold"/>
+                                    <text x="105" y="76" text-anchor="middle" class="d-text" font-weight="700" fill="#d4b86a">Precatória</text>
+                                    <text x="105" y="98" text-anchor="middle" class="d-label">Juízo brasileiro diverso</text>
+
+                                    <!-- Ordem -->
+                                    <rect x="200" y="50" width="150" height="70" class="d-box-teal"/>
+                                    <text x="275" y="76" text-anchor="middle" class="d-text" font-weight="700" fill="#6d9b8a">Ordem</text>
+                                    <text x="275" y="98" text-anchor="middle" class="d-label">Juízo inferior vinculado</text>
+
+                                    <!-- Rogatória -->
+                                    <rect x="370" y="50" width="150" height="70" class="d-box-coral"/>
+                                    <text x="445" y="76" text-anchor="middle" class="d-text" font-weight="700" fill="#c47a6a">Rogatória</text>
+                                    <text x="445" y="98" text-anchor="middle" class="d-label">Órgão estrangeiro</text>
+
+                                    <!-- Arbitral -->
+                                    <rect x="540" y="50" width="150" height="70" class="d-box-purple"/>
+                                    <text x="615" y="76" text-anchor="middle" class="d-text" font-weight="700" fill="#8a7a9e">Arbitral</text>
+                                    <text x="615" y="98" text-anchor="middle" class="d-label">Juízo arbitral</text>
+
+                                    <!-- Macetes -->
+                                    <rect x="30" y="150" width="150" height="48" class="d-box" stroke="#3f3730"/>
+                                    <text x="105" y="170" text-anchor="middle" class="d-label" fill="#6d9b8a">"Entre comarcas</text>
+                                    <text x="105" y="186" text-anchor="middle" class="d-label" fill="#6d9b8a"> brasileiras"</text>
+
+                                    <rect x="200" y="150" width="150" height="48" class="d-box" stroke="#3f3730"/>
+                                    <text x="275" y="170" text-anchor="middle" class="d-label" fill="#6d9b8a">"Hierarquia</text>
+                                    <text x="275" y="186" text-anchor="middle" class="d-label" fill="#6d9b8a"> superior-inferior"</text>
+
+                                    <rect x="370" y="150" width="150" height="48" class="d-box" stroke="#3f3730"/>
+                                    <text x="445" y="170" text-anchor="middle" class="d-label" fill="#6d9b8a">"Roga a</text>
+                                    <text x="445" y="186" text-anchor="middle" class="d-label" fill="#6d9b8a"> estrangeiro"</text>
+
+                                    <rect x="540" y="150" width="150" height="48" class="d-box" stroke="#3f3730"/>
+                                    <text x="615" y="170" text-anchor="middle" class="d-label" fill="#6d9b8a">"Cooperação com</text>
+                                    <text x="615" y="186" text-anchor="middle" class="d-label" fill="#6d9b8a"> arbitragem"</text>
+
+                                    <!-- Aviso -->
+                                    <text x="360" y="250" text-anchor="middle" class="d-label" fill="#c47a6a" font-weight="600">⚠️ "Carta de citação" NÃO é modalidade autônoma (art. 237)</text>
+                                </svg>
+                                <div class="diagram-caption">Resumo visual das cartas processuais com macetes de memorização</div>
+                            </div>
+
+                            <div class="callout callout-warning">
+                                <span class="callout-label">⚠️ Pegadinha principal</span>
+                                <p>Confundir carta precatória (juízo brasileiro diverso) com carta rogatória (estrangeiro).</p>
+                            </div>
+
+                            <div class="callout callout-important">
+                                <span class="callout-label">📌 Carta de citação?</span>
+                                <p><strong>ATENÇÃO:</strong> "Carta de citação" <strong>NÃO</strong> é modalidade autônoma de carta processual prevista no art. 237 do CPC.</p>
+                            </div>
+
+                            <hr class="divider">
+
+                            <!-- ============================================================ -->
+                            <!-- 6. MANDADO DE SEGURANÇA — AUTORIDADE COATORA                 -->
+                            <!-- ============================================================ -->
+                            <div class="section" id="mandado-seguranca">
+                                <span class="section-anchor" id="mandado-seguranca"></span>
+                                <h2>6. Mandado de Segurança — Autoridade Coatora</h2>
+                                <p>O mandado de segurança é um remédio constitucional amplamente cobrado, e a definição de autoridade coatora é um ponto crucial.</p>
+
+                                <!-- ===== 6.1 ===== -->
+                                <span class="section-anchor" id="ms-conceito"></span>
+                                <h3>6.1. Conceito</h3>
+
+                                <div class="card card-accent">
+                                    <div class="card-title">
+                                        <span class="icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4b86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                                <circle cx="12" cy="7" r="4"/>
+                                            </svg>
+                                        </span>
+                                        Autoridade coatora
+                                    </div>
+                                    <p><strong>Autoridade coatora</strong> é a pessoa física investida de poder de decisão e competência para:</p>
+                                    <ul class="modern">
+                                        <li>Ordenar; <strong>ou</strong></li>
+                                        <li>Praticar o ato decisório ilegal ou abusivo</li>
+                                    </ul>
+                                </div>
+
+                                <div class="card card-teal">
+                                    <div class="card-title">
+                                        <span class="icon">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d9b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="12" cy="12" r="10"/>
+                                                <path d="M12 8v4l3 3"/>
+                                            </svg>
+                                        </span>
+                                        Natureza do cargo
+                                    </div>
+                                    <p>A autoridade coatora pode ser:</p>
+                                    <ul class="modern">
+                                        <li><strong>Chefe do Poder Executivo</strong> (Presidente, Governadores, Prefeitos)</li>
+                                        <li><strong>Magistrado</strong> (em suas decisões)</li>
+                                        <li><strong>Membro de Tribunal</strong> (em decisões colegiadas)</li>
+                                        <li><strong>Diretor de autarquia/empresa pública</strong> (em atos administrativos)</li>
+                                        <li><strong>Qualquer agente público com poder de decisão</strong></li>
+                                    </ul>
+                                </div>
+
+                                <!-- ===== 6.2 ===== -->
+                                <span class="section-anchor" id="ms-requisitos"></span>
+                                <h3>6.2. Requisitos para ser autoridade coatora</h3>
+
+                                <div class="table-wrap">
+                                    <table class="modern">
+                                        <thead>
+                                            <tr><th>Requisito</th><th>Explicação</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Poder de decisão</strong></td>
+                                                <td>Não é o mero executor de ordem superior</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Competência</strong></td>
+                                                <td>Deve ter competência para praticar o ato impugnado</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="callout callout-warning">
+                                    <span class="callout-label">⚠️ Quem NÃO é autoridade coatora?</span>
+                                    <p>❌ O mero executor de ordem superior</p>
+                                    <p>❌ O agente público que pratica atos meramente executórios (sem conteúdo decisório)</p>
+                                </div>
+
+                                <div class="quote">
+                                    <p><strong>Doutrina (Hely Lopes Meirelles):</strong> A autoridade coatora detém poder de decisão; o simples agente público que pratica atos executórios não responde a mandado de segurança.</p>
+                                </div>
+
+                                <div class="table-wrap">
+                                    <table class="modern">
+                                        <thead>
+                                            <tr><th>Situação</th><th>Autoridade coatora?</th></tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Prefeito que assina decreto expropriatório</td>
+                                                <td><span class="hl-teal">✅ Sim</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Servidor público que executa a ordem de desocupação</td>
+                                                <td><span class="hl-coral">❌ Não</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Juiz que profere decisão</td>
+                                                <td><span class="hl-teal">✅ Sim</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Oficial de justiça que cumpre a decisão</td>
+                                                <td><span class="hl-coral">❌ Não</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <hr class="divider">
+
+                                <!-- ============================================================ -->
+                                <!-- 7. PRAZOS PROCESSUAIS                                      -->
+                                <!-- ============================================================ -->
+                                <div class="section" id="prazos">
+                                    <span class="section-anchor" id="prazos"></span>
+                                    <h2>7. Prazos Processuais</h2>
+                                    <p>A contagem de prazos é um dos temas mais técnicos e mais cobrados em questões práticas. Dominar o cálculo é essencial.</p>
+
+                                    <!-- ===== 7.1 ===== -->
+                                    <span class="section-anchor" id="prazos-contagem"></span>
+                                    <h3>7.1. Contagem de Prazos</h3>
+
+                                    <div class="quote">
+                                        <p><strong>Regra Fundamental (art. 219 do CPC)</strong></p>
+                                        <p><em>"Os prazos serão contados em dias úteis, excluindo-se o dia do início e incluindo-se o dia do vencimento."</em></p>
+                                    </div>
+
+                                    <div class="card card-accent">
+                                        <div class="card-title">
+                                            <span class="icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4b86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                                </svg>
+                                            </span>
+                                            Passo a passo da contagem
+                                        </div>
+                                        <ol class="modern">
+                                            <li>Identificar a data de início (intimação, publicação, etc.)</li>
+                                            <li><strong>Excluir</strong> o dia do início (não conta)</li>
+                                            <li>Contar os dias corridos <strong>apenas dias úteis</strong> (segunda a sexta-feira, feriados não contam)</li>
+                                            <li>O prazo termina no último dia útil do período</li>
+                                        </ol>
+                                    </div>
+
+                                    <div class="card card-teal">
+                                        <div class="card-title">
+                                            <span class="icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d9b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                                                </svg>
+                                            </span>
+                                            Exemplo
+                                        </div>
+                                        <p>Intimação em 02/05/2022 (segunda-feira), prazo de 5 dias úteis.</p>
+                                        <table class="modern" style="margin-top:0.6rem;">
+                                            <thead>
+                                                <tr><th>Dia</th><th>É útil?</th><th>Conta?</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>02/05 (segunda)</td><td>Sim</td><td><span class="hl-coral">❌ Excluído (dia do início)</span></td></tr>
+                                                <tr><td>03/05 (terça)</td><td>Sim</td><td>✅ 1º dia</td></tr>
+                                                <tr><td>04/05 (quarta)</td><td>Sim</td><td>✅ 2º dia</td></tr>
+                                                <tr><td>05/05 (quinta)</td><td>Sim</td><td>✅ 3º dia</td></tr>
+                                                <tr><td>06/05 (sexta)</td><td>Sim</td><td>✅ 4º dia</td></tr>
+                                                <tr><td>07/05 (sábado)</td><td>Não</td><td>—</td></tr>
+                                                <tr><td>08/05 (domingo)</td><td>Não</td><td>—</td></tr>
+                                                <tr><td>09/05 (segunda)</td><td>Sim</td><td>✅ 5º dia</td></tr>
+                                            </tbody>
+                                        </table>
+                                        <p style="margin-top:0.6rem;"><strong>Termo final: 09/05/2022</strong></p>
+                                    </div>
+
+                                    <!-- Diagrama 5: Contagem de prazos -->
+                                    <div class="diagram-container">
+                                        <svg viewBox="0 0 720 140" xmlns="http://www.w3.org/2000/svg" style="max-width:720px; width:100%;">
+                                            <defs>
+                                                <style>
+                                                    .d-text { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12px; fill: #ece4d9; }
+                                                    .d-title { font-family: 'Georgia', serif; font-size: 14px; font-weight: 700; fill: #d4b86a; }
+                                                    .d-day { fill: #2d2822; stroke: #4d453e; stroke-width: 1.5; rx: 4; }
+                                                    .d-day-excl { fill: rgba(196,122,106,0.15); stroke: #c47a6a; stroke-width: 1.5; rx: 4; }
+                                                    .d-day-count { fill: rgba(109,155,138,0.12); stroke: #6d9b8a; stroke-width: 1.5; rx: 4; }
+                                                    .d-label { font-size: 10px; fill: #b0a598; }
+                                                </style>
+                                            </defs>
+
+                                            <text x="360" y="22" text-anchor="middle" class="d-title">Contagem de Prazo — Exemplo (5 dias úteis)</text>
+
+                                            <!-- dias da semana -->
+                                            <rect x="30" y="44" width="68" height="44" class="d-day-excl"/>
+                                            <text x="64" y="62" text-anchor="middle" class="d-text" font-weight="700" fill="#c47a6a">02/05</text>
+                                            <text x="64" y="80" text-anchor="middle" class="d-label" fill="#c47a6a">Seg (excluído)</text>
+
+                                            <rect x="118" y="44" width="68" height="44" class="d-day-count"/>
+                                            <text x="152" y="62" text-anchor="middle" class="d-text" font-weight="700" fill="#6d9b8a">03/05</text>
+                                            <text x="152" y="80" text-anchor="middle" class="d-label" fill="#6d9b8a">Ter (1º)</text>
+
+                                            <rect x="206" y="44" width="68" height="44" class="d-day-count"/>
+                                            <text x="240" y="62" text-anchor="middle" class="d-text" font-weight="700" fill="#6d9b8a">04/05</text>
+                                            <text x="240" y="80" text-anchor="middle" class="d-label" fill="#6d9b8a">Qua (2º)</text>
+
+                                            <rect x="294" y="44" width="68" height="44" class="d-day-count"/>
+                                            <text x="328" y="62" text-anchor="middle" class="d-text" font-weight="700" fill="#6d9b8a">05/05</text>
+                                            <text x="328" y="80" text-anchor="middle" class="d-label" fill="#6d9b8a">Qui (3º)</text>
+
+                                            <rect x="382" y="44" width="68" height="44" class="d-day-count"/>
+                                            <text x="416" y="62" text-anchor="middle" class="d-text" font-weight="700" fill="#6d9b8a">06/05</text>
+                                            <text x="416" y="80" text-anchor="middle" class="d-label" fill="#6d9b8a">Sex (4º)</text>
+
+                                            <rect x="470" y="44" width="68" height="44" class="d-day"/>
+                                            <text x="504" y="62" text-anchor="middle" class="d-text" fill="#6d6a64">07/05</text>
+                                            <text x="504" y="80" text-anchor="middle" class="d-label" fill="#6d6a64">Sáb</text>
+
+                                            <rect x="558" y="44" width="68" height="44" class="d-day"/>
+                                            <text x="592" y="62" text-anchor="middle" class="d-text" fill="#6d6a64">08/05</text>
+                                            <text x="592" y="80" text-anchor="middle" class="d-label" fill="#6d6a64">Dom</text>
+
+                                            <!-- seta para o último dia -->
+                                            <path d="M 640 66 L 670 66" stroke="#d4b86a" stroke-width="2" marker-end="url(#arrow-gold-sm)"/>
+
+                                            <rect x="670" y="44" width="50" height="44" class="d-day-count" stroke="#d4b86a"/>
+                                            <text x="695" y="62" text-anchor="middle" class="d-text" font-weight="700" fill="#d4b86a">09/05</text>
+                                            <text x="695" y="80" text-anchor="middle" class="d-label" fill="#d4b86a">Seg (5º)</text>
+
+                                            <!-- legenda -->
+                                            <text x="360" y="122" text-anchor="middle" class="d-label" fill="#6d9b8a">✅ Exclui o dia do início • Inclui o dia do vencimento • Só conta dias úteis</text>
+
+                                            <defs>
+                                                <marker id="arrow-gold-sm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                                                    <path d="M0,0 L10,5 L0,10 Z" fill="#d4b86a"/>
+                                                </marker>
+                                            </defs>
+                                        </svg>
+                                        <div class="diagram-caption">Visualização da contagem de prazo: exclui o dia do início, conta apenas dias úteis</div>
+                                    </div>
+
+                                    <!-- ===== 7.2 ===== -->
+                                    <span class="section-anchor" id="prazos-defensoria"></span>
+                                    <h3>7.2. Prazo em Dobro para a Defensoria Pública</h3>
+
+                                    <div class="card card-accent">
+                                        <div class="card-title">
+                                            <span class="icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4b86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                </svg>
+                                            </span>
+                                            Previsão Legal
+                                        </div>
+                                        <p>Art. 186 do CPC: a Defensoria Pública goza de prazo em dobro para <strong>todas</strong> as suas manifestações processuais.</p>
+                                    </div>
+
+                                    <div class="table-wrap">
+                                        <table class="modern">
+                                            <thead>
+                                                <tr><th>Regra geral</th><th>Com Defensoria Pública</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>Prazo de 5 dias úteis para embargos de declaração</td><td><span class="hl">10 dias úteis</span></td></tr>
+                                                <tr><td>Prazo de 15 dias úteis para apelação</td><td><span class="hl">30 dias úteis</span></td></tr>
+                                                <tr><td>Prazo de 10 dias úteis para contrarrazões</td><td><span class="hl">20 dias úteis</span></td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="callout callout-tip">
+                                        <span class="callout-label">💡 Características da intimação da Defensoria</span>
+                                        <p>Art. 183, §1º, do CPC: a intimação pessoal do defensor público ocorre com a entrega dos autos com vista.</p>
+                                        <p><strong>Efeito:</strong> O prazo começa a contar no primeiro dia útil seguinte à intimação pessoal.</p>
+                                    </div>
+
+                                    <!-- ===== 7.3 ===== -->
+                                    <span class="section-anchor" id="prazos-pratico"></span>
+                                    <h3>7.3. Exercício Prático</h3>
+
+                                    <div class="card card-coral">
+                                        <div class="card-title">
+                                            <span class="icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c47a6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                    <path d="M2 17l10 5 10-5"/>
+                                                    <path d="M2 12l10 5 10-5"/>
+                                                </svg>
+                                            </span>
+                                            Problema
+                                        </div>
+                                        <p>Caio, patrocinado pela Defensoria Pública, foi intimado pessoalmente de decisão em 02/05/2022 (segunda-feira) e optou por embargos de declaração.</p>
+                                        <p><strong>Qual o termo final do prazo?</strong></p>
+                                    </div>
+
+                                    <div class="card card-teal">
+                                        <div class="card-title">
+                                            <span class="icon">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d9b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <circle cx="12" cy="12" r="10"/>
+                                                    <path d="M12 8v4l3 3"/>
+                                                </svg>
+                                            </span>
+                                            Resolução passo a passo
+                                        </div>
+                                        <p><strong>Passo 1:</strong> Identificar o prazo legal dos embargos de declaração.</p>
+                                        <ul class="modern">
+                                            <li>Regra: 5 dias úteis (art. 1.023 do CPC)</li>
+                                        </ul>
+                                        <p><strong>Passo 2:</strong> Verificar se há prazo em dobro.</p>
+                                        <ul class="modern">
+                                            <li>Defensoria Pública → prazo em dobro para todas as manifestações (art. 186)</li>
+                                            <li>5 dias úteis × 2 = <span class="hl">10 dias úteis</span></li>
+                                        </ul>
+                                        <p><strong>Passo 3:</strong> Contar o prazo.</p>
+                                        <table class="modern" style="margin-top:0.4rem;">
+                                            <thead>
+                                                <tr><th>Data</th><th>Dia</th><th>Útil?</th><th>Contagem</th></tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>02/05</td><td>Segunda</td><td>Sim</td><td><span class="hl-coral">❌ Excluído (intimação)</span></td></tr>
+                                                <tr><td>03/05</td><td>Terça</td><td>Sim</td><td>1º dia</td></tr>
+                                                <tr><td>04/05</td><td>Quarta</td><td>Sim</td><td>2º dia</td></tr>
+                                                <tr><td>05/05</td><td>Quinta</td><td>Sim</td><td>3º dia</td></tr>
+                                                <tr><td>06/05</td><td>Sexta</td><td>Sim</td><td>4º dia</td></tr>
+                                                <tr><td>07/05</td><td>Sábado</td><td>Não</td><td>—</td></tr>
+                                                <tr><td>08/05</td><td>Domingo</td><td>Não</td><td>—</td></tr>
+                                                <tr><td>09/05</td><td>Segunda</td><td>Sim</td><td>5º dia</td></tr>
+                                                <tr><td>10/05</td><td>Terça</td><td>Sim</td><td>6º dia</td></tr>
+                                                <tr><td>11/05</td><td>Quarta</td><td>Sim</td><td>7º dia</td></tr>
+                                                <tr><td>12/05</td><td>Quinta</td><td>Sim</td><td>8º dia</td></tr>
+                                                <tr><td>13/05</td><td>Sexta</td><td>Sim</td><td>9º dia</td></tr>
+                                                <tr><td>14/05</td><td>Sábado</td><td>Não</td><td>—</td></tr>
+                                                <tr><td>15/05</td><td>Domingo</td><td>Não</td><td>—</td></tr>
+                                                <tr><td><strong>16/05</strong></td><td><strong>Segunda</strong></td><td><strong>Sim</strong></td><td><strong>10º dia ✅</strong></td></tr>
+                                            </tbody>
+                                        </table>
+                                        <p style="margin-top:0.6rem;"><strong>Resposta: 16 de maio de 2022 (segunda-feira)</strong></p>
+                                    </div>
+
+                                    <hr class="divider">
+
+                                    <!-- ============================================================ -->
+                                    <!-- 8. INCOMPETÊNCIA ABSOLUTA                                   -->
+                                    <!-- ============================================================ -->
+                                    <div class="section" id="incompetencia">
+                                        <span class="section-anchor" id="incompetencia"></span>
+                                        <h2>8. Incompetência Absoluta</h2>
+                                        <p>O reconhecimento da incompetência absoluta é uma questão de ordem pública e deve ser tratada com rigor processual.</p>
+
+                                        <!-- ===== 8.1 ===== -->
+                                        <span class="section-anchor" id="incompetencia-conceito"></span>
+                                        <h3>8.1. Conceito</h3>
+
+                                        <div class="card card-accent">
+                                            <div class="card-title">
+                                                <span class="icon">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4b86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                        <path d="M2 17l10 5 10-5"/>
+                                                        <path d="M2 12l10 5 10-5"/>
+                                                    </svg>
+                                                </span>
+                                                Incompetência Absoluta
+                                            </div>
+                                            <p>Ocorre quando o juiz não tem competência em razão da:</p>
+                                            <ul class="modern">
+                                                <li><strong>Matéria</strong> (ex: juiz federal julgando causa trabalhista)</li>
+                                                <li><strong>Pessoa</strong> (ex: juiz comum julgando causa eleitoral)</li>
+                                                <li><strong>Função</strong> (ex: juiz de primeiro grau julgando recurso de competência do tribunal)</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="card card-coral">
+                                            <div class="card-title">
+                                                <span class="icon">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c47a6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                        <path d="M2 17l10 5 10-5"/>
+                                                        <path d="M2 12l10 5 10-5"/>
+                                                    </svg>
+                                                </span>
+                                                Efeitos
+                                            </div>
+                                            <ul class="modern">
+                                                <li>Nulidade absoluta dos atos decisórios</li>
+                                                <li>Pode ser reconhecida de ofício pelo juiz</li>
+                                                <li>Pode ser alegada a qualquer tempo e grau de jurisdição</li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- ===== 8.2 ===== -->
+                                        <span class="section-anchor" id="incompetencia-regras"></span>
+                                        <h3>8.2. Regras Processuais</h3>
+
+                                        <div class="quote">
+                                            <p><strong>Art. 62 do CPC</strong></p>
+                                            <p><em>"A incompetência absoluta deve ser declarada de ofício e pode ser alegada em qualquer tempo e grau de jurisdição."</em></p>
+                                        </div>
+
+                                        <div class="quote">
+                                            <p><strong>Art. 64, §1º, do CPC</strong></p>
+                                            <p><em>"A incompetência absoluta, uma vez reconhecida, determina a remessa dos autos ao juízo competente."</em></p>
+                                        </div>
+
+                                        <div class="card card-teal">
+                                            <div class="card-title">
+                                                <span class="icon">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d9b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                                                    </svg>
+                                                </span>
+                                                Exemplo prático
+                                            </div>
+                                            <p><strong>Situação:</strong> João ajuíza ação previdenciária na Justiça Federal. O juiz federal, reconhecendo a competência da Justiça Estadual (que não julga causas previdenciárias), deve:</p>
+                                            <ol class="modern">
+                                                <li>Reconhecer a incompetência absoluta <strong>de ofício</strong> (art. 62)</li>
+                                                <li>Remeter os autos ao <strong>juízo competente</strong> (art. 64, §1º)</li>
+                                                <li><strong>NÃO</strong> pode simplesmente extinguir o processo ou julgar o mérito</li>
+                                            </ol>
+                                        </div>
+
+                                        <div class="callout callout-warning">
+                                            <span class="callout-label">⚠️ Prioridade sobre celeridade</span>
+                                            <p><strong>ATENÇÃO:</strong> O princípio do juiz natural prevalece sobre a celeridade e a economia processual. Mesmo que o processo esteja em estágio avançado, a incompetência absoluta deve ser reconhecida.</p>
+                                        </div>
+
+                                        <hr class="divider">
+
+                                        <!-- ============================================================ -->
+                                        <!-- 9. SÍNTESE ESTRATÉGICA PARA PROVAS                         -->
+                                        <!-- ============================================================ -->
+                                        <div class="section" id="sintese">
+                                            <span class="section-anchor" id="sintese"></span>
+                                            <h2>9. Síntese Estratégica para Provas</h2>
+
+                                            <h3>Dispositivos Legais Mais Cobrados</h3>
+
+                                            <div class="table-wrap">
+                                                <table class="modern">
+                                                    <thead>
+                                                        <tr><th>Dispositivo</th><th>Conteúdo</th><th>Cuidado na prova</th></tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><strong>Art. 988, caput</strong></td>
+                                                            <td>Legitimidade para reclamação: parte interessada e MP</td>
+                                                            <td><span class="hl-coral">Não marcar "apenas MP"</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Art. 325</strong></td>
+                                                            <td>Pedido alternativo</td>
+                                                            <td><span class="hl-coral">Não confundir com "facultativo"</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Art. 78</strong></td>
+                                                            <td>Vedação de expressões ofensivas</td>
+                                                            <td><span class="hl-coral">Atinge todos os participantes</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Art. 237</strong></td>
+                                                            <td>Cartas processuais</td>
+                                                            <td><span class="hl-coral">Diferenciar precatória, rogatória, ordem, arbitral</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Art. 186</strong></td>
+                                                            <td>Prazo em dobro para Defensoria</td>
+                                                            <td><span class="hl-teal">Aplica-se a todos os prazos</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Art. 219</strong></td>
+                                                            <td>Contagem de prazos em dias úteis</td>
+                                                            <td><span class="hl-coral">Excluir dia do início</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Art. 62/64</strong></td>
+                                                            <td>Incompetência absoluta</td>
+                                                            <td><span class="hl-teal">Reconhecimento de ofício, remessa ao juízo competente</span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <h3>Principais Pegadinhas</h3>
+
+                                            <div class="table-wrap">
+                                                <table class="modern">
+                                                    <thead>
+                                                        <tr><th>Tema</th><th>Pegadinha</th><th>Correção</th></tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Reclamação</td>
+                                                            <td><span class="hl-coral">"Apenas MP"</span></td>
+                                                            <td><span class="hl-teal">Parte interessada também</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Reclamação</td>
+                                                            <td><span class="hl-coral">"É recurso"</span></td>
+                                                            <td><span class="hl-teal">É ação autônoma</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cartas</td>
+                                                            <td><span class="hl-coral">Precatória × Rogatória</span></td>
+                                                            <td><span class="hl-teal">Precatória = Brasil; Rogatória = estrangeiro</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Pedido</td>
+                                                            <td><span class="hl-coral">"Facultativo"</span></td>
+                                                            <td><span class="hl-teal">Não existe tecnicamente; é alternativo</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Juiz Natural</td>
+                                                            <td><span class="hl-coral">Confundir com Inevitabilidade</span></td>
+                                                            <td><span class="hl-teal">Juiz Natural = competência; Inevitabilidade = submissão</span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                            <h3>Macetes para Memorização</h3>
+
+                                            <div class="card card-accent">
+                                                <div class="card-title">
+                                                    <span class="icon">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4b86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                                        </svg>
+                                                    </span>
+                                                    Para cartas processuais:
+                                                </div>
+                                                <p><strong>"Precatória = entre comarcas brasileiras"</strong></p>
+                                                <p><strong>"Rogatória = roga a estrangeiro"</strong></p>
+                                                <p><strong>"Ordem = hierarquia superior-inferior"</strong></p>
+                                            </div>
+
+                                            <div class="card card-teal">
+                                                <div class="card-title">
+                                                    <span class="icon">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6d9b8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <circle cx="12" cy="12" r="10"/>
+                                                            <path d="M12 8v4l3 3"/>
+                                                        </svg>
+                                                    </span>
+                                                    Para princípios:
+                                                </div>
+                                                <p><strong>Juiz Natural = "Quem pode julgar?"</strong></p>
+                                                <p><strong>Inevitabilidade = "Não pode escolher cumprir"</strong></p>
+                                                <p><strong>Investidura = "Como se torna juiz?"</strong></p>
+                                            </div>
+
+                                            <div class="card card-coral">
+                                                <div class="card-title">
+                                                    <span class="icon">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c47a6a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                            <path d="M2 17l10 5 10-5"/>
+                                                            <path d="M2 12l10 5 10-5"/>
+                                                        </svg>
+                                                    </span>
+                                                    Para Defensoria Pública:
+                                                </div>
+                                                <p><strong>"Defensoria sempre em dobro"</strong></p>
+                                            </div>
+
+                                            <div class="card card-purple">
+                                                <div class="card-title">
+                                                    <span class="icon">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8a7a9e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                                            <line x1="16" y1="2" x2="16" y2="6"/>
+                                                            <line x1="8" y1="2" x2="8" y2="6"/>
+                                                            <line x1="3" y1="10" x2="21" y2="10"/>
+                                                        </svg>
+                                                    </span>
+                                                    Para contagem de prazos:
+                                                </div>
+                                                <p><strong>"Exclui o dia que começa, inclui o dia que termina, só conta dia útil"</strong></p>
+                                            </div>
+
+                                            <hr class="divider">
+
+                                            <!-- ==================== CONSIDERAÇÕES FINAIS ==================== -->
+                                            <div class="card card-accent" style="border-left-color:#d4b86a; margin-top:2.5rem;">
+                                                <div class="card-title" style="font-size:1.3rem; color:#f0e6d8;">
+                                                    <span class="icon">
+                                                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d4b86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                                        </svg>
+                                                    </span>
+                                                    Considerações Finais
+                                                </div>
+                                                <p style="font-size:1.05rem;">Caro(a) candidato(a),</p>
+                                                <p>Chegamos ao final deste material. Os tópicos aqui abordados são recorrentes em provas de Técnico Judiciário e, como você pôde perceber, cada um deles esconde armadilhas que as bancas adoram explorar.</p>
+                                                <p>A chave para o sucesso está em:</p>
+                                                <ol class="modern">
+                                                    <li><strong>Compreender o conceito</strong> (não apenas memorizar)</li>
+                                                    <li><strong>Identificar as diferenças</strong> entre institutos semelhantes</li>
+                                                    <li><strong>Reconhecer as pegadinhas</strong> antes de marcar a alternativa</li>
+                                                    <li><strong>Aplicar o raciocínio jurídico</strong> a situações concretas</li>
+                                                </ol>
+                                                <p>Lembre-se: o concurso público não testa apenas sua capacidade de memorização, mas sua habilidade de interpretar e aplicar o Direito com precisão.</p>
+                                                <p>Continue firme nos estudos, revise este material quantas vezes forem necessárias e, principalmente, resolva muitas questões. A prática é o que transforma o conhecimento teórico em aprovação.</p>
+                                                <p style="margin-top:0.8rem;"><strong>Bons estudos e sucesso na sua jornada!</strong></p>
+                                                <hr style="border:none;border-top:1px solid #3f3730;margin:1.2rem 0 0.8rem;">
+                                                <p style="font-size:0.85rem; color:#9a8f82; text-align:center; margin-bottom:0;">Este material é de uso exclusivo para fins de estudo e preparação para concursos públicos. Sua reprodução ou comercialização é proibida.</p>
+                                            </div>
+
+                                        </div><!-- /sintese -->
+                                    </div><!-- /container -->
+                                </body>
+                                </html>

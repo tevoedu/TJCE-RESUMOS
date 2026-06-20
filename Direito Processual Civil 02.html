@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Processual Civil e Constitucional Aplicado</title>
+    <style>
+        /* ── RESET & BASE ── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #12121f;
+            color: #e0e0e8;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            color: #f0c860;
+            letter-spacing: 0.5px;
+            margin-top: 0;
+            border-bottom: 3px solid #f0c86040;
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            color: #f0c860;
+            margin-top: 3rem;
+            border-left: 6px solid #f0c860;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #7fb8e0;
+            margin-top: 2.2rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #b8d4e8;
+            margin-top: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #7fb8e0;
+            text-decoration: none;
+            border-bottom: 1px dotted #7fb8e060;
+            transition: border 0.2s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #7fb8e0;
+        }
+
+        /* ── HEADER ── */
+        .header {
+            text-align: center;
+            padding: 2rem 1rem 1.5rem;
+            border-bottom: 2px solid #2a2a40;
+            margin-bottom: 2.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            color: #b8b8d0;
+            margin-top: 0.25rem;
+        }
+
+        .header .area {
+            font-size: 1.1rem;
+            color: #f0c860;
+            background: #1e1e30;
+            display: inline-block;
+            padding: 0.2rem 1.5rem;
+            border-radius: 20px;
+            margin-top: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── SUMÁRIO ── */
+        .sumario {
+            background: #1a1a2e;
+            border-radius: 16px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #2a2a40;
+        }
+
+        .sumario h2 {
+            margin-top: 0;
+            border-left: none;
+            padding-left: 0;
+            font-size: 1.6rem;
+        }
+
+        .sumario ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sumario>ul>li {
+            margin-bottom: 0.6rem;
+        }
+
+        .sumario>ul>li>a {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #f0c860;
+            border-bottom: none;
+        }
+
+        .sumario ul ul {
+            padding-left: 1.8rem;
+            margin-top: 0.2rem;
+        }
+
+        .sumario ul ul li {
+            margin-bottom: 0.2rem;
+        }
+
+        .sumario ul ul a {
+            color: #b8d4e8;
+            font-size: 0.95rem;
+        }
+
+        /* ── BOXES ── */
+        .box {
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.8rem 0;
+            background: #1a1a2e;
+            border-left: 6px solid #7fb8e0;
+            position: relative;
+        }
+
+        .box-dica {
+            border-left-color: #f0c860;
+            background: #1e1e30;
+        }
+
+        .box-atencao {
+            border-left-color: #f28b82;
+            background: #1e1e30;
+        }
+
+        .box-exemplo {
+            border-left-color: #6fcf97;
+            background: #1a1a2e;
+        }
+
+        .box-estudo-caso {
+            border-left-color: #bb86fc;
+            background: #1a1a2e;
+        }
+
+        .box-macete {
+            border-left-color: #ffb347;
+            background: #1e1e30;
+        }
+
+        .box-conceito {
+            border-left-color: #7fb8e0;
+            background: #1a1a2e;
+        }
+
+        .box .box-icon {
+            display: inline-block;
+            margin-right: 0.6rem;
+            vertical-align: middle;
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+        }
+
+        .box .box-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .box .box-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.3rem;
+            color: #e0e0e8;
+        }
+
+        .box-dica .box-title {
+            color: #f0c860;
+        }
+        .box-atencao .box-title {
+            color: #f28b82;
+        }
+        .box-exemplo .box-title {
+            color: #6fcf97;
+        }
+        .box-estudo-caso .box-title {
+            color: #bb86fc;
+        }
+        .box-macete .box-title {
+            color: #ffb347;
+        }
+        .box-conceito .box-title {
+            color: #7fb8e0;
+        }
+
+        .box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ── CITAÇÃO ── */
+        .citacao {
+            font-style: italic;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+            background: #14142a;
+            border-radius: 12px;
+            border-left: 6px solid #7fb8e0;
+            color: #c8c8e0;
+            font-size: 1.05rem;
+        }
+
+        .citacao::before {
+            content: "“";
+            font-size: 2.5rem;
+            color: #7fb8e0;
+            line-height: 0.8;
+            margin-right: 0.2rem;
+        }
+
+        /* ── TABELAS ── */
+        .tabela-moderna {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.8rem 0;
+            font-size: 0.95rem;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #1a1a2e;
+        }
+
+        .tabela-moderna th {
+            background: #2a2a42;
+            color: #f0c860;
+            font-weight: 600;
+            padding: 0.8rem 1rem;
+            text-align: left;
+        }
+
+        .tabela-moderna td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #2a2a40;
+        }
+
+        .tabela-moderna tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tabela-moderna tr:nth-child(even) td {
+            background: #14142a;
+        }
+
+        .tabela-moderna tr:hover td {
+            background: #22223a;
+        }
+
+        /* ── LISTAS ── */
+        ul.lista-icones {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.lista-icones li {
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+
+        ul.lista-icones li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #f0c860;
+            font-size: 1.2rem;
+        }
+
+        ul.lista-marcadores {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.lista-marcadores li {
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+
+        ul.lista-marcadores li::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: #7fb8e0;
+            font-size: 1rem;
+        }
+
+        /* ── CARDS ── */
+        .card-conceito {
+            background: #14142a;
+            border-radius: 16px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.8rem 0;
+            border: 1px solid #2a2a40;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-conceito h4 {
+            margin-top: 0;
+            color: #f0c860;
+        }
+
+        /* ── DIVISÓRIAS ── */
+        .divisoria {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, #2a2a40, #f0c86080, #2a2a40);
+            margin: 2.5rem 0;
+            opacity: 0.5;
+        }
+
+        /* ── DESTAQUE TEXTO ── */
+        .destaque {
+            background: #f0c86020;
+            color: #f0c860;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .destaque-verde {
+            background: #6fcf9720;
+            color: #6fcf97;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .destaque-azul {
+            background: #7fb8e020;
+            color: #7fb8e0;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .destaque-rosa {
+            background: #f28b8220;
+            color: #f28b82;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        /* ── SVG DIAGRAMAS ── */
+        .diagrama-container {
+            background: #14142a;
+            border-radius: 16px;
+            padding: 1.5rem 0.5rem;
+            margin: 2rem 0;
+            border: 1px solid #2a2a40;
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .diagrama-container svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ── RESPONSIVO ── */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            h3 {
+                font-size: 1.25rem;
+            }
+            .sumario {
+                padding: 1.2rem 1.2rem;
+            }
+            .box {
+                padding: 1rem 1.2rem;
+            }
+            .tabela-moderna {
+                font-size: 0.85rem;
+            }
+            .tabela-moderna th,
+            .tabela-moderna td {
+                padding: 0.5rem 0.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            .header .subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        /* ── MISC ── */
+        .text-center {
+            text-align: center;
+        }
+        .mt-0 {
+            margin-top: 0;
+        }
+        .mb-0 {
+            margin-bottom: 0;
+        }
+        .fw-bold {
+            font-weight: 700;
+        }
+        .cor-dourada {
+            color: #f0c860;
+        }
+        .cor-azul {
+            color: #7fb8e0;
+        }
+        .cor-verde {
+            color: #6fcf97;
+        }
+        .cor-rosa {
+            color: #f28b82;
+        }
+        .cor-laranja {
+            color: #ffb347;
+        }
+
+        hr.divisoria {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, #2a2a40, #f0c86080, #2a2a40);
+            margin: 2.5rem 0;
+            opacity: 0.5;
+        }
+
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== CABEÇALHO ========== -->
+    <header class="header">
+        <h1>DIREITO PROCESSUAL CIVIL E CONSTITUCIONAL APLICADO</h1>
+        <p class="subtitle">Apostila Teórica para Concursos de Técnico Judiciário</p>
+        <span class="area">Área Judiciária</span>
+    </header>
+
+    <!-- ========== SUMÁRIO ========== -->
+    <nav class="sumario" id="sumario">
+        <h2>Sumário</h2>
+        <ul>
+            <li><a href="#cap1">Capítulo 1: Fundamentos da Jurisdição e Processo</a>
+                <ul>
+                    <li><a href="#sec1-1">1. Jurisdição: Conceito e Características</a></li>
+                    <li><a href="#sec1-2">2. Atos Processuais: Classificação e Forma</a></li>
+                    <li><a href="#sec1-3">3. Capacidade Processual</a></li>
+                    <li><a href="#sec1-4">4. Ministério Público no Processo Civil</a></li>
+                    <li><a href="#sec1-5">5. Competência dos Tribunais Superiores</a></li>
+                    <li><a href="#sec1-6">6. Citação: Conceito, Indispensabilidade e Nulidade</a></li>
+                    <li><a href="#sec1-7">7. Auxiliares da Justiça</a></li>
+                    <li><a href="#sec1-8">8. Juizados Especiais Cíveis (Lei 9.099/95)</a></li>
+                </ul>
+            </li>
+            <li><a href="#cap2">Capítulo 2: Síntese e Mapas Mentais</a>
+                <ul>
+                    <li><a href="#mapa-jurisdicao">Mapa Mental 1: Jurisdição</a></li>
+                    <li><a href="#mapa-atos">Mapa Mental 2: Atos Processuais</a></li>
+                    <li><a href="#mapa-capacidades">Mapa Mental 3: Capacidades no Processo</a></li>
+                    <li><a href="#mapa-recursos">Mapa Mental 4: Recursos aos Tribunais Superiores</a></li>
+                    <li><a href="#mapa-auxiliares">Mapa Mental 5: Auxiliares da Justiça</a></li>
+                </ul>
+            </li>
+            <li><a href="#vinculos">Tabela de Vínculos Normativos</a></li>
+            <li><a href="#macetes">Macetes de Memorização</a></li>
+            <li><a href="#questoes">Questões de Fixação (Gabarito Comentado)</a></li>
+            <li><a href="#consideracoes">Considerações Finais</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 1                                                    -->
+    <!-- ============================================================ -->
+    <section id="cap1">
+        <h2>CAPÍTULO 1: FUNDAMENTOS DA JURISDIÇÃO E PROCESSO</h2>
+
+        <!-- ---------- SEÇÃO 1 ---------- -->
+        <section id="sec1-1">
+            <h3>1. JURISDIÇÃO: CONCEITO E CARACTERÍSTICAS</h3>
+
+            <h4>1.1. O que é Jurisdição?</h4>
+            <p>A jurisdição é uma das funções essenciais do Estado moderno. Trata-se do <span class="destaque">poder-dever</span> do Estado de dizer o direito no caso concreto, resolvendo conflitos de interesses com força de coisa julgada.</p>
+            <p>Para o concurso público, é fundamental compreender que a jurisdição não se resume ao ato de julgar, mas abrange todo o ciclo de atuação estatal na solução de litígios: desde a provocação inicial até a efetivação da decisão.</p>
+
+            <h4>1.2. Características Essenciais da Jurisdição</h4>
+            <p>A doutrina processualista identifica cinco características fundamentais da jurisdição, que são sistematicamente cobradas em provas:</p>
+
+            <table class="tabela-moderna">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Conceito</th>
+                        <th>Implicação Prática</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="destaque-azul">Inércia</span></td>
+                        <td>A jurisdição não atua de ofício; necessita de provocação da parte interessada</td>
+                        <td>O juiz não pode iniciar processo sem pedido (art. 2º, CPC)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="destaque-verde">Substitutividade</span></td>
+                        <td>O Estado substitui a vontade das partes envolvidas no conflito</td>
+                        <td>A decisão judicial prevalece sobre a vontade dos litigantes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="destaque-rosa">Imperatividade</span></td>
+                        <td>As decisões judiciais são impositivas e obrigatórias</td>
+                        <td>Independem da concordância das partes para produzir efeitos</td>
+                    </tr>
+                    <tr>
+                        <td><span class="destaque">Definitividade</span></td>
+                        <td>A jurisdição produz coisa julgada material</td>
+                        <td>A decisão se torna imutável e indiscutível após o trânsito em julgado</td>
+                    </tr>
+                    <tr>
+                        <td><span class="cor-laranja">Indelegabilidade</span></td>
+                        <td>A função jurisdicional não pode ser delegada a outro poder</td>
+                        <td>Somente o Poder Judiciário exerce jurisdição (art. 92, CF)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- BOX APLICAÇÃO PRÁTICA -->
+            <div class="box box-exemplo">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                    </span>
+                    APLICAÇÃO PRÁTICA: O PRINCÍPIO DA CONGRUÊNCIA
+                </div>
+                <p>A característica da <strong>inércia</strong> tem uma consequência prática importantíssima: o <strong>princípio da congruência</strong> (ou adstrição). O juiz deve decidir dentro dos limites do pedido formulado pela parte.</p>
+                <p><strong>EXEMPLO PRÁTICO:</strong></p>
+                <p><em>Maria ajuíza ação de indenização contra João, pedindo R$ 50.000,00 por danos materiais. Durante a instrução, o juiz verifica que os danos somam R$ 80.000,00. Pode o juiz condenar João a pagar R$ 80.000,00?</em></p>
+                <p><strong>RESPOSTA:</strong> NÃO! O juiz estaria proferindo uma <span class="destaque-rosa">sentença ultra petita</span> (além do pedido), violando o princípio da congruência. O juiz só pode conceder exatamente o que foi pedido ou menos (desde que justificado), mas nunca mais.</p>
+                <p><span class="destaque-rosa">PEGADINHA DE BANCA:</span> A FCC costuma perguntar se a vedação à sentença <em>ultra petita</em> decorre da inércia da jurisdição. A resposta é SIM, pois o excedente não foi provocado pela parte.</p>
+            </div>
+
+            <h4>1.3. Espécies de Jurisdição</h4>
+            <table class="tabela-moderna">
+                <thead>
+                    <tr>
+                        <th>Espécie</th>
+                        <th>Característica</th>
+                        <th>Exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="destaque-azul">Jurisdição Contenciosa</span></td>
+                        <td>Existe lide entre partes</td>
+                        <td>Ação de cobrança, ação de divórcio</td>
+                    </tr>
+                    <tr>
+                        <td><span class="destaque-verde">Jurisdição Voluntária</span></td>
+                        <td>Não há conflito; o juiz apenas fiscaliza/valida atos</td>
+                        <td>Alvará judicial, interdição, inventário</td>
+                    </tr>
+                    <tr>
+                        <td><span class="cor-laranja">Jurisdição Civil</span></td>
+                        <td>Conflitos de natureza privada</td>
+                        <td>Direito civil, empresarial, consumo</td>
+                    </tr>
+                    <tr>
+                        <td><span class="destaque-rosa">Jurisdição Penal</span></td>
+                        <td>Aplica sanções penais</td>
+                        <td>Ações penais em geral</td>
+                    </tr>
+                    <tr>
+                        <td><span class="destaque">Jurisdição Trabalhista</span></td>
+                        <td>Conflitos trabalhistas</td>
+                        <td>Ações entre empregado e empregador</td>
+                    </tr>
+                    <tr>
+                        <td><span class="cor-azul">Jurisdição Eleitoral</span></td>
+                        <td>Matéria eleitoral</td>
+                        <td>Registro de candidatura, abuso de poder</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr class="divisoria">
+
+        <!-- ---------- SEÇÃO 2 ---------- -->
+        <section id="sec1-2">
+            <h3>2. ATOS PROCESSUAIS: CLASSIFICAÇÃO E FORMA</h3>
+
+            <h4>2.1. Classificação dos Atos Processuais (art. 203, CPC)</h4>
+            <p>O Código de Processo Civil de 2015 classifica os pronunciamentos do juiz em três categorias:</p>
+
+            <!-- DIAGRAMA SVG: PRONUNCIAMENTOS DO JUIZ -->
+            <div class="diagrama-container">
+                <svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto;">
+                    <!-- fundo -->
+                    <rect x="0" y="0" width="820" height="320" rx="16" fill="#12121f" />
+
+                    <!-- título -->
+                    <rect x="20" y="16" width="780" height="44" rx="10" fill="#1e1e30" stroke="#f0c860" stroke-width="2"/>
+                    <text x="410" y="45" text-anchor="middle" fill="#f0c860" font-size="20" font-weight="bold">PRONUNCIAMENTOS DO JUIZ</text>
+
+                    <!-- Sentença -->
+                    <rect x="30" y="80" width="220" height="210" rx="10" fill="#1a1a2e" stroke="#6fcf97" stroke-width="2"/>
+                    <text x="140" y="112" text-anchor="middle" fill="#6fcf97" font-size="17" font-weight="bold">SENTENÇA</text>
+                    <text x="140" y="140" text-anchor="middle" fill="#e0e0e8" font-size="14">ATIVIDADE</text>
+                    <text x="140" y="162" text-anchor="middle" fill="#e0e0e8" font-size="14">DECISÓRIA</text>
+                    <line x1="50" y1="180" x2="230" y2="180" stroke="#6fcf97" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="140" y="210" text-anchor="middle" fill="#e0e0e8" font-size="13">EXTINGUE O PROCESSO</text>
+                    <text x="140" y="232" text-anchor="middle" fill="#e0e0e8" font-size="13">(com ou sem resolução)</text>
+                    <text x="140" y="260" text-anchor="middle" fill="#6fcf97" font-size="12">Art. 203, §1º</text>
+
+                    <!-- Decisão Interlocutória -->
+                    <rect x="300" y="80" width="220" height="210" rx="10" fill="#1a1a2e" stroke="#f28b82" stroke-width="2"/>
+                    <text x="410" y="112" text-anchor="middle" fill="#f28b82" font-size="17" font-weight="bold">DECISÃO</text>
+                    <text x="410" y="134" text-anchor="middle" fill="#f28b82" font-size="15" font-weight="bold">INTERLOCUTÓRIA</text>
+                    <text x="410" y="162" text-anchor="middle" fill="#e0e0e8" font-size="14">ATIVIDADE DECISÓRIA</text>
+                    <line x1="320" y1="180" x2="500" y2="180" stroke="#f28b82" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="410" y="210" text-anchor="middle" fill="#e0e0e8" font-size="13">RESOLVE QUESTÃO</text>
+                    <text x="410" y="232" text-anchor="middle" fill="#e0e0e8" font-size="13">INTERLOCUTÓRIA</text>
+                    <text x="410" y="260" text-anchor="middle" fill="#f28b82" font-size="12">Art. 203, §2º</text>
+
+                    <!-- Despacho -->
+                    <rect x="570" y="80" width="220" height="210" rx="10" fill="#1a1a2e" stroke="#7fb8e0" stroke-width="2"/>
+                    <text x="680" y="112" text-anchor="middle" fill="#7fb8e0" font-size="17" font-weight="bold">DESPACHO</text>
+                    <text x="680" y="140" text-anchor="middle" fill="#e0e0e8" font-size="14">ATIVIDADE</text>
+                    <text x="680" y="162" text-anchor="middle" fill="#e0e0e8" font-size="14">ORDINATÓRIA</text>
+                    <line x1="590" y1="180" x2="770" y2="180" stroke="#7fb8e0" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="680" y="210" text-anchor="middle" fill="#e0e0e8" font-size="13">IMPULSIONA O</text>
+                    <text x="680" y="232" text-anchor="middle" fill="#e0e0e8" font-size="13">PROCESSO SEM DECISÃO</text>
+                    <text x="680" y="260" text-anchor="middle" fill="#7fb8e0" font-size="12">Art. 203, §3º</text>
+                </svg>
+            </div>
+
+            <h4>2.1.1. Sentença (art. 203, §1º, CPC)</h4>
+            <p>É o ato do juiz que <span class="destaque">extingue o processo</span>, com ou sem resolução do mérito.</p>
+            <ul class="lista-marcadores">
+                <li>Julgamento de improcedência do pedido</li>
+                <li>Homologação de desistência da ação</li>
+                <li>Extinção por prescrição</li>
+            </ul>
+
+            <h4>2.1.2. Decisão Interlocutória (art. 203, §2º, CPC)</h4>
+            <p>É o ato do juiz que <span class="destaque-azul">resolve questão incidente</span> (questão que surge no curso do processo sem extingui-lo).</p>
+            <ul class="lista-marcadores">
+                <li>Decisão sobre tutela de urgência</li>
+                <li>Decisão que rejeita preliminar de incompetência</li>
+                <li>Decisão que admite ou não a produção de prova pericial</li>
+            </ul>
+
+            <h4>2.1.3. Despacho (art. 203, §3º, CPC)</h4>
+            <p>É o ato do juiz que <span class="destaque-verde">impulsiona o processo</span> sem caráter decisório.</p>
+            <ul class="lista-marcadores">
+                <li>"Vista ao Ministério Público"</li>
+                <li>"Apensem-se os autos"</li>
+                <li>"Abra-se vista à parte contrária"</li>
+            </ul>
+
+            <!-- BOX ATENÇÃO -->
+            <div class="box box-atencao">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </span>
+                    ATENÇÃO: O DESPACHO NÃO PRECISA SER FUNDAMENTADO
+                </div>
+                <p>Este é um ponto essencial para a prova:</p>
+                <p><strong>Regra geral:</strong> Todos os atos judiciais devem ser fundamentados (art. 93, IX, CF).</p>
+                <p><span class="destaque-rosa">EXCEÇÃO:</span> Os despachos NÃO precisam ser fundamentados, sob pena de nulidade.</p>
+                <p><strong>FUNDAMENTO:</strong> Como o despacho é ato meramente ordinatório (não decisório), não há conteúdo a ser fundamentado.</p>
+                <p><span class="destaque-rosa">DICA DE PROVA:</span> Quando a questão perguntar "qual ato jurisdicional NÃO demanda fundamentação sob pena de nulidade?", a resposta é <strong>DESPACHO</strong>. Sentenças, acórdãos e decisões interlocutórias SEMPRE exigem fundamentação.</p>
+            </div>
+
+            <h4>2.2. Princípio da Instrumentalidade das Formas (art. 188, CPC)</h4>
+            <div class="citacao">
+                "Os atos e os termos processuais independem de forma determinada, salvo quando a lei expressamente a exigir, reputando-se válidos os que, realizados de outro modo, lhe preencham a finalidade essencial."
+            </div>
+            <p><strong>SIGNIFICADO:</strong> A forma é apenas um <span class="destaque">instrumento</span> para alcançar a finalidade do ato. Se o ato cumpriu sua função mesmo sem a forma prescrita, deve ser validado.</p>
+
+            <div class="box box-exemplo">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                    </span>
+                    EXEMPLO
+                </div>
+                <p><em>A lei exige que a petição inicial seja assinada pelo advogado. Se a parte protocolar a inicial sem assinatura, mas o advogado regulariza em 5 dias, o ato será válido porque a finalidade (dar início ao processo) foi alcançada.</em></p>
+            </div>
+
+            <div class="box box-macete">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 18h6M9 15h6M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"/></svg>
+                    </span>
+                    MACETE PARA MEMORIZAR
+                </div>
+                <pre style="color:#e0e0e8; background:#12121f; padding:0.8rem; border-radius:8px; font-family:inherit; line-height:1.6;">
+FORMA É INSTRUMENTO, NÃO É FIM EM SI MESMA
+     ↓
+VALIDA-SE O ATO QUE CUMPRIU SUA FINALIDADE
+     ↓
+SALVO QUANDO A LEI EXIGIR FORMA ESPECÍFICA</pre>
+                <p><span class="destaque-rosa">PEGADINHA DE BANCA:</span> A FCC adora perguntar sobre as EXCEÇÕES ao princípio da instrumentalidade. Quando a lei diz "sob pena de nulidade" ou "sob pena de inadmissibilidade", a forma é <strong>essencial</strong> e não pode ser flexibilizada.</p>
+            </div>
+        </section>
+
+        <hr class="divisoria">
+
+        <!-- ---------- SEÇÃO 3 ---------- -->
+        <section id="sec1-3">
+            <h3>3. CAPACIDADE PROCESSUAL</h3>
+
+            <h4>3.1. Distinção Fundamental</h4>
+            <p>Um dos pontos que mais geram confusão em provas é a diferença entre:</p>
+            <table class="tabela-moderna">
+                <thead>
+                    <tr>
+                        <th>Conceito</th>
+                        <th>Definição</th>
+                        <th>Quem tem?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="destaque-azul">Capacidade de ser parte</span></td>
+                        <td>Aptidão para figurar em um processo como parte (autor ou réu)</td>
+                        <td>TODA PESSOA (física ou jurídica) — decorre da personalidade civil</td>
+                    </tr>
+                    <tr>
+                        <td><span class="destaque-verde">Capacidade de estar em juízo</span></td>
+                        <td>Aptidão para praticar atos processuais sozinho</td>
+                        <td>Apenas quem tem capacidade civil plena</td>
+                    </tr>
+                    <tr>
+                        <td><span class="destaque-rosa">Capacidade postulatória</span></td>
+                        <td>Aptidão para praticar atos processuais em nome das partes</td>
+                        <td>Advogados regularmente inscritos na OAB</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>3.2. Representação e Assistência (art. 71, CPC)</h4>
+            <ul class="lista-icones">
+                <li><strong>Capacidade plena</strong> → atua sozinho em juízo</li>
+                <li><strong>Relativamente incapaz</strong> (maior de 16 e menor de 18 anos) → <span class="destaque-azul">assistido</span> (o representante atua junto com o incapaz)</li>
+                <li><strong>Absolutamente incapaz</strong> (menor de 16 anos) → <span class="destaque-rosa">representado</span> (o representante atua no lugar do incapaz)</li>
+            </ul>
+
+            <table class="tabela-moderna">
+                <thead>
+                    <tr>
+                        <th>Situação</th>
+                        <th>Menor de 16 anos</th>
+                        <th>Maior de 16 e menor de 18</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Capacidade de ser parte</td>
+                        <td><span class="destaque-verde">✅ SIM</span></td>
+                        <td><span class="destaque-verde">✅ SIM</span></td>
+                    </tr>
+                    <tr>
+                        <td>Capacidade de estar em juízo</td>
+                        <td><span class="destaque-rosa">❌ NÃO</span></td>
+                        <td><span class="destaque-rosa">❌ NÃO</span> (precisa de assistência)</td>
+                    </tr>
+                    <tr>
+                        <td>Como atua</td>
+                        <td>Representado</td>
+                        <td>Assistido</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- ESTUDO DE CASO -->
+            <div class="box box-estudo-caso">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg>
+                    </span>
+                    ESTUDO DE CASO
+                </div>
+                <p><strong>Questão de Prova (FCC adaptada):</strong></p>
+                <p><em>Um menor de 16 anos, sem assistência de seu representante legal, outorga mandato a advogado e ajuíza ação indenizatória. Qual o vício processual existente?</em></p>
+                <p><strong>RESOLUÇÃO:</strong></p>
+                <ol style="padding-left:1.8rem; margin-bottom:0.5rem;">
+                    <li><strong>Capacidade de ser parte:</strong> O menor de 16 anos TEM capacidade de ser parte (toda pessoa tem).</li>
+                    <li><strong>Capacidade de estar em juízo:</strong> NÃO TEM, pois é absolutamente incapaz.</li>
+                    <li><strong>Capacidade postulatória:</strong> O advogado TEM capacidade postulatória (está regularmente inscrito).</li>
+                    <li><strong>Vício:</strong> Ocorre <span class="destaque-rosa">falta de capacidade de estar em juízo</span> por ausência de representação legal.</li>
+                </ol>
+                <p><strong>CONSEQUÊNCIA:</strong> O processo ficará <span class="destaque">suspenso</span> para que o vício seja sanado (art. 76, CPC), com a nomeação ou comparecimento do representante legal.</p>
+                <p><strong>RESPOSTA CORRETA:</strong> Falta de capacidade de estar em juízo.</p>
+            </div>
+
+            <!-- PEGADINHA -->
+            <div class="box box-atencao">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </span>
+                    ⚠️ PEGADINHA DE BANCA: NÃO CONFUNDA!
+                </div>
+                <p>A banca FGV costuma tentar confundir os candidatos com as seguintes pegadinhas:</p>
+                <ul class="lista-icones">
+                    <li><strong>PEGADINHA 1:</strong> "Menor de 16 anos não pode ser parte em processo." → <span class="destaque-rosa">ERRADO!</span> Pode sim, mas deve ser representado.</li>
+                    <li><strong>PEGADINHA 2:</strong> "Menor de 16 anos não tem capacidade postulatória." → <span class="destaque-rosa">ERRADO!</span> Nenhuma parte tem capacidade postulatória (isso é privativo de advogado). O menor tem falta de capacidade de estar em juízo.</li>
+                    <li><strong>PEGADINHA 3:</strong> "A outorga de mandato por menor de 16 anos é nula." → <span class="destaque-rosa">ERRADO!</span> O ato pode ser convalidado com a intervenção do representante legal.</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr class="divisoria">
+
+        <!-- ---------- SEÇÃO 4 ---------- -->
+        <section id="sec1-4">
+            <h3>4. MINISTÉRIO PÚBLICO NO PROCESSO CIVIL</h3>
+
+            <h4>4.1. Funções do Ministério Público</h4>
+            <p>O Ministério Público pode atuar no processo civil de duas formas distintas:</p>
+
+            <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin:1.5rem 0;">
+                <div style="flex:1; min-width:200px; background:#1a1a2e; border-radius:12px; padding:1.2rem 1.5rem; border:1px solid #2a2a40;">
+                    <h4 style="margin-top:0; color:#6fcf97;">ATUA COMO PARTE</h4>
+                    <p style="margin-bottom:0.2rem;"><span class="destaque-verde">substituto processual</span></p>
+                    <ul class="lista-marcadores" style="margin-top:0.3rem;">
+                        <li>Ajuíza ação em nome próprio defendendo direito alheio</li>
+                        <li>Ex: Ação civil pública para defender meio ambiente</li>
+                    </ul>
+                </div>
+                <div style="flex:1; min-width:200px; background:#1a1a2e; border-radius:12px; padding:1.2rem 1.5rem; border:1px solid #2a2a40;">
+                    <h4 style="margin-top:0; color:#7fb8e0;">ATUA COMO FISCAL DA LEI</h4>
+                    <p style="margin-bottom:0.2rem;"><span class="destaque-azul">custos legis</span></p>
+                    <ul class="lista-marcadores" style="margin-top:0.3rem;">
+                        <li>Intervém em processos alheios para fiscalizar a correta aplicação da lei</li>
+                        <li>Ex: Parecer em processo que envolve incapaz</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>4.2. Substituição Processual (Legitimação Extraordinária)</h4>
+            <p>O art. 18 do CPC autoriza o Ministério Público a atuar como <span class="destaque">substituto processual</span>:</p>
+            <div class="citacao">
+                "Ninguém poderá pleitear direito alheio em nome próprio, salvo quando autorizado pelo ordenamento jurídico."
+            </div>
+            <p><strong>CARACTERÍSTICAS DA SUBSTITUIÇÃO PROCESSUAL:</strong></p>
+            <ul class="lista-icones">
+                <li>O MP pleiteia direito <span class="destaque-rosa">alheio</span> em <span class="destaque-azul">nome próprio</span></li>
+                <li>É parte legítima para a ação</li>
+                <li>A decisão vinculará o titular do direito</li>
+                <li>Exige expressa autorização legal</li>
+            </ul>
+
+            <div class="box box-estudo-caso">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg>
+                    </span>
+                    ESTUDO DE CASO
+                </div>
+                <p><strong>Questão de Prova (CESPE adaptada):</strong></p>
+                <p><em>O Promotor de Justiça, autorizado por lei, ajuíza ação em nome próprio para defender interesses de um incapaz. Nessa hipótese, o MP atua na qualidade de quê?</em></p>
+                <p><strong>RESOLUÇÃO:</strong> O MP está atuando como <span class="destaque">substituto processual</span> (legitimação extraordinária).</p>
+                <p><strong>POR QUE NÃO É REPRESENTANTE LEGAL?</strong></p>
+                <table class="tabela-moderna" style="margin-top:0.5rem;">
+                    <thead>
+                        <tr><th>Função</th><th>Quem atua</th><th>Em nome de quem</th><th>Direito de quem</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="destaque-azul">Representante legal</span></td>
+                            <td>Advogado/representante</td>
+                            <td>Do incapaz</td>
+                            <td>Do incapaz</td>
+                        </tr>
+                        <tr>
+                            <td><span class="destaque-verde">Substituto processual (MP)</span></td>
+                            <td>O MP</td>
+                            <td>Próprio (MP)</td>
+                            <td>Do incapaz</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top:0.5rem;">Na representação, o ato é praticado em nome alheio. Na substituição processual, o ato é praticado em nome próprio, mas defendendo direito alheio.</p>
+            </div>
+
+            <div class="box box-macete">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 18h6M9 15h6M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"/></svg>
+                    </span>
+                    MACETE PARA MEMORIZAR
+                </div>
+                <p><span class="destaque">SUBSTITUIÇÃO PROCESSUAL</span> = "FALO EM NOME PRÓPRIO SOBRE DIREITO ALHEIO"</p>
+                <p><span class="destaque-azul">REPRESENTAÇÃO</span> = "FALO EM NOME ALHEIO SOBRE DIREITO ALHEIO"</p>
+            </div>
+        </section>
+
+        <hr class="divisoria">
+
+        <!-- ---------- SEÇÃO 5 ---------- -->
+        <section id="sec1-5">
+            <h3>5. COMPETÊNCIA DOS TRIBUNAIS SUPERIORES</h3>
+
+            <h4>5.1. O Papel do Superior Tribunal de Justiça (STJ)</h4>
+            <p>O STJ é o <span class="destaque">guardião da lei federal</span> (art. 105, III, CF).</p>
+            <p><strong>Competência principal do STJ:</strong> Julgar <span class="destaque-azul">recurso especial</span> quando:</p>
+            <ol style="padding-left:1.8rem; margin-bottom:1rem;">
+                <li>A decisão recorrida <strong>contrariar</strong> tratado ou lei federal (art. 105, III, "a")</li>
+                <li>A decisão recorrida <strong>julgar válida</strong> lei federal em confronto com outra lei federal (art. 105, III, "b")</li>
+                <li>A decisão recorrida <strong>der à lei federal interpretação divergente</strong> da que lhe haja atribuído outro tribunal (art. 105, III, "c")</li>
+            </ol>
+
+            <h4>5.2. O Papel do Supremo Tribunal Federal (STF)</h4>
+            <p>O STF é o <span class="destaque">guardião da Constituição</span> (art. 102, III, CF).</p>
+            <p><strong>Competência principal do STF:</strong> Julgar <span class="destaque-verde">recurso extraordinário</span> quando:</p>
+            <ol style="padding-left:1.8rem; margin-bottom:1rem;">
+                <li>A decisão recorrida <strong>contrariar</strong> dispositivo da Constituição (art. 102, III, "a")</li>
+                <li>A decisão recorrida <strong>julgar válida</strong> lei ou ato em confronto com a Constituição (art. 102, III, "b")</li>
+                <li>A decisão recorrida <strong>der à lei federal interpretação divergente</strong> da que lhe haja atribuído outro tribunal (art. 102, III, "c")</li>
+            </ol>
+
+            <table class="tabela-moderna">
+                <caption style="caption-side:bottom; margin-top:0.4rem; color:#b8b8d0;">TABELA COMPARATIVA: STJ X STF</caption>
+                <thead>
+                    <tr>
+                        <th>Critério</th>
+                        <th>STJ</th>
+                        <th>STF</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Papel</strong></td>
+                        <td>Guardião da lei federal</td>
+                        <td>Guardião da Constituição</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Recurso</strong></td>
+                        <td>Recurso Especial</td>
+                        <td>Recurso Extraordinário</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Base legal</strong></td>
+                        <td>Art. 105, III, CF</td>
+                        <td>Art. 102, III, CF</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Matéria</strong></td>
+                        <td>Lei federal</td>
+                        <td>Constituição Federal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exemplo</strong></td>
+                        <td>Divergência na interpretação do art. 402 do CC</td>
+                        <td>Ofensa ao art. 5º da CF</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="box box-estudo-caso">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg>
+                    </span>
+                    ESTUDO DE CASO
+                </div>
+                <p><strong>Questão de Prova (FCC adaptada):</strong></p>
+                <p><em>Um Tribunal de Justiça estadual, ao julgar apelação, interpreta lei federal de forma divergente da interpretação dada por outro TJ. Esgotadas as instâncias ordinárias, o acórdão é impugnável por qual recurso e perante qual tribunal?</em></p>
+                <p><strong>RESOLUÇÃO:</strong></p>
+                <ul class="lista-icones">
+                    <li><strong>Análise do caso:</strong> Matéria: interpretação de <span class="destaque">lei federal</span>; Divergência: entre dois Tribunais de Justiça; Fundamento: art. 105, III, "c" da CF</li>
+                    <li><strong>RESPOSTA:</strong> Recurso Especial para o <span class="destaque-azul">STJ</span>.</li>
+                    <li><strong>POR QUE NÃO É RECURSO EXTRAORDINÁRIO?</strong> Porque não envolve ofensa direta à Constituição. A discussão é sobre a interpretação de lei federal, não sobre constitucionalidade.</li>
+                    <li><strong>POR QUE NÃO É RECLAMAÇÃO?</strong> Reclamação é cabível para garantir competência ou autoridade de decisão do STF/STJ, não para uniformizar interpretação de lei federal.</li>
+                </ul>
+            </div>
+
+            <div class="box box-macete">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 18h6M9 15h6M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"/></svg>
+                    </span>
+                    MACETE PARA MEMORIZAR
+                </div>
+                <p><span class="destaque">"QUEM CUIDA DA LEI FEDERAL É O STJ"</span> 🇧🇷</p>
+                <p><span class="destaque-azul">"QUEM CUIDA DA CONSTITUIÇÃO É O STF"</span> 📜</p>
+                <p><strong>DICA DE PROVA:</strong> Identifique a <span class="destaque-rosa">matéria</span> da questão:</p>
+                <table class="tabela-moderna" style="margin-top:0.3rem;">
+                    <thead><tr><th>Se a questão envolver...</th><th>Recurso</th><th>Tribunal</th></tr></thead>
+                    <tbody>
+                        <tr><td>Ofensa à lei federal</td><td>Recurso Especial</td><td>STJ</td></tr>
+                        <tr><td>Ofensa à Constituição</td><td>Recurso Extraordinário</td><td>STF</td></tr>
+                        <tr><td>Divergência interpretativa de lei federal</td><td>Recurso Especial</td><td>STJ</td></tr>
+                        <tr><td>Divergência interpretativa da CF</td><td>Recurso Extraordinário</td><td>STF</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr class="divisoria">
+
+        <!-- ---------- SEÇÃO 6 ---------- -->
+        <section id="sec1-6">
+            <h3>6. CITAÇÃO: CONCEITO, INDISPONIBILIDADE E NULIDADE</h3>
+
+            <h4>6.1. Conceito de Citação (art. 238, CPC)</h4>
+            <div class="citacao">
+                "Citação é o ato pelo qual são convocados o réu, o executado ou o interessado para integrar a relação processual."
+            </div>
+            <p><strong>FINALIDADE DA CITAÇÃO:</strong></p>
+            <ul class="lista-icones">
+                <li>Dar ciência da existência do processo</li>
+                <li>Convocar para integrar a relação processual</li>
+                <li>Oportunizar a defesa (contraditório e ampla defesa)</li>
+            </ul>
+
+            <h4>6.2. Indispensabilidade da Citação</h4>
+            <p><span class="destaque-rosa">REGRRA:</span> A citação é indispensável para a validade do processo (art. 239, CPC).</p>
+            <p><span class="destaque-verde">EXCEÇÕES (art. 239, CPC):</span> A citação é <strong>dispensada</strong> quando:</p>
+            <ol style="padding-left:1.8rem;">
+                <li>O pedido for <strong>indeferido</strong> liminarmente (art. 330, CPC)</li>
+                <li>Houver <strong>improcedência liminar</strong> do pedido (art. 332, CPC)</li>
+                <li>O réu comparecer <strong>espontaneamente</strong> (supre a falta ou nulidade da citação)</li>
+            </ol>
+
+            <h4>6.3. Comparecimento Espontâneo (art. 239, §1º, CPC)</h4>
+            <p><strong>REGRA:</strong> O comparecimento espontâneo do réu <span class="destaque">supre a falta ou a nulidade da citação</span>.</p>
+            <p><strong>Efeitos do comparecimento espontâneo:</strong></p>
+            <ul class="lista-marcadores">
+                <li>Considera-se citado na data em que compareceu</li>
+                <li>O prazo para contestação começa a fluir a partir do comparecimento</li>
+                <li>Valida todo o processo anterior (exceto se houver nulidade insanável)</li>
+            </ul>
+
+            <div class="box box-estudo-caso">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg>
+                    </span>
+                    ESTUDO DE CASO
+                </div>
+                <p><strong>Questão de Prova (adaptada):</strong></p>
+                <p><em>Julgue os itens sobre citação:</em></p>
+                <ol style="padding-left:1.8rem;">
+                    <li><em>Citação é o ato pelo qual réu, executado ou interessado são convocados para integrar a relação processual.</em></li>
+                    <li><em>A citação do réu é indispensável para a validade do processo, ainda que haja improcedência liminar do pedido.</em></li>
+                    <li><em>Sendo nula a citação, o comparecimento espontâneo do réu supre a falha e determina o início do prazo para contestação.</em></li>
+                </ol>
+                <p><strong>RESOLUÇÃO:</strong></p>
+                <table class="tabela-moderna" style="margin-top:0.3rem;">
+                    <thead><tr><th>Item</th><th>Análise</th><th>Corretude</th></tr></thead>
+                    <tbody>
+                        <tr><td>I</td><td>Art. 238, CPC — definição correta</td><td><span class="destaque-verde">✅ CORRETO</span></td></tr>
+                        <tr><td>II</td><td>Art. 239, CPC — há exceções (indeferimento inicial e improcedência liminar)</td><td><span class="destaque-rosa">❌ INCORRETO</span></td></tr>
+                        <tr><td>III</td><td>Art. 239, §1º, CPC — comparecimento espontâneo supre falta/nulidade</td><td><span class="destaque-verde">✅ CORRETO</span></td></tr>
+                    </tbody>
+                </table>
+                <p><strong>RESPOSTA:</strong> Apenas os itens I e III estão corretos.</p>
+            </div>
+
+            <div class="box box-atencao">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    </span>
+                    ⚠️ PEGADINHA DE BANCA: CITAÇÃO INDISPENSÁVEL
+                </div>
+                <p>A FCC costuma afirmar que a citação é "sempre indispensável" e cobrar as exceções. Lembre-se:</p>
+                <p><strong>A citação NÃO é indispensável quando:</strong></p>
+                <ol style="padding-left:1.8rem;">
+                    <li>O pedido for indeferido liminarmente (art. 330)</li>
+                    <li>Houver improcedência liminar (art. 332)</li>
+                    <li>O réu comparecer espontaneamente (art. 239, §1º)</li>
+                </ol>
+            </div>
+        </section>
+
+        <hr class="divisoria">
+
+        <!-- ---------- SEÇÃO 7 ---------- -->
+        <section id="sec1-7">
+            <h3>7. AUXILIARES DA JUSTIÇA</h3>
+
+            <h4>7.1. Escrivão/Chefe de Secretaria (art. 152, CPC)</h4>
+            <p>O escrivão ou chefe de secretaria tem diversas atribuições, sendo a mais cobrada em concursos:</p>
+            <p><span class="destaque">INCUMBÊNCIA DO ESCRIVÃO:</span> Fornecer <strong>certidão</strong> de qualquer ato ou termo do processo, <strong>independentemente de despacho</strong>, observadas as disposições referentes ao sigilo/segredo de justiça (art. 152, V, CPC).</p>
+            <p><strong>OUTRAS INCUMBÊNCIAS:</strong></p>
+            <ul class="lista-marcadores">
+                <li>Manter os autos em cartório, não permitindo saída sem autorização (art. 152, IV, "a")</li>
+                <li>Não permitir que os autos saiam para conclusão ao juiz (art. 152, IV, "a" — exceção)</li>
+            </ul>
+
+            <h4>7.2. Oficial de Justiça (art. 154, CPC)</h4>
+            <p>O oficial de justiça tem atribuições específicas:</p>
+            <ul class="lista-marcadores">
+                <li>Fazer <strong>avaliações</strong> de bens</li>
+                <li>Auxiliar o juiz na <strong>manutenção da ordem</strong></li>
+                <li>Realizar <strong>citações</strong>, <strong>intimações</strong> e <strong>notificações</strong></li>
+            </ul>
+
+            <h4>7.3. Depositário e Administrador (art. 159, CPC)</h4>
+            <ul class="lista-marcadores">
+                <li>Responsável pela <strong>guarda e conservação</strong> de bens penhorados</li>
+                <li>Responderá pelos prejuízos se não zelar pelo bem</li>
+            </ul>
+
+            <h4>7.4. Intérprete/Tradutor (art. 162, CPC)</h4>
+            <ul class="lista-marcadores">
+                <li><strong>Verter</strong> para o português os documentos redigidos em língua estrangeira</li>
+            </ul>
+
+            <table class="tabela-moderna">
+                <caption style="caption-side:bottom; margin-top:0.4rem; color:#b8b8d0;">TABELA COMPARATIVA: AUXILIARES DA JUSTIÇA</caption>
+                <thead>
+                    <tr>
+                        <th>Auxiliar</th>
+                        <th>Principal Atribuição</th>
+                        <th>Fundamento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="destaque-azul">Escrivão/Chefe de Secretaria</span></td>
+                        <td>Fornecer certidão independentemente de despacho</td>
+                        <td>Art. 152, V, CPC</td>
+                    </tr>
+                    <tr>
+                        <td><span class="destaque-verde">Oficial de Justiça</span></td>
+                        <td>Avaliações, manutenção da ordem, citações</td>
+                        <td>Art. 154, IV e V, CPC</td>
+                    </tr>
+                    <tr>
+                        <td><span class="destaque-rosa">Depositário/Administrador</span></td>
+                        <td>Guarda e conservação de bens penhorados</td>
+                        <td>Art. 159, CPC</td>
+                    </tr>
+                    <tr>
+                        <td><span class="cor-laranja">Intérprete/Tradutor</span></td>
+                        <td>Verter língua estrangeira para o português</td>
+                        <td>Art. 162, II, CPC</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="box box-macete">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 18h6M9 15h6M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"/></svg>
+                    </span>
+                    MACETE PARA MEMORIZAR
+                </div>
+                <p><span class="destaque">ESCRIVÃO = CERTIDÃO</span> (PODE DAR SEM DESPACHO)</p>
+                <p><span class="destaque-azul">OFICIAL = AVALIAÇÃO E ORDEM</span></p>
+                <p><span class="destaque-verde">DEPOSITÁRIO = GUARDA BEM PENHORADO</span></p>
+                <p><span class="cor-laranja">INTÉRPRETE = TRADUZ IDIOMA</span></p>
+            </div>
+        </section>
+
+        <hr class="divisoria">
+
+        <!-- ---------- SEÇÃO 8 ---------- -->
+        <section id="sec1-8">
+            <h3>8. JUIZADOS ESPECIAIS CÍVEIS (LEI 9.099/95)</h3>
+
+            <h4>8.1. Competência dos Juizados Especiais Cíveis</h4>
+            <p>O art. 3º da Lei 9.099/95 estabelece a competência dos Juizados Especiais Cíveis:</p>
+            <p><strong>São causas de menor complexidade:</strong></p>
+            <table class="tabela-moderna">
+                <thead>
+                    <tr><th>Inciso</th><th>Causa</th><th>Limite</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>I</td><td>Valor até 40 salários mínimos</td><td>—</td></tr>
+                    <tr><td>II</td><td>Arrendamento rural/parceria agrícola</td><td>—</td></tr>
+                    <tr><td>III</td><td><span class="destaque">Ação de despejo para uso próprio</span></td><td>—</td></tr>
+                    <tr><td>IV</td><td>Ações possessórias sobre bens imóveis</td><td>Até 40 salários mínimos</td></tr>
+                </tbody>
+            </table>
+
+            <h4>8.2. Causas Excluídas (§2º do art. 3º)</h4>
+            <p><span class="destaque-rosa">NÃO podem ser processadas nos Juizados Especiais:</span></p>
+            <ul class="lista-icones">
+                <li>❌ Causas de natureza <strong>alimentar</strong></li>
+                <li>❌ Causas <strong>falimentares</strong></li>
+                <li>❌ Causas <strong>fiscais</strong></li>
+                <li>❌ Causas de interesse da <strong>Fazenda Pública</strong></li>
+                <li>❌ <strong>Acidentes de trabalho</strong></li>
+                <li>❌ <strong>Resíduos</strong> (direito de família, sucessões)</li>
+                <li>❌ Sobre <strong>estado/capacidade</strong> das pessoas</li>
+            </ul>
+
+            <div class="box box-estudo-caso">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg>
+                    </span>
+                    ESTUDO DE CASO
+                </div>
+                <p><strong>Questão de Prova (FCC adaptada):</strong></p>
+                <p><em>Conforme a Lei nº 9.099/1995, qual das seguintes causas está incluída na competência dos Juizados Especiais Cíveis?</em></p>
+                <ul class="lista-marcadores">
+                    <li>a) Ação de alimentos</li>
+                    <li>b) Ação de despejo para uso próprio</li>
+                    <li>c) Ação possessória sobre bem imóvel avaliado em 80 salários mínimos</li>
+                    <li>d) Ação fiscal envolvendo ICMS</li>
+                </ul>
+                <p><strong>RESOLUÇÃO:</strong></p>
+                <table class="tabela-moderna" style="margin-top:0.3rem;">
+                    <thead><tr><th>Opção</th><th>Análise</th><th>Resultado</th></tr></thead>
+                    <tbody>
+                        <tr><td>a) Ação de alimentos</td><td>Excluída (art. 3º, §2º)</td><td><span class="destaque-rosa">❌ INCORRETA</span></td></tr>
+                        <tr><td><strong>b) Ação de despejo para uso próprio</strong></td><td>Incluída (art. 3º, III)</td><td><span class="destaque-verde">✅ CORRETA</span></td></tr>
+                        <tr><td>c) Ação possessória &gt; 40 SM</td><td>Excluída (limite de 40 SM)</td><td><span class="destaque-rosa">❌ INCORRETA</span></td></tr>
+                        <tr><td>d) Ação fiscal</td><td>Excluída (art. 3º, §2º)</td><td><span class="destaque-rosa">❌ INCORRETA</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="box box-macete">
+                <div class="box-title">
+                    <span class="box-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 18h6M9 15h6M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"/></svg>
+                    </span>
+                    MACETE PARA MEMORIZAR (CAUSAS EXCLUÍDAS)
+                </div>
+                <pre style="color:#e0e0e8; background:#12121f; padding:0.8rem; border-radius:8px; font-family:inherit; line-height:1.6;">
+FATIA FALTA?
+F - Fiscal (causas fiscais)
+A - Alimentar (causas alimentares)
+T - Trabalho (acidentes de trabalho)
+I - Interesse da Fazenda Pública
+A - Estado/capacidade das pessoas
+
+FALÊNCIA (causas falimentares)
+RESÍDUOS (direito de família/sucessões)</pre>
+            </div>
+        </section>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 2                                                    -->
+    <!-- ============================================================ -->
+    <section id="cap2">
+        <h2>CAPÍTULO 2: SÍNTESE E MAPAS MENTAIS</h2>
+
+        <!-- MAPA 1: JURISDIÇÃO -->
+        <section id="mapa-jurisdicao">
+            <h3>MAPA MENTAL 1: JURISDIÇÃO</h3>
+            <div class="diagrama-container">
+                <svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto;">
+                    <rect x="0" y="0" width="800" height="460" rx="16" fill="#12121f" />
+
+                    <!-- nó central -->
+                    <rect x="280" y="20" width="240" height="50" rx="10" fill="#1e1e30" stroke="#f0c860" stroke-width="2"/>
+                    <text x="400" y="51" text-anchor="middle" fill="#f0c860" font-size="20" font-weight="bold">JURISDIÇÃO</text>
+
+                    <!-- linhas -->
+                    <line x1="400" y1="70" x2="400" y2="100" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="400" y1="100" x2="120" y2="100" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="400" y1="100" x2="400" y2="100" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="400" y1="100" x2="680" y2="100" stroke="#7fb8e0" stroke-width="2"/>
+
+                    <!-- ramo 1: Características -->
+                    <line x1="120" y1="100" x2="120" y2="130" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="20" y="130" width="200" height="44" rx="8" fill="#1a1a2e" stroke="#7fb8e0" stroke-width="2"/>
+                    <text x="120" y="158" text-anchor="middle" fill="#7fb8e0" font-size="16" font-weight="bold">CARACTERÍSTICAS</text>
+                    <line x1="120" y1="174" x2="120" y2="200" stroke="#7fb8e0" stroke-width="2"/>
+                    <text x="120" y="220" text-anchor="middle" fill="#e0e0e8" font-size="13">• Inércia</text>
+                    <text x="120" y="242" text-anchor="middle" fill="#e0e0e8" font-size="13">• Substitutividade</text>
+                    <text x="120" y="264" text-anchor="middle" fill="#e0e0e8" font-size="13">• Imperatividade</text>
+                    <text x="120" y="286" text-anchor="middle" fill="#e0e0e8" font-size="13">• Definitividade</text>
+                    <text x="120" y="308" text-anchor="middle" fill="#e0e0e8" font-size="13">• Indelegabilidade</text>
+
+                    <!-- ramo 2: Princípios -->
+                    <line x1="400" y1="100" x2="400" y2="130" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="300" y="130" width="200" height="44" rx="8" fill="#1a1a2e" stroke="#6fcf97" stroke-width="2"/>
+                    <text x="400" y="158" text-anchor="middle" fill="#6fcf97" font-size="16" font-weight="bold">PRINCÍPIOS</text>
+                    <line x1="400" y1="174" x2="400" y2="200" stroke="#7fb8e0" stroke-width="2"/>
+                    <text x="400" y="220" text-anchor="middle" fill="#e0e0e8" font-size="13">• Inércia da Jurisdição</text>
+                    <text x="400" y="242" text-anchor="middle" fill="#e0e0e8" font-size="13">• Congruência</text>
+                    <text x="400" y="264" text-anchor="middle" fill="#e0e0e8" font-size="13">• Instrumentalidade</text>
+                    <text x="400" y="286" text-anchor="middle" fill="#e0e0e8" font-size="13">• Fundamentação</text>
+                    <text x="400" y="308" text-anchor="middle" fill="#e0e0e8" font-size="13">  (exceção: despachos)</text>
+
+                    <!-- ramo 3: Espécies -->
+                    <line x1="680" y1="100" x2="680" y2="130" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="580" y="130" width="200" height="44" rx="8" fill="#1a1a2e" stroke="#f28b82" stroke-width="2"/>
+                    <text x="680" y="158" text-anchor="middle" fill="#f28b82" font-size="16" font-weight="bold">ESPÉCIES</text>
+                    <line x1="680" y1="174" x2="680" y2="200" stroke="#7fb8e0" stroke-width="2"/>
+                    <text x="680" y="220" text-anchor="middle" fill="#e0e0e8" font-size="13">• Contenciosa</text>
+                    <text x="680" y="242" text-anchor="middle" fill="#e0e0e8" font-size="13">• Voluntária</text>
+                    <text x="680" y="264" text-anchor="middle" fill="#e0e0e8" font-size="13">• Civil</text>
+                    <text x="680" y="286" text-anchor="middle" fill="#e0e0e8" font-size="13">• Penal</text>
+                    <text x="680" y="308" text-anchor="middle" fill="#e0e0e8" font-size="13">• Trabalhista</text>
+                    <text x="680" y="330" text-anchor="middle" fill="#e0e0e8" font-size="13">• Eleitoral</text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- MAPA 2: ATOS PROCESSUAIS -->
+        <section id="mapa-atos">
+            <h3>MAPA MENTAL 2: ATOS PROCESSUAIS</h3>
+            <div class="diagrama-container">
+                <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto;">
+                    <rect x="0" y="0" width="700" height="320" rx="16" fill="#12121f" />
+
+                    <!-- título -->
+                    <rect x="150" y="16" width="400" height="44" rx="10" fill="#1e1e30" stroke="#f0c860" stroke-width="2"/>
+                    <text x="350" y="46" text-anchor="middle" fill="#f0c860" font-size="18" font-weight="bold">PRONUNCIAMENTOS DO JUIZ</text>
+
+                    <!-- linha central -->
+                    <line x1="350" y1="60" x2="350" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="350" y1="90" x2="120" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="350" y1="90" x2="350" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="350" y1="90" x2="580" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+
+                    <!-- Sentença -->
+                    <line x1="120" y1="90" x2="120" y2="120" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="20" y="120" width="200" height="170" rx="10" fill="#1a1a2e" stroke="#6fcf97" stroke-width="2"/>
+                    <text x="120" y="152" text-anchor="middle" fill="#6fcf97" font-size="16" font-weight="bold">SENTENÇA</text>
+                    <text x="120" y="178" text-anchor="middle" fill="#e0e0e8" font-size="13">(EXTINGUE O PROCESSO)</text>
+                    <line x1="40" y1="192" x2="200" y2="192" stroke="#6fcf97" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="120" y="216" text-anchor="middle" fill="#e0e0e8" font-size="13">com ou sem</text>
+                    <text x="120" y="238" text-anchor="middle" fill="#e0e0e8" font-size="13">resolução do mérito</text>
+
+                    <!-- Decisão Interlocutória -->
+                    <line x1="350" y1="90" x2="350" y2="120" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="250" y="120" width="200" height="170" rx="10" fill="#1a1a2e" stroke="#f28b82" stroke-width="2"/>
+                    <text x="350" y="152" text-anchor="middle" fill="#f28b82" font-size="16" font-weight="bold">DECISÃO</text>
+                    <text x="350" y="174" text-anchor="middle" fill="#f28b82" font-size="14" font-weight="bold">INTERLOCUTÓRIA</text>
+                    <text x="350" y="200" text-anchor="middle" fill="#e0e0e8" font-size="13">(RESOLVE INCIDENTE)</text>
+                    <line x1="270" y1="212" x2="430" y2="212" stroke="#f28b82" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="350" y="238" text-anchor="middle" fill="#e0e0e8" font-size="13">questão incidente</text>
+                    <text x="350" y="260" text-anchor="middle" fill="#e0e0e8" font-size="13">sem extinguir o processo</text>
+
+                    <!-- Despacho -->
+                    <line x1="580" y1="90" x2="580" y2="120" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="480" y="120" width="200" height="170" rx="10" fill="#1a1a2e" stroke="#7fb8e0" stroke-width="2"/>
+                    <text x="580" y="152" text-anchor="middle" fill="#7fb8e0" font-size="16" font-weight="bold">DESPACHO</text>
+                    <text x="580" y="178" text-anchor="middle" fill="#e0e0e8" font-size="13">(IMPULSIONA O PROCESSO)</text>
+                    <line x1="500" y1="192" x2="660" y2="192" stroke="#7fb8e0" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="580" y="216" text-anchor="middle" fill="#e0e0e8" font-size="13">sem caráter decisório</text>
+                    <text x="580" y="238" text-anchor="middle" fill="#e0e0e8" font-size="13">NÃO precisa</text>
+                    <text x="580" y="260" text-anchor="middle" fill="#e0e0e8" font-size="13">de fundamentação</text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- MAPA 3: CAPACIDADES -->
+        <section id="mapa-capacidades">
+            <h3>MAPA MENTAL 3: CAPACIDADES NO PROCESSO</h3>
+            <div class="diagrama-container">
+                <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto;">
+                    <rect x="0" y="0" width="720" height="280" rx="16" fill="#12121f" />
+
+                    <rect x="180" y="16" width="360" height="44" rx="10" fill="#1e1e30" stroke="#f0c860" stroke-width="2"/>
+                    <text x="360" y="46" text-anchor="middle" fill="#f0c860" font-size="18" font-weight="bold">CAPACIDADES NO PROCESSO</text>
+
+                    <line x1="360" y1="60" x2="360" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="360" y1="90" x2="120" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="360" y1="90" x2="360" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="360" y1="90" x2="600" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+
+                    <!-- 1 -->
+                    <line x1="120" y1="90" x2="120" y2="120" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="10" y="120" width="220" height="130" rx="10" fill="#1a1a2e" stroke="#7fb8e0" stroke-width="2"/>
+                    <text x="120" y="150" text-anchor="middle" fill="#7fb8e0" font-size="15" font-weight="bold">Capacidade de</text>
+                    <text x="120" y="172" text-anchor="middle" fill="#7fb8e0" font-size="15" font-weight="bold">SER PARTE</text>
+                    <line x1="30" y1="185" x2="210" y2="185" stroke="#7fb8e0" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="120" y="210" text-anchor="middle" fill="#e0e0e8" font-size="13">TODOS têm</text>
+                    <text x="120" y="232" text-anchor="middle" fill="#e0e0e8" font-size="13">(personalidade civil)</text>
+
+                    <!-- 2 -->
+                    <line x1="360" y1="90" x2="360" y2="120" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="250" y="120" width="220" height="130" rx="10" fill="#1a1a2e" stroke="#6fcf97" stroke-width="2"/>
+                    <text x="360" y="150" text-anchor="middle" fill="#6fcf97" font-size="15" font-weight="bold">Capacidade de</text>
+                    <text x="360" y="172" text-anchor="middle" fill="#6fcf97" font-size="15" font-weight="bold">ESTAR EM JUÍZO</text>
+                    <line x1="270" y1="185" x2="450" y2="185" stroke="#6fcf97" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="360" y="210" text-anchor="middle" fill="#e0e0e8" font-size="13">Quem tem</text>
+                    <text x="360" y="232" text-anchor="middle" fill="#e0e0e8" font-size="13">capacidade civil plena</text>
+
+                    <!-- 3 -->
+                    <line x1="600" y1="90" x2="600" y2="120" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="490" y="120" width="220" height="130" rx="10" fill="#1a1a2e" stroke="#f28b82" stroke-width="2"/>
+                    <text x="600" y="150" text-anchor="middle" fill="#f28b82" font-size="15" font-weight="bold">Capacidade</text>
+                    <text x="600" y="172" text-anchor="middle" fill="#f28b82" font-size="15" font-weight="bold">POSTULATÓRIA</text>
+                    <line x1="510" y1="185" x2="690" y2="185" stroke="#f28b82" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="600" y="210" text-anchor="middle" fill="#e0e0e8" font-size="13">ADVOGADO</text>
+                    <text x="600" y="232" text-anchor="middle" fill="#e0e0e8" font-size="13">(OAB)</text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- MAPA 4: RECURSOS -->
+        <section id="mapa-recursos">
+            <h3>MAPA MENTAL 4: RECURSOS AOS TRIBUNAIS SUPERIORES</h3>
+            <div class="diagrama-container">
+                <svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto;">
+                    <rect x="0" y="0" width="760" height="280" rx="16" fill="#12121f" />
+
+                    <rect x="180" y="16" width="400" height="44" rx="10" fill="#1e1e30" stroke="#f0c860" stroke-width="2"/>
+                    <text x="380" y="46" text-anchor="middle" fill="#f0c860" font-size="18" font-weight="bold">RECURSOS AOS TRIBUNAIS SUPERIORES</text>
+
+                    <line x1="380" y1="60" x2="380" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="380" y1="90" x2="170" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="380" y1="90" x2="590" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+
+                    <!-- STJ -->
+                    <line x1="170" y1="90" x2="170" y2="120" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="20" y="120" width="300" height="130" rx="10" fill="#1a1a2e" stroke="#6fcf97" stroke-width="2"/>
+                    <text x="170" y="150" text-anchor="middle" fill="#6fcf97" font-size="16" font-weight="bold">RECURSO ESPECIAL</text>
+                    <text x="170" y="174" text-anchor="middle" fill="#6fcf97" font-size="14">(PARA O STJ)</text>
+                    <line x1="40" y1="188" x2="300" y2="188" stroke="#6fcf97" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="170" y="212" text-anchor="middle" fill="#e0e0e8" font-size="13">• Matéria: LEI FEDERAL</text>
+                    <text x="170" y="234" text-anchor="middle" fill="#e0e0e8" font-size="13">• Guardião da lei federal</text>
+
+                    <!-- STF -->
+                    <line x1="590" y1="90" x2="590" y2="120" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="440" y="120" width="300" height="130" rx="10" fill="#1a1a2e" stroke="#f28b82" stroke-width="2"/>
+                    <text x="590" y="150" text-anchor="middle" fill="#f28b82" font-size="16" font-weight="bold">RECURSO EXTRAORDINÁRIO</text>
+                    <text x="590" y="174" text-anchor="middle" fill="#f28b82" font-size="14">(PARA O STF)</text>
+                    <line x1="460" y1="188" x2="720" y2="188" stroke="#f28b82" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="590" y="212" text-anchor="middle" fill="#e0e0e8" font-size="13">• Matéria: CONSTITUIÇÃO</text>
+                    <text x="590" y="234" text-anchor="middle" fill="#e0e0e8" font-size="13">• Guardião da CF</text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- MAPA 5: AUXILIARES -->
+        <section id="mapa-auxiliares">
+            <h3>MAPA MENTAL 5: AUXILIARES DA JUSTIÇA</h3>
+            <div class="diagrama-container">
+                <svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto;">
+                    <rect x="0" y="0" width="800" height="340" rx="16" fill="#12121f" />
+
+                    <rect x="240" y="16" width="320" height="44" rx="10" fill="#1e1e30" stroke="#f0c860" stroke-width="2"/>
+                    <text x="400" y="46" text-anchor="middle" fill="#f0c860" font-size="18" font-weight="bold">AUXILIARES DA JUSTIÇA</text>
+
+                    <line x1="400" y1="60" x2="400" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+                    <!-- 4 ramos -->
+                    <line x1="400" y1="90" x2="90" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="400" y1="90" x2="250" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="400" y1="90" x2="550" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+                    <line x1="400" y1="90" x2="710" y2="90" stroke="#7fb8e0" stroke-width="2"/>
+
+                    <!-- Escrivão -->
+                    <line x1="90" y1="90" x2="90" y2="120" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="10" y="120" width="160" height="180" rx="10" fill="#1a1a2e" stroke="#7fb8e0" stroke-width="2"/>
+                    <text x="90" y="152" text-anchor="middle" fill="#7fb8e0" font-size="15" font-weight="bold">ESCRIVÃO</text>
+                    <line x1="30" y1="165" x2="150" y2="165" stroke="#7fb8e0" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="90" y="192" text-anchor="middle" fill="#e0e0e8" font-size="12">CERTIDÃO</text>
+                    <text x="90" y="214" text-anchor="middle" fill="#e0e0e8" font-size="12">independentemente</text>
+                    <text x="90" y="236" text-anchor="middle" fill="#e0e0e8" font-size="12">de despacho</text>
+                    <text x="90" y="266" text-anchor="middle" fill="#7fb8e0" font-size="11">Art. 152, V</text>
+
+                    <!-- Oficial -->
+                    <line x1="250" y1="90" x2="250" y2="120" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="170" y="120" width="160" height="180" rx="10" fill="#1a1a2e" stroke="#6fcf97" stroke-width="2"/>
+                    <text x="250" y="152" text-anchor="middle" fill="#6fcf97" font-size="15" font-weight="bold">OFICIAL DE</text>
+                    <text x="250" y="174" text-anchor="middle" fill="#6fcf97" font-size="15" font-weight="bold">JUSTIÇA</text>
+                    <line x1="190" y1="188" x2="310" y2="188" stroke="#6fcf97" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="250" y="214" text-anchor="middle" fill="#e0e0e8" font-size="12">AVALIAÇÃO</text>
+                    <text x="250" y="236" text-anchor="middle" fill="#e0e0e8" font-size="12">manutenção da ordem</text>
+                    <text x="250" y="258" text-anchor="middle" fill="#e0e0e8" font-size="12">citações / intimações</text>
+                    <text x="250" y="286" text-anchor="middle" fill="#6fcf97" font-size="11">Art. 154</text>
+
+                    <!-- Depositário -->
+                    <line x1="550" y1="90" x2="550" y2="120" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="470" y="120" width="160" height="180" rx="10" fill="#1a1a2e" stroke="#f28b82" stroke-width="2"/>
+                    <text x="550" y="152" text-anchor="middle" fill="#f28b82" font-size="15" font-weight="bold">DEPOSITÁRIO</text>
+                    <line x1="490" y1="165" x2="610" y2="165" stroke="#f28b82" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="550" y="192" text-anchor="middle" fill="#e0e0e8" font-size="12">guarda e conservação</text>
+                    <text x="550" y="214" text-anchor="middle" fill="#e0e0e8" font-size="12">de bens penhorados</text>
+                    <text x="550" y="244" text-anchor="middle" fill="#e0e0e8" font-size="12">responsabilidade</text>
+                    <text x="550" y="266" text-anchor="middle" fill="#e0e0e8" font-size="12">por prejuízos</text>
+                    <text x="550" y="286" text-anchor="middle" fill="#f28b82" font-size="11">Art. 159</text>
+
+                    <!-- Intérprete -->
+                    <line x1="710" y1="90" x2="710" y2="120" stroke="#7fb8e0" stroke-width="2"/>
+                    <rect x="630" y="120" width="160" height="180" rx="10" fill="#1a1a2e" stroke="#ffb347" stroke-width="2"/>
+                    <text x="710" y="152" text-anchor="middle" fill="#ffb347" font-size="15" font-weight="bold">INTÉRPRETE</text>
+                    <text x="710" y="174" text-anchor="middle" fill="#ffb347" font-size="13">/ TRADUTOR</text>
+                    <line x1="650" y1="188" x2="770" y2="188" stroke="#ffb347" stroke-width="1" stroke-dasharray="4 2"/>
+                    <text x="710" y="214" text-anchor="middle" fill="#e0e0e8" font-size="12">verter para o</text>
+                    <text x="710" y="236" text-anchor="middle" fill="#e0e0e8" font-size="12">português documentos</text>
+                    <text x="710" y="258" text-anchor="middle" fill="#e0e0e8" font-size="12">em língua estrangeira</text>
+                    <text x="710" y="286" text-anchor="middle" fill="#ffb347" font-size="11">Art. 162, II</text>
+                </svg>
+            </div>
+        </section>
+    </section>
+
+    <hr class="divisoria">
+
+    <!-- ========== TABELA DE VÍNCULOS NORMATIVOS ========== -->
+    <section id="vinculos">
+        <h2>TABELA DE VÍNCULOS NORMATIVOS</h2>
+        <table class="tabela-moderna">
+            <thead>
+                <tr>
+                    <th>Dispositivo</th>
+                    <th>Conteúdo</th>
+                    <th>Tema</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Art. 2º, CPC</strong></td><td>Jurisdição não atua de ofício</td><td>Inércia</td></tr>
+                <tr><td><strong>Art. 18, CPC</strong></td><td>Substituição processual</td><td>MP</td></tr>
+                <tr><td><strong>Art. 71, CPC</strong></td><td>Representação/assistência de incapazes</td><td>Capacidade</td></tr>
+                <tr><td><strong>Art. 76, CPC</strong></td><td>Suspensão para sanar vício de representação</td><td>Capacidade</td></tr>
+                <tr><td><strong>Art. 93, IX, CF</strong></td><td>Fundamentação dos atos judiciais (exceto despachos)</td><td>Atos</td></tr>
+                <tr><td><strong>Art. 105, III, CF</strong></td><td>Competência do STJ (recurso especial)</td><td>Tribunais</td></tr>
+                <tr><td><strong>Art. 102, III, CF</strong></td><td>Competência do STF (recurso extraordinário)</td><td>Tribunais</td></tr>
+                <tr><td><strong>Art. 152, V, CPC</strong></td><td>Escrivão: certidão independente de despacho</td><td>Auxiliares</td></tr>
+                <tr><td><strong>Art. 154, IV/V, CPC</strong></td><td>Oficial de justiça: avaliação e ordem</td><td>Auxiliares</td></tr>
+                <tr><td><strong>Art. 159, CPC</strong></td><td>Depositário: guarda de bens</td><td>Auxiliares</td></tr>
+                <tr><td><strong>Art. 162, II, CPC</strong></td><td>Intérprete: tradução</td><td>Auxiliares</td></tr>
+                <tr><td><strong>Art. 188, CPC</strong></td><td>Instrumentalidade das formas</td><td>Forma dos atos</td></tr>
+                <tr><td><strong>Art. 203, CPC</strong></td><td>Classificação dos atos do juiz</td><td>Atos</td></tr>
+                <tr><td><strong>Art. 238, CPC</strong></td><td>Conceito de citação</td><td>Citação</td></tr>
+                <tr><td><strong>Art. 239, CPC</strong></td><td>Indispensabilidade da citação</td><td>Citação</td></tr>
+                <tr><td><strong>Art. 330, CPC</strong></td><td>Indeferimento da inicial</td><td>Citação (exceção)</td></tr>
+                <tr><td><strong>Art. 332, CPC</strong></td><td>Improcedência liminar</td><td>Citação (exceção)</td></tr>
+                <tr><td><strong>Art. 3º, Lei 9.099/95</strong></td><td>Competência dos Juizados</td><td>Juizados</td></tr>
+                <tr><td><strong>Art. 3º, §2º, Lei 9.099/95</strong></td><td>Causas excluídas</td><td>Juizados</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr class="divisoria">
+
+    <!-- ========== MACETES ========== -->
+    <section id="macetes">
+        <h2>MACETES DE MEMORIZAÇÃO</h2>
+
+        <div class="box box-macete">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M9 15h6M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"/></svg></span>
+                1. Despacho não precisa de fundamentação
+            </div>
+            <p><span class="destaque">"DESPACHO DESPENSA FUNDAMENTAÇÃO"</span> (D - Despacho, D - Dispensa)</p>
+        </div>
+
+        <div class="box box-macete">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M9 15h6M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"/></svg></span>
+                2. STJ x STF
+            </div>
+            <p><span class="destaque-azul">"LEI FEDERAL VAI PARA O STJ"</span></p>
+            <p><span class="destaque-rosa">"CONSTITUIÇÃO VAI PARA O STF"</span></p>
+        </div>
+
+        <div class="box box-macete">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M9 15h6M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"/></svg></span>
+                3. Auxiliares
+            </div>
+            <p><span class="destaque">ESCRIVÃO DÁ CERTIDÃO</span></p>
+            <p><span class="destaque-azul">OFICIAL AVALIA E MANTÉM ORDEM</span></p>
+            <p><span class="destaque-verde">DEPOSITÁRIO GUARDA PENHORA</span></p>
+            <p><span class="cor-laranja">INTÉRPRETE TRADUZ</span></p>
+        </div>
+
+        <div class="box box-macete">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M9 15h6M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"/></svg></span>
+                4. Exceções à indispensabilidade da citação
+            </div>
+            <p><span class="destaque">"PIN"</span> — Pedido Indeferido / Improcedência liminar / comparecimento espontâneo do réu</p>
+        </div>
+
+        <div class="box box-macete">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M9 15h6M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"/></svg></span>
+                5. Causas excluídas dos Juizados
+            </div>
+            <pre style="color:#e0e0e8; background:#12121f; padding:0.8rem; border-radius:8px; font-family:inherit; line-height:1.6;">
+FATIA FALTA
+F - Fiscal
+A - Alimentar
+T - Trabalho (acidentes)
+I - Interesse da Fazenda Pública
+A - Estado/capacidade
+FAL - Falimentar
+TA - (direito de família/sucessões)</pre>
+        </div>
+    </section>
+
+    <hr class="divisoria">
+
+    <!-- ========== QUESTÕES DE FIXAÇÃO ========== -->
+    <section id="questoes">
+        <h2>QUESTÕES DE FIXAÇÃO (GABARITO COMENTADO)</h2>
+
+        <div class="box box-estudo-caso">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg></span>
+                Questão 1 (CESPE - adaptada)
+            </div>
+            <p><em>A jurisdição é caracterizada pela inércia, substitutividade e definitividade. No entanto, a inércia não é absoluta, pois o juiz pode atuar de ofício nos casos previstos em lei.</em></p>
+            <p><strong>GABARITO: CERTO</strong></p>
+            <p><strong>COMENTÁRIO:</strong> Apesar da regra geral ser a inércia (art. 2º, CPC), existem exceções em que o juiz pode atuar de ofício (ex: exceções processuais, direitos indisponíveis).</p>
+        </div>
+
+        <div class="box box-estudo-caso">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg></span>
+                Questão 2 (FCC - adaptada)
+            </div>
+            <p><em>O princípio da instrumentalidade das formas, previsto no art. 188 do CPC, permite a validação de atos processuais que, realizados de forma diversa da prescrita, preencham sua finalidade essencial.</em></p>
+            <p><strong>GABARITO: CERTO</strong></p>
+            <p><strong>COMENTÁRIO:</strong> Exatamente a definição legal do art. 188, CPC.</p>
+        </div>
+
+        <div class="box box-estudo-caso">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg></span>
+                Questão 3 (FGV - adaptada)
+            </div>
+            <p><em>Um menor de 17 anos, relativamente incapaz, ajuíza ação sem a assistência de seu representante legal. O processo deve ser extinto sem resolução do mérito.</em></p>
+            <p><strong>GABARITO: ERRADO</strong></p>
+            <p><strong>COMENTÁRIO:</strong> O processo não é extinto, mas sim <span class="destaque">suspenso</span> para que o vício seja sanado (art. 76, CPC). A extinção seria medida extrema, aplicável apenas se o vício não for sanado no prazo.</p>
+        </div>
+
+        <div class="box box-estudo-caso">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg></span>
+                Questão 4 (CESPE - adaptada)
+            </div>
+            <p><em>O Ministério Público, ao ajuizar ação civil pública para defesa do meio ambiente, atua como substituto processual.</em></p>
+            <p><strong>GABARITO: CERTO</strong></p>
+            <p><strong>COMENTÁRIO:</strong> O MP defende direito alheio (meio ambiente) em nome próprio, caracterizando a substituição processual (legitimação extraordinária).</p>
+        </div>
+
+        <div class="box box-estudo-caso">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg></span>
+                Questão 5 (FCC - adaptada)
+            </div>
+            <p><em>O escrivão pode fornecer certidão de qualquer ato ou termo do processo apenas mediante despacho do juiz.</em></p>
+            <p><strong>GABARITO: ERRADO</strong></p>
+            <p><strong>COMENTÁRIO:</strong> O art. 152, V, CPC prevê que o escrivão fornece certidão <span class="destaque">independentemente de despacho</span>, observadas as disposições sobre sigilo/segredo de justiça.</p>
+        </div>
+
+        <div class="box box-estudo-caso">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg></span>
+                Questão 6 (FGV - adaptada)
+            </div>
+            <p><em>Ação de despejo para uso próprio é causa de competência dos Juizados Especiais Cíveis, independentemente do valor.</em></p>
+            <p><strong>GABARITO: CERTO</strong></p>
+            <p><strong>COMENTÁRIO:</strong> O art. 3º, III, da Lei 9.099/95 inclui a ação de despejo para uso próprio como causa de menor complexidade, sem limitação de valor.</p>
+        </div>
+
+        <div class="box box-estudo-caso">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg></span>
+                Questão 7 (CESPE - adaptada)
+            </div>
+            <p><em>A citação é indispensável em todos os processos, não havendo exceção a essa regra.</em></p>
+            <p><strong>GABARITO: ERRADO</strong></p>
+            <p><strong>COMENTÁRIO:</strong> Há exceções no art. 239, CPC: indeferimento da inicial (art. 330) e improcedência liminar (art. 332). Além disso, o comparecimento espontâneo supre a falta ou nulidade da citação (art. 239, §1º).</p>
+        </div>
+
+        <div class="box box-estudo-caso">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg></span>
+                Questão 8 (FCC - adaptada)
+            </div>
+            <p><em>Os despachos são atos decisórios e, portanto, devem ser fundamentados sob pena de nulidade.</em></p>
+            <p><strong>GABARITO: ERRADO</strong></p>
+            <p><strong>COMENTÁRIO:</strong> Despachos são atos meramente ordinatórios (não decisórios) e NÃO precisam ser fundamentados (art. 93, IX, CF — exceção). Apenas sentenças, acórdãos e decisões interlocutórias exigem fundamentação.</p>
+        </div>
+
+        <div class="box box-estudo-caso">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg></span>
+                Questão 9 (FGV - adaptada)
+            </div>
+            <p><em>Recurso Especial é cabível quando a decisão recorrida der à lei federal interpretação divergente da que lhe haja atribuído outro tribunal, sendo julgado pelo STF.</em></p>
+            <p><strong>GABARITO: ERRADO</strong></p>
+            <p><strong>COMENTÁRIO:</strong> O Recurso Especial é julgado pelo <span class="destaque">STJ</span> (art. 105, III, "c", CF). O STF julga Recurso Extraordinário (matéria constitucional).</p>
+        </div>
+
+        <div class="box box-estudo-caso">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="8" y1="10" x2="16" y2="10"/></svg></span>
+                Questão 10 (CESPE - adaptada)
+            </div>
+            <p><em>A capacidade de ser parte é inerente à personalidade civil, enquanto a capacidade de estar em juízo exige capacidade civil plena.</em></p>
+            <p><strong>GABARITO: CERTO</strong></p>
+            <p><strong>COMENTÁRIO:</strong> Conceitos fundamentais: capacidade de ser parte = todos têm; capacidade de estar em juízo = apenas quem tem capacidade civil plena.</p>
+        </div>
+    </section>
+
+    <hr class="divisoria">
+
+    <!-- ========== CONSIDERAÇÕES FINAIS ========== -->
+    <section id="consideracoes">
+        <h2>CONSIDERAÇÕES FINAIS</h2>
+        <p>Esta apostila foi elaborada para proporcionar ao candidato uma compreensão profunda dos temas de Direito Processual Civil e Constitucional mais cobrados em concursos de alto nível, especialmente para o cargo de Técnico Judiciário.</p>
+
+        <div class="card-conceito">
+            <h4 style="margin-top:0;">PARA O SUCESSO NA PROVA, LEMBRE-SE:</h4>
+            <ol style="padding-left:1.8rem;">
+                <li><strong>Leia a literalidade da lei</strong> — as bancas adoram cobrar o texto exato dos artigos</li>
+                <li><strong>Identifique as exceções</strong> — muitas questões giram em torno das exceções às regras</li>
+                <li><strong>Diferencie conceitos similares</strong> — capacidade de ser parte ≠ capacidade de estar em juízo; STJ ≠ STF; MP parte ≠ MP fiscal</li>
+                <li><strong>Aplique a lei ao caso concreto</strong> — as questões sempre apresentam situações hipotéticas</li>
+                <li><strong>Memorize os macetes</strong> — eles são ferramentas poderosas para o dia da prova</li>
+            </ol>
+        </div>
+
+        <div class="box box-dica">
+            <div class="box-title">
+                <span class="box-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M9 15h6M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.7V17h8v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 0 0-7-7z"/></svg></span>
+                Técnica de Estudo Recomendada
+            </div>
+            <ol style="padding-left:1.8rem;">
+                <li>Estude a teoria completa (esta apostila)</li>
+                <li>Resolva questões de provas anteriores (FCC, CESPE, FGV)</li>
+                <li>Identifique seus pontos fracos</li>
+                <li>Releia os capítulos específicos</li>
+                <li>Faça a revisão pelos mapas mentais</li>
+            </ol>
+        </div>
+
+        <p style="text-align:center; margin-top:2.5rem; color:#b8b8d0; font-style:italic;">Bons estudos e sucesso na aprovação!</p>
+        <hr style="border:none; height:1px; background:#2a2a40; margin:2rem 0;">
+        <p style="text-align:center; color:#7a7a90; font-size:0.9rem;">Material didático elaborado com foco em concursos públicos de alto nível para Técnico Judiciário.</p>
+    </section>
+
+</body>
+</html>

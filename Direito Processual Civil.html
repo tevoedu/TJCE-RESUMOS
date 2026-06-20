@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Processual Civil - Apostila para Concursos</title>
+    <style>
+        /* Reset e base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #151521;
+            color: #e4e4ea;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: #1e1e2c;
+            border-radius: 32px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            transition: padding 0.2s;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            .container {
+                padding: 1.8rem 1.2rem;
+                border-radius: 20px;
+            }
+        }
+
+        /* Tipografia */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            color: #f2eee7;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
+            background: linear-gradient(135deg, #f2c94c, #f2994a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitulo-header {
+            font-size: 1.1rem;
+            color: #b0adbc;
+            border-left: 4px solid #f2994a;
+            padding-left: 1.2rem;
+            margin-top: 0.2rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            margin-top: 2.8rem;
+            margin-bottom: 1.2rem;
+            color: #f2eee7;
+            border-bottom: 2px solid #2e2e42;
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        h2 .cap-num {
+            font-size: 1.3rem;
+            background: #2e2e42;
+            padding: 0.1rem 0.7rem;
+            border-radius: 40px;
+            color: #c4b5a0;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            color: #ddd8cc;
+        }
+
+        h4 {
+            font-size: 1.15rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.4rem;
+            color: #c9c1b2;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #d6d4de;
+        }
+
+        a {
+            color: #89b4fa;
+            text-decoration: none;
+            border-bottom: 1px dotted #3a4a6a;
+        }
+
+        a:hover {
+            color: #b4cffa;
+            border-bottom-color: #89b4fa;
+        }
+
+        /* Sumário */
+        .sumario {
+            background: #252533;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 2.5rem 0;
+            border: 1px solid #33334a;
+        }
+
+        .sumario h2 {
+            margin-top: 0;
+            border-bottom: none;
+            font-size: 1.5rem;
+            color: #f2eee7;
+            padding-bottom: 0;
+        }
+
+        .sumario-lista {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.3rem 1.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0 0 0;
+        }
+
+        @media (max-width: 600px) {
+            .sumario-lista {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sumario-lista li {
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #2e2e42;
+        }
+
+        .sumario-lista li a {
+            color: #d6d4de;
+            border-bottom: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .sumario-lista li a:hover {
+            color: #f2c94c;
+        }
+
+        .sumario-lista .num {
+            color: #7a7792;
+            font-weight: 400;
+            min-width: 1.8rem;
+        }
+
+        /* Blocos e boxes */
+        .box-dica,
+        .box-observacao,
+        .box-importante,
+        .box-card {
+            border-radius: 16px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.5rem 0;
+            border-left: 6px solid;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(2px);
+        }
+
+        .box-dica {
+            border-left-color: #a6da95;
+            background: rgba(166, 218, 149, 0.07);
+        }
+
+        .box-dica::before {
+            content: "💡 Dica";
+            display: block;
+            font-weight: 600;
+            color: #a6da95;
+            margin-bottom: 0.2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .box-observacao {
+            border-left-color: #f5a97f;
+            background: rgba(245, 169, 127, 0.07);
+        }
+
+        .box-observacao::before {
+            content: "🔍 Observação";
+            display: block;
+            font-weight: 600;
+            color: #f5a97f;
+            margin-bottom: 0.2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .box-importante {
+            border-left-color: #f2c94c;
+            background: rgba(242, 201, 76, 0.07);
+        }
+
+        .box-importante::before {
+            content: "⚡ Importante";
+            display: block;
+            font-weight: 600;
+            color: #f2c94c;
+            margin-bottom: 0.2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .box-card {
+            border-left-color: #7dc4e4;
+            background: rgba(125, 196, 228, 0.07);
+            border: 1px solid #2e4a5a;
+        }
+
+        .box-card::before {
+            content: "📌 Conceito-chave";
+            display: block;
+            font-weight: 600;
+            color: #7dc4e4;
+            margin-bottom: 0.2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Citações */
+        blockquote {
+            background: #252533;
+            border-left: 4px solid #f2994a;
+            padding: 1rem 1.8rem;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            font-style: italic;
+            color: #ccc8d8;
+            font-size: 1.05rem;
+        }
+
+        blockquote cite {
+            display: block;
+            margin-top: 0.4rem;
+            font-style: normal;
+            font-size: 0.9rem;
+            color: #8a86a0;
+        }
+
+        /* Tabelas modernas */
+        .tabela-moderna {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .tabela-moderna thead {
+            background: #2a2a3e;
+        }
+
+        .tabela-moderna th {
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #f2eee7;
+            border-bottom: 2px solid #3d3d58;
+        }
+
+        .tabela-moderna td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #2e2e42;
+            background: rgba(255, 255, 255, 0.02);
+            vertical-align: top;
+        }
+
+        .tabela-moderna tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tabela-moderna tr:hover td {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Destaques de texto */
+        .destaque {
+            background: linear-gradient(120deg, rgba(242, 201, 76, 0.2) 0%, rgba(242, 201, 76, 0.2) 100%);
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+            color: #f2d98a;
+            font-weight: 500;
+        }
+
+        .destaque-azul {
+            background: rgba(125, 196, 228, 0.2);
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+            color: #7dc4e4;
+            font-weight: 500;
+        }
+
+        .destaque-verde {
+            background: rgba(166, 218, 149, 0.2);
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+            color: #a6da95;
+            font-weight: 500;
+        }
+
+        /* Listas com marcadores SVG */
+        .lista-marcadores {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .lista-marcadores li {
+            padding: 0.4rem 0 0.4rem 2.2rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .lista-marcadores li::before {
+            content: "▹";
+            position: absolute;
+            left: 0.2rem;
+            color: #f2994a;
+            font-size: 1.2rem;
+        }
+
+        .lista-marcadores-verde li::before {
+            color: #a6da95;
+        }
+
+        .lista-marcadores-azul li::before {
+            color: #7dc4e4;
+        }
+
+        /* Linha divisória elegante */
+        .divisoria {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #3d3d58, #5a5a7a, #3d3d58, transparent);
+            margin: 2.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Cards para conceitos */
+        .card-conceito {
+            background: #252533;
+            border-radius: 18px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.8rem 0;
+            border: 1px solid #33334a;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+            transition: transform 0.1s ease;
+        }
+
+        .card-conceito h4 {
+            margin-top: 0;
+            color: #f2eee7;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .card-conceito h4 .icone-svg {
+            width: 28px;
+            height: 28px;
+            fill: #f2994a;
+            flex-shrink: 0;
+        }
+
+        /* Macete box especial */
+        .box-macete {
+            background: #1f2a2f;
+            border-radius: 18px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.5rem 0;
+            border: 1px solid #2a4a4a;
+            border-left: 6px solid #7dc4e4;
+        }
+
+        .box-macete strong {
+            color: #7dc4e4;
+        }
+
+        /* SVG container */
+        .diagrama-svg {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            background: #161622;
+            border-radius: 20px;
+            padding: 1.5rem 0.5rem;
+            border: 1px solid #2a2a40;
+            overflow-x: auto;
+        }
+
+        .diagrama-svg svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Responsividade geral */
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            .tabela-moderna {
+                font-size: 0.8rem;
+            }
+            .tabela-moderna th,
+            .tabela-moderna td {
+                padding: 0.5rem 0.6rem;
+            }
+        }
+
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Box para glossário */
+        .glossario-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem 1.5rem;
+            margin: 1rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .glossario-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .glossario-item {
+            background: #1e1e2e;
+            padding: 0.6rem 1rem;
+            border-radius: 12px;
+            border-left: 3px solid #7dc4e4;
+        }
+
+        .glossario-item strong {
+            color: #f2c94c;
+        }
+
+        /* Callout especial */
+        .callout {
+            background: #1c1c2e;
+            border-radius: 18px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.5rem 0;
+            border: 1px solid #3a3a5a;
+            border-left: 6px solid #f2c94c;
+        }
+
+        .callout strong {
+            color: #f2c94c;
+        }
+
+        /* Espaçamento extra entre assuntos */
+        .assunto-divider {
+            margin: 2.8rem 0 1.5rem;
+            border-top: 1px solid #2e2e42;
+            position: relative;
+        }
+
+        .assunto-divider::after {
+            content: "✦";
+            position: absolute;
+            top: -0.7rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e1e2c;
+            padding: 0 1rem;
+            color: #4a4a6a;
+            font-size: 1rem;
+        }
+
+        /* Referências */
+        .referencias {
+            background: #1a1a2a;
+            border-radius: 16px;
+            padding: 1.2rem 1.8rem;
+            margin-top: 2rem;
+            border: 1px solid #2a2a42;
+        }
+
+        .referencias ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .referencias ul li {
+            padding: 0.2rem 0;
+            color: #b0adbc;
+        }
+
+        .referencias ul li::before {
+            content: "•";
+            color: #f2994a;
+            margin-right: 0.6rem;
+        }
+
+        /* Exercícios */
+        .exercicio {
+            background: #1a1a2a;
+            border-radius: 16px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #7dc4e4;
+        }
+
+        .exercicio .gabarito {
+            color: #a6da95;
+            font-weight: 600;
+        }
+
+        .exercicio .justificativa {
+            color: #c9c1b2;
+            font-size: 0.95rem;
+        }
+
+        /* Cabeçalho do sumário com ícone svg */
+        .sumario-icon {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            fill: #f2994a;
+            vertical-align: middle;
+            margin-right: 0.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- CABEÇALHO -->
+        <header>
+            <h1>DIREITO PROCESSUAL CIVIL APLICADO AO TÉCNICO JUDICIÁRIO</h1>
+            <p class="subtitulo-header">Apostila Teórica Completa para Concursos de Alto Nível</p>
+        </header>
+
+        <!-- SUMÁRIO -->
+        <div class="sumario">
+            <h2>
+                <svg class="sumario-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                    <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h10v2H4v-2z"/>
+                </svg>
+                SUMÁRIO
+            </h2>
+            <ul class="sumario-lista">
+                <li><a href="#cap1"><span class="num">1.</span> Normas Fundamentais e Princípios</a></li>
+                <li><a href="#cap2"><span class="num">2.</span> Elementos Essenciais da Ação</a></li>
+                <li><a href="#cap3"><span class="num">3.</span> Pressupostos Processuais</a></li>
+                <li><a href="#cap4"><span class="num">4.</span> Competência Territorial</a></li>
+                <li><a href="#cap5"><span class="num">5.</span> Propositura da Ação</a></li>
+                <li><a href="#cap6"><span class="num">6.</span> Preclusão e Coisa Julgada</a></li>
+                <li><a href="#cap7"><span class="num">7.</span> Intervenção de Terceiros</a></li>
+                <li><a href="#cap8"><span class="num">8.</span> Cooperação Jurídica Internacional</a></li>
+                <li><a href="#cap9"><span class="num">9.</span> Contraditório – Aprofundamento</a></li>
+                <li><a href="#cap10"><span class="num">10.</span> Quadro Comparativo e Macetes</a></li>
+                <li><a href="#exercicios"><span class="num">+</span> Exercícios de Fixação</a></li>
+                <li><a href="#glossario"><span class="num">+</span> Glossário</a></li>
+            </ul>
+        </div>
+
+        <!-- ==================== CAPÍTULO 1 ==================== -->
+        <section id="cap1">
+            <h2><span class="cap-num">1</span> NORMAS FUNDAMENTAIS E PRINCÍPIOS DO PROCESSO CIVIL</h2>
+
+            <h3>1.1. O Art. 8º do CPC e seu Significado Prático</h3>
+            <p>O art. 8º do Código de Processo Civil estabelece um verdadeiro <span class="destaque">código de conduta</span> para o magistrado no exercício de sua atividade jurisdicional. Trata-se de norma fundamental que orienta toda a atuação do juiz durante o processo.</p>
+
+            <blockquote>
+                Art. 8º. Ao aplicar o ordenamento jurídico, o juiz atenderá aos fins sociais e às exigências do bem comum, respeitando a dignidade da pessoa humana e observando a proporcionalidade, a razoabilidade, a legalidade, a publicidade e a eficiência.
+                <cite>CPC/2015</cite>
+            </blockquote>
+
+            <h4>1.1.1. Os Princípios Expressos no Art. 8º</h4>
+            <p>O artigo enumera cinco princípios específicos que o juiz deve observar. Vamos analisar cada um deles com profundidade:</p>
+
+            <table class="tabela-moderna">
+                <thead>
+                    <tr><th>Princípio</th><th>Significado</th><th>Aplicação Prática</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Proporcionalidade</strong></td><td>A decisão deve guardar adequação entre os meios empregados e os fins pretendidos</td><td>O juiz não pode aplicar uma sanção desproporcional à gravidade da conduta</td></tr>
+                    <tr><td><strong>Razoabilidade</strong></td><td>A decisão deve ser sensata, lógica e compatível com o senso comum</td><td>O magistrado não pode adotar interpretações absurdas ou ilógicas</td></tr>
+                    <tr><td><strong>Legalidade</strong></td><td>O juiz deve atuar estritamente dentro dos limites da lei</td><td>A decisão deve ter fundamento legal expresso ou implícito no ordenamento</td></tr>
+                    <tr><td><strong>Publicidade</strong></td><td>Os atos processuais devem ser públicos, salvo exceções legais</td><td>Garantia de transparência e controle social da atividade jurisdicional</td></tr>
+                    <tr><td><strong>Eficiência</strong></td><td>O processo deve alcançar seus objetivos com celeridade e racionalidade</td><td>Busca pela duração razoável do processo e aproveitamento dos atos processuais</td></tr>
+                </tbody>
+            </table>
+
+            <div class="box-macete">
+                <strong>Macete de Memorização:</strong> Para fixar esses cinco princípios, utilize a frase:<br>
+                <span style="font-size:1.2rem; color:#f2c94c;">"Pedro Resolveu Levar Pão e Empada"</span><br>
+                <span class="destaque-azul">P</span>edro = <strong>P</strong>roporcionalidade &bull;
+                <span class="destaque-azul">R</span>esolveu = <strong>R</strong>azoabilidade &bull;
+                <span class="destaque-azul">L</span>evar = <strong>L</strong>egalidade &bull;
+                <span class="destaque-azul">P</span>ão = <strong>P</strong>ublicidade &bull;
+                <span class="destaque-azul">E</span>mpada = <strong>E</strong>ficiência
+            </div>
+
+            <h4>1.1.3. A Dimensão Constitucional do Art. 8º</h4>
+            <p>O art. 8º do CPC não é apenas uma norma de repetição. Ele <span class="destaque">constitucionaliza</span> o processo civil ao incorporar princípios fundamentais da Carta Magna, como:</p>
+            <ul class="lista-marcadores">
+                <li>A dignidade da pessoa humana (art. 1º, III, CF)</li>
+                <li>Os fins sociais e o bem comum (art. 3º, I e IV, CF)</li>
+                <li>A eficiência (art. 37, caput, CF - aplicada ao Judiciário)</li>
+            </ul>
+
+            <div class="box-observacao">
+                <strong>Cobrança em Provas da FCC:</strong> A FCC adora explorar a literalidade do art. 8º. <span class="destaque">Armadilha comum</span>: incluir princípios que NÃO constam do rol, como "moralidade" ou "impessoalidade" (princípios da Administração Pública que não estão no art. 8º do CPC).<br><br>
+                <strong>Exemplo de questão com pegadinha:</strong> "O juiz deve observar a proporcionalidade, a razoabilidade, a legalidade, a publicidade, a moralidade e a eficiência."<br>
+                <span style="color:#f5a97f;">Análise:</span> A questão está <strong>ERRADA</strong> porque incluiu "moralidade", que não está previsto no art. 8º do CPC.
+            </div>
+
+            <hr class="divisoria">
+
+            <h3>1.2. Princípio do Contraditório e suas Exceções</h3>
+
+            <h4>1.2.1. Fundamentação Legal e Conceito</h4>
+            <p>O princípio do contraditório está previsto no <span class="destaque">art. 9º do CPC</span> e representa uma das garantias mais importantes do processo civil:</p>
+            <blockquote>
+                Art. 9º. Não se proferirá decisão contra uma das partes sem que ela seja previamente ouvida.
+                <cite>CPC/2015</cite>
+            </blockquote>
+            <p>Este dispositivo consagra a <span class="destaque">bilateralidade da audiência</span>, garantindo que nenhuma das partes seja surpreendida por decisão judicial sem ter tido oportunidade de se manifestar previamente.</p>
+
+            <h4>1.2.2. Dimensão do Contraditório</h4>
+            <p>O contraditório possui duas dimensões essenciais:</p>
+            <table class="tabela-moderna">
+                <thead><tr><th>Dimensão</th><th>Conteúdo</th><th>Fundamento</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Informação (ciência)</strong></td><td>A parte deve ser cientificada dos atos e termos do processo</td><td>Art. 9º, caput</td></tr>
+                    <tr><td><strong>Participação (reação)</strong></td><td>A parte deve poder se manifestar e influenciar a decisão</td><td>Art. 7º, 9º e 10 do CPC</td></tr>
+                </tbody>
+            </table>
+
+            <h4>1.2.3. Exceções Legais ao Contraditório</h4>
+            <p>O próprio art. 9º, parágrafo único, estabelece duas exceções importantes:</p>
+            <blockquote>
+                Art. 9º, parágrafo único. O disposto no caput não se aplica:<br>
+                I - à tutela de urgência;<br>
+                II - às hipóteses de tutela da evidência previstas no art. 311, incisos II e III.
+                <cite>CPC/2015</cite>
+            </blockquote>
+
+            <div class="box-importante">
+                <strong>Contraditório Diferido ou Postecipado:</strong> A doutrina e a jurisprudência admitem o chamado contraditório diferido nas exceções acima: a parte é ouvida posteriormente, mas a decisão já produz efeitos desde o início.<br>
+                <strong>Exemplo prático:</strong> Juiz concede liminar em mandado de segurança sem ouvir a autoridade coatora; a autoridade só será ouvida posteriormente, mas a liminar já está produzindo efeitos.
+            </div>
+
+            <div class="box-observacao">
+                <strong>Violação do Contraditório:</strong> Caso típico: juiz profere sentença com fundamento em documento que não foi submetido à manifestação da parte contrária. Isso viola o art. 9º e também o art. 10 do CPC.<br>
+                <strong>Consequências:</strong> Nulidade da decisão (art. 488, III, CPC) e possibilidade de correição parcial ou apelação.
+            </div>
+
+            <div class="callout">
+                <strong>Pegadinha de Prova:</strong> "O juiz violou o contraditório ao proferir sentença baseada em documentos novos, mesmo após a fase instrutória."<br>
+                <span style="color:#f5a97f;">Análise:</span> Isso é <strong>VERDADEIRO</strong>. O contraditório deve ser garantido em TODO o processo, inclusive na fase de julgamento. A exceção do art. 9º só se aplica a tutelas de urgência e da evidência, NÃO a sentenças proferidas após a instrução.
+            </div>
+
+            <hr class="divisoria">
+        </section>
+
+        <!-- ==================== CAPÍTULO 2 ==================== -->
+        <section id="cap2">
+            <h2><span class="cap-num">2</span> ELEMENTOS ESSENCIAIS DA AÇÃO</h2>
+
+            <h3>2.1. Os Três Elementos da Ação</h3>
+            <p>A ação é composta por <span class="destaque">três elementos essenciais</span>, que devem constar da petição inicial. Sem qualquer um deles, a petição será considerada inepta.</p>
+
+            <table class="tabela-moderna">
+                <thead><tr><th>Elemento</th><th>O que é?</th><th>Onde está?</th><th>Consequência da Falta</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Partes</strong></td><td>Quem são os sujeitos da relação processual (autor e réu)</td><td>Art. 319, I e II, CPC</td><td>Iregularidade, mas pode ser sanada</td></tr>
+                    <tr><td><strong>Causa de Pedir</strong></td><td>O porquê do ajuizamento (fundamentos de fato e de direito)</td><td>Art. 319, III, CPC</td><td>Petição inepta (art. 330, §1º, I)</td></tr>
+                    <tr><td><strong>Pedido</strong></td><td>O que se quer (providência jurisdicional)</td><td>Art. 319, IV, CPC</td><td>Petição inepta (art. 330, §1º, I)</td></tr>
+                </tbody>
+            </table>
+
+            <div class="box-macete">
+                <strong>Macete:</strong> <span style="font-size:1.2rem; color:#f2c94c;">"Pedi Caro ao Papai"</span><br>
+                <span class="destaque-azul">P</span> = Partes &bull;
+                <span class="destaque-azul">C</span> = Causa de pedir &bull;
+                <span class="destaque-azul">P</span> = Pedido
+            </div>
+
+            <h4>2.1.2. Análise Detalhada de Cada Elemento</h4>
+
+            <div class="card-conceito">
+                <h4><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg> Partes</h4>
+                <p>As partes são os sujeitos da relação processual: <strong>Autor</strong> (quem propõe a ação) e <strong>Réu</strong> (contra quem a ação é proposta).</p>
+                <ul class="lista-marcadores lista-marcadores-azul">
+                    <li>Devem ser indicados com qualificação completa (nome, CPF/CNPJ, endereço)</li>
+                    <li>Devem ter capacidade de ser parte e capacidade processual</li>
+                    <li>Devem ter legitimidade ativa e passiva (condições da ação)</li>
+                </ul>
+            </div>
+
+            <div class="card-conceito">
+                <h4><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg> Causa de Pedir (Causa Petendi)</h4>
+                <p>A causa de pedir se divide em dois aspectos:</p>
+                <ul class="lista-marcadores lista-marcadores-verde">
+                    <li><strong>Fundamentos de Fato:</strong> os fatos concretos que ensejaram a demanda (ex.: o acidente de trânsito que danificou o veículo)</li>
+                    <li><strong>Fundamentos de Direito:</strong> a base legal que fundamenta a pretensão (ex.: art. 186 do CC – responsabilidade civil)</li>
+                </ul>
+                <p><span class="destaque">Atenção:</span> No CPC/2015, o art. 319, III exige que o autor exponha os fatos e indique os fundamentos jurídicos do pedido. A indicação do fundamento jurídico é <strong>OBRIGATÓRIA</strong>, diferente do que ocorria no CPC/1973 (que admitia o pedido genérico).</p>
+            </div>
+
+            <div class="card-conceito">
+                <h4><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg> Pedido</h4>
+                <p>O pedido é a <span class="destaque">providência jurisdicional</span> que o autor busca. Divide-se em:</p>
+                <ul class="lista-marcadores">
+                    <li><strong>Pedido Imediato (ou mediato):</strong> é a própria prestação jurisdicional (ex.: "que seja julgada procedente a ação")</li>
+                    <li><strong>Pedido Remoto (ou imediato):</strong> é o bem da vida que se busca (ex.: "condenando o réu a pagar R$ 50.000,00")</li>
+                </ul>
+            </div>
+
+            <div class="box-observacao">
+                <strong>Petição Inicial Inepta:</strong> De acordo com o art. 330, §1º, I do CPC, a petição inicial será considerada inepta quando "faltar pedido ou causa de pedir".<br>
+                <span class="destaque">Importante:</span> A falta de qualificação completa das partes não torna a petição inepta, mas sim irregular (art. 321 CPC), dando-se prazo para emenda.
+            </div>
+
+            <div class="callout">
+                <strong>Pegadinhas de Prova:</strong><br>
+                <span style="color:#f5a97f;">1.</span> "A falta de indicação das partes torna a petição inepta." – <strong>Falso</strong>. É irregularidade sanável.<br>
+                <span style="color:#f5a97f;">2.</span> "A ausência de causa de pedir ou de pedido é vício de natureza formal." – <strong>Falso</strong>. É vício de natureza substancial.<br>
+                <span style="color:#f5a97f;">3.</span> "A falta de fundamentos de direito, mas com exposição dos fatos, não gera ineptidão." – <strong>Falso</strong>. O art. 319, III exige TANTO os fundamentos de fato QUANTO os de direito.
+            </div>
+
+            <hr class="divisoria">
+        </section>
+
+        <!-- ==================== CAPÍTULO 3 ==================== -->
+        <section id="cap3">
+            <h2><span class="cap-num">3</span> PRESSUPOSTOS PROCESSUAIS: EXISTÊNCIA E VALIDADE</h2>
+
+            <h3>3.1. Teoria Geral dos Pressupostos Processuais</h3>
+            <p>Os pressupostos processuais são condições indispensáveis para que o processo possa existir e se desenvolver validamente. O CPC/2015 adotou a distinção entre pressupostos de existência e pressupostos de validade.</p>
+
+            <div class="diagrama-svg">
+                <svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" style="background:transparent; max-width:100%; height:auto;">
+                    <defs>
+                        <style>
+                            .node-box { fill: #252540; stroke: #4a4a6a; stroke-width: 2; rx: 12; ry: 12; }
+                            .node-text { fill: #e4e4ea; font-family: 'Segoe UI', sans-serif; font-size: 14px; font-weight: 600; text-anchor: middle; dominant-baseline: central; }
+                            .node-sub { fill: #1e1e32; stroke: #3a3a5a; stroke-width: 1.5; rx: 10; ry: 10; }
+                            .node-sub-text { fill: #d6d4de; font-family: 'Segoe UI', sans-serif; font-size: 12px; text-anchor: middle; dominant-baseline: central; }
+                            .edge { stroke: #5a5a7a; stroke-width: 2; fill: none; }
+                            .edge-label { fill: #8a86a0; font-family: 'Segoe UI', sans-serif; font-size: 10px; text-anchor: middle; }
+                        </style>
+                    </defs>
+
+                    <!-- Raiz -->
+                    <rect x="300" y="20" width="300" height="50" class="node-box" />
+                    <text x="450" y="45" class="node-text">Pressupostos Processuais</text>
+
+                    <!-- Linhas raiz -> filhos -->
+                    <line x1="450" y1="70" x2="200" y2="120" class="edge" />
+                    <line x1="450" y1="70" x2="700" y2="120" class="edge" />
+
+                    <!-- Existência -->
+                    <rect x="80" y="120" width="240" height="46" class="node-box" />
+                    <text x="200" y="143" class="node-text">EXISTÊNCIA</text>
+
+                    <!-- Validade -->
+                    <rect x="580" y="120" width="240" height="46" class="node-box" />
+                    <text x="700" y="143" class="node-text">VALIDADE</text>
+
+                    <!-- Subitens Existência -->
+                    <line x1="200" y1="166" x2="200" y2="190" class="edge" />
+                    <rect x="50" y="190" width="300" height="38" class="node-sub" />
+                    <text x="200" y="209" class="node-sub-text">Órgão investido de jurisdição</text>
+
+                    <line x1="200" y1="228" x2="200" y2="240" class="edge" />
+                    <rect x="50" y="240" width="300" height="38" class="node-sub" />
+                    <text x="200" y="259" class="node-sub-text">Capacidade de ser parte</text>
+
+                    <line x1="200" y1="278" x2="200" y2="290" class="edge" />
+                    <rect x="50" y="290" width="300" height="38" class="node-sub" />
+                    <text x="200" y="309" class="node-sub-text">Petição inicial</text>
+
+                    <line x1="200" y1="328" x2="200" y2="340" class="edge" />
+                    <rect x="50" y="340" width="300" height="38" class="node-sub" />
+                    <text x="200" y="359" class="node-sub-text">Citação</text>
+
+                    <!-- Subitens Validade -->
+                    <line x1="700" y1="166" x2="700" y2="190" class="edge" />
+                    <rect x="560" y="190" width="280" height="38" class="node-sub" />
+                    <text x="700" y="209" class="node-sub-text">Subjetivos (juízo competente, etc.)</text>
+
+                    <line x1="700" y1="228" x2="700" y2="240" class="edge" />
+                    <rect x="560" y="240" width="280" height="38" class="node-sub" />
+                    <text x="700" y="259" class="node-sub-text">Objetivos (petição regular, citação válida, inércia)</text>
+                </svg>
+            </div>
+
+            <h4>3.1.1. Pressupostos de Existência</h4>
+            <p>São aqueles sem os quais o processo <span class="destaque">nem sequer existe juridicamente</span>. Estão previstos no art. 239, parágrafo único do CPC.</p>
+            <ul class="lista-marcadores">
+                <li><strong>Órgão investido de jurisdição:</strong> juiz ou tribunal com competência para julgar</li>
+                <li><strong>Capacidade de ser parte:</strong> aptidão genérica para estar em juízo</li>
+                <li><strong>Petição inicial:</strong> instrumento formal de provocação da jurisdição</li>
+                <li><strong>Citação:</strong> ato de chamamento do réu ao processo</li>
+            </ul>
+
+            <h4>3.1.2. Pressupostos de Validade</h4>
+            <p>São aqueles que, se ausentes, tornam o processo <span class="destaque">inválido</span>, mas não inexistente. Dividem-se em subjetivos e objetivos.</p>
+
+            <p><strong>Pressupostos de Validade Subjetivos:</strong></p>
+            <ul class="lista-marcadores lista-marcadores-azul">
+                <li>Juízo competente (juízo investido de jurisdição na comarca correta)</li>
+                <li>Juiz imparcial (sem impedimento ou suspeição)</li>
+                <li>Capacidade processual (aptidão para praticar atos processuais – maioridade, etc.)</li>
+                <li>Capacidade postulatória (representação por advogado – art. 103 CPC)</li>
+            </ul>
+
+            <p><strong>Pressupostos de Validade Objetivos:</strong></p>
+            <ul class="lista-marcadores lista-marcadores-verde">
+                <li>Petição inicial regular (preencher os requisitos formais)</li>
+                <li>Citação válida (obedecer ao rito legal)</li>
+                <li>Inércia da jurisdição (o juiz só atua se provocado)</li>
+            </ul>
+
+            <div class="box-importante">
+                <strong>Distinção Fundamental:</strong>
+                <table style="width:100%; margin-top:0.5rem; border-collapse:collapse; font-size:0.95rem;">
+                    <tr><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;"><strong>Aspecto</strong></td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;"><strong>Existência</strong></td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;"><strong>Validade</strong></td></tr>
+                    <tr><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Natureza</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Elementos constitutivos do processo</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Qualidades do processo</td></tr>
+                    <tr><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Vício</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Inexistência jurídica</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Nulidade ou anulabilidade</td></tr>
+                    <tr><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Exemplo</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Ausência de citação</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Incompetência relativa</td></tr>
+                    <tr><td style="padding:0.3rem 0.6rem;">Consequência</td><td style="padding:0.3rem 0.6rem;">O processo não nasce</td><td style="padding:0.3rem 0.6rem;">O processo nasce, mas é viciado</td></tr>
+                </table>
+            </div>
+
+            <h4>3.2. Caso Concreto: Incompetência Relativa</h4>
+            <p>A incompetência relativa (territorial) é um <span class="destaque">pressuposto de validade</span>, não de existência.</p>
+            <div class="box-dica">
+                <strong>Raciocínio:</strong><br>
+                1. O juiz da comarca errada tem jurisdição (existe)<br>
+                2. Mas a jurisdição é exercida em comarca inadequada (vício)<br>
+                3. Isso afeta a VALIDADE, não a existência do processo
+            </div>
+
+            <div class="callout">
+                <strong>Pegadinha de Prova:</strong> "A alegação de incompetência relativa do juízo afeta o pressuposto processual de existência, pois a jurisdição deve ser exercida por órgão competente."<br>
+                <span style="color:#f5a97f;">Análise:</span> A questão está <strong>ERRADA</strong>. A incompetência relativa afeta a VALIDADE, não a existência. O órgão investido de jurisdição existe (pressuposto de existência), mas exerce sua função em comarca errada (vício de validade).
+            </div>
+
+            <div class="box-observacao">
+                <strong>Condições da Ação vs. Pressupostos Processuais:</strong> Não confundir condições da ação (art. 17 CPC) com pressupostos processuais.<br>
+                <span style="color:#f2c94c;">Condições da ação:</span> legitimidade das partes, interesse de agir, possibilidade jurídica do pedido.<br>
+                <span style="color:#7dc4e4;">Pressupostos processuais:</span> competência, imparcialidade, capacidade processual, petição inicial, citação, etc.<br>
+                <span class="destaque">Atenção:</span> A legitimidade passiva é condição da ação, não pressuposto processual.
+            </div>
+
+            <hr class="divisoria">
+        </section>
+
+        <!-- ==================== CAPÍTULO 4 ==================== -->
+        <section id="cap4">
+            <h2><span class="cap-num">4</span> COMPETÊNCIA TERRITORIAL NO CPC/2015</h2>
+
+            <h3>4.1. Regra Geral: Competência Territorial</h3>
+            <p>A competência territorial (ou foro) é a distribuição geográfica da jurisdição. O CPC/2015 estabelece regras específicas para determinar o foro competente.</p>
+
+            <h4>4.1.1. Regra Geral do Art. 46 do CPC</h4>
+            <blockquote>
+                Art. 46. A ação fundada em direito pessoal ou em direito real sobre bens móveis será proposta, em regra, no foro de domicílio do réu.
+                <cite>CPC/2015</cite>
+            </blockquote>
+            <ul class="lista-marcadores">
+                <li><strong>Direito pessoal:</strong> direito obrigacional (contrato, cobrança, etc.)</li>
+                <li><strong>Direito real sobre bens móveis:</strong> direito sobre coisas móveis (compra de veículo, etc.)</li>
+                <li><strong>Foro:</strong> comarca do domicílio do réu</li>
+            </ul>
+
+            <h4>4.1.2. Foro da Pessoa Jurídica</h4>
+            <p>Para ações em que o réu é pessoa jurídica, aplica-se o art. 53, III, "a" do CPC:</p>
+            <blockquote>
+                Art. 53. É competente o foro:<br>
+                III - da sede da pessoa jurídica, quando a ação for proposta contra ela;
+                <cite>CPC/2015</cite>
+            </blockquote>
+            <div class="box-importante">
+                <strong>Importante:</strong> A regra para pessoa jurídica é o foro da SEDE, não da filial. Exceto se a ação envolver obrigação contraída em filial (art. 53, III, "b").
+            </div>
+
+            <h4>4.2. Competência Especial para Reparação de Danos</h4>
+            <h4>4.2.1. Art. 53, V do CPC</h4>
+            <blockquote>
+                Art. 53. É competente o foro:<br>
+                V - do local do fato, para ação de reparação de dano sofrido em razão de delito ou acidente de veículos, inclusive aeronaves.
+                <cite>CPC/2015</cite>
+            </blockquote>
+
+            <div class="diagrama-svg">
+                <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" style="background:transparent; max-width:100%; height:auto;">
+                    <defs>
+                        <style>
+                            .box-flow { fill: #252540; stroke: #4a4a6a; stroke-width: 2; rx: 12; ry: 12; }
+                            .text-flow { fill: #e4e4ea; font-family: 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+                            .arrow { stroke: #5a5a7a; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+                            .arrow-label { fill: #8a86a0; font-family: 'Segoe UI', sans-serif; font-size: 11px; text-anchor: middle; }
+                            .choice-box { fill: #1f2a3a; stroke: #4a6a8a; stroke-width: 2; rx: 10; ry: 10; }
+                        </style>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#5a5a7a" />
+                        </marker>
+                    </defs>
+
+                    <!-- Início -->
+                    <rect x="250" y="20" width="300" height="50" class="box-flow" />
+                    <text x="400" y="45" class="text-flow">Ação de reparação de danos (acidente/delito)</text>
+
+                    <!-- Seta -->
+                    <line x1="400" y1="70" x2="400" y2="110" class="arrow" />
+
+                    <!-- Decisão: local do fato? -->
+                    <rect x="200" y="110" width="400" height="50" class="choice-box" />
+                    <text x="400" y="135" class="text-flow" style="font-size:13px;">Qual foro escolher?</text>
+
+                    <!-- Setas para duas opções -->
+                    <line x1="300" y1="160" x2="150" y2="210" class="arrow" />
+                    <line x1="500" y1="160" x2="650" y2="210" class="arrow" />
+
+                    <!-- Opção 1 -->
+                    <rect x="30" y="210" width="240" height="50" class="box-flow" />
+                    <text x="150" y="235" class="text-flow">Local do fato (art. 53, V)</text>
+
+                    <!-- Opção 2 -->
+                    <rect x="530" y="210" width="240" height="50" class="box-flow" />
+                    <text x="650" y="235" class="text-flow">Domicílio do autor</text>
+
+                    <!-- Setas para conclusão -->
+                    <line x1="150" y1="260" x2="150" y2="300" class="arrow" />
+                    <line x1="650" y1="260" x2="650" y2="300" class="arrow" />
+
+                    <!-- Conclusão central -->
+                    <rect x="200" y="300" width="400" height="46" class="box-flow" style="fill:#1a2a2a; stroke:#4a8a6a;" />
+                    <text x="400" y="323" class="text-flow" style="fill:#a6da95;">Foro competente: local do fato OU domicílio do autor</text>
+                </svg>
+            </div>
+
+            <div class="box-observacao">
+                <strong>Caso Concreto:</strong><br>
+                Maria, residente em Fortaleza (CE), sofreu acidente de trânsito em Curitiba (PR) com seu veículo. O proprietário do outro veículo reside em São Paulo (SP), e o condutor reside no Rio de Janeiro (RJ). O veículo está segurado pela Seguradora X, com sede em Belo Horizonte (MG).<br><br>
+                <span style="color:#f2c94c;">Pergunta:</span> Qual o foro competente para ação de reparação de danos?<br>
+                <span style="color:#a6da95;">Resposta:</span> Curitiba (PR) – local do fato, OU Fortaleza (CE) – domicílio da autora (opção). Os demais foros NÃO são competentes.
+            </div>
+
+            <div class="callout">
+                <strong>Pegadinhas de Prova:</strong><br>
+                <span style="color:#f5a97f;">1.</span> "A ação de reparação de danos de acidente de trânsito deve ser proposta, obrigatoriamente, no foro do domicílio do proprietário do veículo." – <strong>Falso</strong>. O art. 53, V dá opção ao autor entre o local do fato e seu domicílio.<br>
+                <span style="color:#f5a97f;">2.</span> "O foro do domicílio do condutor é sempre competente para ação de reparação de danos." – <strong>Falso</strong>. A regra é o local do fato ou domicílio do autor.<br>
+                <span style="color:#f5a97f;">3.</span> "A sede da seguradora é foro competente para ação de reparação de danos." – <strong>Falso</strong>. A seguradora não é parte na ação de reparação de danos (a não ser que haja ação regressiva).
+            </div>
+
+            <hr class="divisoria">
+        </section>
+
+        <!-- ==================== CAPÍTULO 5 ==================== -->
+        <section id="cap5">
+            <h2><span class="cap-num">5</span> PROPOSITURA DA AÇÃO E SEUS EFEITOS</h2>
+
+            <h3>5.1. Conceito e Momento da Propositura</h3>
+            <h4>5.1.1. Art. 312 do CPC</h4>
+            <blockquote>
+                Art. 312. Considera-se proposta a ação quando a petição inicial for protocolada.
+                <cite>CPC/2015</cite>
+            </blockquote>
+
+            <div class="diagrama-svg">
+                <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" style="background:transparent; max-width:100%; height:auto;">
+                    <defs>
+                        <style>
+                            .timeline-node { fill: #252540; stroke: #4a4a6a; stroke-width: 2; rx: 12; ry: 12; }
+                            .timeline-text { fill: #e4e4ea; font-family: 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+                            .timeline-arrow { stroke: #5a5a7a; stroke-width: 2.5; fill: none; marker-end: url(#arrow-timeline); }
+                            .timeline-label { fill: #8a86a0; font-family: 'Segoe UI', sans-serif; font-size: 11px; text-anchor: middle; }
+                        </style>
+                        <marker id="arrow-timeline" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#5a5a7a" />
+                        </marker>
+                    </defs>
+
+                    <!-- Linha do tempo -->
+                    <line x1="80" y1="100" x2="720" y2="100" stroke="#3a3a5a" stroke-width="3" />
+
+                    <!-- Marco 1 -->
+                    <circle cx="150" cy="100" r="12" fill="#f2994a" stroke="#4a4a6a" stroke-width="2" />
+                    <rect x="60" y="130" width="180" height="46" class="timeline-node" />
+                    <text x="150" y="153" class="timeline-text">PROTOCOLO DA INICIAL</text>
+                    <text x="150" y="195" class="timeline-label" style="fill:#f2c94c;">Art. 312: ação proposta</text>
+
+                    <!-- Marco 2 -->
+                    <circle cx="400" cy="100" r="12" fill="#7dc4e4" stroke="#4a4a6a" stroke-width="2" />
+                    <rect x="310" y="130" width="180" height="46" class="timeline-node" />
+                    <text x="400" y="153" class="timeline-text">REGISTRO / DISTRIBUIÇÃO</text>
+                    <text x="400" y="195" class="timeline-label" style="fill:#7dc4e4;">Art. 59: competência fixada</text>
+
+                    <!-- Marco 3 -->
+                    <circle cx="650" cy="100" r="12" fill="#a6da95" stroke="#4a4a6a" stroke-width="2" />
+                    <rect x="560" y="130" width="180" height="46" class="timeline-node" />
+                    <text x="650" y="153" class="timeline-text">CITAÇÃO VÁLIDA</text>
+                    <text x="650" y="195" class="timeline-label" style="fill:#a6da95;">Art. 240: efeitos da propositura</text>
+
+                    <!-- Setas entre marcos -->
+                    <line x1="162" y1="100" x2="388" y2="100" class="timeline-arrow" />
+                    <line x1="412" y1="100" x2="638" y2="100" class="timeline-arrow" />
+                </svg>
+            </div>
+
+            <div class="box-importante">
+                <strong>Regra do Art. 59: Fixação da Competência</strong><br>
+                Art. 59. A competência é fixada no momento do registro ou da distribuição da petição inicial.<br>
+                <span class="destaque">Distinção crucial:</span> Competência fixada: REGISTRO/DISTRIBUIÇÃO da inicial; Ação proposta: PROTOCOLO da inicial.
+            </div>
+
+            <h4>5.2. Efeitos da Propositura</h4>
+            <p><strong>Efeitos que independem da citação:</strong></p>
+            <ul class="lista-marcadores lista-marcadores-azul">
+                <li><strong>Perpetuação da jurisdição:</strong> mudança de competência posterior não atinge o processo (art. 43 CPC)</li>
+                <li><strong>Impede outra ação idêntica:</strong> litispendência entre processos (art. 337, V, CPC)</li>
+                <li><strong>Coisa julgada material:</strong> se houver sentença de mérito (art. 502 CPC)</li>
+            </ul>
+
+            <p><strong>Efeitos que dependem da citação:</strong></p>
+            <ul class="lista-marcadores lista-marcadores-verde">
+                <li><strong>Litispendência (contra o réu):</strong> réu não pode demandar sobre o mesmo objeto (art. 240, §1º)</li>
+                <li><strong>Constituição em mora:</strong> réu é constituído em mora (art. 240, §1º)</li>
+                <li><strong>Tornar litigiosa a coisa:</strong> terceiro não pode adquirir a coisa (art. 240, §1º)</li>
+                <li><strong>Interrupção da prescrição:</strong> prazo prescricional interrompido (art. 240, §1º)</li>
+            </ul>
+
+            <div class="callout">
+                <strong>Pegadinhas de Prova:</strong><br>
+                <span style="color:#f5a97f;">1.</span> "A ação é considerada proposta no momento da citação válida." – <strong>Falso</strong>. A ação é proposta no protocolo da inicial (art. 312).<br>
+                <span style="color:#f5a97f;">2.</span> "A competência é fixada no momento do protocolo da inicial." – <strong>Falso</strong>. A competência é fixada no REGISTRO ou DISTRIBUIÇÃO (art. 59).<br>
+                <span style="color:#f5a97f;">3.</span> "A litispendência só ocorre após a citação válida." – <strong>Falso</strong>. A litispendência ocorre com a propositura (protocolo), mas seus efeitos em relação ao réu dependem da citação.
+            </div>
+
+            <hr class="divisoria">
+        </section>
+
+        <!-- ==================== CAPÍTULO 6 ==================== -->
+        <section id="cap6">
+            <h2><span class="cap-num">6</span> PRECLUSÃO E COISA JULGADA: DISTINÇÕES ESSENCIAIS</h2>
+
+            <h3>6.1. Conceito de Preclusão</h3>
+            <h4>6.1.1. Art. 507 do CPC</h4>
+            <blockquote>
+                Art. 507. É vedado à parte discutir no curso do processo as questões já decididas a cujo respeito se operou a preclusão.
+                <cite>CPC/2015</cite>
+            </blockquote>
+
+            <div class="card-conceito">
+                <h4><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Preclusão</h4>
+                <ul class="lista-marcadores">
+                    <li><strong>Momento:</strong> DURANTE o curso do processo</li>
+                    <li><strong>Efeito:</strong> Impede reexame de questões já decididas</li>
+                    <li><strong>Fundamento:</strong> Art. 507 do CPC</li>
+                </ul>
+                <p><strong>Espécies:</strong></p>
+                <ul class="lista-marcadores lista-marcadores-azul">
+                    <li><strong>Temporal:</strong> perda do direito por não realização do ato no prazo (ex.: não interpor recurso no prazo)</li>
+                    <li><strong>Lógica:</strong> incompatibilidade de posições (ex.: apresentar defesa contraditória)</li>
+                    <li><strong>Consumativa:</strong> irretratabilidade do ato (ex.: decisão não pode ser alterada pelo juiz)</li>
+                </ul>
+            </div>
+
+            <h3>6.2. Conceito de Coisa Julgada</h3>
+            <h4>6.2.1. Art. 502 do CPC</h4>
+            <blockquote>
+                Art. 502. Denomina-se coisa julgada material a autoridade que torna imutável e indiscutível a decisão de mérito não mais sujeita a recurso.
+                <cite>CPC/2015</cite>
+            </blockquote>
+
+            <div class="card-conceito">
+                <h4><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Coisa Julgada</h4>
+                <ul class="lista-marcadores">
+                    <li><strong>Momento:</strong> APÓS o trânsito em julgado</li>
+                    <li><strong>Efeito:</strong> Torna a decisão imutável e indiscutível</li>
+                    <li><strong>Fundamento:</strong> Art. 502 do CPC</li>
+                </ul>
+            </div>
+
+            <div class="box-importante">
+                <strong>Distinção Fundamental:</strong>
+                <table style="width:100%; margin-top:0.5rem; border-collapse:collapse; font-size:0.95rem;">
+                    <tr><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;"><strong>Aspecto</strong></td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;"><strong>Preclusão</strong></td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;"><strong>Coisa Julgada</strong></td></tr>
+                    <tr><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Momento</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Durante o processo</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Após o processo</td></tr>
+                    <tr><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Amplitude</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Questões processuais</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Mérito da ação</td></tr>
+                    <tr><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Fundamento</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Art. 507 CPC</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Art. 502 CPC</td></tr>
+                    <tr><td style="padding:0.3rem 0.6rem;">Efeito</td><td style="padding:0.3rem 0.6rem;">Impede reexame no processo</td><td style="padding:0.3rem 0.6rem;">Torna imutável a decisão</td></tr>
+                </table>
+            </div>
+
+            <div class="box-observacao">
+                <strong>Pegadinhas da FCC:</strong> A FCC ADORA explorar a diferença temporal entre preclusão e coisa julgada.<br>
+                <span style="color:#f2c94c;">Expressões-chave:</span><br>
+                "No curso do processo" → PRECLUSÃO<br>
+                "Após o trânsito em julgado" → COISA JULGADA<br>
+                "Durante o processo" → PRECLUSÃO<br>
+                "Depois do encerramento da lide" → COISA JULGADA
+            </div>
+
+            <div class="diagrama-svg">
+                <svg viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg" style="background:transparent; max-width:100%; height:auto;">
+                    <defs>
+                        <style>
+                            .sq { fill: #252540; stroke: #4a4a6a; stroke-width: 2; rx: 10; ry: 10; }
+                            .sq-text { fill: #e4e4ea; font-family: 'Segoe UI', sans-serif; font-size: 14px; text-anchor: middle; dominant-baseline: central; }
+                            .arrow-simple { stroke: #5a5a7a; stroke-width: 2; fill: none; marker-end: url(#arrow-s); }
+                        </style>
+                        <marker id="arrow-s" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                            <polygon points="0 0, 8 3, 0 6" fill="#5a5a7a" />
+                        </marker>
+                    </defs>
+                    <rect x="40" y="30" width="140" height="60" class="sq" />
+                    <text x="110" y="60" class="sq-text">QUESTÃO JÁ DECIDIDA</text>
+
+                    <line x1="180" y1="60" x2="230" y2="60" class="arrow-simple" />
+
+                    <rect x="230" y="10" width="120" height="50" class="sq" style="fill:#1a2a2a; stroke:#4a8a6a;" />
+                    <text x="290" y="35" class="sq-text" style="fill:#a6da95;">NO CURSO</text>
+                    <text x="290" y="55" class="sq-text" style="fill:#a6da95;">DO PROCESSO?</text>
+
+                    <line x1="290" y1="60" x2="290" y2="100" class="arrow-simple" />
+                    <line x1="310" y1="80" x2="390" y2="80" class="arrow-simple" />
+
+                    <rect x="30" y="100" width="160" height="46" class="sq" style="fill:#1f2a3a; stroke:#4a6a8a;" />
+                    <text x="110" y="123" class="sq-text" style="fill:#7dc4e4;">SIM → PRECLUSÃO (art. 507)</text>
+
+                    <rect x="310" y="100" width="160" height="46" class="sq" style="fill:#1a2a2a; stroke:#4a8a6a;" />
+                    <text x="390" y="123" class="sq-text" style="fill:#a6da95;">NÃO → COISA JULGADA (art. 502)</text>
+                </svg>
+            </div>
+
+            <hr class="divisoria">
+        </section>
+
+        <!-- ==================== CAPÍTULO 7 ==================== -->
+        <section id="cap7">
+            <h2><span class="cap-num">7</span> INTERVENÇÃO DE TERCEIROS: CHAMAMENTO AO PROCESSO E DENUNCIAÇÃO DA LIDE</h2>
+
+            <h3>7.1. Chamamento ao Processo</h3>
+            <h4>7.1.1. Art. 130 do CPC</h4>
+            <blockquote>
+                Art. 130. É admissível o chamamento ao processo, requerido pelo réu:<br>
+                I - do afiançado, na ação em que o fiador for réu;<br>
+                II - dos demais fiadores, na ação em que um ou alguns deles forem réus;<br>
+                III - dos demais devedores solidários, quando o credor exigir de um ou de alguns o pagamento da dívida.
+                <cite>CPC/2015</cite>
+            </blockquote>
+
+            <div class="box-dica">
+                <strong>Características do Chamamento ao Processo:</strong>
+                <ul class="lista-marcadores">
+                    <li><strong>Quem pode requerer:</strong> SOMENTE O RÉU (não o autor)</li>
+                    <li><strong>Relação:</strong> Codevedor ou solidário</li>
+                    <li><strong>Finalidade:</strong> Ampliar o polo passivo</li>
+                    <li><strong>Fundamento:</strong> Art. 130 do CPC</li>
+                </ul>
+            </div>
+
+            <h3>7.2. Denunciação da Lide</h3>
+            <h4>7.2.1. Art. 125 do CPC</h4>
+            <blockquote>
+                Art. 125. É admissível a denunciação da lide, promovida por qualquer das partes:<br>
+                I - ao alienante imediato, no processo relativo à coisa cujo domínio foi transferido ao denunciante, a fim de que possa exercer o direito que da evicção lhe resulta;<br>
+                II - àquele que esteja obrigado, por lei ou pelo contrato, a indenizar, em ação regressiva, o prejuízo do que perder a demanda.
+                <cite>CPC/2015</cite>
+            </blockquote>
+
+            <div class="box-dica">
+                <strong>Características da Denunciação da Lide:</strong>
+                <ul class="lista-marcadores">
+                    <li><strong>Quem pode requerer:</strong> QUALQUER PARTE (autor ou réu)</li>
+                    <li><strong>Relação:</strong> Direito de regresso</li>
+                    <li><strong>Finalidade:</strong> Chamar o terceiro para responder por perdas</li>
+                    <li><strong>Fundamento:</strong> Art. 125 do CPC</li>
+                </ul>
+            </div>
+
+            <div class="box-importante">
+                <strong>Quadro Comparativo:</strong>
+                <table class="tabela-moderna" style="margin:0.5rem 0;">
+                    <thead><tr><th>Aspecto</th><th>Chamamento ao Processo</th><th>Denunciação da Lide</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Quem requer</strong></td><td>Somente o réu</td><td>Qualquer parte</td></tr>
+                        <tr><td><strong>Relação</strong></td><td>Codevedor ou solidário</td><td>Direito de regresso</td></tr>
+                        <tr><td><strong>Hipóteses</strong></td><td>Fiador, demais fiadores, devedores solidários</td><td>Evicção, ação regressiva</td></tr>
+                        <tr><td><strong>Fundamento</strong></td><td>Art. 130 CPC</td><td>Art. 125 CPC</td></tr>
+                        <tr><td><strong>Palavra-chave</strong></td><td>"Fiador" ou "solidário"</td><td>"Regresso" ou "evicção"</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="box-macete">
+                <strong>Macete:</strong><br>
+                <span style="color:#7dc4e4;">"Chamamento é do Réu para Codevedor (Fiador)"</span><br>
+                C = Chamamento = Réu &bull; C = Codevedor (fiador)<br><br>
+                <span style="color:#a6da95;">"Denunciação é de Qualquer Parte com Direito de Regresso"</span><br>
+                D = Denunciação = Qualquer parte &bull; D = Direito de regresso
+            </div>
+
+            <div class="callout">
+                <strong>Pegadinhas de Prova:</strong><br>
+                <span style="color:#f5a97f;">1.</span> "O chamamento ao processo pode ser requerido pelo autor quando o réu é fiador." – <strong>Falso</strong>. O chamamento ao processo só pode ser requerido PELO RÉU (art. 130, caput).<br>
+                <span style="color:#f5a97f;">2.</span> "A denunciação da lide aplica-se apenas nas hipóteses de evicção." – <strong>Falso</strong>. Também se aplica em ações regressivas (art. 125, II).<br>
+                <span style="color:#f5a97f;">3.</span> "A nomeação à autoria é a modalidade de intervenção de terceiro aplicável ao fiador." – <strong>Falso</strong>. A nomeação à autoria foi REVOGADA no CPC/2015. O fiador utiliza o chamamento ao processo (art. 130, I).
+            </div>
+
+            <div class="diagrama-svg">
+                <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="background:transparent; max-width:100%; height:auto;">
+                    <defs>
+                        <style>
+                            .box-comp { fill: #252540; stroke: #4a4a6a; stroke-width: 2; rx: 12; ry: 12; }
+                            .comp-text { fill: #e4e4ea; font-family: 'Segoe UI', sans-serif; font-size: 13px; text-anchor: middle; dominant-baseline: central; }
+                            .comp-label { fill: #8a86a0; font-family: 'Segoe UI', sans-serif; font-size: 11px; text-anchor: middle; }
+                        </style>
+                    </defs>
+                    <rect x="40" y="20" width="280" height="50" class="box-comp" />
+                    <text x="180" y="45" class="comp-text" style="font-weight:600;">CHAMAMENTO AO PROCESSO</text>
+                    <text x="180" y="85" class="comp-label" style="fill:#7dc4e4;">Réu → Codevedor (fiador/solidário)</text>
+
+                    <rect x="380" y="20" width="280" height="50" class="box-comp" />
+                    <text x="520" y="45" class="comp-text" style="font-weight:600;">DENUNCIAÇÃO DA LIDE</text>
+                    <text x="520" y="85" class="comp-label" style="fill:#a6da95;">Qualquer parte → Direito de regresso</text>
+
+                    <!-- Subitens -->
+                    <rect x="40" y="120" width="280" height="40" class="box-comp" style="fill:#1f2a3a; stroke:#4a6a8a;" />
+                    <text x="180" y="140" class="comp-text" style="font-size:12px; fill:#7dc4e4;">Hipóteses: fiador, demais fiadores,</text>
+                    <text x="180" y="158" class="comp-text" style="font-size:12px; fill:#7dc4e4;">devedores solidários</text>
+
+                    <rect x="380" y="120" width="280" height="40" class="box-comp" style="fill:#1a2a2a; stroke:#4a8a6a;" />
+                    <text x="520" y="140" class="comp-text" style="font-size:12px; fill:#a6da95;">Hipóteses: evicção, ação regressiva</text>
+                    <text x="520" y="158" class="comp-text" style="font-size:12px; fill:#a6da95;">(art. 125, I e II)</text>
+
+                    <!-- Fundamento -->
+                    <rect x="40" y="190" width="280" height="40" class="box-comp" style="fill:#1a1a2a; stroke:#3a3a5a;" />
+                    <text x="180" y="210" class="comp-text" style="font-size:12px;">Art. 130 CPC</text>
+
+                    <rect x="380" y="190" width="280" height="40" class="box-comp" style="fill:#1a1a2a; stroke:#3a3a5a;" />
+                    <text x="520" y="210" class="comp-text" style="font-size:12px;">Art. 125 CPC</text>
+                </svg>
+            </div>
+
+            <hr class="divisoria">
+        </section>
+
+        <!-- ==================== CAPÍTULO 8 ==================== -->
+        <section id="cap8">
+            <h2><span class="cap-num">8</span> COOPERAÇÃO JURÍDICA INTERNACIONAL E CARTA ROGATÓRIA</h2>
+
+            <h3>8.1. Cooperação Jurídica Internacional</h3>
+            <p>A cooperação jurídica internacional é o conjunto de mecanismos que permitem que órgãos jurisdicionais de diferentes países atuem de forma coordenada para a realização da justiça.</p>
+
+            <h4>8.1.2. Formas de Cooperação</h4>
+            <ul class="lista-marcadores">
+                <li><strong>Carta rogatória:</strong> solicitação de prática de ato processual em outro país</li>
+                <li><strong>Auxílio direto:</strong> comunicação direta entre autoridades judiciárias</li>
+                <li><strong>Homologação de sentença estrangeira:</strong> reconhecimento de decisão judicial de outro país</li>
+            </ul>
+
+            <h3>8.2. Carta Rogatória e Exequatur</h3>
+            <p>A carta rogatória é um pedido formulado por autoridade judiciária de um país a outro para a prática de ato processual.</p>
+
+            <div class="box-importante">
+                <strong>Competência para Conceder Exequatur:</strong>
+                <table style="width:100%; margin-top:0.5rem; border-collapse:collapse; font-size:0.95rem;">
+                    <tr><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;"><strong>Órgão</strong></td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;"><strong>Competência</strong></td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;"><strong>Fundamento</strong></td></tr>
+                    <tr><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">STJ</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Conceder exequatur a carta rogatória</td><td style="padding:0.3rem 0.6rem; border-bottom:1px solid #33334a;">Art. 36 CPC + EC 45/2004</td></tr>
+                    <tr><td style="padding:0.3rem 0.6rem;">STF</td><td style="padding:0.3rem 0.6rem;">Competência anterior</td><td style="padding:0.3rem 0.6rem;">Alterada pela EC 45/2004</td></tr>
+                </table>
+            </div>
+
+            <div class="diagrama-svg">
+                <svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" style="background:transparent; max-width:100%; height:auto;">
+                    <defs>
+                        <style>
+                            .tl-box { fill: #252540; stroke: #4a4a6a; stroke-width: 2; rx: 12; ry: 12; }
+                            .tl-text { fill: #e4e4ea; font-family: 'Segoe UI', sans-serif; font-size: 13px; text-anchor: middle; dominant-baseline: central; }
+                            .tl-arrow { stroke: #5a5a7a; stroke-width: 2.5; fill: none; marker-end: url(#tl-arrowhead); }
+                        </style>
+                        <marker id="tl-arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#5a5a7a" />
+                        </marker>
+                    </defs>
+                    <rect x="30" y="20" width="280" height="46" class="tl-box" style="fill:#1f2a3a; stroke:#4a6a8a;" />
+                    <text x="170" y="43" class="tl-text" style="fill:#7dc4e4;">ANTES DA EC 45/2004</text>
+                    <text x="170" y="70" class="tl-text" style="font-size:12px; fill:#8a86a0;">STF competente</text>
+
+                    <line x1="310" y1="43" x2="390" y2="43" class="tl-arrow" />
+
+                    <rect x="390" y="20" width="280" height="46" class="tl-box" style="fill:#1a2a2a; stroke:#4a8a6a;" />
+                    <text x="530" y="43" class="tl-text" style="fill:#a6da95;">APÓS A EC 45/2004</text>
+                    <text x="530" y="70" class="tl-text" style="font-size:12px; fill:#8a86a0;">STJ competente (art. 36 CPC)</text>
+                </svg>
+            </div>
+
+            <div class="box-observacao">
+                <strong>Art. 36 do CPC:</strong><br>
+                "O procedimento da carta rogatória perante o Superior Tribunal de Justiça é de jurisdição contenciosa e deve assegurar às partes as garantias do devido processo legal."<br><br>
+                <span class="destaque">Elementos:</span>
+                <ul class="lista-marcadores">
+                    <li><strong>Procedimento contencioso:</strong> há contraditório e partes</li>
+                    <li><strong>Devido processo legal:</strong> garantias constitucionais</li>
+                    <li><strong>STJ:</strong> órgão competente</li>
+                </ul>
+            </div>
+
+            <div class="callout">
+                <strong>Pegadinhas de Prova:</strong><br>
+                <span style="color:#f5a97f;">1.</span> "O STF é competente para conceder exequatur a carta rogatória." – <strong>Falso</strong>. Desde a EC 45/2004, a competência é do STJ (art. 36 CPC).<br>
+                <span style="color:#f5a97f;">2.</span> "O procedimento da carta rogatória perante o STJ é de jurisdição voluntária." – <strong>Falso</strong>. É de jurisdição CONTENCIOSA (art. 36, caput).<br>
+                <span style="color:#f5a97f;">3.</span> "A carta rogatória não assegura as garantias do devido processo legal." – <strong>Falso</strong>. O art. 36 expressamente exige o devido processo legal.
+            </div>
+
+            <hr class="divisoria">
+        </section>
+
+        <!-- ==================== CAPÍTULO 9 ==================== -->
+        <section id="cap9">
+            <h2><span class="cap-num">9</span> PRINCÍPIO DO CONTRADITÓRIO – APROFUNDAMENTO</h2>
+
+            <h3>9.1. Fundamentos Constitucionais</h3>
+            <blockquote>
+                Art. 5º, LV: "aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e a ampla defesa, com os meios e recursos a ela inerentes."
+                <cite>CF/1988</cite>
+            </blockquote>
+            <blockquote>
+                Art. 7º. É assegurada às partes paridade de tratamento em relação ao exercício de direitos e faculdades processuais, aos meios de defesa, aos ônus, aos deveres e à aplicação de sanções processuais.
+                <cite>CPC/2015</cite>
+            </blockquote>
+
+            <h3>9.2. Dimensões do Contraditório</h3>
+            <table class="tabela-moderna">
+                <thead><tr><th>Dimensão</th><th>Conteúdo</th><th>Fundamento</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Informação</strong></td><td>Ciência dos atos processuais</td><td>Art. 9º CPC</td></tr>
+                    <tr><td><strong>Participação</strong></td><td>Manifestação sobre os atos</td><td>Art. 7º, 9º, 10 CPC</td></tr>
+                    <tr><td><strong>Igualdade</strong></td><td>Paridade de armas</td><td>Art. 7º CPC</td></tr>
+                </tbody>
+            </table>
+
+            <div class="box-importante">
+                <strong>Exceções ao Contraditório (Revisão):</strong><br>
+                Art. 9º, parágrafo único:<br>
+                I - tutela de urgência;<br>
+                II - tutela da evidência (art. 311, II e III).<br><br>
+                <span class="destaque">Contraditório Diferido:</span> A parte é ouvida após a decisão, e não antes. A decisão produz efeitos imediatamente, mas pode ser revista após manifestação da parte.
+            </div>
+
+            <div class="box-observacao">
+                <strong>Casos Concretos de Violação:</strong><br>
+                <span style="color:#f5a97f;">Caso 1:</span> O juiz, no final da instrução, determina a juntada de documentos produzidos por ele mesmo e profere sentença sem ouvir as partes sobre esses documentos.<br>
+                <span style="color:#f5a97f;">Violação:</span> Contraditório (art. 9º) e também o princípio da inércia da jurisdição (art. 2º).<br><br>
+                <span style="color:#f5a97f;">Caso 2:</span> O juiz utiliza conhecimentos técnicos pessoais para decidir, sem que as partes tenham sido intimadas a se manifestar.<br>
+                <span style="color:#f5a97f;">Violação:</span> Contraditório (art. 9º) e também o art. 472 do CPC (que exige perícia para prova técnica).
+            </div>
+
+            <div class="callout">
+                <strong>Pegadinhas de Prova:</strong><br>
+                <span style="color:#f5a97f;">1.</span> "Em qualquer caso, o contraditório deve ser prévio." – <strong>Falso</strong>. O CPC admite contraditório diferido nas hipóteses de tutela de urgência e da evidência.<br>
+                <span style="color:#f5a97f;">2.</span> "A violação do contraditório sempre gera nulidade absoluta." – <strong>Falso</strong>. Pode gerar nulidade relativa, dependendo do caso e do prejuízo.<br>
+                <span style="color:#f5a97f;">3.</span> "Na tutela de urgência, não há contraditório em momento algum." – <strong>Falso</strong>. Há contraditório diferido, ou seja, a parte será ouvida posteriormente.
+            </div>
+
+            <hr class="divisoria">
+        </section>
+
+        <!-- ==================== CAPÍTULO 10 ==================== -->
+        <section id="cap10">
+            <h2><span class="cap-num">10</span> QUADRO COMPARATIVO E MACETES PARA PROVA</h2>
+
+            <h3>10.1. Quadro Comparativo Geral</h3>
+            <table class="tabela-moderna">
+                <thead><tr><th>Instituto</th><th>Art. CPC</th><th>Conceito</th><th>Exceções</th></tr></thead>
+                <tbody>
+                    <tr><td>Princípios do art. 8º</td><td>8º</td><td>Proporcionalidade, razoabilidade, legalidade, publicidade, eficiência</td><td>-</td></tr>
+                    <tr><td>Contraditório</td><td>9º</td><td>Bilateralidade da audiência</td><td>Tutela de urgência e evidência</td></tr>
+                    <tr><td>Elementos da ação</td><td>319</td><td>Partes, causa de pedir, pedido</td><td>-</td></tr>
+                    <tr><td>Propositura da ação</td><td>312</td><td>Protocolo da inicial</td><td>Efeitos dependem da citação</td></tr>
+                    <tr><td>Competência territorial</td><td>46/53</td><td>Domicílio do réu (regra geral)</td><td>Ação de reparação de danos: local do fato</td></tr>
+                    <tr><td>Preclusão</td><td>507</td><td>Impede reexame no processo</td><td>-</td></tr>
+                    <tr><td>Coisa julgada</td><td>502</td><td>Imutabilidade após trânsito em julgado</td><td>-</td></tr>
+                    <tr><td>Chamamento ao processo</td><td>130</td><td>Réu chama codevedor</td><td>Fiador, demais fiadores, devedores solidários</td></tr>
+                    <tr><td>Denunciação da lide</td><td>125</td><td>Qualquer parte chama terceiro</td><td>Evicção, ação regressiva</td></tr>
+                </tbody>
+            </table>
+
+            <h3>10.2. Macetes para Prova</h3>
+            <div class="box-macete">
+                <strong>Princípios do Art. 8º:</strong><br>
+                <span style="font-size:1.2rem; color:#f2c94c;">"Pedro Resolveu Levar Pão e Empada"</span><br>
+                <span class="destaque-azul">P</span> = Proporcionalidade &bull;
+                <span class="destaque-azul">R</span> = Razoabilidade &bull;
+                <span class="destaque-azul">L</span> = Legalidade &bull;
+                <span class="destaque-azul">P</span> = Publicidade &bull;
+                <span class="destaque-azul">E</span> = Eficiência
+            </div>
+
+            <div class="box-macete">
+                <strong>Elementos da Ação:</strong><br>
+                <span style="font-size:1.2rem; color:#7dc4e4;">"Pedi Caro ao Papai"</span><br>
+                <span class="destaque-azul">P</span> = Partes &bull;
+                <span class="destaque-azul">C</span> = Causa de pedir &bull;
+                <span class="destaque-azul">P</span> = Pedido
+            </div>
+
+            <div class="box-macete">
+                <strong>Pressupostos de Existência:</strong><br>
+                <span style="font-size:1.2rem; color:#a6da95;">"Casa Pequena e Coberta"</span><br>
+                <span class="destaque-verde">C</span> = Citação &bull;
+                <span class="destaque-verde">P</span> = Petição inicial &bull;
+                <span class="destaque-verde">C</span> = Capacidade de ser parte (ou Órgão investido de jurisdição)
+            </div>
+
+            <div class="box-macete">
+                <strong>Pressupostos de Validade:</strong><br>
+                <span style="font-size:1.2rem; color:#f5a97f;">"Cada Cachorro Come Pouco"</span><br>
+                <span class="destaque">C</span> = Competente (juízo) &bull;
+                <span class="destaque">C</span> = Capacidade processual &bull;
+                <span class="destaque">C</span> = Capacidade postulatória &bull;
+                <span class="destaque">P</span> = Petição inicial regular (ou Imparcialidade)
+            </div>
+
+            <div class="box-macete">
+                <strong>Chamamento x Denunciação:</strong><br>
+                <span style="color:#7dc4e4;">"Chamamento é do Réu para Codevedor (Fiador)"</span><br>
+                C = Chamamento = Réu &bull; C = Codevedor (fiador)<br><br>
+                <span style="color:#a6da95;">"Denunciação é de Qualquer Parte com Direito de Regresso"</span><br>
+                D = Denunciação = Qualquer parte &bull; D = Direito de regresso
+            </div>
+
+            <hr class="divisoria">
+
+            <h3>10.3. Resumo para Revisão Rápida</h3>
+            <h4>Competência Territorial</h4>
+            <table class="tabela-moderna">
+                <thead><tr><th>Ação</th><th>Foro Competente</th></tr></thead>
+                <tbody>
+                    <tr><td>Reparação de danos (acidente)</td><td>Local do fato OU domicílio do autor</td></tr>
+                    <tr><td>Cobrança (direito pessoal)</td><td>Domicílio do réu</td></tr>
+                    <tr><td>Contra pessoa jurídica</td><td>Sede da pessoa jurídica</td></tr>
+                </tbody>
+            </table>
+
+            <h4>Propositura da Ação</h4>
+            <ul class="lista-marcadores">
+                <li><strong>Protocolo:</strong> considerada proposta</li>
+                <li><strong>Registro/distribuição:</strong> fixada a competência</li>
+                <li><strong>Citação:</strong> produz efeitos</li>
+            </ul>
+
+            <h4>Intervenção de Terceiros</h4>
+            <table class="tabela-moderna">
+                <thead><tr><th>Modalidade</th><th>Quem</th><th>Relação</th><th>Palavra-chave</th></tr></thead>
+                <tbody>
+                    <tr><td>Chamamento</td><td>Réu</td><td>Codevedor</td><td>Fiador/Solidário</td></tr>
+                    <tr><td>Denunciação</td><td>Qualquer</td><td>Regresso</td><td>Evicção/Regresso</td></tr>
+                </tbody>
+            </table>
+
+            <hr class="divisoria">
+        </section>
+
+        <!-- ==================== EXERCÍCIOS ==================== -->
+        <section id="exercicios">
+            <h2><span class="cap-num">+</span> EXERCÍCIOS DE FIXAÇÃO</h2>
+
+            <div class="exercicio">
+                <p><strong>Questão 1 (FCC - Estilo)</strong></p>
+                <p>O juiz, no curso do processo, profere decisão sobre questão já decidida e sobre a qual se operou a preclusão. Tal conduta:</p>
+                <ul class="lista-marcadores">
+                    <li>A) Viola o princípio da coisa julgada.</li>
+                    <li>B) Viola o princípio da preclusão.</li>
+                    <li>C) Viola o princípio da legalidade.</li>
+                    <li>D) É permitida, desde que haja fundamentação.</li>
+                    <li>E) É permitida, desde que haja recurso da parte.</li>
+                </ul>
+                <p class="gabarito">Gabarito: B</p>
+                <p class="justificativa"><strong>Justificativa:</strong> A preclusão (art. 507 CPC) impede o reexame de questões já decididas no curso do processo. A coisa julgada (art. 502 CPC) refere-se a decisões de mérito imutáveis após o trânsito em julgado.</p>
+            </div>
+
+            <div class="exercicio">
+                <p><strong>Questão 2 (FCC - Estilo)</strong></p>
+                <p>Maria, residente em São Paulo, sofreu acidente de trânsito em Belo Horizonte com seu veículo. O proprietário do outro veículo reside em Curitiba. A ação de reparação de danos poderá ser proposta:</p>
+                <ul class="lista-marcadores">
+                    <li>A) Apenas em Belo Horizonte.</li>
+                    <li>B) Apenas em São Paulo.</li>
+                    <li>C) Em Belo Horizonte ou em São Paulo.</li>
+                    <li>D) Em Belo Horizonte, São Paulo ou Curitiba.</li>
+                    <li>E) Apenas em Curitiba.</li>
+                </ul>
+                <p class="gabarito">Gabarito: C</p>
+                <p class="justificativa"><strong>Justificativa:</strong> Nos termos do art. 53, V do CPC, o autor pode optar entre o foro do local do fato (Belo Horizonte) e o seu próprio domicílio (São Paulo). Curitiba (domicílio do proprietário) não é foro competente.</p>
+            </div>
+
+            <div class="exercicio">
+                <p><strong>Questão 3 (FCC - Estilo)</strong></p>
+                <p>Em ação de cobrança ajuizada contra pessoa jurídica, na ausência de foro de eleição contratual, o foro competente será o:</p>
+                <ul class="lista-marcadores">
+                    <li>A) Domicílio do autor.</li>
+                    <li>B) Domicílio do réu.</li>
+                    <li>C) Sede da pessoa jurídica.</li>
+                    <li>D) Local onde a obrigação foi contraída.</li>
+                    <li>E) Domicílio do administrador.</li>
+                </ul>
+                <p class="gabarito">Gabarito: C</p>
+                <p class="justificativa"><strong>Justificativa:</strong> O art. 53, III, "a" do CPC estabelece que a ação contra pessoa jurídica deve ser proposta no foro de sua sede. A opção "D" (local da obrigação) só se aplica se a obrigação foi contraída em filial (art. 53, III, "b").</p>
+            </div>
+
+            <div class="exercicio">
+                <p><strong>Questão 4 (FCC - Estilo)</strong></p>
+                <p>O fiador, quando réu em ação de cobrança, poderá requerer o ingresso do afiançado por meio de:</p>
+                <ul class="lista-marcadores">
+                    <li>A) Denunciação da lide.</li>
+                    <li>B) Chamamento ao processo.</li>
+                    <li>C) Nomeação à autoria.</li>
+                    <li>D) Assistência simples.</li>
+                    <li>E) Assistência litisconsorcial.</li>
+                </ul>
+                <p class="gabarito">Gabarito: B</p>
+                <p class="justificativa"><strong>Justificativa:</strong> O art. 130, I do CPC prevê o chamamento ao processo do afiançado na ação em que o fiador for réu. A nomeação à autoria foi revogada no CPC/2015. A denunciação da lide aplica-se a casos de direito de regresso (evicção, ação regressiva).</p>
+            </div>
+
+            <div class="exercicio">
+                <p><strong>Questão 5 (FCC - Estilo)</strong></p>
+                <p>O exequatur a carta rogatória, no sistema processual brasileiro atual, é competência do:</p>
+                <ul class="lista-marcadores">
+                    <li>A) Supremo Tribunal Federal.</li>
+                    <li>B) Superior Tribunal de Justiça.</li>
+                    <li>C) Tribunal Regional Federal.</li>
+                    <li>D) Juiz de Direito da Comarca.</li>
+                    <li>E) Ministro da Justiça.</li>
+                </ul>
+                <p class="gabarito">Gabarito: B</p>
+                <p class="justificativa"><strong>Justificativa:</strong> Com a EC 45/2004, a competência para conceder exequatur a carta rogatória passou a ser do STJ (art. 36 CPC). O STF perdeu essa competência.</p>
+            </div>
+
+            <hr class="divisoria">
+        </section>
+
+        <!-- ==================== GLOSSÁRIO ==================== -->
+        <section id="glossario">
+            <h2><span class="cap-num">+</span> GLOSSÁRIO</h2>
+            <div class="glossario-grid">
+                <div class="glossario-item"><strong>Chamamento ao processo:</strong> Intervenção de terceiro requerida pelo réu para chamar codevedor ou solidário (art. 130 CPC).</div>
+                <div class="glossario-item"><strong>Coisa julgada:</strong> Imutabilidade e indiscutibilidade da decisão de mérito após o trânsito em julgado (art. 502 CPC).</div>
+                <div class="glossario-item"><strong>Competência territorial:</strong> Distribuição geográfica da jurisdição.</div>
+                <div class="glossario-item"><strong>Contraditório:</strong> Princípio que garante às partes o direito de serem ouvidas antes de decisões (art. 9º CPC).</div>
+                <div class="glossario-item"><strong>Denunciação da lide:</strong> Intervenção de terceiro para chamar quem tem direito de regresso (art. 125 CPC).</div>
+                <div class="glossario-item"><strong>Exequatur:</strong> Homologação de carta rogatória pelo STJ.</div>
+                <div class="glossario-item"><strong>Preclusão:</strong> Perda do direito de praticar ato ou discutir questão no processo (art. 507 CPC).</div>
+                <div class="glossario-item"><strong>Pressupostos de existência:</strong> Elementos mínimos para o processo existir juridicamente.</div>
+                <div class="glossario-item"><strong>Pressupostos de validade:</strong> Qualidades necessárias para o processo ser válido.</div>
+                <div class="glossario-item"><strong>Propositura da ação:</strong> Momento em que a petição inicial é protocolada (art. 312 CPC).</div>
+            </div>
+
+            <hr class="divisoria">
+        </section>
+
+        <!-- ==================== REFERÊNCIAS ==================== -->
+        <div class="referencias">
+            <h4 style="margin-top:0; color:#f2eee7;">REFERÊNCIAS</h4>
+            <ul>
+                <li><strong>Código de Processo Civil</strong> (Lei nº 13.105/2015)</li>
+                <li><strong>Constituição Federal de 1988</strong></li>
+                <li><strong>Emenda Constitucional nº 45/2004</strong></li>
+                <li><strong>Jurisprudência do Superior Tribunal de Justiça</strong></li>
+                <li><strong>Doutrina de Processo Civil</strong></li>
+            </ul>
+            <p style="margin-top:1rem; font-size:0.9rem; color:#8a86a0; text-align:center; border-top:1px solid #2e2e42; padding-top:1rem;">
+                FIM DA APOSTILA<br>
+                <span style="font-size:0.85rem;">Material preparado com base na doutrina e jurisprudência predominante, com foco em concursos públicos de nível superior. Recomenda-se a complementação com leitura da lei seca e resolução de questões das bancas FCC, FGV e Cebraspe.</span>
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

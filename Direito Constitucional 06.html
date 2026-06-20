@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Constitucional Aplicado - Apostila para Concursos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0f1117;
+            --bg-secondary: #171b24;
+            --bg-card: #1e2430;
+            --bg-card-hover: #262e3e;
+            --bg-highlight: #1a1f2e;
+            --text-primary: #e8e6e3;
+            --text-secondary: #b8b5b0;
+            --text-muted: #8a8782;
+            --accent-gold: #d4a853;
+            --accent-gold-dim: #a8893f;
+            --accent-blue: #6a8fc0;
+            --accent-blue-dim: #3d5a7a;
+            --accent-green: #6fa87a;
+            --accent-red: #b06a6a;
+            --border-subtle: #2a3346;
+            --border-card: #2f3a52;
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --font-sans: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Container */
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gold-dim);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-gold);
+        }
+
+        /* === HEADER / COVER === */
+        .cover {
+            text-align: center;
+            padding: 3rem 1rem 2.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 2.5rem;
+        }
+        .cover .badge {
+            display: inline-block;
+            background: var(--accent-gold-dim);
+            color: #fff;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+        .cover h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        .cover h1 span {
+            color: var(--accent-gold);
+        }
+        .cover .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+        .cover .meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+        .cover .divider-line {
+            width: 80px;
+            height: 2px;
+            background: var(--accent-gold-dim);
+            margin: 1.2rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* === TOC === */
+        .toc {
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-subtle);
+        }
+        .toc h2 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 2rem;
+        }
+        .toc-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s;
+        }
+        .toc-item:hover {
+            color: var(--accent-gold);
+        }
+        .toc-item .num {
+            color: var(--accent-gold-dim);
+            font-weight: 600;
+            font-size: 0.75rem;
+            min-width: 1.8rem;
+        }
+        .toc-item .label {
+            color: var(--text-secondary);
+        }
+        .toc-part {
+            font-weight: 600;
+            color: var(--text-primary);
+            padding-top: 0.6rem;
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 0.4rem;
+            grid-column: 1 / -1;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+        .toc-part:first-of-type {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        @media (max-width: 600px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
+            }
+            .toc-part {
+                grid-column: 1;
+            }
+            .cover h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* === GENERAL TYPOGRAPHY === */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 2.8rem 0 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-gold-dim);
+            letter-spacing: -0.3px;
+        }
+        .section-title .part-label {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .topic-title {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 2.4rem 0 1rem;
+            letter-spacing: -0.2px;
+        }
+        .topic-title .num {
+            color: var(--accent-gold);
+            margin-right: 0.5rem;
+        }
+
+        .sub-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1.8rem 0 0.8rem;
+        }
+        .sub-title .num {
+            color: var(--accent-blue);
+            margin-right: 0.4rem;
+            font-weight: 400;
+        }
+
+        .sub-sub-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin: 1.4rem 0 0.6rem;
+        }
+
+        p {
+            margin: 0 0 1rem 0;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        p strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* === DIVIDER === */
+        .divider-elegant {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2.5rem 0;
+            color: var(--border-subtle);
+        }
+        .divider-elegant .line {
+            flex: 1;
+            height: 1px;
+            background: var(--border-subtle);
+        }
+        .divider-elegant .diamond {
+            width: 6px;
+            height: 6px;
+            background: var(--accent-gold-dim);
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        /* === CARDS === */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 1.6rem 1.8rem;
+            margin: 1.2rem 0 1.6rem;
+            border: 1px solid var(--border-card);
+            box-shadow: var(--shadow-card);
+            transition: border-color 0.2s;
+        }
+        .card:hover {
+            border-color: var(--accent-gold-dim);
+        }
+        .card-gold {
+            border-left: 4px solid var(--accent-gold);
+        }
+        .card-blue {
+            border-left: 4px solid var(--accent-blue);
+        }
+        .card-green {
+            border-left: 4px solid var(--accent-green);
+        }
+        .card-red {
+            border-left: 4px solid var(--accent-red);
+        }
+        .card-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .card-title .icon {
+            flex-shrink: 0;
+        }
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* === CALLOUT / INFO BOXES === */
+        .callout {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0 1.6rem;
+            border-left: 4px solid var(--accent-blue);
+            font-size: 0.95rem;
+        }
+        .callout strong {
+            color: var(--text-primary);
+        }
+        .callout-tip {
+            border-left-color: var(--accent-gold);
+            background: rgba(212, 168, 83, 0.06);
+        }
+        .callout-tip .label {
+            color: var(--accent-gold);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .callout-important {
+            border-left-color: var(--accent-red);
+            background: rgba(176, 106, 106, 0.06);
+        }
+        .callout-important .label {
+            color: var(--accent-red);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .callout-warning {
+            border-left-color: var(--accent-gold);
+            background: rgba(212, 168, 83, 0.08);
+        }
+        .callout-warning .label {
+            color: var(--accent-gold);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* === QUOTE === */
+        .quote {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            padding: 1.4rem 1.8rem;
+            margin: 1.2rem 0 1.6rem;
+            border-left: 4px solid var(--accent-gold-dim);
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            font-family: var(--font-serif);
+        }
+        .quote .source {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: var(--font-sans);
+        }
+
+        /* === TABLES === */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.2rem 0 1.6rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-secondary);
+        }
+        .table-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 500px;
+        }
+        .table-wrap th {
+            background: var(--bg-card);
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-align: left;
+            padding: 0.8rem 1rem;
+            border-bottom: 2px solid var(--accent-gold-dim);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .table-wrap td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+        .table-wrap tr:last-child td {
+            border-bottom: none;
+        }
+        .table-wrap tr:hover td {
+            background: var(--bg-card-hover);
+        }
+        .table-wrap .highlight-cell {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* === LISTS === */
+        .styled-list {
+            padding-left: 1.5rem;
+            margin: 0.6rem 0 1.2rem;
+            list-style: none;
+        }
+        .styled-list li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .styled-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-gold-dim);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .styled-list li strong {
+            color: var(--text-primary);
+        }
+        .styled-list-alpha {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+        .styled-list-alpha li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-secondary);
+        }
+        .styled-list-alpha li::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        /* === HIGHLIGHT (marker) === */
+        .highlight {
+            background: rgba(212, 168, 83, 0.18);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .highlight-blue {
+            background: rgba(106, 143, 192, 0.18);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .highlight-green {
+            background: rgba(111, 168, 122, 0.18);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* === INLINE CODE / TERM === */
+        .term {
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+        .term-blue {
+            color: var(--accent-blue);
+            font-weight: 500;
+        }
+
+        /* === MACETE BOX === */
+        .macete {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0 1.6rem;
+            border: 1px solid var(--accent-gold-dim);
+            border-left: 4px solid var(--accent-gold);
+        }
+        .macete .label {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .macete p {
+            margin-bottom: 0;
+            color: var(--text-secondary);
+        }
+
+        /* === SVG DIAGRAM WRAPPER === */
+        .diagram-wrap {
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 1.5rem 1rem;
+            margin: 1.5rem 0 2rem;
+            border: 1px solid var(--border-subtle);
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .diagram-wrap svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* === RESPONSIVE FINE-TUNE === */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.2rem 1rem 3rem;
+            }
+            .cover {
+                padding: 2rem 0.5rem 1.8rem;
+            }
+            .cover h1 {
+                font-size: 1.6rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .topic-title {
+                font-size: 1.25rem;
+            }
+            .sub-title {
+                font-size: 1.05rem;
+            }
+            .card {
+                padding: 1.2rem 1.2rem;
+            }
+            .toc {
+                padding: 1.2rem 1.2rem;
+            }
+            .quote {
+                padding: 1rem 1.2rem;
+            }
+            .callout {
+                padding: 1rem 1.2rem;
+            }
+            .table-wrap table {
+                font-size: 0.8rem;
+                min-width: 400px;
+            }
+            .table-wrap th,
+            .table-wrap td {
+                padding: 0.5rem 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0.8rem 0.7rem 2.5rem;
+            }
+            .cover h1 {
+                font-size: 1.35rem;
+            }
+            .cover .subtitle {
+                font-size: 0.95rem;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .topic-title {
+                font-size: 1.1rem;
+            }
+            .card {
+                padding: 1rem 1rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr;
+                gap: 0.1rem;
+            }
+            .toc-item {
+                font-size: 0.82rem;
+            }
+            .table-wrap table {
+                font-size: 0.75rem;
+                min-width: 320px;
+            }
+            .table-wrap th,
+            .table-wrap td {
+                padding: 0.4rem 0.5rem;
+            }
+            .diagram-wrap {
+                padding: 0.8rem 0.3rem;
+            }
+        }
+
+        /* Print-friendly */
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+            }
+            .container {
+                max-width: 100%;
+                padding: 0.5in;
+            }
+            .card,
+            .toc,
+            .callout,
+            .quote,
+            .macete,
+            .diagram-wrap,
+            .table-wrap {
+                background: #f5f5f5;
+                border-color: #ccc;
+                color: #111;
+                box-shadow: none;
+            }
+            .cover h1 {
+                color: #111;
+            }
+            .cover h1 span {
+                color: #b8860b;
+            }
+            .section-title {
+                border-bottom-color: #b8860b;
+                color: #111;
+            }
+            .topic-title {
+                color: #111;
+            }
+            .sub-title {
+                color: #222;
+            }
+            p,
+            .toc-item,
+            .styled-list li,
+            .table-wrap td {
+                color: #222;
+            }
+            .table-wrap th {
+                background: #e0e0e0;
+                color: #111;
+            }
+            .highlight {
+                background: #f0e6c0;
+            }
+            .highlight-blue {
+                background: #d0dce8;
+            }
+            .highlight-green {
+                background: #d0e8d4;
+            }
+            .macete {
+                border-color: #b8860b;
+            }
+            .macete .label {
+                color: #b8860b;
+            }
+            .divider-elegant .diamond {
+                background: #b8860b;
+            }
+            .toc-part {
+                color: #111;
+                border-top-color: #ccc;
+            }
+            .callout-tip {
+                background: #f5f0e6;
+            }
+            .callout-important {
+                background: #f5e6e6;
+            }
+            .callout-warning {
+                background: #f5f0e6;
+            }
+            .quote {
+                border-left-color: #b8860b;
+                color: #222;
+            }
+            .term {
+                color: #b8860b;
+            }
+            .term-blue {
+                color: #2a5a8a;
+            }
+            .cover .badge {
+                background: #b8860b;
+                color: #fff;
+            }
+        }
+
+        /* Accessibility: focus */
+        a:focus-visible {
+            outline: 2px solid var(--accent-gold);
+            outline-offset: 2px;
+        }
+
+        /* Extra spacing helpers */
+        .mt-1 {
+            margin-top: 0.5rem;
+        }
+        .mt-2 {
+            margin-top: 1rem;
+        }
+        .mb-1 {
+            margin-bottom: 0.5rem;
+        }
+        .mb-2 {
+            margin-bottom: 1rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-muted {
+            color: var(--text-muted);
+        }
+        .text-gold {
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ====== COVER ====== -->
+        <header class="cover">
+            <div class="badge">⚖️ Material Exclusivo</div>
+            <h1>Direito <span>Constitucional</span> Aplicado</h1>
+            <p class="subtitle">Apostila para Concursos do Poder Judiciário</p>
+            <div class="meta">Técnico Judiciário – Área Judiciária | TJCE · FCC · FGV · Cebraspe</div>
+            <div class="divider-line"></div>
+        </header>
+
+        <!-- ====== APRESENTAÇÃO ====== -->
+        <section>
+            <h2 class="section-title">Apresentação</h2>
+            <p>Esta apostila foi desenvolvida especialmente para candidatos a cargos de <strong>Técnico Judiciário – Área Judiciária</strong>, com foco no padrão de cobrança de bancas como FCC, FGV, Cebraspe e similares, incluindo o Tribunal de Justiça do Estado do Ceará (TJCE).</p>
+            <p>O material que você tem em mãos representa uma reconstrução completa e aprofundada de conhecimentos fragmentados, transformados em uma estrutura lógica de aprendizado. Cada tema foi desenvolvido com:</p>
+            <ul class="styled-list">
+                <li><strong>Explicações detalhadas</strong> para compreensão profunda</li>
+                <li><strong>Conexões entre tópicos</strong> para visão sistêmica</li>
+                <li><strong>Exemplos práticos e casos concretos</strong> para aplicação</li>
+                <li><strong>Dicas de prova e pegadinhas</strong> para evitar erros comuns</li>
+                <li><strong>Quadros comparativos e resumos</strong> para memorização inteligente</li>
+            </ul>
+            <p style="color: var(--accent-gold); font-weight: 500; margin-top: 0.5rem;">Bons estudos!</p>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- ====== SUMÁRIO ====== -->
+        <nav class="toc" aria-label="Sumário">
+            <h2>📑 Sumário</h2>
+            <div class="toc-grid">
+                <div class="toc-part">PARTE I – Princípios Fundamentais e Garantias Constitucionais</div>
+                <a href="#sec-1" class="toc-item"><span class="num">1.</span><span class="label">Princípio da Legalidade Penal e Irretroatividade</span></a>
+                <a href="#sec-2" class="toc-item"><span class="num">2.</span><span class="label">Direito Adquirido e Proteção Constitucional</span></a>
+                <a href="#sec-3" class="toc-item"><span class="num">3.</span><span class="label">Imunidades Parlamentares</span></a>
+
+                <div class="toc-part">PARTE II – Organização do Estado e Poderes</div>
+                <a href="#sec-4" class="toc-item"><span class="num">4.</span><span class="label">Ministério Público: Funções e Vedações</span></a>
+                <a href="#sec-5" class="toc-item"><span class="num">5.</span><span class="label">Poder Executivo: Competências</span></a>
+                <a href="#sec-6" class="toc-item"><span class="num">6.</span><span class="label">Poder Judiciário: Autonomia Orçamentária</span></a>
+
+                <div class="toc-part">PARTE III – Processo Legislativo e Normas</div>
+                <a href="#sec-7" class="toc-item"><span class="num">7.</span><span class="label">Processo Legislativo Municipal</span></a>
+                <a href="#sec-8" class="toc-item"><span class="num">8.</span><span class="label">Tratados Internacionais de Direitos Humanos</span></a>
+                <a href="#sec-9" class="toc-item"><span class="num">9.</span><span class="label">Classificação das Constituições</span></a>
+            </div>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- PARTE I                                                       -->
+        <!-- ============================================================ -->
+
+        <section id="sec-1">
+            <h2 class="section-title"><span class="part-label">Parte I – Princípios Fundamentais e Garantias Constitucionais</span>1. Princípio da Legalidade Penal e a Irretroatividade da Lei Penal</h2>
+
+            <h3 class="sub-title">1.1. Fundamentos Constitucionais</h3>
+            <p>O princípio da legalidade penal, também conhecido como <span class="term">nullum crimen, nulla poena sine lege</span> (não há crime nem pena sem lei anterior), representa uma das mais importantes garantias individuais previstas na Constituição Federal de 1988.</p>
+            <p>Este princípio encontra-se expressamente previsto em dois dispositivos constitucionais:</p>
+            <ul class="styled-list">
+                <li><strong>Art. 5º, XXXIX</strong>: "não há crime sem lei anterior que o defina, nem pena sem prévia cominação legal"</li>
+                <li><strong>Art. 5º, XL</strong>: "a lei penal não retroagirá, salvo para beneficiar o réu"</li>
+            </ul>
+
+            <h3 class="sub-title">1.2. Análise Detalhada do Art. 5º, XXXIX</h3>
+            <p>Este dispositivo consagra dois aspectos fundamentais do princípio da legalidade penal:</p>
+
+            <h4 class="sub-sub-title">a) Reserva Legal (ou Legalidade Estrita)</h4>
+            <p>A criação de tipos penais (definição de crimes) e a cominação de penas são <strong>atividades reservadas exclusivamente à lei em sentido formal</strong> (lei ordinária ou complementar, emanada do Poder Legislativo, com observância do processo legislativo).</p>
+            <div class="callout callout-warning">
+                <span class="label">⚠️ Consequências práticas</span>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li><strong>Vedação a medidas provisórias</strong> para criar ou aumentar penas (art. 62, §1º, I, "b", CF/88)</li>
+                    <li><strong>Vedação a decretos e regulamentos</strong> para definir crimes</li>
+                    <li><strong>Princípio da anterioridade</strong>: a lei deve ser editada antes da conduta criminosa</li>
+                </ul>
+            </div>
+
+            <h4 class="sub-sub-title">b) Taxatividade (ou Determinação)</h4>
+            <p>A lei penal deve descrever a conduta proibida de forma clara, certa e determinada, sem margem para dúvidas ou interpretações excessivamente amplas.</p>
+
+            <h3 class="sub-title">1.3. Análise Detalhada do Art. 5º, XL</h3>
+            <p>A regra geral é a <strong>irretroatividade da lei penal</strong>: a lei só se aplica a fatos ocorridos durante sua vigência.</p>
+            <p><strong>Exceção constitucional</strong>: a retroatividade é permitida <strong>exclusivamente para beneficiar o réu</strong>, ou seja, quando a nova lei for mais favorável ao acusado ou condenado.</p>
+            <p>Isso decorre do princípio da <span class="term">ultratividade da lei penal benigna</span>, que se desdobra em três situações:</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Situação</th><th>Efeito</th></tr></thead>
+                    <tbody>
+                        <tr><td>Nova lei descriminaliza a conduta (abolitio criminis)</td><td>Extinção da punibilidade (art. 107, III, CP)</td></tr>
+                        <tr><td>Nova lei diminui a pena</td><td>Aplica-se a pena mais benéfica</td></tr>
+                        <tr><td>Nova lei exclui ou reduz efeitos da condenação</td><td>Aplica-se a nova lei</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub-title">1.4. Estudo de Caso: Lei Penal Retroativa Incriminadora</h3>
+            <div class="card card-red">
+                <div class="card-title">📌 Hipótese</div>
+                <p>Uma lei publicada em 2025 define como crime uma conduta que, à época de sua prática (2024), era perfeitamente lícita. O legislador, no entanto, determina a aplicação retroativa dessa lei para alcançar fatos ocorridos antes de sua vigência.</p>
+                <p><strong>Pergunta:</strong> Esta lei é compatível com a Constituição Federal de 1988?</p>
+                <p><strong>Resposta:</strong> <span class="highlight">NÃO</span>, é absolutamente incompatível.</p>
+                <p><strong>Fundamentação:</strong></p>
+                <ol class="styled-list" style="margin-bottom:0;">
+                    <li>A CF/88 estabelece que "não há crime sem lei anterior que o defina" (art. 5º, XXXIX) — a lei deve ser <strong>anterior</strong> ao fato criminoso.</li>
+                    <li>A CF/88 estabelece que "a lei penal não retroagirá, salvo para beneficiar o réu" (art. 5º, XL) — a retroação é exceção e apenas para beneficiar.</li>
+                    <li>A lei que criminaliza conduta pretérita e determina sua aplicação retroativa viola frontalmente ambos os dispositivos.</li>
+                </ol>
+            </div>
+
+            <div class="callout callout-important">
+                <span class="label">⚠️ Pegadinha de prova</span>
+                <p>Cuidado com a formulação da questão! Muitas bancas tentam confundir o candidato perguntando sobre "lei que retroage para beneficiar o réu" (válida) versus "lei que retroage para prejudicar o réu" (inválida). A retroatividade penal benigna é constitucional; a retroatividade penal maléfica é inconstitucional.</p>
+            </div>
+
+            <h3 class="sub-title">1.5. Jurisprudência Relevante</h3>
+            <div class="quote">
+                "A lei penal não retroagirá, salvo para beneficiar o réu. O princípio da irretroatividade da lei penal configura garantia constitucional que impede a aplicação de lei penal mais gravosa a fatos anteriores à sua vigência, sendo admitida a retroatividade apenas quando a nova lei for mais favorável ao acusado."
+                <span class="source">STF, HC 82.959-4/DF, Rel. Min. Sepúlveda Pertence</span>
+            </div>
+
+            <h3 class="sub-title">1.6. Resumo para Memorização</h3>
+            <div class="macete">
+                <span class="label">🧠 Macete</span>
+                <p><strong>"Retroage se beneficia; nunca para prejudicar"</strong></p>
+            </div>
+            <div class="card card-gold">
+                <div class="card-title">📋 Princípio da Legalidade Penal (CF/88)</div>
+                <p><strong>Art. 5º, XXXIX:</strong> "Não há crime sem lei anterior, nem pena sem prévia cominação legal"</p>
+                <p><strong>Art. 5º, XL:</strong> "A lei penal não retroagirá, salvo para beneficiar o réu"</p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>Lei anterior ao fato → <span class="highlight">OBRIGATÓRIA</span> (nullum crimen sine lege praevia)</li>
+                    <li>Lei que prejudica o réu → <span class="highlight-blue">IRRETROATIVA</span></li>
+                    <li>Lei que beneficia o réu → <span class="highlight-green">RETROATIVA</span> (exceção constitucional)</li>
+                </ul>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- ====== SEC 2 ====== -->
+        <section id="sec-2">
+            <h2 class="section-title">2. Direito Adquirido e a Proteção Constitucional</h2>
+
+            <h3 class="sub-title">2.1. Fundamentos Constitucionais</h3>
+            <p>O direito adquirido é uma das mais importantes garantias individuais previstas no art. 5º, XXXVI da Constituição Federal, que estabelece:</p>
+            <div class="quote">
+                "A lei não prejudicará o direito adquirido, o ato jurídico perfeito e a coisa julgada."
+            </div>
+
+            <h3 class="sub-title">2.2. Conceito de Direito Adquirido</h3>
+            <p>Direito adquirido é aquele que já se incorporou definitivamente ao patrimônio jurídico do titular, tendo sido preenchidos todos os requisitos legais para sua constituição, ainda que o exercício do direito esteja pendente.</p>
+            <div class="card card-blue">
+                <div class="card-title">📌 Elementos caracterizadores</div>
+                <ol class="styled-list" style="margin-bottom:0;">
+                    <li><strong>Preenchimento dos requisitos legais</strong>: a lei exige certas condições para o surgimento do direito; quando todas são satisfeitas, o direito se adquire.</li>
+                    <li><strong>Incorporação ao patrimônio jurídico</strong>: o direito passa a integrar a esfera jurídica do titular, não podendo mais ser retirado por lei posterior.</li>
+                    <li><strong>Desvinculação do exercício</strong>: o direito adquirido existe independentemente de seu exercício. O simples fato de ainda não ter sido exercido (requerido, cobrado, usado) não impede que seja considerado adquirido.</li>
+                </ol>
+            </div>
+
+            <h3 class="sub-title">2.3. Distinção entre Direito Adquirido e Meras Expectativas de Direito</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Direito Adquirido</th><th>Mera Expectativa de Direito</th></tr></thead>
+                    <tbody>
+                        <tr><td>Todos os requisitos legais já foram cumpridos</td><td>Ainda não foram cumpridos todos os requisitos</td></tr>
+                        <tr><td>Incorporado ao patrimônio jurídico</td><td>Não há incorporação, apenas esperança futura</td></tr>
+                        <tr><td>Protegido contra lei nova que o prejudique</td><td>Pode ser frustrado por lei nova</td></tr>
+                        <tr><td>Exemplo: servidor que já cumpriu tempo de serviço</td><td>Exemplo: servidor que ainda não cumpriu tempo de serviço</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub-title">2.4. Estudo de Caso: Direito Adquirido e Lei Extintiva</h3>
+            <div class="card card-red">
+                <div class="card-title">📌 Hipótese</div>
+                <p>João é servidor público e preencheu todos os requisitos legais para a concessão de um benefício pecuniário (adicional por tempo de serviço) em 15 de janeiro de 2025. No dia 16 de janeiro, João ainda não havia protocolado o requerimento administrativo para solicitar o benefício. Nesse ínterim, foi editada uma lei, publicada em 17 de janeiro, que extinguiu completamente o referido benefício.</p>
+                <p><strong>Pergunta:</strong> João ainda pode receber o benefício?</p>
+                <p><strong>Resposta:</strong> <span class="highlight">SIM</span>, João tem direito ao benefício.</p>
+                <p><strong>Fundamentação:</strong></p>
+                <ol class="styled-list" style="margin-bottom:0;">
+                    <li>João já havia preenchido <strong>todos os requisitos legais</strong> antes da edição da lei nova (em 15 de janeiro).</li>
+                    <li>O direito já se incorporou ao patrimônio jurídico de João, tornando-se <strong>direito adquirido</strong>, nos termos do art. 5º, XXXVI da CF/88.</li>
+                    <li>A lei nova que extingue o benefício <strong>não pode prejudicar</strong> o direito adquirido.</li>
+                    <li>O fato de João não ter protocolado o requerimento formal é irrelevante para a caracterização do direito adquirido, pois o direito existe independentemente de seu exercício.</li>
+                </ol>
+            </div>
+            <div class="callout callout-important">
+                <span class="label">⚠️ Observação importante</span>
+                <p>A Administração Pública pode exigir o cumprimento de procedimentos formais para o exercício do direito (protocolo do requerimento, comprovação de documentos etc.), mas não pode negar o direito em si, se já adquirido.</p>
+            </div>
+
+            <h3 class="sub-title">2.5. Aplicação do Direito Adquirido em Concursos</h3>
+            <div class="callout callout-warning">
+                <span class="label">⚠️ Pegadinha de prova</span>
+                <p>Muitas questões afirmam que "o direito adquirido só se configura após o requerimento formal". Isso é <strong>FALSO</strong>! O direito adquirido se configura com o preenchimento dos requisitos legais, não com o requerimento.</p>
+            </div>
+
+            <h3 class="sub-title">2.6. Resumo para Memorização</h3>
+            <div class="macete">
+                <span class="label">🧠 Macete</span>
+                <p><strong>"Direito adquirido: preencheu os requisitos → tem o direito, independentemente de ter pedido ou não"</strong></p>
+            </div>
+            <div class="card card-gold">
+                <div class="card-title">📋 Direito Adquirido (CF/88, Art. 5º, XXXVI)</div>
+                <p>"a lei não prejudicará o direito adquirido, o ato jurídico perfeito e a coisa julgada"</p>
+                <p><strong>Requisitos para configuração:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>Preenchimento de todos os requisitos legais</li>
+                    <li>Incorporação ao patrimônio jurídico do titular</li>
+                </ul>
+                <p style="margin-top:0.5rem;"><strong>Não se confunde com:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>Mera expectativa de direito (requisitos não preenchidos)</li>
+                    <li>Exercício do direito (basta aquisição, não exercício)</li>
+                </ul>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- ====== SEC 3 ====== -->
+        <section id="sec-3">
+            <h2 class="section-title">3. Imunidades Parlamentares</h2>
+
+            <h3 class="sub-title">3.1. Conceito e Fundamento</h3>
+            <p>As imunidades parlamentares são garantias constitucionais destinadas a proteger o livre exercício do mandato parlamentar, assegurando que os representantes do povo possam atuar com independência, sem temor de represálias.</p>
+            <p><strong>Fundamento</strong>: Garantir a autonomia e a independência do Poder Legislativo, preservando a liberdade de manifestação dos parlamentares no exercício de suas funções.</p>
+
+            <h3 class="sub-title">3.2. Imunidade Material (ou Inviolabilidade)</h3>
+            <p>A imunidade material, também chamada de inviolabilidade, garante ao parlamentar que suas opiniões, palavras e votos não poderão ser objeto de responsabilização penal, civil ou disciplinar.</p>
+
+            <h4 class="sub-sub-title">3.2.1. Deputados e Senadores (Âmbito Federal)</h4>
+            <p><strong>Previsão constitucional</strong>: Art. 53 da CF/88</p>
+            <div class="quote">
+                "Os Deputados e Senadores são invioláveis, civil e penalmente, por quaisquer de suas opiniões, palavras e votos."
+            </div>
+            <div class="card card-blue">
+                <div class="card-title">📌 Características</div>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li><strong>Irrestrita quanto ao local</strong>: aplica-se em todo o território nacional</li>
+                    <li><strong>Irrestrita quanto ao tempo</strong>: aplica-se mesmo fora do exercício do mandato, desde que as declarações tenham relação com o exercício da função parlamentar</li>
+                    <li><strong>Irrestrita quanto ao conteúdo</strong>: abrange opiniões, palavras e votos</li>
+                    <li><strong>Perpetuidade</strong>: a imunidade permanece mesmo após o fim do mandato, para fatos ocorridos durante o exercício</li>
+                </ul>
+            </div>
+
+            <h4 class="sub-sub-title">3.2.2. Vereadores (Âmbito Municipal)</h4>
+            <p><strong>Previsão constitucional</strong>: Art. 29, VIII da CF/88</p>
+            <div class="quote">
+                "Os Vereadores são invioláveis por suas opiniões, palavras e votos no exercício do mandato e na circunscrição do Município."
+            </div>
+            <div class="card card-blue">
+                <div class="card-title">📌 Características</div>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li><strong>Restrita quanto ao local</strong>: aplica-se apenas na circunscrição do Município</li>
+                    <li><strong>Restrita quanto ao tempo</strong>: aplica-se apenas no exercício do mandato</li>
+                    <li><strong>Perpetuidade após fim do mandato</strong>: para fatos ocorridos durante o exercício</li>
+                </ul>
+            </div>
+
+            <h3 class="sub-title">3.3. Imunidade Formal (ou Processual)</h3>
+            <p>A imunidade formal (processual) refere-se às regras especiais de processo aplicáveis aos parlamentares, especialmente no que diz respeito à prisão e ao processo penal.</p>
+            <p><strong>Previsão constitucional</strong>: Art. 53, §1º e §2º da CF/88</p>
+            <ul class="styled-list">
+                <li><strong>Prisão</strong>: Deputados e Senadores não podem ser presos, salvo em flagrante de crime inafiançável. Neste caso, os autos devem ser remetidos dentro de 24 horas à Casa respectiva, que decidirá sobre a prisão.</li>
+                <li><strong>Processo penal</strong>: Recebida denúncia contra parlamentar por crime ocorrido após a diplomação, o STF deve dar ciência à Casa respectiva, que poderá, até a decisão final, sustar o andamento da ação.</li>
+            </ul>
+
+            <h3 class="sub-title">3.4. Estudo de Caso: Imunidade Parlamentar Comparada</h3>
+            <div class="card card-red">
+                <div class="card-title">📌 Hipótese</div>
+                <p>Uma Deputada Federal e um Vereador participam de um ato político em Brasília/DF. Durante o evento, ambos fazem declarações contundentes criticando agentes públicos, com palavras que, em tese, poderiam configurar crimes contra a honra.</p>
+                <p><strong>Pergunta:</strong> Ambos possuem imunidade material por suas declarações?</p>
+                <p><strong>Resposta:</strong> <span class="highlight">NÃO</span>. Apenas a Deputada Federal possui imunidade.</p>
+                <p><strong>Fundamentação:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li><strong>Deputada Federal</strong>: a imunidade material do art. 53 da CF/88 garante inviolabilidade por opiniões, palavras e votos <strong>sem limitação territorial</strong> (aplica-se em todo o território nacional). Brasília/DF está dentro do território nacional. A deputada está protegida.</li>
+                    <li><strong>Vereador</strong>: a imunidade material do art. 29, VIII da CF/88 é restrita — aplica-se apenas <strong>"no exercício do mandato e na circunscrição do Município"</strong>. Brasília/DF está fora da circunscrição do município do vereador. O vereador <strong>NÃO</strong> está protegido.</li>
+                </ul>
+            </div>
+
+            <h3 class="sub-title">3.5. Quadro Comparativo: Imunidade Material</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Aspecto</th><th>Deputados e Senadores</th><th>Vereadores</th></tr></thead>
+                    <tbody>
+                        <tr><td>Base legal</td><td>Art. 53, CF/88</td><td>Art. 29, VIII, CF/88</td></tr>
+                        <tr><td>Inviolabilidade</td><td>Civil e penal</td><td>Civil e penal</td></tr>
+                        <tr><td>Limitação territorial</td><td><span class="highlight">NENHUMA</span></td><td>Circunscrição do Município</td></tr>
+                        <tr><td>Limitação temporal</td><td><span class="highlight">NENHUMA</span></td><td>Exercício do mandato</td></tr>
+                        <tr><td>Aplicação fora do Município</td><td><span class="highlight-green">SIM</span></td><td><span class="highlight-blue">NÃO</span></td></tr>
+                        <tr><td>Aplicação fora do exercício</td><td><span class="highlight-green">SIM</span> (para fatos durante o mandato)</td><td><span class="highlight-blue">NÃO</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub-title">3.6. Jurisprudência Relevante</h3>
+            <div class="quote">
+                "A imunidade parlamentar material, prevista no art. 53 da Constituição Federal, não se limita à circunscrição do Município, estendendo-se a todo o território nacional."
+                <span class="source">STF, Súmula Vinculante nº 30</span>
+            </div>
+            <div class="callout callout-important">
+                <span class="label">⚠️ Importante</span>
+                <p>Esta súmula se refere à imunidade material do art. 53 (Deputados e Senadores), <strong>não se aplicando a vereadores</strong>, cuja imunidade é restrita à circunscrição do município (art. 29, VIII).</p>
+            </div>
+
+            <h3 class="sub-title">3.7. Dica de Prova</h3>
+            <div class="callout callout-warning">
+                <span class="label">⚠️ Pegadinha comum</span>
+                <p>Afirmar que o vereador tem imunidade material em todo o território nacional. Isso é <strong>FALSO</strong>! A imunidade do vereador é restrita à circunscrição do Município.</p>
+            </div>
+
+            <h3 class="sub-title">3.8. Resumo para Memorização</h3>
+            <div class="macete">
+                <span class="label">🧠 Macete</span>
+                <p><strong>"Deputado fala onde quiser; vereador fala só na cidade e na função"</strong></p>
+            </div>
+            <div class="card card-gold">
+                <div class="card-title">📋 Imunidade Parlamentar Material</div>
+                <p><strong>DEPUTADOS E SENADORES (Art. 53, CF/88):</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>✓ Inviolabilidade civil e penal</li>
+                    <li>✓ Por quaisquer opiniões, palavras e votos</li>
+                    <li>✓ Sem limitação territorial</li>
+                    <li>✓ Aplica-se mesmo fora do exercício do mandato</li>
+                    <li>✓ Perpétua (para fatos do mandato)</li>
+                </ul>
+                <p style="margin-top:0.8rem;"><strong>VEREADORES (Art. 29, VIII, CF/88):</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>✓ Inviolabilidade civil e penal</li>
+                    <li>✓ Por opiniões, palavras e votos</li>
+                    <li>✓ Apenas no exercício do mandato</li>
+                    <li>✓ Apenas na circunscrição do Município</li>
+                    <li>✗ NÃO se aplica fora do Município</li>
+                    <li>✗ NÃO se aplica fora do exercício</li>
+                </ul>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PARTE II                                                      -->
+        <!-- ============================================================ -->
+
+        <section id="sec-4">
+            <h2 class="section-title"><span class="part-label">Parte II – Organização do Estado e Poderes</span>4. Ministério Público: Funções Institucionais e Vedações</h2>
+
+            <h3 class="sub-title">4.1. Natureza e Funções do Ministério Público</h3>
+            <p>O Ministério Público é instituição permanente, essencial à função jurisdicional do Estado, incumbindo-lhe a defesa da ordem jurídica, do regime democrático e dos interesses sociais e individuais indisponíveis (art. 127, caput, CF/88).</p>
+            <div class="card card-blue">
+                <div class="card-title">📌 Princípios institucionais (art. 127, §1º)</div>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>Unidade</li>
+                    <li>Indivisibilidade</li>
+                    <li>Independência funcional</li>
+                </ul>
+            </div>
+
+            <h3 class="sub-title">4.2. Funções Institucionais do Ministério Público (Art. 129, CF/88)</h3>
+            <p>O art. 129 da CF/88 enumera as funções institucionais do Ministério Público, entre as quais se destacam:</p>
+            <ol class="styled-list">
+                <li>Promover, privativamente, a ação penal pública, na forma da lei</li>
+                <li>Zelar pelo efetivo respeito dos Poderes Públicos e dos serviços de relevância pública aos direitos assegurados na CF</li>
+                <li>Promover o inquérito civil e a ação civil pública para proteção do patrimônio público e social, do meio ambiente e de outros interesses difusos e coletivos</li>
+                <li>Promover a ação de inconstitucionalidade ou representação para fins de intervenção da União e dos Estados</li>
+                <li>Defender judicialmente os direitos e interesses das populações indígenas</li>
+                <li>Exercer o controle externo da atividade policial</li>
+                <li>Requisitar diligências investigatórias e instauração de inquérito policial</li>
+                <li>Exercer outras funções compatíveis com sua finalidade</li>
+            </ol>
+
+            <h3 class="sub-title">4.3. Vedação Constitucional: Proibição de Consultoria Jurídica</h3>
+            <p>Uma das mais importantes vedações ao Ministério Público está prevista no <strong>art. 129, IX da CF/88</strong>:</p>
+            <div class="quote">
+                "São funções institucionais do Ministério Público: [...] IX - exercer outras funções que lhe forem conferidas, desde que compatíveis com sua finalidade, sendo-lhe vedada a representação judicial e a consultoria jurídica de entidades públicas."
+            </div>
+
+            <h3 class="sub-title">4.4. Análise da Vedação</h3>
+            <div class="card card-red">
+                <div class="card-title">🚫 Proibição de Representação Judicial</div>
+                <p>O Ministério Público <strong>não pode</strong> atuar como advogado ou procurador de entidades públicas em juízo. Isso significa que:</p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>Não pode defender entes públicos em ações judiciais</li>
+                    <li>Não pode patrocinar interesses de órgãos públicos</li>
+                    <li>Não pode substituir a Advocacia-Geral da União, Procuradorias Estaduais ou Municipais</li>
+                </ul>
+            </div>
+            <div class="card card-red">
+                <div class="card-title">🚫 Proibição de Consultoria Jurídica</div>
+                <p>O Ministério Público <strong>não pode</strong> emitir pareceres, opiniões ou orientações jurídicas vinculantes para entidades públicas. Isso significa que:</p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>Não pode assessorar juridicamente órgãos públicos</li>
+                    <li>Não pode ser consultado previamente sobre a legalidade de atos administrativos</li>
+                    <li>Não pode substituir as assessorias jurídicas dos Poderes Executivo, Legislativo e Judiciário</li>
+                </ul>
+            </div>
+
+            <h3 class="sub-title">4.5. Estudo de Caso: Decreto Governamental e Consultoria do MP</h3>
+            <div class="card card-red">
+                <div class="card-title">📌 Hipótese</div>
+                <p>O Governador do Estado edita um decreto determinando que "todos os atos da Secretaria de Estado de Saúde, antes de sua prática, deverão ser submetidos à análise prévia do Ministério Público Estadual, que emitirá parecer aprovando ou rejeitando os atos".</p>
+                <p><strong>Pergunta:</strong> Este decreto é constitucional?</p>
+                <p><strong>Resposta:</strong> <span class="highlight">NÃO</span>, o decreto é inconstitucional.</p>
+                <p><strong>Fundamentação:</strong></p>
+                <ol class="styled-list" style="margin-bottom:0;">
+                    <li>O art. 129, IX da CF/88 veda expressamente ao Ministério Público a consultoria jurídica de entidades públicas.</li>
+                    <li>O MP é instituição autônoma e independente, não subordinada ao Poder Executivo.</li>
+                    <li>A função do MP não inclui assessorar órgãos públicos, mas sim: defender a ordem jurídica; fiscalizar a aplicação das leis; atuar como fiscal da lei (custos legis) em processos judiciais; promover ações para proteção de interesses coletivos.</li>
+                    <li>O decreto do Governador viola o art. 129, IX da CF/88, a independência funcional do MP (art. 127, §1º) e a separação dos Poderes (art. 2º da CF/88).</li>
+                </ol>
+            </div>
+
+            <h3 class="sub-title">4.6. Distinção Importante: Pareceres do MP em Processos Judiciais × Consultoria Jurídica</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Situação</th><th>Natureza</th><th>Permissão Constitucional</th></tr></thead>
+                    <tbody>
+                        <tr><td>Parecer do MP em processo judicial (como custos legis)</td><td>Atuação no processo, fiscalizando a correta aplicação da lei</td><td><span class="highlight-green">SIM</span> (art. 127, caput)</td></tr>
+                        <tr><td>Parecer do MP sobre a legalidade de atos administrativos antes de sua prática</td><td>Consultoria jurídica prévia à entidade pública</td><td><span class="highlight-blue">NÃO</span> (art. 129, IX)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="callout callout-important">
+                <span class="label">⚠️ Observação</span>
+                <p>O MP pode atuar como fiscal da lei em processos judiciais, emitindo pareceres sobre questões jurídicas. Isso <strong>não configura</strong> consultoria jurídica, pois: não é prévio à prática do ato; não é vinculante para o juiz; é um ato processual, não administrativo.</p>
+            </div>
+
+            <h3 class="sub-title">4.7. Resumo para Memorização</h3>
+            <div class="macete">
+                <span class="label">🧠 Macete</span>
+                <p><strong>"MP fiscaliza, não assessora; atua no processo, não no ato administrativo"</strong></p>
+            </div>
+            <div class="card card-gold">
+                <div class="card-title">📋 Ministério Público – Vedações (Art. 129, IX, CF/88)</div>
+                <p><strong>✅ PODE:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>Promover ação penal pública</li>
+                    <li>Promover inquérito civil e ação civil pública</li>
+                    <li>Requisitar diligências investigatórias</li>
+                    <li>Exercer controle externo da polícia</li>
+                    <li>Atuar como custos legis em processos</li>
+                    <li>Emitir pareceres em processos judiciais</li>
+                </ul>
+                <p style="margin-top:0.8rem;"><strong>❌ NÃO PODE:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>Representar judicialmente entidades públicas</li>
+                    <li>Prestar consultoria jurídica a entidades públicas</li>
+                    <li>Substituir a Advocacia-Geral da União ou procuradorias</li>
+                    <li>Assessorar órgãos públicos antes da prática de atos</li>
+                </ul>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- ====== SEC 5 ====== -->
+        <section id="sec-5">
+            <h2 class="section-title">5. Poder Executivo: Competências do Presidente da República e dos Ministros de Estado</h2>
+
+            <h3 class="sub-title">5.1. Competências do Presidente da República (Art. 84, CF/88)</h3>
+            <p>O art. 84 da CF/88 estabelece as competências privativas do Presidente da República. São competências que <strong>somente</strong> o Presidente pode exercer, não podendo ser delegadas ou exercidas por outros agentes públicos, salvo exceções legais.</p>
+
+            <h4 class="sub-sub-title">5.1.1. Inciso XVII – Nomeação de Ministros de Estado</h4>
+            <div class="quote">
+                "Art. 84. Compete privativamente ao Presidente da República: [...] XVII - nomear os Ministros de Estado, nos termos do art. 88."
+            </div>
+            <ul class="styled-list">
+                <li>A nomeação dos Ministros de Estado é <strong>competência privativa do Presidente da República</strong>.</li>
+                <li>O art. 88 da CF/88 estabelece que a nomeação dos Ministros de Estado deve ser feita com a observância dos requisitos legais.</li>
+                <li>A escolha é discricionária do Presidente, mas deve recair sobre brasileiros natos ou naturalizados, maiores de 21 anos, no pleno exercício dos direitos políticos.</li>
+            </ul>
+
+            <h4 class="sub-sub-title">5.1.2. Inciso XXV – Propositura de Ação Direta de Inconstitucionalidade</h4>
+            <div class="quote">
+                "Art. 84. Compete privativamente ao Presidente da República: [...] XXV - propor a ação direta de inconstitucionalidade de lei ou ato normativo federal ou estadual, e a ação declaratória de constitucionalidade de lei ou ato normativo federal."
+            </div>
+            <ul class="styled-list">
+                <li>O Presidente da República é um dos legitimados a propor ADI e ADC.</li>
+                <li>Esta competência é <strong>privativa</strong>, ou seja, somente o Presidente pode exercê-la, não podendo ser delegada a Ministros de Estado.</li>
+            </ul>
+
+            <h3 class="sub-title">5.2. Competências dos Ministros de Estado (Art. 87, CF/88)</h3>
+            <p>O art. 87, parágrafo único da CF/88 estabelece as atribuições dos Ministros de Estado:</p>
+            <div class="quote">
+                "Art. 87, parágrafo único. Compete ao Ministro de Estado, além de outras atribuições estabelecidas nesta Constituição e na lei: I - exercer a orientação, coordenação e supervisão dos órgãos e entidades da administração federal na área de sua competência; II - referendar os atos e decretos assinados pelo Presidente da República; III - expedir instruções para a execução das leis, decretos e regulamentos; IV - apresentar ao Presidente da República relatório anual de sua gestão no Ministério; V - praticar os atos pertinentes às atribuições que lhe forem outorgadas ou delegadas pelo Presidente da República."
+            </div>
+
+            <h3 class="sub-title">5.3. Estudo de Caso: Competência para Nomear Membros do Conselho da República</h3>
+            <div class="card card-red">
+                <div class="card-title">📌 Hipótese</div>
+                <p>Em um determinado Estado, o Governador editou decreto determinando que o Ministro de Estado da Justiça e Segurança Pública tem competência para nomear os membros do Conselho da República.</p>
+                <p><strong>Pergunta:</strong> Esta nomeação pelo Ministro de Estado é válida?</p>
+                <p><strong>Resposta:</strong> <span class="highlight">NÃO</span>, é inválida.</p>
+                <p><strong>Fundamentação:</strong></p>
+                <ol class="styled-list" style="margin-bottom:0;">
+                    <li>A competência para nomear os membros do Conselho da República é do <strong>Presidente da República</strong>, conforme art. 84, XVII da CF/88.</li>
+                    <li>O art. 87, parágrafo único da CF/88 estabelece as atribuições dos Ministros de Estado, e <strong>não inclui</strong> a nomeação de membros do Conselho da República.</li>
+                    <li>Nenhuma das atribuições do Ministro autoriza a nomeação de membros do Conselho da República.</li>
+                </ol>
+            </div>
+
+            <h3 class="sub-title">5.4. Quadro Comparativo: Competências</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Competência</th><th>Titular</th><th>Base Legal</th></tr></thead>
+                    <tbody>
+                        <tr><td>Nomear Ministros de Estado</td><td>Presidente da República</td><td>Art. 84, XVII</td></tr>
+                        <tr><td>Nomear membros do Conselho da República</td><td>Presidente da República</td><td>Art. 84, XVII</td></tr>
+                        <tr><td>Propor ADI e ADC</td><td>Presidente da República</td><td>Art. 84, XXV</td></tr>
+                        <tr><td>Expedir instruções para execução de leis</td><td>Ministro de Estado</td><td>Art. 87, III</td></tr>
+                        <tr><td>Referendar atos do Presidente</td><td>Ministro de Estado</td><td>Art. 87, II</td></tr>
+                        <tr><td>Exercer coordenação dos órgãos da Administração Indireta</td><td>Ministro de Estado</td><td>Art. 87, I</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub-title">5.5. Resumo para Memorização</h3>
+            <div class="macete">
+                <span class="label">🧠 Macete</span>
+                <p><strong>"Presidente nomeia; Ministro executa e coordena"</strong></p>
+            </div>
+            <div class="card card-gold">
+                <div class="card-title">📋 Competências</div>
+                <p><strong>PRESIDENTE DA REPÚBLICA (Art. 84):</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>✓ Nomear e exonerar Ministros de Estado</li>
+                    <li>✓ Nomear membros do Conselho da República</li>
+                    <li>✓ Propor ADI e ADC</li>
+                    <li>✓ Sancionar, promulgar e fazer publicar leis</li>
+                    <li>✓ Dispor sobre a organização da administração federal</li>
+                </ul>
+                <p style="margin-top:0.8rem;"><strong>MINISTROS DE ESTADO (Art. 87):</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>✓ Expedir instruções para execução de leis</li>
+                    <li>✓ Referendar atos do Presidente</li>
+                    <li>✓ Coordenar órgãos da Administração Indireta</li>
+                    <li>✓ Apresentar relatório anual de gestão</li>
+                    <li>✓ Praticar atos delegados pelo Presidente</li>
+                    <li>✗ <strong>NÃO</strong> compete ao Ministro nomear membros do Conselho da República</li>
+                </ul>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- ====== SEC 6 ====== -->
+        <section id="sec-6">
+            <h2 class="section-title">6. Poder Judiciário: Autonomia Orçamentária e Financeira</h2>
+
+            <h3 class="sub-title">6.1. Fundamentos Constitucionais</h3>
+            <p>O Poder Judiciário goza de autonomia orçamentária e financeira, garantida pela Constituição Federal para assegurar sua independência em relação aos demais Poderes.</p>
+            <p><strong>Previsão constitucional principal</strong>: Art. 99 da CF/88</p>
+            <div class="quote">
+                "Ao Poder Judiciário é assegurada autonomia administrativa e financeira."
+            </div>
+
+            <h3 class="sub-title">6.2. Detalhamento da Autonomia Orçamentária</h3>
+            <p>O art. 99, §§1º e 2º da CF/88 estabelece as regras para a elaboração da proposta orçamentária do Poder Judiciário:</p>
+
+            <h4 class="sub-sub-title">§1º – Elaboração da Proposta pelos Tribunais</h4>
+            <div class="quote">
+                "Os tribunais elaborarão suas propostas orçamentárias dentro dos limites estipulados conjuntamente com os demais Poderes na lei de diretrizes orçamentárias."
+            </div>
+            <ul class="styled-list">
+                <li>Cada tribunal (STF, STJ, TJs, TRFs, etc.) elabora sua <strong>própria</strong> proposta orçamentária</li>
+                <li>A proposta deve observar os limites da LDO</li>
+                <li>Os tribunais têm autonomia para definir suas prioridades de gastos</li>
+            </ul>
+
+            <h4 class="sub-sub-title">§2º – Encaminhamento ao Poder Executivo</h4>
+            <div class="quote">
+                "O encaminhamento da proposta, ouvidos os demais tribunais interessados, compete ao Presidente do Supremo Tribunal Federal, com o acordo dos respectivos tribunais, e ao Presidente dos Tribunais de Justiça dos Estados, ouvidos os demais tribunais interessados."
+            </div>
+
+            <div class="card card-blue">
+                <div class="card-title">📋 Fluxo do processo orçamentário do Judiciário</div>
+                <ol class="styled-list" style="margin-bottom:0;">
+                    <li>Tribunal elabora sua proposta orçamentária</li>
+                    <li>Presidente do Tribunal encaminha a proposta (Judiciário → Executivo)</li>
+                    <li>Poder Executivo consolida as propostas de todos os Poderes</li>
+                    <li>Executivo encaminha o projeto de lei orçamentária ao Legislativo</li>
+                    <li>Congresso Nacional aprova o orçamento</li>
+                </ol>
+            </div>
+
+            <h3 class="sub-title">6.3. Estudo de Caso: Elaboração da Proposta Orçamentária do Judiciário</h3>
+            <div class="card card-red">
+                <div class="card-title">📌 Hipótese</div>
+                <p>O Governador de um Estado, no exercício de suas atribuições, determina que a Secretaria de Planejamento e Finanças elabore a proposta orçamentária do Tribunal de Justiça do Estado e, após essa elaboração, submeta a proposta à apreciação e aprovação do Tribunal de Justiça.</p>
+                <p><strong>Pergunta:</strong> Este procedimento está correto?</p>
+                <p><strong>Resposta:</strong> <span class="highlight">NÃO</span>, o procedimento é incorreto.</p>
+                <p><strong>Fundamentação:</strong></p>
+                <ol class="styled-list" style="margin-bottom:0;">
+                    <li>O art. 99, §§1º e 2º da CF/88 assegura autonomia orçamentária ao Poder Judiciário.</li>
+                    <li>A proposta orçamentária do Tribunal de Justiça deve ser <strong>elaborada pelo próprio Tribunal</strong>, não pelo Poder Executivo.</li>
+                    <li>O papel do Poder Executivo é: consolidar as propostas dos diferentes Poderes; encaminhar o projeto de lei orçamentária ao Poder Legislativo; <strong>NÃO</strong> elaborar a proposta do Judiciário.</li>
+                    <li>A submissão da proposta do Judiciário à "apreciação e aprovação" do Executivo seria uma violação da autonomia orçamentária assegurada pelo art. 99.</li>
+                </ol>
+            </div>
+            <div class="callout callout-important">
+                <span class="label">⚠️ Observação</span>
+                <p>O Poder Executivo não pode alterar, modificar ou condicionar a proposta orçamentária do Judiciário. A proposta do Judiciário deve ser encaminhada ao Legislativo <strong>sem modificações</strong> pelo Executivo.</p>
+            </div>
+
+            <h3 class="sub-title">6.4. Extensão da Autonomia Financeira</h3>
+            <ul class="styled-list">
+                <li><strong>Gestão própria dos recursos</strong>: os tribunais administram seus próprios recursos financeiros</li>
+                <li><strong>Abertura de créditos</strong>: os tribunais podem abrir créditos suplementares e especiais, dentro dos limites legais</li>
+                <li><strong>Contratação de serviços</strong>: os tribunais podem contratar serviços e adquirir bens sem interferência do Executivo</li>
+                <li><strong>Pagamento de pessoal</strong>: os tribunais gerem a folha de pagamento de seus servidores e magistrados</li>
+            </ul>
+
+            <h3 class="sub-title">6.5. Resumo para Memorização</h3>
+            <div class="macete">
+                <span class="label">🧠 Macete</span>
+                <p><strong>"Judiciário faz sua proposta; Executivo apenas entrega; Legislativo aprova"</strong></p>
+            </div>
+            <div class="card card-gold">
+                <div class="card-title">📋 Autonomia Orçamentária do Judiciário (Art. 99, CF/88)</div>
+                <p><strong>QUEM ELABORA A PROPOSTA:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>✓ Tribunais (cada tribunal elabora sua própria proposta)</li>
+                    <li>✓ O Poder Executivo <strong>NÃO</strong> elabora a proposta do Judiciário</li>
+                </ul>
+                <p style="margin-top:0.8rem;"><strong>PAPEL DO PODER EXECUTIVO:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>✓ Consolida as propostas de todos os Poderes</li>
+                    <li>✓ Encaminha o projeto de lei ao Legislativo</li>
+                    <li>✗ <strong>NÃO</strong> modifica a proposta do Judiciário</li>
+                </ul>
+                <p style="margin-top:0.8rem;"><strong>PAPEL DO PODER LEGISLATIVO:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>✓ Aprova o orçamento</li>
+                    <li>✓ Pode discutir e votar a proposta</li>
+                </ul>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PARTE III                                                     -->
+        <!-- ============================================================ -->
+
+        <section id="sec-7">
+            <h2 class="section-title"><span class="part-label">Parte III – Processo Legislativo e Normas</span>7. Processo Legislativo Municipal: Lei Orgânica dos Municípios</h2>
+
+            <h3 class="sub-title">7.1. Fundamentos Constitucionais</h3>
+            <p>O art. 29 da Constituição Federal estabelece as regras para a organização dos Municípios, incluindo a elaboração de sua Lei Orgânica.</p>
+            <div class="quote">
+                "Art. 29. O Município reger-se-á por lei orgânica, votada em dois turnos, com o interstício mínimo de dez dias, e aprovada por dois terços dos membros da Câmara Municipal, que a promulgará, atendidos os princípios estabelecidos nesta Constituição, na Constituição do respectivo Estado e os seguintes preceitos: [...]"
+            </div>
+
+            <h3 class="sub-title">7.2. Processo de Elaboração da Lei Orgânica Municipal</h3>
+            <p>O processo de elaboração da Lei Orgânica Municipal segue um rito especial, diferente do processo legislativo ordinário municipal:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Etapa</th><th>Requisito</th></tr></thead>
+                    <tbody>
+                        <tr><td>1. Votação em 1º turno</td><td>Aprovação por 2/3 dos membros da Câmara</td></tr>
+                        <tr><td>2. Interstício mínimo</td><td>10 dias entre o 1º e o 2º turno</td></tr>
+                        <tr><td>3. Votação em 2º turno</td><td>Aprovação por 2/3 dos membros da Câmara</td></tr>
+                        <tr><td>4. Promulgação</td><td>Pela própria Câmara Municipal</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Diagrama SVG: Processo de Elaboração da Lei Orgânica -->
+            <div class="diagram-wrap" aria-label="Diagrama do processo de elaboração da Lei Orgânica Municipal">
+                <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                    <defs>
+                        <marker id="arrowGold" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#d4a853" />
+                        </marker>
+                        <style>
+                            .box-lei { fill: #1e2430; stroke: #d4a853; stroke-width: 2; rx: 8; }
+                            .text-lei { fill: #e8e6e3; font-family: 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+                            .text-lei-small { fill: #b8b5b0; font-family: 'Segoe UI', sans-serif; font-size: 11px; text-anchor: middle; dominant-baseline: central; }
+                            .arrow-line { stroke: #d4a853; stroke-width: 2; fill: none; marker-end: url(#arrowGold); }
+                            .label-step { fill: #d4a853; font-family: 'Segoe UI', sans-serif; font-size: 11px; font-weight: 600; text-anchor: middle; }
+                        </style>
+                    </defs>
+                    <!-- Etapa 1 -->
+                    <rect x="30" y="20" width="180" height="70" class="box-lei" />
+                    <text x="120" y="45" class="text-lei">1º Turno</text>
+                    <text x="120" y="67" class="text-lei-small">Aprovação por 2/3</text>
+                    <!-- Seta 1→2 -->
+                    <line x1="210" y1="55" x2="260" y2="55" class="arrow-line" />
+                    <!-- Etapa 2 -->
+                    <rect x="270" y="20" width="160" height="70" class="box-lei" />
+                    <text x="350" y="45" class="text-lei">Interstício</text>
+                    <text x="350" y="67" class="text-lei-small">mínimo 10 dias</text>
+                    <!-- Seta 2→3 -->
+                    <line x1="430" y1="55" x2="480" y2="55" class="arrow-line" />
+                    <!-- Etapa 3 -->
+                    <rect x="490" y="20" width="180" height="70" class="box-lei" />
+                    <text x="580" y="45" class="text-lei">2º Turno</text>
+                    <text x="580" y="67" class="text-lei-small">Aprovação por 2/3</text>
+                    <!-- Seta 3→4 (descendo) -->
+                    <line x1="580" y1="90" x2="580" y2="140" class="arrow-line" />
+                    <!-- Etapa 4 -->
+                    <rect x="420" y="150" width="320" height="70" class="box-lei" style="stroke:#6a8fc0;" />
+                    <text x="580" y="178" class="text-lei" style="fill:#6a8fc0;">Promulgação</text>
+                    <text x="580" y="200" class="text-lei-small">Pela própria Câmara Municipal</text>
+                    <!-- Destaque: Prefeito não participa -->
+                    <rect x="50" y="150" width="280" height="70" class="box-lei" style="stroke:#b06a6a; stroke-dasharray:6,4;" />
+                    <text x="190" y="178" class="text-lei" style="fill:#b06a6a;">Prefeito</text>
+                    <text x="190" y="200" class="text-lei-small" style="fill:#b8b5b0;">NÃO sanciona · NÃO promulga · NÃO veta</text>
+                    <!-- Legenda -->
+                    <text x="580" y="260" class="text-lei-small" style="fill:#8a8782;">Rito especial: art. 29, CF/88</text>
+                </svg>
+            </div>
+
+            <h3 class="sub-title">7.3. Características da Lei Orgânica Municipal</h3>
+            <p>A Lei Orgânica Municipal é, para o Município, o equivalente à Constituição para a União e à Constituição Estadual para o Estado. Caracteriza-se por:</p>
+            <ol class="styled-list">
+                <li><strong>Supremacia local</strong>: é a norma máxima do Município</li>
+                <li><strong>Rito especial</strong>: não segue o processo legislativo ordinário</li>
+                <li><strong>Quórum qualificado</strong>: exige aprovação por 2/3 dos vereadores</li>
+                <li><strong>Não participação do Prefeito</strong>: o Prefeito não sanciona nem promulga a Lei Orgânica</li>
+            </ol>
+
+            <h3 class="sub-title">7.4. Estudo de Caso: Processo de Aprovação da Lei Orgânica Municipal</h3>
+            <div class="card card-red">
+                <div class="card-title">📌 Hipótese</div>
+                <p>A Câmara Municipal de uma cidade aprova a Lei Orgânica Municipal, submete o texto à sanção do Prefeito, que o sanciona e promulga.</p>
+                <p><strong>Pergunta:</strong> O procedimento de aprovação da Lei Orgânica Municipal está correto?</p>
+                <p><strong>Resposta:</strong> <span class="highlight">NÃO</span>, o procedimento está incorreto.</p>
+                <p><strong>Fundamentação:</strong></p>
+                <ol class="styled-list" style="margin-bottom:0;">
+                    <li>O art. 29 da CF/88 estabelece que a Lei Orgânica é <strong>promulgada pela própria Câmara Municipal</strong>, não pelo Prefeito.</li>
+                    <li>O Prefeito <strong>não participa</strong> do processo de elaboração da Lei Orgânica, não havendo: sanção pelo Prefeito; veto pelo Prefeito; promulgação pelo Prefeito.</li>
+                    <li>A Lei Orgânica, por ser a norma fundamental do Município, é de elaboração exclusiva da Câmara Municipal, sem interferência do Poder Executivo local.</li>
+                </ol>
+            </div>
+
+            <h3 class="sub-title">7.5. Distinção: Lei Orgânica × Lei Ordinária Municipal</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Aspecto</th><th>Lei Orgânica</th><th>Lei Ordinária</th></tr></thead>
+                    <tbody>
+                        <tr><td>Conteúdo</td><td>Normas fundamentais do Município</td><td>Matérias ordinárias de interesse local</td></tr>
+                        <tr><td>Quórum de aprovação</td><td>2/3 dos vereadores, em dois turnos</td><td>Maioria simples, em um turno</td></tr>
+                        <tr><td>Sanção pelo Prefeito</td><td><span class="highlight-blue">NÃO</span></td><td><span class="highlight-green">SIM</span> (regra geral)</td></tr>
+                        <tr><td>Promulgação</td><td>Pela Câmara Municipal</td><td>Pelo Prefeito</td></tr>
+                        <tr><td>Veto</td><td><span class="highlight-blue">NÃO</span> se aplica</td><td><span class="highlight-green">SIM</span> (pelo Prefeito)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub-title">7.6. Resumo para Memorização</h3>
+            <div class="macete">
+                <span class="label">🧠 Macete</span>
+                <p><strong>"Lei Orgânica é da Câmara, sem o Prefeito; dois turnos com 2/3 e 10 dias"</strong></p>
+            </div>
+            <div class="card card-gold">
+                <div class="card-title">📋 Lei Orgânica Municipal (Art. 29, CF/88)</div>
+                <p><strong>REQUISITOS:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>✓ Votada em dois turnos</li>
+                    <li>✓ Interstício mínimo de 10 dias entre os turnos</li>
+                    <li>✓ Aprovada por 2/3 dos membros da Câmara Municipal</li>
+                    <li>✓ Promulgada pela Câmara Municipal</li>
+                </ul>
+                <p style="margin-top:0.8rem;"><strong>PARTICIPAÇÃO DO PREFEITO:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>✗ NÃO sanciona</li>
+                    <li>✗ NÃO promulga</li>
+                    <li>✗ NÃO veta</li>
+                </ul>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- ====== SEC 8 ====== -->
+        <section id="sec-8">
+            <h2 class="section-title">8. Tratados Internacionais de Direitos Humanos e sua Incorporação</h2>
+
+            <h3 class="sub-title">8.1. Hierarquia dos Tratados Internacionais no Ordenamento Brasileiro</h3>
+            <p>A incorporação dos tratados internacionais no direito brasileiro segue regras distintas conforme a matéria e o procedimento de aprovação:</p>
+
+            <h3 class="sub-title">8.2. Rito Especial para Tratados de Direitos Humanos (Art. 5º, §3º, CF/88)</h3>
+            <p>A EC nº 45/2004 introduziu o §3º ao art. 5º da CF/88:</p>
+            <div class="quote">
+                "Os tratados e convenções internacionais sobre direitos humanos que forem aprovados, em cada Casa do Congresso Nacional, em dois turnos, por três quintos dos votos dos respectivos membros, serão equivalentes às emendas constitucionais."
+            </div>
+            <div class="card card-blue">
+                <div class="card-title">📌 Requisitos para status de emenda constitucional</div>
+                <ol class="styled-list" style="margin-bottom:0;">
+                    <li>Tratar de <strong>direitos humanos</strong></li>
+                    <li>Ser aprovado em <strong>dois turnos de votação</strong> em cada Casa do Congresso Nacional</li>
+                    <li>Ser aprovado por <strong>três quintos dos votos</strong> dos membros de cada Casa (quórum qualificado)</li>
+                </ol>
+            </div>
+
+            <h3 class="sub-title">8.3. Hierarquia dos Tratados Internacionais</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Tipo de Tratado</th><th>Hierarquia</th></tr></thead>
+                    <tbody>
+                        <tr><td>Tratado de direitos humanos aprovado pelo rito do art. 5º, §3º (2 turnos, 3/5)</td><td><span class="highlight">Emenda constitucional</span></td></tr>
+                        <tr><td>Tratado de direitos humanos aprovado sem o rito do art. 5º, §3º (1 turno, maioria simples)</td><td><span class="highlight-blue">Supralegal</span> (acima das leis ordinárias, abaixo da CF)</td></tr>
+                        <tr><td>Tratado que não versa sobre direitos humanos</td><td>Lei ordinária</td></tr>
+                        <tr><td>Tratado que versa sobre matéria tributária</td><td>Lei ordinária (deve observar princípios tributários)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Diagrama SVG: Hierarquia dos Tratados -->
+            <div class="diagram-wrap" aria-label="Diagrama da hierarquia dos tratados internacionais no Brasil">
+                <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                    <defs>
+                        <style>
+                            .hier-box { fill: #1e2430; stroke-width: 2; rx: 8; }
+                            .hier-text { fill: #e8e6e3; font-family: 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+                            .hier-text-sub { fill: #b8b5b0; font-family: 'Segoe UI', sans-serif; font-size: 11px; text-anchor: middle; dominant-baseline: central; }
+                            .hier-line { stroke: #2a3346; stroke-width: 2; fill: none; }
+                            .hier-label { fill: #8a8782; font-family: 'Segoe UI', sans-serif; font-size: 10px; text-anchor: middle; }
+                        </style>
+                    </defs>
+                    <!-- Nível 1: CF -->
+                    <rect x="260" y="10" width="200" height="50" class="hier-box" style="stroke:#d4a853;" />
+                    <text x="360" y="35" class="hier-text" style="fill:#d4a853;">Constituição Federal</text>
+                    <!-- Linhas descendentes -->
+                    <line x1="360" y1="60" x2="360" y2="95" class="hier-line" />
+                    <!-- Nível 2: Emenda / Supralegal -->
+                    <line x1="180" y1="95" x2="540" y2="95" class="hier-line" />
+                    <line x1="180" y1="95" x2="180" y2="120" class="hier-line" />
+                    <line x1="540" y1="95" x2="540" y2="120" class="hier-line" />
+                    <!-- Bloco Esquerda: Emenda -->
+                    <rect x="60" y="120" width="240" height="55" class="hier-box" style="stroke:#d4a853;" />
+                    <text x="180" y="140" class="hier-text" style="fill:#d4a853;">Emenda Constitucional</text>
+                    <text x="180" y="162" class="hier-text-sub">Tratado DH + rito 3/5 (2 turnos)</text>
+                    <!-- Bloco Direita: Supralegal -->
+                    <rect x="420" y="120" width="240" height="55" class="hier-box" style="stroke:#6a8fc0;" />
+                    <text x="540" y="140" class="hier-text" style="fill:#6a8fc0;">Supralegal</text>
+                    <text x="540" y="162" class="hier-text-sub">Tratado DH + rito comum</text>
+                    <!-- Linhas para nível 3 -->
+                    <line x1="180" y1="175" x2="180" y2="200" class="hier-line" />
+                    <line x1="540" y1="175" x2="540" y2="200" class="hier-line" />
+                    <!-- Nível 3: Lei ordinária -->
+                    <rect x="260" y="200" width="200" height="50" class="hier-box" style="stroke:#8a8782;" />
+                    <text x="360" y="225" class="hier-text" style="fill:#8a8782;">Lei Ordinária</text>
+                    <text x="360" y="245" class="hier-text-sub" style="fill:#8a8782;">Tratado não-DH</text>
+                    <!-- Labels -->
+                    <text x="70" y="265" class="hier-label">↑ Mais alta hierarquia</text>
+                </svg>
+            </div>
+
+            <h3 class="sub-title">8.4. Quadro Comparativo Detalhado</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Aspecto</th><th>Tratado DH + Rito 3/5</th><th>Tratado DH (rito comum)</th><th>Tratado não-DH</th></tr></thead>
+                    <tbody>
+                        <tr><td>Base legal</td><td>Art. 5º, §3º, CF/88</td><td>Art. 5º, caput</td><td>Art. 84, VIII c/c art. 49, I</td></tr>
+                        <tr><td>Votações</td><td>2 turnos em cada Casa</td><td>1 turno em cada Casa</td><td>1 turno em cada Casa</td></tr>
+                        <tr><td>Quórum</td><td>3/5 (qualificado)</td><td>Maioria simples</td><td>Maioria simples</td></tr>
+                        <tr><td>Hierarquia</td><td><span class="highlight">Emenda constitucional</span></td><td><span class="highlight-blue">Supralegal</span></td><td>Lei ordinária</td></tr>
+                        <tr><td>Efeito</td><td>Pode revogar CF (parcialmente)</td><td>Não revoga CF, mas revoga lei</td><td>Não revoga CF, revogável por lei</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub-title">8.5. O Conceito de "Supralegalidade"</h3>
+            <p>A tese da supralegalidade foi desenvolvida pelo Supremo Tribunal Federal no julgamento do <strong>RE 466.343-1/SP</strong> (caso da Convenção Americana de Direitos Humanos – Pacto de San José da Costa Rica):</p>
+            <div class="quote">
+                "Os tratados internacionais de direitos humanos, quando aprovados pelo Congresso Nacional sem observância do rito especial do art. 5º, §3º da CF/88, têm status supralegal, situando-se acima das leis ordinárias, mas abaixo da Constituição."
+            </div>
+            <div class="card card-blue">
+                <div class="card-title">📌 Consequência prática da supralegalidade</div>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>O tratado supralegal <strong>prevalece</strong> sobre leis ordinárias anteriores ou posteriores (quando incompatíveis)</li>
+                    <li>O tratado supralegal <strong>não prevalece</strong> sobre a Constituição (se incompatível com a CF, prevalece a CF)</li>
+                    <li>O tratado supralegal <strong>não revoga</strong> a CF, mas pode revogar leis ordinárias</li>
+                </ul>
+            </div>
+
+            <h3 class="sub-title">8.6. Estudo de Caso: Aprovação de Tratado de Direitos Humanos</h3>
+            <div class="card card-red">
+                <div class="card-title">📌 Hipótese</div>
+                <p>O Brasil celebra um tratado internacional de direitos humanos. O Congresso Nacional aprova o tratado em dois turnos de votação em cada Casa, com quórum de três quintos dos votos dos respectivos membros.</p>
+                <p><strong>Pergunta:</strong> Com que natureza jurídica este tratado ingressa no ordenamento jurídico brasileiro?</p>
+                <p><strong>Resposta:</strong> Com natureza de <span class="highlight">emenda constitucional</span>.</p>
+                <p><strong>Fundamentação:</strong></p>
+                <ol class="styled-list" style="margin-bottom:0;">
+                    <li>O art. 5º, §3º da CF/88 estabelece que tratados de direitos humanos aprovados pelo rito especial (2 turnos, 3/5 dos votos) são equivalentes a emendas constitucionais.</li>
+                    <li>Isso significa que o tratado: integra o bloco de constitucionalidade; tem força de norma constitucional; não pode ser revogado por lei ordinária; pode ser usado como parâmetro para controle de constitucionalidade.</li>
+                </ol>
+            </div>
+
+            <h3 class="sub-title">8.7. Resumo para Memorização</h3>
+            <div class="macete">
+                <span class="label">🧠 Macete</span>
+                <p><strong>"Direitos humanos com 3/5 vira emenda; sem 3/5 fica supralegal; outros temas são lei ordinária"</strong></p>
+            </div>
+            <div class="card card-gold">
+                <div class="card-title">📋 Hierarquia dos Tratados Internacionais</div>
+                <ol class="styled-list" style="margin-bottom:0;">
+                    <li><strong>TRATADO DE DIREITOS HUMANOS + RITO 3/5</strong> (2 turnos, 3/5) → <span class="highlight">EMENDA CONSTITUCIONAL</span></li>
+                    <li><strong>TRATADO DE DIREITOS HUMANOS + RITO COMUM</strong> (1 turno, maioria) → <span class="highlight-blue">SUPRALEGAL</span></li>
+                    <li><strong>TRATADO SOBRE OUTRAS MATÉRIAS</strong> → <span class="text-muted">LEI ORDINÁRIA</span></li>
+                </ol>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- ====== SEC 9 ====== -->
+        <section id="sec-9">
+            <h2 class="section-title">9. Classificação das Constituições</h2>
+
+            <h3 class="sub-title">9.1. Introdução</h3>
+            <p>A classificação das Constituições é um tema clássico da Teoria Geral do Direito Constitucional, cobrado com frequência em concursos públicos. As constituições podem ser classificadas segundo diversos critérios, sendo os mais importantes:</p>
+            <ol class="styled-list">
+                <li>Quanto à origem</li>
+                <li>Quanto à estabilidade (ou alterabilidade)</li>
+                <li>Quanto ao conteúdo</li>
+                <li>Quanto à forma</li>
+                <li>Quanto à extensão</li>
+            </ol>
+
+            <h3 class="sub-title">9.2. Classificação Quanto à Origem</h3>
+            <p>Este critério analisa como a Constituição foi criada, quem a elaborou e com que legitimidade.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Tipo</th><th>Característica</th><th>Exemplo</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="highlight">Promulgada</span> (popular, democrática)</td><td>Elaborada por Assembleia Constituinte eleita pelo povo, representando a vontade popular</td><td>CF/1988 (Brasil)</td></tr>
+                        <tr><td><span class="highlight-blue">Outorgada</span> (imposta)</td><td>Imposta unilateralmente por um governante ou grupo, sem participação popular</td><td>CF/1937 (Estado Novo)</td></tr>
+                        <tr><td><span class="highlight-green">Cesarista</span></td><td>Elaborada por ato unilateral (como outorgada), mas submetida à aprovação popular (plebiscito ou referendo)</td><td>Constituição de 1967 (Brasil)</td></tr>
+                        <tr><td><span class="text-muted">Pactuada</span> (dualista)</td><td>Resulta de acordo entre diferentes forças políticas ou entre o soberano e o povo</td><td>Carta de 1814 (França)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="callout callout-important">
+                <span class="label">⚠️ Importante</span>
+                <p>A classificação quanto à origem NÃO se confunde com a forma de governo (monarquia/república) ou com o sistema de governo (presidencialismo/parlamentarismo).</p>
+            </div>
+
+            <h3 class="sub-title">9.3. Classificação Quanto à Estabilidade (Alterabilidade)</h3>
+            <p>Este critério analisa a rigidez ou flexibilidade do processo de alteração da Constituição.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Tipo</th><th>Característica</th><th>Exemplo</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="highlight">Rígida</span></td><td>O processo de alteração é mais solene e exigente que o processo legislativo ordinário</td><td>CF/1988 (EC com 3/5, 2 turnos)</td></tr>
+                        <tr><td><span class="highlight-blue">Flexível</span></td><td>O processo de alteração é o mesmo do processo legislativo ordinário</td><td>Constituição da Inglaterra</td></tr>
+                        <tr><td><span class="highlight-green">Semirrígida</span> (ou semiflexível)</td><td>Parte das normas é rígida, parte é flexível</td><td>CF/1824 (Brasil Império)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>No Brasil:</strong> A CF/1988 é <span class="highlight">rígida</span>, pois exige processo legislativo especial para emendas constitucionais (art. 60: aprovação em dois turnos, com 3/5 dos votos em cada Casa).</p>
+
+            <h3 class="sub-title">9.4. Estudo de Caso: Constituição Cesarista e Semirrígida</h3>
+            <div class="card card-red">
+                <div class="card-title">📌 Hipótese</div>
+                <p>Uma Constituição foi elaborada por uma comissão nomeada pelo líder de um golpe de Estado, sem participação popular direta. Posteriormente, foi submetida a um plebiscito para aprovação popular. Quanto à alteração das normas, parte delas exige processo legislativo mais rigoroso (quórum qualificado), enquanto outras podem ser alteradas por processo legislativo ordinário.</p>
+                <p><strong>Pergunta:</strong> Como esta Constituição é classificada quanto à origem e quanto à estabilidade?</p>
+                <p><strong>Resposta:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li><strong>Quanto à origem</strong>: <span class="highlight">CESARISTA</span> – pois foi imposta por ato unilateral (comissão nomeada pelo líder do golpe) mas submetida à aprovação popular por plebiscito.</li>
+                    <li><strong>Quanto à estabilidade</strong>: <span class="highlight-blue">SEMIRRÍGIDA</span> – pois parte das normas exige processo legislativo mais solene (quórum qualificado) e parte pode ser alterada por processo ordinário.</li>
+                </ul>
+            </div>
+
+            <h3 class="sub-title">9.5. Outras Classificações Relevantes</h3>
+
+            <h4 class="sub-sub-title">Quanto ao Conteúdo</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Tipo</th><th>Característica</th><th>Exemplo</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="highlight">Material</span></td><td>Contém apenas normas que tratam da estrutura do Estado e dos direitos fundamentais</td><td>—</td></tr>
+                        <tr><td><span class="highlight-blue">Formal</span></td><td>Contém todas as normas que estão no texto constitucional, mesmo que não sejam materialmente constitucionais</td><td>CF/1988 (contém normas sobre orçamento, processo legislativo, etc.)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="sub-sub-title">Quanto à Forma</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Tipo</th><th>Característica</th><th>Exemplo</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="highlight">Escrita</span></td><td>Codificada em um único documento</td><td>CF/1988</td></tr>
+                        <tr><td><span class="highlight-blue">Costumeira</span> (não escrita)</td><td>Não está codificada, baseia-se em costumes e convenções</td><td>Constituição da Inglaterra</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4 class="sub-sub-title">Quanto à Extensão</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Tipo</th><th>Característica</th><th>Exemplo</th></tr></thead>
+                    <tbody>
+                        <tr><td><span class="highlight">Analítica</span></td><td>Longa, detalhada, trata de inúmeros temas</td><td>CF/1988 (mais de 250 artigos)</td></tr>
+                        <tr><td><span class="highlight-blue">Sintética</span></td><td>Curta, trata apenas de princípios fundamentais</td><td>Constituição dos EUA (7 artigos)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Diagrama SVG: Classificação das Constituições -->
+            <div class="diagram-wrap" aria-label="Diagrama de classificação das constituições">
+                <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                    <defs>
+                        <style>
+                            .class-box { fill: #1e2430; stroke-width: 2; rx: 8; }
+                            .class-text { fill: #e8e6e3; font-family: 'Segoe UI', sans-serif; font-size: 12px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+                            .class-text-sub { fill: #b8b5b0; font-family: 'Segoe UI', sans-serif; font-size: 10px; text-anchor: middle; dominant-baseline: central; }
+                            .class-title { fill: #d4a853; font-family: 'Segoe UI', sans-serif; font-size: 14px; font-weight: 600; text-anchor: middle; }
+                            .class-line { stroke: #2a3346; stroke-width: 1.5; fill: none; }
+                        </style>
+                    </defs>
+                    <!-- Título central -->
+                    <text x="360" y="22" class="class-title">Classificação das Constituições</text>
+                    <!-- Linha central -->
+                    <line x1="360" y1="35" x2="360" y2="55" class="class-line" />
+                    <!-- 5 critérios -->
+                    <!-- 1. Origem -->
+                    <line x1="360" y1="55" x2="100" y2="55" class="class-line" />
+                    <line x1="100" y1="55" x2="100" y2="75" class="class-line" />
+                    <rect x="15" y="75" width="170" height="40" class="class-box" style="stroke:#d4a853;" />
+                    <text x="100" y="95" class="class-text" style="fill:#d4a853;">Origem</text>
+                    <line x1="100" y1="115" x2="100" y2="130" class="class-line" />
+                    <!-- Subitens Origem -->
+                    <rect x="5" y="130" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="47" y="146" class="class-text-sub" style="fill:#6a8fc0;">Promulgada</text>
+                    <rect x="95" y="130" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="137" y="146" class="class-text-sub" style="fill:#6a8fc0;">Outorgada</text>
+                    <rect x="5" y="168" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="47" y="184" class="class-text-sub" style="fill:#6a8fc0;">Cesarista</text>
+                    <rect x="95" y="168" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="137" y="184" class="class-text-sub" style="fill:#6a8fc0;">Pactuada</text>
+
+                    <!-- 2. Estabilidade -->
+                    <line x1="360" y1="55" x2="280" y2="55" class="class-line" />
+                    <line x1="280" y1="55" x2="280" y2="75" class="class-line" />
+                    <rect x="195" y="75" width="170" height="40" class="class-box" style="stroke:#d4a853;" />
+                    <text x="280" y="95" class="class-text" style="fill:#d4a853;">Estabilidade</text>
+                    <line x1="280" y1="115" x2="280" y2="130" class="class-line" />
+                    <rect x="195" y="130" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="237" y="146" class="class-text-sub" style="fill:#6a8fc0;">Rígida</text>
+                    <rect x="285" y="130" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="327" y="146" class="class-text-sub" style="fill:#6a8fc0;">Flexível</text>
+                    <rect x="240" y="168" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="282" y="184" class="class-text-sub" style="fill:#6a8fc0;">Semirrígida</text>
+
+                    <!-- 3. Conteúdo -->
+                    <line x1="360" y1="55" x2="440" y2="55" class="class-line" />
+                    <line x1="440" y1="55" x2="440" y2="75" class="class-line" />
+                    <rect x="355" y="75" width="170" height="40" class="class-box" style="stroke:#d4a853;" />
+                    <text x="440" y="95" class="class-text" style="fill:#d4a853;">Conteúdo</text>
+                    <line x1="440" y1="115" x2="440" y2="130" class="class-line" />
+                    <rect x="355" y="130" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="397" y="146" class="class-text-sub" style="fill:#6a8fc0;">Material</text>
+                    <rect x="445" y="130" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="487" y="146" class="class-text-sub" style="fill:#6a8fc0;">Formal</text>
+
+                    <!-- 4. Forma -->
+                    <line x1="360" y1="55" x2="600" y2="55" class="class-line" />
+                    <line x1="600" y1="55" x2="600" y2="75" class="class-line" />
+                    <rect x="515" y="75" width="170" height="40" class="class-box" style="stroke:#d4a853;" />
+                    <text x="600" y="95" class="class-text" style="fill:#d4a853;">Forma</text>
+                    <line x1="600" y1="115" x2="600" y2="130" class="class-line" />
+                    <rect x="515" y="130" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="557" y="146" class="class-text-sub" style="fill:#6a8fc0;">Escrita</text>
+                    <rect x="605" y="130" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="647" y="146" class="class-text-sub" style="fill:#6a8fc0;">Costumeira</text>
+
+                    <!-- 5. Extensão -->
+                    <line x1="360" y1="55" x2="720" y2="55" class="class-line" />
+                    <line x1="720" y1="55" x2="720" y2="75" class="class-line" />
+                    <rect x="635" y="75" width="170" height="40" class="class-box" style="stroke:#d4a853;" />
+                    <text x="720" y="95" class="class-text" style="fill:#d4a853;">Extensão</text>
+                    <line x1="720" y1="115" x2="720" y2="130" class="class-line" />
+                    <rect x="635" y="130" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="677" y="146" class="class-text-sub" style="fill:#6a8fc0;">Analítica</text>
+                    <rect x="725" y="130" width="85" height="32" class="class-box" style="stroke:#6a8fc0;stroke-width:1.5;" />
+                    <text x="767" y="146" class="class-text-sub" style="fill:#6a8fc0;">Sintética</text>
+
+                    <!-- CF/88 destaque -->
+                    <rect x="240" y="230" width="240" height="55" class="class-box" style="stroke:#d4a853;stroke-width:2.5;" />
+                    <text x="360" y="252" class="class-text" style="fill:#d4a853;">CF/1988</text>
+                    <text x="360" y="274" class="class-text-sub">Promulgada · Rígida · Formal · Escrita · Analítica</text>
+                    <!-- seta para CF/88 -->
+                    <line x1="360" y1="210" x2="360" y2="230" class="class-line" style="stroke:#d4a853;" />
+                    <text x="360" y="222" class="class-text-sub" style="fill:#d4a853;font-size:9px;">Brasil</text>
+                </svg>
+            </div>
+
+            <h3 class="sub-title">9.6. Quadro-Resumo: Classificação das Constituições</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Critério</th><th>Tipos</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Origem</strong></td><td>Promulgada, Outorgada, Cesarista, Pactuada</td></tr>
+                        <tr><td><strong>Estabilidade</strong></td><td>Rígida, Flexível, Semirrígida</td></tr>
+                        <tr><td><strong>Conteúdo</strong></td><td>Material, Formal</td></tr>
+                        <tr><td><strong>Forma</strong></td><td>Escrita, Costumeira (não escrita)</td></tr>
+                        <tr><td><strong>Extensão</strong></td><td>Analítica, Sintética</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub-title">9.7. Dica de Prova</h3>
+            <div class="callout callout-warning">
+                <span class="label">⚠️ Pegadinha comum</span>
+                <p>As bancas frequentemente cobram a combinação de diferentes classificações. Exemplo: "A Constituição Federal de 1988 é promulgada (democrática), rígida, formal, escrita e analítica."</p>
+                <p><strong>Verifique:</strong> Sim, a CF/88 é:</p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>Promulgada (elaborada pela Assembleia Nacional Constituinte de 1987-1988)</li>
+                    <li>Rígida (art. 60 – EC com 3/5 em 2 turnos)</li>
+                    <li>Formal (contém normas que não são materialmente constitucionais)</li>
+                    <li>Escrita (codificada em texto único)</li>
+                    <li>Analítica (extensa e detalhada)</li>
+                </ul>
+            </div>
+
+            <h3 class="sub-title">9.8. Resumo para Memorização</h3>
+            <div class="macete">
+                <span class="label">🧠 Macete</span>
+                <p><strong>"PROMULGADA = povo; OUTORGADA = governante; CESARISTA = imposição + plebiscito"</strong></p>
+            </div>
+            <div class="card card-gold">
+                <div class="card-title">📋 Classificação das Constituições</div>
+                <p><strong>QUANTO À ORIGEM:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>Promulgada: pelo povo (Assembleia Constituinte)</li>
+                    <li>Outorgada: imposta pelo governante</li>
+                    <li>Cesarista: imposta, mas com aprovação popular (plebiscito)</li>
+                    <li>Pactuada: acordo entre forças políticas</li>
+                </ul>
+                <p style="margin-top:0.8rem;"><strong>QUANTO À ESTABILIDADE:</strong></p>
+                <ul class="styled-list" style="margin-bottom:0;">
+                    <li>Rígida: alteração mais difícil que a lei</li>
+                    <li>Flexível: alteração igual à lei</li>
+                    <li>Semirrígida: parte rígida, parte flexível</li>
+                </ul>
+                <p style="margin-top:0.8rem;"><strong>CF/88 → PROMULGADA, RÍGIDA, FORMAL, ESCRITA, ANALÍTICA</strong></p>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SÍNTESE FINAL                                                 -->
+        <!-- ============================================================ -->
+
+        <section>
+            <h2 class="section-title">Síntese Final para Revisão</h2>
+
+            <h3 class="sub-title">Quadro-Resumo dos Temas Abordados</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Tema</th><th>Base Legal</th><th>Pontos-Chave</th></tr></thead>
+                    <tbody>
+                        <tr><td>Legalidade Penal</td><td>Art. 5º, XXXIX e XL</td><td>Lei anterior; irretroatividade salvo para beneficiar</td></tr>
+                        <tr><td>Direito Adquirido</td><td>Art. 5º, XXXVI</td><td>Proteção contra lei nova; não exige exercício</td></tr>
+                        <tr><td>Imunidade Material</td><td>Art. 53 (Deputados) / Art. 29, VIII (Vereadores)</td><td>Deputado: ilimitada; Vereador: municipal</td></tr>
+                        <tr><td>Ministério Público</td><td>Art. 129, IX</td><td>Vedação a consultoria e representação de entes públicos</td></tr>
+                        <tr><td>Competências Presidente</td><td>Art. 84</td><td>Nomeações, ADI/ADC, etc.</td></tr>
+                        <tr><td>Competências Ministros</td><td>Art. 87, p.u.</td><td>Instruções, coordenação, etc.</td></tr>
+                        <tr><td>Autonomia Judiciário</td><td>Art. 99</td><td>Elaboração própria do orçamento</td></tr>
+                        <tr><td>Lei Orgânica Municipal</td><td>Art. 29</td><td>2 turnos, 10 dias, 2/3, Câmara promulga</td></tr>
+                        <tr><td>Tratados DH</td><td>Art. 5º, §3º</td><td>Rito 3/5 = EC; rito comum = supralegal</td></tr>
+                        <tr><td>Classificação das Constituições</td><td>Teoria Geral</td><td>Origem e estabilidade</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="sub-title">Macetes para Memorização</h3>
+            <div class="card card-gold" style="border-left-color:var(--accent-gold);">
+                <div class="card-title">🧠 Macetes</div>
+                <ol class="styled-list" style="margin-bottom:0;">
+                    <li><strong>Legalidade Penal</strong>: "Retroage se beneficia; nunca para prejudicar"</li>
+                    <li><strong>Direito Adquirido</strong>: "Direito adquirido: preencheu os requisitos → tem o direito, independentemente de ter pedido ou não"</li>
+                    <li><strong>Imunidade Parlamentar</strong>: "Deputado fala onde quiser; vereador fala só na cidade e na função"</li>
+                    <li><strong>Ministério Público</strong>: "MP fiscaliza, não assessora; atua no processo, não no ato administrativo"</li>
+                    <li><strong>Competências Presidente/Ministros</strong>: "Presidente nomeia; Ministro executa e coordena"</li>
+                    <li><strong>Autonomia Judiciário</strong>: "Judiciário faz sua proposta; Executivo apenas entrega; Legislativo aprova"</li>
+                    <li><strong>Lei Orgânica</strong>: "Lei Orgânica é da Câmara, sem o Prefeito; dois turnos com 2/3 e 10 dias"</li>
+                    <li><strong>Tratados Internacionais</strong>: "Direitos humanos com 3/5 vira emenda; sem 3/5 fica supralegal; outros temas são lei ordinária"</li>
+                    <li><strong>Classificação das Constituições</strong>: "PROMULGADA = povo; OUTORGADA = governante; CESARISTA = imposição + plebiscito"</li>
+                </ol>
+            </div>
+
+            <h3 class="sub-title">Considerações Finais</h3>
+            <p>Esta apostila abrange os principais temas de Direito Constitucional cobrados em concursos para o Poder Judiciário, com ênfase nos tópicos mais recorrentes e nas pegadinhas mais comuns aplicadas pelas bancas examinadoras.</p>
+            <p>O estudo sistemático destes conteúdos, aliado à resolução de questões de provas anteriores, é o caminho mais eficaz para a aprovação. Recomenda-se:</p>
+            <ol class="styled-list">
+                <li><strong>Leitura atenta</strong> de cada tópico, com foco na compreensão dos fundamentos</li>
+                <li><strong>Resolução de questões</strong> para fixação e identificação de padrões de cobrança</li>
+                <li><strong>Revisão periódica</strong> utilizando os quadros-resumo e macetes</li>
+                <li><strong>Estudo comparado</strong> entre temas semelhantes para evitar confusões</li>
+            </ol>
+            <p style="color: var(--accent-gold); font-weight: 500; margin-top: 1.5rem; text-align: center; font-size: 1.1rem;">Bons estudos e sucesso em sua jornada rumo à aprovação!</p>
+        </section>
+
+        <!-- ====== FOOTER ====== -->
+        <footer style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); text-align: center; color: var(--text-muted); font-size: 0.8rem;">
+            <p style="margin-bottom:0;">Direito Constitucional Aplicado · Apostila para Concursos do Poder Judiciário</p>
+            <p style="margin-bottom:0; font-size:0.7rem; margin-top:0.2rem;">Material exclusivo para estudo · Conteúdo 100% preservado</p>
+        </footer>
+
+    </div>
+    <!-- /container -->
+</body>
+</html>

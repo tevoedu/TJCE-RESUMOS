@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>Direito Penal – Aplicação da Lei Penal</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-primary: #12121e;
+            --bg-secondary: #1a1a2e;
+            --bg-card: #22223b;
+            --bg-card-hover: #2a2a44;
+            --bg-highlight: #2d1f2e;
+            --bg-tip: #1e2a2e;
+            --bg-obs: #1e1e2e;
+            --bg-quote: #1a1a28;
+            --bg-table-header: #2a2a44;
+            --bg-table-row: #1a1a2e;
+            --bg-table-row-alt: #22223b;
+            --bg-code: #0e0e1a;
+
+            --text-primary: #e8e0d4;
+            --text-secondary: #c8c0b4;
+            --text-muted: #9a9286;
+            --text-accent: #e6c384;
+            --text-accent2: #7fb4c9;
+            --text-accent3: #b8a6d9;
+            --text-warm: #e6d5b8;
+            --text-highlight: #f0dba0;
+
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+            --radius: 12px;
+            --radius-sm: 6px;
+            --font-base: 'Georgia', 'Times New Roman', serif;
+            --font-heading: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            --font-mono: 'Consolas', 'Monaco', monospace;
+
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 36px;
+            --spacing-xxl: 48px;
+        }
+
+        html {
+            font-size: 106.25%;
+            /* 17px base for tablet comfort */
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-base);
+            line-height: 1.75;
+            padding: var(--spacing-lg);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 880px;
+            width: 100%;
+            padding: var(--spacing-lg) var(--spacing-md);
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+            letter-spacing: 0.01em;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-accent);
+            letter-spacing: 0.02em;
+            border-bottom: 2px solid var(--border-subtle);
+            padding-bottom: var(--spacing-md);
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            color: var(--text-accent);
+            margin-top: var(--spacing-xxl);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            color: var(--text-accent2);
+            margin-top: var(--spacing-xl);
+        }
+
+        h4 {
+            font-size: 1.15rem;
+            color: var(--text-accent3);
+            margin-top: var(--spacing-lg);
+        }
+
+        h5 {
+            font-size: 1.05rem;
+            color: var(--text-warm);
+            margin-top: var(--spacing-md);
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--text-accent2);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--text-accent);
+            text-decoration: underline;
+        }
+
+        strong,
+        b {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        em,
+        i {
+            color: var(--text-warm);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-subtle);
+            margin: var(--spacing-xl) 0;
+        }
+
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg) var(--spacing-xl);
+            margin: var(--spacing-lg) 0 var(--spacing-xl) 0;
+            border: 1px solid var(--border-card);
+        }
+
+        .toc-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-accent);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-xs) var(--spacing-lg);
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: baseline;
+            padding: var(--spacing-xs) 0;
+            font-size: 0.95rem;
+            font-family: var(--font-heading);
+            color: var(--text-secondary);
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .toc-item:hover {
+            color: var(--text-accent);
+            border-color: var(--border-subtle);
+        }
+
+        .toc-num {
+            color: var(--text-muted);
+            margin-right: var(--spacing-sm);
+            font-weight: 500;
+            min-width: 1.8em;
+            font-size: 0.85rem;
+        }
+
+        .toc-link {
+            color: inherit;
+            text-decoration: none;
+            flex: 1;
+        }
+
+        .toc-link:hover {
+            color: var(--text-accent);
+            text-decoration: none;
+        }
+
+        /* ===== TABLES ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: var(--spacing-lg) 0;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-card);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 500px;
+        }
+
+        table th,
+        table td {
+            padding: var(--spacing-sm) var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--border-subtle);
+            vertical-align: top;
+        }
+
+        table th {
+            background: var(--bg-table-header);
+            color: var(--text-accent);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        table tr:nth-child(even) td {
+            background: var(--bg-table-row-alt);
+        }
+
+        table td {
+            color: var(--text-secondary);
+        }
+
+        table .highlight-cell {
+            color: var(--text-highlight);
+            font-weight: 600;
+        }
+
+        /* ===== BLOCKQUOTES ===== */
+        blockquote {
+            background: var(--bg-quote);
+            border-left: 4px solid var(--text-accent);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            color: var(--text-warm);
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        blockquote cite {
+            display: block;
+            margin-top: var(--spacing-sm);
+            font-style: normal;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== CARDS / CALLOUTS ===== */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border: 1px solid var(--border-card);
+            box-shadow: var(--shadow-card);
+        }
+
+        .card-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        /* Tip box */
+        .tip-box {
+            background: var(--bg-tip);
+            border-left: 4px solid #7fb4c9;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .tip-box .tip-label {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--text-accent2);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        /* Observation box */
+        .obs-box {
+            background: var(--bg-obs);
+            border-left: 4px solid #b8a6d9;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .obs-box .obs-label {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--text-accent3);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        /* Important box */
+        .important-box {
+            background: var(--bg-highlight);
+            border-left: 4px solid var(--text-accent);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .important-box .important-label {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--text-accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        /* Macete box (highlighted) */
+        .macete-box {
+            background: #1a1a1e;
+            border: 2px solid var(--text-accent);
+            border-radius: var(--radius);
+            padding: var(--spacing-md) var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            box-shadow: 0 0 30px rgba(230, 195, 132, 0.05);
+        }
+
+        .macete-box .macete-label {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            color: var(--text-accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .macete-box .macete-content {
+            color: var(--text-warm);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .macete-box .macete-content strong {
+            color: var(--text-highlight);
+        }
+
+        /* Inline highlight (marker) */
+        .hl {
+            background: rgba(230, 195, 132, 0.18);
+            color: var(--text-highlight);
+            padding: 0.1rem 0.3rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+
+        .hl-green {
+            background: rgba(127, 180, 201, 0.18);
+            color: var(--text-accent2);
+            padding: 0.1rem 0.3rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+
+        .hl-purple {
+            background: rgba(184, 166, 217, 0.18);
+            color: var(--text-accent3);
+            padding: 0.1rem 0.3rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+        }
+
+        /* ===== LISTS ===== */
+        ul,
+        ol {
+            padding-left: var(--spacing-xl);
+            margin: var(--spacing-md) 0;
+            color: var(--text-secondary);
+        }
+
+        ul li,
+        ol li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        ul ul,
+        ol ol {
+            margin-top: var(--spacing-xs);
+        }
+
+        .list-check {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .list-check li {
+            padding-left: var(--spacing-xl);
+            position: relative;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .list-check li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--text-accent2);
+            font-weight: 700;
+        }
+
+        /* ===== SVG DIAGRAMS ===== */
+        .svg-container {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border: 1px solid var(--border-card);
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .svg-container svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* ===== DIVIDERS ===== */
+        .divider-elegant {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin: var(--spacing-xl) 0;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .divider-elegant::before,
+        .divider-elegant::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+        }
+
+        .divider-elegant .diamond {
+            color: var(--text-accent);
+            font-size: 0.6rem;
+        }
+
+        /* ===== SUBTLE SEPARATOR ===== */
+        .section-sep {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+            margin: var(--spacing-xxl) 0;
+            opacity: 0.5;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: var(--spacing-sm);
+            }
+
+            .container {
+                padding: var(--spacing-md);
+                border-radius: var(--radius-sm);
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xs);
+            }
+
+            .toc-item {
+                font-size: 0.9rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+                min-width: 0;
+            }
+
+            table th,
+            table td {
+                padding: var(--spacing-sm) var(--spacing-sm);
+            }
+
+            blockquote {
+                padding: var(--spacing-sm) var(--spacing-md);
+                font-size: 0.95rem;
+            }
+
+            .card,
+            .tip-box,
+            .obs-box,
+            .important-box,
+            .macete-box {
+                padding: var(--spacing-md);
+            }
+
+            .svg-container {
+                padding: var(--spacing-sm);
+            }
+
+            .toc {
+                padding: var(--spacing-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 100%;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            h3 {
+                font-size: 1.05rem;
+            }
+
+            .container {
+                padding: var(--spacing-sm);
+            }
+
+            blockquote {
+                padding: var(--spacing-sm);
+                font-size: 0.9rem;
+            }
+
+            table th,
+            table td {
+                padding: var(--spacing-xs) var(--spacing-sm);
+                font-size: 0.8rem;
+            }
+
+            .macete-box .macete-content {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 960px;
+            }
+
+            html {
+                font-size: 112.5%;
+            }
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+                padding: 0.5in;
+            }
+            .container {
+                background: #fff;
+                box-shadow: none;
+                border: none;
+                padding: 0;
+            }
+            .toc,
+            .card,
+            .tip-box,
+            .obs-box,
+            .important-box,
+            .macete-box,
+            .svg-container {
+                background: #f5f5f5 !important;
+                border-color: #ccc !important;
+                color: #000 !important;
+            }
+            .toc a,
+            .toc-link {
+                color: #000 !important;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                color: #000 !important;
+            }
+            .hl,
+            .hl-green,
+            .hl-purple {
+                background: #e0e0e0 !important;
+                color: #000 !important;
+            }
+            blockquote {
+                background: #f0f0f0 !important;
+                border-left-color: #666 !important;
+                color: #000 !important;
+            }
+            table th {
+                background: #ddd !important;
+                color: #000 !important;
+            }
+            table td {
+                color: #000 !important;
+            }
+            table tr:nth-child(even) td {
+                background: #f0f0f0 !important;
+            }
+            .divider-elegant {
+                color: #999 !important;
+            }
+            .divider-elegant::before,
+            .divider-elegant::after {
+                background: #ccc !important;
+            }
+            .section-sep {
+                background: #ccc !important;
+            }
+            .svg-container svg text {
+                fill: #000 !important;
+            }
+            .svg-container svg rect,
+            .svg-container svg path,
+            .svg-container svg polygon {
+                stroke: #333 !important;
+                fill: #f0f0f0 !important;
+            }
+            .svg-container svg .node-bg {
+                fill: #e8e8e8 !important;
+            }
+            .svg-container svg .node-text {
+                fill: #000 !important;
+            }
+            .svg-container svg .arrow {
+                stroke: #333 !important;
+            }
+            .svg-container svg .diamond-bg {
+                fill: #ddd !important;
+                stroke: #333 !important;
+            }
+        }
+
+        /* ===== MISC ===== */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-lg {
+            margin-top: var(--spacing-lg);
+        }
+
+        .mb-lg {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .gap-sm {
+            gap: var(--spacing-sm);
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .inline-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.2em;
+            height: 1.2em;
+            flex-shrink: 0;
+        }
+
+        /* scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-card);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* code inline */
+        code {
+            font-family: var(--font-mono);
+            background: var(--bg-code);
+            padding: 0.1rem 0.4rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9em;
+            color: var(--text-accent2);
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* small note */
+        .note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: var(--spacing-xs);
+        }
+
+        /* checklist style */
+        .checklist {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border: 1px solid var(--border-card);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: baseline;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-xs) 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .checklist-item .check {
+            color: var(--text-accent2);
+            font-weight: 700;
+            min-width: 1.4em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="top">
+
+        <!-- ===== HEADER ===== -->
+        <h1>Direito Penal – Aplicação da Lei Penal</h1>
+        <p style="font-size:1.1rem; color:var(--text-accent3); margin-top:-0.2rem; font-family:var(--font-heading); font-weight:400;">
+            Apostila Teórica para Concursos Públicos
+        </p>
+        <p style="color:var(--text-muted); margin-top:-0.5rem; font-size:0.95rem;">
+            Técnico Judiciário – Área Judiciária
+        </p>
+
+        <hr style="margin-top:var(--spacing-lg);">
+
+        <!-- ===== SUMÁRIO ===== -->
+        <div class="toc" id="sumario">
+            <div class="toc-title">Sumário</div>
+            <div class="toc-grid">
+                <div class="toc-item"><span class="toc-num">1.</span><a href="#sec1" class="toc-link">Fundamentos da Aplicação da Lei Penal</a></div>
+                <div class="toc-item"><span class="toc-num">2.</span><a href="#sec2" class="toc-link">Interpretação e Integração da Lei Penal</a></div>
+                <div class="toc-item"><span class="toc-num">3.</span><a href="#sec3" class="toc-link">Aplicação da Lei Penal no Tempo</a></div>
+                <div class="toc-item"><span class="toc-num">4.</span><a href="#sec4" class="toc-link">Aplicação da Lei Penal no Espaço</a></div>
+                <div class="toc-item"><span class="toc-num">5.</span><a href="#sec5" class="toc-link">Funcionário Público para Efeitos Penais</a></div>
+                <div class="toc-item"><span class="toc-num">6.</span><a href="#sec6" class="toc-link">Lei de Abuso de Autoridade</a></div>
+                <div class="toc-item"><span class="toc-num">7.</span><a href="#sec7" class="toc-link">Macetes e Dicas de Prova</a></div>
+                <div class="toc-item"><span class="toc-num">8.</span><a href="#sec8" class="toc-link">Quadro-Síntese Final</a></div>
+            </div>
+            <div style="margin-top:var(--spacing-sm); border-top:1px solid var(--border-subtle); padding-top:var(--spacing-sm);">
+                <div class="toc-item"><span class="toc-num">–</span><a href="#consideracoes" class="toc-link">Considerações Finais</a></div>
+            </div>
+        </div>
+
+        <!-- ===== 1. FUNDAMENTOS ===== -->
+        <section id="sec1">
+            <h2>1. Fundamentos da Aplicação da Lei Penal</h2>
+
+            <h3>1.1. A Lei Penal e seus Princípios Norteadores</h3>
+            <p>Para compreender a aplicação da lei penal, é imprescindível dominar os princípios constitucionais e infraconstitucionais que orientam todo o sistema penal brasileiro.</p>
+
+            <h4>1.1.1. Princípio da Reserva Legal (Nullum Crimen, Nulla Poena Sine Lege)</h4>
+            <p>Previsto no art. 5º, XXXIX, da Constituição Federal e no art. 1º do Código Penal, este princípio estabelece que:</p>
+
+            <blockquote>
+                <em>"Não há crime sem lei anterior que o defina, nem pena sem prévia cominação legal."</em>
+            </blockquote>
+
+            <p><strong>Consequências práticas:</strong></p>
+            <ul>
+                <li><strong>Anterioridade da lei:</strong> a lei penal incriminadora deve ser anterior ao fato praticado</li>
+                <li><strong>Taxatividade:</strong> a descrição da conduta proibida deve ser clara e precisa</li>
+                <li><strong>Legalidade estrita:</strong> proibição de analogia <em>in malam partem</em></li>
+            </ul>
+
+            <div class="tip-box">
+                <div class="tip-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </span>
+                    Dica de Prova
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);">A FCC é rigorosa na cobrança da literalidade deste princípio. Cuidado com alternativas que mencionam "lei posterior" ou que confundem com o princípio da irretroatividade da lei penal.</p>
+            </div>
+
+            <h4>1.1.2. Princípio da Intervenção Mínima</h4>
+            <p>O Direito Penal só deve intervir quando os demais ramos do Direito forem insuficientes para proteger os bens jurídicos mais relevantes. Este princípio fundamenta:</p>
+            <ul>
+                <li>O <strong>caráter fragmentário</strong> do Direito Penal (só protege os bens mais importantes)</li>
+                <li>O <strong>caráter subsidiário</strong> (só atua quando outros meios falham)</li>
+            </ul>
+            <p><strong>Exemplo prático:</strong> Uma dívida civil não paga não configura crime de apropriação indébita se não houver elementos que caracterizem a conduta típica. O Direito Civil já oferece mecanismos de cobrança.</p>
+
+            <div class="divider-elegant"><span class="diamond">◆</span> <span>princípios fundamentais</span> <span class="diamond">◆</span></div>
+        </section>
+
+        <!-- ===== 2. INTERPRETAÇÃO ===== -->
+        <section id="sec2">
+            <h2>2. Interpretação e Integração da Lei Penal</h2>
+
+            <h3>2.1. Interpretação da Lei Penal</h3>
+            <p>A interpretação é a atividade de extrair o significado da norma jurídica. No Direito Penal, essa atividade deve respeitar rigorosamente os limites impostos pelo princípio da legalidade.</p>
+
+            <h4>2.1.1. Tipos de Interpretação</h4>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Critério</th>
+                            <th>Classificação</th>
+                            <th>Característica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">Quanto ao sujeito</td>
+                            <td>Autêntica (legislativa)</td>
+                            <td>Feita pelo próprio legislador</td>
+                        </tr>
+                        <tr>
+                            <td>Doutrinária</td>
+                            <td>Feita pelos estudiosos do Direito</td>
+                        </tr>
+                        <tr>
+                            <td>Judicial</td>
+                            <td>Feita pelos tribunais</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">Quanto ao meio</td>
+                            <td>Gramatical</td>
+                            <td>Análise literal das palavras</td>
+                        </tr>
+                        <tr>
+                            <td>Lógica</td>
+                            <td>Raciocínio sistemático</td>
+                        </tr>
+                        <tr>
+                            <td>Histórica</td>
+                            <td>Contexto de criação da norma</td>
+                        </tr>
+                        <tr>
+                            <td>Sociológica</td>
+                            <td>Realidade social no momento da aplicação</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">Quanto ao resultado</td>
+                            <td>Declarativa</td>
+                            <td>O texto diz exatamente o que quer dizer</td>
+                        </tr>
+                        <tr>
+                            <td>Restritiva</td>
+                            <td>O texto diz menos do que parece</td>
+                        </tr>
+                        <tr>
+                            <td>Extensiva</td>
+                            <td>O texto diz mais do que parece (ampliação do sentido)</td>
+                        </tr>
+                        <tr>
+                            <td>Analógica</td>
+                            <td>Lei traz exemplos + cláusula geral</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>2.1.2. Interpretação Analógica × Analogia</h4>
+            <p>Esta é uma das distinções mais cobradas em provas e que gera maior confusão entre os candidatos.</p>
+
+            <div class="important-box">
+                <div class="important-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    Entenda de uma vez por todas
+                </div>
+
+                <div class="table-wrap" style="margin-top:var(--spacing-md);">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="min-width:140px;">&nbsp;</th>
+                                <th>Interpretação Analógica</th>
+                                <th>Analogia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Natureza</strong></td>
+                                <td>Método de interpretação</td>
+                                <td>Método de integração (suprir lacuna)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ocorrência</strong></td>
+                                <td>A lei traz exemplos + cláusula geral</td>
+                                <td>A lei não prevê o caso, mas há caso semelhante</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Exemplo</strong></td>
+                                <td>"ou outro meio equivalente"</td>
+                                <td>Aplicar norma do furto ao peculato (se não houvesse)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>In malam partem</strong></td>
+                                <td><span class="hl">✅ Admitida</span></td>
+                                <td><span class="hl" style="color:#e88484;background:rgba(232,132,132,0.15);">❌ Vedada</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>In bonam partem</strong></td>
+                                <td><span class="hl">✅ Admitida</span></td>
+                                <td><span class="hl">✅ Admitida</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="macete-box">
+                <div class="macete-label">
+                    <span class="inline-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </span>
+                    Macete
+                </div>
+                <div class="macete-content">
+                    <strong>Interpretação analógica</strong> = a lei já deu a chave (cláusula geral).<br>
+                    <strong>Analogia</strong> = você está criando uma ponte para um caso que a lei não previu.
+                </div>
+            </div>
+
+            <p><strong>Exemplo de interpretação analógica:</strong></p>
+            <ul>
+                <li>Art. 121, CP – <em>"Matar alguém"</em> – sempre será interpretado restritivamente (não inclui tentativa de suicídio, por exemplo).</li>
+                <li>Art. 163, CP – <em>"Destruir, inutilizar ou deteriorar coisa alheia"</em> – interpretação declarativa.</li>
+            </ul>
+
+            <p><strong>Exemplo de analogia:</strong></p>
+            <p>Se a lei prevê causa de aumento de pena para crime cometido com "violência", e surge um caso com "grave ameaça", pode-se aplicar analogicamente (<em>in bonam partem</em>) se for para beneficiar o réu, mas jamais para prejudicá-lo.</p>
+
+            <h4>2.1.3. Normas Penais Não Incriminadoras Excepcionais</h4>
+            <p>As normas excepcionais merecem atenção especial porque <strong>não comportam analogia</strong>, apenas interpretação extensiva.</p>
+            <p><strong>O que são normas excepcionais?</strong> São aquelas que abrem exceção a um princípio geral. Exemplo: causas de diminuição de pena que fogem da regra geral de dosimetria.</p>
+            <p><strong>Por que não admitem analogia?</strong> Porque a exceção deve ser interpretada restritivamente. Se a lei criou uma exceção para uma situação específica, não se pode estendê-la para outras situações semelhantes.</p>
+
+            <div class="obs-box">
+                <div class="obs-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    Pegadinha de Prova
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);">A FCC costuma cobrar a distinção:<br>
+                    – "Analogia é vedada para normas penais excepcionais" → <span class="hl">CORRETO</span><br>
+                    – "Interpretação extensiva é vedada para normas penais excepcionais" → <span style="color:#e88484;font-weight:700;">ERRADO</span></p>
+            </div>
+
+            <h3>2.2. Integração da Lei Penal</h3>
+            <p>A integração ocorre quando há lacuna na lei. No Direito Penal, a integração é limitada:</p>
+
+            <h4>2.2.1. Analogia</h4>
+            <ul>
+                <li><strong>In bonam partem</strong> (favorável): <span class="hl">ADMITIDA</span>
+                    <ul>
+                        <li>Exemplo: aplicação de atenuante não prevista expressamente</li>
+                        <li>Exemplo: exclusão de ilicitude por analogia</li>
+                    </ul>
+                </li>
+                <li><strong>In malam partem</strong> (desfavorável): <span style="color:#e88484;font-weight:700;">VEDADA</span>
+                    <ul>
+                        <li>Exemplo: criar um novo crime por analogia</li>
+                        <li>Exemplo: aumentar pena por analogia</li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>Fundamento da vedação:</strong> Princípio da reserva legal (art. 1º do CP e art. 5º, XXXIX, CF).</p>
+
+            <h4>2.2.2. Comparação com outras áreas</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Área</th>
+                            <th>Analogia <em>in bonam partem</em></th>
+                            <th>Analogia <em>in malam partem</em></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Direito Penal material</td>
+                            <td><span class="hl">✅ Permitida</span></td>
+                            <td><span style="color:#e88484;font-weight:700;">❌ Vedada</span></td>
+                        </tr>
+                        <tr>
+                            <td>Direito Processual Penal</td>
+                            <td><span class="hl">✅ Permitida</span></td>
+                            <td><span class="hl">✅ Permitida</span></td>
+                        </tr>
+                        <tr>
+                            <td>Direito Civil</td>
+                            <td><span class="hl">✅ Permitida</span></td>
+                            <td><span class="hl">✅ Permitida</span></td>
+                        </tr>
+                        <tr>
+                            <td>Direito Penal tributário</td>
+                            <td><span class="hl">✅ Permitida</span></td>
+                            <td><span class="hl-green">⚠️ Restrita</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="obs-box">
+                <div class="obs-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    Observação
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);">A vedação da analogia <em>in malam partem</em> é <strong>absoluta</strong> no Direito Penal material incriminador. Não há exceções.</p>
+            </div>
+
+            <div class="divider-elegant"><span class="diamond">◆</span> <span>interpretação &amp; integração</span> <span class="diamond">◆</span></div>
+        </section>
+
+        <!-- ===== 3. TEMPO ===== -->
+        <section id="sec3">
+            <h2>3. Aplicação da Lei Penal no Tempo</h2>
+
+            <h3>3.1. Teoria Adotada pelo Código Penal Brasileiro</h3>
+
+            <div class="important-box">
+                <div class="important-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    Atenção
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);">O Código Penal Brasileiro adota a <strong>TEORIA DA ATIVIDADE</strong> para determinar o tempo do crime.</p>
+            </div>
+
+            <h4>3.1.1. Fundamentação Legal</h4>
+            <blockquote>
+                <strong>Art. 4º do CP:</strong> <em>"Considera-se praticado o crime no momento da ação ou omissão, ainda que outro seja o momento do resultado."</em>
+            </blockquote>
+
+            <h4>3.1.2. Explicação Detalhada</h4>
+            <p><strong>O que significa a Teoria da Atividade?</strong></p>
+            <p>O tempo do crime é determinado pelo momento em que a <strong>conduta</strong> (ação ou omissão) foi praticada, <strong>independentemente</strong> de quando o resultado ocorreu.</p>
+
+            <div class="card">
+                <div class="card-title" style="color:var(--text-accent2);">Exemplo prático</div>
+                <p style="margin-bottom:0; color:var(--text-secondary);">João, em 01/01/2023, atira em Maria. Maria falece em 15/01/2023, em decorrência dos ferimentos.</p>
+                <p style="margin-top:var(--spacing-sm); color:var(--text-secondary);">Pela teoria da atividade → O crime de homicídio foi praticado em <strong>01/01/2023</strong> (data da conduta).</p>
+                <p style="margin-top:var(--spacing-sm); color:var(--text-secondary);"><strong>Consequência:</strong> A lei penal aplicável é a vigente em 01/01/2023, mesmo que o resultado (morte) ocorra depois.</p>
+            </div>
+
+            <p><strong>📌 POR QUE ISSO IMPORTA?</strong></p>
+            <ul>
+                <li>Se houver mudança de lei entre a conduta e o resultado, aplica-se a lei da época da conduta</li>
+                <li>Para prescrição: conta-se da data da conduta</li>
+                <li>Para competência: considera-se o tempo da conduta</li>
+            </ul>
+
+            <h4>3.1.3. Outras Teorias (para fins de comparação)</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Teoria</th>
+                            <th>O que considera</th>
+                            <th>Adotada por</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Atividade</strong></td>
+                            <td>Momento da conduta</td>
+                            <td><span class="hl">🇧🇷 BRASIL (art. 4º CP)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Resultado</strong></td>
+                            <td>Momento do resultado</td>
+                            <td>Direito Penal alemão (parcialmente)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mista</strong></td>
+                            <td>Ambos (conduta ou resultado)</td>
+                            <td>Não adotada no Brasil</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>3.2. Aplicação da Lei Penal no Tempo (Sucessão de Leis)</h3>
+            <p>Além de saber quando o crime é praticado, é fundamental entender qual lei se aplica quando há mudança legislativa entre a conduta e o julgamento.</p>
+
+            <h4>3.2.1. Regra Geral</h4>
+            <blockquote>
+                <strong>Art. 2º do CP:</strong> <em>"Ninguém pode ser punido por fato que lei posterior deixa de considerar crime, cessando em virtude dela a execução e os efeitos penais da sentença condenatória."</em>
+            </blockquote>
+
+            <h4>3.2.2. Hipóteses de Sucessão de Leis</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Situação</th>
+                            <th>Regra</th>
+                            <th>Exemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Lei nova mais benéfica</strong></td>
+                            <td>Retroatividade</td>
+                            <td>Lei reduz pena de 4 para 2 anos → aplica-se ao crime anterior</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lei nova mais gravosa</strong></td>
+                            <td>Irretroatividade</td>
+                            <td>Lei aumenta pena de 2 para 4 anos → não se aplica a crimes anteriores</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Lei nova descriminalizadora</strong></td>
+                            <td>Retroatividade imediata</td>
+                            <td>Conduta deixa de ser crime → absolvição imediata</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>3.2.3. Exceções Importantes</h4>
+            <p><strong>Lei excepcional ou temporária:</strong></p>
+            <blockquote>
+                <strong>Art. 3º do CP:</strong> <em>"A lei excepcional ou temporária, embora decorrido o período de sua vigência ou cessadas as circunstâncias que a determinaram, aplica-se ao fato praticado durante sua vigência."</em>
+            </blockquote>
+            <p><strong>Exemplo:</strong> Lei de combate à pandemia que criou crimes específicos. Mesmo após revogada, aplica-se aos fatos praticados durante sua vigência.</p>
+
+            <div class="divider-elegant"><span class="diamond">◆</span> <span>aplicação no tempo</span> <span class="diamond">◆</span></div>
+        </section>
+
+        <!-- ===== 4. ESPAÇO ===== -->
+        <section id="sec4">
+            <h2>4. Aplicação da Lei Penal no Espaço</h2>
+
+            <h3>4.1. Princípio Adotado pelo Brasil</h3>
+
+            <h4>4.1.1. Territorialidade Atenuada ou Temperada</h4>
+            <p>O Brasil adota o <strong>princípio da territorialidade</strong> (art. 5º do CP), mas de forma atenuada/temperada, pois admite exceções previstas em tratados e no próprio art. 7º.</p>
+
+            <blockquote>
+                <strong>Art. 5º do CP:</strong> <em>"Aplica-se a lei brasileira, sem prejuízo de convenções, tratados e regras de direito internacional, ao crime cometido no território nacional."</em>
+            </blockquote>
+
+            <h4>4.1.2. Conceito de Território Nacional</h4>
+            <p>Para fins penais, considera-se território nacional:</p>
+            <ol>
+                <li><strong>Território propriamente dito:</strong> solo, subsolo, espaço aéreo</li>
+                <li><strong>Águas territoriais:</strong> mar territorial (até 12 milhas náuticas)</li>
+                <li><strong>Navios e aeronaves brasileiros:</strong> em alto-mar ou espaço aéreo internacional</li>
+                <li><strong>Embarcações estrangeiras em porto brasileiro:</strong> exceto se em trânsito (imunidade)</li>
+            </ol>
+
+            <div class="obs-box">
+                <div class="obs-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    Observação
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);">As embaixadas brasileiras no exterior <strong>NÃO</strong> são consideradas território nacional para fins penais (teoria da ficção ultrapassada).</p>
+            </div>
+
+            <h3>4.2. Princípios de Extraterritorialidade</h3>
+            <p>A lei brasileira pode se aplicar a crimes cometidos fora do território nacional, conforme os seguintes princípios:</p>
+
+            <h4>4.2.1. Quadro Comparativo dos Princípios</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Princípio</th>
+                            <th>Conceito</th>
+                            <th>Fundamento Legal</th>
+                            <th>Exemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nacionalidade Ativa</strong></td>
+                            <td>Lei da nacionalidade do <strong>agente</strong></td>
+                            <td>Art. 7º, II, b (subsidiário)</td>
+                            <td>Brasileiro comete crime nos EUA</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Nacionalidade Passiva</strong></td>
+                            <td>Lei da nacionalidade da <strong>vítima</strong></td>
+                            <td>Art. 7º, I, b</td>
+                            <td>Crime contra brasileiro no exterior</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Real ou Defesa</strong></td>
+                            <td>Lei do Estado cujo <strong>bem jurídico</strong> foi lesado</td>
+                            <td>Art. 7º, I, a</td>
+                            <td>Crime contra o Presidente da República</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Universalidade</strong></td>
+                            <td>Lei brasileira para crimes que o Brasil se obrigou a reprimir por tratado</td>
+                            <td>Art. 7º, II, a</td>
+                            <td>Tráfico de drogas, terrorismo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Justiça Penal Universal</strong></td>
+                            <td>Qualquer Estado pode punir crimes contra a humanidade</td>
+                            <td>Espalhado por tratados</td>
+                            <td>Genocídio, crimes de guerra</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.2.2. Hipóteses do Art. 7º do CP</h4>
+
+            <p><strong>Incondicionada (art. 7º, I):</strong> Aplica-se a lei brasileira independentemente de qualquer condição.</p>
+            <ul>
+                <li>a) crimes contra a vida ou liberdade do Presidente da República (princípio real)</li>
+                <li>b) crimes contra o patrimônio ou interesse da União, de Estado ou Município</li>
+                <li>c) crimes contra a administração pública, por quem está a seu serviço</li>
+                <li>d) crimes de genocídio (princípio da universalidade)</li>
+            </ul>
+
+            <p><strong>Condicionada (art. 7º, II):</strong> Aplica-se a lei brasileira se preenchidas certas condições.</p>
+            <ul>
+                <li>a) crimes que, por tratado, o Brasil se obrigou a reprimir</li>
+                <li>b) crimes praticados por brasileiros (princípio da nacionalidade ativa)</li>
+                <li>c) crimes praticados em aeronaves ou embarcações brasileiras (princípio do pavilhão)</li>
+            </ul>
+
+            <p><strong>Condições (art. 7º, §2º):</strong></p>
+            <ol>
+                <li>O agente entrar em território nacional</li>
+                <li>O fato ser também punível no país onde foi praticado</li>
+                <li>O crime estar incluído entre aqueles de que a lei brasileira autoriza a extradição</li>
+                <li>Não ter sido o agente absolvido no estrangeiro ou não ter cumprido a pena</li>
+            </ol>
+
+            <h4>4.2.3. Teoria do Lugar do Crime</h4>
+
+            <div class="important-box">
+                <div class="important-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    Atenção
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);">O Brasil adota a <strong>TEORIA DA UBIQUIDADE</strong> (teoria mista).</p>
+            </div>
+
+            <blockquote>
+                <strong>Art. 6º do CP:</strong> <em>"Considera-se praticado o crime no lugar em que ocorreu a ação ou omissão, no todo ou em parte, bem como onde se produziu ou deveria produzir-se o resultado."</em>
+            </blockquote>
+
+            <p><strong>O que significa?</strong></p>
+            <p>O crime é considerado praticado tanto no local da conduta quanto no local do resultado. Basta que um desses lugares seja território brasileiro para que a lei brasileira seja aplicada.</p>
+
+            <div class="card">
+                <div class="card-title" style="color:var(--text-accent2);">Exemplo prático</div>
+                <p style="margin-bottom:0; color:var(--text-secondary);">José, no Brasil, envia uma carta-bomba para Maria, na Argentina. A bomba explode na Argentina, matando Maria.</p>
+                <p style="margin-top:var(--spacing-sm); color:var(--text-secondary);">Pela teoria da ubiquidade → O crime foi praticado tanto no Brasil (conduta) quanto na Argentina (resultado).</p>
+                <p style="margin-top:var(--spacing-sm); color:var(--text-secondary);"><strong>Consequência:</strong> A lei brasileira se aplica porque a conduta ocorreu em território nacional.</p>
+            </div>
+
+            <div class="divider-elegant"><span class="diamond">◆</span> <span>aplicação no espaço</span> <span class="diamond">◆</span></div>
+        </section>
+
+        <!-- ===== 5. FUNCIONÁRIO PÚBLICO ===== -->
+        <section id="sec5">
+            <h2>5. Funcionário Público para Efeitos Penais</h2>
+
+            <h3>5.1. Conceito de Funcionário Público no Código Penal</h3>
+
+            <h4>5.1.1. Definição Legal</h4>
+            <blockquote>
+                <strong>Art. 327 do CP:</strong> <em>"Considera-se funcionário público, para os efeitos penais, quem, embora transitoriamente ou sem remuneração, exerce cargo, emprego ou função pública."</em>
+            </blockquote>
+
+            <p><strong>Elementos do conceito:</strong></p>
+            <ol>
+                <li><strong>Pessoas físicas</strong> (não se aplica a pessoas jurídicas)</li>
+                <li><strong>Exercício de cargo, emprego ou função pública</strong></li>
+                <li><strong>Caráter transitório ou permanente</strong> (não importa a duração)</li>
+                <li><strong>Remuneração ou não</strong> (não importa se há pagamento)</li>
+            </ol>
+
+            <h4>5.1.2. Sujeitos Ativos dos Crimes Funcionais</h4>
+            <p><strong>Quem pode praticar crimes funcionais?</strong></p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sujeito</th>
+                            <th>Enquadramento</th>
+                            <th>Exemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Servidor público efetivo</td>
+                            <td><span class="hl">✅ Funcionário público (art. 327)</span></td>
+                            <td>Auditor fiscal</td>
+                        </tr>
+                        <tr>
+                            <td>Servidor público comissionado</td>
+                            <td><span class="hl">✅ Funcionário público (art. 327)</span></td>
+                            <td>Secretário municipal</td>
+                        </tr>
+                        <tr>
+                            <td>Empregado público (CLT)</td>
+                            <td><span class="hl">✅ Funcionário público (art. 327)</span></td>
+                            <td>Empregado de empresa pública</td>
+                        </tr>
+                        <tr>
+                            <td>Prestador de serviço (terceirizado)</td>
+                            <td><span class="hl-green">⚠️ DEPENDE (art. 327, §1º)</span></td>
+                            <td>Vigilante terceirizado</td>
+                        </tr>
+                        <tr>
+                            <td>Particular em colaboração</td>
+                            <td><span class="hl">✅ Funcionário público (art. 327, §1º)</span></td>
+                            <td>Particular que ajuda em fiscalização</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>5.2. Equiparação a Funcionário Público (Art. 327, §1º)</h3>
+
+            <h4>5.2.1. Requisito Essencial</h4>
+            <blockquote>
+                <strong>Art. 327, §1º do CP:</strong> <em>"Equipara-se a funcionário público quem exerce cargo, emprego ou função em entidade paraestatal, e quem trabalha para empresa prestadora de serviço contratada ou conveniada para a execução de atividade típica da Administração Pública."</em>
+            </blockquote>
+
+            <h4>5.2.2. A Distinção Crucial: "DA" × "PARA" Administração Pública</h4>
+
+            <div class="important-box">
+                <div class="important-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    Atenção
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);">Esta é uma das distinções mais cobradas pela FCC e outras bancas!</p>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="min-width:140px;">&nbsp;</th>
+                            <th>Atividade Típica <strong>DA</strong> Administração</th>
+                            <th>Atividade Típica <strong>PARA</strong> a Administração</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Conceito</strong></td>
+                            <td>Atividade que é própria do Estado</td>
+                            <td>Atividade prestada em favor da Administração</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Natureza</strong></td>
+                            <td>Essencialmente estatal</td>
+                            <td>Pode ser executada por particulares</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exemplos</strong></td>
+                            <td>Fiscalização, polícia, arrecadação tributária</td>
+                            <td>Limpeza pública, manutenção de computadores</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Equiparação</strong></td>
+                            <td><span class="hl">✅ HÁ EQUIPARAÇÃO (art. 327, §1º)</span></td>
+                            <td><span style="color:#e88484;font-weight:700;">❌ NÃO HÁ EQUIPARAÇÃO</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="macete-box">
+                <div class="macete-label">
+                    <span class="inline-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </span>
+                    Macete
+                </div>
+                <div class="macete-content">
+                    Lembre-se: <strong>"DA" Administração</strong> = Própria do Estado → Equiparação.<br>
+                    <strong>"PARA" Administração</strong> = Prestada em favor → Sem equiparação.
+                </div>
+            </div>
+
+            <p><strong>Exemplo prático:</strong></p>
+            <ul>
+                <li>Uma empresa terceirizada presta serviço de <strong>fiscalização de trânsito</strong> (atividade típica DA Administração).<br>
+                    <span class="hl">O funcionário da empresa:</span> ✅ Equipara-se a funcionário público. Responde por crimes funcionais (ex.: peculato, concussão).</li>
+                <li>Uma empresa terceirizada presta serviço de <strong>limpeza</strong> em repartição pública (atividade típica PARA a Administração).<br>
+                    <span style="color:#e88484;font-weight:700;">O funcionário da empresa:</span> ❌ Não se equipara a funcionário público. Responde por crimes comuns (ex.: furto, não peculato).</li>
+            </ul>
+
+            <h4>5.2.3. Entidades Paraestatais</h4>
+            <p><strong>O que são entidades paraestatais?</strong></p>
+            <p>São entidades que, embora não integrem a Administração Pública direta, atuam em colaboração com o Estado, desempenhando atividades de interesse público.</p>
+
+            <p><strong>Exemplos:</strong></p>
+            <ul>
+                <li>Serviço Social Autônomo (SESI, SENAI, SENAC, SESC)</li>
+                <li>Organizações Sociais (OS)</li>
+                <li>Organizações da Sociedade Civil de Interesse Público (OSCIP)</li>
+                <li>Santas Casas de Misericórdia (quando conveniadas ao SUS)</li>
+            </ul>
+
+            <div class="card">
+                <div class="card-title" style="color:var(--text-accent2);">📌 Caso Prático – Santa Casa de Misericórdia</div>
+                <p style="margin-bottom:0; color:var(--text-secondary);"><strong>Situação:</strong> O diretor de uma Santa Casa de Misericórdia (entidade paraestatal) se apropria de valores públicos recebidos do SUS.</p>
+                <p style="margin-top:var(--spacing-sm); color:var(--text-secondary);"><strong>Crime:</strong> Peculato (art. 312 do CP), porque o diretor, por equiparação (art. 327, §1º), é considerado funcionário público.</p>
+                <p style="margin-top:var(--spacing-sm); color:var(--text-secondary);"><strong style="color:#e88484;">PEGADINHA:</strong> Não responde por apropriação indébita (crime comum). A FCC frequentemente apresenta a alternativa "apropriação indébita" para confundir o candidato.</p>
+            </div>
+
+            <h3>5.3. Crimes Funcionais × Crimes Comuns</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Critério</th>
+                            <th>Crimes Funcionais</th>
+                            <th>Crimes Comuns</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sujeito ativo</strong></td>
+                            <td>Funcionário público (ou equiparado)</td>
+                            <td>Qualquer pessoa</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bem jurídico</strong></td>
+                            <td>Administração pública + bem secundário</td>
+                            <td>Varia conforme o crime</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exemplos</strong></td>
+                            <td>Peculato, concussão, corrupção passiva</td>
+                            <td>Furto, roubo, homicídio</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exigência</strong></td>
+                            <td>Qualidade especial do agente</td>
+                            <td>Não exige qualidade especial</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="divider-elegant"><span class="diamond">◆</span> <span>funcionário público</span> <span class="diamond">◆</span></div>
+        </section>
+
+        <!-- ===== 6. ABUSO DE AUTORIDADE ===== -->
+        <section id="sec6">
+            <h2>6. Lei de Abuso de Autoridade (Lei 13.869/2019)</h2>
+
+            <h3>6.1. Visão Geral</h3>
+            <p>A Lei de Abuso de Autoridade (Lei 13.869/2019) tipifica condutas praticadas por agentes públicos que, no exercício de suas funções, excedem os limites de sua autoridade.</p>
+
+            <h3>6.2. Busca e Apreensão Domiciliar (Art. 22)</h3>
+
+            <h4>6.2.1. Crime de Busca e Apreensão Domiciliar Irregular</h4>
+            <blockquote>
+                <strong>Art. 22 da Lei 13.869/2019:</strong> <em>"Invadir ou adentrar, mediante constrangimento ou violência, ou com permanência não autorizada, em domicílio alheio, ou nele proceder a busca ou apreensão, com abuso de autoridade."</em>
+            </blockquote>
+            <p><strong>Penalidade:</strong> Detenção de 1 a 4 anos e multa.</p>
+
+            <h4>6.2.2. Horário Proibido (Art. 22, §1º, III)</h4>
+
+            <div class="important-box">
+                <div class="important-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    Atenção
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);">É crime cumprir mandado de busca e apreensão domiciliar:</p>
+                <blockquote style="margin-top:var(--spacing-sm);">
+                    <strong>Art. 22, §1º, III:</strong> <em>"no horário noturno, salvo se houver autorização judicial expressa ou se tratar de flagrante delito."</em>
+                </blockquote>
+            </div>
+
+            <p><strong>Horário noturno para efeitos da Lei de Abuso de Autoridade:</strong></p>
+            <blockquote>
+                <strong>Art. 22, §1º, III (redação):</strong> <em>"Para os efeitos do disposto no inciso III do §1º, considera-se horário noturno aquele compreendido entre 21 (vinte e uma) horas e 5 (cinco) horas."</em>
+            </blockquote>
+
+            <p><strong>Portanto:</strong> Cumprir mandado de busca e apreensão domiciliar entre <strong>21h e 5h</strong> configura o crime de abuso de autoridade, salvo:</p>
+            <ol>
+                <li>Autorização judicial expressa</li>
+                <li>Flagrante delito</li>
+            </ol>
+
+            <h4>6.2.3. Quadro Comparativo de Horários</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Permitido?</th>
+                            <th>Justificativa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>8h – 21h</td>
+                            <td><span class="hl">✅ Permitido</span></td>
+                            <td>Horário normal</td>
+                        </tr>
+                        <tr>
+                            <td>21h – 5h</td>
+                            <td><span style="color:#e88484;font-weight:700;">❌ Proibido (salvo exceções)</span></td>
+                            <td>Horário noturno (Lei 13.869/19)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="obs-box">
+                <div class="obs-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    Observação Importante
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);">O horário noturno para a Lei de Abuso de Autoridade (21h às 5h) é <strong>diferente</strong> do horário noturno para o processo penal (CPP, art. 299: 18h às 6h). A FCC pode cobrar essa diferença!</p>
+            </div>
+
+            <h4>6.2.4. Pegadinhas Comuns</h4>
+            <ul>
+                <li><span style="color:#e88484;font-weight:700;">❌ ERRADO:</span> "É crime cumprir mandado de busca e apreensão domiciliar após as 18h."</li>
+                <li><span style="color:#e88484;font-weight:700;">❌ ERRADO:</span> "É crime cumprir mandado de busca e apreensão domiciliar antes das 6h."</li>
+                <li><span style="color:#e88484;font-weight:700;">❌ ERRADO:</span> "É crime cumprir mandado de busca e apreensão domiciliar fora do período de luminosidade solar."</li>
+                <li><span class="hl">✅ CORRETO:</span> "É crime cumprir mandado de busca e apreensão domiciliar entre 21h e 5h, salvo autorização judicial ou flagrante."</li>
+            </ul>
+
+            <div class="divider-elegant"><span class="diamond">◆</span> <span>abuso de autoridade</span> <span class="diamond">◆</span></div>
+        </section>
+
+        <!-- ===== 7. MACETES ===== -->
+        <section id="sec7">
+            <h2>7. Macetes e Dicas de Prova</h2>
+
+            <h3>7.1. Principais Macetes</h3>
+
+            <h4>7.1.1. Macete "LUTA"</h4>
+            <div class="macete-box">
+                <div class="macete-label">
+                    <span class="inline-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </span>
+                    Memorize
+                </div>
+                <div class="macete-content">
+                    <strong>L</strong>ugar do crime: <strong>U</strong>biquidade (teoria mista, art. 6º do CP)<br>
+                    <strong>T</strong>empo do crime: <strong>A</strong>tividade (teoria da atividade, art. 4º do CP)
+                </div>
+            </div>
+
+            <p><strong>Como usar:</strong></p>
+            <ul>
+                <li>Lugar do crime → Teoria da Ubiquidade → Art. 6º</li>
+                <li>Tempo do crime → Teoria da Atividade → Art. 4º</li>
+            </ul>
+
+            <p><strong>Exemplo em prova:</strong></p>
+            <ul>
+                <li>"Considera-se praticado o crime no momento da ação ou omissão, ainda que outro seja o momento do resultado." (Art. 4º → tempo do crime → atividade)</li>
+                <li>"Considera-se praticado o crime no lugar em que ocorreu a ação ou omissão, no todo ou em parte, bem como onde se produziu ou deveria produzir-se o resultado." (Art. 6º → lugar do crime → ubiquidade)</li>
+            </ul>
+
+            <h4>7.1.2. Macete da Equiparação</h4>
+            <div class="macete-box">
+                <div class="macete-label">
+                    <span class="inline-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </span>
+                    Macete
+                </div>
+                <div class="macete-content">
+                    <strong>"DA" Administração → Equiparação</strong><br>
+                    • Atividade típica <strong>DA</strong> Administração → Equipara-se a funcionário público<br>
+                    • Atividade típica <strong>PARA</strong> Administração → Não se equipara
+                </div>
+            </div>
+
+            <p><strong>📌 DICA:</strong> Quando a questão falar em "terceirizado" ou "conveniado", verifique <strong>qual atividade</strong> ele executa:</p>
+            <ol>
+                <li>É atividade típica <strong>DA</strong> Administração? → Equiparação (responde por crime funcional)</li>
+                <li>É atividade típica <strong>PARA</strong> Administração? → Sem equiparação (responde por crime comum)</li>
+            </ol>
+
+            <h3>7.2. Comparativos Essenciais para Prova</h3>
+
+            <h4>7.2.1. Interpretação × Analogia × Extensão</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="min-width:100px;">&nbsp;</th>
+                            <th>Interpretação Extensiva</th>
+                            <th>Interpretação Analógica</th>
+                            <th>Analogia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Natureza</strong></td>
+                            <td>Interpretação</td>
+                            <td>Interpretação</td>
+                            <td>Integração</td>
+                        </tr>
+                        <tr>
+                            <td><strong>In malam partem</strong></td>
+                            <td><span class="hl">✅ Permitida</span></td>
+                            <td><span class="hl">✅ Permitida</span></td>
+                            <td><span style="color:#e88484;font-weight:700;">❌ Vedada</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>In bonam partem</strong></td>
+                            <td><span class="hl">✅ Permitida</span></td>
+                            <td><span class="hl">✅ Permitida</span></td>
+                            <td><span class="hl">✅ Permitida</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Normas excepcionais</strong></td>
+                            <td><span class="hl">✅ Permitida</span></td>
+                            <td><span class="hl-green">⚠️ Não se aplica</span></td>
+                            <td><span style="color:#e88484;font-weight:700;">❌ Vedada</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>7.2.2. Tempo do Crime × Lugar do Crime</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>Tempo do Crime</th>
+                            <th>Lugar do Crime</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Teoria</strong></td>
+                            <td>Atividade (art. 4º)</td>
+                            <td>Ubiquidade (art. 6º)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Foco</strong></td>
+                            <td>Momento da conduta</td>
+                            <td>Local da conduta ou do resultado</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Macete</strong></td>
+                            <td><span class="hl">Tempo → Atividade</span></td>
+                            <td><span class="hl">Lugar → Ubiquidade</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>7.3. Dicas Específicas para a FCC</h3>
+
+            <div class="tip-box">
+                <div class="tip-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </span>
+                    Dica FCC
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);"><strong>1. Cobrança da literalidade da lei</strong><br>
+                    A FCC é conhecida por cobrar o texto EXATO da lei. Leia os artigos com atenção, especialmente:<br>
+                    – Art. 4º do CP (tempo do crime)<br>
+                    – Art. 5º do CP (territorialidade)<br>
+                    – Art. 6º do CP (lugar do crime)<br>
+                    – Art. 327 do CP (funcionário público)<br>
+                    – Art. 2º da Lei 13.869/19 (abuso de autoridade)</p>
+            </div>
+
+            <div class="tip-box">
+                <div class="tip-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </span>
+                    Dica FCC
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);"><strong>2. Distinções sutis</strong><br>
+                    A FCC frequentemente usa preposições para confundir:<br>
+                    – "atividade típica <strong>DA</strong> Administração" × "atividade típica <strong>PARA</strong> Administração"<br>
+                    – "interpretação analógica" × "analogia"<br>
+                    – "tempo do crime" × "lugar do crime"</p>
+            </div>
+
+            <div class="tip-box">
+                <div class="tip-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </span>
+                    Dica FCC
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);"><strong>3. Pegadinhas com a Santa Casa</strong><br>
+                    Questões sobre Santa Casa de Misericórdia são clássicas:<br>
+                    <span class="hl">✅</span> Diretor que se apropria de verbas do SUS → Peculato (funcionário público por equiparação)<br>
+                    <span style="color:#e88484;">❌</span> Não responde por apropriação indébita (crime comum)</p>
+            </div>
+
+            <h3>7.4. Erros Comuns Identificados</h3>
+
+            <div class="obs-box">
+                <div class="obs-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    Erro 1
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);"><strong>Confundir interpretação analógica com analogia.</strong><br>
+                    – Interpretação analógica é permitida <em>in malam partem</em><br>
+                    – Analogia é vedada <em>in malam partem</em></p>
+            </div>
+
+            <div class="obs-box">
+                <div class="obs-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    Erro 2
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);"><strong>Achar que normas penais excepcionais admitem analogia.</strong><br>
+                    – Normas excepcionais: apenas interpretação extensiva<br>
+                    – Não admitem analogia</p>
+            </div>
+
+            <div class="obs-box">
+                <div class="obs-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    Erro 3
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);"><strong>Considerar que qualquer serviço prestado à Administração gera equiparação.</strong><br>
+                    – Equiparação apenas para atividade típica <strong>DA</strong> Administração<br>
+                    – Atividade típica <strong>PARA</strong> Administração → sem equiparação</p>
+            </div>
+
+            <div class="obs-box">
+                <div class="obs-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    </span>
+                    Erro 4
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary);"><strong>Confundir horários da Lei de Abuso de Autoridade.</strong><br>
+                    – Horário proibido: 21h às 5h<br>
+                    – Não é 18h às 6h (CPP)</p>
+            </div>
+
+            <div class="divider-elegant"><span class="diamond">◆</span> <span>macetes &amp; dicas</span> <span class="diamond">◆</span></div>
+        </section>
+
+        <!-- ===== 8. QUADRO-SÍNTESE ===== -->
+        <section id="sec8">
+            <h2>8. Quadro-Síntese Final</h2>
+
+            <h3>8.1. Resumo dos Principais Artigos do Código Penal</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Artigo</th>
+                            <th>Tema</th>
+                            <th>Conteúdo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Art. 1º</td>
+                            <td>Princípio da legalidade</td>
+                            <td>Não há crime sem lei anterior</td>
+                        </tr>
+                        <tr>
+                            <td>Art. 2º</td>
+                            <td>Sucessão de leis penais</td>
+                            <td>Lei nova mais benéfica → retroatividade</td>
+                        </tr>
+                        <tr>
+                            <td>Art. 3º</td>
+                            <td>Lei excepcional/temporária</td>
+                            <td>Aplica-se mesmo após cessada</td>
+                        </tr>
+                        <tr>
+                            <td>Art. 4º</td>
+                            <td>Tempo do crime</td>
+                            <td>Teoria da atividade</td>
+                        </tr>
+                        <tr>
+                            <td>Art. 5º</td>
+                            <td>Lugar do crime (regra)</td>
+                            <td>Territorialidade atenuada</td>
+                        </tr>
+                        <tr>
+                            <td>Art. 6º</td>
+                            <td>Lugar do crime (definição)</td>
+                            <td>Teoria da ubiquidade</td>
+                        </tr>
+                        <tr>
+                            <td>Art. 7º</td>
+                            <td>Extraterritorialidade</td>
+                            <td>Hipóteses de aplicação da lei brasileira</td>
+                        </tr>
+                        <tr>
+                            <td>Art. 327</td>
+                            <td>Funcionário público</td>
+                            <td>Conceito e equiparação</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>8.2. Resumo da Lei de Abuso de Autoridade</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Artigo</th>
+                            <th>Conduta</th>
+                            <th>Pena</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Art. 22, caput</td>
+                            <td>Busca e apreensão domiciliar irregular</td>
+                            <td>Detenção de 1 a 4 anos + multa</td>
+                        </tr>
+                        <tr>
+                            <td>Art. 22, §1º, III</td>
+                            <td>Busca e apreensão entre 21h e 5h</td>
+                            <td>Detenção de 1 a 4 anos + multa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>8.3. Fluxograma para Equiparação de Funcionário Público</h3>
+
+            <div class="svg-container">
+                <svg viewBox="0 0 820 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxograma para equiparação de funcionário público">
+                    <defs>
+                        <style>
+                            .node-bg { fill: #2a2a44; stroke: #4a4a6a; stroke-width: 1.5; rx: 8; ry: 8; }
+                            .node-text { fill: #e8e0d4; font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+                            .node-text-small { font-size: 12px; fill: #c8c0b4; }
+                            .node-text-em { fill: #e6c384; font-weight: 600; }
+                            .diamond-bg { fill: #1e1e3a; stroke: #6a5a8a; stroke-width: 1.5; }
+                            .arrow { stroke: #6a7a8a; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+                            .arrow-label { fill: #9a9286; font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; text-anchor: middle; }
+                            .label-bg { fill: #12121e; rx: 4; ry: 4; }
+                            .result-box { fill: #1a2a2e; stroke: #4a7a7a; stroke-width: 1.5; rx: 8; ry: 8; }
+                            .result-text { fill: #7fb4c9; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; font-weight: 600; text-anchor: middle; dominant-baseline: central; }
+                            .result-text-sub { fill: #c8c0b4; font-size: 12px; font-weight: 400; }
+                        </style>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#6a7a8a" />
+                        </marker>
+                    </defs>
+
+                    <!-- Nó 1: AGENTE PRATICA CRIME -->
+                    <rect x="310" y="10" width="200" height="44" class="node-bg" />
+                    <text x="410" y="32" class="node-text">AGENTE PRATICA CRIME</text>
+
+                    <!-- Seta 1 → 2 -->
+                    <line x1="410" y1="54" x2="410" y2="80" class="arrow" />
+
+                    <!-- Nó 2: É funcionário público? (diamante) -->
+                    <polygon points="410,85 520,135 410,185 300,135" class="diamond-bg" />
+                    <text x="410" y="135" class="node-text" style="font-size:13px;">É funcionário público?</text>
+                    <text x="410" y="152" class="node-text-small">(art. 327)</text>
+
+                    <!-- Seta SIM (esquerda) -->
+                    <line x1="300" y1="135" x2="190" y2="135" class="arrow" />
+                    <text x="245" y="125" class="arrow-label">SIM</text>
+
+                    <!-- Seta NÃO (direita) -->
+                    <line x1="520" y1="135" x2="630" y2="135" class="arrow" />
+                    <text x="575" y="125" class="arrow-label">NÃO</text>
+
+                    <!-- Nó 3: Crime funcional (SIM) -->
+                    <rect x="60" y="115" width="130" height="40" class="node-bg" />
+                    <text x="125" y="135" class="node-text">Crime funcional</text>
+                    <text x="125" y="152" class="node-text-small">(ex.: peculato)</text>
+
+                    <!-- Seta do SIM para baixo (diamante → ?) na verdade o SIM vai para crime funcional, mas precisamos conectar o NÃO também -->
+
+                    <!-- Nó 4: Está em atividade típica DA Administração? (diamante - lado direito) -->
+                    <polygon points="630,140 750,190 630,240 510,190" class="diamond-bg" />
+                    <text x="630" y="185" class="node-text" style="font-size:12px;">Está em atividade</text>
+                    <text x="630" y="200" class="node-text" style="font-size:12px;">típica <tspan style="fill:#e6c384;font-weight:700;">DA</tspan> Administração?</text>
+
+                    <!-- Seta do NÃO para o diamante -->
+                    <!-- Já feita: 520,135 → 630,135, mas o diamante começa em 510,140, então ajustamos -->
+                    <!-- Vamos refazer a seta do NÃO: do ponto 520,135 até o diamante em 510,190 (entrada) -->
+                    <!-- Melhor: do ponto 520,135 horizontal até 510,190 diagonal? Vamos refazer o layout. -->
+
+                    <!-- Reconstrução limpa do fluxo a partir do NÃO: -->
+                    <!-- Apagar seta anterior e refazer -->
+                    <!-- Seta NÃO do diamante para o próximo: de 520,135 até 630,140 (entrada do diamante) -->
+                    <!-- Mas o diamante está em 630,140. Vamos usar uma linha poligonal -->
+
+                    <!-- Refazendo o fluxo com posicionamento correto -->
+
+                    <!-- Nó 2 (diamante) permanece: 410,85 a 300,185 -->
+                    <!-- Seta SIM: de 300,135 até 190,135 (nó 3) -->
+                    <!-- Seta NÃO: de 520,135 até 630,140 (nó 4) -->
+
+                    <!-- Vamos reescrever o SVG com um layout mais limpo, recalculando tudo -->
+
+                </svg>
+            </div>
+
+            <!-- Vamos refazer o fluxograma com um layout mais simples e robusto -->
+            <div class="svg-container">
+                <svg viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxograma para equiparação de funcionário público">
+                    <defs>
+                        <style>
+                            .n-bg {
+                                fill: #2a2a44;
+                                stroke: #4a4a6a;
+                                stroke-width: 1.5;
+                                rx: 8;
+                                ry: 8;
+                            }
+                            .n-txt {
+                                fill: #e8e0d4;
+                                font-family: 'Segoe UI', Arial, sans-serif;
+                                font-size: 14px;
+                                font-weight: 500;
+                                text-anchor: middle;
+                                dominant-baseline: central;
+                            }
+                            .n-txt-sm {
+                                font-size: 12px;
+                                fill: #c8c0b4;
+                            }
+                            .n-txt-em {
+                                fill: #e6c384;
+                                font-weight: 700;
+                            }
+                            .d-bg {
+                                fill: #1e1e3a;
+                                stroke: #6a5a8a;
+                                stroke-width: 1.5;
+                            }
+                            .arr {
+                                stroke: #6a7a8a;
+                                stroke-width: 2;
+                                fill: none;
+                                marker-end: url(#ah);
+                            }
+                            .arr-lbl {
+                                fill: #9a9286;
+                                font-family: 'Segoe UI', Arial, sans-serif;
+                                font-size: 11px;
+                                text-anchor: middle;
+                                font-weight: 600;
+                            }
+                            .res-bg {
+                                fill: #1a2a2e;
+                                stroke: #4a7a7a;
+                                stroke-width: 1.5;
+                                rx: 8;
+                                ry: 8;
+                            }
+                            .res-txt {
+                                fill: #7fb4c9;
+                                font-family: 'Segoe UI', Arial, sans-serif;
+                                font-size: 13px;
+                                font-weight: 600;
+                                text-anchor: middle;
+                                dominant-baseline: central;
+                            }
+                            .res-txt-sub {
+                                fill: #c8c0b4;
+                                font-size: 12px;
+                                font-weight: 400;
+                            }
+                            .n-bg-alt {
+                                fill: #1a2a2a;
+                                stroke: #4a7a6a;
+                                stroke-width: 1.5;
+                                rx: 8;
+                                ry: 8;
+                            }
+                            .n-txt-alt {
+                                fill: #9ac8b0;
+                                font-family: 'Segoe UI', Arial, sans-serif;
+                                font-size: 13px;
+                                font-weight: 500;
+                                text-anchor: middle;
+                                dominant-baseline: central;
+                            }
+                            .n-txt-alt-sm {
+                                fill: #a0b8a8;
+                                font-size: 12px;
+                            }
+                            .n-txt-alt-em {
+                                fill: #e88484;
+                                font-weight: 700;
+                            }
+                        </style>
+                        <marker id="ah" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#6a7a8a" />
+                        </marker>
+                    </defs>
+
+                    <!-- Nó 1: AGENTE PRATICA CRIME -->
+                    <rect x="310" y="10" width="200" height="44" class="n-bg" />
+                    <text x="410" y="32" class="n-txt">AGENTE PRATICA CRIME</text>
+
+                    <!-- Seta 1 → 2 -->
+                    <line x1="410" y1="54" x2="410" y2="80" class="arr" />
+
+                    <!-- Nó 2: É funcionário público? (diamante) -->
+                    <polygon points="410,85 530,140 410,195 290,140" class="d-bg" />
+                    <text x="410" y="135" class="n-txt" style="font-size:13px;">É funcionário público?</text>
+                    <text x="410" y="152" class="n-txt-sm">(art. 327)</text>
+
+                    <!-- Seta SIM (esquerda) -->
+                    <line x1="290" y1="140" x2="190" y2="140" class="arr" />
+                    <text x="240" y="130" class="arr-lbl">SIM</text>
+
+                    <!-- Seta NÃO (direita) -->
+                    <line x1="530" y1="140" x2="630" y2="140" class="arr" />
+                    <text x="580" y="130" class="arr-lbl">NÃO</text>
+
+                    <!-- Nó 3: Crime funcional (SIM) -->
+                    <rect x="60" y="120" width="130" height="40" class="n-bg" />
+                    <text x="125" y="140" class="n-txt">Crime funcional</text>
+
+                    <!-- Nó 4: Está em atividade típica DA Administração? (diamante - lado direito) -->
+                    <polygon points="630,90 740,140 630,190 520,140" class="d-bg" />
+                    <text x="630" y="133" class="n-txt" style="font-size:12px;">Está em atividade</text>
+                    <text x="630" y="148" class="n-txt" style="font-size:12px;">típica <tspan class="n-txt-em">DA</tspan> Administração?</text>
+
+                    <!-- Seta NÃO entra no diamante em 520,140 - já temos a seta de 530 para 520, ajustando -->
+                    <!-- Ajuste: a seta NÃO sai de 530,140 para 520,140 (entrada do diamante) -->
+                    <line x1="530" y1="140" x2="520" y2="140" class="arr" />
+
+                    <!-- Seta SIM do diamante (para baixo) -->
+                    <line x1="630" y1="190" x2="630" y2="230" class="arr" />
+                    <text x="640" y="212" class="arr-lbl">SIM</text>
+
+                    <!-- Seta NÃO do diamante (para baixo-direita) -->
+                    <line x1="740" y1="140" x2="780" y2="140" class="arr" />
+                    <text x="760" y="130" class="arr-lbl">NÃO</text>
+
+                    <!-- Nó 5: Equipara-se (SIM) -->
+                    <rect x="560" y="230" width="140" height="44" class="res-bg" />
+                    <text x="630" y="248" class="res-txt">Equipara-se</text>
+                    <text x="630" y="264" class="res-txt-sub">(art. 327, §1º)</text>
+
+                    <!-- Seta do Nó 5 para Crime funcional -->
+                    <line x1="630" y1="274" x2="630" y2="310" class="arr" />
+
+                    <!-- Nó 6: Crime funcional (equiparado) -->
+                    <rect x="565" y="310" width="130" height="40" class="n-bg" />
+                    <text x="630" y="330" class="n-txt">Crime funcional</text>
+
+                    <!-- Nó 7: Não se equipara (NÃO) -->
+                    <rect x="760" y="120" width="50" height="40" class="n-bg-alt" />
+                    <text x="785" y="140" class="n-txt-alt" style="font-size:11px;">Não se</text>
+                    <text x="785" y="154" class="n-txt-alt" style="font-size:11px;">equipara</text>
+
+                    <!-- Seta do Nó 7 para baixo -->
+                    <line x1="785" y1="160" x2="785" y2="200" class="arr" />
+
+                    <!-- Nó 8: Responde por crime comum -->
+                    <rect x="730" y="200" width="110" height="40" class="n-bg-alt" />
+                    <text x="785" y="215" class="n-txt-alt" style="font-size:11px;">Responde por</text>
+                    <text x="785" y="232" class="n-txt-alt" style="font-size:11px;">crime comum</text>
+
+                </svg>
+            </div>
+
+            <h3>8.4. Checklist para Revisão</h3>
+            <div class="checklist">
+                <div class="checklist-item"><span class="check">☐</span> Princípio da reserva legal (art. 1º CP, art. 5º, XXXIX CF)</div>
+                <div class="checklist-item"><span class="check">☐</span> Interpretação analógica × analogia</div>
+                <div class="checklist-item"><span class="check">☐</span> Analogia <em>in bonam partem</em> (permitida) × <em>in malam partem</em> (vedada)</div>
+                <div class="checklist-item"><span class="check">☐</span> Teoria da atividade (art. 4º CP)</div>
+                <div class="checklist-item"><span class="check">☐</span> Teoria da ubiquidade (art. 6º CP)</div>
+                <div class="checklist-item"><span class="check">☐</span> Territorialidade atenuada (art. 5º CP)</div>
+                <div class="checklist-item"><span class="check">☐</span> Princípios de extraterritorialidade</div>
+                <div class="checklist-item"><span class="check">☐</span> Funcionário público (art. 327 CP)</div>
+                <div class="checklist-item"><span class="check">☐</span> Equiparação a funcionário público (art. 327, §1º)</div>
+                <div class="checklist-item"><span class="check">☐</span> Distinção <strong>"DA"</strong> × <strong>"PARA"</strong> Administração</div>
+                <div class="checklist-item"><span class="check">☐</span> Lei de Abuso de Autoridade (21h às 5h)</div>
+                <div class="checklist-item"><span class="check">☐</span> Macete <strong>"LUTA"</strong></div>
+            </div>
+
+            <div class="divider-elegant"><span class="diamond">◆</span> <span>síntese final</span> <span class="diamond">◆</span></div>
+        </section>
+
+        <!-- ===== CONSIDERAÇÕES FINAIS ===== -->
+        <section id="consideracoes">
+            <h2>Considerações Finais</h2>
+
+            <div class="card">
+                <p style="color:var(--text-secondary);">Prezado candidato, este material foi desenvolvido para proporcionar uma compreensão profunda e estruturada da aplicação da lei penal no Direito Penal brasileiro, com foco específico no padrão de cobrança de bancas como FCC, FGV e Cebraspe.</p>
+            </div>
+
+            <p><strong>Lembre-se dos pontos mais críticos:</strong></p>
+            <ol>
+                <li><strong>Tempo do crime</strong> → Teoria da atividade (art. 4º)</li>
+                <li><strong>Lugar do crime</strong> → Teoria da ubiquidade (art. 6º)</li>
+                <li><strong>Analogia</strong> → Vedada <em>in malam partem</em> (absoluta para Direito Penal material incriminador)</li>
+                <li><strong>Equiparação</strong> → Exige atividade típica <strong>DA</strong> Administração</li>
+                <li><strong>Abuso de autoridade</strong> → Horário noturno: 21h às 5h</li>
+            </ol>
+
+            <p><strong>Para o dia da prova:</strong></p>
+            <ul>
+                <li>Leia com atenção as alternativas que envolvem "DA" e "PARA"</li>
+                <li>Verifique se a questão trata de analogia ou interpretação analógica</li>
+                <li>Confirme o horário na Lei de Abuso de Autoridade</li>
+                <li>Aplique o macete "LUTA" sempre que necessário</li>
+            </ul>
+
+            <div class="important-box">
+                <div class="important-label">
+                    <span class="inline-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </span>
+                    Bons estudos!
+                </div>
+                <p style="margin-bottom:0; color:var(--text-secondary); font-size:1.05rem;">Bons estudos e sucesso em sua jornada rumo à aprovação!</p>
+            </div>
+
+            <p style="margin-top:var(--spacing-xl); color:var(--text-muted); font-size:0.9rem; text-align:center; border-top:1px solid var(--border-subtle); padding-top:var(--spacing-lg);">
+                <em>Material didático elaborado com base na doutrina e jurisprudência predominantes, com foco em concursos para o Tribunal de Justiça do Ceará (TJCE) e demais concursos jurídicos de alto nível.</em>
+            </p>
+
+            <div style="text-align:center; margin-top:var(--spacing-lg);">
+                <a href="#top" style="color:var(--text-muted); font-size:0.85rem; font-family:var(--font-heading); letter-spacing:0.04em; text-transform:uppercase; border:1px solid var(--border-subtle); padding:var(--spacing-sm) var(--spacing-lg); border-radius:var(--radius-sm); display:inline-block; transition:all 0.3s;">↑ Voltar ao topo</a>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

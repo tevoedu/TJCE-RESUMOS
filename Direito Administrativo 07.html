@@ -1,0 +1,1903 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila de Direito Administrativo - Técnico Judiciário</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-body: #1a1e2c;
+            --bg-surface: #232838;
+            --bg-card: #2a3042;
+            --bg-elevated: #323a50;
+            --bg-highlight: #3d4660;
+            --text-primary: #e8edf5;
+            --text-secondary: #b8c4d8;
+            --text-muted: #8899b8;
+            --accent-gold: #d4a853;
+            --accent-gold-dim: #b8923f;
+            --accent-blue: #5b8dd9;
+            --accent-blue-dim: #4a78c4;
+            --accent-green: #5cb885;
+            --accent-green-dim: #4a9f72;
+            --accent-red: #d97a7a;
+            --accent-red-dim: #c46666;
+            --accent-purple: #9b7fd4;
+            --accent-teal: #5bc0be;
+            --border-subtle: #3d4660;
+            --border-medium: #4f5a78;
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.45);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --font-base: 'Segoe UI', 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
+            --transition: 0.2s ease;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-base);
+            background: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::selection {
+            background: var(--accent-gold);
+            color: #1a1e2c;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-body);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-elevated);
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-gold-dim);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            background: var(--bg-surface);
+            border-radius: var(--radius);
+            padding: 2.8rem 2.8rem 3.2rem;
+            box-shadow: var(--shadow-card);
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 0.8rem;
+            }
+            .container {
+                padding: 1.6rem 1.2rem 2rem;
+                border-radius: var(--radius-sm);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.2rem 0.9rem 1.6rem;
+            }
+            html {
+                font-size: 15px;
+            }
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 2.8rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid var(--border-subtle);
+            color: var(--accent-gold);
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            margin-top: 2rem;
+            margin-bottom: 0.6rem;
+            color: var(--accent-blue);
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            margin-top: 1.4rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color var(--transition);
+        }
+        a:hover {
+            border-bottom-color: var(--accent-blue);
+        }
+
+        strong,
+        b {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        em,
+        i {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* ===== DIVIDERS ===== */
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
+            margin: 2.4rem 0;
+        }
+
+        .divider-elegant {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2.8rem 0;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .divider-elegant::before,
+        .divider-elegant::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
+        }
+        .divider-elegant::after {
+            background: linear-gradient(90deg, var(--border-medium), transparent);
+        }
+
+        /* ===== LISTS ===== */
+        ul,
+        ol {
+            margin: 0.8rem 0 1.2rem 1.6rem;
+            color: var(--text-secondary);
+        }
+        ul li,
+        ol li {
+            margin-bottom: 0.4rem;
+            padding-left: 0.2rem;
+        }
+        ul ul,
+        ol ol {
+            margin: 0.3rem 0 0.3rem 1.4rem;
+        }
+
+        /* ===== TABLES ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.6rem 0 2rem;
+            border-radius: var(--radius-sm);
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 400px;
+        }
+        table thead {
+            background: var(--bg-elevated);
+        }
+        table th {
+            text-align: left;
+            padding: 0.8rem 1rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            border-bottom: 2px solid var(--border-medium);
+            letter-spacing: 0.02em;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+        table td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+        table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        table tbody tr:hover {
+            background: var(--bg-highlight);
+        }
+        table td:first-child {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 600px) {
+            table {
+                font-size: 0.82rem;
+                min-width: 300px;
+            }
+            table th,
+            table td {
+                padding: 0.5rem 0.7rem;
+            }
+        }
+
+        /* ===== CARDS ===== */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 1.4rem 1.6rem;
+            margin: 1.4rem 0;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+        .card:hover {
+            border-color: var(--border-medium);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .card-title {
+            font-weight: 600;
+            color: var(--accent-gold);
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .card-title svg {
+            flex-shrink: 0;
+        }
+        .card p:last-child,
+        .card ul:last-child,
+        .card ol:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== CALLOUTS ===== */
+        .callout {
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.4rem;
+            margin: 1.4rem 0;
+            border-left: 4px solid;
+            background: var(--bg-card);
+            position: relative;
+        }
+        .callout-tip {
+            border-left-color: var(--accent-green);
+        }
+        .callout-tip .callout-label {
+            color: var(--accent-green);
+        }
+        .callout-warning {
+            border-left-color: var(--accent-gold);
+        }
+        .callout-warning .callout-label {
+            color: var(--accent-gold);
+        }
+        .callout-important {
+            border-left-color: var(--accent-red);
+        }
+        .callout-important .callout-label {
+            color: var(--accent-red);
+        }
+        .callout-info {
+            border-left-color: var(--accent-blue);
+        }
+        .callout-info .callout-label {
+            color: var(--accent-blue);
+        }
+        .callout-purple {
+            border-left-color: var(--accent-purple);
+        }
+        .callout-purple .callout-label {
+            color: var(--accent-purple);
+        }
+        .callout-label {
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.2rem;
+        }
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== HIGHLIGHT (marca-texto) ===== */
+        .highlight {
+            background: rgba(212, 168, 83, 0.25);
+            padding: 0.08rem 0.3rem;
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .highlight-blue {
+            background: rgba(91, 141, 217, 0.25);
+            padding: 0.08rem 0.3rem;
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .highlight-green {
+            background: rgba(92, 184, 133, 0.25);
+            padding: 0.08rem 0.3rem;
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .highlight-red {
+            background: rgba(217, 122, 122, 0.25);
+            padding: 0.08rem 0.3rem;
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* ===== QUOTE ===== */
+        .quote {
+            background: var(--bg-card);
+            border-radius: var(--radius-sm);
+            padding: 1.4rem 1.8rem;
+            margin: 1.6rem 0;
+            border-left: 4px solid var(--accent-gold);
+            font-style: italic;
+            color: var(--text-secondary);
+            position: relative;
+        }
+        .quote::before {
+            content: '\201C';
+            font-size: 3rem;
+            line-height: 1;
+            color: var(--accent-gold-dim);
+            opacity: 0.3;
+            position: absolute;
+            top: 0.2rem;
+            left: 0.6rem;
+            font-family: Georgia, serif;
+        }
+        .quote p {
+            margin-bottom: 0;
+            padding-left: 1.8rem;
+        }
+        .quote .quote-source {
+            display: block;
+            margin-top: 0.6rem;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            padding-left: 1.8rem;
+        }
+
+        /* ===== CODE / MONOSPACE ===== */
+        .code-inline {
+            font-family: var(--font-mono);
+            background: var(--bg-highlight);
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--accent-teal);
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* ===== SUMMARY / TOC ===== */
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 1.6rem 2rem;
+            margin: 1.8rem 0 2.4rem;
+        }
+        .toc-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            letter-spacing: 0.02em;
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.3rem 1.6rem;
+        }
+        .toc-list li {
+            padding: 0.2rem 0;
+            margin: 0;
+            border-bottom: 1px solid transparent;
+            transition: border-color var(--transition);
+        }
+        .toc-list li:hover {
+            border-bottom-color: var(--border-medium);
+        }
+        .toc-list a {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color var(--transition);
+        }
+        .toc-list a:hover {
+            color: var(--accent-gold);
+        }
+        .toc-list .toc-chapter {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            min-width: 2.2rem;
+        }
+
+        @media (max-width: 600px) {
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+            .toc {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+
+        /* ===== SVG icons ===== */
+        .icon-svg {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 1.2em;
+            height: 1.2em;
+        }
+        .icon-svg svg {
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+        }
+
+        /* ===== MACETE BOX ===== */
+        .macete-box {
+            background: var(--bg-elevated);
+            border: 1px solid var(--accent-gold-dim);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.6rem;
+            margin: 1.4rem 0;
+            box-shadow: 0 0 0 1px rgba(212, 168, 83, 0.08);
+        }
+        .macete-box .macete-label {
+            font-weight: 600;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+        .macete-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== GRID for side-by-side ===== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.2rem 0;
+        }
+        @media (max-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        /* ===== CHAPTER MARKER ===== */
+        .chapter-marker {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            background: var(--bg-elevated);
+            padding: 0.1rem 0.8rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 0.4rem;
+        }
+
+        /* ===== TITLE PAGE ===== */
+        .title-page {
+            text-align: center;
+            padding: 1.6rem 0 2rem;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 2.4rem;
+        }
+        .title-page .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-blue);
+            font-weight: 400;
+            margin-top: 0.2rem;
+        }
+        .title-page .meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.6rem;
+            letter-spacing: 0.04em;
+        }
+        .title-page .badge {
+            display: inline-block;
+            background: var(--accent-gold-dim);
+            color: #1a1e2c;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 0.2rem 1.2rem;
+            border-radius: 20px;
+            margin-top: 0.8rem;
+        }
+
+        /* ===== STUDY CASE ===== */
+        .case-study {
+            background: var(--bg-card);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.6rem;
+            margin: 1.4rem 0;
+            border-left: 3px solid var(--accent-purple);
+        }
+        .case-study .case-title {
+            font-weight: 600;
+            color: var(--accent-purple);
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+        .case-study .case-analysis {
+            margin-top: 0.6rem;
+            padding-top: 0.6rem;
+            border-top: 1px solid var(--border-subtle);
+        }
+        .case-study .case-analysis strong {
+            color: var(--accent-gold);
+        }
+        .case-study p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== RESPONSIVE FINE-TUNE ===== */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            h2 {
+                font-size: 1.35rem;
+                margin-top: 2rem;
+            }
+            h3 {
+                font-size: 1.1rem;
+            }
+            .title-page .subtitle {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 1rem 0.8rem 1.4rem;
+            }
+            .callout {
+                padding: 0.9rem 1rem;
+            }
+            .card {
+                padding: 1rem 1.2rem;
+            }
+            .quote {
+                padding: 1rem 1.2rem;
+            }
+            .quote::before {
+                font-size: 2.2rem;
+            }
+            .quote p {
+                padding-left: 1.2rem;
+            }
+            .quote .quote-source {
+                padding-left: 1.2rem;
+            }
+            .toc-list a {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            body {
+                background: #fff;
+                padding: 0.2in;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+                background: #fff;
+            }
+            :root {
+                --bg-body: #fff;
+                --bg-surface: #fff;
+                --bg-card: #f5f7fa;
+                --bg-elevated: #edf0f5;
+                --bg-highlight: #e8ecf3;
+                --text-primary: #1a1e2c;
+                --text-secondary: #2d3346;
+                --text-muted: #6b7a92;
+                --border-subtle: #d0d7e3;
+                --border-medium: #b0bbcc;
+            }
+            .title-page .badge {
+                background: #d4a853;
+                color: #fff;
+            }
+            .highlight {
+                background: rgba(212, 168, 83, 0.2);
+            }
+            .highlight-blue {
+                background: rgba(91, 141, 217, 0.15);
+            }
+            .highlight-green {
+                background: rgba(92, 184, 133, 0.15);
+            }
+            .highlight-red {
+                background: rgba(217, 122, 122, 0.15);
+            }
+            .card:hover {
+                border-color: var(--border-subtle);
+                box-shadow: none;
+            }
+            .toc-list li:hover {
+                border-bottom-color: transparent;
+            }
+            .toc-list a:hover {
+                color: var(--text-secondary);
+            }
+            .callout {
+                background: #f5f7fa;
+            }
+            .macete-box {
+                background: #edf0f5;
+            }
+            .case-study {
+                background: #f5f7fa;
+            }
+            .quote {
+                background: #f5f7fa;
+            }
+            .table-wrap {
+                background: #f5f7fa;
+            }
+            table thead {
+                background: #e8ecf3;
+            }
+            table tbody tr:hover {
+                background: transparent;
+            }
+            hr {
+                background: linear-gradient(90deg, transparent, #b0bbcc, transparent);
+            }
+            .divider-elegant::before,
+            .divider-elegant::after {
+                background: linear-gradient(90deg, transparent, #b0bbcc, transparent);
+            }
+            .divider-elegant::after {
+                background: linear-gradient(90deg, #b0bbcc, transparent);
+            }
+            .chapter-marker {
+                background: #edf0f5;
+                border-color: #b0bbcc;
+            }
+            .code-inline {
+                background: #e8ecf3;
+                border-color: #b0bbcc;
+                color: #2d3346;
+            }
+            .macete-box .macete-label {
+                color: #b8923f;
+            }
+            .callout-tip {
+                border-left-color: #5cb885;
+            }
+            .callout-warning {
+                border-left-color: #d4a853;
+            }
+            .callout-important {
+                border-left-color: #d97a7a;
+            }
+            .callout-info {
+                border-left-color: #5b8dd9;
+            }
+            .callout-purple {
+                border-left-color: #9b7fd4;
+            }
+            .case-study {
+                border-left-color: #9b7fd4;
+            }
+            .case-study .case-title {
+                color: #9b7fd4;
+            }
+            h2 {
+                border-bottom-color: #d0d7e3;
+                color: #b8923f;
+            }
+            h3 {
+                color: #4a78c4;
+            }
+            h4 {
+                color: #1a1e2c;
+            }
+            table th {
+                color: #b8923f;
+                border-bottom-color: #b0bbcc;
+            }
+            table td {
+                border-bottom-color: #d0d7e3;
+            }
+            .quote::before {
+                color: #b0bbcc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ===== TITLE PAGE ===== -->
+        <header class="title-page">
+            <span class="chapter-marker">Material Teórico Completo</span>
+            <h1>Direito Administrativo</h1>
+            <p class="subtitle">para concursos públicos de Técnico Judiciário</p>
+            <div class="badge">PDF interativo · estudo em tablet</div>
+            <div class="meta">10 capítulos · teoria + macetes + pegadinhas</div>
+        </header>
+
+        <!-- ===== TOC ===== -->
+        <nav class="toc" aria-label="Sumário">
+            <div class="toc-title">
+                <span class="icon-svg">
+                    <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h10v2H4v-2z"/></svg>
+                </span>
+                Sumário inteligente
+            </div>
+            <ul class="toc-list">
+                <li><a href="#cap1"><span class="toc-chapter">Cap.1</span> Atributos do Ato Administrativo</a></li>
+                <li><a href="#cap2"><span class="toc-chapter">Cap.2</span> Poderes da Administração</a></li>
+                <li><a href="#cap3"><span class="toc-chapter">Cap.3</span> Organização Administrativa</a></li>
+                <li><a href="#cap4"><span class="toc-chapter">Cap.4</span> Atos e Controle</a></li>
+                <li><a href="#cap5"><span class="toc-chapter">Cap.5</span> Agentes e Cargo Público</a></li>
+                <li><a href="#cap6"><span class="toc-chapter">Cap.6</span> Responsabilidade Civil do Estado</a></li>
+                <li><a href="#cap7"><span class="toc-chapter">Cap.7</span> Improbidade Administrativa</a></li>
+                <li><a href="#cap8"><span class="toc-chapter">Cap.8</span> Licitação e Contratos</a></li>
+                <li><a href="#cap9"><span class="toc-chapter">Cap.9</span> Princípios Implícitos</a></li>
+                <li><a href="#cap10"><span class="toc-chapter">Cap.10</span> Resumo Estratégico</a></li>
+            </ul>
+        </nav>
+
+        <hr>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 1                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap1">
+            <span class="chapter-marker">Capítulo 1</span>
+            <h2>Atributos do Ato Administrativo</h2>
+
+            <h3>1.1 Introdução aos Atributos</h3>
+            <p>Os atributos do ato administrativo são características que conferem ao ato administrativo um regime jurídico especial, diferenciando-o dos atos praticados pelos particulares. Esses atributos são verdadeiras prerrogativas que a Administração Pública possui para garantir a supremacia do interesse público sobre o interesse privado.</p>
+            <p>É fundamental compreender que <strong>os atributos não são elementos do ato administrativo</strong>. Enquanto os elementos (competência, finalidade, forma, motivo e objeto) são requisitos de validade, os atributos são características que podem ou não estar presentes, conferindo ao ato maior ou menor poder de impor-se perante os administrados.</p>
+
+            <div class="macete-box">
+                <div class="macete-label">
+                    <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></span>
+                    Macete PATI
+                </div>
+                <p><strong>P</strong> — Presunção de legitimidade &nbsp;|&nbsp; <strong>A</strong> — Autoexecutoriedade &nbsp;|&nbsp; <strong>T</strong> — Tipicidade &nbsp;|&nbsp; <strong>I</strong> — Imperatividade</p>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Atributo</th><th>Descrição Sucinta</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>P</strong> — Presunção de legitimidade</td><td>O ato nasce com presunção de que é válido</td></tr>
+                        <tr><td><strong>A</strong> — Autoexecutoriedade</td><td>Pode ser executado diretamente pela Administração</td></tr>
+                        <tr><td><strong>T</strong> — Tipicidade</td><td>Deve corresponder a uma figura prevista em lei</td></tr>
+                        <tr><td><strong>I</strong> — Imperatividade</td><td>Pode ser imposto coercitivamente</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>1.2 Presunção de Legitimidade e Veracidade</h3>
+            <p>A presunção de legitimidade (também chamada de presunção de legalidade) é o atributo pelo qual os atos administrativos são considerados válidos e conformes à ordem jurídica até que se prove o contrário. Essa presunção é <strong>relativa</strong> (juris tantum), admitindo prova em contrário.</p>
+            <p>A presunção de veracidade, por sua vez, diz respeito aos fatos declarados pela Administração, que se presumem verdadeiros.</p>
+
+            <div class="callout callout-info">
+                <div class="callout-label">
+                    <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></span>
+                    Efeitos práticos
+                </div>
+                <ul>
+                    <li><strong>Inversão do ônus da prova:</strong> cabe a quem alega a ilegalidade do ato demonstrá-la, e não à Administração provar sua legalidade</li>
+                    <li><strong>Execução imediata:</strong> o ato produz efeitos desde sua publicação, independentemente de confirmação judicial</li>
+                    <li><strong>Segurança jurídica:</strong> estabilidade das relações administrativas</li>
+                </ul>
+            </div>
+
+            <div class="callout callout-important">
+                <div class="callout-label">
+                    <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></span>
+                    Importante para prova
+                </div>
+                <p>A presunção de legitimidade <strong>não</strong> torna o ato definitivo. É possível sua anulação a qualquer tempo pela própria Administração (autotutela) ou pelo Poder Judiciário, quando constatada ilegalidade.</p>
+            </div>
+
+            <h3>1.3 Autoexecutoriedade</h3>
+            <p>A autoexecutoriedade é a <strong>faculdade que a Administração possui de executar diretamente suas decisões</strong>, sem necessidade de intervenção do Poder Judiciário. É o que permite, por exemplo, que um estabelecimento seja interditado sem autorização judicial prévia.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Espécie</th><th>Característica</th><th>Exemplos</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Exigibilidade</strong></td><td>Meios indiretos de coerção</td><td>Multas administrativas, cobranças</td></tr>
+                        <tr><td><strong>Executoriedade</strong></td><td>Meios diretos de coerção</td><td>Interdição de estabelecimento, apreensão de mercadorias</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-warning">
+                <div class="callout-label">
+                    <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></span>
+                    ⚠️ Pegadinha de Prova (FGV/FCC)
+                </div>
+                <p>A banca frequentemente apresenta situações de interdição de estabelecimento e pergunta qual atributo justifica. A resposta sempre será <strong>autoexecutoriedade</strong>, especificamente a <strong>executoriedade</strong>.</p>
+                <p><em>Exemplo:</em> "A administração pública pode interditar um estabelecimento comercial sem autorização do Poder Judiciário, com base em qual atributo?"<br>
+                <strong>Resposta correta:</strong> Autoexecutoriedade (executoriedade)</p>
+            </div>
+
+            <h3>1.4 Tipicidade</h3>
+            <p>A tipicidade é o atributo pelo qual o ato administrativo deve corresponder a uma figura prevista em lei, com todos os seus elementos definidos normativamente.</p>
+            <div class="callout callout-info">
+                <div class="callout-label">Consequências da Tipicidade</div>
+                <ul>
+                    <li>A Administração só pode praticar atos previstos em lei</li>
+                    <li>Os atos devem observar as formalidades legais</li>
+                    <li>Não há "atos atípicos" na Administração Pública (diferentemente do direito privado, onde vigora a autonomia da vontade)</li>
+                </ul>
+            </div>
+
+            <h3>1.5 Imperatividade (Coercibilidade)</h3>
+            <p>A imperatividade (ou coercibilidade) é o atributo que permite ao ato administrativo <strong>impor-se independentemente ou contra a vontade do destinatário</strong>. É a capacidade que o ato possui de criar obrigações para os administrados.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th></th><th>Imperatividade</th><th>Autoexecutoriedade</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>O que é</strong></td><td>Implantação da obrigação</td><td>Execução da obrigação</td></tr>
+                        <tr><td><strong>Momento</strong></td><td>Antes do cumprimento</td><td>Após o descumprimento</td></tr>
+                        <tr><td><strong>Natureza</strong></td><td>Normativa</td><td>Executiva</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-warning">
+                <div class="callout-label">⚠️ Pegadinha de Prova (FGV/FCC)</div>
+                <p>A banca frequentemente confunde imperatividade com autoexecutoriedade:</p>
+                <p><em>"Qual atributo NÃO justifica a interdição de um estabelecimento pela própria Administração sem o Judiciário?"</em></p>
+                <p><strong>Resposta:</strong> A coercibilidade (imperatividade) NÃO autoriza a execução direta. Quem autoriza é a autoexecutoriedade.</p>
+            </div>
+
+            <h3>1.6 Quadro-Resumo dos Atributos</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Atributo</th><th>Conceito</th><th>Efeito Principal</th><th>Exemplo</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Presunção de legitimidade</strong></td><td>O ato é considerado válido até prova em contrário</td><td>Inversão do ônus da prova</td><td>Qualquer ato administrativo</td></tr>
+                        <tr><td><strong>Autoexecutoriedade</strong></td><td>Execução direta pela Administração</td><td>Intervenção sem Judiciário</td><td>Interdição, apreensão</td></tr>
+                        <tr><td><strong>Tipicidade</strong></td><td>Atos previstos em lei</td><td>Legalidade estrita</td><td>Só pode fazer o que a lei prevê</td></tr>
+                        <tr><td><strong>Imperatividade</strong></td><td>Implantação coativa</td><td>Dever de cumprir</td><td>Multa de trânsito</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>1.7 Estudos de Caso</h3>
+
+            <div class="case-study">
+                <div class="case-title">Caso 1: Interdição de Restaurante</div>
+                <p>A Vigilância Sanitária constata grave infração às normas de higiene em um restaurante, com risco iminente à saúde pública. O órgão interdita o estabelecimento sumariamente, sem autorização judicial.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> A interdição é válida com base na <span class="highlight">autoexecutoriedade (executoriedade)</span>. A urgência justifica a medida imediata. O administrado poderá posteriormente recorrer administrativa e judicialmente.</p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-title">Caso 2: Multa de Trânsito</div>
+                <p>Um motorista recebe uma multa por excesso de velocidade. O órgão de trânsito aplica a penalidade sem necessidade de ação judicial.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> A multa é uma manifestação da <span class="highlight">exigibilidade</span> (autoexecutoriedade indireta). A imperatividade está presente na imposição da obrigação de pagar. A presunção de legitimidade garante a execução imediata da multa.</p>
+                </div>
+            </div>
+
+            <h3>1.8 Dicas de Memorização</h3>
+            <div class="macete-box">
+                <div class="macete-label">
+                    <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></span>
+                    Frase de fixação
+                </div>
+                <p>"A Administração <strong>PRESUME</strong> que seus atos são legais, <strong>TIPA</strong> todos eles na lei, <strong>IMPERA</strong> sobre os administrados e, quando necessário, <strong>AUTOEXECUTA</strong> suas decisões."</p>
+            </div>
+
+            <div class="divider-elegant">✦</div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 2                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap2">
+            <span class="chapter-marker">Capítulo 2</span>
+            <h2>Poderes da Administração</h2>
+
+            <h3>2.1 Introdução aos Poderes Administrativos</h3>
+            <p>Os poderes da Administração Pública são instrumentos conferidos à Administração para o cumprimento de suas finalidades. Diferentemente dos "poderes" no sentido político (Executivo, Legislativo e Judiciário), aqui tratamos de <strong>poderes administrativos</strong>, que são prerrogativas funcionais.</p>
+            <p>É importante compreender que os poderes da Administração são:</p>
+            <ul>
+                <li><strong>Instrumentais:</strong> servem como meios para atingir os fins públicos</li>
+                <li><strong>Inerentes:</strong> decorrem da própria organização administrativa</li>
+                <li><strong>Irrenunciáveis:</strong> não podem ser abandonados pela Administração</li>
+            </ul>
+
+            <h3>2.2 Poder Disciplinar</h3>
+            <p>O poder disciplinar é a <strong>faculdade da Administração de apurar infrações e aplicar penalidades</strong> aos servidores públicos e demais pessoas sujeitas à disciplina administrativa.</p>
+
+            <div class="callout callout-info">
+                <div class="callout-label">Base Legal</div>
+                <ul>
+                    <li>CF/88, art. 41: estabilidade do servidor público</li>
+                    <li>Lei 8.112/90: Estatuto dos Servidores Públicos Federais</li>
+                    <li>Lei 9.784/99: normas do processo administrativo</li>
+                </ul>
+            </div>
+
+            <div class="callout callout-important">
+                <div class="callout-label">💡 Ponto Crucial para Prova</div>
+                <p>O erro mais comum é acreditar que o poder disciplinar só se aplica a servidores públicos. <strong>Isso é falso!</strong></p>
+                <p>O poder disciplinar também alcança <strong>particulares com vínculo específico</strong> com a Administração, especialmente aqueles com contratos administrativos.</p>
+            </div>
+
+            <h3>2.3 Poder Hierárquico</h3>
+            <p>O poder hierárquico é a <strong>faculdade da Administração de distribuir, escalonar e controlar as funções de seus órgãos</strong>, estabelecendo relações de subordinação entre os agentes públicos.</p>
+            <div class="callout callout-info">
+                <div class="callout-label">Manifestações do Poder Hierárquico</div>
+                <ul>
+                    <li><strong>Ordens e instruções:</strong> o superior pode determinar condutas</li>
+                    <li><strong>Delegação de competência:</strong> o superior pode transferir atribuições</li>
+                    <li><strong>Avocação de competência:</strong> o superior pode chamar para si atribuições</li>
+                    <li><strong>Controle e fiscalização:</strong> o superior controla os atos dos subordinados</li>
+                    <li><strong>Revisão de atos:</strong> o superior pode rever atos dos subordinados</li>
+                </ul>
+            </div>
+
+            <h3>2.4 Poder de Polícia</h3>
+            <p>O poder de polícia é a <strong>atividade estatal de condicionar o exercício dos direitos individuais</strong> ao interesse público, mediante limitações impostas pela Administração.</p>
+            <div class="callout callout-info">
+                <div class="callout-label">Atributos do Poder de Polícia</div>
+                <ul>
+                    <li><strong>Discricionariedade:</strong> o agente tem certa margem de escolha</li>
+                    <li><strong>Coercibilidade:</strong> o poder de polícia é impositivo</li>
+                    <li><strong>Autoexecutoriedade:</strong> pode ser executado diretamente</li>
+                </ul>
+            </div>
+
+            <h3>2.5 Distinção entre os Poderes</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Critério</th><th>Poder Disciplinar</th><th>Poder Hierárquico</th><th>Poder de Polícia</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Sujeitos</strong></td><td>Servidores e particulares com vínculo específico</td><td>Órgãos da mesma pessoa jurídica</td><td>Administrados em geral (sem vínculo)</td></tr>
+                        <tr><td><strong>Finalidade</strong></td><td>Aplicar penalidades</td><td>Organizar e controlar</td><td>Limitar direitos individuais</td></tr>
+                        <tr><td><strong>Natureza</strong></td><td>Sancionatória</td><td>Organizacional</td><td>Regulatória</td></tr>
+                        <tr><td><strong>Exemplo</strong></td><td>Multa a empresa contratada</td><td>Subordinação de secretaria</td><td>Licenciamento de atividade</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>2.6 Estudos de Caso</h3>
+
+            <div class="case-study">
+                <div class="case-title">Caso 1: Empresa Contratada</div>
+                <p>O Estado, após contraditório e ampla defesa, aplica sanção contratual a empresa privada. Qual poder está sendo manifestado?</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> O poder disciplinar se aplica a particulares com vínculo específico. A existência de contrato administrativo caracteriza o vínculo. A sanção contratual decorre do descumprimento de obrigações contratuais.</p>
+                    <p><strong>Resposta correta:</strong> <span class="highlight">Poder disciplinar</span></p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-title">Caso 2: Subordinação Interna</div>
+                <p>Uma secretaria municipal recebe ordens de um órgão superior da mesma prefeitura.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> A relação entre órgãos da mesma pessoa jurídica caracteriza hierarquia. Não há vínculo contratual entre eles.</p>
+                    <p><strong>Resposta correta:</strong> <span class="highlight">Poder hierárquico</span></p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-title">Caso 3: Licenciamento Ambiental</div>
+                <p>O órgão ambiental licencia a operação de uma fábrica, impondo condições para a atividade.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> Trata-se de condicionamento do exercício de direito individual. Não há vínculo específico entre a fábrica e a Administração.</p>
+                    <p><strong>Resposta correta:</strong> <span class="highlight">Poder de polícia</span></p>
+                </div>
+            </div>
+
+            <h3>2.7 Dicas de Memorização</h3>
+            <div class="macete-box">
+                <div class="macete-label">Filtro de Identificação</div>
+                <ol>
+                    <li><strong>Há vínculo específico?</strong> (contrato, convênio, permissão) → SIM = Poder Disciplinar; NÃO = Hierárquico ou Polícia</li>
+                    <li><strong>É relação interna na Administração?</strong> (subordinação) → SIM = Poder Hierárquico; NÃO = Poder de Polícia</li>
+                </ol>
+            </div>
+
+            <div class="callout callout-warning">
+                <div class="callout-label">⚠️ Pegadinha Clássica (FGV/FCC)</div>
+                <p>A banca apresenta uma <strong>empresa contratada</strong> e sugere:</p>
+                <ul>
+                    <li>"Poder hierárquico" → errado (não há subordinação)</li>
+                    <li>"Poder de polícia" → errado (há vínculo específico)</li>
+                    <li><strong>Resposta correta:</strong> Poder disciplinar</li>
+                </ul>
+            </div>
+
+            <div class="macete-box">
+                <div class="macete-label">Frase de fixação</div>
+                <p>"A Administração <strong>DISCIPLINA</strong> quem tem vínculo com ela, <strong>HIERARQUIZA</strong> seus órgãos internos, e exerce <strong>POLÍCIA</strong> sobre todos os administrados em geral."</p>
+            </div>
+
+            <div class="divider-elegant">✦</div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 3                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap3">
+            <span class="chapter-marker">Capítulo 3</span>
+            <h2>Organização Administrativa</h2>
+
+            <h3>3.1 Conceitos Fundamentais</h3>
+            <p>A organização administrativa trata da estruturação da Administração Pública para o desempenho de suas atividades. É fundamental compreender a diferença entre Administração Direta e Indireta, e os conceitos de desconcentração e descentralização.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th></th><th>Administração Direta</th><th>Administração Indireta</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Conceito</strong></td><td>Conjunto de órgãos que integram a estrutura dos entes federativos</td><td>Conjunto de entidades com personalidade jurídica própria</td></tr>
+                        <tr><td><strong>Personalidade</strong></td><td>Sem personalidade jurídica</td><td>Com personalidade jurídica própria</td></tr>
+                        <tr><td><strong>Exemplos</strong></td><td>Ministérios, Secretarias, Departamentos</td><td>Autarquias, Fundações, Empresas Públicas, SEM</td></tr>
+                        <tr><td><strong>Criação</strong></td><td>Criação por lei</td><td>Criação por lei autorizadora</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>3.2 Desconcentração × Descentralização</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th></th><th>Desconcentração</th><th>Descentralização</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Conceito</strong></td><td>Distribuição de competências dentro da mesma pessoa jurídica</td><td>Transferência de competência para outra pessoa jurídica</td></tr>
+                        <tr><td><strong>Criação</strong></td><td>Cria órgãos (sem personalidade jurídica)</td><td>Cria entidades (com personalidade jurídica)</td></tr>
+                        <tr><td><strong>Exemplo</strong></td><td>Secretarias de um município</td><td>Autarquia, Fundação, Empresa Pública</td></tr>
+                        <tr><td><strong>Palavra-chave</strong></td><td><span class="highlight">"Órgão"</span></td><td><span class="highlight">"Entidade"</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-important">
+                <div class="callout-label">💡 Palavra-Gatilho para Prova (FGV/FCC)</div>
+                <p>Quando a questão menciona:</p>
+                <ul>
+                    <li><strong>"ÓRGÃO"</strong> → desconcentração (Administração Direta)</li>
+                    <li><strong>"ENTIDADE"</strong> → descentralização (Administração Indireta)</li>
+                </ul>
+            </div>
+
+            <h3>3.3 Espécies de Entidades da Administração Indireta</h3>
+
+            <div class="card">
+                <div class="card-title">
+                    <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></span>
+                    Autarquia
+                </div>
+                <ul>
+                    <li><strong>Conceito:</strong> pessoa jurídica de direito público, criada por lei específica</li>
+                    <li><strong>Características:</strong> Personalidade jurídica de direito público; criação por lei ordinária; capacidade de autoadministração; vinculada à Administração Direta</li>
+                    <li><strong>Exemplos:</strong> INSS, INCRA, CACEX</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></span>
+                    Fundação Pública
+                </div>
+                <ul>
+                    <li><strong>Conceito:</strong> pessoa jurídica de direito público ou privado, instituída pela Administração</li>
+                    <li><strong>Características:</strong> Pode ser de direito público ou privado; criada por lei autorizadora e registro do ato constitutivo; destinação específica</li>
+                    <li><strong>Exemplos:</strong> FUNAI, FUNASA, UFSC</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></span>
+                    Empresa Pública
+                </div>
+                <ul>
+                    <li><strong>Conceito:</strong> pessoa jurídica de direito privado, com capital público (total ou majoritário)</li>
+                    <li><strong>Características:</strong> Personalidade jurídica de direito privado; capital 100% público; criação por lei autorizadora e registro no órgão competente</li>
+                    <li><strong>Exemplos:</strong> CAIXA, EMBRAPA, BNDES</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></span>
+                    Sociedade de Economia Mista
+                </div>
+                <ul>
+                    <li><strong>Conceito:</strong> pessoa jurídica de direito privado, com capital público (majoritário) e privado</li>
+                    <li><strong>Características:</strong> Personalidade jurídica de direito privado; capital misto (público + privado); criação por lei autorizadora e registro no órgão competente</li>
+                    <li><strong>Exemplos:</strong> Petrobras, Banco do Brasil, Eletrobras</li>
+                </ul>
+            </div>
+
+            <h3>3.4 Estudo de Caso</h3>
+            <div class="case-study">
+                <div class="case-title">Caso: Município Alfa</div>
+                <p>No Município Alfa, há: Secretarias, uma autarquia, uma fundação estatal de direito público, e uma empresa pública.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong></p>
+                    <ul>
+                        <li><strong>Secretarias</strong> → Administração Direta (órgãos, desconcentração)</li>
+                        <li><strong>Autarquia</strong> → Administração Indireta (entidade, descentralização)</li>
+                        <li><strong>Fundação estatal de direito público</strong> → Administração Indireta (entidade, descentralização)</li>
+                        <li><strong>Empresa pública</strong> → Administração Indireta (entidade, descentralização)</li>
+                    </ul>
+                    <p><em>Obs.:</em> A empresa pública é pessoa jurídica de direito privado, mas faz parte da Administração Indireta.</p>
+                </div>
+            </div>
+
+            <h3>3.5 Dicas de Memorização</h3>
+            <div class="macete-box">
+                <div class="macete-label">Associação para fixação</div>
+                <ul>
+                    <li><strong>DESCONCENTRAÇÃO</strong> = DENTRO (mesma pessoa jurídica)</li>
+                    <li><strong>DESCENTRALIZAÇÃO</strong> = FORA (outra pessoa jurídica)</li>
+                </ul>
+            </div>
+
+            <div class="macete-box">
+                <div class="macete-label">Macete para Entidades</div>
+                <p>"A <strong>AUTARQUIA</strong> é pública, <strong>FUNDAÇÃO</strong> tem patrimônio, <strong>EMPRESA PÚBLICA</strong> é 100% pública, e <strong>SOCIEDADE MISTA</strong> tem capital privado também."</p>
+            </div>
+
+            <div class="divider-elegant">✦</div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 4                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap4">
+            <span class="chapter-marker">Capítulo 4</span>
+            <h2>Atos Administrativos e Controle</h2>
+
+            <h3>4.1 Convalidação dos Atos Administrativos</h3>
+            <p>A convalidação (ou saneamento) é o <strong>ato administrativo que corrige um vício sanável</strong> em outro ato, produzindo efeitos retroativos (ex tunc), desde que não haja lesão ao interesse público nem prejuízo a terceiros.</p>
+
+            <div class="callout callout-info">
+                <div class="callout-label">Base Legal — Lei 9.784/99, art. 55</div>
+                <p>"Em decisão na qual se evidencie não acarretarem lesão ao interesse público nem prejuízo a terceiros, os atos que apresentarem defeitos sanáveis poderão ser convalidados pela própria Administração."</p>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Vícios Sanáveis</th><th>Vícios Insanáveis</th></tr></thead>
+                    <tbody>
+                        <tr><td>Forma</td><td>Motivo</td></tr>
+                        <tr><td>Competência</td><td>Objeto</td></tr>
+                        <tr><td></td><td>Finalidade</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-important">
+                <div class="callout-label">⚠️ Atenção para Prova</div>
+                <ul>
+                    <li>A convalidação tem <strong>efeitos retroativos</strong> (ex tunc)</li>
+                    <li>Apenas vícios de <strong>FORMA</strong> e <strong>COMPETÊNCIA</strong> são sanáveis</li>
+                    <li>Vícios de <strong>MOTIVO, OBJETO OU FINALIDADE</strong> são insanáveis (nulidade absoluta)</li>
+                </ul>
+            </div>
+
+            <h3>4.2 Controle da Administração Pública</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Tipo</th><th>Órgão</th><th>Características</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Controle Administrativo</strong></td><td>Própria Administração</td><td>Autotutela (Súmula 473/STF)</td></tr>
+                        <tr><td><strong>Controle Judicial</strong></td><td>Poder Judiciário</td><td>Revisão de legalidade apenas</td></tr>
+                        <tr><td><strong>Controle Legislativo</strong></td><td>Poder Legislativo + TC</td><td>Controle externo</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="quote">
+                <p><strong>Súmula 473 do STF:</strong> "A administração pode anular seus próprios atos, quando eivados de vícios que os tornem ilegais, ou revogá-los, por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos, e ressalvada, em todos os casos, a apreciação judicial."</p>
+            </div>
+
+            <h3>4.3 Estudos de Caso</h3>
+
+            <div class="case-study">
+                <div class="case-title">Caso 1: Vício de Forma</div>
+                <p>Um ato administrativo de nomeação de servidor foi praticado com vício de forma (ausência de publicação). A Administração constata o erro e decide convalidar o ato.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> O vício de forma é sanável (art. 55 da Lei 9.784/99). A convalidação é possível com efeitos retroativos. Não houve lesão ao interesse público nem prejuízo a terceiros.</p>
+                    <p><strong>Resposta:</strong> O ato pode ser <span class="highlight">convalidado</span>.</p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-title">Caso 2: Vício de Motivo</div>
+                <p>Um servidor foi demitido com base em motivo falso (alegou-se abandono de cargo, mas o servidor estava afastado legalmente). A Administração descobre o erro.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> O vício de motivo é insanável. O ato é nulo (não há convalidação possível).</p>
+                    <p><strong>Resposta:</strong> O ato deve ser <span class="highlight-red">anulado</span>, não convalidado.</p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-title">Caso 3: Controle Administrativo</div>
+                <p>O prefeito de um município constata que um ato praticado por seu antecessor é ilegal. Decide anulá-lo.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> Trata-se de controle administrativo (autotutela). A Administração pode anular seus atos ilegais a qualquer tempo. Base na Súmula 473 do STF.</p>
+                    <p><strong>Resposta:</strong> Pode <span class="highlight">anular</span> o ato.</p>
+                </div>
+            </div>
+
+            <h3>4.4 Dicas de Memorização</h3>
+            <div class="macete-box">
+                <div class="macete-label">Macete para Convalidação</div>
+                <p>"<strong>FORMA E COMPETÊNCIA</strong> se <span class="highlight">CONVALIDAM</span>; <strong>MOTIVO, OBJETO E FINALIDADE</strong> se <span class="highlight-red">ANULAM</span>."</p>
+            </div>
+
+            <div class="divider-elegant">✦</div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 5                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap5">
+            <span class="chapter-marker">Capítulo 5</span>
+            <h2>Agentes Públicos e Cargo Público</h2>
+
+            <h3>5.1 Cargo, Emprego e Função Pública</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th></th><th>Cargo Público</th><th>Emprego Público</th><th>Função Pública</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Natureza</strong></td><td>Estatutária</td><td>Celetista (CLT)</td><td>Transitória</td></tr>
+                        <tr><td><strong>Criação</strong></td><td>Lei (criação e extinção)</td><td>Lei autorizadora</td><td>Atribuições específicas</td></tr>
+                        <tr><td><strong>Exemplos</strong></td><td>Juiz, professor, fiscal</td><td>Empregado da CAIXA</td><td>Serviços temporários</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>5.2 Cargos em Comissão × Funções de Confiança</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th></th><th>Cargo em Comissão</th><th>Função de Confiança</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Conceito</strong></td><td>Cargo de provimento em comissão, de livre nomeação e exoneração</td><td>Conjunto de atribuições de chefia, direção e assessoramento</td></tr>
+                        <tr><td><strong>Ocupante</strong></td><td>Pode ser ocupado por não concursado</td><td>Exclusivamente por servidor efetivo</td></tr>
+                        <tr><td><strong>Base Legal</strong></td><td>CF/88, art. 37, V</td><td>CF/88, art. 37, V</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-important">
+                <div class="callout-label">💡 Ponto Crucial para Prova</div>
+                <ul>
+                    <li><strong>Função de confiança</strong> → exige servidor ocupante de cargo efetivo (concursado)</li>
+                    <li><strong>Cargo em comissão</strong> → pode ser ocupado por não concursado (mas exige servidor de carreira em casos específicos)</li>
+                </ul>
+            </div>
+
+            <h3>5.3 Direito à Nomeação (Tema 784 do STF)</h3>
+            <div class="quote">
+                <p><strong>Tese fixada — Tema 784 (RE 837.311):</strong> "O candidato aprovado em concurso público dentro do número de vagas do edital tem direito subjetivo à nomeação."</p>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Situação</th><th>Direito</th><th>Fundamentos</th></tr></thead>
+                    <tbody>
+                        <tr><td>Aprovado <strong>dentro</strong> das vagas</td><td><span class="highlight">Direito subjetivo</span> à nomeação</td><td>Boa-fé, segurança jurídica, vinculação ao edital</td></tr>
+                        <tr><td>Aprovado <strong>além</strong> das vagas (cadastro reserva)</td><td><span class="highlight-blue">Mera expectativa</span> de direito</td><td>Não há previsão editalícia garantida</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-warning">
+                <div class="callout-label">⚠️ Atenção para Prova</div>
+                <ul>
+                    <li>Candidato aprovado <strong>dentro das vagas</strong> → direito subjetivo</li>
+                    <li>Candidato aprovado <strong>em cadastro reserva</strong> → expectativa de direito</li>
+                </ul>
+            </div>
+
+            <h3>5.4 Estudos de Caso</h3>
+
+            <div class="case-study">
+                <div class="case-title">Caso 1: Função de Confiança</div>
+                <p>Maria exerce a função de confiança de Diretora de Departamento de Tribunal de Justiça. É correto afirmar que ela:</p>
+                <ul>
+                    <li>A) é necessariamente servidora ocupante de cargo efetivo</li>
+                    <li>B) pode ser pessoa não concursada</li>
+                    <li>C) é necessariamente ocupante de cargo em comissão</li>
+                </ul>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> Função de confiança exige <strong>servidor ocupante de cargo efetivo</strong> (CF/88, art. 37, V). Não confundir com cargo em comissão.</p>
+                    <p><strong>Resposta correta:</strong> <span class="highlight">Alternativa A</span></p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-title">Caso 2: Direito à Nomeação</div>
+                <p>João foi aprovado em concurso público dentro do número de vagas previsto no edital. A Administração não o nomeou no prazo.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> Tem direito subjetivo à nomeação (Tema 784 do STF). A Administração deve nomear o candidato aprovado dentro das vagas.</p>
+                    <p><strong>Resposta:</strong> João tem <span class="highlight">direito líquido e certo</span> à nomeação.</p>
+                </div>
+            </div>
+
+            <h3>5.5 Dicas de Memorização</h3>
+            <div class="macete-box">
+                <div class="macete-label">Macete para Cargo/Comissão × Função</div>
+                <p>"<strong>COMISSÃO</strong> pode ser de <strong>FORA</strong>; <strong>CONFIANÇA</strong> exige <strong>EFETIVO</strong>."</p>
+            </div>
+
+            <div class="divider-elegant">✦</div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 6                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap6">
+            <span class="chapter-marker">Capítulo 6</span>
+            <h2>Responsabilidade Civil do Estado</h2>
+
+            <h3>6.1 Fundamentos Constitucionais</h3>
+            <div class="quote">
+                <p><strong>CF/88, art. 37, §6º:</strong> "As pessoas jurídicas de direito público e as de direito privado prestadoras de serviços públicos responderão pelos danos que seus agentes, nessa qualidade, causarem a terceiros, assegurado o direito de regresso contra o responsável nos casos de dolo ou culpa."</p>
+            </div>
+
+            <div class="callout callout-info">
+                <div class="callout-label">Teoria do Risco Administrativo</div>
+                <p>O Estado adota a <strong>teoria do risco administrativo</strong> (responsabilidade objetiva), que exige:</p>
+                <ol>
+                    <li><strong>Ação do agente público</strong> (comportamento)</li>
+                    <li><strong>Dano ao particular</strong> (prejuízo)</li>
+                    <li><strong>Nexo causal</strong> entre a ação e o dano</li>
+                    <li><strong>Não exige dolo ou culpa</strong> do agente (objetiva)</li>
+                </ol>
+            </div>
+
+            <h3>6.2 Excludentes da Responsabilidade</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Excludente</th><th>Efeito</th><th>Exemplo</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Culpa exclusiva da vítima</strong></td><td>Rompe o nexo causal — Estado não responde</td><td>Vítima atravessa via sinalizada por agente</td></tr>
+                        <tr><td><strong>Caso fortuito ou força maior</strong></td><td>Rompe o nexo causal — Estado não responde</td><td>Desastre natural imprevisível</td></tr>
+                        <tr><td><strong>Fato de terceiro</strong></td><td>Rompe o nexo causal — Estado não responde</td><td>Dano causado por particular não relacionado</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-important">
+                <div class="callout-label">⚠️ Distinção Crucial</div>
+                <ul>
+                    <li><strong>Culpa exclusiva da vítima</strong> → <span class="highlight-red">Exclui</span> a responsabilidade do Estado</li>
+                    <li><strong>Culpa concorrente</strong> → <span class="highlight">Reduz</span> o valor indenizatório</li>
+                </ul>
+            </div>
+
+            <h3>6.3 Culpa Concorrente</h3>
+            <p>A culpa concorrente ocorre quando tanto o agente público quanto a vítima contribuíram para a ocorrência do dano. Nesse caso:</p>
+            <ol>
+                <li>O Estado <strong>responde objetivamente</strong></li>
+                <li>O valor indenizatório é <strong>reduzido proporcionalmente</strong></li>
+                <li>A culpa da vítima não exclui o dever de indenizar, apenas o atenua</li>
+            </ol>
+
+            <h3>6.4 Responsabilidade Subjetiva (Regresso)</h3>
+            <p>Após indenizar o particular (responsabilidade objetiva), o Estado pode <strong>cobrar do agente público</strong> o valor pago, desde que fique comprovado:</p>
+            <ol>
+                <li><strong>Dolo</strong> (intenção de causar dano)</li>
+                <li><strong>Culpa</strong> (negligência, imprudência ou imperícia)</li>
+            </ol>
+            <div class="callout callout-important">
+                <div class="callout-label">⚠️ Atenção</div>
+                <p>A responsabilidade do agente para fins de regresso é <strong>subjetiva</strong> (exige dolo ou culpa), enquanto a responsabilidade do Estado perante o particular é <strong>objetiva</strong> (independe de culpa).</p>
+            </div>
+
+            <h3>6.5 Estudos de Caso</h3>
+
+            <div class="case-study">
+                <div class="case-title">Caso 1: Culpa Exclusiva da Vítima</div>
+                <p>João, em alta velocidade, colide com um veículo oficial estacionado regularmente, sofrendo danos. João ingressa com ação contra o Estado.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> A conduta de João foi a causa exclusiva do dano. Não há nexo causal entre a ação do Estado e o dano.</p>
+                    <p><strong>Resposta:</strong> O Estado <span class="highlight-red">não responde</span> (culpa exclusiva da vítima).</p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-title">Caso 2: Culpa Concorrente</div>
+                <p>João (agente público), por negligência, causou dano a Maria, que também agiu com culpa. Maria ingressa com ação contra o Estado.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> O Estado responde objetivamente (art. 37, §6º, CF). A culpa da vítima não exclui o dever de indenizar. O valor será reduzido proporcionalmente.</p>
+                    <p><strong>Resposta:</strong> Procedente, com <span class="highlight">redução do valor indenizatório</span>.</p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-title">Caso 3: Ação de Regresso</div>
+                <p>O Estado pagou indenização a um particular por dano causado por seu agente. O agente agiu com culpa.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> O Estado pode ajuizar ação de regresso contra o agente. A responsabilidade do agente é subjetiva (exige dolo ou culpa).</p>
+                    <p><strong>Resposta:</strong> O Estado <span class="highlight">pode cobrar</span> o valor do agente.</p>
+                </div>
+            </div>
+
+            <h3>6.6 Dicas de Memorização</h3>
+            <div class="macete-box">
+                <div class="macete-label">Macete para Responsabilidade</div>
+                <p>"<strong>ESTADO</strong> responde <strong>OBJETIVAMENTE</strong> ao particular; <strong>AGENTE</strong> responde <strong>SUBJETIVAMENTE</strong> ao Estado."</p>
+            </div>
+
+            <div class="divider-elegant">✦</div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 7                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap7">
+            <span class="chapter-marker">Capítulo 7</span>
+            <h2>Improbidade Administrativa</h2>
+
+            <h3>7.1 A Reforma da Lei 8.429/92 (Lei 14.230/2021)</h3>
+            <p>A Lei 14.230/2021 promoveu uma <strong>reforma substancial</strong> na Lei de Improbidade Administrativa (Lei 8.429/92), com alterações que impactam profundamente a responsabilização dos agentes públicos.</p>
+
+            <div class="callout callout-important">
+                <div class="callout-label">Dolo como Requisito Essencial</div>
+                <p><strong>Art. 1º, §1º da Lei 8.429/92</strong> (redação atualizada):</p>
+                <p>"Consideram-se atos de improbidade administrativa as condutas dolosas tipificadas nos arts. 9º, 10 e 11, ressalvados tipos previstos em leis especiais."</p>
+                <p><span class="highlight">A culpa foi excluída do âmbito da improbidade administrativa.</span> Agora, <strong>todas as modalidades</strong> de improbidade (arts. 9, 10 e 11) exigem <strong>dolo específico</strong>.</p>
+            </div>
+
+            <h3>7.2 Modalidades de Improbidade</h3>
+
+            <div class="card">
+                <div class="card-title">Art. 9 — Enriquecimento Ilícito</div>
+                <p>"Constitui ato de improbidade administrativa importando enriquecimento ilícito auferir, mediante a prática de ato doloso, qualquer tipo de vantagem patrimonial indevida em razão do exercício de cargo, mandato, função, emprego ou atividade."</p>
+                <p><strong>Requisito:</strong> Dolo específico para enriquecimento ilícito.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Art. 10 — Prejuízo ao Erário</div>
+                <p>"Constitui ato de improbidade administrativa que causa lesão ao erário qualquer ação ou omissão, <strong>dolosa</strong>, que enseje, efetiva e comprovadamente, perda patrimonial, desvio, apropriação, malbaratamento ou dilapidação dos bens ou haveres das entidades referidas no art. 1º desta Lei."</p>
+                <p><strong>Requisito:</strong> Dolo específico para causar prejuízo ao erário.</p>
+                <p><span class="highlight-red">❌ ANTES:</span> Culpa também era admitida (negligência, imprudência, imperícia)<br>
+                <span class="highlight">✅ AGORA:</span> Somente dolo</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Art. 11 — Violação de Princípios</div>
+                <p>"Constitui ato de improbidade administrativa que atenta contra os princípios da administração pública qualquer ação ou omissão <strong>dolosa</strong> que viole os deveres de honestidade, imparcialidade, legalidade, e lealdade às instituições."</p>
+                <p><strong>Requisito:</strong> Dolo específico para violar princípios.</p>
+            </div>
+
+            <h3>7.3 Consequências da Reforma</h3>
+            <div class="callout callout-info">
+                <div class="callout-label">Responsabilidade Civil (Regresso)</div>
+                <p>A exclusão da culpa para improbidade <strong>não elimina</strong> a responsabilidade civil do agente perante o Estado.</p>
+                <ul>
+                    <li>O Estado ainda pode ajuizar <strong>ação de regresso</strong></li>
+                    <li>A responsabilidade do agente nessa ação é <strong>subjetiva</strong> (dolo ou culpa)</li>
+                    <li>A culpa é suficiente para a ação regressiva, mas <strong>não</strong> para a improbidade</li>
+                </ul>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th></th><th>Improbidade Administrativa</th><th>Responsabilidade Civil (Regresso)</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Base Legal</strong></td><td>Lei 8.429/92 (arts. 9, 10, 11)</td><td>CF/88, art. 37, §6º</td></tr>
+                        <tr><td><strong>Exige dolo?</strong></td><td><span class="highlight">SIM</span> (todos os casos)</td><td>NÃO (dolo ou culpa)</td></tr>
+                        <tr><td><strong>Exige culpa?</strong></td><td>NÃO</td><td><span class="highlight">SIM</span> (pode ser)</td></tr>
+                        <tr><td><strong>Natureza</strong></td><td>Sancionatória</td><td>Indenizatória</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>7.4 Estudos de Caso</h3>
+
+            <div class="case-study">
+                <div class="case-title">Caso 1: Conduta Culposa</div>
+                <p>Um agente público concorre culposamente para que pessoa jurídica utilize bens públicos sem formalidade legal. Diante da Lei 8.429/92 atualizada, é correto afirmar que ele:</p>
+                <ul>
+                    <li>A) poderá ser responsabilizado por improbidade por prejuízo ao erário</li>
+                    <li>B) não poderá ser responsabilizado por improbidade</li>
+                    <li>C) poderá ser responsabilizado por improbidade por ato contra princípios</li>
+                </ul>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> A conduta culposa foi excluída do âmbito da improbidade. A reforma exige dolo para todas as modalidades.</p>
+                    <p><strong>Resposta correta:</strong> <span class="highlight">Alternativa B</span> (não poderá ser responsabilizado por improbidade).</p>
+                    <p><em>Obs.:</em> A responsabilidade civil do agente perante o Estado continua sendo subjetiva (dolo ou culpa) em ação regressiva.</p>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-title">Caso 2: Dolo Comprovado</div>
+                <p>Um agente público, com dolo, desvia recursos públicos para benefício próprio.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> Configura improbidade (enriquecimento ilícito — art. 9). O dolo está presente.</p>
+                    <p><strong>Resposta:</strong> Pode ser <span class="highlight">responsabilizado por improbidade</span>.</p>
+                </div>
+            </div>
+
+            <h3>7.5 Dicas de Memorização</h3>
+            <div class="macete-box">
+                <div class="macete-label">Macete Principal</div>
+                <p>"<strong>DOLO</strong> para <strong>IMPROBIDADE</strong>, <strong>CULPA</strong> só para <strong>REGRESSO</strong>."</p>
+            </div>
+
+            <div class="callout callout-warning">
+                <div class="callout-label">⚠️ Pegadinha de Prova (FGV/FCC)</div>
+                <p>A banca costuma apresentar situações com a palavra <strong>"culposamente"</strong>. A resposta sempre será: <strong>NÃO configura improbidade</strong>, mas o agente pode ser acionado regressivamente pelo Estado.</p>
+            </div>
+
+            <div class="macete-box">
+                <div class="macete-label">Frase de fixação</div>
+                <p>"A Lei de Improbidade, após 2021, só pune quem age com <strong>DOLO</strong>. A culpa ficou apenas para a ação de <strong>REGRESSO</strong> do Estado contra o agente."</p>
+            </div>
+
+            <div class="divider-elegant">✦</div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 8                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap8">
+            <span class="chapter-marker">Capítulo 8</span>
+            <h2>Licitação e Contratos Administrativos</h2>
+
+            <h3>8.1 Dispensa de Licitação</h3>
+            <p><strong>Art. 75 da Nova Lei de Licitações (14.133/21)</strong> trata das hipóteses de dispensa de licitação.</p>
+
+            <div class="callout callout-info">
+                <div class="callout-label">Caso Especial — Segurança Pública</div>
+                <p><strong>Art. 75, VIII da Nova Lei 14.133/21:</strong></p>
+                <p>"É dispensável a licitação para a contratação que envolva as seguintes situações: ... VIII — para a construção, ampliação, reforma e aprimoramento de estabelecimentos penais, desde que configurada situação de grave e iminente risco à segurança pública."</p>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Aspecto</th><th>Lei 8.666/93 (antiga)</th><th>Lei 14.133/21 (nova)</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Dispositivo</strong></td><td>Art. 24, XXXV</td><td>Art. 75, VIII</td></tr>
+                        <tr><td><strong>Conteúdo</strong></td><td>Dispensa para estabelecimentos penais em situação de grave e iminente risco à segurança pública</td><td>Praticamente igual</td></tr>
+                        <tr><td><strong>Obs.</strong></td><td colspan="2">Independente do valor do contrato</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-important">
+                <div class="callout-label">💡 Pontos Importantes</div>
+                <ol>
+                    <li><strong>Não depende do valor</strong> do contrato</li>
+                    <li><strong>Exige justificativa do preço</strong></li>
+                    <li><strong>Situação de grave e iminente risco</strong> à segurança pública</li>
+                    <li><strong>Aplicável a estabelecimentos penais</strong> (construção, ampliação, reforma, aprimoramento)</li>
+                </ol>
+            </div>
+
+            <h3>8.2 Estudo de Caso</h3>
+            <div class="case-study">
+                <div class="case-title">Caso: Superlotação de Presídios</div>
+                <p>Em situação de grave e iminente risco à segurança pública, em razão da superlotação de presídios, o governo decide contratar obra de ampliação de um estabelecimento penal.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong></p>
+                    <ul>
+                        <li>A situação configura grave e iminente risco à segurança pública</li>
+                        <li>A contratação é possível sem licitação</li>
+                        <li>O valor do contrato é irrelevante para a dispensa</li>
+                        <li>Deve haver justificativa do preço</li>
+                    </ul>
+                    <p><strong>Resposta:</strong> <span class="highlight">Dispensa de licitação</span> com base no art. 75, VIII da Lei 14.133/21.</p>
+                </div>
+            </div>
+
+            <h3>8.3 Dicas de Memorização</h3>
+            <div class="macete-box">
+                <div class="macete-label">Macete para Dispensa Especial</div>
+                <p>"<strong>RISCO GRAVE</strong> no <strong>PENAL</strong> → <strong>DISPENSA</strong> com justificativa de <strong>PREÇO</strong>."</p>
+            </div>
+
+            <div class="divider-elegant">✦</div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 9                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap9">
+            <span class="chapter-marker">Capítulo 9</span>
+            <h2>Princípios Implícitos</h2>
+
+            <h3>9.1 Princípio da Intranscendência Subjetiva das Sanções</h3>
+            <p>O princípio da intranscendência subjetiva das sanções impede que o <strong>sucessor no cargo seja penalizado por irregularidades cometidas pelo antecessor</strong>, desde que adote medidas para sanar o prejuízo.</p>
+
+            <div class="callout callout-info">
+                <div class="callout-label">Fundamentos</div>
+                <ul>
+                    <li>Base na <strong>Súmula 615 do STJ</strong></li>
+                    <li>Vedação à inscrição do município em cadastros restritivos por gestão anterior</li>
+                    <li>Aplica-se quando a atual gestão está regularizando a situação</li>
+                </ul>
+            </div>
+
+            <div class="callout callout-important">
+                <div class="callout-label">💡 Palavra-Gatilho para Prova</div>
+                <p><strong>"Ato de gestão anterior"</strong> → remete ao princípio da intranscendência subjetiva das sanções.</p>
+            </div>
+
+            <div class="quote">
+                <p><strong>Súmula 615 do STJ:</strong> "O município não pode ser inscrito em cadastros restritivos por débitos relativos a atos de gestão de gestão anterior, quando a atual administração está adotando providências para regularizar a situação."</p>
+            </div>
+
+            <h3>9.2 Estudo de Caso</h3>
+            <div class="case-study">
+                <div class="case-title">Caso: Novo Gestor</div>
+                <p>O STF inibe a aplicação de severas sanções a entidade federativa por ato de gestão anterior, se o novo gestor toma providências para reparar o dano.</p>
+                <div class="case-analysis">
+                    <p><strong>Análise:</strong> Aplica-se o princípio da intranscendência subjetiva das sanções. O sucessor não pode ser penalizado pelo antecessor, desde que adote medidas para regularizar.</p>
+                    <p><strong>Resposta:</strong> <span class="highlight">Princípio da intranscendência subjetiva das sanções</span>.</p>
+                </div>
+            </div>
+
+            <h3>9.3 Dicas de Memorização</h3>
+            <div class="macete-box">
+                <div class="macete-label">Macete</div>
+                <p>"O novo prefeito não paga a conta do antigo se estiver <strong>REGULARIZANDO</strong> a situação."</p>
+            </div>
+
+            <div class="divider-elegant">✦</div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 10                                                    -->
+        <!-- ============================================================ -->
+        <section id="cap10">
+            <span class="chapter-marker">Capítulo 10</span>
+            <h2>Resumo Estratégico e Dicas de Prova</h2>
+
+            <h3>10.1 Mapa Mental dos Atributos (PATI)</h3>
+            <div class="card">
+                <div class="card-title">ATRIBUTOS DO ATO ADMINISTRATIVO</div>
+                <ul>
+                    <li><strong>P</strong> — PRESUNÇÃO DE LEGITIMIDADE → Inversão do ônus da prova</li>
+                    <li><strong>A</strong> — AUTOEXECUTORIEDADE
+                        <ul>
+                            <li>Exigibilidade (coação indireta — multa)</li>
+                            <li>Executoriedade (coação direta — interdição)</li>
+                        </ul>
+                    </li>
+                    <li><strong>T</strong> — TIPICIDADE → Ato previsto em lei</li>
+                    <li><strong>I</strong> — IMPERATIVIDADE (COERCIBILIDADE) → Imposição coativa (não autoriza execução direta)</li>
+                </ul>
+            </div>
+
+            <h3>10.2 Mapa Mental dos Poderes</h3>
+            <div class="card">
+                <div class="card-title">PODERES DA ADMINISTRAÇÃO</div>
+                <ul>
+                    <li><strong>PODER DISCIPLINAR</strong> → Servidores públicos + Particulares com vínculo específico (contratos, convênios, permissões)</li>
+                    <li><strong>PODER HIERÁRQUICO</strong> → Subordinação — Órgãos da mesma pessoa jurídica</li>
+                    <li><strong>PODER DE POLÍCIA</strong> → Administrados em geral (sem vínculo)</li>
+                </ul>
+            </div>
+
+            <h3>10.3 Mapa Mental de Responsabilidade</h3>
+            <div class="card">
+                <div class="card-title">RESPONSABILIDADE CIVIL DO ESTADO</div>
+                <ul>
+                    <li><strong>ART. 37, §6º CF/88</strong>
+                        <ul>
+                            <li>RESPONSABILIDADE OBJETIVA (Estado) → Dano + Ação do agente + Nexo causal</li>
+                            <li>RESPONSABILIDADE SUBJETIVA (Agente) → Regresso (dolo ou culpa)</li>
+                        </ul>
+                    </li>
+                    <li><strong>EXCLUDENTES</strong> → Culpa exclusiva da vítima, caso fortuito, fato de terceiro</li>
+                    <li><strong>ATENUANTE</strong> → Culpa concorrente (reduz indenização)</li>
+                </ul>
+            </div>
+
+            <h3>10.4 Mapa Mental de Improbidade</h3>
+            <div class="card">
+                <div class="card-title">IMPROBIDADE ADMINISTRATIVA (PÓS-2021)</div>
+                <ul>
+                    <li><strong>REQUISITO ESSENCIAL:</strong> DOLO (em todos os casos)</li>
+                    <li><strong>Art. 9</strong> — Enriquecimento ilícito → Dolo para enriquecer</li>
+                    <li><strong>Art. 10</strong> — Prejuízo ao erário → Dolo para causar prejuízo (<span class="highlight-red">CULPA EXCLUÍDA</span>)</li>
+                    <li><strong>Art. 11</strong> — Violação de princípios → Dolo para violar princípios</li>
+                    <li><strong>AÇÃO REGRESSIVA</strong> (Estado x Agente) → Responsabilidade subjetiva (dolo ou culpa) — <span class="highlight">CULPA ADMITIDA</span></li>
+                </ul>
+            </div>
+
+            <h3>10.5 Quadro de Macetes Finais</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Tema</th><th>Macete</th></tr></thead>
+                    <tbody>
+                        <tr><td>Atributos</td><td><strong>PATI</strong> (Presunção, Autoexecutoriedade, Tipicidade, Imperatividade)</td></tr>
+                        <tr><td>Autoexecutoriedade</td><td><strong>EX</strong>igibilidade = multa (indireta); <strong>EX</strong>ecutoriedade = interdição (direta)</td></tr>
+                        <tr><td>Poder Disciplinar</td><td>Aplica-se a <strong>servidores + particulares com vínculo</strong></td></tr>
+                        <tr><td>Cargo/Comissão</td><td><strong>COMISSÃO</strong> pode ser de <strong>FORA</strong>; <strong>CONFIANÇA</strong> exige <strong>EFETIVO</strong></td></tr>
+                        <tr><td>Improbidade</td><td><strong>DOLO</strong> para improbidade; <strong>CULPA</strong> só para regresso</td></tr>
+                        <tr><td>Responsabilidade</td><td><strong>ESTADO</strong> = objetivo; <strong>AGENTE</strong> = subjetivo</td></tr>
+                        <tr><td>Convalidação</td><td><strong>FORMA e COMPETÊNCIA</strong> convalidam-se; <strong>MOTIVO, OBJETO e FINALIDADE</strong> anulam-se</td></tr>
+                        <tr><td>Controle</td><td><strong>Autotutela</strong> = Súmula 473; <strong>Judicial</strong> = legalidade apenas</td></tr>
+                        <tr><td>Organização</td><td><strong>ÓRGÃO</strong> = desconcentração; <strong>ENTIDADE</strong> = descentralização</td></tr>
+                        <tr><td>Princípio implícito</td><td><strong>"Ato de gestão anterior"</strong> = intranscendência subjetiva</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>10.6 Pegadinhas Mais Frequentes (FGV/FCC)</h3>
+
+            <div class="callout callout-warning">
+                <div class="callout-label">⚠️ Pegadinha 1: Poder Disciplinar vs. Poder de Polícia</div>
+                <ul>
+                    <li><strong>Erro:</strong> Achar que poder disciplinar só se aplica a servidores</li>
+                    <li><strong>Correto:</strong> Também se aplica a <strong>particulares com vínculo específico</strong> (contratos)</li>
+                </ul>
+            </div>
+
+            <div class="callout callout-warning">
+                <div class="callout-label">⚠️ Pegadinha 2: Imperatividade vs. Autoexecutoriedade</div>
+                <ul>
+                    <li><strong>Erro:</strong> Confundir imposição coativa com execução direta</li>
+                    <li><strong>Correto:</strong> Imperatividade impõe a obrigação; autoexecutoriedade executa</li>
+                </ul>
+            </div>
+
+            <div class="callout callout-warning">
+                <div class="callout-label">⚠️ Pegadinha 3: Culpa na Improbidade</div>
+                <ul>
+                    <li><strong>Erro:</strong> Achar que culpa ainda pode ensejar improbidade</li>
+                    <li><strong>Correto:</strong> A reforma (Lei 14.230/2021) <strong>excluiu a culpa</strong> de todas as modalidades</li>
+                </ul>
+            </div>
+
+            <div class="callout callout-warning">
+                <div class="callout-label">⚠️ Pegadinha 4: Direito à Nomeação</div>
+                <ul>
+                    <li><strong>Erro:</strong> Tratar todos os aprovados como tendo direito subjetivo</li>
+                    <li><strong>Correto:</strong> Apenas <strong>dentro das vagas</strong> tem direito; cadastro reserva é expectativa</li>
+                </ul>
+            </div>
+
+            <h3>10.7 Checklist de Revisão</h3>
+            <div class="card">
+                <ul>
+                    <li>☐ Atributos do ato administrativo (PATI)</li>
+                    <li>☐ Autoexecutoriedade: exigibilidade vs. executoriedade</li>
+                    <li>☐ Poder disciplinar (servidores e particulares com vínculo)</li>
+                    <li>☐ Poder hierárquico (relação interna)</li>
+                    <li>☐ Poder de polícia (administrados em geral)</li>
+                    <li>☐ Desconcentração (órgãos) vs. descentralização (entidades)</li>
+                    <li>☐ Convalidação: vícios sanáveis (forma e competência)</li>
+                    <li>☐ Controle: administrativo, judicial, legislativo</li>
+                    <li>☐ Cargo em comissão vs. função de confiança</li>
+                    <li>☐ Direito à nomeação (Tema 784 do STF)</li>
+                    <li>☐ Responsabilidade civil objetiva (Estado) vs. subjetiva (agente)</li>
+                    <li>☐ Culpa exclusiva da vítima (exclui) vs. culpa concorrente (reduz)</li>
+                    <li>☐ Improbidade: dolo obrigatório (pós-2021)</li>
+                    <li>☐ Dispensa de licitação para segurança pública</li>
+                    <li>☐ Princípio da intranscendência subjetiva das sanções</li>
+                </ul>
+            </div>
+
+            <div class="divider-elegant">✦</div>
+
+            <div style="margin-top: 2.8rem; padding: 1.8rem 2rem; background: var(--bg-elevated); border-radius: var(--radius-sm); border: 1px solid var(--border-medium); text-align: center;">
+                <p style="font-size: 1.1rem; color: var(--text-primary); font-weight: 600; margin-bottom: 0.2rem;">Bons estudos e sucesso na sua preparação!</p>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Material para uso exclusivo em estudos para concursos públicos.</p>
+            </div>
+
+        </section>
+
+    </div>
+    <!-- end container -->
+</body>
+</html>

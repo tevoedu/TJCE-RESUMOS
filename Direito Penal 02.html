@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>Direito Penal – Apostila para Concursos</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #12121c;
+            color: #e6e6ee;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: #1b1b2a;
+            border-radius: 32px;
+            padding: 2.5rem 2.2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        /* ===== TIPOGRAFIA ===== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            margin: 1.8rem 0 0.8rem 0;
+            color: #f0f0fa;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            letter-spacing: -0.01em;
+            border-left: 6px solid #f39c12;
+            padding-left: 1.2rem;
+            margin-top: 0.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            border-bottom: 2px solid #2d2d44;
+            padding-bottom: 0.4rem;
+            margin-top: 2.5rem;
+            color: #f0e6d0;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #d4c9b0;
+            margin-top: 1.8rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #c0b8a0;
+            margin-top: 1.4rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin: 0.8rem 0;
+            color: #d6d6e0;
+        }
+
+        a {
+            color: #8ab8ff;
+            text-decoration: none;
+            border-bottom: 1px dotted #3a4a6a;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #b8d6ff;
+        }
+
+        strong,
+        b {
+            color: #f5e7c8;
+            font-weight: 600;
+        }
+
+        em {
+            color: #d0c8b0;
+            font-style: italic;
+        }
+
+        /* ===== SUMÁRIO ===== */
+        .toc {
+            background: #232336;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 1.8rem 0 2.8rem 0;
+            border-left: 5px solid #f39c12;
+        }
+        .toc h2 {
+            border: none;
+            margin-top: 0;
+            padding-bottom: 0;
+            font-size: 1.8rem;
+            color: #f0e6d0;
+        }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.6rem 1.5rem;
+            margin-top: 0.6rem;
+        }
+        .toc-grid a {
+            display: block;
+            padding: 0.3rem 0;
+            border-bottom: none;
+            font-size: 0.98rem;
+            color: #c8d4e8;
+            transition: color 0.2s, padding-left 0.2s;
+        }
+        .toc-grid a:hover {
+            color: #f5e7c8;
+            padding-left: 8px;
+        }
+
+        /* ===== BOXES ===== */
+        .box {
+            border-radius: 16px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.6rem 0;
+            background: #212135;
+            border-left: 6px solid #6a7a9a;
+        }
+        .box-dica {
+            border-left-color: #2ecc71;
+            background: #1a2a22;
+        }
+        .box-dica strong {
+            color: #7ddfa0;
+        }
+        .box-atencao {
+            border-left-color: #f1c40f;
+            background: #2a281a;
+        }
+        .box-atencao strong {
+            color: #f5d76e;
+        }
+        .box-importante {
+            border-left-color: #e74c3c;
+            background: #2a1e1e;
+        }
+        .box-importante strong {
+            color: #f1948a;
+        }
+        .box-exemplo {
+            border-left-color: #5dade2;
+            background: #1a2633;
+        }
+        .box-exemplo strong {
+            color: #85c1e9;
+        }
+        .box-card {
+            border-left: none;
+            background: #26263b;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            padding: 1.4rem 1.8rem;
+        }
+        .box-card h4 {
+            margin-top: 0;
+            color: #f0e6d0;
+        }
+
+        /* ===== TABELAS ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.6rem 0;
+            border-radius: 16px;
+            background: #1d1d30;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 480px;
+        }
+        th {
+            background: #2d2d4a;
+            color: #f0e6d0;
+            font-weight: 600;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid #3d3d5a;
+        }
+        td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #2d2d44;
+            color: #d0d0dd;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover td {
+            background: #25253a;
+        }
+
+        /* ===== BLOCKQUOTE ===== */
+        blockquote {
+            background: #1f1f32;
+            border-radius: 16px;
+            padding: 1.2rem 2rem;
+            margin: 1.6rem 0;
+            border-left: 8px solid #8e7a5a;
+            font-style: italic;
+            color: #d4d0c8;
+            position: relative;
+        }
+        blockquote::before {
+            content: "“";
+            font-size: 3rem;
+            color: #8e7a5a;
+            position: absolute;
+            left: 0.8rem;
+            top: -0.2rem;
+            opacity: 0.3;
+        }
+        blockquote p {
+            margin: 0.2rem 0;
+            padding-left: 1.8rem;
+        }
+        blockquote cite {
+            display: block;
+            text-align: right;
+            font-style: normal;
+            font-size: 0.9rem;
+            color: #a09880;
+            margin-top: 0.3rem;
+        }
+
+        /* ===== LISTAS ===== */
+        ul,
+        ol {
+            margin: 0.8rem 0 0.8rem 1.8rem;
+            color: #d0d0dd;
+        }
+        li {
+            margin: 0.3rem 0;
+        }
+        ul ul,
+        ol ul {
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        /* ===== DIVISÓRIAS ===== */
+        .divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #3d3d5a, #6a6a8a, #3d3d5a, transparent);
+            margin: 2.8rem 0;
+            opacity: 0.4;
+        }
+        .divider-light {
+            height: 1px;
+            background: #2d2d44;
+            margin: 1.8rem 0;
+        }
+
+        /* ===== DESTAQUE TEXTO ===== */
+        .highlight {
+            background: #4a3a1a;
+            color: #f5e7c8;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        .highlight-blue {
+            background: #1a2a44;
+            color: #aac8ff;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+        }
+
+        /* ===== SVG CONTAINERS ===== */
+        .svg-container {
+            width: 100%;
+            margin: 2rem 0;
+            background: #14141f;
+            border-radius: 20px;
+            padding: 0.5rem;
+            box-shadow: inset 0 0 0 1px #2d2d44;
+            overflow-x: auto;
+        }
+        .svg-container svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 800px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+                border-radius: 24px;
+            }
+            h1 {
+                font-size: 2rem;
+                padding-left: 0.8rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .box {
+                padding: 1rem 1.2rem;
+            }
+            table {
+                font-size: 0.85rem;
+                min-width: 300px;
+            }
+            th,
+            td {
+                padding: 0.5rem 0.7rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .container {
+                padding: 1rem 0.8rem;
+            }
+        }
+
+        /* ===== ANIMAÇÃO SUAVE ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== CÓDIGO / LEGISLAÇÃO ===== */
+        .legis {
+            font-family: 'Courier New', monospace;
+            background: #1a1a2a;
+            padding: 0.1rem 0.5rem;
+            border-radius: 6px;
+            color: #d4d0c8;
+            border: 1px solid #2d2d44;
+            font-size: 0.9rem;
+        }
+
+        /* ===== CARDS CONCEITOS ===== */
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin: 1.6rem 0;
+        }
+        .concept-card {
+            background: #202036;
+            border-radius: 16px;
+            padding: 1.2rem 1.4rem;
+            border-left: 4px solid #8e7a5a;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .concept-card h5 {
+            font-size: 1.1rem;
+            color: #f0e6d0;
+            margin: 0 0 0.3rem 0;
+        }
+        .concept-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #c8c8d8;
+        }
+
+        /* ===== DESTAQUE MARCATEXTO ===== */
+        .marca-texto {
+            background: linear-gradient(120deg, rgba(243, 156, 18, 0.25) 0%, rgba(243, 156, 18, 0.25) 100%);
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+            font-weight: 500;
+            color: #f5e7c8;
+        }
+
+        /* ===== SUBTÍTULO ===== */
+        .subtitle {
+            font-size: 1.1rem;
+            color: #b0a890;
+            margin-top: -0.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            border-bottom: 1px solid #2d2d44;
+            padding-bottom: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ===== TÍTULO PRINCIPAL ===== -->
+        <h1>DIREITO PENAL – APOSTILA TEÓRICA PARA CONCURSOS</h1>
+        <div class="subtitle">TÉCNICO JUDICIÁRIO – ÁREA JUDICIÁRIA &bull; Material de Aprofundamento para TJCE, FCC, FGV, Cebraspe e Bancas similares</div>
+
+        <!-- ===== SUMÁRIO ===== -->
+        <div class="toc">
+            <h2>📑 Sumário</h2>
+            <div class="toc-grid">
+                <a href="#aplicacao">Aplicação da Lei Penal no Tempo e Espaço</a>
+                <a href="#tempo">Tempo do Crime (Teoria da Atividade)</a>
+                <a href="#lugar">Lugar do Crime (Teoria da Ubiquidade)</a>
+                <a href="#conflito">Conflito Aparente de Normas</a>
+                <a href="#patrimonio">Crimes contra o Patrimônio</a>
+                <a href="#admin">Crimes contra a Administração Pública</a>
+                <a href="#hediondos">Crimes Hediondos</a>
+                <a href="#intranscendencia">Princípio da Intranscendência</a>
+                <a href="#continuado">Crime Continuado &amp; Súmula 711</a>
+                <a href="#estado">Estado de Necessidade</a>
+                <a href="#mapas">Mapas Mentais (SVG)</a>
+                <a href="#jurisprudencia">Jurisprudência</a>
+                <a href="#exercicios">Exercícios de Fixação</a>
+                <a href="#dicas">Dicas Finais</a>
+                <a href="#referencias">Referências</a>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 1 – APLICAÇÃO DA LEI PENAL NO TEMPO E NO ESPAÇO        -->
+        <!-- ============================================================ -->
+        <h2 id="aplicacao">Aplicação da Lei Penal no Tempo e no Espaço</h2>
+
+        <h3>1. Introdução – A Lei Penal e sua Dimensão Espaço-Temporal</h3>
+        <p>Antes de adentrarmos no estudo dos crimes em espécie, é fundamental que o candidato domine as regras que determinam <strong>quando</strong> e <strong>onde</strong> se considera praticado o crime. Essas normas, previstas nos arts. 4º e 6º do Código Penal, são a base para a aplicação da lei penal e aparecem com frequência em questões de concurso, muitas vezes disfarçadas em casos concretos.</p>
+        <p>A doutrina penal desenvolveu diferentes teorias para responder a duas perguntas essenciais:</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Pergunta</th><th>Teoria adotada pelo CP</th><th>Dispositivo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Quando</strong> se considera praticado o crime?</td><td><span class="highlight">Teoria da Atividade</span></td><td>Art. 4º do CP</td></tr>
+                    <tr><td><strong>Onde</strong> se considera praticado o crime?</td><td><span class="highlight-blue">Teoria da Ubiquidade</span> (ou mista)</td><td>Art. 6º do CP</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider-light">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 2 – TEMPO DO CRIME                                      -->
+        <!-- ============================================================ -->
+        <h3 id="tempo">2. Tempo do Crime – Teoria da Atividade (Art. 4º, CP)</h3>
+
+        <h4>2.1. O que diz a lei?</h4>
+        <blockquote>
+            <p><strong>Art. 4º do Código Penal:</strong> “Considera-se praticado o crime no momento da ação ou omissão, ainda que outro seja o momento do resultado.”</p>
+        </blockquote>
+
+        <h4>2.2. O que isso significa na prática?</h4>
+        <p>O Brasil adotou a <strong>teoria da atividade</strong> para definir o tempo do crime. Isso quer dizer que, para todos os efeitos penais, o crime será considerado praticado <strong>no instante em que o agente agiu ou se omitiu</strong>, e não quando o resultado se produziu.</p>
+        <p><strong>Por que isso é importante?</strong> Essa definição tem implicações práticas enormes, especialmente em três situações:</p>
+        <ul>
+            <li><strong>Imputabilidade (idade do agente):</strong> Se o agente praticou a conduta com 17 anos e 11 meses, mas o resultado (ex.: morte da vítima) só ocorreu após ele completar 18 anos, ele será julgado como <strong>menor infrator</strong>, pois o crime se considera praticado no momento da ação (teoria da atividade). A lei penal considera o agente inimputável à época da conduta.</li>
+            <li><strong>Lei penal no tempo (sucessão de leis):</strong> Para saber se a lei nova é mais benéfica ou mais gravosa, e se pode retroagir, toma-se como referência o <strong>momento da ação ou omissão</strong>. Uma lei editada após a conduta, mas antes do resultado, só se aplica ao agente se for mais benéfica (retroatividade da lei penal benéfica).</li>
+            <li><strong>Prescrição:</strong> A contagem do prazo prescricional, em regra, inicia-se com a consumação do crime (art. 111, CP). No entanto, havendo desdobramento temporal entre conduta e resultado, a data da consumação será a do resultado, mas a <strong>imputabilidade</strong> e a <strong>lei aplicável</strong> seguem a teoria da atividade.</li>
+        </ul>
+
+        <div class="box box-exemplo">
+            <strong>Exemplo prático – CESPE</strong>
+            <p><strong>Caso:</strong> João, com 17 anos e 11 meses, dispara contra Pedro. Pedro fica internado em estado grave e vem a falecer 15 dias depois, quando João já completou 18 anos.</p>
+            <p><strong>Pergunta:</strong> João responde como menor infrator (ato infracional) ou como adulto (homicídio)?</p>
+            <p><strong>Resposta:</strong> João responde como <strong>menor infrator</strong>, pois, pela teoria da atividade, o crime considera-se praticado no momento do disparo (ação), quando João ainda era inimputável. A idade do agente é aferida no momento da conduta, não do resultado.</p>
+        </div>
+
+        <div class="box box-dica">
+            <strong>🧠 Mnemônico para memorização</strong>
+            <p><span class="marca-texto">LUGAR do crime = UBIGUIDADE (art. 6º)</span><br><span class="marca-texto">TEMPO do crime = ATIVIDADE (art. 4º)</span></p>
+            <p>Guarde a palavra <strong>LUTA</strong>:</p>
+            <ul>
+                <li><strong>L</strong>ugar = U<strong>b</strong>iguidade (associe lugar e ubiquidade)</li>
+                <li><strong>T</strong>empo = A<strong>t</strong>ividade (a letra “t” aparece nas duas palavras)</li>
+            </ul>
+        </div>
+
+        <hr class="divider-light">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 3 – LUGAR DO CRIME                                      -->
+        <!-- ============================================================ -->
+        <h3 id="lugar">3. Lugar do Crime – Teoria da Ubiquidade (Art. 6º, CP)</h3>
+
+        <h4>3.1. O que diz a lei?</h4>
+        <blockquote>
+            <p><strong>Art. 6º do Código Penal:</strong> “Considera-se praticado o crime no lugar em que ocorreu a ação ou omissão, no todo ou em parte, bem como onde se produziu ou deveria produzir-se o resultado.”</p>
+        </blockquote>
+
+        <h4>3.2. A Teoria da Ubiquidade (ou Mista)</h4>
+        <p>O Brasil adotou a <strong>teoria da ubiquidade</strong>, também chamada de <strong>teoria mista</strong>, que considera praticado o crime tanto no lugar da <strong>conduta</strong> (ação ou omissão) quanto no lugar do <strong>resultado</strong> (onde ele se produziu ou deveria ter se produzido).</p>
+        <p>Essa teoria é extremamente útil para definir a <strong>competência territorial</strong> do juízo, especialmente nos chamados <strong>crimes à distância</strong> ou <strong>transnacionais</strong>, em que a conduta ocorre em um país e o resultado em outro.</p>
+
+        <h4>3.3. Aplicação prática – casos concretos</h4>
+
+        <div class="box box-exemplo">
+            <strong>Exemplo 1 – Crime à distância</strong>
+            <p>Maria, no Brasil, envia por correio uma carta com ameaça de morte a Joana, que reside em Portugal. Joana recebe a carta e sofre intenso temor.</p>
+            <p><strong>Análise:</strong> O crime de ameaça (art. 147, CP) considera-se praticado tanto no Brasil (lugar da ação – envio da carta) quanto em Portugal (lugar do resultado – recebimento e temor). Se o caso fosse julgado no Brasil, a justiça brasileira seria competente, pois parte da conduta ocorreu em território nacional.</p>
+        </div>
+
+        <div class="box box-exemplo">
+            <strong>Exemplo 2 – Crime com resultado em local diverso</strong>
+            <p>Antônio, em São Paulo, envia um produto químico contaminado para uma indústria no Rio de Janeiro. Os funcionários da indústria, ao manipular o produto, sofrem intoxicação.</p>
+            <p><strong>Análise:</strong> O crime (lesão corporal ou perigo de vida) considera-se praticado tanto em São Paulo (conduta) quanto no Rio de Janeiro (resultado). Isso permite que o processo seja instaurado em qualquer uma das duas comarcas.</p>
+        </div>
+
+        <div class="box box-exemplo">
+            <strong>Exemplo 3 – Crime com resultado que não se produziu</strong>
+            <p>Carlos dispara contra Pedro em Brasília, mas Pedro, ferido, é levado para Goiânia, onde vem a falecer.</p>
+            <p><strong>Análise:</strong> O homicídio considera-se praticado tanto em Brasília (ação) quanto em Goiânia (resultado). Se Pedro não tivesse morrido, mas a bala tivesse o destino de atingi-lo em Goiânia, também se consideraria praticado lá (“onde deveria produzir-se o resultado”).</p>
+        </div>
+
+        <hr class="divider-light">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 4 – QUADRO COMPARATIVO                                  -->
+        <!-- ============================================================ -->
+        <h3>4. Quadro Comparativo – Teorias do Tempo e do Lugar</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Aspecto</th><th>Teoria adotada</th><th>Dispositivo</th><th>Efeito</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Tempo do crime</strong></td><td>Teoria da Atividade</td><td>Art. 4º, CP</td><td>Crime no momento da conduta (ação/omissão)</td></tr>
+                    <tr><td><strong>Lugar do crime</strong></td><td>Teoria da Ubiquidade</td><td>Art. 6º, CP</td><td>Crime na conduta OU no resultado</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-atencao">
+            <strong>⚠️ Macete para a prova da FCC</strong>
+            <p>A FCC adora cobrar a diferença entre esses dois artigos em uma mesma questão. O candidato deve estar atento ao seguinte:</p>
+            <ul>
+                <li>Se a questão perguntar <strong>“momento do crime”</strong> ou <strong>“tempo do crime”</strong> → resposta: <strong>art. 4º, teoria da atividade</strong>.</li>
+                <li>Se a questão perguntar <strong>“lugar do crime”</strong> → resposta: <strong>art. 6º, teoria da ubiquidade</strong>.</li>
+            </ul>
+            <p>Além disso, leia com atenção os enunciados:</p>
+            <p><em>“O agente, com 17 anos, desfere golpes em sua vítima. A vítima vem a falecer dois meses depois, quando o agente já tinha 18 anos. Para fins de imputabilidade, considera-se o crime praticado no momento da...”</em> → <strong>ação</strong> (art. 4º).</p>
+            <p><em>“O crime foi praticado em território estrangeiro, mas o resultado ocorreu no Brasil. A Justiça brasileira é competente para julgar o fato?”</em> → Sim, com base no <strong>art. 6º</strong> (ubiquidade).</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 5 – CONFLITO APARENTE DE NORMAS                        -->
+        <!-- ============================================================ -->
+        <h2 id="conflito">Conflito Aparente de Normas Penais</h2>
+
+        <h3>5. O que é Conflito Aparente de Normas?</h3>
+        <p>No Direito Penal, não raro, uma mesma conduta parece se enquadrar em mais de um tipo penal. Diz-se que o conflito é <strong>aparente</strong> porque, após a aplicação dos princípios de solução, apenas uma norma será efetivamente aplicada ao caso. Os princípios que resolvem esse conflito são:</p>
+        <ol>
+            <li><strong>Especialidade</strong> (<em>lex specialis derogat legi generali</em>)</li>
+            <li><strong>Subsidiariedade</strong> (<em>lex primaria derogat legi subsidiariae</em>)</li>
+            <li><strong>Consunção (ou absorção)</strong> (<em>lex consumens derogat legi consumptae</em>)</li>
+        </ol>
+        <p>Nos concursos da FCC, FGV e Cebraspe, a <strong>consunção</strong> e a <strong>subsidiariedade</strong> são campeãs de cobrança. Vamos aprofundar cada uma.</p>
+
+        <hr class="divider-light">
+
+        <h3>6. Princípio da Consunção (Absorção)</h3>
+
+        <h4>6.1. Conceito</h4>
+        <p>Pelo princípio da consunção, <strong>o crime mais grave absorve o crime menos grave</strong> que constitui fase necessária de preparação ou execução do delito maior. O agente responde apenas pelo crime-fim (mais grave), e o crime-meio é por ele consumido.</p>
+        <p>A doutrina costuma resumir assim: <strong><em>lex consumens derogat legi consumptae</em></strong> (a lei que consome prevalece sobre a lei consumida).</p>
+
+        <h4>6.2. Quando ocorre a consunção?</h4>
+        <p>A consunção ocorre em duas situações principais:</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Hipótese</th><th>Exemplo</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Crime-meio necessário</strong> – quando um crime é meio necessário para a prática de outro mais grave.</td>
+                        <td>O agente pratica lesão corporal para, em seguida, matar a vítima. A lesão corporal é absorvida pelo homicídio. Responde-se apenas por homicídio.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crime-fase de execução</strong> – quando o crime menos grave é um passo natural e esperado na execução do crime mais grave.</td>
+                        <td>O agente invade a residência (violação de domicílio) para subtrair bens (furto). A violação de domicílio é absorvida pelo furto. Responde-se apenas por furto, salvo se houver dolo autônomo.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-exemplo">
+            <strong>Exemplo aprofundado – FCC</strong>
+            <p><strong>Caso:</strong> José, para matar seu desafeto Carlos, compra uma arma de fogo (posse ilegal de arma), desloca-se até a casa de Carlos, arromba a porta (violação de domicílio) e efetua os disparos, vindo Carlos a falecer.</p>
+            <p><strong>Questão:</strong> José responde por posse ilegal de arma, violação de domicílio e homicídio?</p>
+            <p><strong>Resposta:</strong> Não. Pelo princípio da consunção, a posse da arma e a violação de domicílio são absorvidas pelo homicídio (crime mais grave), pois foram meios necessários para a execução do crime-fim. José responde apenas por <strong>homicídio</strong> (desde que não haja prova de dolo autônomo em relação aos crimes-meio).</p>
+        </div>
+
+        <div class="box box-atencao">
+            <strong>⚠️ Cuidado com a “pegadinha” da FCC</strong>
+            <p>A FCC costuma apresentar uma situação em que o agente, para praticar um crime, comete outro que <strong>não é necessário</strong> nem meio natural de execução. Nesse caso, não haverá consunção. Exemplo:</p>
+            <p><em>O agente invade a casa da vítima para furtar seus bens, mas, durante a invasão, estupra a filha da vítima. O estupro <strong>não</strong> é meio necessário para o furto, portanto não é absorvido. Responde por <strong>furto + estupro</strong> (em concurso material).</em></p>
+        </div>
+
+        <h4>6.5. Consunção e crimes contra a vida</h4>
+        <ul>
+            <li><strong>Lesão corporal + homicídio</strong> → se a lesão foi meio para a morte, é absorvida (responde por homicídio consumado ou tentado).</li>
+            <li><strong>Lesão corporal + homicídio</strong> → se a lesão foi praticada com dolo autônomo antes da intenção de matar, responde por lesão corporal + homicídio (concurso material).</li>
+        </ul>
+
+        <hr class="divider-light">
+
+        <h3>7. Princípio da Subsidiariedade</h3>
+
+        <h4>7.1. Conceito</h4>
+        <p>A subsidiariedade pode ser <strong>expressa</strong> ou <strong>tácita</strong>:</p>
+        <ul>
+            <li><strong>Subsidiariedade expressa:</strong> a própria lei afirma que a norma só se aplica “se o fato não constitui crime mais grave”. Exemplo: art. 307, CP (falsa identidade) – “Atribuir-se ou atribuir a terceiro falsa identidade para obter vantagem, em proveito próprio ou alheio, ou para causar dano a outrem, <strong>se o fato não constitui elemento de crime mais grave</strong>”.</li>
+            <li><strong>Subsidiariedade tácita:</strong> ocorre quando a norma menos grave é aplicável apenas na falta da norma mais grave. Exemplo: a ameaça (art. 147) é subsidiária em relação à extorsão mediante sequestro ou à extorsão qualificada pela restrição da liberdade, pois, se houver privação da liberdade para exigir vantagem, aplica-se o crime mais grave.</li>
+        </ul>
+
+        <h4>7.2. Qual a diferença entre consunção e subsidiariedade?</h4>
+        <p>Aqui está o ponto que mais confunde candidatos. Vamos esclarecer:</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Critério</th><th>Consunção</th><th>Subsidiariedade</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>O que ocorre?</strong></td>
+                        <td>O crime menos grave é <strong>absorvido</strong> pelo mais grave, pois é meio necessário ou fase de execução.</td>
+                        <td>A norma menos grave só se aplica quando a norma mais grave <strong>não pode ser aplicada</strong> (por falta de algum requisito).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Função</strong></td>
+                        <td>O agente pratica os dois crimes, mas responde apenas pelo mais grave.</td>
+                        <td>O agente pratica apenas o crime menos grave, porque o mais grave não se configurou.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exemplo</strong></td>
+                        <td>Lesão corporal absorvida pelo homicídio.</td>
+                        <td>A falsa identidade (art. 307) só se aplica se o fato não constituir estelionato (art. 171) ou outro crime mais grave.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>“Soldado de reserva”</strong></td>
+                        <td>O crime menos grave é “consumido” pelo mais grave.</td>
+                        <td>A norma subsidiária é uma “norma de reserva” – só entra em ação se a principal não se aplicar.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-exemplo">
+            <strong>Exemplo prático de subsidiariedade</strong>
+            <p><strong>Caso:</strong> Maria, para obter um empréstimo, apresenta à instituição financeira documentos falsos com dados alterados. O banco, porém, não desconfia e concede o empréstimo.</p>
+            <p><strong>Análise:</strong> Maria não responde por estelionato (art. 171, CP) porque a falsa identidade ou a falsificação de documento público pode ser o meio para o estelionato, mas, se o estelionato não se consumou (o banco não sofreu prejuízo, ou não houve obtenção de vantagem ilícita), responde-se pelo crime-meio, que é subsidiário: falsificação de documento público (art. 297, CP) ou uso de documento falso (art. 304, CP).</p>
+        </div>
+
+        <div class="box box-dica">
+            <strong>🧠 Dica de prova – FCC</strong>
+            <ul>
+                <li><strong>Consunção:</strong> O crime menos grave é <strong>meio necessário</strong> para o mais grave (ex.: violação de domicílio para furto). A FCC pergunta: “O agente responde por ambos os crimes?” → Não, responde apenas pelo mais grave.</li>
+                <li><strong>Subsidiariedade:</strong> A questão pergunta se o agente responde por crime “A” ou “B”, e a resposta é “apenas por ‘B’ se ‘A’ não se configurar”. A subsidiariedade aparece especialmente com o art. 307 (falsa identidade) e com o art. 332 (exercício arbitrário das próprias razões).</li>
+            </ul>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 6 – CRIMES CONTRA O PATRIMÔNIO                         -->
+        <!-- ============================================================ -->
+        <h2 id="patrimonio">Crimes contra o Patrimônio: Distinções Fundamentais</h2>
+
+        <h3>8. Furto × Roubo × Extorsão × Sequestro Relâmpago</h3>
+
+        <h4>8.1. Furto (art. 155, CP)</h4>
+        <p><strong>Definição:</strong> Subtrair coisa alheia móvel, para si ou para outrem, sem violência ou grave ameaça.</p>
+        <p><strong>Verbo nuclear:</strong> subtrair.</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Elemento</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Sujeito ativo</td><td>Qualquer pessoa (crime comum)</td></tr>
+                    <tr><td>Sujeito passivo</td><td>O possuidor ou detentor da coisa</td></tr>
+                    <tr><td>Conduta</td><td>Subtrair (retirar da esfera de vigilância da vítima)</td></tr>
+                    <tr><td>Objeto</td><td>Coisa alheia móvel</td></tr>
+                    <tr><td>Dolo</td><td>Consciência de subtrair coisa alheia</td></tr>
+                    <tr><td>Ausência de violência ou grave ameaça</td><td>Se houver violência, é roubo</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><strong>Observação:</strong> Furto de coisa comum (bem indiviso) não é crime se o agente é coproprietário, salvo se houver violência ou grave ameaça (art. 155, §2º, CP).</p>
+
+        <h4>8.2. Roubo (art. 157, CP)</h4>
+        <p><strong>Definição:</strong> Subtrair coisa alheia móvel, para si ou para outrem, <strong>mediante violência ou grave ameaça</strong>, ou depois de, por qualquer meio, reduzir a vítima à impossibilidade de resistência.</p>
+        <p><strong>Verbos nucleares:</strong> subtrair + violência/grave ameaça.</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Critério</th><th>Furto</th><th>Roubo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Violência ou grave ameaça</td><td><strong>Ausente</strong></td><td><strong>Presente</strong> (contra a pessoa)</td></tr>
+                    <tr><td>Momento da violência</td><td>Não há</td><td>Durante ou imediatamente após a subtração (para assegurar a impunidade)</td></tr>
+                    <tr><td>Pena</td><td>1 a 4 anos + multa</td><td>4 a 10 anos + multa</td></tr>
+                    <tr><td>Hediondez</td><td>Em regra, não é hediondo</td><td><strong>É hediondo</strong> (art. 1º, II, “a”, Lei 8.072/90), <strong>se houver violência ou grave ameaça</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>8.3. Extorsão (art. 158, CP)</h4>
+        <p><strong>Definição:</strong> Constranger alguém, mediante violência ou grave ameaça, e com o intuito de obter para si ou para outrem indevida vantagem econômica, a <strong>fazer, tolerar ou deixar de fazer alguma coisa</strong>.</p>
+        <p><strong>Verbos nucleares:</strong> constranger + fazer/tolerar/deixar de fazer.</p>
+
+        <div class="box box-atencao">
+            <strong>Distinção entre roubo e extorsão – AQUI ESTÁ O PULO DO GATO</strong>
+            <div class="table-wrap" style="margin:0.5rem 0;">
+                <table>
+                    <thead><tr><th>Critério</th><th>Roubo</th><th>Extorsão</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Subtração</strong></td><td>O agente <strong>subtrai</strong> diretamente a coisa. A subtração é imediata e feita pelo próprio agente.</td><td>O agente <strong>constrange</strong> a vítima a entregar a coisa ou a fazer algo. A vítima colabora ativamente.</td></tr>
+                        <tr><td><strong>Ação da vítima</strong></td><td>A vítima não colabora; o agente toma a coisa.</td><td>A vítima colabora (faz, tolera ou deixa de fazer).</td></tr>
+                        <tr><td><strong>Exemplo</strong></td><td>O bandido aponta a arma e pega a carteira do bolso da vítima.</td><td>O bandido ameaça a vítima e diz: “Transfira R$ 10 mil para esta conta”. A vítima transfere (colabora).</td></tr>
+                        <tr><td><strong>Tipo de crime</strong></td><td>Crime contra o patrimônio.</td><td>Crime contra o patrimônio, mas a conduta é constranger (crime de constrangimento ilegal com finalidade patrimonial).</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h4>8.4. Sequestro Relâmpago (art. 158, §3º, CP)</h4>
+        <p><strong>Definição:</strong> Se a extorsão é cometida <strong>com a restrição da liberdade da vítima</strong>, e essa restrição é <strong>condição necessária para a obtenção da vantagem</strong> indevida, a pena é de 6 a 12 anos (extorsão qualificada pela restrição da liberdade).</p>
+        <p><strong>Elementos do sequestro relâmpago:</strong></p>
+        <ol>
+            <li><strong>Extorsão</strong> (constranger a vítima a fazer algo para obter vantagem indevida).</li>
+            <li><strong>Restrição da liberdade da vítima</strong> (a vítima fica privada de sua liberdade de locomoção).</li>
+            <li><strong>Nexo de causalidade</strong> entre a restrição da liberdade e a obtenção da vantagem: a vítima só é libertada quando a exigência é cumprida.</li>
+        </ol>
+
+        <div class="box box-exemplo">
+            <strong>Exemplo:</strong>
+            <p>Dois homens armados abordam Joana em seu carro, obrigam-na a dirigir até um cativeiro, mantendo-a em cárcere privado. Eles exigem que o marido de Joana faça um Pix de R$ 50 mil para libertá-la. O marido faz o Pix e Joana é libertada.</p>
+            <p><strong>Análise:</strong> O crime é <strong>extorsão qualificada pela restrição da liberdade</strong> (art. 158, §3º, CP), com pena de 6 a 12 anos. Não é sequestro (crime contra a liberdade pessoal – art. 148, CP) se o objetivo foi exclusivamente a vantagem econômica. A restrição da liberdade foi a condição para a obtenção da vantagem.</p>
+        </div>
+
+        <div class="box box-atencao">
+            <strong>Pegadinha da FCC/FGV:</strong>
+            <ul>
+                <li>Se a restrição da liberdade for <strong>meio para a extorsão</strong> (exige-se o resgate), a resposta é <strong>extorsão qualificada (art. 158, §3º)</strong>.</li>
+                <li>Se a restrição da liberdade for <strong>fim em si mesma</strong>, ou a exigência for de vantagem <strong>não econômica</strong> (ex.: liberdade de um preso), a resposta é <strong>sequestro (art. 148, CP)</strong> ou <strong>extorsão mediante sequestro (art. 159, CP)</strong>, conforme o caso.</li>
+            </ul>
+        </div>
+
+        <h4>8.5. Quadro comparativo final: Furto, Roubo, Extorsão e Sequestro Relâmpago</h4>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Crime</th><th>Conduta</th><th>Violência/Grave ameaça</th><th>Colaboração da vítima</th><th>Pena</th><th>Hediondo?</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Furto (art. 155)</td><td>Subtrair</td><td><strong>Não</strong></td><td>Não</td><td>1-4 anos</td><td>Não (salvo qualificadora com explosivo após Pacote Anticrime)</td></tr>
+                    <tr><td>Roubo (art. 157)</td><td>Subtrair + violência/grave ameaça</td><td><strong>Sim</strong> (contra a pessoa)</td><td>Não</td><td>4-10 anos</td><td><strong>Sim</strong></td></tr>
+                    <tr><td>Extorsão (art. 158)</td><td>Constranger + fazer/tolerar/deixar de fazer</td><td><strong>Sim</strong></td><td><strong>Sim</strong> (colabora)</td><td>4-10 anos</td><td>Não (salvo se qualificada – restrição da liberdade)</td></tr>
+                    <tr><td>Extorsão qualificada (art. 158, §3º)</td><td>Extorsão + restrição da liberdade da vítima</td><td><strong>Sim</strong></td><td><strong>Sim</strong></td><td>6-12 anos</td><td><strong>Sim</strong> (por força da Lei 8.072/90, art. 1º, II, “b”)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 7 – CRIMES CONTRA A ADMINISTRAÇÃO PÚBLICA              -->
+        <!-- ============================================================ -->
+        <h2 id="admin">Crimes contra a Administração Pública: Peculato, Concussão, Corrupção</h2>
+
+        <h3>9.1. Peculato (art. 312, CP)</h3>
+        <p><strong>Definição:</strong> Apropriar-se o funcionário público de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo, ou desviá-lo, em proveito próprio ou alheio.</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Modalidade</th><th>Definição</th><th>Dispositivo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Peculato-apropriação</strong></td><td>O funcionário já tem a posse da coisa e se apropria dela.</td><td><em>caput</em> do art. 312</td></tr>
+                    <tr><td><strong>Peculato-desvio</strong></td><td>O funcionário desvia o bem (ex.: usa verba pública para fim diverso).</td><td><em>caput</em> do art. 312</td></tr>
+                    <tr><td><strong>Peculato-furto</strong></td><td>O funcionário subtrai o bem <strong>sem tê-lo na posse</strong>, valendo-se da facilidade do cargo.</td><td>Art. 312, §1º</td></tr>
+                    <tr><td><strong>Peculato culposo</strong></td><td>O funcionário, por culpa, contribui para que terceiro se aproprie do bem.</td><td>Art. 312, §2º</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>9.2. Peculato-furto × Furto comum</h4>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Critério</th><th>Peculato-furto (art. 312, §1º)</th><th>Furto comum (art. 155)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Sujeito ativo</strong></td><td><strong>Funcionário público</strong> (crime próprio)</td><td>Qualquer pessoa (crime comum)</td></tr>
+                    <tr><td><strong>Posse da coisa</strong></td><td>O funcionário <strong>não tem a posse</strong> (subtrai valendo-se da facilidade do cargo)</td><td>O agente não tem a posse</td></tr>
+                    <tr><td><strong>Exemplo</strong></td><td>Funcionário da prefeitura, sem ter a chave do almoxarifado, arromba a porta e subtrai computadores.</td><td>Um cidadão comum invade a prefeitura e subtrai computadores.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><strong>Importante:</strong> O particular que pratica peculato-furto em concurso com o funcionário responde pelo mesmo crime (peculato-furto), desde que tenha ciência da qualidade funcional do agente (art. 30, CP – comunicabilidade das circunstâncias pessoais).</p>
+
+        <h4>9.3. Distinção fundamental: Concussão × Corrupção Passiva × Corrupção Ativa × Excesso de Exação</h4>
+        <p>Essa é, sem dúvida, uma das áreas mais cobradas e com maior índice de erro. A FCC, em especial, adora usar os verbos nucleares como “gatilhos” para a resposta correta.</p>
+
+        <h4>9.4. Concussão (art. 316, <em>caput</em>, CP)</h4>
+        <blockquote>
+            <p><strong>“Exigir, para si ou para outrem, direta ou indiretamente, ainda que fora da função ou antes de assumi-la, mas em razão dela, vantagem indevida.”</strong></p>
+        </blockquote>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Elemento</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Verbo nuclear</td><td><strong>EXIGIR</strong></td></tr>
+                    <tr><td>Sujeito ativo</td><td>Funcionário público (crime próprio)</td></tr>
+                    <tr><td>Conduta</td><td>Exigir vantagem indevida (não precisa ser econômica, mas é comum que seja)</td></tr>
+                    <tr><td>Momento</td><td>Pode ser antes ou depois da função, desde que em razão dela</td></tr>
+                    <tr><td>Dolo</td><td>Consciência de que a vantagem é indevida</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box box-exemplo">
+            <strong>Exemplo:</strong> O fiscal do trabalho, ao inspecionar uma fábrica, <strong>exige</strong> do proprietário R$ 5.000,00 para não autuá-lo por irregularidades trabalhistas.<br>
+            <strong>Análise:</strong> O fiscal comete <strong>concussão</strong> (art. 316, CP), pois <strong>exigiu</strong> vantagem indevida em razão da função.
+        </div>
+
+        <h4>9.5. Corrupção Passiva (art. 317, CP)</h4>
+        <blockquote>
+            <p><strong>“Solicitar ou receber, para si ou para outrem, direta ou indiretamente, ainda que fora da função ou antes de assumi-la, mas em razão dela, vantagem indevida, ou aceitar promessa de tal vantagem.”</strong></p>
+        </blockquote>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Elemento</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Verbo nuclear</td><td><strong>SOLICITAR</strong> ou <strong>RECEBER</strong> ou <strong>ACEITAR PROMESSA</strong></td></tr>
+                    <tr><td>Sujeito ativo</td><td>Funcionário público (crime próprio)</td></tr>
+                    <tr><td>Conduta</td><td>Solicitar (pedir), receber (aceitar) ou aceitar promessa de vantagem indevida</td></tr>
+                    <tr><td>Momento</td><td>Pode ser antes ou depois da função, desde que em razão dela</td></tr>
+                    <tr><td>Dolo</td><td>Consciência de que a vantagem é indevida</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box box-exemplo">
+            <strong>Exemplo:</strong> O fiscal do trabalho, ao inspecionar a fábrica, <strong>solicita</strong> ao proprietário R$ 5.000,00 para não autuá-lo. O proprietário paga.<br>
+            <strong>Análise:</strong> O fiscal comete <strong>corrupção passiva</strong> (art. 317, CP), pois <strong>solicitou</strong> a vantagem indevida.
+        </div>
+
+        <h4>9.6. Corrupção Ativa (art. 333, CP)</h4>
+        <blockquote>
+            <p><strong>“Oferecer ou prometer vantagem indevida a funcionário público, para determiná-lo a praticar, omitir ou retardar ato de ofício.”</strong></p>
+        </blockquote>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Elemento</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Verbo nuclear</td><td><strong>OFERECER</strong> ou <strong>PROMETER</strong></td></tr>
+                    <tr><td>Sujeito ativo</td><td><strong>Particular</strong> (crime comum)</td></tr>
+                    <tr><td>Conduta</td><td>Oferecer ou prometer vantagem indevida ao funcionário</td></tr>
+                    <tr><td>Finalidade</td><td>Determinar o funcionário a praticar, omitir ou retardar ato de ofício</td></tr>
+                    <tr><td>Dolo</td><td>Consciência de que a vantagem é indevida</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box box-exemplo">
+            <strong>Exemplo:</strong> O empresário, sabendo que sua fábrica tem irregularidades, <strong>oferece</strong> R$ 5.000,00 ao fiscal para que este não autue a empresa.<br>
+            <strong>Análise:</strong> O empresário comete <strong>corrupção ativa</strong> (art. 333, CP), pois <strong>ofereceu</strong> vantagem indevida ao funcionário.
+        </div>
+
+        <h4>9.7. Excesso de Exação (art. 316, §1º, CP)</h4>
+        <blockquote>
+            <p><strong>“Exigir tributo ou contribuição social que sabe ou deveria saber indevido, ou, quando devido, empregar na cobrança meio vexatório ou gravoso, que a lei não autoriza.”</strong></p>
+        </blockquote>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Elemento</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Verbo nuclear</td><td><strong>EXIGIR</strong> (mas com objeto específico: tributo)</td></tr>
+                    <tr><td>Sujeito ativo</td><td>Funcionário público que cobra tributos</td></tr>
+                    <tr><td>Conduta</td><td>Exigir tributo indevido OU usar meio vexatório na cobrança de tributo devido</td></tr>
+                    <tr><td>Dolo</td><td>Consciência da indevida exigência (ou culpa em relação ao saber)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-atencao">
+            <strong>Distinção entre concussão e excesso de exação:</strong>
+            <div class="table-wrap" style="margin:0.5rem 0;">
+                <table>
+                    <thead><tr><th>Critério</th><th>Concussão (art. 316)</th><th>Excesso de exação (art. 316, §1º)</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Objeto da exigência</strong></td><td>Qualquer vantagem indevida (dinheiro, bens, favores)</td><td><strong>Tributo ou contribuição social</strong></td></tr>
+                        <tr><td><strong>Legitimidade da cobrança</strong></td><td>A vantagem é sempre indevida</td><td>O tributo pode ser indevido (exigido ilegalmente) ou devido (mas cobrado com meio vexatório)</td></tr>
+                        <tr><td><strong>Exemplo</strong></td><td>Fiscal exige propina para não multar</td><td>Fiscal exige IPTU com ameaça de penhora de bens pessoais (meio vexatório)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h4>9.8. Quadro-síntese – Crimes da Administração (FCC e FGV)</h4>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Crime</th><th>Verbo nuclear</th><th>Sujeito ativo</th><th>Elemento essencial</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Concussão</strong></td><td><strong>EXIGIR</strong></td><td>Funcionário público</td><td>Vantagem indevida (qualquer)</td></tr>
+                    <tr><td><strong>Corrupção passiva</strong></td><td><strong>SOLICITAR / RECEBER / ACEITAR PROMESSA</strong></td><td>Funcionário público</td><td>Vantagem indevida</td></tr>
+                    <tr><td><strong>Corrupção ativa</strong></td><td><strong>OFERECER / PROMETER</strong></td><td>Particular</td><td>Vantagem indevida ao funcionário</td></tr>
+                    <tr><td><strong>Excesso de exação</strong></td><td><strong>EXIGIR</strong> (tributo)</td><td>Funcionário público que cobra tributos</td><td>Tributo indevido ou meio vexatório</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-dica">
+            <strong>🧠 Macete da FCC:</strong>
+            <ul>
+                <li>“Se a palavra <strong>‘exigiu’</strong> aparecer no enunciado, desconfie: pode ser concussão ou excesso de exação. Pergunte-se: o que foi exigido? Se foi tributo → excesso de exação. Se foi qualquer outra vantagem → concussão.”</li>
+                <li>“Se a palavra <strong>‘solicitou’</strong>, <strong>‘recebeu’</strong> ou <strong>‘aceitou promessa’</strong> aparecer, a resposta é corrupção passiva.”</li>
+                <li>“Se a palavra <strong>‘ofereceu’</strong> ou <strong>‘prometeu’</strong> aparecer, a resposta é corrupção ativa.”</li>
+            </ul>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 8 – CRIMES HEDIONDOS                                   -->
+        <!-- ============================================================ -->
+        <h2 id="hediondos">10. Crimes Hediondos – Lei nº 8.072/1990</h2>
+
+        <h3>10.1. Introdução</h3>
+        <p>A Lei dos Crimes Hediondos (Lei nº 8.072/1990) estabelece um regime mais rigoroso para determinados delitos, com penas mais severas, progressão de regime mais restritiva e vedação de certos benefícios (ex.: anistia, graça, indulto, fiança).</p>
+
+        <h3>10.2. Rol de crimes hediondos (redação original da Lei 8.072/1990)</h3>
+        <p>Antes do <strong>Pacote Anticrime (Lei nº 13.964/2019)</strong>, o rol de crimes hediondos era o seguinte (art. 1º):</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Inciso</th><th>Crime</th><th>Dispositivo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>I</td><td>Homicídio qualificado (art. 121, §2º) e homicídio praticado em atividade típica de grupo de extermínio</td><td>Art. 121, §2º</td></tr>
+                    <tr><td>I-A</td><td>Homicídio simples praticado por milícia privada, sob encomenda, ou com uso de fogo</td><td>Art. 121, §2º (na redação original, hediondo apenas o qualificado)</td></tr>
+                    <tr><td>II</td><td>Roubo qualificado (restrição da liberdade da vítima, uso de arma de fogo, concurso de pessoas, etc.)</td><td>Art. 157, §2º</td></tr>
+                    <tr><td>III</td><td>Extorsão qualificada pela restrição da liberdade da vítima (sequestro relâmpago)</td><td>Art. 158, §3º</td></tr>
+                    <tr><td>IV</td><td>Extorsão mediante sequestro (na forma qualificada – morte)</td><td>Art. 159, §2º</td></tr>
+                    <tr><td>V</td><td>Estupro (art. 213) e atentado violento ao pudor (art. 214, hoje revogado)</td><td>Arts. 213 e 214</td></tr>
+                    <tr><td>VI</td><td>Epidemia com resultado morte (art. 267, §1º)</td><td>Art. 267, §1º</td></tr>
+                    <tr><td>VII</td><td>Falsificação, corrupção, adulteração ou alteração de produto destinado a fins terapêuticos ou medicinais (art. 273, com resultado morte)</td><td>Art. 273, §1º-B</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>10.3. Alterações pelo Pacote Anticrime (Lei nº 13.964/2019)</h3>
+        <p>Com a Lei nº 13.964/2019 (Pacote Anticrime), o rol de hediondos foi ampliado:</p>
+        <ol>
+            <li><strong>Furto qualificado pelo emprego de explosivo</strong> (art. 155, §4º-A, CP) passou a ser hediondo.</li>
+            <li><strong>Furto qualificado pela destruição ou rompimento de obstáculo</strong> (art. 155, §4º-A, CP) passou a ser hediondo.</li>
+            <li><strong>Porte ou posse de arma de fogo de uso proibido ou restrito</strong> (arts. 16 e 17, Estatuto do Desarmamento) passou a ser hediondo.</li>
+        </ol>
+
+        <div class="box box-atencao">
+            <strong>Pegadinhas de prova sobre crimes hediondos</strong>
+            <p><strong>Pegadinha 1 – Furto qualificado pelo emprego de explosivo</strong></p>
+            <ul>
+                <li>Crime praticado <strong>antes</strong> da Lei nº 13.964/2019 → <strong>Não é hediondo</strong> (não constava na redação original).</li>
+                <li>Crime praticado <strong>após</strong> a Lei nº 13.964/2019 → <strong>É hediondo</strong>.</li>
+            </ul>
+            <p>A banca deve especificar a data do fato ou a redação legal aplicável. Se não especificar, o candidato deve considerar a lei vigente (atual).</p>
+            <p><strong>Pegadinha 2 – Arma de fogo de uso permitido × uso proibido</strong></p>
+            <ul>
+                <li>Porte/posse de arma de fogo de <strong>uso permitido</strong> (ex.: revólver calibre .38, com registro) → <strong>NÃO</strong> é hediondo.</li>
+                <li>Porte/posse de arma de fogo de <strong>uso proibido ou restrito</strong> (ex.: fuzil, metralhadora, calibre .50) → <strong>SIM</strong>, é hediondo (Lei 8.072/90, art. 1º, VI, e Estatuto do Desarmamento, arts. 16 e 17).</li>
+            </ul>
+            <p><strong>Pegadinha 3 – Roubo sem violência</strong><br>O roubo <strong>só é hediondo</strong> se houver violência ou grave ameaça, ou se for qualificado (art. 157, §2º). O roubo simples (art. 157, <em>caput</em>) não é hediondo.</p>
+            <p><strong>Pegadinha 4 – Estupro simples</strong></p>
+            <ul>
+                <li>Estupro simples (art. 213) → <strong>SIM</strong> (art. 1º, V, Lei 8.072/90).</li>
+                <li>Estupro de vulnerável (art. 217-A) → <strong>SIM</strong> (art. 1º, V, Lei 8.072/90).</li>
+            </ul>
+            <p>O estupro, em qualquer de suas formas, é hediondo, independentemente de violência real, grave ameaça ou vulnerabilidade da vítima.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 9 – PRINCÍPIO DA INTRANSCENDÊNCIA                      -->
+        <!-- ============================================================ -->
+        <h2 id="intranscendencia">11. Princípio da Intranscendência (Responsabilidade Pessoal)</h2>
+
+        <h3>11.1. Previsão constitucional</h3>
+        <blockquote>
+            <p><strong>Art. 5º, XLV, da CF:</strong> “Nenhuma pena passará da pessoa do condenado, podendo a obrigação de reparar o dano e a decretação do perdimento de bens ser, nos termos da lei, estendidas aos sucessores e contra eles executadas, até o limite do valor do patrimônio transferido.”</p>
+        </blockquote>
+
+        <h3>11.2. O que significa o princípio?</h3>
+        <p>A pena <strong>não pode passar da pessoa do condenado</strong>. Isso significa que ninguém pode ser responsabilizado criminalmente por fato de terceiro. A responsabilidade penal é <strong>personalíssima</strong> e <strong>intransferível</strong>.</p>
+        <p><strong>Atenção:</strong> A Constituição faz uma ressalva para a obrigação de <strong>reparar o dano</strong> (indenização civil) e para o <strong>perdimento de bens</strong>, que podem ser estendidos aos sucessores (herdeiros), mas <strong>nunca a pena criminal</strong>.</p>
+
+        <div class="box box-exemplo">
+            <strong>Exemplo prático – FCC/FGV</strong>
+            <p><strong>Caso:</strong> Adelmo está cumprindo pena em regime fechado. Sua companheira, Rita, tenta entrar com substância proibida (drogas) na prisão, escondida em um pacote de alimentos, sem o conhecimento de Adelmo. O diretor do presídio descobre e ambos são denunciados. Adelmo é condenado pelo mesmo fato (tráfico de drogas), ainda que não soubesse da conduta de Rita.</p>
+            <p><strong>Questão:</strong> Qual princípio constitucional foi violado pela condenação de Adelmo?</p>
+            <p><strong>Resposta:</strong> O princípio da <strong>responsabilidade pessoal</strong> ou <strong>intranscendência da pena</strong> (art. 5º, XLV, CF), pois Adelmo está sendo punido por ato de Rita que ele não conhecia.</p>
+        </div>
+
+        <h3>11.4. Não se confunde com...</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Princípio</th><th>Conteúdo</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Intranscendência</strong></td><td>A pena não passa da pessoa do condenado (responsabilidade pessoal).</td></tr>
+                    <tr><td><strong>Insignificância</strong></td><td>O Direito Penal não deve intervir em bagatelas (princípio da intervenção mínima).</td></tr>
+                    <tr><td><strong>Humanidade da pena</strong></td><td>A pena não pode ser cruel, degradante ou desumana.</td></tr>
+                    <tr><td><strong>Anterioridade da lei penal</strong></td><td>Não há crime sem lei anterior que o defina, nem pena sem prévia cominação legal.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 10 – CRIME CONTINUADO E SÚMULA 711                     -->
+        <!-- ============================================================ -->
+        <h2 id="continuado">12. Crime Continuado e Lei Nova – Súmula 711 do STF</h2>
+
+        <h3>12.1. O que é crime continuado?</h3>
+        <p>O crime continuado (art. 71, CP) é uma ficção jurídica que trata como um único crime (com pena majorada) uma série de condutas que, isoladamente, seriam crimes autônomos, desde que preenchidos os requisitos:</p>
+        <ul>
+            <li><strong>Mesma pessoa</strong>;</li>
+            <li><strong>Mesma espécie de crimes</strong> (crimes da mesma espécie, não necessariamente idênticos);</li>
+            <li><strong>Mesmas circunstâncias de tempo, lugar e modo de execução</strong>;</li>
+            <li><strong>Conexão entre os crimes</strong> (a continuidade delitiva).</li>
+        </ul>
+
+        <h3>12.2. Crime continuado e sucessão de leis penais</h3>
+        <p>A Súmula 711 do STF dispõe:</p>
+        <blockquote>
+            <p><strong>Súmula 711-STF:</strong> “A lei penal mais grave aplica-se ao crime continuado ou ao crime permanente, se a sua vigência é anterior à cessação da continuidade ou da permanência.”</p>
+        </blockquote>
+        <p><strong>O que isso significa na prática?</strong></p>
+        <ul>
+            <li>Se o agente pratica vários crimes em continuidade delitiva (ex.: cinco furtos ao longo de um mês);</li>
+            <li>E, durante essa série de condutas, entra em vigor uma lei que <strong>aumenta a pena</strong> do furto;</li>
+            <li>A lei nova (mais grave) será aplicada a <strong>todos</strong> os furtos (inclusive os praticados antes da vigência da lei nova), porque o crime continuado é considerado uma unidade, e a lei nova é anterior à <strong>cessação</strong> da continuidade.</li>
+        </ul>
+
+        <div class="box box-exemplo">
+            <strong>Exemplo prático</strong>
+            <p><strong>Caso:</strong> Adão pratica cinco furtos na mesma cidade, no intervalo de um mês. Após o terceiro furto, entra em vigor uma lei que aumenta a pena do furto de 1-4 anos para 2-6 anos. Adão comete o quarto e o quinto furto após a entrada em vigor da nova lei.</p>
+            <p><strong>Qual lei se aplica a todos os furtos?</strong></p>
+            <p><strong>Resposta:</strong> Aplica-se a <strong>nova lei</strong> (mais grave) a todos os cinco furtos, pois o crime continuado é tratado como unidade (art. 71, CP), e a lei nova entrou em vigor antes da cessação da continuidade (Súmula 711-STF).</p>
+        </div>
+
+        <h4>12.4. Por que isso não viola a irretroatividade da lei penal?</h4>
+        <p>A lei penal não pode retroagir para prejudicar o réu (art. 5º, XL, CF). No entanto, no crime continuado, o agente, ao prosseguir na prática dos delitos mesmo após a vigência da lei mais severa, demonstra que não se intimidou pela nova norma. Assim, a lei nova se aplica a todo o bloco delitivo, sem ofensa à irretroatividade, pois a conduta se prolongou no tempo.</p>
+
+        <hr class="divider">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 11 – ESTADO DE NECESSIDADE                             -->
+        <!-- ============================================================ -->
+        <h2 id="estado">13. Estado de Necessidade – Requisitos e Excludentes</h2>
+
+        <h3>13.1. Previsão legal</h3>
+        <blockquote>
+            <p><strong>Art. 24, CP:</strong> “Considera-se em estado de necessidade quem pratica o fato para salvar de perigo atual, que não provocou por sua vontade, nem podia de outro modo evitar, direito próprio ou alheio, cujo sacrifício, nas circunstâncias, não era razoável exigir-se.”</p>
+            <p><strong>§ 1º:</strong> “Não é legítimo o estado de necessidade quando o agente provocou o perigo.”</p>
+            <p><strong>§ 2º:</strong> “Embora seja razoável o sacrifício do direito ameaçado, a pena poderá ser reduzida de 1/3 a 2/3.”</p>
+        </blockquote>
+
+        <h3>13.2. Requisitos do estado de necessidade</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Requisito</th><th>Descrição</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Perigo atual</strong></td><td>O perigo deve ser presente, iminente, não futuro ou passado.</td></tr>
+                    <tr><td><strong>Não provocado voluntariamente</strong></td><td>O agente não pode ter causado o perigo com sua conduta.</td></tr>
+                    <tr><td><strong>Inevitabilidade do perigo</strong></td><td>O agente não pode evitar o perigo por outro meio menos gravoso.</td></tr>
+                    <tr><td><strong>Bem jurídico próprio ou alheio</strong></td><td>Pode salvar direito próprio ou de terceiro.</td></tr>
+                    <tr><td><strong>Proporcionalidade (razoabilidade)</strong></td><td>O sacrifício do bem ameaçado não pode ser desproporcional ao bem salvo.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>13.3. Estado de necessidade × Legítima defesa</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Critério</th><th>Estado de necessidade</th><th>Legítima defesa</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Origem do perigo</strong></td><td>Perigo proveniente de <strong>fato da natureza, acidente ou conduta de terceiro</strong> (não necessariamente agressão humana).</td><td>Perigo proveniente de <strong>agressão humana injusta</strong>.</td></tr>
+                    <tr><td><strong>Bem jurídico</strong></td><td>Pode sacrificar bem de <strong>terceiro inocente</strong>.</td><td>Só pode repelir a agressão do <strong>agressor</strong> (não pode sacrificar bem de terceiro).</td></tr>
+                    <tr><td><strong>Exemplo</strong></td><td>Um náufrago, para não se afogar, toma uma prancha de surf de outra pessoa que estava flutuando.</td><td>O agente, agredido por um ladrão, revida com força para se defender.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-exemplo">
+            <strong>Exemplo prático (analisando o caso de Jacó)</strong>
+            <p><strong>Caso:</strong> Jacó e Isaque estão em um barco. Jacó, por vontade própria, ateia fogo no barco, sabendo que ambos não sabem nadar. Jacó pega o único colete salva-vidas para si. Isaque morre afogado. Depois, Jacó tenta salvá-lo, mas sem sucesso.</p>
+            <p><strong>Jacó pode alegar estado de necessidade?</strong></p>
+            <p><strong>Resposta:</strong> <strong>Não.</strong> O estado de necessidade exige que o perigo <strong>não tenha sido provocado voluntariamente</strong> pelo agente (art. 24, §1º, CP). Jacó provocou o perigo ao atear fogo no barco. Além disso, não há legítima defesa (Isaque não agrediu Jacó) nem exercício regular de direito (incendiar o barco não é direito). Jacó responde por <strong>homicídio com dolo eventual</strong>, pois assumiu o risco de produzir a morte de Isaque ao pegar o único colete para si.</p>
+        </div>
+
+        <h4>13.5. Dolo eventual × Homicídio culposo</h4>
+        <ul>
+            <li><strong>Dolo eventual:</strong> O agente assume o risco de produzir o resultado (art. 18, I, CP). Se Jacó sabia que Isaque não sabia nadar e pegou o único colete, assumiu o risco da morte. → Homicídio doloso (dolo eventual).</li>
+            <li><strong>Culpa:</strong> O agente não quis o resultado e não assumiu o risco, mas agiu com imprudência, negligência ou imperícia. Se Jacó tivesse, por descuido, deixado o colete cair na água, sem intenção de prejudicar Isaque, poderia ser homicídio culposo.</li>
+        </ul>
+
+        <hr class="divider">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 12 – MAPAS MENTAIS EM SVG                              -->
+        <!-- ============================================================ -->
+        <h2 id="mapas">14. Mapas Mentais – Direito Penal (Parte Geral e Crimes em Espécie)</h2>
+
+        <h3>14.1. Aplicação da Lei Penal no Tempo e Espaço</h3>
+        <div class="svg-container">
+            <svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                    <style>
+                        .map-text { font-family: 'Segoe UI', sans-serif; font-size: 14px; fill: #e6e6ee; }
+                        .map-title { font-weight: 600; font-size: 16px; }
+                        .map-box { fill: #262642; stroke: #4a4a6a; stroke-width: 1.5; rx: 12; ry: 12; }
+                        .map-box-root { fill: #2a2a4a; stroke: #8e7a5a; stroke-width: 2; }
+                        .map-line { stroke: #4a4a6a; stroke-width: 2; fill: none; }
+                        .map-label { font-size: 13px; fill: #c8c8d8; }
+                    </style>
+                </defs>
+                <!-- Raiz -->
+                <rect x="340" y="20" width="220" height="48" class="map-box-root"/>
+                <text x="450" y="50" text-anchor="middle" class="map-text map-title">APLICAÇÃO DA LEI PENAL</text>
+                <!-- Linhas -->
+                <line x1="450" y1="68" x2="450" y2="100" class="map-line"/>
+                <line x1="200" y1="100" x2="700" y2="100" class="map-line"/>
+                <line x1="200" y1="100" x2="200" y2="130" class="map-line"/>
+                <line x1="700" y1="100" x2="700" y2="130" class="map-line"/>
+                <!-- Ramo Tempo -->
+                <rect x="80" y="130" width="240" height="48" class="map-box"/>
+                <text x="200" y="158" text-anchor="middle" class="map-text map-title">TEMPO DO CRIME</text>
+                <text x="200" y="175" text-anchor="middle" class="map-label">Art. 4º, CP – Teoria da Atividade</text>
+                <line x1="200" y1="178" x2="200" y2="210" class="map-line"/>
+                <rect x="80" y="210" width="240" height="60" class="map-box"/>
+                <text x="200" y="232" text-anchor="middle" class="map-text">Crime no momento da</text>
+                <text x="200" y="252" text-anchor="middle" class="map-text">ação ou omissão (conduta)</text>
+
+                <!-- Ramo Lugar -->
+                <rect x="580" y="130" width="240" height="48" class="map-box"/>
+                <text x="700" y="158" text-anchor="middle" class="map-text map-title">LUGAR DO CRIME</text>
+                <text x="700" y="175" text-anchor="middle" class="map-label">Art. 6º, CP – Teoria da Ubiquidade</text>
+                <line x1="700" y1="178" x2="700" y2="210" class="map-line"/>
+                <rect x="560" y="210" width="280" height="60" class="map-box"/>
+                <text x="700" y="232" text-anchor="middle" class="map-text">Crime na ação OU no resultado</text>
+                <text x="700" y="252" text-anchor="middle" class="map-text">(ubiquidade)</text>
+            </svg>
+        </div>
+
+        <h3>14.2. Conflito Aparente de Normas</h3>
+        <div class="svg-container">
+            <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                <style>
+                    .map-text { font-family: 'Segoe UI', sans-serif; font-size: 14px; fill: #e6e6ee; }
+                    .map-title { font-weight: 600; font-size: 16px; }
+                    .map-box { fill: #262642; stroke: #4a4a6a; stroke-width: 1.5; rx: 12; ry: 12; }
+                    .map-box-root { fill: #2a2a4a; stroke: #8e7a5a; stroke-width: 2; }
+                    .map-line { stroke: #4a4a6a; stroke-width: 2; fill: none; }
+                    .map-label { font-size: 13px; fill: #c8c8d8; }
+                </style>
+                <rect x="310" y="20" width="280" height="48" class="map-box-root"/>
+                <text x="450" y="50" text-anchor="middle" class="map-text map-title">CONFLITO APARENTE DE NORMAS</text>
+                <line x1="450" y1="68" x2="450" y2="100" class="map-line"/>
+                <line x1="150" y1="100" x2="750" y2="100" class="map-line"/>
+                <line x1="150" y1="100" x2="150" y2="130" class="map-line"/>
+                <line x1="450" y1="100" x2="450" y2="130" class="map-line"/>
+                <line x1="750" y1="100" x2="750" y2="130" class="map-line"/>
+
+                <!-- Especialidade -->
+                <rect x="60" y="130" width="180" height="48" class="map-box"/>
+                <text x="150" y="158" text-anchor="middle" class="map-text map-title">ESPECIALIDADE</text>
+                <line x1="150" y1="178" x2="150" y2="210" class="map-line"/>
+                <rect x="40" y="210" width="220" height="60" class="map-box"/>
+                <text x="150" y="232" text-anchor="middle" class="map-text">Lei especial prevalece</text>
+                <text x="150" y="252" text-anchor="middle" class="map-text">sobre a geral</text>
+
+                <!-- Subsidiariedade -->
+                <rect x="360" y="130" width="180" height="48" class="map-box"/>
+                <text x="450" y="158" text-anchor="middle" class="map-text map-title">SUBSIDIARIEDADE</text>
+                <line x1="450" y1="178" x2="450" y2="210" class="map-line"/>
+                <rect x="320" y="210" width="260" height="90" class="map-box"/>
+                <text x="450" y="232" text-anchor="middle" class="map-text">Norma de reserva</text>
+                <text x="450" y="252" text-anchor="middle" class="map-text">(menos grave) só se aplica</text>
+                <text x="450" y="272" text-anchor="middle" class="map-text">se a principal não se aplica</text>
+
+                <!-- Consunção -->
+                <rect x="660" y="130" width="180" height="48" class="map-box"/>
+                <text x="750" y="158" text-anchor="middle" class="map-text map-title">CONSUÇÃO</text>
+                <line x1="750" y1="178" x2="750" y2="210" class="map-line"/>
+                <rect x="630" y="210" width="240" height="90" class="map-box"/>
+                <text x="750" y="232" text-anchor="middle" class="map-text">Crime mais grave</text>
+                <text x="750" y="252" text-anchor="middle" class="map-text">absorve o menos grave</text>
+                <text x="750" y="272" text-anchor="middle" class="map-text">(meio necessário)</text>
+            </svg>
+        </div>
+
+        <h3>14.3. Distinção: Roubo × Extorsão × Sequestro Relâmpago</h3>
+        <div class="svg-container">
+            <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                <style>
+                    .map-text { font-family: 'Segoe UI', sans-serif; font-size: 14px; fill: #e6e6ee; }
+                    .map-title { font-weight: 600; font-size: 16px; }
+                    .map-box { fill: #262642; stroke: #4a4a6a; stroke-width: 1.5; rx: 12; ry: 12; }
+                    .map-box-root { fill: #2a2a4a; stroke: #8e7a5a; stroke-width: 2; }
+                    .map-line { stroke: #4a4a6a; stroke-width: 2; fill: none; }
+                    .map-label { font-size: 13px; fill: #c8c8d8; }
+                </style>
+                <!-- Raiz -->
+                <rect x="280" y="20" width="340" height="48" class="map-box-root"/>
+                <text x="450" y="50" text-anchor="middle" class="map-text map-title">DISTINÇÃO: ROUBO × EXTORSÃO × SEQUESTRO</text>
+                <line x1="450" y1="68" x2="450" y2="100" class="map-line"/>
+                <line x1="150" y1="100" x2="750" y2="100" class="map-line"/>
+                <line x1="150" y1="100" x2="150" y2="130" class="map-line"/>
+                <line x1="450" y1="100" x2="450" y2="130" class="map-line"/>
+                <line x1="750" y1="100" x2="750" y2="130" class="map-line"/>
+
+                <!-- Roubo -->
+                <rect x="60" y="130" width="180" height="48" class="map-box"/>
+                <text x="150" y="158" text-anchor="middle" class="map-text map-title">ROUBO (art. 157)</text>
+                <line x1="150" y1="178" x2="150" y2="210" class="map-line"/>
+                <rect x="30" y="210" width="240" height="100" class="map-box"/>
+                <text x="150" y="232" text-anchor="middle" class="map-text">Subtração + violência/</text>
+                <text x="150" y="252" text-anchor="middle" class="map-text">grave ameaça</text>
+                <line x1="150" y1="280" x2="150" y2="300" class="map-line"/>
+                <rect x="30" y="300" width="240" height="60" class="map-box"/>
+                <text x="150" y="324" text-anchor="middle" class="map-text">Subtração imediata,</text>
+                <text x="150" y="344" text-anchor="middle" class="map-text">vítima não colabora</text>
+
+                <!-- Extorsão -->
+                <rect x="360" y="130" width="180" height="48" class="map-box"/>
+                <text x="450" y="158" text-anchor="middle" class="map-text map-title">EXTORSÃO (art. 158)</text>
+                <line x1="450" y1="178" x2="450" y2="210" class="map-line"/>
+                <rect x="330" y="210" width="240" height="100" class="map-box"/>
+                <text x="450" y="232" text-anchor="middle" class="map-text">Constranger + fazer/</text>
+                <text x="450" y="252" text-anchor="middle" class="map-text">tolerar/deixar de fazer</text>
+                <line x1="450" y1="280" x2="450" y2="300" class="map-line"/>
+                <rect x="330" y="300" width="240" height="60" class="map-box"/>
+                <text x="450" y="324" text-anchor="middle" class="map-text">Vítima colabora ativamente</text>
+                <text x="450" y="344" text-anchor="middle" class="map-text">(ex.: Pix, entrega a coisa)</text>
+
+                <!-- Sequestro Relâmpago -->
+                <rect x="660" y="130" width="180" height="48" class="map-box"/>
+                <text x="750" y="158" text-anchor="middle" class="map-text map-title">SEQUESTRO RELÂMPAGO</text>
+                <line x1="750" y1="178" x2="750" y2="210" class="map-line"/>
+                <rect x="630" y="210" width="240" height="100" class="map-box"/>
+                <text x="750" y="232" text-anchor="middle" class="map-text">Extorsão + restrição</text>
+                <text x="750" y="252" text-anchor="middle" class="map-text">da liberdade da vítima</text>
+                <line x1="750" y1="280" x2="750" y2="300" class="map-line"/>
+                <rect x="620" y="300" width="260" height="60" class="map-box"/>
+                <text x="750" y="324" text-anchor="middle" class="map-text">Pena 6 a 12 anos, hediondo</text>
+                <text x="750" y="344" text-anchor="middle" class="map-text">(art. 158, §3º)</text>
+            </svg>
+        </div>
+
+        <h3>14.4. Verbos Nucleares – Crimes da Administração</h3>
+        <div class="svg-container">
+            <svg viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                <style>
+                    .map-text { font-family: 'Segoe UI', sans-serif; font-size: 14px; fill: #e6e6ee; }
+                    .map-title { font-weight: 600; font-size: 16px; }
+                    .map-box { fill: #262642; stroke: #4a4a6a; stroke-width: 1.5; rx: 12; ry: 12; }
+                    .map-box-root { fill: #2a2a4a; stroke: #8e7a5a; stroke-width: 2; }
+                    .map-line { stroke: #4a4a6a; stroke-width: 2; fill: none; }
+                    .map-label { font-size: 13px; fill: #c8c8d8; }
+                </style>
+                <!-- Raiz: Funcionário Público -->
+                <rect x="320" y="20" width="360" height="48" class="map-box-root"/>
+                <text x="500" y="50" text-anchor="middle" class="map-text map-title">FUNCIONÁRIO PÚBLICO</text>
+                <line x1="500" y1="68" x2="500" y2="100" class="map-line"/>
+                <line x1="160" y1="100" x2="840" y2="100" class="map-line"/>
+                <line x1="160" y1="100" x2="160" y2="130" class="map-line"/>
+                <line x1="500" y1="100" x2="500" y2="130" class="map-line"/>
+                <line x1="840" y1="100" x2="840" y2="130" class="map-line"/>
+
+                <!-- EXIGIR -->
+                <rect x="60" y="130" width="200" height="48" class="map-box"/>
+                <text x="160" y="158" text-anchor="middle" class="map-text map-title">EXIGIR</text>
+                <line x1="160" y1="178" x2="160" y2="210" class="map-line"/>
+                <rect x="30" y="210" width="260" height="60" class="map-box"/>
+                <text x="160" y="234" text-anchor="middle" class="map-text">CONCUSSÃO (art. 316)</text>
+                <text x="160" y="256" text-anchor="middle" class="map-text">Qualquer vantagem indevida</text>
+                <line x1="160" y1="270" x2="160" y2="290" class="map-line"/>
+                <rect x="30" y="290" width="260" height="60" class="map-box"/>
+                <text x="160" y="314" text-anchor="middle" class="map-text">EXCESSO DE EXAÇÃO</text>
+                <text x="160" y="336" text-anchor="middle" class="map-text">(art. 316, §1º) – tributo</text>
+
+                <!-- SOLICITAR / RECEBER -->
+                <rect x="380" y="130" width="240" height="48" class="map-box"/>
+                <text x="500" y="158" text-anchor="middle" class="map-text map-title">SOLICITAR / RECEBER</text>
+                <line x1="500" y1="178" x2="500" y2="210" class="map-line"/>
+                <rect x="370" y="210" width="260" height="60" class="map-box"/>
+                <text x="500" y="234" text-anchor="middle" class="map-text">CORRUPÇÃO PASSIVA</text>
+                <text x="500" y="256" text-anchor="middle" class="map-text">(art. 317)</text>
+
+                <!-- EXIGIR (tributo) já incluso acima, mas mantemos a estrutura -->
+                <!-- Particular -->
+                <rect x="740" y="130" width="200" height="48" class="map-box-root"/>
+                <text x="840" y="158" text-anchor="middle" class="map-text map-title">PARTICULAR</text>
+                <line x1="840" y1="178" x2="840" y2="210" class="map-line"/>
+                <rect x="740" y="210" width="200" height="60" class="map-box"/>
+                <text x="840" y="234" text-anchor="middle" class="map-text">OFERECER / PROMETER</text>
+                <line x1="840" y1="270" x2="840" y2="290" class="map-line"/>
+                <rect x="720" y="290" width="240" height="60" class="map-box"/>
+                <text x="840" y="314" text-anchor="middle" class="map-text">CORRUPÇÃO ATIVA</text>
+                <text x="840" y="336" text-anchor="middle" class="map-text">(art. 333)</text>
+            </svg>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 15 – JURISPRUDÊNCIA RELEVANTE                         -->
+        <!-- ============================================================ -->
+        <h2 id="jurisprudencia">15. Jurisprudência Relevante para Provas</h2>
+
+        <div class="concept-grid">
+            <div class="concept-card">
+                <h5>Súmula 711 – STF</h5>
+                <p>“A lei penal mais grave aplica-se ao crime continuado ou ao crime permanente, se a sua vigência é anterior à cessação da continuidade ou da permanência.”</p>
+            </div>
+            <div class="concept-card">
+                <h5>Súmula 691 – STF</h5>
+                <p>O homicídio qualificado é hediondo (Lei 8.072/90), independentemente de ter sido cometido por milícia ou grupo de extermínio.</p>
+            </div>
+            <div class="concept-card">
+                <h5>STJ – Consunção</h5>
+                <p>No concurso de crimes em que um é meio necessário para a prática do outro, aplica-se o princípio da consunção. Ex.: violação de domicílio absorvida pelo furto.</p>
+            </div>
+            <div class="concept-card">
+                <h5>STF – Estado de necessidade</h5>
+                <p>O agente que provoca voluntariamente o perigo não pode alegar estado de necessidade (art. 24, §1º, CP).</p>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 16 – EXERCÍCIOS DE FIXAÇÃO                             -->
+        <!-- ============================================================ -->
+        <h2 id="exercicios">16. Exercícios de Fixação – Casos Concretos</h2>
+
+        <div class="box box-exemplo">
+            <strong>16.1. Caso 1 – Teoria da Atividade</strong>
+            <p>Paulo, 17 anos e 11 meses, desfere uma facada em Joana. Joana é internada e vem a falecer 30 dias depois, quando Paulo já completou 18 anos. Paulo responde por ato infracional ou por homicídio (crime doloso contra a vida)?</p>
+            <p><strong>Resposta:</strong> Paulo responde por <strong>ato infracional</strong> (como menor infrator), pois, pela teoria da atividade (art. 4º, CP), o crime considera-se praticado no momento da ação (facada), quando Paulo ainda era inimputável (menor de 18 anos).</p>
+        </div>
+
+        <div class="box box-exemplo">
+            <strong>16.2. Caso 2 – Teoria da Ubiquidade</strong>
+            <p>Carlos, em Foz do Iguaçu (Brasil), atira contra Pedro, que está em Ciudad del Este (Paraguai). Pedro morre no local. A Justiça brasileira é competente para julgar Carlos?</p>
+            <p><strong>Resposta:</strong> Sim, com base no art. 6º do CP (teoria da ubiquidade), o crime considera-se praticado tanto no lugar da ação (Brasil) quanto no lugar do resultado (Paraguai). A Justiça brasileira pode julgar Carlos, desde que haja cooperação internacional ou extradição.</p>
+        </div>
+
+        <div class="box box-exemplo">
+            <strong>16.3. Caso 3 – Conflito Aparente (Consunção)</strong>
+            <p>José arromba a porta da casa de João, entra, subtrai uma TV e foge. José responde por violação de domicílio e furto, ou apenas por furto?</p>
+            <p><strong>Resposta:</strong> José responde apenas por <strong>furto</strong>, pois a violação de domicílio foi meio necessário para a execução do furto, sendo absorvida pelo crime mais grave (princípio da consunção).</p>
+        </div>
+
+        <div class="box box-exemplo">
+            <strong>16.4. Caso 4 – Sequestro Relâmpago</strong>
+            <p>Dois homens armados abordam Maria em seu carro, obrigam-na a dirigir até um local ermo, onde a mantêm presa. Exigem que o marido de Maria pague R$ 100 mil via Pix para libertá-la. O marido paga e Maria é libertada. Qual crime?</p>
+            <p><strong>Resposta:</strong> Extorsão qualificada pela restrição da liberdade da vítima (art. 158, §3º, CP) – sequestro relâmpago. Pena de 6 a 12 anos. É hediondo.</p>
+        </div>
+
+        <div class="box box-exemplo">
+            <strong>16.5. Caso 5 – Concurso de Pessoas e Peculato</strong>
+            <p>Miguel, funcionário público, sem ter a posse direta do bem municipal, subtrai um computador da prefeitura valendo-se das facilidades do cargo. Ele pede ajuda a Mário, particular, que desconhece a qualidade funcional de Miguel. Ambos são denunciados.</p>
+            <p><strong>Resposta:</strong> Miguel comete <strong>peculato-furto</strong> (art. 312, §1º, CP). Mário, por não ter ciência da qualidade funcional de Miguel, responde por <strong>furto qualificado</strong> (crime comum). A condição pessoal de funcionário público não se comunica a Mário sem seu conhecimento (art. 30, CP).</p>
+        </div>
+
+        <div class="box box-exemplo">
+            <strong>16.6. Caso 6 – Crime Continuado e Súmula 711</strong>
+            <p>Ana pratica três furtos nos dias 1º, 5 e 10 de janeiro. No dia 7 de janeiro, entra em vigor lei que aumenta a pena do furto. Qual lei se aplica aos três furtos?</p>
+            <p><strong>Resposta:</strong> Aplica-se a <strong>nova lei</strong> (mais grave) a todos os três furtos, pois o crime continuado é tratado como unidade, e a nova lei entrou em vigor antes da cessação da continuidade (Súmula 711-STF).</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 17 – DICAS FINAIS                                      -->
+        <!-- ============================================================ -->
+        <h2 id="dicas">17. Dicas Finais para a Prova</h2>
+
+        <div class="box box-dica">
+            <strong>🧠 1. Leia atentamente o enunciado</strong>
+            <p>Muitas questões da FCC giram em torno da redação literal da lei. Não invente. Decore os verbos nucleares e os artigos principais.</p>
+        </div>
+
+        <div class="box box-dica">
+            <strong>🧠 2. Fique atento aos “gatilhos”</strong>
+            <ul>
+                <li>“exigiu” → concussão (salvo se tributo → excesso de exação)</li>
+                <li>“solicitou” / “recebeu” → corrupção passiva</li>
+                <li>“ofereceu” / “prometeu” → corrupção ativa</li>
+            </ul>
+        </div>
+
+        <div class="box box-dica">
+            <strong>🧠 3. Crimes hediondos</strong>
+            <ul>
+                <li>Arma de fogo de <strong>uso permitido</strong> não é hediondo.</li>
+                <li>Furto com explosivo <strong>só é hediondo</strong> após o Pacote Anticrime (Lei 13.964/2019).</li>
+                <li>Roubo <strong>sempre hediondo</strong> se houver violência ou grave ameaça (qualificado).</li>
+            </ul>
+        </div>
+
+        <div class="box box-dica">
+            <strong>🧠 4. Conflito aparente</strong>
+            <p>Se a questão der um crime-meio e um crime-fim, o mais provável é a <strong>consunção</strong> (responde apenas pelo crime-fim). Se a norma disser “se o fato não constitui crime mais grave”, é <strong>subsidiariedade</strong>.</p>
+        </div>
+
+        <div class="box box-dica">
+            <strong>🧠 5. Teoria do tempo e lugar</strong>
+            <ul>
+                <li>Tempo = atividade (art. 4º) → imputabilidade, lei penal no tempo.</li>
+                <li>Lugar = ubiquidade (art. 6º) → competência territorial.</li>
+            </ul>
+        </div>
+
+        <div class="box box-dica">
+            <strong>🧠 6. Súmula 711-STF</strong>
+            <p>Se o crime continuado começa antes e termina depois da lei nova mais grave, a lei nova se aplica a todo o bloco delitivo.</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============================================================ -->
+        <!-- SEÇÃO 18 – REFERÊNCIAS                                       -->
+        <!-- ============================================================ -->
+        <h2 id="referencias">18. Referências e Base Legal</h2>
+
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Dispositivo</th><th>Conteúdo</th></tr></thead>
+                <tbody>
+                    <tr><td>Art. 4º, CP</td><td>Teoria da atividade (tempo do crime)</td></tr>
+                    <tr><td>Art. 6º, CP</td><td>Teoria da ubiquidade (lugar do crime)</td></tr>
+                    <tr><td>Art. 24, CP</td><td>Estado de necessidade</td></tr>
+                    <tr><td>Art. 71, CP</td><td>Crime continuado</td></tr>
+                    <tr><td>Art. 155, CP</td><td>Furto</td></tr>
+                    <tr><td>Art. 157, CP</td><td>Roubo</td></tr>
+                    <tr><td>Art. 158, CP</td><td>Extorsão</td></tr>
+                    <tr><td>Art. 312, CP</td><td>Peculato</td></tr>
+                    <tr><td>Art. 316, CP</td><td>Concussão e excesso de exação</td></tr>
+                    <tr><td>Art. 317, CP</td><td>Corrupção passiva</td></tr>
+                    <tr><td>Art. 333, CP</td><td>Corrupção ativa</td></tr>
+                    <tr><td>Lei 8.072/1990</td><td>Crimes hediondos</td></tr>
+                    <tr><td>Lei 13.964/2019</td><td>Pacote Anticrime</td></tr>
+                    <tr><td>Art. 5º, XLV, CF</td><td>Princípio da intranscendência</td></tr>
+                    <tr><td>Art. 5º, XL, CF</td><td>Irretroatividade da lei penal</td></tr>
+                    <tr><td>Súmula 711-STF</td><td>Crime continuado e lei nova</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider">
+
+        <p style="text-align: center; color: #8a8a9a; font-size: 0.95rem; margin-top: 2rem; border-top: 1px solid #2d2d44; padding-top: 1.5rem;">
+            <strong>Bons estudos e ótima prova!</strong>
+        </p>
+
+    </div>
+    <!-- fim container -->
+</body>
+</html>

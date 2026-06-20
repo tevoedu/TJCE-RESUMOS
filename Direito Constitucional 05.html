@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila Completa - Direito Constitucional e Administrativo</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-primary: #1a1e2c;
+            --bg-secondary: #232837;
+            --bg-card: #282f42;
+            --bg-elevated: #2f3850;
+            --bg-highlight: #1e2a3a;
+            --text-primary: #e8edf5;
+            --text-secondary: #b6c4d9;
+            --text-muted: #8895b0;
+            --accent-gold: #d4a84b;
+            --accent-gold-dim: #b8913b;
+            --accent-blue: #5b8dd9;
+            --accent-blue-dim: #3f6fb5;
+            --accent-green: #5fa87f;
+            --accent-red: #c96a6a;
+            --accent-purple: #9b7bcf;
+            --accent-orange: #d48a5a;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-medium: rgba(255, 255, 255, 0.10);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.35);
+            --radius: 14px;
+            --radius-sm: 8px;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+            --max-width: 1000px;
+            --toc-width: 280px;
+        }
+
+        html {
+            font-size: 17px;
+            -webkit-text-size-adjust: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 0 20px 60px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gold-dim);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-gold);
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+            background: linear-gradient(135deg, var(--accent-gold), #f0d080);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2.8rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border-subtle);
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            margin-top: 2rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-primary);
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            margin-top: 1.4rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        strong,
+        b {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        em,
+        i {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        ul,
+        ol {
+            margin: 0.8rem 0 1.2rem 1.6rem;
+            color: var(--text-secondary);
+        }
+        li {
+            margin-bottom: 0.35rem;
+        }
+        li::marker {
+            color: var(--accent-gold-dim);
+        }
+
+        blockquote {
+            border-left: 4px solid var(--accent-gold);
+            padding: 0.8rem 1.4rem;
+            margin: 1.2rem 0;
+            background: rgba(212, 168, 75, 0.07);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        blockquote p {
+            margin-bottom: 0;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
+            margin: 2.4rem 0;
+        }
+
+        /* ===== HEADER / HERO ===== */
+        .hero {
+            padding: 2.8rem 0 1.6rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 2.4rem;
+        }
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
+        .hero .meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.6rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem 2rem;
+        }
+        .hero .meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* ===== TOC ===== */
+        .toc-wrap {
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 1.6rem 2rem;
+            margin-bottom: 2.8rem;
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-card);
+        }
+        .toc-wrap .toc-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .toc-wrap .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.3rem 1.6rem;
+        }
+        .toc-wrap .toc-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            padding: 0.2rem 0;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s;
+        }
+        .toc-wrap .toc-item:hover {
+            color: var(--accent-gold);
+        }
+        .toc-wrap .toc-item .num {
+            color: var(--accent-gold-dim);
+            font-weight: 500;
+            font-size: 0.8rem;
+            min-width: 1.6rem;
+        }
+        .toc-wrap .toc-item a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s;
+        }
+        .toc-wrap .toc-item a:hover {
+            color: var(--accent-gold);
+        }
+        .toc-wrap .toc-sub {
+            padding-left: 1.8rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .toc-wrap .toc-sub .num {
+            font-size: 0.7rem;
+            min-width: 1.2rem;
+        }
+
+        /* ===== CARDS & BOXES ===== */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 1.6rem 2rem;
+            margin: 1.4rem 0;
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-card);
+            transition: border-color 0.2s;
+        }
+        .card:hover {
+            border-color: var(--border-medium);
+        }
+
+        .card-tip {
+            border-left: 5px solid var(--accent-blue);
+            background: rgba(91, 141, 217, 0.08);
+        }
+        .card-tip .card-label {
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-important {
+            border-left: 5px solid var(--accent-red);
+            background: rgba(201, 106, 106, 0.08);
+        }
+        .card-important .card-label {
+            color: var(--accent-red);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-warning {
+            border-left: 5px solid var(--accent-orange);
+            background: rgba(212, 138, 90, 0.08);
+        }
+        .card-warning .card-label {
+            color: var(--accent-orange);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-success {
+            border-left: 5px solid var(--accent-green);
+            background: rgba(95, 168, 127, 0.08);
+        }
+        .card-success .card-label {
+            color: var(--accent-green);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-concept {
+            background: var(--bg-highlight);
+            border: 1px solid var(--accent-purple);
+            border-radius: var(--radius);
+            padding: 1.4rem 1.8rem;
+            margin: 1.2rem 0;
+            box-shadow: var(--shadow-card);
+        }
+        .card-concept .concept-title {
+            color: var(--accent-purple);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* ===== TABLES ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.4rem 0;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-secondary);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            min-width: 480px;
+        }
+        thead {
+            background: var(--bg-elevated);
+        }
+        th {
+            padding: 0.8rem 1.2rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-medium);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        td {
+            padding: 0.7rem 1.2rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* ===== HIGHLIGHT (marker) ===== */
+        .marker {
+            background: rgba(212, 168, 75, 0.20);
+            padding: 0.08rem 0.3rem;
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .marker-blue {
+            background: rgba(91, 141, 217, 0.18);
+            color: var(--accent-blue);
+            padding: 0.08rem 0.3rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .marker-green {
+            background: rgba(95, 168, 127, 0.18);
+            color: var(--accent-green);
+            padding: 0.08rem 0.3rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .marker-red {
+            background: rgba(201, 106, 106, 0.18);
+            color: var(--accent-red);
+            padding: 0.08rem 0.3rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .marker-purple {
+            background: rgba(155, 123, 207, 0.18);
+            color: var(--accent-purple);
+            padding: 0.08rem 0.3rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2.8rem 0 2rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
+        }
+
+        /* ===== QUOTE ===== */
+        .quote-block {
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 1.4rem 2rem;
+            margin: 1.4rem 0;
+            border-left: 4px solid var(--accent-gold);
+            font-style: italic;
+            color: var(--text-secondary);
+            box-shadow: var(--shadow-card);
+        }
+        .quote-block p {
+            margin-bottom: 0;
+        }
+        .quote-block .attribution {
+            margin-top: 0.6rem;
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== CALL OUT ===== */
+        .callout {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.4rem;
+            margin: 1rem 0;
+            border: 1px solid var(--border-subtle);
+        }
+        .callout .icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            margin-top: 0.1rem;
+        }
+        .callout .content {
+            flex: 1;
+            color: var(--text-secondary);
+        }
+        .callout .content strong {
+            color: var(--text-primary);
+        }
+
+        /* ===== MNEMONIC ===== */
+        .mnemonic {
+            background: var(--bg-elevated);
+            border-radius: var(--radius);
+            padding: 1.2rem 1.8rem;
+            margin: 1.2rem 0;
+            border: 1px solid var(--accent-gold-dim);
+            box-shadow: var(--shadow-card);
+        }
+        .mnemonic .mnemonic-title {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.3rem;
+        }
+        .mnemonic .mnemonic-body {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        .mnemonic .mnemonic-body .highlight {
+            color: var(--accent-gold);
+        }
+
+        /* ===== CHECKLIST ===== */
+        .checklist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1.6rem;
+            margin: 1rem 0;
+        }
+        .checklist .check-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            padding: 0.2rem 0;
+        }
+        .checklist .check-item .box {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--border-medium);
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+            background: transparent;
+        }
+        @media (max-width: 640px) {
+            .checklist {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SVG ICONS ===== */
+        .icon-svg {
+            display: inline-block;
+            width: 1.2em;
+            height: 1.2em;
+            vertical-align: middle;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+        .icon-svg-lg {
+            width: 1.6em;
+            height: 1.6em;
+        }
+
+        /* ===== DIAGRAMS (SVG) ===== */
+        .diagram-container {
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 1.6rem 1.2rem;
+            margin: 1.6rem 0;
+            border: 1px solid var(--border-subtle);
+            overflow-x: auto;
+            box-shadow: var(--shadow-card);
+            text-align: center;
+        }
+        .diagram-container svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .diagram-container .diagram-caption {
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            html {
+                font-size: 15px;
+            }
+            body {
+                padding: 0 14px 40px;
+            }
+            h1 {
+                font-size: 1.9rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 2.2rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            .hero {
+                padding: 1.8rem 0 1.2rem;
+            }
+            .toc-wrap {
+                padding: 1.2rem 1.2rem;
+            }
+            .toc-wrap .toc-grid {
+                grid-template-columns: 1fr;
+                gap: 0.1rem;
+            }
+            .card {
+                padding: 1.2rem 1.2rem;
+            }
+            .table-wrap table {
+                font-size: 0.85rem;
+                min-width: 400px;
+            }
+            th,
+            td {
+                padding: 0.5rem 0.8rem;
+            }
+            .callout {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .callout .icon {
+                width: 24px;
+                height: 24px;
+            }
+            .mnemonic .mnemonic-body {
+                font-size: 1rem;
+            }
+            .diagram-container {
+                padding: 1rem 0.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .hero .meta {
+                flex-direction: column;
+                gap: 0.3rem;
+                align-items: center;
+            }
+            .table-wrap table {
+                font-size: 0.8rem;
+                min-width: 320px;
+            }
+            th,
+            td {
+                padding: 0.4rem 0.6rem;
+            }
+            .card {
+                padding: 1rem 1rem;
+            }
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+                padding: 0.5in;
+            }
+            .container {
+                max-width: 100%;
+            }
+            .toc-wrap,
+            .card,
+            .diagram-container,
+            .mnemonic,
+            .quote-block,
+            .callout {
+                background: #f5f5f5;
+                border-color: #ccc;
+                box-shadow: none;
+                color: #111;
+            }
+            .card-tip {
+                border-left-color: #2a6bb0;
+            }
+            .card-important {
+                border-left-color: #b33;
+            }
+            .card-warning {
+                border-left-color: #c76a1a;
+            }
+            .card-success {
+                border-left-color: #2a7a4a;
+            }
+            .card-concept {
+                border-color: #7a5aaa;
+            }
+            .hero h1 {
+                -webkit-text-fill-color: #1a1e2c;
+                background: none;
+                color: #1a1e2c;
+            }
+            .marker {
+                background: #e8e0c0;
+                color: #111;
+            }
+            .marker-blue {
+                background: #d0ddf0;
+                color: #1a4a7a;
+            }
+            .marker-green {
+                background: #d0f0d8;
+                color: #1a5a3a;
+            }
+            .marker-red {
+                background: #f0d0d0;
+                color: #7a2a2a;
+            }
+            .marker-purple {
+                background: #e0d0f0;
+                color: #5a2a7a;
+            }
+            th {
+                background: #e5e5e5;
+                color: #111;
+            }
+            td {
+                color: #222;
+                border-color: #ddd;
+            }
+            .toc-wrap .toc-item {
+                color: #222;
+            }
+            .toc-wrap .toc-item a {
+                color: #222;
+            }
+            .toc-wrap .toc-item a:hover {
+                color: #7a5a1a;
+            }
+            .quote-block {
+                border-left-color: #7a5a1a;
+            }
+            .mnemonic {
+                border-color: #7a5a1a;
+            }
+            .checklist .check-item .box {
+                border-color: #999;
+            }
+            .diagram-container svg text {
+                fill: #111 !important;
+            }
+            .diagram-container svg rect,
+            .diagram-container svg path {
+                stroke: #555 !important;
+            }
+            .divider {
+                color: #666;
+            }
+            .divider::before,
+            .divider::after {
+                background: #ccc;
+            }
+        }
+
+        /* ===== UTILITY ===== */
+        .text-gold {
+            color: var(--accent-gold);
+        }
+        .text-blue {
+            color: var(--accent-blue);
+        }
+        .text-green {
+            color: var(--accent-green);
+        }
+        .text-red {
+            color: var(--accent-red);
+        }
+        .text-purple {
+            color: var(--accent-purple);
+        }
+        .text-muted {
+            color: var(--text-muted);
+        }
+        .mt-1 {
+            margin-top: 0.6rem;
+        }
+        .mt-2 {
+            margin-top: 1.2rem;
+        }
+        .mb-1 {
+            margin-bottom: 0.6rem;
+        }
+        .mb-2 {
+            margin-bottom: 1.2rem;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-center {
+            align-items: center;
+            justify-content: center;
+        }
+        .gap-1 {
+            gap: 0.5rem;
+        }
+        .gap-2 {
+            gap: 1rem;
+        }
+        .inline-flex {
+            display: inline-flex;
+            align-items: center;
+        }
+        .wrap {
+            flex-wrap: wrap;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-small {
+            font-size: 0.85rem;
+        }
+        .text-smaller {
+            font-size: 0.75rem;
+        }
+        .fw-600 {
+            font-weight: 600;
+        }
+        .fw-500 {
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== HERO ===== -->
+        <header class="hero">
+            <h1>Direito Constitucional<br>e Administrativo</h1>
+            <p class="subtitle">Apostila completa para concursos do TJCE &amp; bancas FCC, FGV, CEBRASPE</p>
+            <div class="meta">
+                <span>
+                    <svg class="icon-svg" viewBox="0 0 24 24" width="16" height="16"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    Técnico Judiciário – Área Judiciária
+                </span>
+                <span>
+                    <svg class="icon-svg" viewBox="0 0 24 24" width="16" height="16"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+                    Material teórico-aprofundado
+                </span>
+            </div>
+        </header>
+
+        <!-- ===== SUMÁRIO ===== -->
+        <nav class="toc-wrap" aria-label="Sumário">
+            <div class="toc-title">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="20" height="20"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+                Sumário
+            </div>
+            <div class="toc-grid">
+                <div class="toc-item"><span class="num">1.</span><a href="#cap1">Sistema de Controle de Constitucionalidade Estadual</a></div>
+                <div class="toc-item toc-sub"><span class="num">1.1</span><a href="#sec1-1">ADI Estadual</a></div>
+                <div class="toc-item toc-sub"><span class="num">1.2</span><a href="#sec1-2">Legitimados Ativos na CE/AL</a></div>
+                <div class="toc-item toc-sub"><span class="num">1.3</span><a href="#sec1-3">Legitimados Universais vs Especiais</a></div>
+                <div class="toc-item toc-sub"><span class="num">1.4</span><a href="#sec1-4">Pertinência Temática</a></div>
+                <div class="toc-item toc-sub"><span class="num">1.5</span><a href="#sec1-5">Quadro-Resumo</a></div>
+
+                <div class="toc-item"><span class="num">2.</span><a href="#cap2">Organização do Estado e Administração Pública</a></div>
+                <div class="toc-item toc-sub"><span class="num">2.1</span><a href="#sec2-1">Princípios do Art. 37</a></div>
+                <div class="toc-item toc-sub"><span class="num">2.2</span><a href="#sec2-2">Princípio da Eficiência</a></div>
+                <div class="toc-item toc-sub"><span class="num">2.3</span><a href="#sec2-3">Organização Municipal</a></div>
+                <div class="toc-item toc-sub"><span class="num">2.4</span><a href="#sec2-4">Criação de Municípios</a></div>
+                <div class="toc-item toc-sub"><span class="num">2.5</span><a href="#sec2-5">Laicidade do Estado</a></div>
+                <div class="toc-item toc-sub"><span class="num">2.6</span><a href="#sec2-6">Empresas Públicas</a></div>
+                <div class="toc-item toc-sub"><span class="num">2.7</span><a href="#sec2-7">Competência dos Tribunais</a></div>
+
+                <div class="toc-item"><span class="num">3.</span><a href="#cap3">Direitos Fundamentais e Remédios</a></div>
+                <div class="toc-item toc-sub"><span class="num">3.1</span><a href="#sec3-1">Ensino Religioso</a></div>
+                <div class="toc-item toc-sub"><span class="num">3.2</span><a href="#sec3-2">Planejamento Familiar</a></div>
+                <div class="toc-item toc-sub"><span class="num">3.3</span><a href="#sec3-3">Habeas Corpus</a></div>
+                <div class="toc-item toc-sub"><span class="num">3.4</span><a href="#sec3-4">HC vs Habeas Data</a></div>
+
+                <div class="toc-item"><span class="num">4.</span><a href="#cap4">Funções Essenciais à Justiça (CE/AL)</a></div>
+                <div class="toc-item toc-sub"><span class="num">4.1</span><a href="#sec4-1">Previsões Estaduais</a></div>
+                <div class="toc-item toc-sub"><span class="num">4.2</span><a href="#sec4-2">Advogados e Poder Judiciário</a></div>
+                <div class="toc-item toc-sub"><span class="num">4.3</span><a href="#sec4-3">Ministério Público</a></div>
+                <div class="toc-item toc-sub"><span class="num">4.4</span><a href="#sec4-4">Defensoria Pública</a></div>
+                <div class="toc-item toc-sub"><span class="num">4.5</span><a href="#sec4-5">Procuradoria-Geral</a></div>
+
+                <div class="toc-item"><span class="num">5.</span><a href="#cap5">Macetes, Pegadinhas e Estratégias</a></div>
+                <div class="toc-item toc-sub"><span class="num">5.1</span><a href="#sec5-1">Mnemônicos</a></div>
+                <div class="toc-item toc-sub"><span class="num">5.2</span><a href="#sec5-2">Erros Frequentes</a></div>
+                <div class="toc-item toc-sub"><span class="num">5.3</span><a href="#sec5-3">Quadro de Remédios</a></div>
+            </div>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 1 -->
+        <!-- ============================================================ -->
+
+        <h2 id="cap1">1. Sistema de Controle de Constitucionalidade Estadual</h2>
+
+        <h3 id="sec1-1">1.1. Ação Direta de Inconstitucionalidade Estadual (ADI Estadual)</h3>
+
+        <h4>Conceito e Fundamentação</h4>
+        <p>A Ação Direta de Inconstitucionalidade Estadual é o instrumento processual destinado a controlar, em tese, a conformidade das leis e atos normativos estaduais e municipais com a Constituição do respectivo Estado-membro. Trata-se de uma ação de competência originária do Tribunal de Justiça local, prevista nas Constituições Estaduais por força do princípio da simetria com o modelo federal de controle concentrado de constitucionalidade.</p>
+
+        <div class="card card-concept">
+            <div class="concept-title">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Base legal
+            </div>
+            <p style="margin-bottom:0;">O art. 125, §2º da CF/88 estabelece que cabe aos Estados a instituição, mediante lei, da representação de inconstitucionalidade de leis ou atos normativos estaduais ou municipais em face da Constituição Estadual. É o que se denomina <strong>ADI Estadual</strong> ou <strong>Representação de Inconstitucionalidade</strong>.</p>
+        </div>
+
+        <h4>Natureza Jurídica</h4>
+        <p>A ADI Estadual é uma ação de natureza objetiva, ou seja, não se presta a tutelar interesses subjetivos de partes, mas sim a garantir a supremacia da Constituição Estadual sobre o ordenamento jurídico infraconstitucional local. Por isso, não exige, em regra, a demonstração de interesse de agir ou de lesão concreta ao direito do autor.</p>
+
+        <h4>Competência para Julgamento</h4>
+        <p>O julgamento da ADI Estadual compete ao <strong>Tribunal de Justiça</strong> do respectivo Estado (Pleno ou Órgão Especial), conforme previsão na Constituição Estadual. No caso do Estado de Alagoas, a competência está prevista no art. 86 da CE/AL, que estabelece a legitimidade para propositura e o rito processual.</p>
+
+        <hr>
+
+        <h3 id="sec1-2">1.2. Legitimados Ativos na CE/AL</h3>
+
+        <h4>Legitimados para Propor a ADI Estadual (Art. 86, CE/AL)</h4>
+        <p>A Constituição do Estado de Alagoas, em seu art. 86, estabelece um rol taxativo de legitimados para propor a ação direta de inconstitucionalidade de leis ou atos normativos estaduais e municipais em face da Constituição Estadual.</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Legitimado</th><th>Fundamento</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Governador do Estado</td><td>Art. 86, I</td></tr>
+                    <tr><td>Mesa da Assembleia Legislativa</td><td>Art. 86, II</td></tr>
+                    <tr><td>Procurador-Geral de Justiça</td><td>Art. 86, III</td></tr>
+                    <tr><td>Conselho Seccional da Ordem dos Advogados do Brasil (OAB)</td><td>Art. 86, IV</td></tr>
+                    <tr><td>Partido político com representação na Assembleia Legislativa</td><td>Art. 86, V</td></tr>
+                    <tr><td>Prefeito Municipal</td><td>Art. 86, VI</td></tr>
+                    <tr><td>Mesa da Câmara de Vereadores</td><td>Art. 86, VII</td></tr>
+                    <tr><td>Entidade de classe de âmbito estadual</td><td>Art. 86, VIII</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card card-important">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Pegadinha Clássica
+            </div>
+            <p style="margin-bottom:0;">Em provas da FCC, a banca frequentemente cobra a identificação de <strong>quem não está legitimado</strong> para propor a ADI Estadual.</p>
+        </div>
+
+        <h4>Quem NÃO Pode Propor a ADI Estadual</h4>
+        <ul>
+            <li><strong>Qualquer Promotor de Justiça</strong> – Apenas o <span class="marker">Procurador-Geral de Justiça</span> detém essa legitimidade.</li>
+            <li><strong>Qualquer advogado</strong> – Apenas o <span class="marker">Conselho Seccional da OAB</span> (entidade institucional) é legitimado.</li>
+            <li><strong>Partido político sem representação na Assembleia Legislativa</strong> – precisa ter, no mínimo, um deputado estadual em exercício.</li>
+            <li><strong>Presidente do Tribunal de Justiça</strong> – ele <span class="marker-red">julga</span> a ação, não a propõe.</li>
+            <li><strong>Ministério Público Federal</strong> – atua na defesa da ordem jurídica federal, não na estadual.</li>
+        </ul>
+
+        <hr>
+
+        <h3 id="sec1-3">1.3. Distinção entre Legitimados Universais e Especiais</h3>
+
+        <h4>Conceito e Relevância Prática</h4>
+        <p>A jurisprudência do Supremo Tribunal Federal (STF), aplicada por simetria aos estados, estabelece uma distinção fundamental entre duas categorias de legitimados para a propositura da ADI:</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Característica</th><th>Legitimados Universais</th><th>Legitimados Especiais</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Quem são</strong></td><td>Governador, Mesa da AL, PGJ, OAB</td><td>Prefeito, Mesa da Câmara, entidades de classe</td></tr>
+                    <tr><td><strong>Exigência de pertinência temática</strong></td><td><span class="marker-green">NÃO</span></td><td><span class="marker-red">SIM</span></td></tr>
+                    <tr><td><strong>Interesse de agir</strong></td><td>Presumido</td><td>Deve ser demonstrado</td></tr>
+                    <tr><td><strong>Âmbito de atuação</strong></td><td>Pode questionar qualquer lei</td><td>Só leis que afetem sua esfera</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Legitimados Universais</h4>
+        <p>Os <span class="marker">legitimados universais</span> (também chamados de <strong>legitimados gerais</strong> ou <strong>legitimados extraordinários</strong>) são aqueles que podem questionar <strong>qualquer lei ou ato normativo</strong>, independentemente da matéria tratada. Não precisam demonstrar qualquer interesse direto ou específico na causa.</p>
+        <p><strong>Quem são:</strong> Governador do Estado, Mesa da Assembleia Legislativa, Procurador-Geral de Justiça, Conselho Seccional da OAB.</p>
+
+        <h4>Legitimados Especiais</h4>
+        <p>Os <span class="marker-blue">legitimados especiais</span> (também chamados de <strong>legitimados qualificados</strong> ou <strong>legitimados por interesse difuso</strong>) precisam demonstrar a chamada <strong>pertinência temática</strong>, ou seja, que a norma questionada afeta diretamente a esfera de atuação ou os interesses da entidade ou do ente que propõe a ação.</p>
+        <p><strong>Quem são:</strong> Prefeito Municipal, Mesa da Câmara de Vereadores, Entidade de classe de âmbito estadual, Partido político com representação na Assembleia.</p>
+
+        <div class="card card-tip">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Caso Prático – Pertinência Temática
+            </div>
+            <p style="margin-bottom:0;">Uma entidade de classe que representa médicos deseja propor ADI Estadual contra uma lei que trata de matéria tributária (ICMS). Nesse caso, a entidade <strong>não terá legitimidade</strong>, pois a lei tributária não afeta diretamente a categoria profissional dos médicos. Falta a <span class="marker">pertinência temática</span>. Já o Governador do Estado, como legitimado universal, poderia propor a mesma ação sem qualquer restrição.</p>
+        </div>
+
+        <hr>
+
+        <h3 id="sec1-4">1.4. Pertinência Temática – Aprofundamento</h3>
+
+        <h4>Conceito e Requisitos</h4>
+        <p>A <strong>pertinência temática</strong> é o requisito processual que exige a demonstração de um <strong>nexo de relação direta</strong> entre a norma questionada e o interesse da entidade ou do ente que propõe a ação.</p>
+
+        <div class="card">
+            <p style="margin-bottom:0;"><strong>Elementos da pertinência temática:</strong></p>
+            <ol style="margin-bottom:0;">
+                <li><strong>Relação de causalidade:</strong> A norma impugnada deve impactar a esfera de atuação do legitimado.</li>
+                <li><strong>Especificidade:</strong> O impacto não pode ser genérico; deve haver relação específica entre a matéria e a finalidade institucional.</li>
+                <li><strong>Proximidade:</strong> Quanto mais próxima a relação entre a norma e a atividade do legitimado, mais evidente é a pertinência.</li>
+            </ol>
+        </div>
+
+        <h4>Jurisprudência do STF Aplicável</h4>
+        <p>O STF, no julgamento da <strong>ADI 1.137-7/DF</strong>, firmou entendimento de que a pertinência temática é requisito indispensável para os legitimados especiais, sob pena de inadequação da via eleita.</p>
+        <div class="card card-important">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Atenção
+            </div>
+            <p style="margin-bottom:0;">A ausência de pertinência temática não é questão de mérito (inconstitucionalidade da norma), mas sim de <strong>ilegitimidade ativa</strong>, o que impede o conhecimento da ação.</p>
+        </div>
+
+        <hr>
+
+        <h3 id="sec1-5">1.5. Quadro-Resumo dos Legitimados</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Legitimado</th><th>Tipo</th><th>Exige Pertinência?</th><th>Pode questionar qualquer lei?</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Governador do Estado</td><td><span class="marker-green">Universal</span></td><td>Não</td><td>Sim</td></tr>
+                    <tr><td>Mesa da Assembleia</td><td><span class="marker-green">Universal</span></td><td>Não</td><td>Sim</td></tr>
+                    <tr><td>Procurador-Geral de Justiça</td><td><span class="marker-green">Universal</span></td><td>Não</td><td>Sim</td></tr>
+                    <tr><td>Conselho Seccional da OAB</td><td><span class="marker-green">Universal</span></td><td>Não</td><td>Sim</td></tr>
+                    <tr><td>Prefeito Municipal</td><td><span class="marker-blue">Especial</span></td><td>Sim</td><td>Não</td></tr>
+                    <tr><td>Mesa da Câmara de Vereadores</td><td><span class="marker-blue">Especial</span></td><td>Sim</td><td>Não</td></tr>
+                    <tr><td>Partido com representação na AL</td><td><span class="marker-blue">Especial</span></td><td>Sim</td><td>Não</td></tr>
+                    <tr><td>Entidade de classe estadual</td><td><span class="marker-blue">Especial</span></td><td>Sim</td><td>Não</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="divider">• • •</div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 2 -->
+        <!-- ============================================================ -->
+
+        <h2 id="cap2">2. Organização do Estado e Administração Pública</h2>
+
+        <h3 id="sec2-1">2.1. Princípios Constitucionais da Administração Pública (Art. 37, caput)</h3>
+
+        <p>O art. 37, <em>caput</em>, da Constituição Federal estabelece que a Administração Pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de:</p>
+
+        <div class="mnemonic">
+            <div class="mnemonic-title">📌 Mnemônico: LIMPE</div>
+            <div class="mnemonic-body">
+                <span class="highlight">L</span>egalidade &bull;
+                <span class="highlight">I</span>mpessoalidade &bull;
+                <span class="highlight">M</span>oralidade &bull;
+                <span class="highlight">P</span>ublicidade &bull;
+                <span class="highlight">E</span>ficiência
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Princípio</th><th>Significado</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Legalidade</strong></td><td>O administrador só pode fazer o que a lei autoriza</td></tr>
+                    <tr><td><strong>Impessoalidade</strong></td><td>Atuação sem favoritismos; finalidade pública</td></tr>
+                    <tr><td><strong>Moralidade</strong></td><td>Atuação ética, honesta, proba</td></tr>
+                    <tr><td><strong>Publicidade</strong></td><td>Transparência, divulgação dos atos oficiais</td></tr>
+                    <tr><td><strong>Eficiência</strong></td><td>Melhor resultado com menores custos (EC 19/1998)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Princípios Expressos vs. Implícitos</h4>
+        <div class="card card-important">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Pegadinha Clássica da FCC
+            </div>
+            <p style="margin-bottom:0;">A banca coloca <span class="marker-red">"efetividade"</span> ou <span class="marker-red">"resolutividade"</span> como se fossem princípios expressos do art. 37. <strong>NÃO SÃO!</strong> O único princípio acrescido pela EC 19/1998 foi a <span class="marker">eficiência</span>.</p>
+        </div>
+
+        <p><strong>Princípios expressos no art. 37, caput:</strong> LIMPE (Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência).</p>
+        <p><strong>Princípios implícitos (NÃO estão no art. 37):</strong> Razoabilidade, Proporcionalidade, Supremacia do interesse público, Indisponibilidade do interesse público, Continuidade do serviço público, Autotutela, Motivação.</p>
+
+        <hr>
+
+        <h3 id="sec2-2">2.2. O Princípio da Eficiência</h3>
+
+        <h4>Conceito e Fundamentação</h4>
+        <p>O princípio da eficiência foi inserido no art. 37 da CF/88 pela <strong>Emenda Constitucional nº 19/1998</strong>, que trouxe a <strong>Reforma Administrativa</strong> do Estado brasileiro.</p>
+        <div class="card card-concept">
+            <div class="concept-title">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Conceito
+            </div>
+            <p style="margin-bottom:0;">Exige que a Administração Pública atue com <strong>qualidade</strong>, <strong>celeridade</strong> e <strong>economicidade</strong>, buscando os melhores resultados com os recursos disponíveis.</p>
+        </div>
+
+        <h4>Dois Pilares do Princípio da Eficiência</h4>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Pilar</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Eficiência da conduta do agente</strong></td><td>O servidor deve desempenhar suas funções com o melhor rendimento possível</td></tr>
+                    <tr><td><strong>Eficiência da organização administrativa</strong></td><td>A máquina pública deve ser organizada para oferecer o melhor serviço com o menor custo</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Aplicação Prática</h4>
+        <ul>
+            <li><strong>Atuação do servidor:</strong> Executar tarefas com presteza, qualidade e observância das normas técnicas.</li>
+            <li><strong>Organização dos serviços públicos:</strong> Estruturar-se para atender bem e rapidamente o cidadão.</li>
+            <li><strong>Controle de resultados:</strong> Avaliação periódica de desempenho e metas.</li>
+            <li><strong>Modernização administrativa:</strong> Uso de tecnologia, simplificação de procedimentos, desburocratização.</li>
+        </ul>
+
+        <hr>
+
+        <h3 id="sec2-3">2.3. Organização Municipal</h3>
+
+        <h4>Autonomia Municipal (Art. 18 da CF/88)</h4>
+        <p>A Constituição Federal, em seu art. 18, estabelece que a organização político-administrativa da República Federativa do Brasil compreende a União, os Estados, o Distrito Federal e os Municípios, <strong>todos autônomos</strong>, nos termos da Constituição.</p>
+
+        <div class="card">
+            <p style="margin-bottom:0;"><strong>Características da autonomia municipal:</strong></p>
+            <ol style="margin-bottom:0;">
+                <li><strong>Autonomia política:</strong> Capacidade de se auto-organizar, com a elaboração de sua Lei Orgânica.</li>
+                <li><strong>Autonomia administrativa:</strong> Gestão própria de seus serviços e interesses locais.</li>
+                <li><strong>Autonomia financeira:</strong> Capacidade de instituir e arrecadar seus tributos (IPTU, ISS, ITBI).</li>
+            </ol>
+        </div>
+
+        <div class="card card-important">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Atenção
+            </div>
+            <p style="margin-bottom:0;">Municípios são <strong>autônomos</strong>, não subordinados ao Estado. Não há hierarquia entre Estado e Município, apenas uma relação de coordenação federativa.</p>
+        </div>
+
+        <h4>Vereadores – Requisitos e Imunidade</h4>
+        <ul>
+            <li><strong>Idade mínima para vereador:</strong> <span class="marker">18 anos</span> (art. 14, §3º, VI, "a" da CF/88).</li>
+            <li><strong>Imunidade do vereador:</strong> Prevista no art. 29, VIII da CF/88, a imunidade material (inviolabilidade por opiniões, palavras e votos) do vereador <strong>limita-se à circunscrição do município</strong>.</li>
+        </ul>
+
+        <div class="card card-warning">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Pegadinha
+            </div>
+            <p style="margin-bottom:0;">A FCC adora induzir o candidato a pensar que a imunidade do vereador se estende a todo o território nacional (como ocorre com deputados e senadores). <strong>ERRADO!</strong> A imunidade do vereador é <span class="marker">municipal</span>!</p>
+        </div>
+
+        <hr>
+
+        <h3 id="sec2-4">2.4. Criação de Municípios</h3>
+
+        <h4>Requisitos Constitucionais (Art. 18, §4º da CF/88)</h4>
+        <p>A criação, incorporação, fusão ou desmembramento de Municípios deve observar um procedimento complexo e detalhado:</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Etapa</th><th>Descrição</th><th>Normativo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1º</td><td>Lei complementar federal estabelecendo o período para criação</td><td>Plano federal</td></tr>
+                    <tr><td>2º</td><td>Realização de Estudos de Viabilidade Municipal (EVM)</td><td>Município/Estado</td></tr>
+                    <tr><td>3º</td><td>Divulgação dos EVM</td><td>Município/Estado</td></tr>
+                    <tr><td>4º</td><td>Consulta prévia à população diretamente interessada por <span class="marker">plebiscito</span></td><td>Município/Estado</td></tr>
+                    <tr><td>5º</td><td>Aprovação por <span class="marker">lei estadual</span></td><td>Plano estadual</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card card-important">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Atenção
+            </div>
+            <p style="margin-bottom:0;">Não há necessidade de lei municipal nesse processo.</p>
+        </div>
+
+        <h4>Erros Mais Comuns em Provas</h4>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>O que a FCC colocou ERRADO</th><th>O que é CORRETO</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Criação por lei federal</td><td>Criação por <span class="marker">lei estadual</span></td></tr>
+                    <tr><td>Consulta por referendo</td><td>Consulta por <span class="marker">plebiscito</span></td></tr>
+                    <tr><td>Idade mínima para vereador = 21 anos</td><td>Idade mínima = <span class="marker">18 anos</span></td></tr>
+                    <tr><td>Município subordinado ao Estado</td><td>Município <span class="marker">autônomo</span></td></tr>
+                    <tr><td>Imunidade do vereador = nacional</td><td>Imunidade do vereador = <span class="marker">municipal</span></td></tr>
+                    <tr><td>Criação por lei municipal</td><td>Criação apenas por lei federal e estadual</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <h3 id="sec2-5">2.5. Laicidade do Estado e Colaboração com Cultos Religiosos</h3>
+
+        <h4>Princípio da Laicidade (Art. 19, I da CF/88)</h4>
+        <p>A Constituição Federal, em seu art. 19, I, veda à União, aos Estados, ao Distrito Federal e aos Municípios:</p>
+
+        <blockquote>
+            <p>"estabelecer cultos religiosos ou igrejas, subvencioná-los, embaraçar-lhes o funcionamento ou manter com eles ou seus representantes relações de dependência ou aliança, <strong>ressalvada, na forma da lei, a colaboração de interesse público</strong>."</p>
+        </blockquote>
+
+        <h4>A Única Ressalva Permitida</h4>
+        <p>A única exceção à vedação constitucional é a <strong>colaboração de interesse público</strong>, desde que estabelecida <strong>na forma da lei</strong>.</p>
+
+        <div class="card card-success">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Exemplos de colaboração permitida
+            </div>
+            <ul style="margin-bottom:0;">
+                <li>Convênios com igrejas para prestação de serviços sociais (assistência a dependentes químicos, acolhimento de idosos).</li>
+                <li>Parcerias para preservação de patrimônio histórico e cultural religioso.</li>
+                <li>Celebração de acordos para prestação de serviços de capelania em hospitais públicos e presídios.</li>
+            </ul>
+        </div>
+
+        <div class="card card-important">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                O que NÃO é permitido
+            </div>
+            <ul style="margin-bottom:0;">
+                <li>Subvenção financeira a igrejas.</li>
+                <li>Estabelecimento de cultos religiosos oficiais.</li>
+                <li>Relações de dependência ou aliança com instituições religiosas.</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h3 id="sec2-6">2.6. Empresas Públicas e Sociedades de Economia Mista</h3>
+
+        <h4>Forma de Instituição (Art. 37, XIX da CF/88)</h4>
+        <p>O art. 37, XIX da CF/88 estabelece:</p>
+
+        <blockquote>
+            <p>"somente por lei específica poderá ser criada autarquia e <strong>autorizada a instituição de empresa pública, de sociedade de economia mista e de fundação</strong>"</p>
+        </blockquote>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Entidade</th><th>Forma de Instituição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Autarquia</td><td><span class="marker">Criada</span> por lei específica</td></tr>
+                    <tr><td>Empresa pública</td><td><span class="marker-blue">Autorizada</span> por lei específica</td></tr>
+                    <tr><td>Sociedade de economia mista</td><td><span class="marker-blue">Autorizada</span> por lei específica</td></tr>
+                    <tr><td>Fundação pública</td><td><span class="marker-blue">Autorizada</span> por lei específica</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card card-warning">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Pegadinha
+            </div>
+            <p style="margin-bottom:0;">A FCC adora inverter: "a empresa pública é criada por lei específica". <strong>ERRADO!</strong> A lei específica <span class="marker">autoriza</span> a instituição; a criação efetiva ocorre com o registro.</p>
+        </div>
+
+        <p><strong>Passo a passo para criação de uma empresa pública:</strong></p>
+        <ol>
+            <li><strong>Lei específica autoriza</strong> a instituição.</li>
+            <li><strong>Registro do ato constitutivo</strong> no órgão competente (Junta Comercial ou Registro Civil de Pessoas Jurídicas).</li>
+            <li>A partir do registro, a empresa pública <strong>existe juridicamente</strong>.</li>
+        </ol>
+
+        <hr>
+
+        <h3 id="sec2-7">2.7. Competência dos Tribunais Estaduais</h3>
+
+        <h4>Definição da Competência (Art. 125, §1º da CF/88)</h4>
+        <p>O art. 125, §1º da CF/88 estabelece:</p>
+
+        <blockquote>
+            <p>"A competência dos tribunais será definida na <strong>Constituição do Estado</strong>, sendo a lei de organização judiciária de iniciativa do Tribunal de Justiça."</p>
+        </blockquote>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Norma</th><th>Função</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Constituição do Estado</strong></td><td>Define a competência do Tribunal de Justiça (ADI, conflitos, recursos, etc.)</td></tr>
+                    <tr><td><strong>Lei de Organização Judiciária</strong></td><td>Dispõe sobre estrutura, composição, funcionamento e divisão judiciária (iniciativa do TJ)</td></tr>
+                    <tr><td><strong>Regimento Interno</strong></td><td>Disciplina o funcionamento interno do tribunal (não define competência)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card card-important">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Atenção
+            </div>
+            <p style="margin-bottom:0;">A competência dos tribunais estaduais <strong>não é definida por</strong> lei ordinária estadual, lei complementar estadual, lei de divisão judiciária ou regimento interno. A definição é <strong>exclusiva</strong> da <span class="marker">Constituição Estadual</span>.</p>
+        </div>
+
+        <div class="divider">• • •</div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 3 -->
+        <!-- ============================================================ -->
+
+        <h2 id="cap3">3. Direitos Fundamentais e Remédios Constitucionais</h2>
+
+        <h3 id="sec3-1">3.1. Ensino Religioso em Escolas Públicas</h3>
+
+        <h4>Previsão Constitucional (Art. 210, §1º da CF/88)</h4>
+        <p>O art. 210, §1º da CF/88 dispõe:</p>
+
+        <blockquote>
+            <p>"O ensino religioso, de matrícula facultativa, constituirá disciplina dos horários normais das escolas públicas de ensino fundamental."</p>
+        </blockquote>
+
+        <h4>Entendimento do STF – ADI 4439</h4>
+        <p>No julgamento da ADI 4439, o STF consolidou o entendimento sobre o ensino religioso nas escolas públicas:</p>
+
+        <div class="card">
+            <p style="margin-bottom:0;"><strong>Diretrizes do STF:</strong></p>
+            <ol style="margin-bottom:0;">
+                <li><strong>Disciplina em horário regular:</strong> O ensino religioso deve ser ofertado nos horários normais das escolas públicas, e não em contraturno.</li>
+                <li><strong>Matrícula facultativa:</strong> O aluno pode optar por cursar ou não a disciplina. Nenhum aluno pode ser obrigado a frequentar as aulas.</li>
+                <li><strong>Admissibilidade do ensino confessional:</strong> O STF admite que o ensino religioso seja confessional, desde que haja respeito à diversidade religiosa, seja vedado o proselitismo e garantido o direito de não frequentar.</li>
+                <li><strong>Independência de interesse:</strong> Não é necessário que haja pessoas de outras religiões interessadas em ministrar a disciplina para que o ensino confessional seja ofertado.</li>
+            </ol>
+        </div>
+
+        <div class="card card-tip">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Caso Prático
+            </div>
+            <p style="margin-bottom:0;">Em uma escola pública municipal, o ensino religioso é ofertado em horário normal, com matrícula facultativa, seguindo a doutrina católica. Pais de alunos de outras religiões questionam a constitucionalidade. <strong>Solução:</strong> A prática é constitucional. O ensino religioso confessional é admitido pelo STF, desde que respeitada a diversidade religiosa e vedado o proselitismo. A matrícula facultativa garante o direito de não participação.</p>
+        </div>
+
+        <hr>
+
+        <h3 id="sec3-2">3.2. Planejamento Familiar e Políticas Públicas de Saúde</h3>
+
+        <h4>Previsão Constitucional (Art. 226, §7º da CF/88)</h4>
+        <p>O art. 226, §7º da CF/88 estabelece:</p>
+
+        <blockquote>
+            <p>"Fundado nos princípios da dignidade da pessoa humana e da paternidade responsável, o planejamento familiar é livre decisão do casal, competindo ao Estado propiciar recursos educacionais e científicos para o exercício desse direito, vedada qualquer forma coercitiva por parte de instituições oficiais ou privadas."</p>
+        </blockquote>
+
+        <h4>Análise da Distribuição Gratuita de Preservativos</h4>
+        <p><strong>Caso prático:</strong> Um município distribui preservativos gratuitamente em escolas e postos de saúde. Uma associação de pais alega ofensa ao direito de educar os filhos.</p>
+        <p><strong>Questão:</strong> Essa ação municipal é constitucional?</p>
+        <p><strong>Resposta:</strong> <span class="marker-green">SIM</span>, é constitucional.</p>
+
+        <div class="card card-success">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Fundamentos
+            </div>
+            <ol style="margin-bottom:0;">
+                <li>A distribuição gratuita de preservativos é um <strong>recurso científico e educacional</strong> para o exercício do direito ao planejamento familiar.</li>
+                <li>Não há <strong>coercitividade</strong> na medida. A distribuição é ofertada, não imposta.</li>
+                <li>O art. 226, §7º da CF/88 impõe ao Estado o dever de <strong>propiciar recursos educacionais e científicos</strong> para o planejamento familiar.</li>
+                <li>A medida respeita a liberdade de escolha do casal e não interfere no direito dos pais de educarem os filhos.</li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <h3 id="sec3-3">3.3. Habeas Corpus</h3>
+
+        <h4>Previsão Constitucional (Art. 5º, LXVIII da CF/88)</h4>
+        <p>O art. 5º, LXVIII da CF/88 dispõe:</p>
+
+        <blockquote>
+            <p>"conceder-se-á habeas corpus sempre que alguém sofrer ou se achar ameaçado de sofrer violência ou coação em sua liberdade de locomoção, por ilegalidade ou abuso de poder."</p>
+        </blockquote>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Característica</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Objeto</strong></td><td>Liberdade de locomoção (direito de ir, vir e ficar)</td></tr>
+                    <tr><td><strong>Ameaça ou lesão</strong></td><td>Violência ou coação</td></tr>
+                    <tr><td><strong>Causa</strong></td><td>Ilegalidade ou abuso de poder</td></tr>
+                    <tr><td><strong>Cabimento</strong></td><td>Esferas criminal e não criminal</td></tr>
+                    <tr><td><strong>Legitimidade</strong></td><td>Qualquer pessoa, em nome próprio ou de terceiro</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Cabimento na Esfera Não Criminal (Pegadinha)</h4>
+        <p>O habeas corpus <strong>NÃO</strong> se restringe à esfera criminal. É cabível sempre que houver <strong>ilegalidade ou abuso de poder</strong> na restrição da liberdade de locomoção, independentemente da natureza da restrição.</p>
+
+        <div class="card card-tip">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Exemplos de cabimento do HC na esfera não criminal
+            </div>
+            <ul style="margin-bottom:0;">
+                <li>Internação psiquiátrica compulsória sem laudo médico.</li>
+                <li>Detenção administrativa (ex.: prisão civil do depositário infiel).</li>
+                <li>Retenção de passaporte por autoridade administrativa sem fundamento legal.</li>
+                <li>Impedimento de entrada em repartição pública.</li>
+                <li>Impedimento de saída do país.</li>
+            </ul>
+        </div>
+
+        <div class="card card-concept">
+            <div class="concept-title">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Caso Prático – Internação Psiquiátrica Ilegal
+            </div>
+            <p style="margin-bottom:0;"><strong>Situação:</strong> Joana foi internada em hospital psiquiátrico sem laudo médico, sem prontuário, sem médico no local, e está impedida de sair. <strong>Remédio cabível:</strong> <span class="marker">Habeas Corpus</span>. <strong>Fundamento:</strong> Há ilegalidade na internação (ausência de laudo médico, prontuário e médico responsável), que configura coação ilegal na liberdade de locomoção. O HC é cabível mesmo na esfera não criminal.</p>
+        </div>
+
+        <hr>
+
+        <h3 id="sec3-4">3.4. Distinção entre Habeas Corpus e Habeas Data</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Critério</th><th>Habeas Corpus</th><th>Habeas Data</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Bem jurídico tutelado</strong></td><td>Liberdade de locomoção (ir, vir, ficar)</td><td>Acesso a informações pessoais</td></tr>
+                    <tr><td><strong>Objeto</strong></td><td>Cessar coação/ilegalidade na liberdade</td><td>Obter/corrigir informações pessoais</td></tr>
+                    <tr><td><strong>Cabimento</strong></td><td>Qualquer restrição ilegal à locomoção</td><td>Dados em bancos de dados públicos</td></tr>
+                    <tr><td><strong>Finalidade</strong></td><td>Libertar ou proteger</td><td>Acessar ou retificar dados</td></tr>
+                    <tr><td><strong>Previsão</strong></td><td>Art. 5º, LXVIII da CF/88</td><td>Art. 5º, LXXII da CF/88</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card card-tip">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Casos Práticos para Fixação
+            </div>
+            <ul style="margin-bottom:0;">
+                <li><strong>HABEAS CORPUS:</strong> Joana está presa em um hospital psiquiátrico sem laudo médico. → HC.</li>
+                <li><strong>HABEAS DATA:</strong> João quer saber quais informações o governo federal tem sobre ele em seu banco de dados. → HD.</li>
+                <li><strong>HABEAS DATA:</strong> Maria quer corrigir informações erradas em seu CPF na Receita Federal. → HD.</li>
+                <li><strong>HABEAS CORPUS:</strong> Pedro está impedido de entrar no prédio da prefeitura para exercer seu direito de petição. → HC (restrição à locomoção).</li>
+            </ul>
+        </div>
+
+        <div class="divider">• • •</div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 4 -->
+        <!-- ============================================================ -->
+
+        <h2 id="cap4">4. Funções Essenciais à Justiça na CE/AL</h2>
+
+        <h3 id="sec4-1">4.1. Previsões Constitucionais Estaduais</h3>
+
+        <h4>O que são Funções Essenciais à Justiça?</h4>
+        <p>As funções essenciais à Justiça são atividades indispensáveis ao funcionamento do Poder Judiciário e à efetivação da justiça. São elas:</p>
+        <ol>
+            <li>Ministério Público</li>
+            <li>Advocacia Pública (Procuradorias)</li>
+            <li>Defensoria Pública</li>
+            <li>Advocacia Privada</li>
+            <li>Magistratura (Poder Judiciário)</li>
+        </ol>
+        <p>A Constituição do Estado de Alagoas traz previsões específicas sobre essas funções, detalhando a organização, competências e garantias de cada uma.</p>
+
+        <hr>
+
+        <h3 id="sec4-2">4.2. Advogados e o Poder Judiciário (Art. 157 da CE/AL)</h3>
+
+        <h4>Previsão Constitucional</h4>
+        <p>O art. 157 da Constituição do Estado de Alagoas estabelece que:</p>
+
+        <blockquote>
+            <p>"O Poder Judiciário reservará, em todos os fóruns e tribunais do Estado, <strong>salas privativas, condignas e permanentes</strong> destinadas aos advogados."</p>
+        </blockquote>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Elemento</th><th>Significado</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Salas privativas</strong></td><td>Exclusivas para advogados, não compartilhadas com outros profissionais</td></tr>
+                    <tr><td><strong>Condignas</strong></td><td>Dignas, adequadas, com estrutura mínima para o trabalho</td></tr>
+                    <tr><td><strong>Permanentes</strong></td><td>Fixas, não temporárias ou itinerantes</td></tr>
+                    <tr><td><strong>Em todos os fóruns e tribunais</strong></td><td>Obrigação em toda a estrutura judiciária estadual</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Importância Prática</h4>
+        <p>Essa previsão assegura aos advogados um local adequado para:</p>
+        <ul>
+            <li>Atender seus clientes</li>
+            <li>Reunir-se com colegas</li>
+            <li>Preparar-se para audiências</li>
+            <li>Ter acesso a documentos e processos</li>
+        </ul>
+
+        <hr>
+
+        <h3 id="sec4-3">4.3. Ministério Público Estadual</h3>
+
+        <div class="card card-concept">
+            <div class="concept-title">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Chefe do Ministério Público
+            </div>
+            <p style="margin-bottom:0;">O chefe do Ministério Público do Estado de Alagoas é o <strong>Procurador-Geral de Justiça</strong>.</p>
+        </div>
+
+        <h4>Proibição de Exercício da Advocacia</h4>
+        <p>Os membros do Ministério Público <strong>não podem exercer advocacia</strong>, conforme previsão constitucional (art. 128, §5º, II, "d" da CF/88).</p>
+        <p><strong>Fundamento:</strong> A incompatibilidade visa garantir a independência e imparcialidade do MP no exercício de suas funções institucionais.</p>
+
+        <h4>Legitimidade do Procurador-Geral de Justiça</h4>
+        <p>O Procurador-Geral de Justiça é <strong>legitimado universal</strong> para propor a ADI Estadual, conforme visto no Capítulo 1.</p>
+
+        <hr>
+
+        <h3 id="sec4-4">4.4. Defensoria Pública</h3>
+
+        <h4>Assistência Jurídica Gratuita</h4>
+        <p>A assistência jurídica gratuita aos necessitados é atribuição da <strong>Defensoria Pública</strong>, conforme art. 134 da CF/88.</p>
+
+        <div class="card card-important">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Não confundir
+            </div>
+            <p style="margin-bottom:0;">A Defensoria Pública presta assistência jurídica <strong>gratuita</strong> aos hipossuficientes. A Advocacia-Geral da União ou Procuradorias estaduais prestam consultoria jurídica ao Estado.</p>
+        </div>
+
+        <hr>
+
+        <h3 id="sec4-5">4.5. Procuradoria-Geral do Estado</h3>
+
+        <h4>Execução da Dívida Ativa</h4>
+        <p>A execução da dívida ativa do Estado (cobrança judicial dos créditos tributários e não tributários) é de competência da <strong>Procuradoria-Geral do Estado</strong> (ou Procuradoria-Geral da Fazenda Estadual, conforme a denominação local).</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Função</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Representação judicial do Estado</strong></td><td>Atuar em defesa do Estado em ações judiciais</td></tr>
+                    <tr><td><strong>Consultoria jurídica</strong></td><td>Prestar assessoramento jurídico ao Poder Executivo</td></tr>
+                    <tr><td><strong>Execução da dívida ativa</strong></td><td>Cobrar judicialmente os créditos do Estado</td></tr>
+                    <tr><td><strong>Propositura de ações</strong></td><td>Ajuizar ações em nome do Estado</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="divider">• • •</div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 5 -->
+        <!-- ============================================================ -->
+
+        <h2 id="cap5">5. Macetes, Pegadinhas e Estratégias para Prova</h2>
+
+        <h3 id="sec5-1">5.1. Mnemônicos e Associações Mentais</h3>
+
+        <div class="mnemonic">
+            <div class="mnemonic-title">📌 LIMPE – Princípios da Administração Pública</div>
+            <div class="mnemonic-body">
+                <span class="highlight">L</span>egalidade &bull;
+                <span class="highlight">I</span>mpessoalidade &bull;
+                <span class="highlight">M</span>oralidade &bull;
+                <span class="highlight">P</span>ublicidade &bull;
+                <span class="highlight">E</span>ficiência
+            </div>
+            <div style="margin-top:0.4rem;font-size:0.9rem;color:var(--text-muted);">📌 Macete: LEMBRE-SE DE LIMPAR A ADMINISTRAÇÃO!</div>
+        </div>
+
+        <div class="card card-tip">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Legitimados da ADI Estadual
+            </div>
+            <p style="margin-bottom:0;"><strong>Macete:</strong> "GOVERNADOR, MESA, PGJ, OAB, PARTIDO (COM REPRESENTAÇÃO), PREFEITO, MESA DA CÂMARA E ENTIDADE DE CLASSE"</p>
+        </div>
+
+        <hr>
+
+        <h3 id="sec5-2">5.2. Erros Mais Frequentes em Provas</h3>
+
+        <h4>PEGADINHA 1: Quem pode propor ADI Estadual?</h4>
+        <ul>
+            <li><span class="marker-red">ERRADO:</span> Qualquer Promotor de Justiça pode propor. <span class="marker-green">CORRETO:</span> Apenas o <strong>Procurador-Geral de Justiça</strong> pode propor.</li>
+            <li><span class="marker-red">ERRADO:</span> Qualquer advogado pode propor. <span class="marker-green">CORRETO:</span> Apenas o <strong>Conselho Seccional da OAB</strong> pode propor.</li>
+            <li><span class="marker-red">ERRADO:</span> Presidente do TJ pode propor. <span class="marker-green">CORRETO:</span> Presidente do TJ <strong>julga</strong>, não propõe.</li>
+            <li><span class="marker-red">ERRADO:</span> Partido sem representação pode propor. <span class="marker-green">CORRETO:</span> Partido precisa ter <strong>representação na AL</strong>.</li>
+        </ul>
+
+        <h4>PEGADINHA 2: Criação de Municípios</h4>
+        <ul>
+            <li><span class="marker-red">ERRADO:</span> Criação por lei federal. <span class="marker-green">CORRETO:</span> Criação por <strong>lei estadual</strong>.</li>
+            <li><span class="marker-red">ERRADO:</span> Consulta por referendo. <span class="marker-green">CORRETO:</span> Consulta por <strong>plebiscito</strong>.</li>
+            <li><span class="marker-red">ERRADO:</span> Criação por lei municipal. <span class="marker-green">CORRETO:</span> Apenas lei federal e estadual.</li>
+        </ul>
+
+        <h4>PEGADINHA 3: Idade para Vereador</h4>
+        <ul>
+            <li><span class="marker-red">ERRADO:</span> 21 anos. <span class="marker-green">CORRETO:</span> <strong>18 anos</strong>.</li>
+        </ul>
+
+        <h4>PEGADINHA 4: Imunidade do Vereador</h4>
+        <ul>
+            <li><span class="marker-red">ERRADO:</span> Nacional. <span class="marker-green">CORRETO:</span> <strong>Circunscrição do município</strong>.</li>
+        </ul>
+
+        <h4>PEGADINHA 5: Princípios da Administração</h4>
+        <ul>
+            <li><span class="marker-red">ERRADO:</span> Efetividade, resolutividade, razoabilidade ou proporcionalidade são princípios expressos do art. 37. <span class="marker-green">CORRETO:</span> Os princípios expressos são <strong>LIMPE</strong>.</li>
+        </ul>
+
+        <h4>PEGADINHA 6: Criação de Empresa Pública</h4>
+        <ul>
+            <li><span class="marker-red">ERRADO:</span> Empresa pública é criada por lei específica. <span class="marker-green">CORRETO:</span> Empresa pública é <strong>autorizada</strong> por lei específica.</li>
+        </ul>
+
+        <h4>PEGADINHA 7: Competência dos Tribunais</h4>
+        <ul>
+            <li><span class="marker-red">ERRADO:</span> Definida por lei ordinária estadual. <span class="marker-green">CORRETO:</span> Definida pela <strong>Constituição do Estado</strong>.</li>
+        </ul>
+
+        <hr>
+
+        <h3 id="sec5-3">5.3. Quadro Comparativo de Remédios Constitucionais</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Remédio</th><th>Proteção</th><th>Cabimento</th><th>Legitimado</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Habeas Corpus</strong></td><td>Liberdade de locomoção</td><td>Ilegalidade/abuso de poder</td><td>Qualquer pessoa</td></tr>
+                    <tr><td><strong>Habeas Data</strong></td><td>Acesso/retificação de dados</td><td>Bancos de dados públicos</td><td>Titular dos dados</td></tr>
+                    <tr><td><strong>Mandado de Segurança</strong></td><td>Direito líquido e certo</td><td>Ilegalidade/abuso de poder</td><td>Qualquer pessoa</td></tr>
+                    <tr><td><strong>Mandado de Injunção</strong></td><td>Falta de norma regulamentadora</td><td>Inviabilidade de exercício de direito</td><td>Qualquer pessoa</td></tr>
+                    <tr><td><strong>Ação Popular</strong></td><td>Patrimônio público</td><td>Ilegalidade/lesividade ao erário</td><td>Qualquer cidadão</td></tr>
+                    <tr><td><strong>Ação Civil Pública</strong></td><td>Interesses difusos/coletivos</td><td>Qualquer lesão/interesse</td><td>MP, associações, etc.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card card-tip">
+            <div class="card-label">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Casos Práticos para Fixação dos Remédios
+            </div>
+            <ul style="margin-bottom:0;">
+                <li><strong>Joana foi presa ilegalmente.</strong> → <span class="marker">Habeas Corpus</span>.</li>
+                <li><strong>João quer saber quais informações o governo tem sobre ele.</strong> → <span class="marker-blue">Habeas Data</span>.</li>
+                <li><strong>Maria quer corrigir seu CPF na Receita Federal.</strong> → <span class="marker-blue">Habeas Data</span>.</li>
+                <li><strong>Pedro está impedido de entrar no prédio da prefeitura.</strong> → <span class="marker">Habeas Corpus</span>.</li>
+                <li><strong>Carlos quer impugnar uma obra pública que está causando danos ao patrimônio histórico.</strong> → <span class="marker-purple">Ação Popular</span>.</li>
+                <li><strong>Associação quer impedir a construção de um prédio que poluirá o meio ambiente.</strong> → <span class="marker-purple">Ação Civil Pública</span>.</li>
+                <li><strong>Ana precisa de uma lei que ainda não foi regulamentada para exercer seu direito.</strong> → <span class="marker-purple">Mandado de Injunção</span>.</li>
+                <li><strong>José está com seu direito líquido e certo violado por ato do Prefeito.</strong> → <span class="marker-purple">Mandado de Segurança</span>.</li>
+            </ul>
+        </div>
+
+        <div class="divider">• • •</div>
+
+        <!-- ============================================================ -->
+        <!-- CHECKLIST -->
+        <!-- ============================================================ -->
+
+        <h2 style="margin-top:2.4rem;">Lista de Verificação para Revisão</h2>
+
+        <div style="background:var(--bg-secondary);border-radius:var(--radius);padding:1.6rem 2rem;border:1px solid var(--border-subtle);margin:1.2rem 0;">
+            <p style="font-weight:600;color:var(--text-primary);margin-bottom:0.8rem;">Controle de Constitucionalidade Estadual:</p>
+            <div class="checklist">
+                <div class="check-item"><span class="box"></span> Quem pode propor ADI Estadual na CE/AL</div>
+                <div class="check-item"><span class="box"></span> Quem NÃO pode propor ADI Estadual na CE/AL</div>
+                <div class="check-item"><span class="box"></span> Distinção entre legitimados universais e especiais</div>
+                <div class="check-item"><span class="box"></span> O que é pertinência temática</div>
+            </div>
+
+            <p style="font-weight:600;color:var(--text-primary);margin:1.2rem 0 0.8rem;">Administração Pública:</p>
+            <div class="checklist">
+                <div class="check-item"><span class="box"></span> Princípios expressos do art. 37 (LIMPE)</div>
+                <div class="check-item"><span class="box"></span> Princípio da eficiência e seus pilares</div>
+                <div class="check-item"><span class="box"></span> Autonomia municipal</div>
+                <div class="check-item"><span class="box"></span> Requisitos para criação de municípios</div>
+                <div class="check-item"><span class="box"></span> Laicidade do Estado e colaboração com cultos</div>
+                <div class="check-item"><span class="box"></span> Empresas públicas e sociedades de economia mista</div>
+                <div class="check-item"><span class="box"></span> Competência dos tribunais estaduais</div>
+            </div>
+
+            <p style="font-weight:600;color:var(--text-primary);margin:1.2rem 0 0.8rem;">Direitos Fundamentais e Remédios:</p>
+            <div class="checklist">
+                <div class="check-item"><span class="box"></span> Ensino religioso em escolas públicas</div>
+                <div class="check-item"><span class="box"></span> Planejamento familiar e distribuição de preservativos</div>
+                <div class="check-item"><span class="box"></span> Habeas corpus e seu cabimento</div>
+                <div class="check-item"><span class="box"></span> Distinção entre HC e HD</div>
+            </div>
+
+            <p style="font-weight:600;color:var(--text-primary);margin:1.2rem 0 0.8rem;">Funções Essenciais à Justiça na CE/AL:</p>
+            <div class="checklist">
+                <div class="check-item"><span class="box"></span> Salas privativas para advogados nos fóruns</div>
+                <div class="check-item"><span class="box"></span> Chefe do MP é o Procurador-Geral de Justiça</div>
+                <div class="check-item"><span class="box"></span> Membros do MP não podem advogar</div>
+                <div class="check-item"><span class="box"></span> Defensoria Pública e assistência gratuita</div>
+                <div class="check-item"><span class="box"></span> Procuradoria-Geral e execução da dívida ativa</div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- DICA FINAL -->
+        <!-- ============================================================ -->
+
+        <div class="card card-tip" style="margin-top:2rem;border-left-color:var(--accent-gold);">
+            <div class="card-label" style="color:var(--accent-gold);">
+                <svg class="icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                Dica Final
+            </div>
+            <p style="margin-bottom:0;">Na hora da prova, atente-se ao comando da questão! Se a banca perguntar "quem NÃO pode propor", leia com atenção. As pegadinhas mais comuns envolvem: inverter a ordem (criação vs. autorização), colocar termos que parecem corretos (efetividade vs. eficiência), atribuir imunidade nacional ao vereador, atribuir subordinação do município ao estado, e confundir legitimados universais e especiais.</p>
+        </div>
+
+        <div style="text-align:center;padding:2.4rem 0 0.8rem;border-top:1px solid var(--border-subtle);margin-top:2.4rem;">
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:0;">Material elaborado com base na Constituição Federal de 1988, Constituição do Estado de Alagoas e jurisprudência do STF, com foco em questões da FCC, FGV e Cebraspe para cargos de Técnico Judiciário – Área Judiciária.</p>
+            <p style="color:var(--text-muted);font-size:0.75rem;margin-top:0.4rem;">Bons estudos e sucesso no concurso! 🎯</p>
+        </div>
+
+    </div>
+    <!-- .container -->
+
+</body>
+</html>

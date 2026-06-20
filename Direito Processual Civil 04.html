@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila de Direito Processual Civil – Tópicos Avançados</title>
+    <style>
+        /* Reset básico e tipografia */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1c1e;
+            color: #d6d8da;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Tipografia e espaçamento */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #ececec;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            border-bottom: 2px solid #4a6c8f;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: #f0f2f5;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            margin-top: 2.8rem;
+            border-left: 6px solid #6a8fb1;
+            padding-left: 1rem;
+            color: #e8ebee;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            color: #dce0e4;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            color: #cfd3d8;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        a {
+            color: #8bb4d6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout do sumário */
+        .sumario {
+            background: #262a2e;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 2.5rem 0;
+            border: 1px solid #3a3f44;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .sumario h2 {
+            border-left: none;
+            padding-left: 0;
+            margin-top: 0;
+            font-size: 1.7rem;
+            color: #d4dce6;
+            border-bottom: 2px solid #4a6c8f;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .sumario ul {
+            list-style: none;
+            columns: 1;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sumario li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #2f3439;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .sumario li::before {
+            content: "▹";
+            color: #6a8fb1;
+            margin-right: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .sumario a {
+            color: #c8d4e0;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .sumario a:hover {
+            color: #8bb4d6;
+            text-decoration: none;
+        }
+
+        .sumario .subtopico {
+            font-size: 0.9rem;
+            color: #a0aab4;
+            margin-left: 0.5rem;
+        }
+
+        /* Blocos e caixas */
+        .destaque,
+        .card-conceito,
+        .box-dica,
+        .box-atencao,
+        .box-observacao,
+        .citacao,
+        .callout {
+            border-radius: 14px;
+            padding: 1.3rem 1.8rem;
+            margin: 1.8rem 0;
+            border-left: 6px solid transparent;
+            background: #24282c;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-conceito {
+            background: #1f2a33;
+            border-left-color: #6a8fb1;
+            border: 1px solid #3a5066;
+        }
+
+        .card-conceito strong {
+            color: #aac4db;
+        }
+
+        .box-dica {
+            background: #1f2a1f;
+            border-left-color: #7cb342;
+            border: 1px solid #3a5a3a;
+        }
+
+        .box-dica::before {
+            content: "💡 DICA: ";
+            font-weight: 700;
+            color: #a5d6a7;
+            display: inline;
+        }
+
+        .box-atencao {
+            background: #2a1f1f;
+            border-left-color: #d45a4a;
+            border: 1px solid #5a3a3a;
+        }
+
+        .box-atencao::before {
+            content: "⚠️ ATENÇÃO: ";
+            font-weight: 700;
+            color: #e8a090;
+            display: inline;
+        }
+
+        .box-observacao {
+            background: #1f262f;
+            border-left-color: #b89b6b;
+            border: 1px solid #4a4030;
+        }
+
+        .box-observacao::before {
+            content: "📘 OBSERVAÇÃO: ";
+            font-weight: 700;
+            color: #d4b48a;
+            display: inline;
+        }
+
+        .citacao {
+            background: #20252b;
+            border-left-color: #8a9aa8;
+            font-style: italic;
+            color: #c8d0d8;
+            border: 1px solid #3a4048;
+            position: relative;
+        }
+
+        .citacao::before {
+            content: "“";
+            font-size: 2.8rem;
+            color: #6a8fb1;
+            position: absolute;
+            left: 0.5rem;
+            top: -0.2rem;
+            font-style: normal;
+            opacity: 0.6;
+        }
+
+        .citacao p {
+            padding-left: 2rem;
+            margin-bottom: 0;
+        }
+
+        .citacao .autor {
+            display: block;
+            text-align: right;
+            font-style: normal;
+            font-weight: 400;
+            color: #9aabb8;
+            margin-top: 0.3rem;
+        }
+
+        .callout {
+            background: #1f262e;
+            border-left-color: #b89b6b;
+            border: 1px solid #4a4030;
+            padding: 1.2rem 1.8rem;
+        }
+
+        .callout strong {
+            color: #d4b48a;
+        }
+
+        /* Tabelas modernas */
+        .tabela-wrapper {
+            overflow-x: auto;
+            margin: 1.8rem 0;
+            border-radius: 14px;
+            border: 1px solid #30363c;
+            background: #1e2226;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 600px;
+        }
+
+        th {
+            background: #2f363d;
+            color: #e8edf2;
+            font-weight: 600;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid #4a5a6a;
+        }
+
+        td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #2d3339;
+            vertical-align: top;
+            color: #d0d6dc;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: #262c32;
+        }
+
+        /* Listas */
+        ul,
+        ol {
+            padding-left: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* Linhas divisórias */
+        .divisoria {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, #3a4048, #5a6a7a, #3a4048);
+            margin: 2.5rem 0;
+            opacity: 0.5;
+        }
+
+        /* Destaques inline (marca-texto) */
+        .highlight {
+            background: #3a4a3a;
+            color: #d4e8b0;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .highlight-azul {
+            background: #1f3348;
+            color: #aac4db;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        /* Cards de conceito */
+        .conceito-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        .conceito-item {
+            background: #1f262e;
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            border: 1px solid #3a4048;
+        }
+
+        .conceito-item h4 {
+            margin-top: 0;
+            color: #b8c8d8;
+            font-size: 1.1rem;
+        }
+
+        /* SVGs – diagramas */
+        .diagrama-container {
+            background: #1e2228;
+            border-radius: 18px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid #333a42;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .diagrama-container svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .diagrama-container .legenda {
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            color: #9aaab8;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .sumario ul {
+                columns: 1;
+            }
+
+            .conceito-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tabela-wrapper {
+                font-size: 0.85rem;
+            }
+
+            th,
+            td {
+                padding: 0.6rem 0.8rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            body {
+                padding: 1.8rem 1.2rem;
+            }
+            .sumario ul {
+                columns: 2;
+            }
+        }
+
+        /* Ajustes para tablets maiores */
+        @media (min-width: 1025px) {
+            .sumario ul {
+                columns: 2;
+            }
+        }
+
+        /* Espaçamento entre seções */
+        .secao {
+            margin-bottom: 2.5rem;
+        }
+
+        .subsecao {
+            margin-top: 1.5rem;
+        }
+
+        /* Macetes e tags */
+        .tag {
+            display: inline-block;
+            background: #2f3a44;
+            color: #c8d4e0;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+            margin-right: 0.3rem;
+        }
+
+        .tag-importante {
+            background: #4a2a2a;
+            color: #e8a090;
+        }
+
+        .tag-lei {
+            background: #1f3348;
+            color: #aac4db;
+        }
+
+        /* Rodapé */
+        .rodape-nota {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333a42;
+            font-size: 0.9rem;
+            color: #8a9aa8;
+            text-align: center;
+        }
+
+        /* Para o sumário, links suaves */
+        .sumario a {
+            display: inline-block;
+        }
+
+        /* Citação em bloco */
+        blockquote {
+            background: #1f262e;
+            border-left: 6px solid #6a8fb1;
+            padding: 1rem 1.8rem;
+            margin: 1.5rem 0;
+            border-radius: 0 14px 14px 0;
+            color: #c8d4e0;
+        }
+
+        blockquote p {
+            margin-bottom: 0;
+        }
+
+        /* Ajuste para tabelas em telas pequenas */
+        @media (max-width: 500px) {
+            .tabela-wrapper {
+                font-size: 0.75rem;
+            }
+            th,
+            td {
+                padding: 0.4rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TÍTULO PRINCIPAL -->
+    <h1>APOSTILA DE DIREITO PROCESSUAL CIVIL – TÓPICOS AVANÇADOS PARA CONCURSOS JURÍDICOS</h1>
+    <p style="color: #aab4be; font-size: 1.1rem; margin-top: -0.5rem;">
+        <strong>Material elaborado para cargos de Técnico Judiciário – Área Judiciária</strong><br>
+        Padrão de cobrança: FCC, FGV, Cebraspe e bancas similares<br>
+        <span style="color: #8a9aa8;">Foco: TJCE e demais Tribunais</span>
+    </p>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="secao">
+        <h2 style="border-left-color: #b89b6b;">APRESENTAÇÃO</h2>
+        <p>Caro(a) candidato(a),</p>
+        <p>Esta apostila foi concebida para transformar conhecimentos fragmentados em uma base teórica sólida, conectada e aplicável à realidade das provas de concurso. Não se trata de um resumo, mas de uma reconstrução didática de temas essenciais do Código de Processo Civil (CPC/2015), cobrados com frequência e intensidade variada pelas principais bancas.</p>
+        <p>O conteúdo aqui trabalhado parte de tópicos recorrentes em flashcards de alto desempenho, mas foi expandido para que você compreenda não apenas o "o quê", mas o "porquê", o "como", o "quando" e as "pegadinhas" que as bancas adoram explorar.</p>
+        <p>Ao longo das páginas, você encontrará:</p>
+        <ul>
+            <li>Explicações aprofundadas com linguagem clara e técnica;</li>
+            <li>Tabelas comparativas para fixar diferenças sutis;</li>
+            <li>Esquemas e fluxos para visualização da matéria;</li>
+            <li>Estudos de caso com situações hipotéticas;</li>
+            <li>Dicas de prova e macetes de memorização;</li>
+            <li>Jurisprudência e literalidade da lei sempre que pertinentes.</li>
+        </ul>
+        <p style="font-weight: 500; color: #d4dce6;">Bons estudos!</p>
+        <hr class="divisoria">
+    </section>
+
+    <!-- SUMÁRIO -->
+    <section class="sumario">
+        <h2>SUMÁRIO</h2>
+        <ul>
+            <li><a href="#cap1">1. COMPETÊNCIA NO CPC/2015 – ABSOLUTA, RELATIVA E PRORROGAÇÃO</a>
+                <span class="subtopico">1.1 a 1.6</span>
+            </li>
+            <li><a href="#cap2">2. INTERVENÇÃO DE TERCEIROS – ESPÉCIES E DIFERENÇAS ESSENCIAIS</a>
+                <span class="subtopico">2.1 a 2.5</span>
+            </li>
+            <li><a href="#cap3">3. PARTES, PROCURADORES E SUCESSÃO PROCESSUAL</a>
+                <span class="subtopico">3.1 a 3.5</span>
+            </li>
+            <li><a href="#cap4">4. CITAÇÃO – EFEITOS E DEVERES DO ESCREVENTE</a>
+                <span class="subtopico">4.1 a 4.6</span>
+            </li>
+            <li><a href="#cap5">5. SENTENÇA E SEUS LIMITES – ULTRA, EXTRA E CITRA PETITA</a>
+                <span class="subtopico">5.1 a 5.4</span>
+            </li>
+            <li><a href="#cap6">6. CUMPRIMENTO DE SENTENÇA E ARGUIÇÃO DE INCOMPETÊNCIA</a>
+                <span class="subtopico">6.1 a 6.4</span>
+            </li>
+            <li><a href="#cap7">7. DESCONSIDERAÇÃO DA PERSONALIDADE JURÍDICA – INCIDENTE OU PEDIDO INICIAL?</a>
+                <span class="subtopico">7.1 a 7.4</span>
+            </li>
+            <li><a href="#cap8">8. PRAZO EM DOBRO PARA MINISTÉRIO PÚBLICO E DEFENSORIA PÚBLICA</a>
+                <span class="subtopico">8.1 a 8.4</span>
+            </li>
+            <li><a href="#cap9">9. DISTRIBUIÇÃO POR DEPENDÊNCIA – PRESERVAÇÃO DO JUIZ NATURAL</a>
+                <span class="subtopico">9.1 a 9.3</span>
+            </li>
+            <li><a href="#cap10">10. SÍNTESE FINAL – MAPA MENTAL DOS TÓPICOS</a></li>
+        </ul>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 1 -->
+    <section class="secao" id="cap1">
+        <h2>1. COMPETÊNCIA NO CPC/2015 – ABSOLUTA, RELATIVA E PRORROGAÇÃO</h2>
+
+        <h3>1.1. Conceitos fundamentais</h3>
+        <p>A competência é a medida da jurisdição. Em outras palavras, é o limite dentro do qual o Poder Judiciário exerce sua função de dizer o direito em cada caso concreto. A Constituição Federal e o CPC estabelecem regras para distribuir os processos entre os diversos órgãos do Poder Judiciário, considerando critérios como matéria, pessoa, território, valor da causa e função.</p>
+        <p>Dois conceitos iniciais são imprescindíveis:</p>
+        <ul>
+            <li><strong>Jurisdição</strong>: poder estatal de aplicar o direito aos casos concretos, substituindo a vontade das partes.</li>
+            <li><strong>Competência</strong>: fração da jurisdição atribuída a cada juiz ou tribunal.</li>
+        </ul>
+
+        <h3>1.2. Critérios de determinação da competência</h3>
+        <p>O CPC/2015 adota diversos critérios para fixar a competência, sendo os principais:</p>
+        <div class="tabela-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Critério</th>
+                        <th>Descrição</th>
+                        <th>Exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Matéria</strong></td>
+                        <td>Natureza da relação jurídica discutida</td>
+                        <td>Justiça Federal x Justiça Estadual; Vara Cível x Vara de Família</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pessoa</strong></td>
+                        <td>Qualidade das partes envolvidas</td>
+                        <td>Juízo competente para julgar ações contra a União, estados, municípios</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Território</strong></td>
+                        <td>Circunscrição geográfica onde se desenvolve a relação</td>
+                        <td>Foro do domicílio do réu, do lugar do fato, da situação do imóvel</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Valor da causa</strong></td>
+                        <td>Montante econômico da demanda</td>
+                        <td>Juizado Especial Cível (até 40 salários mínimos) x Vara Cível</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Funcional</strong></td>
+                        <td>Fase ou ato processual</td>
+                        <td>Competência para execução, para instrução, para julgamento de recurso</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>A doutrina e a jurisprudência consolidaram a distinção entre competência <strong>absoluta</strong> e <strong>relativa</strong>, que é um dos temas mais explorados em provas objetivas da FCC, FGV e Cebraspe.</p>
+
+        <h3>1.3. Competência absoluta x relativa – a distinção que cai em prova</h3>
+        <p>A grande diferença reside na possibilidade de <strong>prorrogação</strong> e na <strong>alegação de ofício</strong> pelo juiz.</p>
+
+        <h4>Competência absoluta</h4>
+        <ul>
+            <li><strong>Características</strong>:
+                <ul>
+                    <li>Estabelecida em razão da matéria, da pessoa ou da função.</li>
+                    <li>Não pode ser modificada pela vontade das partes (inderrogável).</li>
+                    <li>Não se prorroga (se o processo for iniciado em juízo absolutamente incompetente, esse vício não se convalesce com o tempo).</li>
+                    <li>Pode ser alegada a qualquer tempo e grau de jurisdição, inclusive pelo juiz de ofício (art. 64, §1º, CPC).</li>
+                    <li>A sua inobservância acarreta nulidade absoluta, que pode ser reconhecida mesmo após o trânsito em julgado, em certas hipóteses.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4>Competência relativa</h4>
+        <ul>
+            <li><strong>Características</strong>:
+                <ul>
+                    <li>Estabelecida em razão do território ou do valor da causa (em regra).</li>
+                    <li>Pode ser modificada pela vontade das partes (derrogável).</li>
+                    <li>Prorroga-se se não for arguida tempestivamente pelo réu (art. 65, caput).</li>
+                    <li>Em regra, não pode ser conhecida de ofício pelo juiz; depende de provocação da parte interessada.</li>
+                    <li>A sua alegação deve ocorrer na contestação, sob pena de preclusão.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="card-conceito">
+            <strong>Quadro comparativo fundamental</strong>
+            <div class="tabela-wrapper" style="margin-top:0.8rem;">
+                <table>
+                    <thead>
+                        <tr><th>Critério</th><th>Competência Absoluta</th><th>Competência Relativa</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Fundamento</strong></td><td>Matéria, pessoa ou função</td><td>Território ou valor da causa</td></tr>
+                        <tr><td><strong>Prorrogação</strong></td><td>Não se prorroga</td><td>Prorroga-se se não arguida pelo réu</td></tr>
+                        <tr><td><strong>Conhecimento de ofício</strong></td><td>Juiz pode/deve conhecer a qualquer tempo</td><td>Juiz não pode conhecer de ofício (salvo exceções legais)</td></tr>
+                        <tr><td><strong>Alegação</strong></td><td>A qualquer tempo e grau de jurisdição</td><td>Na contestação (preclusão)</td></tr>
+                        <tr><td><strong>Natureza do vício</strong></td><td>Nulidade absoluta</td><td>Nulidade relativa</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="box-atencao">
+            A banca FCC frequentemente coloca uma hipótese de competência absoluta (ex.: ação possessória sobre imóvel) e pergunta se o juiz poderia conhecer de ofício. A resposta é sim, pois é absoluta. Já a competência relativa, em regra, não pode ser declarada de ofício.
+        </div>
+
+        <h3>1.4. A incompetência relativa e o papel do Ministério Público</h3>
+        <p>O art. 65, parágrafo único, do CPC traz uma regra específica e que é fonte de pegadinhas em concurso:</p>
+        <blockquote>
+            <p><strong>Art. 65, parágrafo único</strong> – A incompetência relativa pode ser alegada pelo Ministério Público nas causas em que atuar.</p>
+        </blockquote>
+        <p>Isso significa que, mesmo que o réu não tenha argüido a incompetência relativa na contestação (e, portanto, a competência se prorrogou para ele), o Ministério Público, se atua no feito (como fiscal da ordem jurídica ou como parte), pode suscitar a incompetência relativa, desde que o faça no prazo legal a que está sujeito. Essa prerrogativa não se confunde com a possibilidade de o MP alegar incompetência absoluta, que pode ser feita a qualquer tempo (como dito).</p>
+        <div class="box-dica">
+            <strong>Por que isso é importante?</strong><br>
+            Porque a regra geral é que a incompetência relativa se prorroga se não for arguida pelo réu. Mas o parágrafo único do art. 65 cria uma exceção: em relação ao MP, a competência relativa não se prorroga. Portanto, o MP pode alegá-la, ainda que o réu tenha silenciado.
+        </div>
+        <div class="box-atencao">
+            <strong>Pegadinha típica da FCC</strong>:<br>
+            <em>"Em ação que envolve menor absolutamente incapaz, o réu não arguiu a incompetência relativa na contestação. O Ministério Público, intimado para atuar no feito, pode suscitar a incompetência relativa?"</em><br>
+            <strong>Resposta</strong>: Sim, com base no art. 65, parágrafo único. O erro seria afirmar que o MP só pode alegar incompetência absoluta.
+        </div>
+
+        <h3>1.5. Caso prático: ação possessória em foro diverso do da situação da coisa</h3>
+        <p>A ação de reintegração de posse de imóvel foi proposta no foro do domicílio do autor (Comarca de Fortaleza), mas o imóvel está situado em Sobral. Essa demanda foi proposta em foro relativamente ou absolutamente incompetente? O juiz pode declarar de ofício?</p>
+        <ul>
+            <li><strong>Fundamento</strong>: O art. 47, §2º, do CPC estabelece que as ações possessórias imobiliárias devem ser propostas no foro da situação da coisa.</li>
+            <li><strong>Natureza da competência</strong>: É competência <strong>absoluta</strong>, pois decorre da matéria (direito real sobre imóvel) e da função (competência funcional) – é uma regra de competência absoluta, não podendo ser derrogada pelas partes.</li>
+            <li><strong>Consequência</strong>: O juiz <strong>deve</strong> reconhecer a incompetência de ofício, a qualquer tempo, e remeter os autos ao juízo competente. Não há prorrogação.</li>
+        </ul>
+        <div class="box-dica">
+            A banca pode tentar confundir o candidato dizendo que “a competência territorial é relativa, portanto o juiz não pode conhecer de ofício”. Contudo, tratando-se de ação possessória de imóvel, a regra do art. 47, §2º, é de competência absoluta, portanto o juiz pode, sim, declarar de ofício.
+        </div>
+
+        <h3>1.6. Quadro-resumo das matérias que geram competência absoluta ou relativa</h3>
+        <div class="tabela-wrapper">
+            <table>
+                <thead>
+                    <tr><th>Matéria / Hipótese</th><th>Competência</th><th>Base legal</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Ação possessória imobiliária</td><td>Absoluta</td><td>Art. 47, §2º</td></tr>
+                    <tr><td>Ações contra a Fazenda Pública</td><td>Absoluta (pessoa)</td><td>Art. 51 e 52</td></tr>
+                    <tr><td>Competência da Justiça Federal</td><td>Absoluta (matéria)</td><td>CF, art. 109</td></tr>
+                    <tr><td>Competência funcional (ex.: juízo da execução)</td><td>Absoluta</td><td>Art. 45 e seguintes</td></tr>
+                    <tr><td>Foro do domicílio do réu (regra geral)</td><td>Relativa (território)</td><td>Art. 46</td></tr>
+                    <tr><td>Foro de eleição (cláusula contratual)</td><td>Relativa (território)</td><td>Art. 63</td></tr>
+                    <tr><td>Valor da causa para Juizados Especiais</td><td>Relativa (valor)</td><td>Lei 9.099/95</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <hr class="divisoria">
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 2 -->
+    <section class="secao" id="cap2">
+        <h2>2. INTERVENÇÃO DE TERCEIROS – ESPÉCIES E DIFERENÇAS ESSENCIAIS</h2>
+        <p>A intervenção de terceiros é o fenômeno pelo qual alguém que não é parte originária ingressa em um processo já em curso, voluntária ou forçadamente. O CPC/2015 regula diversas modalidades, mas as três que geram maior confusão – e, por isso, são campeãs de questões – são: <strong>denunciação da lide</strong>, <strong>chamamento ao processo</strong> e <strong>assistência</strong>.</p>
+
+        <h3>2.1. Denunciação da lide</h3>
+        <ul>
+            <li><strong>Conceito</strong>: A denunciação da lide é o ato pelo qual uma das partes (denunciante) chama ao processo um terceiro (denunciado) contra quem poderá exercer direito de regresso, caso venha a ser condenada na ação principal.</li>
+            <li><strong>Previsão legal</strong>: arts. 125 a 129 do CPC.</li>
+            <li><strong>Quem pode requerer</strong>: <strong>qualquer parte</strong> (autor ou réu) – art. 125, caput.</li>
+            <li><strong>Natureza</strong>: <strong>Intervenção forçada</strong>, pois o denunciado é obrigado a integrar a relação processual, sob pena de revelia e de não poder discutir a relação de direito material no futuro.</li>
+            <li><strong>Finalidade</strong>: Garantir o direito de regresso, evitando que a parte que sofreu a condenação tenha que ajuizar ação autônoma contra o terceiro.</li>
+            <li><strong>Exemplos</strong>:
+                <ul>
+                    <li>O segurado denuncia a seguradora (ações regressivas).</li>
+                    <li>O proprietário do veículo denuncia o condutor (nas ações de reparação civil).</li>
+                </ul>
+            </li>
+            <li><strong>Procedimento</strong>: O denunciante deve requerer a citação do denunciado na contestação (se for réu) ou na petição inicial (se for autor). O denunciado poderá assumir a defesa ou contestar o pedido de regresso.</li>
+        </ul>
+
+        <h3>2.2. Chamamento ao processo</h3>
+        <ul>
+            <li><strong>Conceito</strong>: O chamamento ao processo é a intervenção pela qual o réu (e somente o réu) chama ao processo os corresponsáveis pela obrigação, para que integrem a relação processual e, ao final, respondam pela dívida, se for o caso.</li>
+            <li><strong>Previsão legal</strong>: art. 130 do CPC.</li>
+            <li><strong>Quem pode requerer</strong>: <strong>exclusivamente o réu</strong>.</li>
+            <li><strong>Natureza</strong>: <strong>Intervenção forçada</strong>, porque os chamados são obrigados a comparecer.</li>
+            <li><strong>Finalidade</strong>: Evitar o fracionamento das execuções e possibilitar o rateio da responsabilidade entre os devedores solidários, fiadores, etc.</li>
+            <li><strong>Hipóteses típicas</strong> (rol taxativo do art. 130):
+                <ul>
+                    <li>I – do afiançado, na ação em que o fiador for réu;</li>
+                    <li>II – dos outros fiadores, quando o fiador for réu;</li>
+                    <li>III – dos demais devedores solidários, quando o réu for um deles.</li>
+                </ul>
+            </li>
+            <li><strong>Prazo</strong>: O réu deve requerer o chamamento na contestação (art. 130, parágrafo único).</li>
+            <li><strong>Obs</strong>: Diferentemente da denunciação da lide, o chamamento ao processo não admite pedido do autor, nem de qualquer outro sujeito. É uma prerrogativa exclusiva do demandado.</li>
+        </ul>
+
+        <h3>2.3. Assistência (simples e litisconsorcial)</h3>
+        <ul>
+            <li><strong>Conceito</strong>: A assistência é a intervenção de um terceiro que, embora não seja parte, possui interesse jurídico no resultado do processo e ingressa para auxiliar uma das partes.</li>
+            <li><strong>Previsão legal</strong>: arts. 119 a 124 do CPC.</li>
+            <li><strong>Natureza</strong>: <strong>Intervenção voluntária</strong> (o terceiro decide se intervém ou não).</li>
+            <li><strong>Quem pode requerer</strong>: qualquer terceiro que demonstre interesse jurídico.</li>
+            <li><strong>Espécies</strong>:
+                <ul>
+                    <li><strong>Assistência simples</strong>: o assistente atua como auxiliar da parte principal, não sendo considerado litisconsorte. A sentença não atinge diretamente o assistente, que pode, posteriormente, discutir a relação jurídica em ação própria, desde que não tenha atuado de forma contraditória.</li>
+                    <li><strong>Assistência litisconsorcial</strong>: ocorre quando a relação jurídica entre assistente e parte principal é de tal modo conexa que a decisão terá eficácia direta sobre o assistente, equiparando-se ao litisconsorte. Exemplo: o sublocatário que assiste o locatário em ação de despejo.</li>
+                </ul>
+            </li>
+            <li><strong>Efeitos</strong>: O assistente não é parte, mas pode praticar atos processuais em nome do assistido, inclusive recorrer, sujeitando-se aos mesmos ônus processuais, salvo se for assistente simples.</li>
+        </ul>
+
+        <h3>2.4. Tabela comparativa definitiva – denunciação, chamamento e assistência</h3>
+        <div class="tabela-wrapper">
+            <table>
+                <thead>
+                    <tr><th>Critério</th><th>Denunciação da lide</th><th>Chamamento ao processo</th><th>Assistência</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Parte que requer</strong></td><td>Autor ou réu (qualquer parte)</td><td>Somente o réu</td><td>Terceiro (voluntário)</td></tr>
+                    <tr><td><strong>Natureza</strong></td><td>Forçada</td><td>Forçada</td><td>Voluntária</td></tr>
+                    <tr><td><strong>Finalidade</strong></td><td>Exercício de direito de regresso</td><td>Inclusão de corresponsáveis (fiador, devedor solidário)</td><td>Auxiliar a parte com interesse jurídico</td></tr>
+                    <tr><td><strong>Rol de hipóteses</strong></td><td>Amplo (direito de regresso)</td><td>Taxativo (art. 130)</td><td>Qualquer hipótese de interesse jurídico</td></tr>
+                    <tr><td><strong>Prazo</strong></td><td>Na contestação (réu) ou na inicial (autor)</td><td>Na contestação (réu)</td><td>Até o julgamento (em regra)</td></tr>
+                    <tr><td><strong>Efeitos da sentença</strong></td><td>O denunciado pode ser responsabilizado no mesmo processo</td><td>O chamado responde solidariamente</td><td>O assistente não é parte, mas se sujeita aos efeitos (assistência litisconsorcial, quando for o caso)</td></tr>
+                    <tr><td><strong>Base legal</strong></td><td>Arts. 125-129</td><td>Art. 130</td><td>Arts. 119-124</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box-dica">
+            <strong>MACETE</strong>: para diferenciar na prova, lembre-se:<br>
+            • <strong>Denunciação</strong> → qualquer parte + regresso.<br>
+            • <strong>Chamamento</strong> → só réu + fiador / devedor solidário.<br>
+            • <strong>Assistência</strong> → voluntário + interesse jurídico.
+        </div>
+
+        <h3>2.5. Casos práticos e distinções cobradas em prova</h3>
+        <div class="card-conceito">
+            <p><strong>Caso 1</strong>: Autor ajuíza ação indenizatória contra o motorista de um veículo. O réu, entendendo que o proprietário do veículo é corresponsável, deseja trazê-lo ao processo. Qual o instrumento adequado?<br>
+            <strong>Resposta</strong>: Denunciação da lide, porque o réu pode denunciar o proprietário para fins de regresso (art. 125). O chamamento ao processo, como visto, só cabe contra fiador ou devedor solidário, não contra proprietário por fato de terceiro, a não ser que haja solidariedade legal.</p>
+        </div>
+        <div class="card-conceito">
+            <p><strong>Caso 2</strong>: O fiador é acionado para pagar dívida do afiançado. Ele pode chamar o afiançado ao processo?<br>
+            <strong>Resposta</strong>: Sim, o chamamento ao processo é cabível, pois o art. 130, I, expressamente prevê o chamamento do afiançado na ação em que o fiador for réu.</p>
+        </div>
+        <div class="card-conceito">
+            <p><strong>Caso 3</strong>: Uma seguradora pretende ingressar em ação indenizatória movida contra seu segurado, para garantir seus interesses em eventual regresso. Qual modalidade é cabível?<br>
+            <strong>Resposta</strong>: Assistência, se a seguradora tiver interesse jurídico no resultado, ou denunciação da lide, se houver direito de regresso (art. 125). A escolha dependerá da política processual da seguradora; contudo, a denunciação é mais comum em contratos de seguro.</p>
+        </div>
+        <div class="box-atencao">
+            <strong>Caso 4 (pegadinha da FCC)</strong>: A questão afirma: "A denunciação da lide somente pode ser requerida pelo réu, pois o chamamento ao processo é que pode ser requerido por qualquer parte." Você já percebeu que é o contrário, certo? Denunciação → qualquer parte; chamamento → só réu.
+        </div>
+        <hr class="divisoria">
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 3 -->
+    <section class="secao" id="cap3">
+        <h2>3. PARTES, PROCURADORES E SUCESSÃO PROCESSUAL</h2>
+
+        <h3>3.1. Sucessão processual (art. 110) – morte da parte e habilitação de herdeiros</h3>
+        <p>A sucessão processual ocorre quando a parte originária (autor ou réu) é substituída por outra pessoa em razão de alteração na titularidade do direito material discutido em juízo. A hipótese clássica é a <strong>morte da parte</strong>, que enseja a habilitação dos herdeiros ou do espólio.</p>
+        <ul>
+            <li><strong>Previsão</strong>: art. 110 do CPC: "Ocorrendo a morte de qualquer das partes, dar-se-á a sucessão pelo seu espólio ou pelos seus sucessores, observado o disposto no art. 313, § 2º."</li>
+            <li><strong>Procedimento</strong>: O processo fica suspenso (art. 313, I) até que se promova a habilitação dos sucessores. A habilitação pode ser requerida pelo espólio, pelos herdeiros ou pelo Ministério Público, se for o caso.</li>
+            <li><strong>Natureza</strong>: É uma sucessão <strong>processual</strong>, pois o herdeiro assume a posição da parte falecida, mas não em nome próprio (como na substituição processual). O herdeiro está defendendo direito próprio (herdado), não direito alheio.</li>
+        </ul>
+        <div class="box-dica">
+            <strong>Diferença crucial</strong>:<br>
+            • <strong>Sucessão processual</strong>: uma pessoa (herdeiro ou espólio) assume o lugar da parte originária, pois o direito material lhe foi transmitido (ex.: herança). Base: art. 110.<br>
+            • <strong>Substituição processual</strong>: ocorre quando uma pessoa, em nome próprio, defende direito alheio (ex.: sindicato defende direito de associado; MP defende direitos difusos). Base: art. 18.
+        </div>
+        <div class="box-atencao">
+            Se a questão falar em "morte do autor e deferimento da habilitação do único herdeiro", o fenômeno é <strong>sucessão processual</strong>, não substituição. O herdeiro não está defendendo direito alheio; está defendendo direito que lhe pertence por sucessão.
+        </div>
+
+        <h3>3.2. Vênia conjugal – suprimento judicial e consequências da falta</h3>
+        <p>A vênia conjugal, também chamada de autorização marital, é a necessidade de consentimento do cônjuge para a propositura de determinadas ações que envolvam direitos reais imobiliários, quando o regime de bens é o da comunhão universal ou parcial (art. 73 e 74 do CPC).</p>
+        <ul>
+            <li><strong>Regra</strong>: O cônjuge deve anuir à ação que verse sobre direito real imobiliário, salvo se o regime de bens for o da separação absoluta.</li>
+            <li><strong>Exceção</strong>: Quando for impossível obter o consentimento (ex.: cônjuge hospitalizado e inconsciente, em local incerto, ou ausente), o juiz pode <strong>suprir</strong> a falta, nos termos do art. 74, caput.</li>
+            <li><strong>Consequência da falta de consentimento não suprido</strong>: O processo será <strong>invalidado</strong> (art. 74, parágrafo único). Portanto, a ausência da vênia conjugal, quando necessária, é causa de nulidade do processo.</li>
+        </ul>
+        <div class="card-conceito">
+            <p><strong>Caso prático</strong>:<br>
+            O autor, casado sob comunhão universal de bens, ajuíza ação sobre direito real imobiliário sem o consentimento do cônjuge, que está hospitalizado e inconsciente. O que o juiz deve fazer?<br>
+            O juiz deve <strong>suprir o consentimento faltante</strong>, pois é impossível ao cônjuge concedê-lo. Assim, o processo será válido. Caso o juiz não suprima e o cônjuge não consinta, o processo será nulo.</p>
+        </div>
+        <div class="box-atencao">
+            <strong>Pegadinha</strong>: A banca pode perguntar se o suprimento judicial é automático. Não: o juiz deve analisar a impossibilidade do consentimento e, convencido da necessidade, suprir a anuência. A falta de pedido do autor pode ser suprida de ofício? A doutrina majoritária entende que o juiz pode determinar a emenda à inicial para que o autor comprove a impossibilidade ou requeira o suprimento, sob pena de extinção.
+        </div>
+
+        <h3>3.3. Legitimidade ativa em ações personalíssimas – o caso da investigação de paternidade</h3>
+        <p>A ação de investigação de paternidade é uma das ações de estado, voltada a declarar o vínculo de parentesco entre pai e filho. Trata-se de direito <strong>personalíssimo</strong> do filho, ou seja, somente ele (ou seu representante legal, se incapaz) pode ajuizar a ação. O irmão do suposto filho não tem legitimidade ativa para propor a ação em nome próprio, mesmo que o filho não tenha interesse.</p>
+        <ul>
+            <li><strong>Fundamento</strong>: A legitimidade é a titularidade da ação, conferida pela lei. Em ações de estado, a lei reserva ao próprio filho a iniciativa, pois o direito à identidade pessoal e ao reconhecimento da filiação é intransferível.</li>
+            <li><strong>Consequência da falta de legitimidade</strong>: O processo será extinto sem resolução de mérito (art. 485, VI, CPC), por ilegitimidade ativa ad causam.</li>
+        </ul>
+        <div class="card-conceito">
+            <p><strong>Caso prático</strong>:<br>
+            João, irmão de Pedro, quer ajuizar ação de investigação de paternidade em nome próprio para que o pai de ambos seja declarado pai de Pedro, pois Pedro não tem interesse.<br>
+            <strong>Resposta</strong>: Não pode, pois falta legitimidade ativa a João. O direito é personalíssimo de Pedro. A ação, se ajuizada por João, será extinta sem resolução de mérito.</p>
+        </div>
+        <div class="box-atencao">
+            <strong>Pegadinha</strong>: A banca pode tentar confundir com a possibilidade de o Ministério Público ajuizar a ação em nome do incapaz (representação) ou como fiscal da lei. Em se tratando de filho incapaz, o MP tem legitimidade para atuar como representante do incapaz (se não houver curador ou representante) ou como fiscal (custos legis). Mas o irmão, em nome próprio, não tem legitimidade.
+        </div>
+        <hr class="divisoria">
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 4 -->
+    <section class="secao" id="cap4">
+        <h2>4. CITAÇÃO – EFEITOS E DEVERES DO ESCREVENTE</h2>
+
+        <h3>4.1. Conceito e finalidade</h3>
+        <p>A citação é o ato pelo qual se dá ciência ao réu, ao executado ou ao interessado de que contra ele foi proposta uma demanda ou está em curso um processo, para que possa exercer seu direito de defesa. O art. 238 do CPC define:</p>
+        <blockquote>
+            <p>"Art. 238. Citação é o ato pelo qual são convocados o réu, o executado ou o interessado para integrar a relação processual."</p>
+        </blockquote>
+        <p>A citação é condição de desenvolvimento válido do processo (art. 239), e sua ausência ou nulidade acarreta a invalidade de todos os atos subsequentes.</p>
+
+        <h3>4.2. Efeitos da citação válida</h3>
+        <p>A citação válida produz diversos efeitos, que devem ser conhecidos para resolver questões de prova:</p>
+        <ol>
+            <li><strong>Litispendência</strong>: A citação válida induz litispendência (art. 240). Isso significa que, uma vez citado o réu, a demanda não pode mais ser proposta perante outro juízo, sob pena de extinção da segunda ação, salvo exceções. O art. 240 é claro: "A citação válida, ainda quando ordenada por juízo incompetente, induz litispendência." Portanto, ainda que a citação tenha sido feita por juízo incompetente, a litispendência se estabelece para todos os efeitos.</li>
+            <li><strong>Constituição em mora</strong>: Para certas obrigações (as que dependem de interpelação), a citação interrompe a prescrição e constitui o devedor em mora (art. 240, parágrafo único).</li>
+            <li><strong>Revelia</strong>: A falta de contestação após a citação gera revelia (art. 344).</li>
+            <li><strong>Coisa julgada</strong>: A citação é necessária para a formação da coisa julgada (art. 506).</li>
+        </ol>
+
+        <h3>4.3. Comunicação do resultado do julgamento favorável ao réu antes da citação (art. 241)</h3>
+        <p>Este é um dispositivo que muitos candidatos desconhecem, e a FCC já o cobrou. O art. 241 do CPC estabelece:</p>
+        <blockquote>
+            <p>"Art. 241. Incumbe ao escrivão ou chefe de secretaria comunicar ao réu, ao executado ou ao interessado o resultado do julgamento quando a sentença de mérito, favorável a eles, transitar em julgado antes da citação."</p>
+        </blockquote>
+        <ul>
+            <li><strong>Quem deve comunicar?</strong> O escrivão ou chefe de secretaria.</li>
+            <li><strong>Para quem?</strong> Ao réu, executado ou interessado.</li>
+            <li><strong>Quando?</strong> Quando a sentença de mérito lhe for favorável e transitar em julgado antes da citação.</li>
+        </ul>
+        <p>Isso evita que o réu seja surpreendido com uma execução posterior sem saber que houve processo contra ele.</p>
+
+        <h3>4.4. Citação por hora certa – permanência no CPC/2015</h3>
+        <p>A citação por hora certa, que já existia no CPC/1973, foi mantida no art. 252 do novo CPC. Ela ocorre quando o oficial de justiça, após tentar citar o réu em seu domicílio por três vezes em dias diferentes, suspeita que o réu esteja se ocultando para não ser citado. Nesse caso, o oficial de justiça intima a pessoa com quem conversar (vizinho, parente) de que voltará em dia e hora certos para efetuar a citação, fazendo a comunicação por edital.</p>
+        <p><strong>Consequências</strong>: A citação por hora certa é válida e produz todos os efeitos da citação, desde que observados os requisitos legais (três tentativas frustradas e suspeita de ocultação).</p>
+
+        <h3>4.5. Comparecimento espontâneo e supressão de nulidade</h3>
+        <p>O art. 239, §1º, do CPC dispõe que "o comparecimento espontâneo do réu supre a falta ou a nulidade da citação." Isso significa que, se o réu, mesmo sem ter sido citado válida ou regularmente, comparece aos autos e pratica ato que implique aceitação do processo (ex.: contestação, nomeação de advogado, etc.), a citação é considerada suprida, e o processo prossegue como se a citação tivesse sido feita regularmente.</p>
+        <div class="box-atencao">
+            <strong>Pegadinha</strong>: A FCC pode perguntar: "O comparecimento espontâneo supre a falta de citação, mas não os efeitos da revelia?" Na verdade, se o réu comparece e contesta, não há revelia. O comparecimento voluntário faz com que o processo seja válido a partir daí.
+        </div>
+        <hr class="divisoria">
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 5 -->
+    <section class="secao" id="cap5">
+        <h2>5. SENTENÇA E SEUS LIMITES – ULTRA, EXTRA E CITRA PETITA</h2>
+
+        <h3>5.1. Princípio da congruência ou adstrição</h3>
+        <p>O juiz, ao proferir a sentença, está adstrito ao pedido formulado pelo autor, não podendo decidir além, aquém ou fora do que foi pedido, salvo as exceções legais. Esse princípio está consagrado no art. 492 do CPC:</p>
+        <blockquote>
+            <p>"Art. 492. É vedado ao juiz proferir decisão de natureza diversa da pedida, bem como condenar a parte em quantidade superior ou em objeto diverso do que lhe foi demandado."</p>
+        </blockquote>
+        <p>A violação a esse princípio gera vícios na sentença: <strong>ultra petita</strong>, <strong>extra petita</strong> ou <strong>citra petita</strong>.</p>
+
+        <h3>5.2. Compreensão dos acessórios no pedido (art. 322, §1º)</h3>
+        <p>O art. 322, §1º, do CPC amplia o pedido de forma implícita:</p>
+        <blockquote>
+            <p>"Art. 322, §1º. Compreendem-se no pedido principal os juros legais, a correção monetária e as verbas de sucumbência, inclusive honorários advocatícios."</p>
+        </blockquote>
+        <p>Isso significa que, mesmo que o autor não tenha pedido expressamente juros, correção monetária e honorários, esses itens são considerados <strong>pedidos implícitos</strong>, pois decorrem da própria condenação principal. Assim, o juiz que incluir tais acessórios na sentença não está decidindo ultra ou extra petita; está apenas aplicando acessórios legais automáticos.</p>
+        <div class="card-conceito">
+            <p><strong>Caso prático</strong>:<br>
+            O autor pede condenação do réu ao pagamento de R$ 10.000,00. O juiz condena ao pagamento de R$ 10.000,00, acrescidos de juros legais, correção monetária e honorários de sucumbência de 10%.<br>
+            <strong>Resposta</strong>: Sentença válida, pois juros, correção e honorários são acessórios compreendidos no pedido, mesmo sem pedido expresso.</p>
+        </div>
+
+        <h3>5.3. Distinção entre sentença ultra petita, extra petita e citra petita</h3>
+        <div class="tabela-wrapper">
+            <table>
+                <thead>
+                    <tr><th>Vício</th><th>Conceito</th><th>Exemplo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Ultra petita</strong></td><td>O juiz concede mais do que foi pedido (quantidade superior)</td><td>Autor pede R$ 100,00; juiz condena em R$ 150,00.</td></tr>
+                    <tr><td><strong>Extra petita</strong></td><td>O juiz concede objeto diverso do pedido (outra coisa)</td><td>Autor pede entrega de bem; juiz condena em perdas e danos.</td></tr>
+                    <tr><td><strong>Citra petita</strong></td><td>O juiz deixa de se manifestar sobre um ou mais pedidos (omissão)</td><td>Autor pede A, B e C; juiz decide apenas sobre A e B.</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p><strong>Importante</strong>: Juros, correção e honorários, por serem acessórios, <strong>não</strong> configuram ultra ou extra petita, conforme art. 322, §1º.</p>
+
+        <h3>5.4. Exemplos práticos e erro comum</h3>
+        <div class="card-conceito">
+            <p><strong>Exemplo 1</strong>:<br>
+            O autor pede condenação do réu a pagar R$ 50.000,00 a título de danos morais, mais R$ 20.000,00 de lucros cessantes. O juiz condena em R$ 50.000,00 de danos morais, e omite-se quanto aos lucros cessantes.<br>
+            <strong>Resposta</strong>: Sentença <strong>citra petita</strong>, por omissão de um dos pedidos.</p>
+        </div>
+        <div class="card-conceito">
+            <p><strong>Exemplo 2</strong>:<br>
+            O autor pede a rescisão de contrato e a devolução das quantias pagas. O juiz, em vez de rescindir, condena o réu a adimplir o contrato.<br>
+            <strong>Resposta</strong>: Sentença <strong>extra petita</strong>, porque o juiz concedeu objeto diverso (cumprimento, não rescisão).</p>
+        </div>
+        <div class="box-atencao">
+            <strong>Exemplo 3 (pegadinha da FCC)</strong>:<br>
+            O autor pede R$ 100.000,00 de indenização e o juiz condena o réu a pagar R$ 100.000,00 mais juros e correção. A questão diz: "A sentença é ultra petita, pois o juiz concedeu juros e correção não pedidos." <strong>Errado!</strong> Juros e correção são acessórios, portanto não configuram ultra petita.
+        </div>
+        <hr class="divisoria">
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 6 -->
+    <section class="secao" id="cap6">
+        <h2>6. CUMPRIMENTO DE SENTENÇA E ARGUIÇÃO DE INCOMPETÊNCIA</h2>
+
+        <h3>6.1. Cumprimento de sentença no CPC/2015</h3>
+        <p>O cumprimento de sentença é a fase de execução da decisão judicial transitada em julgado (ou provisória, com efeito suspensivo). O CPC/2015 separou o processo de conhecimento da execução, embora ambos tramitem nos mesmos autos (art. 513). O cumprimento da sentença pode ser:</p>
+        <ul>
+            <li><strong>Voluntário</strong>: o devedor paga no prazo de 15 dias (art. 523) e fica isento de multa.</li>
+            <li><strong>Forçado</strong>: se não paga, o exequente pode requerer o prosseguimento da execução, com penhora e expropriação.</li>
+        </ul>
+
+        <h3>6.2. Impugnação ao cumprimento de sentença (art. 525) – cabimento e prazo</h3>
+        <p>A impugnação ao cumprimento de sentença é o meio processual cabível para o executado (devedor) opor-se à execução fundada em título judicial (sentença). Está prevista no art. 525 do CPC.</p>
+        <ul>
+            <li><strong>Prazo</strong>: 15 dias úteis, contados da intimação para pagamento voluntário ou da penhora (art. 525, caput).</li>
+            <li><strong>Matérias que podem ser alegadas</strong> (art. 525, §1º): rol exemplificativo, mas abrangente, incluindo:
+                <ul>
+                    <li>I – inexistência ou nulidade do título executivo;</li>
+                    <li>II – inexigibilidade do título;</li>
+                    <li>III – excesso de execução;</li>
+                    <li>IV – prescrição ou decadência;</li>
+                    <li>V – erro de cálculo;</li>
+                    <li>VI – <strong>incompetência absoluta ou relativa do juízo da execução</strong> (inciso VI – atenção!);</li>
+                    <li>VII – e outras.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>6.3. Arguição de incompetência absoluta ou relativa por meio da impugnação</h3>
+        <p>O art. 525, §1º, VI, expressamente permite que o executado, na impugnação, alegue a <strong>incompetência absoluta ou relativa do juízo da execução</strong>. Isso é relevante porque, no processo de conhecimento, a incompetência relativa deveria ter sido arguida na contestação; no cumprimento de sentença, o executado pode argui-la na impugnação, pois a execução pode correr em juízo diverso do que proferiu a sentença (art. 516 e seguintes).</p>
+        <div class="card-conceito">
+            <p><strong>Caso prático</strong>:<br>
+            Transitada em julgado sentença condenatória proferida em São Paulo, o exequente requereu o cumprimento da sentença no foro de Brasília. O executado, que não pagou voluntariamente, pretende arguir a incompetência relativa do juízo de Brasília. Qual o meio adequado?<br>
+            <strong>Resposta</strong>: A impugnação ao cumprimento de sentença, no prazo de 15 dias, com base no art. 525, §1º, VI. Não cabem embargos à execução (pois são para título extrajudicial), nem exceção de incompetência (pois é meio prévio à contestação), nem objeção de pré-executividade (via excepcional que não tem previsão para essa arguição).</p>
+        </div>
+
+        <h3>6.4. Distinção entre meios de defesa na execução</h3>
+        <div class="tabela-wrapper">
+            <table>
+                <thead>
+                    <tr><th>Meio</th><th>Título executivo</th><th>Prazo</th><th>Matérias</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Embargos à execução</strong></td><td>Extrajudicial (art. 736 e ss.)</td><td>15 dias (ou 30 dias para Fazenda Pública)</td><td>Ampla defesa, inclusive incompetência</td></tr>
+                    <tr><td><strong>Impugnação ao cumprimento de sentença</strong></td><td>Judicial (art. 525)</td><td>15 dias úteis</td><td>Rol do art. 525, §1º, incluindo incompetência absoluta ou relativa</td></tr>
+                    <tr><td><strong>Exceção de incompetência</strong></td><td>(meio prévio)</td><td>Antes da contestação no processo de conhecimento</td><td>Incompetência relativa (não se aplica na execução)</td></tr>
+                    <tr><td><strong>Objeção de pré-executividade</strong></td><td>Via excepcional, sem previsão específica</td><td>A qualquer tempo, mas só para matérias de ordem pública</td><td>Não se presta para arguir incompetência relativa, pois esta não é de ordem pública (em regra)</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box-dica">
+            <strong>DICA</strong>: Se a questão envolve título judicial e incompetência, a resposta é impugnação ao cumprimento de sentença (art. 525, §1º, VI). Não caia na armadilha de "embargos à execução" ou "exceção de incompetência".
+        </div>
+        <hr class="divisoria">
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 7 -->
+    <section class="secao" id="cap7">
+        <h2>7. DESCONSIDERAÇÃO DA PERSONALIDADE JURÍDICA – INCIDENTE OU PEDIDO INICIAL?</h2>
+
+        <h3>7.1. Incidente de desconsideração (art. 133 e seguintes)</h3>
+        <p>O CPC/2015 instituiu um procedimento específico para a desconsideração da personalidade jurídica, em regra por meio de um <strong>incidente</strong> (arts. 133 a 137). Esse incidente é instaurado a pedido da parte ou do MP, e deve ser processado em autos apartados, com possibilidade de contraditório prévio.</p>
+
+        <h3>7.2. Exceção do §2º do art. 134 – pedido na inicial e citação direta do sócio</h3>
+        <p>Contudo, o art. 134, §2º, autoriza uma exceção importante:</p>
+        <blockquote>
+            <p>"Art. 134, §2º. Dispensa-se a instauração do incidente se a desconsideração da personalidade jurídica for requerida na petição inicial, hipótese em que o sócio será citado diretamente."</p>
+        </blockquote>
+        <p>Isso significa que, quando a parte autora já prevê a necessidade de desconsideração desde o início da demanda, ela pode formular o pedido na petição inicial, e o juiz, se entender cabível, determinará a citação direta do sócio ou administrador para integrar a relação processual como parte, sem necessidade de incidente apartado.</p>
+        <ul>
+            <li><strong>Procedimento nessa hipótese</strong>:
+                <ul>
+                    <li>O juiz deve fazer um <strong>juízo positivo de admissibilidade</strong> da demanda executiva ou do pedido de desconsideração.</li>
+                    <li>Se entender que o pedido é cabível (presença de indícios de abuso da personalidade jurídica, confusão patrimonial, desvio de finalidade, etc.), determinará a citação do sócio.</li>
+                    <li>O sócio citado poderá defender-se no mesmo processo, contestando tanto o pedido principal quanto a desconsideração.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>7.3. Caso prático em execução de título extrajudicial</h3>
+        <div class="card-conceito">
+            <p><strong>Caso</strong>: Em execução fundada em nota promissória (título extrajudicial), o exequente requer na petição inicial a citação do sócio majoritário da empresa devedora, pleiteando a desconsideração da personalidade jurídica para que o sócio responda com seu patrimônio pessoal. O juiz deve determinar a instauração do incidente ou pode dispensá-lo?</p>
+            <p><strong>Resposta</strong>: O juiz <strong>pode dispensar</strong> a instauração do incidente, com base no art. 134, §2º, e determinar a citação direta do sócio, caso entenda que os pressupostos da desconsideração estão presentes. O juiz, ao analisar a petição inicial, fará o juízo de admissibilidade e, se for positivo, determinará a citação do sócio no mesmo processo.</p>
+        </div>
+        <div class="box-atencao">
+            <strong>Pegadinha</strong>: A banca pode dizer que "o incidente é obrigatório, mesmo que o pedido seja feito na inicial". Isso é <strong>falso</strong> diante do §2º do art. 134.
+        </div>
+        <hr class="divisoria">
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 8 -->
+    <section class="secao" id="cap8">
+        <h2>8. PRAZO EM DOBRO PARA MINISTÉRIO PÚBLICO E DEFENSORIA PÚBLICA</h2>
+
+        <h3>8.1. Prazo comum de 15 dias úteis para apelação</h3>
+        <p>O prazo para interpor apelação (recurso contra sentença) é de <strong>15 dias úteis</strong> (art. 1.003, §5º, do CPC). Esse é o prazo padrão para a maioria dos recursos.</p>
+
+        <h3>8.2. Previsão legal do prazo em dobro</h3>
+        <p>Entretanto, o Ministério Público e a Defensoria Pública têm tratamento diferenciado:</p>
+        <ul>
+            <li><strong>Ministério Público</strong>: art. 180 do CPC – "O Ministério Público gozará de prazo em dobro para todas as suas manifestações processuais."</li>
+            <li><strong>Defensoria Pública</strong>: art. 186 do CPC – "A Defensoria Pública gozará de prazo em dobro para todas as suas manifestações processuais."</li>
+            <li><strong>Apelação</strong>: Como o prazo padrão é de 15 dias úteis (art. 1.003, §5º), o prazo em dobro para MP e DP será de <strong>30 dias úteis</strong>.</li>
+        </ul>
+        <p><strong>Contagem</strong>: O prazo é contado em <strong>dias úteis</strong> (art. 219), e o MP e DP gozam do benefício da intimação pessoal para todos os atos (arts. 183 e 186), contando-se o prazo em dobro a partir da intimação.</p>
+
+        <h3>8.3. Aplicação prática</h3>
+        <ul>
+            <li><strong>MP</strong>: Para apelação, o prazo é de 30 dias úteis, contados da intimação pessoal do representante do MP.</li>
+            <li><strong>Defensoria Pública</strong>: idem, 30 dias úteis, contados da intimação pessoal (ou por carga dos autos).</li>
+        </ul>
+        <p><strong>Importante</strong>: Esse prazo em dobro não se aplica a outros sujeitos, mesmo que sejam entes públicos (ex.: Fazenda Pública), a menos que haja lei específica.</p>
+
+        <h3>8.4. Pegadinhas da FCC</h3>
+        <div class="box-atencao">
+            <p><strong>1. Confundir MP e DP com a Fazenda Pública</strong>: O prazo da Fazenda Pública é de 30 dias para apelação? Não, o prazo da Fazenda Pública para apelação é de 30 dias <strong>na Lei de Execução Fiscal</strong> (Lei 6.830/80), mas no CPC o prazo geral é de 15 dias, salvo nos Juizados Especiais. Portanto, não se confunda: MP e DP têm prazo em dobro sobre os 15 dias (30 dias úteis); Fazenda Pública não tem prazo em dobro no CPC (a não ser que a lei especial assim determine).</p>
+            <p><strong>2. Contagem em dias corridos x dias úteis</strong>: O CPC adotou a contagem em dias úteis para prazos processuais (art. 219). Portanto, o prazo de 30 dias úteis pode ser superior a 30 dias corridos, dependendo dos feriados e fins de semana.</p>
+            <p><strong>3. Intimação pessoal</strong>: Para MP e DP, a intimação pessoal é o marco inicial da contagem do prazo, e o prazo em dobro é uma vantagem, mas não isenta a parte do ônus de cumprir o prazo. Se o MP recebe a intimação pessoal, o prazo começa no primeiro dia útil seguinte (art. 231).</p>
+        </div>
+        <hr class="divisoria">
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 9 -->
+    <section class="secao" id="cap9">
+        <h2>9. DISTRIBUIÇÃO POR DEPENDÊNCIA – PRESERVAÇÃO DO JUIZ NATURAL</h2>
+
+        <h3>9.1. Hipótese de extinção sem resolução de mérito</h3>
+        <p>Quando um processo é extinto <strong>sem resolução de mérito</strong> (art. 485 do CPC), isso significa que o juiz não analisou o mérito da causa. Pode ser por ausência de pressupostos processuais ou condições da ação, como ilegitimidade, impossibilidade jurídica do pedido, ou mesmo por desistência ou abandono.</p>
+
+        <h3>9.2. Reiteração do pedido – mesmo autor ou litisconsórcio com outros autores</h3>
+        <p>O art. 286, II, do CPC estabelece a regra de <strong>distribuição por dependência</strong> nesses casos:</p>
+        <blockquote>
+            <p>"Art. 286. Serão distribuídas por dependência as causas: [...] II – em que for extinto o processo sem resolução de mérito, se o autor reiterar o pedido, ainda que em litisconsórcio com outros autores."</p>
+        </blockquote>
+        <p>Isso significa que, se o autor (ou os autores, em litisconsórcio com outros) propuser nova ação com o mesmo pedido, essa ação <strong>deverá ser distribuída por dependência ao juízo que julgou o processo anterior</strong>, mesmo que a primeira ação tenha sido extinta sem resolução de mérito.</p>
+
+        <h3>9.3. Finalidade e consequências práticas</h3>
+        <p>A finalidade da distribuição por dependência é <strong>preservar o juiz natural</strong> e evitar que a parte, insatisfeita com o primeiro julgamento (ainda que tenha sido extinto sem mérito), possa escolher outro juízo. A ideia é que o mesmo pedido, mesmo em litisconsórcio com novos autores, deve ser submetido ao mesmo órgão jurisdicional.</p>
+        <div class="card-conceito">
+            <p><strong>Exemplo</strong>:<br>
+            João ajuíza ação contra a empresa X pedindo indenização, mas o processo é extinto sem resolução de mérito por ilegitimidade ativa (João não tinha legitimidade). Posteriormente, João e mais dois irmãos ajuízam nova ação, com o mesmo pedido, agora com os três como autores. A nova ação deve ser distribuída <strong>por dependência</strong> ao mesmo juízo que extinguiu a primeira ação.</p>
+        </div>
+        <div class="box-atencao">
+            <strong>Pegadinha</strong>: A banca pode tentar confundir com a distribuição comum (livre) ou com a prevenção. A prevenção se dá quando há conexão ou continência; a distribuição por dependência ocorre especificamente na hipótese de reiteração de pedido após extinção sem resolução de mérito.
+        </div>
+        <hr class="divisoria">
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 10 – MAPA MENTAL EM SVG -->
+    <section class="secao" id="cap10">
+        <h2>10. SÍNTESE FINAL – MAPA MENTAL DOS TÓPICOS</h2>
+        <p>Para auxiliar na memorização, segue um mapa mental visual dos principais pontos abordados:</p>
+
+        <div class="diagrama-container">
+            <svg viewBox="0 0 900 800" xmlns="http://www.w3.org/2000/svg" style="background:#1a1e24; border-radius:16px;">
+                <!-- Fundo -->
+                <rect width="900" height="800" fill="#1a1e24" rx="12" />
+
+                <!-- Título central -->
+                <rect x="250" y="20" width="400" height="56" rx="28" fill="#2a3a4a" stroke="#4a7a9a" stroke-width="2" />
+                <text x="450" y="55" text-anchor="middle" fill="#e8edf2" font-size="18" font-weight="600">DIREITO PROCESSUAL CIVIL</text>
+
+                <!-- Linhas centrais -->
+                <line x1="450" y1="76" x2="450" y2="120" stroke="#4a7a9a" stroke-width="2" />
+
+                <!-- Nó central expandido -->
+                <rect x="300" y="120" width="300" height="44" rx="22" fill="#1f3348" stroke="#5a8aaa" stroke-width="1.5" />
+                <text x="450" y="147" text-anchor="middle" fill="#d4e4f0" font-size="15" font-weight="500">TÓPICOS ESSENCIAIS – CPC/2015</text>
+
+                <!-- Linhas para os ramos -->
+                <line x1="450" y1="164" x2="150" y2="210" stroke="#4a7a9a" stroke-width="1.8" />
+                <line x1="450" y1="164" x2="450" y2="210" stroke="#4a7a9a" stroke-width="1.8" />
+                <line x1="450" y1="164" x2="750" y2="210" stroke="#4a7a9a" stroke-width="1.8" />
+
+                <!-- RAMO 1 – Competência -->
+                <rect x="50" y="210" width="200" height="40" rx="10" fill="#2a3a2a" stroke="#6a9a6a" stroke-width="1.5" />
+                <text x="150" y="235" text-anchor="middle" fill="#c8e0c8" font-size="14" font-weight="600">COMPETÊNCIA</text>
+                <!-- Subitens competência -->
+                <line x1="150" y1="250" x2="150" y2="275" stroke="#4a6a4a" stroke-width="1.5" />
+                <rect x="60" y="275" width="180" height="32" rx="6" fill="#1f2a1f" stroke="#4a6a4a" stroke-width="1" />
+                <text x="150" y="296" text-anchor="middle" fill="#b0c8b0" font-size="11">Absoluta: matéria, pessoa, função</text>
+                <line x1="150" y1="307" x2="150" y2="320" stroke="#4a6a4a" stroke-width="1" />
+                <rect x="60" y="320" width="180" height="32" rx="6" fill="#1f2a1f" stroke="#4a6a4a" stroke-width="1" />
+                <text x="150" y="341" text-anchor="middle" fill="#b0c8b0" font-size="11">Relativa: território, valor</text>
+                <line x1="150" y1="352" x2="150" y2="365" stroke="#4a6a4a" stroke-width="1" />
+                <rect x="50" y="365" width="200" height="42" rx="6" fill="#2a1f1f" stroke="#8a5a4a" stroke-width="1" />
+                <text x="150" y="382" text-anchor="middle" fill="#e0b8a8" font-size="11">MP pode alegar relativa</text>
+                <text x="150" y="398" text-anchor="middle" fill="#e0b8a8" font-size="11">(art. 65, parágrafo único)</text>
+
+                <!-- RAMO 2 – Intervenção -->
+                <rect x="350" y="210" width="200" height="40" rx="10" fill="#2a2a3a" stroke="#6a6a9a" stroke-width="1.5" />
+                <text x="450" y="235" text-anchor="middle" fill="#c8c8e0" font-size="14" font-weight="600">INTERVENÇÃO</text>
+                <line x1="450" y1="250" x2="450" y2="275" stroke="#4a4a6a" stroke-width="1.5" />
+                <rect x="340" y="275" width="220" height="28" rx="6" fill="#1f1f2a" stroke="#4a4a6a" stroke-width="1" />
+                <text x="450" y="294" text-anchor="middle" fill="#b0b0c8" font-size="11">Denunciação: qualquer parte + regresso</text>
+                <line x1="450" y1="303" x2="450" y2="318" stroke="#4a4a6a" stroke-width="1" />
+                <rect x="340" y="318" width="220" height="28" rx="6" fill="#1f1f2a" stroke="#4a4a6a" stroke-width="1" />
+                <text x="450" y="337" text-anchor="middle" fill="#b0b0c8" font-size="11">Chamamento: só réu + fiador/solidário</text>
+                <line x1="450" y1="346" x2="450" y2="361" stroke="#4a4a6a" stroke-width="1" />
+                <rect x="340" y="361" width="220" height="28" rx="6" fill="#1f1f2a" stroke="#4a4a6a" stroke-width="1" />
+                <text x="450" y="380" text-anchor="middle" fill="#b0b0c8" font-size="11">Assistência: voluntário + interesse</text>
+
+                <!-- RAMO 3 – Sentença -->
+                <rect x="650" y="210" width="200" height="40" rx="10" fill="#3a2a2a" stroke="#9a6a6a" stroke-width="1.5" />
+                <text x="750" y="235" text-anchor="middle" fill="#e0c8c8" font-size="14" font-weight="600">SENTENÇA</text>
+                <line x1="750" y1="250" x2="750" y2="275" stroke="#6a4a4a" stroke-width="1.5" />
+                <rect x="640" y="275" width="220" height="28" rx="6" fill="#2a1f1f" stroke="#6a4a4a" stroke-width="1" />
+                <text x="750" y="294" text-anchor="middle" fill="#d0b0b0" font-size="11">Ultra: concede mais que o pedido</text>
+                <line x1="750" y1="303" x2="750" y2="318" stroke="#6a4a4a" stroke-width="1" />
+                <rect x="640" y="318" width="220" height="28" rx="6" fill="#2a1f1f" stroke="#6a4a4a" stroke-width="1" />
+                <text x="750" y="337" text-anchor="middle" fill="#d0b0b0" font-size="11">Extra: concede objeto diverso</text>
+                <line x1="750" y1="346" x2="750" y2="361" stroke="#6a4a4a" stroke-width="1" />
+                <rect x="640" y="361" width="220" height="28" rx="6" fill="#2a1f1f" stroke="#6a4a4a" stroke-width="1" />
+                <text x="750" y="380" text-anchor="middle" fill="#d0b0b0" font-size="11">Citra: omite pedido</text>
+
+                <!-- Ramo inferior: Cumprimento + Desconsideração + Prazos + Distribuição -->
+                <line x1="150" y1="407" x2="150" y2="460" stroke="#4a7a9a" stroke-width="1.8" />
+                <line x1="450" y1="407" x2="450" y2="460" stroke="#4a7a9a" stroke-width="1.8" />
+                <line x1="750" y1="407" x2="750" y2="460" stroke="#4a7a9a" stroke-width="1.8" />
+
+                <!-- Linhas para os novos nós inferiores -->
+                <line x1="150" y1="460" x2="110" y2="510" stroke="#4a6a6a" stroke-width="1.5" />
+                <line x1="150" y1="460" x2="190" y2="510" stroke="#4a6a6a" stroke-width="1.5" />
+                <line x1="450" y1="460" x2="390" y2="510" stroke="#4a6a6a" stroke-width="1.5" />
+                <line x1="450" y1="460" x2="510" y2="510" stroke="#4a6a6a" stroke-width="1.5" />
+                <line x1="750" y1="460" x2="700" y2="510" stroke="#4a6a6a" stroke-width="1.5" />
+                <line x1="750" y1="460" x2="800" y2="510" stroke="#4a6a6a" stroke-width="1.5" />
+
+                <!-- Blocos inferiores -->
+                <rect x="50" y="510" width="120" height="44" rx="8" fill="#1f2a2a" stroke="#4a7a6a" stroke-width="1.2" />
+                <text x="110" y="528" text-anchor="middle" fill="#b0c8c0" font-size="11" font-weight="500">Cumprimento</text>
+                <text x="110" y="544" text-anchor="middle" fill="#b0c8c0" font-size="10">Impugnação art. 525</text>
+
+                <rect x="130" y="510" width="120" height="44" rx="8" fill="#1f2a2a" stroke="#4a7a6a" stroke-width="1.2" />
+                <text x="190" y="528" text-anchor="middle" fill="#b0c8c0" font-size="11" font-weight="500">Desconsideração</text>
+                <text x="190" y="544" text-anchor="middle" fill="#b0c8c0" font-size="10">Incidente ou inicial</text>
+
+                <rect x="330" y="510" width="120" height="44" rx="8" fill="#1f2a2a" stroke="#4a7a6a" stroke-width="1.2" />
+                <text x="390" y="528" text-anchor="middle" fill="#b0c8c0" font-size="11" font-weight="500">Prazos MP/DP</text>
+                <text x="390" y="544" text-anchor="middle" fill="#b0c8c0" font-size="10">30 dias úteis</text>
+
+                <rect x="450" y="510" width="120" height="44" rx="8" fill="#1f2a2a" stroke="#4a7a6a" stroke-width="1.2" />
+                <text x="510" y="528" text-anchor="middle" fill="#b0c8c0" font-size="11" font-weight="500">Distribuição</text>
+                <text x="510" y="544" text-anchor="middle" fill="#b0c8c0" font-size="10">por dependência</text>
+
+                <rect x="640" y="510" width="120" height="44" rx="8" fill="#1f2a2a" stroke="#4a7a6a" stroke-width="1.2" />
+                <text x="700" y="528" text-anchor="middle" fill="#b0c8c0" font-size="11" font-weight="500">Citação</text>
+                <text x="700" y="544" text-anchor="middle" fill="#b0c8c0" font-size="10">efeitos + art. 241</text>
+
+                <rect x="760" y="510" width="120" height="44" rx="8" fill="#1f2a2a" stroke="#4a7a6a" stroke-width="1.2" />
+                <text x="820" y="528" text-anchor="middle" fill="#b0c8c0" font-size="11" font-weight="500">Sucessão</text>
+                <text x="820" y="544" text-anchor="middle" fill="#b0c8c0" font-size="10">art. 110</text>
+
+                <!-- Rodapé do diagrama -->
+                <text x="450" y="610" text-anchor="middle" fill="#6a7a8a" font-size="11">Diagrama esquemático – Revisão rápida para concursos</text>
+
+                <!-- Legenda de cores -->
+                <rect x="200" y="640" width="12" height="12" fill="#2a3a2a" rx="2" />
+                <text x="218" y="651" fill="#9aaab8" font-size="10">Competência</text>
+                <rect x="310" y="640" width="12" height="12" fill="#2a2a3a" rx="2" />
+                <text x="328" y="651" fill="#9aaab8" font-size="10">Intervenção</text>
+                <rect x="420" y="640" width="12" height="12" fill="#3a2a2a" rx="2" />
+                <text x="438" y="651" fill="#9aaab8" font-size="10">Sentença</text>
+                <rect x="510" y="640" width="12" height="12" fill="#1f2a2a" rx="2" />
+                <text x="528" y="651" fill="#9aaab8" font-size="10">Demais tópicos</text>
+            </svg>
+            <div class="legenda">Mapa mental dos principais tópicos da apostila.</div>
+        </div>
+
+        <hr class="divisoria">
+    </section>
+
+    <!-- CONSIDERAÇÕES FINAIS -->
+    <section class="secao">
+        <h2 style="border-left-color: #b89b6b;">CONSIDERAÇÕES FINAIS</h2>
+        <p>Caro(a) candidato(a),</p>
+        <p>A compreensão desses tópicos com profundidade e a capacidade de distingui-los em situações práticas são diferenciais essenciais para alcançar uma boa pontuação em concursos de nível médio e superior na área judiciária.</p>
+        <p>Lembre-se de que o estudo para concursos exige não apenas a leitura, mas a <strong>aplicação ativa</strong> do conhecimento. Resolva muitas questões das bancas FCC, FGV e Cebraspe sobre esses temas, e volte a esta apostila sempre que tiver dúvidas.</p>
+        <div class="box-dica">
+            <strong>Macete final</strong>: Quando estiver em prova e se deparar com uma questão sobre esses temas, pergunte-se:<br>
+            • Estamos diante de competência absoluta ou relativa? Isso muda a possibilidade de alegação de ofício?<br>
+            • Qual a modalidade de intervenção de terceiros? Quem pode requerer?<br>
+            • O juiz pode ou não condenar além do pedido? E os acessórios?<br>
+            • Qual o prazo e o meio de defesa cabível na execução?<br>
+            Com esses filtros, você acertará a maioria das questões.
+        </div>
+        <p style="font-weight: 500; color: #d4dce6;">Boa sorte e bons estudos!</p>
+        <hr class="divisoria">
+    </section>
+
+    <!-- NOTA FINAL -->
+    <div class="rodape-nota">
+        <p><strong>Nota</strong>: Esta apostila foi elaborada com base no CPC/2015 e na jurisprudência dos tribunais superiores. Eventuais alterações legislativas ou jurisprudenciais devem ser verificadas junto ao material atualizado.</p>
+        <p style="margin-top:0.5rem; color:#6a7a8a;">Conteúdo integralmente preservado – versão para estudo em tablet e desktop.</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila de Processo Civil - CPC/2015</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-primary: #1a1a24;
+            --bg-secondary: #222233;
+            --bg-card: #2a2a3e;
+            --bg-card-hover: #33334a;
+            --bg-code: #1e1e30;
+            --bg-highlight: #2a2a3e;
+            --text-primary: #e8e6f0;
+            --text-secondary: #b8b5cc;
+            --text-muted: #8885a0;
+            --text-highlight: #f0e68c;
+            --accent-primary: #7c8cff;
+            --accent-secondary: #5a6fd6;
+            --accent-gold: #d4b86a;
+            --accent-green: #6abf8a;
+            --accent-coral: #e8847a;
+            --accent-orange: #e8a84a;
+            --accent-purple: #a88cdb;
+            --border-subtle: #3a3a52;
+            --border-card: #4a4a66;
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --radius-lg: 16px;
+            --font-body: 'Georgia', 'Times New Roman', serif;
+            --font-heading: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            --font-mono: 'Consolas', 'Monaco', monospace;
+            --transition: 0.25s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-secondary);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-primary);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #e8e6f0 0%, #a88cdb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 2.8rem 0 1.2rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-subtle);
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 0.8rem 0;
+            color: var(--text-primary);
+        }
+
+        h4 {
+            font-size: 1.15rem;
+            margin: 1.6rem 0 0.6rem 0;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        h5 {
+            font-size: 1rem;
+            margin: 1.2rem 0 0.4rem 0;
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        p {
+            margin: 0 0 1.2rem 0;
+            color: var(--text-secondary);
+            line-height: 1.85;
+        }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        a:hover {
+            color: var(--accent-gold);
+        }
+
+        strong,
+        b {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        em,
+        i {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* ===== HEADER / TITLE AREA ===== */
+        .doc-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border-subtle);
+            position: relative;
+        }
+
+        .doc-header .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-family: var(--font-heading);
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .doc-header .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-family: var(--font-heading);
+        }
+
+        .doc-header .meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .doc-header .meta svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--text-muted);
+            flex-shrink: 0;
+        }
+
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 3rem 0;
+            border: 1px solid var(--border-card);
+            box-shadow: var(--shadow-card);
+        }
+
+        .toc-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .toc-title svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent-primary);
+            flex-shrink: 0;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 2rem;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.3rem 0;
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid transparent;
+            transition: color var(--transition), border-color var(--transition);
+            text-decoration: none;
+        }
+        .toc-item:hover {
+            color: var(--accent-primary);
+            border-bottom-color: var(--accent-primary);
+        }
+
+        .toc-item .num {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.8rem;
+            min-width: 1.8rem;
+            font-family: var(--font-heading);
+        }
+
+        .toc-item .label {
+            flex: 1;
+        }
+
+        @media (max-width: 700px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .toc {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+
+        /* ===== CHAPTER MARKERS ===== */
+        .chapter-badge {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-gold);
+            background: rgba(212, 184, 106, 0.12);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin-bottom: 0.6rem;
+            border: 1px solid rgba(212, 184, 106, 0.2);
+        }
+
+        /* ===== CARDS ===== */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 1.8rem 2rem;
+            margin: 1.8rem 0;
+            border: 1px solid var(--border-card);
+            box-shadow: var(--shadow-card);
+            transition: border-color var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--accent-secondary);
+        }
+
+        .card-accent {
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .card-gold {
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .card-green {
+            border-left: 4px solid var(--accent-green);
+        }
+
+        .card-coral {
+            border-left: 4px solid var(--accent-coral);
+        }
+
+        .card-purple {
+            border-left: 4px solid var(--accent-purple);
+        }
+
+        .card-orange {
+            border-left: 4px solid var(--accent-orange);
+        }
+
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .card-title svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--accent-primary);
+            flex-shrink: 0;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== CALLOUTS / INFO BOXES ===== */
+        .callout {
+            border-radius: var(--radius);
+            padding: 1.4rem 1.8rem;
+            margin: 1.6rem 0;
+            border-left: 4px solid var(--accent-primary);
+            background: rgba(124, 140, 255, 0.06);
+            border: 1px solid rgba(124, 140, 255, 0.15);
+            border-left-width: 4px;
+        }
+
+        .callout-tip {
+            border-left-color: var(--accent-gold);
+            background: rgba(212, 184, 106, 0.06);
+            border-color: rgba(212, 184, 106, 0.15);
+        }
+
+        .callout-important {
+            border-left-color: var(--accent-coral);
+            background: rgba(232, 132, 122, 0.06);
+            border-color: rgba(232, 132, 122, 0.15);
+        }
+
+        .callout-warning {
+            border-left-color: var(--accent-orange);
+            background: rgba(232, 168, 74, 0.06);
+            border-color: rgba(232, 168, 74, 0.15);
+        }
+
+        .callout-success {
+            border-left-color: var(--accent-green);
+            background: rgba(106, 191, 138, 0.06);
+            border-color: rgba(106, 191, 138, 0.15);
+        }
+
+        .callout-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .callout-title svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .callout-tip .callout-title {
+            color: var(--accent-gold);
+        }
+        .callout-important .callout-title {
+            color: var(--accent-coral);
+        }
+        .callout-warning .callout-title {
+            color: var(--accent-orange);
+        }
+        .callout-success .callout-title {
+            color: var(--accent-green);
+        }
+        .callout .callout-title {
+            color: var(--accent-primary);
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== QUOTES ===== */
+        .quote {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            padding: 1.4rem 2rem;
+            margin: 1.6rem 0;
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            border-left: 4px solid var(--accent-gold);
+            color: var(--text-secondary);
+            font-style: italic;
+            position: relative;
+        }
+
+        .quote::before {
+            content: '\201C';
+            font-size: 3rem;
+            color: var(--accent-gold);
+            opacity: 0.3;
+            position: absolute;
+            top: -0.2rem;
+            left: 0.6rem;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .quote strong {
+            color: var(--text-primary);
+            font-style: normal;
+        }
+
+        .quote-source {
+            display: block;
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            font-style: normal;
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        /* ===== TABLES ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.8rem 0;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-card);
+            background: var(--bg-card);
+            box-shadow: var(--shadow-card);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 500px;
+        }
+
+        thead {
+            background: var(--bg-secondary);
+        }
+
+        th {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--text-primary);
+            padding: 0.9rem 1.2rem;
+            text-align: left;
+            border-bottom: 2px solid var(--border-subtle);
+        }
+
+        td {
+            padding: 0.8rem 1.2rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(124, 140, 255, 0.04);
+        }
+
+        .table-wrap .table-caption {
+            padding: 0.6rem 1.2rem 0.8rem;
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: left;
+            border-bottom: 1px solid var(--border-subtle);
+            background: var(--bg-secondary);
+        }
+
+        /* ===== LISTS ===== */
+        ul,
+        ol {
+            margin: 0.8rem 0 1.2rem 1.8rem;
+            color: var(--text-secondary);
+            line-height: 1.85;
+        }
+
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        ul ul,
+        ol ol {
+            margin: 0.3rem 0 0.3rem 1.6rem;
+        }
+
+        .list-check {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list-check li {
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+        .list-check li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .list-cross {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list-cross li {
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+        .list-cross li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: var(--accent-coral);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .list-bullet {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list-bullet li {
+            padding-left: 1.6rem;
+            position: relative;
+            margin-bottom: 0.4rem;
+        }
+        .list-bullet li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* ===== HIGHLIGHT (marker) ===== */
+        .highlight {
+            background: rgba(212, 184, 106, 0.2);
+            color: var(--text-primary);
+            padding: 0.05rem 0.3rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .highlight-blue {
+            background: rgba(124, 140, 255, 0.18);
+            color: var(--text-primary);
+            padding: 0.05rem 0.3rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .highlight-green {
+            background: rgba(106, 191, 138, 0.18);
+            color: var(--text-primary);
+            padding: 0.05rem 0.3rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .highlight-coral {
+            background: rgba(232, 132, 122, 0.18);
+            color: var(--text-primary);
+            padding: 0.05rem 0.3rem;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        /* ===== DIVIDERS ===== */
+        .divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, var(--border-subtle), var(--accent-secondary), var(--border-subtle));
+            margin: 2.8rem 0;
+            opacity: 0.6;
+        }
+
+        .divider-dots {
+            border: 0;
+            height: 1px;
+            background: repeating-linear-gradient(to right, var(--border-subtle) 0, var(--border-subtle) 6px, transparent 6px, transparent 12px);
+            margin: 2.4rem 0;
+        }
+
+        .divider-gold {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--accent-gold), transparent);
+            margin: 2.8rem 0;
+            opacity: 0.4;
+        }
+
+        /* ===== CODE / INLINE ===== */
+        .code-inline {
+            font-family: var(--font-mono);
+            background: var(--bg-code);
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--text-primary);
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* ===== SVGs ===== */
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-card);
+            overflow-x: auto;
+        }
+
+        .svg-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== MACETE BOX ===== */
+        .macete {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: 1.6rem 2rem;
+            margin: 1.8rem 0;
+            border: 2px solid var(--accent-gold);
+            box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .macete::before {
+            content: '📌';
+            position: absolute;
+            top: -0.2rem;
+            right: 1.2rem;
+            font-size: 2.8rem;
+            opacity: 0.12;
+            transform: rotate(12deg);
+        }
+
+        .macete-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .macete-title svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--accent-gold);
+            flex-shrink: 0;
+        }
+
+        .macete p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== CASE STUDY ===== */
+        .case-study {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: 1.6rem 2rem;
+            margin: 1.8rem 0;
+            border: 1px solid var(--border-card);
+            box-shadow: var(--shadow-card);
+            border-left: 4px solid var(--accent-purple);
+        }
+
+        .case-study-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--accent-purple);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .case-study-title svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--accent-purple);
+            flex-shrink: 0;
+        }
+
+        .case-study p:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-study strong {
+            color: var(--text-primary);
+        }
+
+        /* ===== FLOWCHART (SVG) ===== */
+        .flowchart-container {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin: 1.8rem 0;
+            border: 1px solid var(--border-card);
+            overflow-x: auto;
+        }
+
+        .flowchart-container svg {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.2rem 1rem 3rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 2.2rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            h4 {
+                font-size: 1.05rem;
+            }
+
+            .card {
+                padding: 1.2rem 1.2rem;
+            }
+            .callout {
+                padding: 1rem 1.2rem;
+            }
+            .quote {
+                padding: 1rem 1.2rem;
+                font-size: 0.95rem;
+            }
+            .macete {
+                padding: 1.2rem 1.2rem;
+            }
+            .case-study {
+                padding: 1.2rem 1.2rem;
+            }
+            .toc {
+                padding: 1.2rem 1rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .doc-header .meta {
+                flex-direction: column;
+                gap: 0.4rem;
+            }
+            table {
+                font-size: 0.85rem;
+                min-width: 400px;
+            }
+            th,
+            td {
+                padding: 0.6rem 0.8rem;
+            }
+            .svg-container {
+                padding: 0.5rem;
+            }
+            .flowchart-container {
+                padding: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .container {
+                padding: 0.8rem 0.8rem 2rem;
+            }
+            .card {
+                padding: 1rem 0.8rem;
+                margin: 1.2rem 0;
+            }
+            .callout {
+                padding: 0.8rem 0.8rem;
+            }
+            table {
+                font-size: 0.78rem;
+                min-width: 320px;
+            }
+            th,
+            td {
+                padding: 0.4rem 0.6rem;
+            }
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+            }
+            .container {
+                max-width: 100%;
+            }
+            .card,
+            .callout,
+            .quote,
+            .macete,
+            .case-study,
+            .toc,
+            .table-wrap,
+            .flowchart-container,
+            .svg-container {
+                background: #f5f5f7;
+                border-color: #ccc;
+                box-shadow: none;
+                color: #111;
+            }
+            .toc-item {
+                color: #222;
+            }
+            .toc-item:hover {
+                color: #222;
+                border-bottom-color: #999;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: #111;
+            }
+            p,
+            li,
+            td,
+            th {
+                color: #222;
+            }
+            .highlight,
+            .highlight-blue,
+            .highlight-green,
+            .highlight-coral {
+                background: #eee;
+                color: #111;
+            }
+            .doc-header .meta {
+                color: #555;
+            }
+            .doc-header .meta svg {
+                fill: #555;
+            }
+            .chapter-badge {
+                color: #a67c00;
+                border-color: #a67c00;
+                background: #f5f0e0;
+            }
+            .divider,
+            .divider-dots,
+            .divider-gold {
+                opacity: 0.3;
+            }
+            .macete::before {
+                opacity: 0.2;
+            }
+            .callout-tip .callout-title {
+                color: #a67c00;
+            }
+            .callout-important .callout-title {
+                color: #c0392b;
+            }
+            .callout-warning .callout-title {
+                color: #b7950b;
+            }
+            .callout-success .callout-title {
+                color: #1e8449;
+            }
+            .callout .callout-title {
+                color: #2c3e8f;
+            }
+            .card-accent {
+                border-left-color: #2c3e8f;
+            }
+            .card-gold {
+                border-left-color: #a67c00;
+            }
+            .card-green {
+                border-left-color: #1e8449;
+            }
+            .card-coral {
+                border-left-color: #c0392b;
+            }
+            .card-purple {
+                border-left-color: #6c3483;
+            }
+            .card-orange {
+                border-left-color: #b7950b;
+            }
+            .case-study {
+                border-left-color: #6c3483;
+            }
+            .case-study-title {
+                color: #6c3483;
+            }
+            .case-study-title svg {
+                fill: #6c3483;
+            }
+            .macete-title {
+                color: #a67c00;
+            }
+            .macete-title svg {
+                fill: #a67c00;
+            }
+            .quote {
+                border-left-color: #a67c00;
+            }
+            .quote::before {
+                color: #a67c00;
+            }
+            .code-inline {
+                background: #eee;
+                border-color: #ccc;
+                color: #111;
+            }
+            .table-wrap {
+                border-color: #ccc;
+            }
+            thead {
+                background: #e8e8ec;
+            }
+            th {
+                color: #111;
+                border-bottom-color: #aaa;
+            }
+            td {
+                border-bottom-color: #ddd;
+            }
+            tr:hover td {
+                background: transparent;
+            }
+            .list-check li::before {
+                color: #1e8449;
+            }
+            .list-cross li::before {
+                color: #c0392b;
+            }
+            .list-bullet li::before {
+                color: #a67c00;
+            }
+            .flowchart-container,
+            .svg-container {
+                background: #f5f5f7;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== HEADER ===== -->
+        <header class="doc-header">
+            <div class="subtitle">Técnico Judiciário – Área Judiciária</div>
+            <h1>Apostila de Processo Civil<br>para Concursos Públicos</h1>
+            <p style="font-size:1.1rem; color:var(--text-secondary); margin-top:0.2rem;">Temas Selecionados do CPC/2015</p>
+            <div class="meta">
+                <span>
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Foco: FCC · FGV · Cebraspe
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    CPC/2015 · Atualizado
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    Estudo prolongado em tablet
+                </span>
+            </div>
+        </header>
+
+        <!-- ===== INTRODUÇÃO ===== -->
+        <section id="introducao">
+            <h2>Introdução</h2>
+            <p>Esta apostila foi desenvolvida com base em questões de alto nível cobradas por bancas como FCC, FGV, Cebraspe e similares, especialmente no padrão do Tribunal de Justiça do Ceará (TJCE). O material aborda temas fundamentais do Código de Processo Civil/2015 que são recorrentes em concursos para Técnico Judiciário – Área Judiciária.</p>
+            <p>A abordagem aqui adotada não se limita à memorização de artigos, mas busca proporcionar <strong>compreensão profunda, capacidade de interpretação e aplicação prática</strong> dos institutos processuais. Cada tema será desenvolvido com:</p>
+            <ul>
+                <li>Explicações didáticas e aprofundadas</li>
+                <li>Conexões entre institutos</li>
+                <li>Diferenciações conceituais</li>
+                <li>Exemplos práticos e casos concretos</li>
+                <li>Macetes de memorização</li>
+                <li>Pegadinhas comuns de banca</li>
+                <li>Jurisprudência relevante</li>
+            </ul>
+            <p>Vamos iniciar nossa jornada pelo universo do Processo Civil, construindo um conhecimento sólido que fará a diferença no dia da prova.</p>
+            <hr class="divider-dots">
+        </section>
+
+        <!-- ===== SUMÁRIO ===== -->
+        <nav class="toc" id="sumario">
+            <div class="toc-title">
+                <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+                Sumário
+            </div>
+            <div class="toc-grid">
+                <a href="#cap1" class="toc-item"><span class="num">1</span><span class="label">Legitimidade Processual</span></a>
+                <a href="#cap2" class="toc-item"><span class="num">2</span><span class="label">Atos Judiciais</span></a>
+                <a href="#cap3" class="toc-item"><span class="num">3</span><span class="label">Amicus Curiae</span></a>
+                <a href="#cap4" class="toc-item"><span class="num">4</span><span class="label">Ônus da Prova</span></a>
+                <a href="#cap5" class="toc-item"><span class="num">5</span><span class="label">Revelia</span></a>
+                <a href="#cap6" class="toc-item"><span class="num">6</span><span class="label">Litisconsórcio</span></a>
+                <a href="#cap7" class="toc-item"><span class="num">7</span><span class="label">Valor da Causa</span></a>
+                <a href="#cap8" class="toc-item"><span class="num">8</span><span class="label">Quadros Sinópticos</span></a>
+                <a href="#cap9" class="toc-item"><span class="num">9</span><span class="label">Exercícios Práticos</span></a>
+                <a href="#conclusao" class="toc-item"><span class="num">10</span><span class="label">Conclusão</span></a>
+            </div>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 1 -->
+        <!-- ============================================================ -->
+        <section id="cap1">
+            <span class="chapter-badge">Capítulo 1</span>
+            <h2>Legitimidade Processual: Substituição e Representação</h2>
+
+            <h3>1.1 Fundamentos da Legitimidade Processual</h3>
+
+            <h4>1.1.1 O que é legitimidade processual?</h4>
+            <p>A legitimidade processual é uma das condições da ação, ao lado do interesse de agir e da possibilidade jurídica do pedido (embora esta última tenha sido superada pela doutrina contemporânea). Diz respeito à <strong>titularidade da relação jurídica deduzida em juízo</strong>.</p>
+            <p>Para que alguém possa atuar em um processo, é necessário que seja o titular do direito material discutido (regra geral) ou que a lei lhe conceda expressamente essa prerrogativa. Essa distinção é fundamental para compreendermos os institutos da substituição e da representação processual.</p>
+
+            <h4>1.1.2 Legitimidade Ordinária vs. Extraordinária</h4>
+            <p><strong>Legitimidade ordinária:</strong> ocorre quando a parte atua em nome próprio defendendo direito próprio. É a regra geral no processo civil. O autor é o titular do direito que busca tutela jurisdicional; o réu é aquele contra quem se direciona a pretensão.</p>
+            <p><strong>Legitimidade extraordinária:</strong> ocorre quando a lei autoriza alguém a pleitear, em nome próprio, direito alheio. É a exceção, somente admitida quando houver expressa previsão legal.</p>
+
+            <h3>1.2 Substituição Processual</h3>
+
+            <h4>1.2.1 Conceito e Fundamentação Legal</h4>
+            <p>A substituição processual está prevista no <strong>art. 18 do CPC/2015</strong>, que estabelece:</p>
+            <div class="quote">
+                <em>"Ninguém poderá pleitear direito alheio em nome próprio, salvo quando autorizado pelo ordenamento jurídico."</em>
+            </div>
+            <p><strong>Conceito:</strong> Na substituição processual, uma pessoa (substituto) atua em nome próprio defendendo direito de outra pessoa (substituído). O substituto é o <strong>legitimado extraordinário</strong>.</p>
+
+            <h4>1.2.2 Características Fundamentais</h4>
+            <div class="table-wrap">
+                <div class="table-caption">Características da Substituição Processual</div>
+                <table>
+                    <thead>
+                        <tr><th>Característica</th><th>Descrição</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Atua em nome próprio</td><td>O substituto aparece como parte no processo</td></tr>
+                        <tr><td>Defende direito alheio</td><td>O direito material pertence a terceiro</td></tr>
+                        <tr><td>Necessidade de autorização legal</td><td>Somente quando a lei expressamente permite</td></tr>
+                        <tr><td>Sentença produz efeitos</td><td>A decisão vinculará o substituído</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>1.2.3 Exemplo Clássico: Ministério Público</h4>
+            <p>O Ministério Público, ao ajuizar ação de investigação de paternidade em favor de criança, está atuando como <strong>substituto processual</strong>. Ele defende direito da criança (direito à filiação), mas atua em nome próprio, sendo parte legítima para a ação.</p>
+            <p><strong>Por que isso ocorre?</strong> A Constituição Federal (art. 127) atribui ao MP a defesa dos interesses sociais e individuais indisponíveis. O Estatuto da Criança e do Adolescente (Lei 8.069/90) autoriza expressamente o MP a propor ações civis em defesa dos direitos das crianças e adolescentes.</p>
+
+            <h4>1.2.4 Outros Exemplos de Substituição Processual</h4>
+            <ul class="list-bullet">
+                <li><strong>Sindicato:</strong> pode substituir seus associados na defesa de direitos decorrentes da relação de trabalho (art. 8º, III, CF)</li>
+                <li><strong>DJe:</strong> pode substituir consumidores em ações coletivas (art. 81, CDC)</li>
+                <li><strong>Associações:</strong> podem substituir seus associados quando autorizadas estatutariamente (art. 5º, XXI, CF)</li>
+            </ul>
+
+            <h4>1.2.5 Efeitos da Substituição Processual</h4>
+            <ol>
+                <li>O substituto tem capacidade para praticar todos os atos processuais</li>
+                <li>A sentença proferida na ação produzirá efeitos em relação ao substituído</li>
+                <li>O substituído não participa do processo, mas será atingido pela decisão</li>
+                <li>A coisa julgada formada atinge o substituído (art. 506 do CPC)</li>
+            </ol>
+
+            <h3>1.3 Representação Processual</h3>
+
+            <h4>1.3.1 Conceito e Fundamentação</h4>
+            <p><strong>Conceito:</strong> Na representação processual, a pessoa (representante) atua em nome alheio e <strong>em defesa de direito alheio</strong>. Diferentemente do substituto, o representante não defende direito próprio, mas atua como se fosse o representado.</p>
+
+            <h4>1.3.2 Características Fundamentais</h4>
+            <div class="table-wrap">
+                <div class="table-caption">Características da Representação Processual</div>
+                <table>
+                    <thead>
+                        <tr><th>Característica</th><th>Descrição</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Atua em nome alheio</td><td>O representante não é a parte propriamente dita</td></tr>
+                        <tr><td>Defende direito alheio</td><td>O direito discutido pertence ao representado</td></tr>
+                        <tr><td>Fundamentação variada</td><td>Pode decorrer de lei, contrato ou decisão judicial</td></tr>
+                        <tr><td>Representado é a parte</td><td>O representado é o verdadeiro titular da relação processual</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>1.3.3 Exemplos Clássicos</h4>
+            <p><strong>Exemplo 1: Pai representando filho menor</strong></p>
+            <p>Quando o pai ajuíza ação em nome do filho menor, está atuando como <strong>representante processual</strong>. O filho é a parte (titular do direito), mas quem pratica os atos processuais é o pai, que fala em nome do filho.</p>
+            <p><strong>Exemplo 2: Curador do interdito</strong></p>
+            <p>O curador nomeado para pessoa interditada atua como representante processual, praticando atos em nome do interdito e defendendo seus direitos.</p>
+            <p><strong>Exemplo 3: Advogado</strong></p>
+            <p>O advogado é mandatário judicial, atuando como representante da parte, mas com poderes limitados à procuração outorgada.</p>
+
+            <h4>1.3.4 Distinção entre Substituição e Representação</h4>
+            <p>A diferença essencial está em <strong>quem é a parte no processo</strong> e <strong>em nome de quem se atua</strong>:</p>
+            <div class="table-wrap">
+                <div class="table-caption">Substituição vs. Representação Processual</div>
+                <table>
+                    <thead>
+                        <tr><th>Critério</th><th>Substituição Processual</th><th>Representação Processual</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Titular da ação</td><td>Substituto</td><td>Representado</td></tr>
+                        <tr><td>Atua em nome</td><td>Próprio</td><td>Alheio</td></tr>
+                        <tr><td>Defende direito</td><td>Alheio</td><td>Alheio</td></tr>
+                        <tr><td>Quem sofre os efeitos</td><td>Substituto (direito de parte) e substituído</td><td>Representado (é a parte)</td></tr>
+                        <tr><td>Exemplo</td><td>MP ajuizando ação para criança</td><td>Pai ajuizando ação em nome do filho</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="macete">
+                <div class="macete-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    MACETE PARA NUNCA MAIS CONFUNDIR
+                </div>
+                <p><strong>SUBSTITUTO PROCESSUAL:</strong> Direito alheio + Nome próprio</p>
+                <p><strong>REPRESENTANTE PROCESSUAL:</strong> Direito alheio + Nome alheio</p>
+                <p style="margin-top:0.6rem; color:var(--text-secondary);">O Ministério Público age como <strong>substituto</strong> quando ajuíza ação de investigação de paternidade, pois pede direito da <strong>criança</strong> em nome do <strong>próprio MP</strong>.</p>
+            </div>
+
+            <h3>1.4 Sucessão Processual</h3>
+
+            <h4>1.4.1 Conceito e Distinção</h4>
+            <p><strong>Sucessão processual:</strong> ocorre quando alguém assume o lugar da parte por modificação da titularidade do direito material. O sucessor litiga em nome próprio e <strong>em defesa de direito próprio</strong>.</p>
+
+            <h4>1.4.2 Hipóteses de Sucessão</h4>
+            <ul class="list-bullet">
+                <li><strong>Morte da parte:</strong> os herdeiros sucedem o falecido (art. 313, I, CPC)</li>
+                <li><strong>Alienação da coisa litigiosa:</strong> o adquirente pode suceder o alienante (art. 109, CPC)</li>
+                <li><strong>Extinção da pessoa jurídica:</strong> a sucessora assume a posição processual</li>
+            </ul>
+
+            <h4>1.4.3 Quadro Comparativo Geral</h4>
+            <div class="table-wrap">
+                <div class="table-caption">Comparativo: Sucessor, Substituto, Representante</div>
+                <table>
+                    <thead>
+                        <tr><th>Instituto</th><th>Nome próprio?</th><th>Direito próprio?</th><th>Direito alheio?</th><th>Exemplo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Sucessor processual</td><td>Sim</td><td>Sim</td><td>Não</td><td>Herdeiro que assume ação do falecido</td></tr>
+                        <tr><td>Substituto processual</td><td>Sim</td><td>Não</td><td>Sim</td><td>MP em ação de paternidade</td></tr>
+                        <tr><td>Representante processual</td><td>Não</td><td>Não</td><td>Sim</td><td>Pai representando filho menor</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="divider-gold">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 2 -->
+        <!-- ============================================================ -->
+        <section id="cap2">
+            <span class="chapter-badge">Capítulo 2</span>
+            <h2>Atos Judiciais: Sentença, Decisão Interlocutória e Julgamento Antecipado Parcial do Mérito</h2>
+
+            <h3>2.1 Classificação dos Atos Judiciais no CPC/2015</h3>
+
+            <h4>2.1.1 Fundamentos</h4>
+            <p>O art. 203 do CPC/2015 estabelece a classificação dos pronunciamentos do juiz, que podem ser:</p>
+            <ul>
+                <li><strong>Sentenças</strong></li>
+                <li><strong>Decisões interlocutórias</strong></li>
+                <li><strong>Despachos</strong></li>
+            </ul>
+            <p>A distinção entre esses atos é <strong>finalística</strong>: o que importa é o efeito prático do ato no processo, não sua forma ou nomenclatura.</p>
+
+            <h3>2.2 Sentença (Art. 203, §1º)</h3>
+
+            <h4>2.2.1 Definição Legal</h4>
+            <p>O art. 203, §1º do CPC dispõe:</p>
+            <div class="quote">
+                <em>"Ressalvadas as disposições expressas dos procedimentos especiais, sentença é o pronunciamento por meio do qual o juiz, com fundamento nos arts. 485 e 487, põe fim à fase cognitiva do procedimento comum, bem como extingue a execução."</em>
+            </div>
+
+            <h4>2.2.2 Características Essenciais</h4>
+            <ol>
+                <li><strong>Põe fim à fase cognitiva do procedimento comum</strong> (ou extingue a execução)</li>
+                <li><strong>Encerra o processo na primeira instância</strong> (em regra)</li>
+                <li><strong>Decide o mérito</strong> (arts. 485 e 487) ou extingue o processo sem resolução do mérito</li>
+                <li><strong>Não admite agravo de instrumento</strong> (em regra) → cabível <strong>apelação</strong></li>
+            </ol>
+
+            <h4>2.2.3 Exemplos de Sentença</h4>
+            <ul class="list-bullet">
+                <li>Sentença de improcedência do pedido (art. 487, I)</li>
+                <li>Sentença de procedência do pedido (art. 487, I)</li>
+                <li>Sentença que extingue o processo com resolução do mérito (art. 487)</li>
+                <li>Sentença que extingue o processo sem resolução do mérito (art. 485)</li>
+            </ul>
+
+            <h3>2.3 Decisão Interlocutória (Art. 203, §2º)</h3>
+
+            <h4>2.3.1 Definição Legal</h4>
+            <p>O art. 203, §2º do CPC estabelece:</p>
+            <div class="quote">
+                <em>"Decisão interlocutória é todo pronunciamento judicial de natureza decisória que não se enquadre no §1º."</em>
+            </div>
+
+            <h4>2.3.2 Características Essenciais</h4>
+            <ol>
+                <li><strong>Não encerra a fase cognitiva</strong></li>
+                <li><strong>Decide questão incidente ou parcial</strong></li>
+                <li><strong>Mantém o processo em andamento</strong></li>
+                <li><strong>Cabível agravo de instrumento</strong> (em regra)</li>
+            </ol>
+
+            <h4>2.3.3 Exemplos de Decisão Interlocutória</h4>
+            <ul class="list-bullet">
+                <li>Decisão que indefere a petição inicial (embora esta seja apelável)</li>
+                <li>Decisão que deferir/indeferir tutela de urgência</li>
+                <li>Decisão que determinar a produção de prova pericial</li>
+                <li>Decisão que julgar o pedido de assistência litisconsorcial</li>
+                <li>Decisão que rejeitar preliminares</li>
+            </ul>
+
+            <h3>2.4 Julgamento Antecipado Parcial do Mérito (Art. 356)</h3>
+
+            <h4>2.4.1 Conceito e Previsão Legal</h4>
+            <p>O <strong>art. 356 do CPC/2015</strong> inovou ao criar a figura do julgamento antecipado parcial do mérito:</p>
+            <div class="quote">
+                <em>"Art. 356. O juiz decidirá parcialmente o mérito, quando um ou mais dos pedidos formulados ou parcela deles:</em><br>
+                <em>I - mostrar-se incontroverso;</em><br>
+                <em>II - estiver em condições de imediato julgamento, nos termos do art. 355."</em>
+            </div>
+
+            <h4>2.4.2 Natureza Jurídica</h4>
+            <p>O julgamento antecipado parcial do mérito é uma <strong>decisão interlocutória</strong> (art. 203, §2º), pois:</p>
+            <ul>
+                <li>Não encerra a fase cognitiva</li>
+                <li>O processo continua para os demais pedidos</li>
+                <li>É impugnável por <strong>agravo de instrumento</strong></li>
+            </ul>
+
+            <h4>2.4.3 Exemplo Prático</h4>
+            <div class="case-study">
+                <div class="case-study-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Caso Prático
+                </div>
+                <p><strong>Situação:</strong> Autor propõe ação indenizatória por danos materiais (R$ 50.000,00) e danos morais (R$ 30.000,00). O réu confessa a ocorrência do acidente, mas contesta o valor dos danos materiais e nega os danos morais.</p>
+                <p>O juiz pode <strong>julgar parcialmente o mérito</strong> para condenar o réu ao pagamento dos danos materiais (pedido incontroverso) e determinar o prosseguimento do processo quanto aos danos morais.</p>
+            </div>
+
+            <h4>2.4.4 Cabimento do Agravo</h4>
+            <p>Decisão interlocutória → cabe <strong>agravo de instrumento</strong> (art. 1.015, II, CPC), no prazo de 15 dias úteis.</p>
+
+            <div class="callout callout-important">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    PEGADINHA DE BANCA
+                </div>
+                <p><strong>Cuidado!</strong> A FCC é conhecida por cobrar a distinção com base no <strong>critério finalístico</strong> do art. 203. O que define o ato não é a denominação dada pelo juiz, mas <strong>o efeito prático</strong> que ele produz.</p>
+                <p><strong>Exemplo:</strong> Se o juiz intitula um ato de "sentença", mas ele não põe fim à fase cognitiva, esse ato será, na realidade, uma <strong>decisão interlocutória</strong>.</p>
+            </div>
+
+            <h3>2.5 Quadro Resumo: Atos Judiciais</h3>
+            <div class="table-wrap">
+                <div class="table-caption">Resumo: Sentença, Decisão Interlocutória e Despacho</div>
+                <table>
+                    <thead>
+                        <tr><th>Critério</th><th>Sentença</th><th>Decisão Interlocutória</th><th>Despacho</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Finalidade</td><td>Põe fim à fase cognitiva</td><td>Decisão no curso do processo</td><td>Mero impulso processual</td></tr>
+                        <tr><td>Mérito</td><td>Julga o mérito ou extingue</td><td>Não julga o mérito</td><td>Não julga</td></tr>
+                        <tr><td>Recurso</td><td>Apelação (em regra)</td><td>Agravo de instrumento</td><td>Não cabe recurso</td></tr>
+                        <tr><td>Exemplo</td><td>Sentença de improcedência</td><td>Decisão que indefere produção de prova</td><td>Mero despacho determinando intimação</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="divider-gold">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 3 -->
+        <!-- ============================================================ -->
+        <section id="cap3">
+            <span class="chapter-badge">Capítulo 3</span>
+            <h2>Amicus Curiae (Art. 138 do CPC/2015)</h2>
+
+            <h3>3.1 Conceito e Fundamentação Legal</h3>
+
+            <h4>3.1.1 Definição</h4>
+            <p>O <strong>amicus curiae</strong> (amigo da corte) é um terceiro que não é parte no processo, mas que, por possuir expertise ou representatividade adequada, é admitido pelo juiz para <strong>fornecer subsídios</strong> e colaborar com a solução da causa.</p>
+
+            <h4>3.1.2 Previsão Legal</h4>
+            <p>O instituto é regulado pelo <strong>art. 138 do CPC/2015</strong>:</p>
+            <div class="quote">
+                <em>"Art. 138. O juiz ou o relator, considerando a relevância da matéria, a especificidade do tema objeto da demanda ou a repercussão social da controvérsia, poderá, por decisão irrecorrível, admitir a intervenção de pessoa natural ou jurídica, órgão ou entidade especializada, com representatividade adequada, no prazo de 15 (quinze) dias de sua intimação, como amicus curiae."</em>
+            </div>
+
+            <h3>3.2 Requisitos para Admissão</h3>
+            <div class="table-wrap">
+                <div class="table-caption">Requisitos para Admissão do Amicus Curiae</div>
+                <table>
+                    <thead>
+                        <tr><th>Requisito</th><th>Explicação</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Relevância da matéria</td><td>O tema deve ser juridicamente relevante</td></tr>
+                        <tr><td>Especificidade do tema</td><td>A questão deve exigir conhecimento técnico-especializado</td></tr>
+                        <tr><td>Repercussão social</td><td>A controvérsia deve ter impacto social relevante</td></tr>
+                        <tr><td>Representatividade adequada</td><td>O amicus deve ter legitimidade para falar sobre o tema</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>3.2.1 Decisão de Admissão</h4>
+            <p>A decisão que admite ou inadmite a intervenção do amicus curiae é <strong>irrecorrível</strong> (art. 138, caput, parte final).</p>
+
+            <h3>3.3 Poderes do Amicus Curiae</h3>
+
+            <h4>3.3.1 Poderes Específicos (Art. 138)</h4>
+            <div class="table-wrap">
+                <div class="table-caption">Poderes do Amicus Curiae</div>
+                <table>
+                    <thead>
+                        <tr><th>Poder</th><th>Fundamento</th><th>Explicação</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Falar após as partes</td><td>Art. 138, §1º</td><td>O amicus pode manifestar-se sobre a questão</td></tr>
+                        <tr><td>Juntar documentos</td><td>Art. 138, §1º</td><td>Pode trazer provas documentais</td></tr>
+                        <tr><td>Requerer esclarecimentos</td><td>Art. 138, §2º</td><td>Pode pedir esclarecimentos ao juiz ou ao relator</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>3.3.2 Poderes Recursais Limitados (Art. 138, §1º e §3º)</h4>
+            <ul class="list-bullet">
+                <li>Pode <strong>opor embargos de declaração</strong> contra qualquer decisão (art. 138, §1º)</li>
+                <li>Pode <strong>recorrer da decisão que julgar o Incidente de Resolução de Demandas Repetitivas (IRDR)</strong> (art. 138, §3º)</li>
+            </ul>
+
+            <h3>3.4 Limites da Legitimidade Recursal do Amicus Curiae</h3>
+
+            <h4>3.4.1 O que o Amicus Curiae NÃO PODE FAZER</h4>
+            <div class="table-wrap">
+                <div class="table-caption">Limitações do Amicus Curiae</div>
+                <table>
+                    <thead>
+                        <tr><th>Atividade</th><th>Motivo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Não pode interpor apelação</strong> da sentença proferida no processo originário</td><td>Pois não é parte, nem terceiro juridicamente interessado</td></tr>
+                        <tr><td><strong>Não pode interpor agravo de instrumento</strong> em geral</td><td>Sua atuação é restrita a colaborador do juízo</td></tr>
+                        <tr><td><strong>Não pode recorrer da decisão que inadmite sua intervenção</strong></td><td>Essa decisão é irrecorrível (art. 138, caput)</td></tr>
+                        <tr><td><strong>Não pode ser tratado como terceiro juridicamente interessado</strong></td><td>Não tem interesse jurídico no resultado, apenas colabora</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>3.4.2 Quadro: O que o Amicus Curiae PODE vs. NÃO PODE</h4>
+            <div class="table-wrap">
+                <div class="table-caption">Amicus Curiae: PODE vs. NÃO PODE</div>
+                <table>
+                    <thead>
+                        <tr><th>PODE</th><th>NÃO PODE</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Opor embargos de declaração contra qualquer decisão</td><td>Interpor apelação da sentença</td></tr>
+                        <tr><td>Recorrer da decisão que julgar o IRDR</td><td>Interpor todos os recursos disponíveis às partes</td></tr>
+                        <tr><td>Manifestar-se sobre a questão</td><td>Recorrer da decisão que inadmite sua intervenção</td></tr>
+                        <tr><td>Juntar documentos</td><td>Ser tratado como parte ou terceiro interessado</td></tr>
+                        <tr><td>Falar após as partes</td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-tip">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    DICA DE PROVA
+                </div>
+                <p><strong>O amicus curiae NÃO é parte, NÃO é terceiro juridicamente interessado, NÃO pode recorrer da sentença.</strong> Sua função é meramente <strong>colaborativa</strong>.</p>
+                <p><strong>Pegadinha frequente:</strong> a banca tenta confundir o amicus curiae com o assistente litisconsorcial. Lembre-se: o assistente é litisconsorte facultativo que ingressa posteriormente, exercendo direitos de parte. O amicus curiae é apenas colaborador do juízo.</p>
+            </div>
+
+            <hr class="divider-gold">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 4 -->
+        <!-- ============================================================ -->
+        <section id="cap4">
+            <span class="chapter-badge">Capítulo 4</span>
+            <h2>Ônus da Prova</h2>
+
+            <h3>4.1 Fundamentos e Regra Geral</h3>
+
+            <h4>4.1.1 Conceito</h4>
+            <p>O ônus da prova é um <strong>encargo processual</strong> atribuído a cada parte para demonstrar a veracidade dos fatos que alega. Não se trata de um dever, mas de um ônus: se a parte não produz a prova, assume o risco do não convencimento do juiz.</p>
+
+            <h4>4.1.2 Fundamento Legal</h4>
+            <p>O art. 373 do CPC/2015 estabelece a regra geral de distribuição do ônus da prova:</p>
+            <div class="quote">
+                <em>"Art. 373. O ônus da prova incumbe:</em><br>
+                <em>I - ao autor, quanto ao fato constitutivo de seu direito;</em><br>
+                <em>II - ao réu, quanto à existência de fato impeditivo, modificativo ou extintivo do direito do autor."</em>
+            </div>
+
+            <h3>4.2 Fato Constitutivo, Impetitivo, Modificativo e Extintivo</h3>
+
+            <h4>4.2.1 Fato Constitutivo (Art. 373, I)</h4>
+            <p>É o fato que <strong>dá origem</strong> ao direito do autor. Exemplos:</p>
+            <div class="table-wrap">
+                <div class="table-caption">Exemplos de Fato Constitutivo</div>
+                <table>
+                    <thead>
+                        <tr><th>Autor</th><th>Fato Constitutivo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Contratante</td><td>A celebração do contrato</td></tr>
+                        <tr><td>Vítima de acidente</td><td>A ocorrência do acidente</td></tr>
+                        <tr><td>Credor</td><td>A existência do negócio jurídico</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.2.2 Fato Impetitivo, Modificativo ou Extintivo (Art. 373, II)</h4>
+            <p>São fatos que <strong>impedem, modificam ou extinguem</strong> o direito do autor. Exemplos:</p>
+            <div class="table-wrap">
+                <div class="table-caption">Exemplos de Fato Impetitivo/Modificativo/Extintivo</div>
+                <table>
+                    <thead>
+                        <tr><th>Autor</th><th>Fato Impetitivo/Modificativo/Extintivo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Contratante</td><td>O pagamento (fato extintivo)</td></tr>
+                        <tr><td>Vítima</td><td>A culpa exclusiva da vítima (fato impeditivo)</td></tr>
+                        <tr><td>Credor</td><td>A novação (fato modificativo)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>4.3 Confissão e Fatos Incontroversos (Art. 374)</h3>
+
+            <h4>4.3.1 Dispensa de Prova</h4>
+            <p>O art. 374 do CPC estabelece os fatos que <strong>não dependem de prova</strong>:</p>
+            <div class="quote">
+                <em>"Art. 374. Não dependem de prova os fatos:</em><br>
+                <em>I - notórios;</em><br>
+                <em>II - afirmados por uma parte e confessados pela parte contrária;</em><br>
+                <em>III - admitidos no processo como incontroversos;</em><br>
+                <em>IV - em cujo favor milita presunção legal de existência ou de veracidade."</em>
+            </div>
+
+            <h4>4.3.2 Efeitos da Confissão</h4>
+            <p>Quando uma parte <strong>confessa</strong> o fato constitutivo do direito do autor, o autor fica <strong>dispensado de provar</strong> esse fato. O ônus se desloca para o réu quanto aos fatos impeditivos, modificativos ou extintivos.</p>
+
+            <h3>4.4 Estudo de Caso Prático</h3>
+            <div class="case-study">
+                <div class="case-study-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    CASO CONCRETO
+                </div>
+                <p><strong>Situação:</strong> Autor ajuíza ação de cobrança contra o réu, alegando que firmaram contrato de compra e venda no valor de R$ 50.000,00, e que o réu não pagou.</p>
+                <p><strong>Alegações do réu:</strong> Confessa que firmou o contrato, mas afirma que já pagou integralmente.</p>
+                <p><strong>Análise:</strong></p>
+                <div class="table-wrap" style="margin:0.8rem 0;">
+                    <table>
+                        <thead>
+                            <tr><th>Fato</th><th>Ônus da Prova</th><th>Fundamento</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Existência do contrato</td><td>Autor</td><td>Art. 373, I</td></tr>
+                            <tr><td>Pagamento</td><td>Réu</td><td>Art. 373, II</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>O que ocorre aqui?</strong></p>
+                <ol>
+                    <li>O réu <strong>confessa</strong> a existência do contrato (art. 374, II)</li>
+                    <li>O autor fica <strong>dispensado</strong> de provar a existência do contrato</li>
+                    <li>O ônus da prova <strong>se desloca</strong> para o réu, que deve provar o pagamento (fato extintivo)</li>
+                </ol>
+                <p><strong>Consequência:</strong> Se o réu não provar o pagamento, a presunção será favorável ao autor, e a ação será julgada procedente.</p>
+            </div>
+
+            <h3>4.5 Ônus Dinâmico (Art. 373, §§1º a 3º)</h3>
+
+            <h4>4.5.1 Conceito e Previsão</h4>
+            <p>O CPC/2015 inovou ao prever o <strong>ônus dinâmico da prova</strong>:</p>
+            <div class="quote">
+                <em>"Art. 373, §1º. Nos casos previstos em lei ou diante de peculiaridades da causa relacionadas à impossibilidade ou à excessiva dificuldade de cumprir o encargo nos termos do caput ou à maior facilidade de obtenção da prova do fato contrário, poderá o juiz atribuir o ônus da prova de modo diverso, desde que o faça por decisão fundamentada."</em>
+            </div>
+
+            <h4>4.5.2 Requisitos para o Ônus Dinâmico</h4>
+            <ol>
+                <li><strong>Previsão legal</strong> ou <strong>peculiaridades da causa</strong></li>
+                <li><strong>Impossibilidade</strong> ou <strong>excessiva dificuldade</strong> de cumprir o encargo</li>
+                <li><strong>Maior facilidade</strong> de obtenção da prova pelo contrário</li>
+                <li>Decisão <strong>fundamentada</strong></li>
+            </ol>
+
+            <hr class="divider-gold">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 5 -->
+        <!-- ============================================================ -->
+        <section id="cap5">
+            <span class="chapter-badge">Capítulo 5</span>
+            <h2>Revelia</h2>
+
+            <h3>5.1 Conceito e Fundamentação Legal</h3>
+
+            <h4>5.1.1 Definição</h4>
+            <p><strong>Revelia</strong> é a situação processual em que o réu, regularmente citado, não apresenta contestação no prazo legal, deixando de se manifestar no processo.</p>
+
+            <h4>5.1.2 Efeitos da Revelia (Art. 344)</h4>
+            <div class="quote">
+                <em>"Art. 344. Se o réu não contestar a ação, será considerado revel e presumir-se-ão verdadeiras as alegações de fato formuladas pelo autor."</em>
+            </div>
+
+            <h3>5.2 Efeitos da Revelia</h3>
+
+            <h4>5.2.1 Efeito Principal: Presunção de Veracidade</h4>
+            <p>A revelia gera uma <strong>presunção relativa</strong> de veracidade das alegações de fato do autor. Isso significa que o juiz pode considerar verdadeiros os fatos alegados pelo autor, mas essa presunção pode ser afastada por outras provas.</p>
+
+            <h4>5.2.2 Limites da Presunção</h4>
+            <p>A presunção de veracidade:</p>
+            <ul class="list-bullet">
+                <li>Aplica-se apenas aos <strong>direitos disponíveis</strong></li>
+                <li>É <strong>relativa</strong> (admite prova em contrário)</li>
+                <li>Pode ser afastada por outros elementos dos autos</li>
+            </ul>
+
+            <h3>5.3 Exceções à Presunção de Veracidade (Art. 345)</h3>
+
+            <h4>5.3.1 Rol do Art. 345</h4>
+            <div class="quote">
+                <em>"Art. 345. A revelia não produz o efeito mencionado no art. 344 se:</em><br>
+                <em>I - havendo pluralidade de réus, algum deles contestar a ação;</em><br>
+                <em>II - o litígio versar sobre direitos indisponíveis;</em><br>
+                <em>III - a petição inicial não estiver acompanhada de instrumento que a lei considere indispensável à prova do ato;</em><br>
+                <em>IV - as alegações de fato formuladas pelo autor forem inverossímeis ou estiverem em contradição com prova constante dos autos."</em>
+            </div>
+
+            <h4>5.3.2 Análise Detalhada de Cada Hipótese</h4>
+            <div class="table-wrap">
+                <div class="table-caption">Exceções à Presunção de Veracidade (Art. 345)</div>
+                <table>
+                    <thead>
+                        <tr><th>Inciso</th><th>Hipótese</th><th>Explicação</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>I</td><td>Pluralidade de réus com contestação de algum</td><td>Se um réu contesta, a presunção não se aplica para nenhum</td></tr>
+                        <tr><td>II</td><td>Direitos indisponíveis</td><td>Ex: direito de família, estado da pessoa</td></tr>
+                        <tr><td>III</td><td>Ausência de instrumento indispensável</td><td>Ex: ação de cobrança sem o título executivo</td></tr>
+                        <tr><td>IV</td><td>Alegações inverossímeis ou contraditas</td><td>A verdade processual prevalece sobre a presunção</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>5.4 Revelia e Prazos (Art. 346)</h3>
+
+            <h4>5.4.1 Regra Especial para Revel sem Advogado</h4>
+            <div class="quote">
+                <em>"Art. 346. Os prazos contra o revel que não tenha patrono nos autos fluirão da data de publicação do ato decisório no órgão oficial."</em>
+            </div>
+
+            <h4>5.4.2 Efeitos e Interpretação</h4>
+            <div class="table-wrap">
+                <div class="table-caption">Revelia e Prazos</div>
+                <table>
+                    <thead>
+                        <tr><th>Situação</th><th>Regra</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Revel sem patrono</td><td>Os prazos fluem da <strong>publicação no órgão oficial</strong>, não havendo intimação pessoal</td></tr>
+                        <tr><td>Revel com patrono constituído</td><td>Os prazos fluem da <strong>intimação pessoal</strong> do advogado</td></tr>
+                        <tr><td>Revel pode intervir a qualquer tempo</td><td>Recebe o processo no estado em que se encontrar (art. 346, parágrafo único)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="macete">
+                <div class="macete-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    MACETE PARA A PROVA
+                </div>
+                <p><strong>"Revel sem patrono nos autos"</strong> → os prazos fluem da <strong>publicação no Diário Oficial</strong>, não da intimação pessoal.</p>
+                <p><strong>Revel pode intervir a qualquer tempo</strong> → recebe o processo no estado em que se encontrar.</p>
+            </div>
+
+            <hr class="divider-gold">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 6 -->
+        <!-- ============================================================ -->
+        <section id="cap6">
+            <span class="chapter-badge">Capítulo 6</span>
+            <h2>Litisconsórcio</h2>
+
+            <h3>6.1 Conceito e Fundamentação Legal</h3>
+
+            <h4>6.1.1 Definição</h4>
+            <p><strong>Litisconsórcio</strong> é a situação em que há <strong>pluralidade de partes</strong> no processo: vários autores (litisconsórcio ativo) ou vários réus (litisconsórcio passivo) ou ambos.</p>
+
+            <h4>6.1.2 Classificações</h4>
+            <p>O litisconsórcio pode ser classificado segundo três critérios:</p>
+            <ol>
+                <li>Quanto à <strong>posição nos polos</strong> (ativo/passivo)</li>
+                <li>Quanto à <strong>obrigatoriedade de formação</strong> (facultativo/necessário)</li>
+                <li>Quanto à <strong>uniformidade da decisão</strong> (simples/unitário)</li>
+            </ol>
+
+            <h3>6.2 Classificação Quanto à Posição nos Polos</h3>
+
+            <h4>6.2.1 Litisconsórcio Ativo</h4>
+            <p>Ocorre quando há <strong>pluralidade de autores</strong> no processo. Exemplos:</p>
+            <ul class="list-bullet">
+                <li>Dois irmãos ajuizando ação conjunta contra um terceiro</li>
+                <li>Vários credores ajuizando ação de cobrança</li>
+            </ul>
+
+            <h4>6.2.2 Litisconsórcio Passivo</h4>
+            <p>Ocorre quando há <strong>pluralidade de réus</strong> no processo. Exemplos:</p>
+            <ul class="list-bullet">
+                <li>Ação contra duas pessoas físicas</li>
+                <li>Ação contra uma pessoa jurídica e uma pessoa física</li>
+            </ul>
+
+            <h4>6.2.3 Litisconsórcio Misto</h4>
+            <p>Ocorre quando há pluralidade de <strong>ambos os polos</strong>: vários autores contra vários réus.</p>
+
+            <h3>6.3 Classificação Quanto à Obrigatoriedade de Formação</h3>
+
+            <h4>6.3.1 Litisconsórcio Facultativo</h4>
+            <p>Ocorre quando a formação do litisconsórcio <strong>depende da vontade da parte</strong>. Não há obrigação de que todos os interessados estejam no processo.</p>
+            <p><strong>Fundamento:</strong> Art. 113 do CPC - <em>"As partes podem, em qualquer tempo, promover o litisconsórcio, desde que haja conexão ou afinidade de questões."</em></p>
+
+            <h4>6.3.2 Litisconsórcio Necessário (Art. 114)</h4>
+            <p>Ocorre quando a <strong>eficácia da sentença</strong> depende da citação de todos os litisconsortes. A lei exige que todos participem do processo.</p>
+            <div class="quote">
+                <em>"Art. 114. O litisconsórcio será necessário por disposição de lei ou quando, pela natureza da relação jurídica controvertida, a eficácia da sentença depender da citação de todos que devam ser litisconsortes."</em>
+            </div>
+            <p><strong>Exemplos:</strong></p>
+            <ul class="list-bullet">
+                <li>Ação possessória: todos os ocupantes do imóvel devem ser citados</li>
+                <li>Ação de divórcio: ambos os cônjuges</li>
+                <li>Ação de anulação de contrato: todos os contratantes</li>
+            </ul>
+
+            <h3>6.4 Classificação Quanto à Uniformidade da Decisão</h3>
+
+            <h4>6.4.1 Litisconsórcio Simples</h4>
+            <p>Ocorre quando a decisão <strong>pode ser diferente</strong> para cada litisconsorte. A relação jurídica é divisível.</p>
+            <p><strong>Fundamento:</strong> Art. 116, primeira parte - <em>"O litisconsórcio será unitário quando, pela natureza da relação jurídica, o juiz tiver de decidir o mérito de modo uniforme para todos os litisconsortes."</em></p>
+            <p><strong>Exemplo:</strong> Ação de cobrança contra vários devedores solidários. A sentença pode condenar uns e absolver outros.</p>
+
+            <h4>6.4.2 Litisconsórcio Unitário</h4>
+            <p>Ocorre quando a decisão <strong>deve ser uniforme</strong> para todos os litisconsortes. A relação jurídica é indivisível.</p>
+            <p><strong>Fundamento:</strong> Art. 116, parte final - <em>"O litisconsórcio será unitário quando, pela natureza da relação jurídica, o juiz tiver de decidir o mérito de modo uniforme para todos os litisconsortes."</em></p>
+            <p><strong>Exemplo:</strong> Ação de anulação de contrato bilateral. Se o contrato for anulado para um, será anulado para todos.</p>
+
+            <h3>6.5 Estudo de Caso: Litisconsórcio Passivo, Necessário e Unitário</h3>
+            <div class="case-study">
+                <div class="case-study-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    CASO CONCRETO
+                </div>
+                <p><strong>Situação:</strong> Autor ajuíza ação declaratória de nulidade de contrato firmado entre José e Paulo. O autor pede a nulidade do contrato que os dois celebraram.</p>
+                <p><strong>Análise do Litisconsórcio:</strong></p>
+                <div class="table-wrap" style="margin:0.8rem 0;">
+                    <table>
+                        <thead>
+                            <tr><th>Critério</th><th>Classificação</th><th>Motivo</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Posição nos polos</td><td><strong>Passivo</strong></td><td>Há mais de um réu (José e Paulo)</td></tr>
+                            <tr><td>Obrigatoriedade</td><td><strong>Necessário</strong></td><td>A eficácia da sentença depende da citação de todos (art. 114)</td></tr>
+                            <tr><td>Uniformidade da decisão</td><td><strong>Unitário</strong></td><td>O juiz deve decidir de modo uniforme para todos (art. 116)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>Por que é necessário?</strong> Pela natureza da relação jurídica controvertida (contrato bilateral), a eficácia da sentença depende da citação de todos os litisconsortes. Se o contrato é nulo para um, será nulo para o outro.</p>
+                <p><strong>Por que é unitário?</strong> O contrato é único e indivisível. A decisão deve ser uniforme: se for nulo para José, será nulo para Paulo. Não há como declarar a nulidade apenas para um dos contratantes.</p>
+            </div>
+
+            <div class="macete">
+                <div class="macete-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    MACETE PARA LITISCONSÓRCIO
+                </div>
+                <div class="table-wrap" style="margin:0.6rem 0;">
+                    <table>
+                        <thead>
+                            <tr><th>Tipo</th><th>Lembrete</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Ativo</strong></td><td>Vários AUTORES</td></tr>
+                            <tr><td><strong>Passivo</strong></td><td>Vários RÉUS</td></tr>
+                            <tr><td><strong>Facultativo</strong></td><td>Vontade das partes</td></tr>
+                            <tr><td><strong>Necessário</strong></td><td>Exigência legal ou natureza da relação</td></tr>
+                            <tr><td><strong>Simples</strong></td><td>Decisão pode ser DIFERENTE para cada um</td></tr>
+                            <tr><td><strong>Unitário</strong></td><td>Decisão deve ser UNIFORME para todos</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <hr class="divider-gold">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 7 -->
+        <!-- ============================================================ -->
+        <section id="cap7">
+            <span class="chapter-badge">Capítulo 7</span>
+            <h2>Valor da Causa e Impugnação</h2>
+
+            <h3>7.1 Conceito e Importância</h3>
+
+            <h4>7.1.1 Definição</h4>
+            <p>O <strong>valor da causa</strong> é o valor econômico atribuído à pretensão deduzida em juízo. Serve como parâmetro para:</p>
+            <ul class="list-bullet">
+                <li>Determinar a competência do juízo</li>
+                <li>Calcular as custas processuais</li>
+                <li>Estabelecer o recurso cabível</li>
+                <li>Definir o procedimento (rito sumário, etc.)</li>
+            </ul>
+
+            <h4>7.1.2 Fundamento Legal</h4>
+            <p>O valor da causa é regulado pelos arts. 291 a 293 do CPC/2015.</p>
+
+            <h3>7.2 Regras para Fixação do Valor da Causa (Art. 292)</h3>
+
+            <h4>7.2.1 Critérios Gerais</h4>
+            <p>O art. 292 do CPC estabelece as regras para fixação do valor da causa:</p>
+            <div class="table-wrap">
+                <div class="table-caption">Critérios para Fixação do Valor da Causa (Art. 292)</div>
+                <table>
+                    <thead>
+                        <tr><th>Inciso</th><th>Hipótese</th><th>Critério</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>I</td><td>Sem pedido líquido</td><td>Valor estimado pelo autor</td></tr>
+                        <tr><td>II</td><td>Pedido de prestação alimentícia</td><td>Soma das prestações de 12 meses</td></tr>
+                        <tr><td>III</td><td>Prestação de alimentos</td><td>Soma das prestações de 12 meses</td></tr>
+                        <tr><td>IV</td><td>Direito de propriedade, posse, uso, etc.</td><td>Valor do bem</td></tr>
+                        <tr><td>V</td><td>Direito a pagamento</td><td>Valor do débito</td></tr>
+                        <tr><td>VI</td><td>Cumulação de pedidos</td><td>Soma dos valores de todos os pedidos</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>7.2.2 Cumulação de Pedidos (Art. 292, VI)</h4>
+            <p>Na cumulação de pedidos, o valor da causa corresponde à <strong>soma dos valores de todos os pedidos</strong>. Exemplo: pedido de danos materiais (R$ 50.000,00) + danos morais (R$ 30.000,00) = valor da causa de R$ 80.000,00.</p>
+
+            <h3>7.3 Impugnação ao Valor da Causa</h3>
+
+            <h4>7.3.1 Fundamento Legal</h4>
+            <p>A impugnação ao valor da causa está prevista no art. 337, III do CPC:</p>
+            <div class="quote">
+                <em>"Art. 337. Incumbe ao réu, antes de discutir o mérito, alegar:</em><br>
+                <em>III - incorreção do valor da causa."</em>
+            </div>
+
+            <h4>7.3.2 Momento Processual</h4>
+            <p>O réu deve arguir a incorreção do valor da causa <strong>em preliminar da contestação</strong> (art. 337, III), sob pena de <strong>preclusão</strong> (art. 293).</p>
+            <p><strong>Preclusão:</strong> Se o réu não impugna o valor da causa no momento oportuno, não poderá mais fazê-lo posteriormente, salvo exceções.</p>
+
+            <h3>7.4 Consequências da Impugnação</h3>
+
+            <h4>7.4.1 Procedimento</h4>
+            <ol>
+                <li>Réu impugna o valor da causa em preliminar da contestação</li>
+                <li>Não há incidente autônomo para essa impugnação</li>
+                <li>O juiz decidirá na <strong>própria contestação</strong></li>
+                <li>Se acolhida, determina a <strong>retificação</strong> e a <strong>complementação das custas</strong></li>
+            </ol>
+
+            <h4>7.4.2 Implicações</h4>
+            <p>Se o juiz acolher a impugnação:</p>
+            <ol>
+                <li>O valor da causa é <strong>retificado</strong> para o valor correto</li>
+                <li>O autor deve <strong>complementar as custas</strong> (art. 293)</li>
+                <li>As consequências retroagem à data do ajuizamento</li>
+            </ol>
+
+            <h3>7.5 Estudo de Caso Prático</h3>
+            <div class="case-study">
+                <div class="case-study-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    CASO CONCRETO
+                </div>
+                <p><strong>Situação:</strong> Autor ajuíza ação com pedido cumulado de danos materiais (R$ 10.000,00) e danos morais (R$ 15.000,00), atribuindo à causa o valor de R$ 1.000,00 (valor manifestamente incorreto).</p>
+                <p><strong>Análise:</strong></p>
+                <ol>
+                    <li>O valor correto da causa seria a <strong>soma dos valores dos pedidos</strong> (art. 292, VI): R$ 10.000,00 + R$ 15.000,00 = <strong>R$ 25.000,00</strong></li>
+                    <li>O réu deve impugnar o valor em <strong>preliminar da contestação</strong> (art. 337, III)</li>
+                    <li>O juiz deve acolher a impugnação, <strong>retificar o valor</strong> e determinar a <strong>complementação das custas</strong> (art. 293)</li>
+                </ol>
+                <p><strong>Consequência:</strong> Se o autor não complementar as custas, o processo poderá ser extinto.</p>
+            </div>
+
+            <div class="callout callout-tip">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    DICA DE PROVA
+                </div>
+                <p><strong>A impugnação ao valor da causa NÃO é um incidente processual autônomo.</strong> Deve ser arguida em preliminar da contestação, sob pena de preclusão.</p>
+                <p><strong>Pegadinha comum:</strong> a banca tenta fazer o candidato acreditar que há um recurso específico para impugnar o valor da causa. Não há. A impugnação é feita na própria contestação.</p>
+            </div>
+
+            <hr class="divider-gold">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 8 -->
+        <!-- ============================================================ -->
+        <section id="cap8">
+            <span class="chapter-badge">Capítulo 8</span>
+            <h2>Quadros Sinópticos e Resumos Estratégicos</h2>
+
+            <h3>8.1 Quadro Geral: Sucessor, Substituto, Representante, Amicus Curiae e Assistente</h3>
+            <div class="table-wrap">
+                <div class="table-caption">Comparativo Geral: Sucessor, Substituto, Representante, Amicus Curiae e Assistente</div>
+                <table>
+                    <thead>
+                        <tr><th>Instituto</th><th>Nome próprio?</th><th>Direito próprio?</th><th>Atuação</th><th>Exemplo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Sucessor processual</td><td>Sim</td><td>Sim</td><td>Assume a posição da parte</td><td>Herdeiros</td></tr>
+                        <tr><td>Substituto processual</td><td>Sim</td><td>Não</td><td>Defende direito alheio em nome próprio</td><td>MP em ação de paternidade</td></tr>
+                        <tr><td>Representante processual</td><td>Não</td><td>Não</td><td>Defende direito alheio em nome alheio</td><td>Pai representando filho menor</td></tr>
+                        <tr><td>Amicus curiae</td><td>Não</td><td>Não</td><td>Colabora com o juízo</td><td>Especialista no tema</td></tr>
+                        <tr><td>Assistente litisconsorcial</td><td>Sim</td><td>Sim</td><td>Auxilia uma das partes</td><td>Terceiro interessado</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>8.2 Quadro: Atos Judiciais</h3>
+            <div class="table-wrap">
+                <div class="table-caption">Atos Judiciais: Sentença, Decisão Interlocutória, Despacho</div>
+                <table>
+                    <thead>
+                        <tr><th>Ato</th><th>Definição</th><th>Efeito</th><th>Recurso</th><th>Exemplo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Sentença</td><td>Põe fim à fase cognitiva (art. 203, §1º)</td><td>Encerra o processo</td><td>Apelação</td><td>Sentença de improcedência</td></tr>
+                        <tr><td>Decisão interlocutória</td><td>Decisão que não encerra a fase cognitiva (art. 203, §2º)</td><td>Mantém o processo</td><td>Agravo de instrumento</td><td>Decisão que indefere produção de prova</td></tr>
+                        <tr><td>Despacho</td><td>Ato de impulso processual</td><td>Não decide</td><td>Não cabe recurso</td><td>Mero despacho</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>8.3 Quadro: Litisconsórcio</h3>
+            <div class="table-wrap">
+                <div class="table-caption">Classificação do Litisconsórcio</div>
+                <table>
+                    <thead>
+                        <tr><th>Classificação</th><th>Explicação</th><th>Exemplo</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ativo</td><td>Vários autores</td><td>Vários irmãos ajuizando ação</td></tr>
+                        <tr><td>Passivo</td><td>Vários réus</td><td>Ação contra José e Paulo</td></tr>
+                        <tr><td>Necessário</td><td>Eficácia da sentença depende da citação de todos</td><td>Ação de anulação de contrato</td></tr>
+                        <tr><td>Facultativo</td><td>Formação por vontade da parte</td><td>Vários credores</td></tr>
+                        <tr><td>Unitário</td><td>Decisão uniforme para todos</td><td>Contrato indivisível</td></tr>
+                        <tr><td>Simples</td><td>Decisão pode ser diferente para cada um</td><td>Devedores solidários</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>8.4 Quadro: Ônus da Prova</h3>
+            <div class="table-wrap">
+                <div class="table-caption">Ônus da Prova (Art. 373)</div>
+                <table>
+                    <thead>
+                        <tr><th>Fato</th><th>Ônus</th><th>Fundamento</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Constitutivo do direito do autor</td><td>Autor</td><td>Art. 373, I</td></tr>
+                        <tr><td>Impetitivo, modificativo ou extintivo</td><td>Réu</td><td>Art. 373, II</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>8.5 Fluxograma: Procedimento da Revelia</h3>
+            <div class="flowchart-container">
+                <svg viewBox="0 0 780 720" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto; font-family:'Segoe UI',Arial,sans-serif; font-size:14px;">
+                    <!-- Background -->
+                    <rect width="780" height="720" fill="transparent"/>
+
+                    <!-- Nodes -->
+                    <!-- Citação -->
+                    <rect x="290" y="20" width="200" height="44" rx="10" fill="#2a2a3e" stroke="#5a6fd6" stroke-width="2"/>
+                    <text x="390" y="48" fill="#e8e6f0" text-anchor="middle" font-weight="700">Citação do réu</text>
+
+                    <line x1="390" y1="64" x2="390" y2="84" stroke="#5a6fd6" stroke-width="2"/>
+                    <polygon points="386,80 390,90 394,80" fill="#5a6fd6"/>
+
+                    <!-- Prazo -->
+                    <rect x="290" y="90" width="200" height="44" rx="10" fill="#2a2a3e" stroke="#5a6fd6" stroke-width="2"/>
+                    <text x="390" y="118" fill="#e8e6f0" text-anchor="middle" font-weight="700">Prazo para contestação</text>
+
+                    <line x1="390" y1="134" x2="390" y2="154" stroke="#5a6fd6" stroke-width="2"/>
+                    <polygon points="386,150 390,160 394,150" fill="#5a6fd6"/>
+
+                    <!-- Não contesta -->
+                    <rect x="290" y="160" width="200" height="44" rx="10" fill="#2a2a3e" stroke="#e8847a" stroke-width="2"/>
+                    <text x="390" y="188" fill="#e8e6f0" text-anchor="middle" font-weight="700">Réu não contesta</text>
+
+                    <line x1="390" y1="204" x2="390" y2="224" stroke="#e8847a" stroke-width="2"/>
+                    <polygon points="386,220 390,230 394,220" fill="#e8847a"/>
+
+                    <!-- Revelia -->
+                    <rect x="290" y="230" width="200" height="44" rx="10" fill="#2a2a3e" stroke="#d4b86a" stroke-width="2"/>
+                    <text x="390" y="258" fill="#e8e6f0" text-anchor="middle" font-weight="700">REVELIA (Art. 344)</text>
+
+                    <line x1="390" y1="274" x2="390" y2="294" stroke="#d4b86a" stroke-width="2"/>
+                    <polygon points="386,290 390,300 394,290" fill="#d4b86a"/>
+
+                    <!-- Presunção -->
+                    <rect x="230" y="300" width="320" height="44" rx="10" fill="#2a2a3e" stroke="#6abf8a" stroke-width="2"/>
+                    <text x="390" y="328" fill="#e8e6f0" text-anchor="middle" font-weight="700">Presunção de veracidade das alegações do autor</text>
+
+                    <line x1="390" y1="344" x2="390" y2="364" stroke="#6abf8a" stroke-width="2"/>
+                    <polygon points="386,360 390,370 394,360" fill="#6abf8a"/>
+
+                    <!-- Verificar exceções -->
+                    <rect x="290" y="370" width="200" height="44" rx="10" fill="#2a2a3e" stroke="#a88cdb" stroke-width="2"/>
+                    <text x="390" y="398" fill="#e8e6f0" text-anchor="middle" font-weight="700">Verificar exceções do art. 345</text>
+
+                    <line x1="390" y1="414" x2="390" y2="434" stroke="#a88cdb" stroke-width="2"/>
+                    <polygon points="386,430 390,440 394,430" fill="#a88cdb"/>
+
+                    <!-- Exceções -->
+                    <rect x="100" y="460" width="580" height="100" rx="10" fill="#1e1e30" stroke="#e8a84a" stroke-width="1.5"/>
+                    <text x="390" y="490" fill="#e8a84a" text-anchor="middle" font-weight="700" font-size="13">Exceções do Art. 345</text>
+                    <text x="390" y="514" fill="#b8b5cc" text-anchor="middle" font-size="12">I — Pluralidade de réus com contestação → Não produz efeito</text>
+                    <text x="390" y="536" fill="#b8b5cc" text-anchor="middle" font-size="12">II — Direitos indisponíveis → Não produz efeito</text>
+                    <text x="390" y="558" fill="#b8b5cc" text-anchor="middle" font-size="12">III — Ausência de instrumento indispensável → Não produz efeito</text>
+                    <text x="390" y="580" fill="#b8b5cc" text-anchor="middle" font-size="12">IV — Alegações inverossímeis → Não produz efeito</text>
+
+                    <line x1="390" y1="440" x2="390" y2="460" stroke="#a88cdb" stroke-width="2"/>
+
+                    <!-- Setas laterais -->
+                    <line x1="390" y1="560" x2="390" y2="590" stroke="#a88cdb" stroke-width="2"/>
+                    <polygon points="386,586 390,596 394,586" fill="#a88cdb"/>
+
+                    <!-- Nenhuma exceção -->
+                    <rect x="240" y="600" width="300" height="44" rx="10" fill="#2a2a3e" stroke="#6abf8a" stroke-width="2"/>
+                    <text x="390" y="628" fill="#e8e6f0" text-anchor="middle" font-weight="700">Nenhuma exceção → Produz efeito</text>
+                </svg>
+            </div>
+
+            <h3>8.6 Fluxograma: Amicus Curiae</h3>
+            <div class="flowchart-container">
+                <svg viewBox="0 0 780 680" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto; font-family:'Segoe UI',Arial,sans-serif; font-size:13px;">
+                    <rect width="780" height="680" fill="transparent"/>
+
+                    <!-- Requisitos -->
+                    <rect x="190" y="10" width="400" height="64" rx="10" fill="#2a2a3e" stroke="#5a6fd6" stroke-width="2"/>
+                    <text x="390" y="34" fill="#e8e6f0" text-anchor="middle" font-weight="700">Requisitos (art. 138)</text>
+                    <text x="390" y="56" fill="#b8b5cc" text-anchor="middle" font-size="12">Relevância · Especificidade · Repercussão · Representatividade</text>
+
+                    <line x1="390" y1="74" x2="390" y2="94" stroke="#5a6fd6" stroke-width="2"/>
+                    <polygon points="386,90 390,100 394,90" fill="#5a6fd6"/>
+
+                    <!-- Juiz admite -->
+                    <rect x="230" y="100" width="320" height="44" rx="10" fill="#2a2a3e" stroke="#5a6fd6" stroke-width="2"/>
+                    <text x="390" y="128" fill="#e8e6f0" text-anchor="middle" font-weight="700">Juiz admite ou inadmite</text>
+
+                    <line x1="390" y1="144" x2="390" y2="164" stroke="#5a6fd6" stroke-width="2"/>
+                    <polygon points="386,160 390,170 394,160" fill="#5a6fd6"/>
+
+                    <!-- Decisão irrecorrível -->
+                    <rect x="230" y="170" width="320" height="44" rx="10" fill="#2a2a3e" stroke="#e8847a" stroke-width="2"/>
+                    <text x="390" y="198" fill="#e8e6f0" text-anchor="middle" font-weight="700">Decisão é IRRORRÍVEL</text>
+
+                    <line x1="390" y1="214" x2="390" y2="234" stroke="#e8847a" stroke-width="2"/>
+                    <polygon points="386,230 390,240 394,230" fill="#e8847a"/>
+
+                    <!-- Se admitido -->
+                    <rect x="270" y="240" width="240" height="40" rx="10" fill="#2a2a3e" stroke="#6abf8a" stroke-width="2"/>
+                    <text x="390" y="266" fill="#e8e6f0" text-anchor="middle" font-weight="700">Se admitido:</text>
+
+                    <line x1="390" y1="280" x2="390" y2="300" stroke="#6abf8a" stroke-width="2"/>
+                    <polygon points="386,296 390,306 394,296" fill="#6abf8a"/>
+
+                    <!-- PODE -->
+                    <rect x="120" y="310" width="540" height="104" rx="10" fill="#1a2a1a" stroke="#6abf8a" stroke-width="1.5"/>
+                    <text x="390" y="338" fill="#6abf8a" text-anchor="middle" font-weight="700">PODE</text>
+                    <text x="390" y="362" fill="#b8b5cc" text-anchor="middle" font-size="12">✓ Falar após as partes</text>
+                    <text x="390" y="382" fill="#b8b5cc" text-anchor="middle" font-size="12">✓ Juntar documentos</text>
+                    <text x="390" y="402" fill="#b8b5cc" text-anchor="middle" font-size="12">✓ Opor embargos de declaração</text>
+                    <text x="390" y="420" fill="#b8b5cc" text-anchor="middle" font-size="12">✓ Recorrer da decisão do IRDR</text>
+
+                    <line x1="390" y1="306" x2="390" y2="310" stroke="#6abf8a" stroke-width="2"/>
+
+                    <!-- NÃO PODE -->
+                    <rect x="120" y="450" width="540" height="130" rx="10" fill="#2a1a1a" stroke="#e8847a" stroke-width="1.5"/>
+                    <text x="390" y="478" fill="#e8847a" text-anchor="middle" font-weight="700">NÃO PODE</text>
+                    <text x="390" y="502" fill="#b8b5cc" text-anchor="middle" font-size="12">✗ Apelar da sentença</text>
+                    <text x="390" y="522" fill="#b8b5cc" text-anchor="middle" font-size="12">✗ Interpor agravo de instrumento</text>
+                    <text x="390" y="542" fill="#b8b5cc" text-anchor="middle" font-size="12">✗ Recorrer da decisão de inadmissão</text>
+                    <text x="390" y="562" fill="#b8b5cc" text-anchor="middle" font-size="12">✗ Ser tratado como parte</text>
+
+                    <line x1="390" y1="420" x2="390" y2="450" stroke="#e8847a" stroke-width="2"/>
+                    <polygon points="386,446 390,456 394,446" fill="#e8847a"/>
+                </svg>
+            </div>
+
+            <hr class="divider-gold">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 9 -->
+        <!-- ============================================================ -->
+        <section id="cap9">
+            <span class="chapter-badge">Capítulo 9</span>
+            <h2>Exercícios e Aplicação Prática</h2>
+
+            <h3>9.1 Casos Hipotéticos para Treinamento</h3>
+
+            <div class="case-study">
+                <div class="case-study-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Caso 1 – Substituição vs. Representação
+                </div>
+                <p><strong>Situação:</strong> O Ministério Público ajuíza ação civil pública em defesa do meio ambiente, pleiteando a nulidade de licença ambiental concedida a uma empresa.</p>
+                <p><strong>Questão:</strong> O MP atua como substituto ou representante processual?</p>
+                <p><strong>Resposta:</strong> <span class="highlight">Substituto processual.</span> O MP atua em nome próprio (é a parte na ação) defendendo direito alheio (interesse difuso da coletividade). Além disso, a lei autoriza expressamente (CF, art. 129, III).</p>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Caso 2 – Litisconsórcio
+                </div>
+                <p><strong>Situação:</strong> Três irmãos ajuízam ação de usucapião contra o proprietário registral do imóvel. A sentença será uniforme para todos.</p>
+                <p><strong>Questão:</strong> Classifique o litisconsórcio.</p>
+                <p><strong>Resposta:</strong></p>
+                <div class="table-wrap" style="margin:0.6rem 0;">
+                    <table>
+                        <thead>
+                            <tr><th>Critério</th><th>Classificação</th><th>Motivo</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Posição nos polos</td><td><strong>Ativo</strong></td><td>Vários autores (três irmãos)</td></tr>
+                            <tr><td>Obrigatoriedade</td><td><strong>Necessário</strong></td><td>A eficácia da sentença depende da citação de todos (art. 114)</td></tr>
+                            <tr><td>Uniformidade da decisão</td><td><strong>Unitário</strong></td><td>A decisão deve ser uniforme para todos (art. 116)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Caso 3 – Revelia
+                </div>
+                <p><strong>Situação:</strong> Autor ajuíza ação de cobrança. Réu é citado, mas não contesta. A ação versa sobre contrato de compra e venda (direito disponível). A petição inicial está acompanhada do contrato.</p>
+                <p><strong>Questão:</strong> A revelia produzirá o efeito de presunção de veracidade?</p>
+                <p><strong>Resposta:</strong> <span class="highlight-green">Sim.</span> Não há nenhuma das exceções do art. 345: não há pluralidade de réus, o litígio versa sobre direito disponível, a inicial está acompanhada do instrumento indispensável e as alegações não são inverossímeis.</p>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Caso 4 – Amicus Curiae
+                </div>
+                <p><strong>Situação:</strong> Em processo que discute a constitucionalidade de uma lei, o juiz admite a intervenção de uma associação de classe como amicus curiae.</p>
+                <p><strong>Questão:</strong> A associação pode interpor apelação da sentença?</p>
+                <p><strong>Resposta:</strong> <span class="highlight-coral">Não.</span> O amicus curiae não é parte, nem terceiro juridicamente interessado. Sua atuação é restrita a colaborador do juízo, podendo apenas opor embargos de declaração e recorrer da decisão que julgar o IRDR (art. 138, §1º e §3º).</p>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Caso 5 – Valor da Causa
+                </div>
+                <p><strong>Situação:</strong> Autor ajuíza ação com pedido de danos materiais (R$ 20.000,00) e danos morais (R$ 30.000,00), atribuindo à causa o valor de R$ 5.000,00.</p>
+                <p><strong>Questão:</strong> O que o réu deve fazer?</p>
+                <p><strong>Resposta:</strong> O réu deve impugnar o valor da causa em preliminar da contestação (art. 337, III). O valor correto é a soma dos pedidos (art. 292, VI): R$ 20.000,00 + R$ 30.000,00 = <strong>R$ 50.000,00</strong>. O juiz deve acolher a impugnação, retificar o valor e determinar a complementação das custas (art. 293).</p>
+            </div>
+
+            <h3>9.2 Pegadinhas Comuns em Prova</h3>
+
+            <div class="callout callout-warning">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Pegadinha 1 – Substituição vs. Representação
+                </div>
+                <p><strong>Erro comum:</strong> Confundir substituto com representante.</p>
+                <p><strong>Correção:</strong> <span class="highlight">Substituto = direito alheio + nome próprio.</span> <span class="highlight-blue">Representante = direito alheio + nome alheio.</span></p>
+            </div>
+
+            <div class="callout callout-warning">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Pegadinha 2 – Amicus Curiae
+                </div>
+                <p><strong>Erro comum:</strong> Achar que o amicus curiae pode recorrer da sentença.</p>
+                <p><strong>Correção:</strong> O amicus curiae só pode opor embargos de declaração e recorrer da decisão do IRDR. <span class="highlight-coral">Não pode apelar.</span></p>
+            </div>
+
+            <div class="callout callout-warning">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Pegadinha 3 – Julgamento Antecipado Parcial do Mérito
+                </div>
+                <p><strong>Erro comum:</strong> Considerar que o julgamento antecipado parcial do mérito é sentença.</p>
+                <p><strong>Correção:</strong> É <span class="highlight-blue">decisão interlocutória</span> (art. 203, §2º), cabendo agravo de instrumento.</p>
+            </div>
+
+            <div class="callout callout-warning">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Pegadinha 4 – Revelia
+                </div>
+                <p><strong>Erro comum:</strong> Achar que a revelia sempre produz presunção de veracidade.</p>
+                <p><strong>Correção:</strong> A revelia <span class="highlight-coral">não produz presunção</span> nas hipóteses do art. 345 (pluralidade de réus, direitos indisponíveis, etc.).</p>
+            </div>
+
+            <div class="callout callout-warning">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Pegadinha 5 – Valor da Causa
+                </div>
+                <p><strong>Erro comum:</strong> Achar que o réu pode impugnar o valor da causa por meio de recurso específico.</p>
+                <p><strong>Correção:</strong> A impugnação é feita em <span class="highlight">preliminar da contestação</span> (art. 337, III), sob pena de preclusão.</p>
+            </div>
+
+            <hr class="divider-gold">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CONCLUSÃO -->
+        <!-- ============================================================ -->
+        <section id="conclusao">
+            <span class="chapter-badge">Conclusão</span>
+            <h2>Conclusão</h2>
+            <p>Esta apostila abordou os principais temas do CPC/2015 que são recorrentes em concursos para Técnico Judiciário – Área Judiciária, com ênfase nas bancas FCC, FGV, Cebraspe e no padrão do TJCE.</p>
+
+            <p>Os temas estudados foram:</p>
+            <ol>
+                <li><strong>Substituição e Representação Processual</strong> (art. 18)</li>
+                <li><strong>Atos Judiciais</strong> (art. 203)</li>
+                <li><strong>Julgamento Antecipado Parcial do Mérito</strong> (art. 356)</li>
+                <li><strong>Amicus Curiae</strong> (art. 138)</li>
+                <li><strong>Ônus da Prova</strong> (art. 373)</li>
+                <li><strong>Revelia</strong> (arts. 344, 345 e 346)</li>
+                <li><strong>Litisconsórcio</strong> (arts. 113, 114 e 116)</li>
+                <li><strong>Valor da Causa e Impugnação</strong> (arts. 292, 293 e 337, III)</li>
+            </ol>
+
+            <p>Lembre-se: o estudo para concursos exige <strong>compreensão profunda</strong>, <strong>interpretação prática</strong> e <strong>aplicação correta</strong> dos institutos. Não se limite à memorização literal dos artigos. Entenda o <strong>porquê</strong> de cada norma, suas <strong>consequências práticas</strong> e as <strong>pegadinhas</strong> comuns de prova.</p>
+
+            <div class="card card-gold">
+                <div class="card-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-.5-13v4l-2.5 1.5.8 1.3 3-1.8V7h-1.3z"/></svg>
+                    Sugestão de Revisão Final
+                </div>
+                <ul class="list-check">
+                    <li>Releia os <strong>quadros sinópticos</strong> (capítulo 8)</li>
+                    <li>Revise os <strong>macetes</strong> para diferenciação dos institutos</li>
+                    <li>Treine com os <strong>casos hipotéticos</strong> (capítulo 9)</li>
+                    <li>Identifique as <strong>pegadinhas</strong> mais comuns</li>
+                    <li>Faça <strong>simulados</strong> com questões da FCC, FGV e Cebraspe sobre os temas estudados</li>
+                </ul>
+            </div>
+
+            <div class="quote" style="margin-top:2.4rem;">
+                "O sucesso nos concursos não é fruto do acaso, mas da preparação consistente e da compreensão profunda dos institutos jurídicos."
+                <span class="quote-source">— Elaborado com base em: CPC/2015, doutrina processual civil, jurisprudência dos tribunais superiores e questões de concursos públicos.</span>
+            </div>
+
+            <p style="margin-top:1.6rem; font-size:0.9rem; color:var(--text-muted); text-align:center;">
+                Atualização: Conforme entendimento atualizado dos tribunais superiores e das principais bancas examinadoras.
+            </p>
+
+            <hr class="divider">
+
+            <p style="text-align:center; color:var(--text-muted); font-size:0.8rem; margin-top:1rem;">
+                <strong>Boa sorte e bons estudos!</strong>
+            </p>
+        </section>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>Apostila de Direito Constitucional</title>
+    <style>
+        /* ===== RESET ===== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #e6edf3;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: #161b22;
+            border-radius: 32px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        /* ===== TIPOGRAFIA ===== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            margin: 2rem 0 1rem 0;
+            color: #f0f6fc;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            letter-spacing: -0.5px;
+            margin-top: 0;
+            border-bottom: 3px solid #2d8cff;
+            padding-bottom: 0.75rem;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            border-left: 6px solid #2d8cff;
+            padding-left: 1rem;
+            margin-top: 2.8rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            color: #c9d1d9;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            color: #b1bac4;
+        }
+
+        p {
+            margin: 0.75rem 0;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== SUMÁRIO ===== */
+        .toc {
+            background: #0d1117;
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 2.5rem 0;
+            border: 1px solid #30363d;
+        }
+
+        .toc h2 {
+            border-left: none;
+            padding-left: 0;
+            margin-top: 0;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem 1.5rem;
+        }
+
+        .toc-grid a {
+            display: block;
+            padding: 0.35rem 0;
+            color: #8b949e;
+            font-size: 0.95rem;
+            border-bottom: 1px solid transparent;
+            transition: 0.2s;
+        }
+
+        .toc-grid a:hover {
+            color: #f0f6fc;
+            border-bottom-color: #2d8cff;
+            text-decoration: none;
+        }
+
+        /* ===== BLOCOS ===== */
+        .card {
+            background: #0d1117;
+            border-radius: 16px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.5rem 0;
+            border: 1px solid #30363d;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            border-color: #484f58;
+        }
+
+        .tip,
+        .warning,
+        .highlight,
+        .info {
+            border-radius: 14px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.5rem 0;
+            border-left: 6px solid;
+            background: #0d1117;
+        }
+
+        .tip {
+            border-color: #2d8cff;
+            background: #0d1a2b;
+        }
+        .tip::before {
+            content: "💡 ";
+            font-size: 1.2rem;
+        }
+
+        .warning {
+            border-color: #f0883e;
+            background: #2b1a0d;
+        }
+        .warning::before {
+            content: "⚠️ ";
+            font-size: 1.2rem;
+        }
+
+        .highlight {
+            border-color: #f5a623;
+            background: #1f1a0d;
+        }
+        .highlight::before {
+            content: "📌 ";
+            font-size: 1.2rem;
+        }
+
+        .info {
+            border-color: #6f42c1;
+            background: #1b0d2b;
+        }
+        .info::before {
+            content: "ℹ️ ";
+            font-size: 1.2rem;
+        }
+
+        blockquote {
+            background: #0d1117;
+            border-left: 6px solid #2d8cff;
+            padding: 1rem 2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: #c9d1d9;
+        }
+
+        /* ===== TABELAS ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 16px;
+            border: 1px solid #30363d;
+            background: #0d1117;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 420px;
+        }
+
+        th {
+            background: #1f2937;
+            color: #f0f6fc;
+            font-weight: 600;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid #2d8cff;
+        }
+
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #30363d;
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) td {
+            background: #0d1117;
+        }
+
+        tr:hover td {
+            background: #1a2332;
+        }
+
+        /* ===== LISTAS ===== */
+        ul,
+        ol {
+            padding-left: 1.8rem;
+            margin: 0.75rem 0;
+        }
+
+        li {
+            margin: 0.3rem 0;
+        }
+
+        /* ===== CÓDIGO / MNEMÔNICO ===== */
+        .mnemonic {
+            display: inline-block;
+            background: #1f2937;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            font-weight: 600;
+            color: #f5a623;
+            letter-spacing: 0.5px;
+            border: 1px solid #30363d;
+        }
+
+        .code {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            background: #0d1117;
+            padding: 0.1rem 0.6rem;
+            border-radius: 6px;
+            color: #f0883e;
+            border: 1px solid #30363d;
+            font-size: 0.9rem;
+        }
+
+        /* ===== SVG FIGURE ===== */
+        .diagram-figure {
+            background: #0d1117;
+            border-radius: 20px;
+            padding: 1.5rem 0.5rem;
+            margin: 2rem 0;
+            border: 1px solid #30363d;
+            text-align: center;
+        }
+
+        .diagram-figure svg {
+            max-width: 100%;
+            height: auto;
+            display: inline-block;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 0.8rem;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+                border-radius: 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+                padding-left: 0.8rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .card {
+                padding: 1rem 1.2rem;
+            }
+            .tip,
+            .warning,
+            .highlight,
+            .info {
+                padding: 1rem 1.2rem;
+            }
+            table {
+                font-size: 0.85rem;
+                min-width: 320px;
+            }
+            th,
+            td {
+                padding: 0.5rem 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .container {
+                padding: 1rem 0.8rem;
+            }
+        }
+
+        /* ===== MISC ===== */
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #2d8cff, transparent);
+            margin: 2.5rem 0;
+        }
+
+        .small-note {
+            font-size: 0.85rem;
+            color: #8b949e;
+            margin-top: 0.2rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            background: #2d8cff;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.15rem 0.7rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            margin-right: 0.4rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="topo">
+
+        <!-- ===== CABEÇALHO ===== -->
+        <header>
+            <h1>📘 APOSTILA DE DIREITO CONSTITUCIONAL PARA CONCURSOS PÚBLICOS</h1>
+            <p style="font-size:1.2rem; color:#8b949e; margin-top:-0.3rem;">
+                TÉCNICO JUDICIÁRIO – ÁREA JUDICIÁRIA
+            </p>
+            <p style="color:#8b949e; font-size:0.95rem; border-left:4px solid #2d8cff; padding-left:1rem; margin-top:0.5rem;">
+                Material desenvolvido com base no padrão de cobrança das bancas FCC, FGV, Cebraspe e similares
+            </p>
+        </header>
+
+        <!-- ===== SUMÁRIO ===== -->
+        <nav class="toc" aria-label="Sumário">
+            <h2>📑 Sumário</h2>
+            <div class="toc-grid">
+                <a href="#cap1">Cap. 1 – Fundamentos da República</a>
+                <a href="#cap2">Cap. 2 – Direitos e Garantias Fundamentais</a>
+                <a href="#cap3">Cap. 3 – Direitos Políticos</a>
+                <a href="#cap4">Cap. 4 – Estado Laico e Liberdade Religiosa</a>
+                <a href="#cap5">Cap. 5 – Partidos Políticos</a>
+                <a href="#cap6">Cap. 6 – Municípios</a>
+                <a href="#cap7">Cap. 7 – Controle de Constitucionalidade</a>
+                <a href="#cap8">Cap. 8 – Ministério Público</a>
+                <a href="#cap9">Cap. 9 – Competência da Justiça Federal</a>
+                <a href="#cap10">Cap. 10 – Princípios da Administração Pública</a>
+                <a href="#cap11">Cap. 11 – Processo Legislativo – Veto</a>
+                <a href="#cap12">Cap. 12 – Princípios das Relações Internacionais</a>
+                <a href="#cap13">Cap. 13 – Exercícios de Fixação</a>
+                <a href="#cap14">Cap. 14 – Resumo Esquemático</a>
+            </div>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 1 -->
+        <section id="cap1">
+            <h2>Capítulo 1: FUNDAMENTOS DA REPÚBLICA E EXERCÍCIO DO PODER POPULAR</h2>
+
+            <h3>1.1 Objetivos Fundamentais da República Federativa do Brasil</h3>
+            <h4>1.1.1 Conceito e Importância</h4>
+            <p>Os objetivos fundamentais da República Federativa do Brasil estão previstos no <strong>art. 3º da Constituição Federal de 1988</strong> e representam as metas permanentes que orientam a atuação do Estado brasileiro em todas as suas esferas. Diferentemente dos princípios, que são diretrizes gerais, os objetivos fundamentais são finalidades concretas que devem ser perseguidas pela União, Estados, Distrito Federal e Municípios.</p>
+
+            <div class="highlight">
+                <p><strong>📌 MACETE PARA MEMORIZAÇÃO – "CON GA ERRA PRO"</strong></p>
+                <ul>
+                    <li><strong>CON</strong>struir uma sociedade livre, justa e solidária</li>
+                    <li><strong>GA</strong>rantir o desenvolvimento nacional</li>
+                    <li><strong>ERR</strong>adicar a pobreza e a marginalização e <strong>RE</strong>duzir as desigualdades sociais e regionais</li>
+                    <li><strong>PRO</strong>mover o bem de todos, sem preconceitos</li>
+                </ul>
+            </div>
+
+            <h4>1.1.2 Análise Detalhada dos Objetivos</h4>
+            <h5>I – Construir uma sociedade livre, justa e solidária</h5>
+            <p>Este objetivo representa a base axiológica da Constituição, refletindo os valores da liberdade, justiça social e solidariedade. A sociedade brasileira deve ser construída de forma permanente, com a participação de todos os cidadãos.</p>
+            <p><strong>Aspectos práticos:</strong></p>
+            <ul>
+                <li>A liberdade aqui referida não é apenas a liberdade individual, mas também a liberdade política, econômica e social</li>
+                <li>A justiça deve ser entendida em sua dimensão distributiva, buscando reduzir as desigualdades</li>
+                <li>A solidariedade impõe deveres de cooperação entre os membros da sociedade</li>
+            </ul>
+
+            <h5>II – Garantir o desenvolvimento nacional</h5>
+            <p>O desenvolvimento nacional deve ser compreendido em sentido amplo, abrangendo não apenas o crescimento econômico, mas também o desenvolvimento social, cultural e sustentável.</p>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode tentar confundir este objetivo com o princípio da igualdade entre os Estados (art. 4º, II), que é princípio das <strong>relações internacionais</strong>, não objetivo fundamental.</p>
+            </div>
+
+            <h5>III – Erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e regionais</h5>
+            <p>Este objetivo estabelece um dever claro de atuação estatal para combater as mazelas sociais. Observe que o texto fala em "erradicar" a pobreza e a marginalização, mas em "reduzir" as desigualdades – o que demonstra a consciência do constituinte de que a pobreza pode ser eliminada, enquanto as desigualdades exigem redução contínua.</p>
+            <p><strong>Exemplo prático:</strong></p>
+            <ul>
+                <li>Programas de transferência de renda (como o Bolsa Família) são instrumentos para alcançar este objetivo</li>
+                <li>Políticas de incentivo ao desenvolvimento das regiões Norte, Nordeste e Centro-Oeste buscam reduzir desigualdades regionais</li>
+            </ul>
+
+            <h5>IV – Promover o bem de todos, sem preconceitos de origem, raça, sexo, cor, idade e quaisquer outras formas de discriminação</h5>
+            <p>Este objetivo está diretamente ligado ao princípio da igualdade (art. 5º, caput) e à vedação de discriminação. O rol apresentado é <strong>exemplificativo</strong>, como indicado pela expressão "quaisquer outras formas de discriminação".</p>
+
+            <div class="warning">
+                <p><strong>⚠️ ATENÇÃO: DIFERENCIAÇÃO ENTRE CONCEITOS</strong></p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>Dispositivo</th><th>Conteúdo</th><th>Natureza</th></tr></thead>
+                        <tbody>
+                            <tr><td>Art. 3º, IV</td><td>Promover o bem de todos sem preconceitos</td><td><strong>Objetivo fundamental</strong></td></tr>
+                            <tr><td>Art. 4º, II</td><td>Igualdade entre os Estados</td><td><strong>Princípio das relações internacionais</strong></td></tr>
+                            <tr><td>Art. 1º, V</td><td>Pluralismo político</td><td><strong>Fundamento da República</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3>1.2 Exercício do Poder Popular</h3>
+            <h4>1.2.1 O Parágrafo Único do Art. 1º da CF/88</h4>
+            <blockquote>
+                "Todo o poder emana do povo, que o exerce por meio de representantes eleitos ou <strong>diretamente</strong>, nos termos desta Constituição."
+            </blockquote>
+            <p>Este dispositivo consagra a <strong>soberania popular</strong> e estabelece que o poder é exercido de <strong>duas formas</strong>:</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Forma de Exercício</th><th>Característica</th><th>Exemplos</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Indireta</strong> (representativa)</td><td>Por meio de representantes eleitos</td><td>Deputados, Senadores, Presidente, Governadores, Prefeitos e Vereadores</td></tr>
+                        <tr><td><strong>Direta</strong> (participativa)</td><td>Exercício direto pelo povo</td><td>Plebiscito, Referendo, Iniciativa Popular de Lei</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode afirmar que o povo exerce o poder "exclusivamente" de forma indireta ou "apenas" por meio de representantes – <strong>isso está ERRADO</strong>. O poder também é exercido diretamente.</p>
+                <p><strong>Outra pegadinha:</strong> Dizer que o voto é forma de exercício direto do poder popular – <strong>ERRADO</strong>. O voto é forma de exercício <strong>indireto</strong>, pois o cidadão elege representantes que exercerão o poder em seu nome.</p>
+            </div>
+
+            <h4>1.2.2 Mecanismos de Exercício Direto do Poder Popular</h4>
+            <h5>a) Plebiscito</h5>
+            <p>O plebiscito é convocado <strong>antes</strong> da criação do ato legislativo ou administrativo. O povo é consultado previamente para decidir sobre a conveniência ou oportunidade de determinada medida.</p>
+            <p><strong>Exemplo prático:</strong></p>
+            <ul>
+                <li>Plebiscito de 1993, que consultou a população sobre a forma e o sistema de governo (República ou Monarquia; Presidencialismo ou Parlamentarismo)</li>
+                <li>Plebiscito sobre a proibição da comercialização de armas de fogo (2005)</li>
+            </ul>
+
+            <h5>b) Referendo</h5>
+            <p>O referendo é convocado <strong>depois</strong> da criação do ato legislativo ou administrativo. O povo é consultado para ratificar ou rejeitar uma norma já criada.</p>
+            <p><strong>Exemplo prático:</strong></p>
+            <ul>
+                <li>Referendo de 2005 sobre a proibição da comercialização de armas de fogo (o plebiscito foi convocado antes, o referendo depois da criação da lei)</li>
+            </ul>
+
+            <h5>c) Iniciativa Popular de Lei</h5>
+            <p>A iniciativa popular é o direito de os cidadãos apresentarem projetos de lei. Em âmbito federal, exige o <strong>subscrevimento de, no mínimo, 1% do eleitorado nacional</strong>, distribuído por pelo menos <strong>5 estados</strong>, com não menos de <strong>0,3%</strong> dos eleitores de cada um deles (art. 61, §2º da CF/88).</p>
+            <p><strong>Legislação aplicável:</strong> Lei nº 9.709/98 (regulamenta os mecanismos de participação popular).</p>
+
+            <h4>1.2.3 Quadro Comparativo: Plebiscito x Referendo</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Critério</th><th>Plebiscito</th><th>Referendo</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Momento</strong></td><td>Antes da criação do ato</td><td>Depois da criação do ato</td></tr>
+                        <tr><td><strong>Finalidade</strong></td><td>Decidir sobre a conveniência da medida</td><td>Ratificar ou rejeitar a medida já criada</td></tr>
+                        <tr><td><strong>Natureza</strong></td><td>Deliberativo prévio</td><td>Deliberativo posterior</td></tr>
+                        <tr><td><strong>Efeito</strong></td><td>Se favorável, autoriza a criação; se contrário, impede</td><td>Se favorável, confirma; se contrário, revoga</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 2 -->
+        <section id="cap2">
+            <h2>Capítulo 2: DIREITOS E GARANTIAS FUNDAMENTAIS</h2>
+
+            <h3>2.1 Direitos Sociais (Art. 6º da CF/88)</h3>
+            <h4>2.1.1 Rol dos Direitos Sociais</h4>
+            <p>O <strong>art. 6º da Constituição Federal</strong> estabelece os direitos sociais, que são direitos de segunda dimensão (prestacionais), exigindo do Estado uma atuação positiva para garanti-los.</p>
+            <blockquote>
+                <strong>Art. 6º:</strong> "São direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia, o transporte, o lazer, a segurança, a previdência social, a proteção à maternidade e à infância, a assistência aos desamparados, na forma desta Constituição."
+            </blockquote>
+
+            <h4>2.1.2 Mnemônico para Memorização: "EDU MORA ALI - ASSIS TRABALHA LA - SAU PROSSEGUE TRANSPORTANDO PRESO"</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Palavra-chave</th><th>Direito Social</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>EDU</strong></td><td>Educação</td></tr>
+                        <tr><td><strong>MORA</strong></td><td>Moradia</td></tr>
+                        <tr><td><strong>ALI</strong></td><td>Alimentação</td></tr>
+                        <tr><td><strong>ASSIS</strong></td><td>Assistência aos desamparados</td></tr>
+                        <tr><td><strong>TRABALHA</strong></td><td>Trabalho</td></tr>
+                        <tr><td><strong>LA</strong></td><td>Lazer</td></tr>
+                        <tr><td><strong>SAU</strong></td><td>Saúde</td></tr>
+                        <tr><td><strong>PROSSEGUE</strong></td><td>Proteção à maternidade/infância</td></tr>
+                        <tr><td><strong>TRANSPORTANDO</strong></td><td>Transporte</td></tr>
+                        <tr><td><strong>PRESO</strong></td><td>Previdência Social</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="warning">
+                <p><strong>⚠️ ATENÇÃO: O DIREITO AO MEIO AMBIENTE</strong></p>
+                <p>O direito ao <strong>meio ambiente NÃO está listado como direito social no art. 6º</strong> da CF/88.</p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead><tr><th>Direito</th><th>Localização na CF/88</th></tr></thead>
+                        <tbody>
+                            <tr><td>Meio Ambiente</td><td>Art. 225 (Direitos Difusos / Ordem Social)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>Pegadinha de banca:</strong> A banca pode listar o meio ambiente entre os direitos sociais do art. 6º – isso está <strong>ERRADO</strong>. O meio ambiente é tratado como direito fundamental difuso no art. 225, mas não integra o rol do art. 6º.</p>
+            </div>
+
+            <h4>2.1.4 Natureza e Efeitos dos Direitos Sociais</h4>
+            <p>Os direitos sociais são <strong>direitos de segunda dimensão</strong>, caracterizados por:</p>
+            <ol>
+                <li><strong>Prestacionalidade</strong> – exigem ações do Estado (políticas públicas)</li>
+                <li><strong>Mínimo existencial</strong> – há um núcleo essencial que não pode ser violado</li>
+                <li><strong>Reserva do possível</strong> – o Estado deve atuar dentro de suas possibilidades orçamentárias</li>
+                <li><strong>Progressividade</strong> – devem ser ampliados gradualmente</li>
+            </ol>
+            <p><strong>Exemplo prático de prova:</strong></p>
+            <div class="info">
+                "O direito ao transporte foi incluído no rol dos direitos sociais pela EC nº 90/2015."
+            </div>
+
+            <h3>2.2 Direito à Razoável Duração do Processo</h3>
+            <h4>2.2.1 Art. 5º, LXXVIII – Garantia Constitucional</h4>
+            <blockquote>
+                <strong>Art. 5º, LXXVIII:</strong> "a todos, no âmbito judicial e administrativo, são assegurados a razoável duração do processo e os meios que garantam a celeridade de sua tramitação."
+            </blockquote>
+
+            <h4>2.2.2 Âmbito de Aplicação</h4>
+            <p>A garantia da razoável duração do processo aplica-se:</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Âmbito</th><th>Aplicação</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Judicial</strong></td><td>Processos judiciais em todas as instâncias</td></tr>
+                        <tr><td><strong>Administrativo</strong></td><td>Processos administrativos em todas as esferas (federal, estadual, municipal)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="warning">
+                <p><strong>⚠️ PONTO CRUCIAL:</strong> O servidor público tem direito à análise de seus pedidos administrativos em prazo razoável. A garantia não se restringe aos processos judiciais.</p>
+                <p><strong>Exemplo prático:</strong> Um servidor público requer aposentadoria junto ao órgão previdenciário. Passados 5 anos sem decisão, o servidor pode invocar a garantia da razoável duração do processo para exigir celeridade na análise de seu pedido.</p>
+                <p><strong>Pegadinha de banca:</strong> A banca pode afirmar que a garantia se aplica apenas ao processo judicial – isso está <strong>ERRADO</strong>. O texto é expresso: "a todos, no âmbito judicial e administrativo".</p>
+            </div>
+
+            <h4>2.2.3 Emenda Constitucional nº 45/2004</h4>
+            <p>A EC nº 45/2004 (Reforma do Judiciário) incluiu o inciso LXXVIII no art. 5º, estabelecendo a razoável duração do processo como direito fundamental.</p>
+            <div class="tip">
+                <strong>Dica de prova:</strong> A banca pode cobrar a origem dessa garantia – é a EC 45/2004.
+            </div>
+
+            <h3>2.3 Escusa de Consciência e Perda de Direitos</h3>
+            <h4>2.3.1 Art. 5º, VIII da CF/88</h4>
+            <blockquote>
+                <strong>Art. 5º, VIII:</strong> "ninguém será privado de direitos por motivo de crença religiosa ou de convicção filosófica ou política, salvo se as invocar para eximir-se de obrigação legal a todos imposta e recusar-se a cumprir prestação alternativa, fixada em lei."
+            </blockquote>
+
+            <h4>2.3.2 Análise Estrutural</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Elemento</th><th>Conteúdo</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Regra</strong></td><td>Ninguém será privado de direitos por motivo de crença religiosa, filosófica ou política</td></tr>
+                        <tr><td><strong>Exceção</strong></td><td>Invocar a crença para eximir-se de obrigação legal a todos imposta</td></tr>
+                        <tr><td><strong>Condição para a perda</strong></td><td>Recusar-se a cumprir prestação alternativa fixada em lei</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>2.3.3 Escusa de Consciência x Prestação Alternativa</h4>
+            <p>A Constituição garante o direito à escusa de consciência, mas impõe uma contrapartida: a prestação alternativa.</p>
+            <p><strong>Exemplo prático – Serviço Militar Obrigatório:</strong></p>
+            <ul>
+                <li>O jovem pode invocar crença religiosa (ex.: Testemunhas de Jeová) para não prestar serviço militar</li>
+                <li>Deve, no entanto, cumprir prestação alternativa (ex.: serviço de natureza civil)</li>
+                <li>Se recusar a prestação alternativa, poderá ser privado de direitos políticos</li>
+            </ul>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode afirmar que a mera invocação da crença religiosa já causa a perda de direitos – <strong>ERRADO</strong>. A perda só ocorre se houver <strong>recusa à prestação alternativa</strong>.</p>
+            </div>
+
+            <h3>2.4 Liberdade de Associação e Vedação Paramilitar</h3>
+            <h4>2.4.1 Art. 5º, XVII da CF/88</h4>
+            <blockquote>
+                <strong>Art. 5º, XVII:</strong> "é plena a liberdade de associação para fins lícitos, vedada a de caráter paramilitar."
+            </blockquote>
+
+            <h4>2.4.2 Natureza da Vedação</h4>
+            <p>A liberdade de associação é garantida, mas <strong>não é absoluta</strong>. A Constituição veda expressamente as associações de <strong>caráter paramilitar</strong>.</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Característica</th><th>Consequência Jurídica</th></tr></thead>
+                    <tbody>
+                        <tr><td>Associação com organização e táticas militares</td><td>Vedada pela CF/88</td></tr>
+                        <tr><td>Associação formada por pessoas com porte regular de arma</td><td>Ainda assim vedada (o porte regular não afasta a vedação)</td></tr>
+                        <tr><td>Associação que respeita direitos humanos</td><td>Ainda assim vedada (o respeito aos direitos humanos não afasta a vedação)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>2.4.3 Raciocínio Jurídico Aplicado</h4>
+            <div class="card">
+                <p><strong>Questão hipotética (FGV):</strong></p>
+                <p>"É lícita a criação de associação civil com organização e táticas inspiradas na atuação militar, formada por pessoas com porte regular de arma de fogo, para autodefesa, observados os direitos humanos?"</p>
+                <p><strong>Resposta:</strong> <span style="color:#f0883e;">NÃO</span>, é vedada pela Constituição. A finalidade "licita" e o respeito aos direitos humanos não elidem a vedação constitucional ao caráter paramilitar.</p>
+                <div class="tip">
+                    <strong>Dica de prova:</strong> A banca pode tentar criar uma situação em que a associação parece legítima (porte regular de armas, respeito aos direitos humanos, finalidade de autodefesa). O examinador espera que o candidato identifique a vedação absoluta às associações paramilitares.
+                </div>
+            </div>
+
+            <h3>2.5 Acesso de Estrangeiros a Cargos Públicos</h3>
+            <h4>2.5.1 Art. 37, I da CF/88</h4>
+            <blockquote>
+                <strong>Art. 37, I:</strong> "a administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência e, também, ao seguinte: <strong>os cargos, empregos e funções públicas são acessíveis aos brasileiros que preencham os requisitos estabelecidos em lei, assim como aos estrangeiros, na forma da lei</strong>."
+            </blockquote>
+
+            <h4>2.5.2 Interpretação do Dispositivo</h4>
+            <p>A Constituição <strong>não veda</strong> o acesso de estrangeiros a cargos públicos. Apenas exige que haja <strong>lei disciplinando</strong> esse acesso.</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Tipo de Lei</th><th>Viabilidade</th></tr></thead>
+                    <tbody>
+                        <tr><td>Lei complementar</td><td>Possível, mas não obrigatória</td></tr>
+                        <tr><td><strong>Lei ordinária</strong></td><td><strong>Admitida</strong> (é a forma mais comum)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="warning">
+                <p><strong>⚠️ ATENÇÃO:</strong> A CF não exige lei complementar para disciplinar o acesso de estrangeiros. Assim, é constitucional lei estadual ordinária que discipline o acesso de estrangeiros a cargos públicos estaduais.</p>
+                <p><strong>Pegadinha de banca:</strong> A banca pode afirmar que "somente lei complementar pode disciplinar o acesso de estrangeiros" – isso está <strong>ERRADO</strong>. O dispositivo não especifica o tipo de lei, admitindo-se lei ordinária.</p>
+            </div>
+
+            <h3>2.6 Desapropriação</h3>
+            <h4>2.6.1 Art. 5º, XXIV da CF/88</h4>
+            <blockquote>
+                <strong>Art. 5º, XXIV:</strong> "a lei estabelecerá o procedimento para desapropriação por necessidade ou utilidade pública, ou por interesse social, mediante justa e prévia indenização em dinheiro, ressalvados os casos previstos nesta Constituição."
+            </blockquote>
+
+            <h4>2.6.2 Espécies de Desapropriação</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Espécie</th><th>Finalidade</th><th>Forma de Pagamento</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Utilidade Pública</strong></td><td>Obra pública, serviço público, etc.</td><td>Justa e prévia indenização em dinheiro</td></tr>
+                        <tr><td><strong>Necessidade Pública</strong></td><td>Situação de urgência/emergência</td><td>Justa e prévia indenização em dinheiro</td></tr>
+                        <tr><td><strong>Interesse Social</strong></td><td>Reforma agrária, habitação popular</td><td>Pode ser com títulos da dívida pública (art. 184)</td></tr>
+                        <tr><td><strong>Desapropriação-sanção</strong></td><td>Solo urbano não edificado (art. 182, §4º)</td><td>Títulos da dívida pública</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>2.6.3 Análise Detalhada</h4>
+            <h5>a) Desapropriação por Utilidade Pública</h5>
+            <ul>
+                <li><strong>Finalidade:</strong> Obra pública, construção de escolas, hospitais, estradas, etc.</li>
+                <li><strong>Exemplo:</strong> Município desapropria terreno para construir escola</li>
+                <li><strong>Pagamento:</strong> <strong>SEMPRE em dinheiro</strong>, justo e prévio</li>
+                <li><strong>Base legal:</strong> Art. 5º, XXIV e Lei nº 4.132/62 (princípios gerais)</li>
+            </ul>
+            <h5>b) Desapropriação por Interesse Social</h5>
+            <ul>
+                <li><strong>Finalidade:</strong> Reforma agrária, regularização fundiária, habitação popular</li>
+                <li><strong>Exemplo:</strong> Desapropriação de imóvel rural improdutivo</li>
+                <li><strong>Pagamento:</strong> Pode ser com títulos da dívida agrária (art. 184)</li>
+                <li><strong>Base legal:</strong> Art. 184 da CF/88</li>
+            </ul>
+            <h5>c) Desapropriação-Sanção</h5>
+            <ul>
+                <li><strong>Finalidade:</strong> Penalizar proprietário que não cumpre função social</li>
+                <li><strong>Exemplos:</strong> Solo urbano não edificado, subutilizado ou não utilizado (art. 182, §4º); Imóvel rural sem função social (art. 184)</li>
+                <li><strong>Pagamento:</strong> Títulos da dívida pública (no caso de solo urbano não edificado)</li>
+            </ul>
+
+            <h4>2.6.4 Quadro Comparativo: Formas de Pagamento</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Situação</th><th>Forma de Pagamento</th></tr></thead>
+                    <tbody>
+                        <tr><td>Desapropriação por utilidade pública</td><td><strong>Dinheiro</strong> (justo e prévio)</td></tr>
+                        <tr><td>Desapropriação por necessidade pública</td><td><strong>Dinheiro</strong> (justo e prévio)</td></tr>
+                        <tr><td>Desapropriação por interesse social (reforma agrária)</td><td>Títulos da dívida agrária</td></tr>
+                        <tr><td>Desapropriação-sanção (solo urbano não edificado)</td><td>Títulos da dívida pública</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="warning">
+                <p><strong>⚠️ ATENÇÃO:</strong> A única exceção à indenização em dinheiro para desapropriação por utilidade pública é quando se trata de desapropriação-sanção.</p>
+                <p><strong>Pegadinha de banca:</strong> A banca pode afirmar que "a desapropriação por utilidade pública pode ser paga com títulos" – isso está <strong>ERRADO</strong>, exceto nas exceções constitucionais expressas.</p>
+            </div>
+
+            <h4>2.6.5 Estudo de Caso</h4>
+            <div class="card">
+                <p><strong>Caso concreto:</strong></p>
+                <p>"O município de Boa Esperança desapropria terreno de propriedade particular, regularmente registrado, para construir uma escola, atendendo ao crescimento demográfico da região."</p>
+                <p><strong>Análise:</strong></p>
+                <ol>
+                    <li><strong>Modalidade:</strong> Desapropriação por <strong>utilidade pública</strong> (a construção de escola é utilidade pública)</li>
+                    <li><strong>Direito do proprietário:</strong> Receber <strong>justa e prévia indenização em dinheiro</strong></li>
+                    <li><strong>Fundamento:</strong> Art. 5º, XXIV da CF/88</li>
+                    <li><strong>Não se aplica:</strong> Pagamento com títulos, pois não é desapropriação-sanção nem reforma agrária</li>
+                </ol>
+                <p><strong>Resposta para a questão:</strong> Trata-se de desapropriação por utilidade pública, e o proprietário tem direito a justa e prévia indenização em dinheiro.</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 3 -->
+        <section id="cap3">
+            <h2>Capítulo 3: DIREITOS POLÍTICOS</h2>
+
+            <h3>3.1 Perda e Suspensão de Direitos Políticos (Art. 15 da CF/88)</h3>
+            <h4>3.1.1 Rol do Art. 15</h4>
+            <blockquote>
+                <strong>Art. 15:</strong> "É vedada a cassação de direitos políticos, cuja perda ou suspensão só se dará nos casos de:<br>
+                I - cancelamento da naturalização por sentença transitada em julgado;<br>
+                II - incapacidade civil absoluta;<br>
+                III - condenação criminal transitada em julgado, enquanto durarem seus efeitos;<br>
+                IV - recusa de cumprir obrigação a todos imposta ou prestação alternativa;<br>
+                V - improbidade administrativa."
+            </blockquote>
+
+            <h4>3.1.2 Distinção entre Perda e Suspensão</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Situação</th><th>Efeito</th><th>Natureza</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Perda</strong></td><td>Definitiva (em regra)</td><td>Há um "fim" do direito</td></tr>
+                        <tr><td><strong>Suspensão</strong></td><td>Temporária</td><td>Há uma "pausa" no exercício</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>3.1.3 Análise Detalhada de Cada Hipótese</h4>
+            <h5>I – Cancelamento da naturalização por sentença transitada em julgado</h5>
+            <ul>
+                <li><strong>Natureza:</strong> Perda</li>
+                <li><strong>Fundamento:</strong> Cancelamento da naturalização (ato que torna a pessoa estrangeira novamente)</li>
+                <li><strong>Prazo:</strong> Transitado em julgado (não cabe mais recurso)</li>
+                <li><strong>Exemplo:</strong> Naturalização cancelada por fraude</li>
+            </ul>
+
+            <h5>II – Incapacidade civil absoluta</h5>
+            <ul>
+                <li><strong>Natureza:</strong> Suspensão</li>
+                <li><strong>Fundamento:</strong> Incapacidade absoluta (não relativa)</li>
+                <li><strong>Exemplo:</strong> Interdição judicial por doença mental</li>
+            </ul>
+            <div class="warning">
+                <p><strong>⚠️ ATENÇÃO:</strong> A CF exige incapacidade civil <strong>ABSOLUTA</strong></p>
+                <p><strong>Pegadinha de banca:</strong> A banca pode afirmar que "incapacidade civil provisória" causa suspensão – <strong>ERRADO</strong>. O texto exige incapacidade civil <strong>absoluta</strong> (art. 15, II).</p>
+            </div>
+
+            <h5>III – Condenação criminal transitada em julgado, enquanto durarem seus efeitos</h5>
+            <ul>
+                <li><strong>Natureza:</strong> Suspensão</li>
+                <li><strong>Fundamento:</strong> Condenação penal definitiva</li>
+                <li><strong>Duração:</strong> Enquanto durarem os efeitos da condenação</li>
+                <li><strong>Exemplo:</strong> Sentença penal condenatória transitada em julgado</li>
+            </ul>
+
+            <h5>IV – Recusa de cumprir obrigação a todos imposta ou prestação alternativa</h5>
+            <ul>
+                <li><strong>Natureza:</strong> Perda</li>
+                <li><strong>Fundamento:</strong> Recusa do cidadão em cumprir obrigação legal</li>
+                <li><strong>Exemplo:</strong> Recusa ao serviço militar obrigatório (sem cumprir prestação alternativa)</li>
+                <li><strong>Relação com art. 5º, VIII:</strong> Há conexão com a escusa de consciência</li>
+            </ul>
+
+            <h5>V – Improbidade administrativa</h5>
+            <ul>
+                <li><strong>Natureza:</strong> Suspensão</li>
+                <li><strong>Fundamento:</strong> Prática de atos de improbidade</li>
+                <li><strong>Duração:</strong> Conforme estabelecido na sentença (Lei nº 8.429/92)</li>
+                <li><strong>Exemplo:</strong> Desvio de recursos públicos</li>
+            </ul>
+
+            <h4>3.1.4 Quadro Resumo: Perda x Suspensão</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Hipótese</th><th>Natureza</th></tr></thead>
+                    <tbody>
+                        <tr><td>Cancelamento da naturalização</td><td><strong>PERDA</strong></td></tr>
+                        <tr><td>Incapacidade civil absoluta</td><td><strong>SUSPENSÃO</strong></td></tr>
+                        <tr><td>Condenação criminal transitada em julgado</td><td><strong>SUSPENSÃO</strong></td></tr>
+                        <tr><td>Recusa de obrigação/alternativa</td><td><strong>PERDA</strong></td></tr>
+                        <tr><td>Improbidade administrativa</td><td><strong>SUSPENSÃO</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tip">
+                <p><strong>Mnemônico:</strong></p>
+                <ul>
+                    <li>Perda: "C A R" (Cancelamento da naturalização / Recusa)</li>
+                    <li>Suspensão: "I C I" (Incapacidade / Condenação / Improbidade)</li>
+                </ul>
+            </div>
+
+            <h4>3.1.5 Estudo de Caso</h4>
+            <div class="card">
+                <p><strong>Questão de prova (FGV/FCC):</strong></p>
+                <p>"Analise as seguintes hipóteses:<br>
+                I. recusa de cumprir obrigação a todos imposta ou prestação alternativa.<br>
+                II. cancelamento da naturalização por sentença transitada em julgado.<br>
+                III. incapacidade civil provisória.<br>
+                IV. improbidade administrativa."</p>
+                <p><strong>Quais hipóteses causam perda ou suspensão dos direitos políticos?</strong></p>
+                <p><strong>Resposta:</strong> Estão corretos os itens I, II e IV.</p>
+                <p><strong>Explicação:</strong></p>
+                <ul>
+                    <li><strong>Item I (correto):</strong> Recusa causa perda (art. 15, IV)</li>
+                    <li><strong>Item II (correto):</strong> Cancelamento da naturalização causa perda (art. 15, I)</li>
+                    <li><strong>Item III (errado):</strong> A CF exige incapacidade civil <strong>ABSOLUTA</strong> (art. 15, II). O termo "provisória" está incorreto</li>
+                    <li><strong>Item IV (correto):</strong> Improbidade administrativa causa suspensão (art. 15, V)</li>
+                </ul>
+                <p><strong>Pegadinha identificada:</strong> Trocar "absoluta" por "relativa" ou "provisória" é uma pegadinha comum da FGV/FCC.</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 4 -->
+        <section id="cap4">
+            <h2>Capítulo 4: ESTADO LAICO E LIBERDADE RELIGIOSA</h2>
+
+            <h3>4.1 Vedação ao Estabelecimento de Cultos Religiosos</h3>
+            <h4>4.1.1 Art. 19, I da CF/88</h4>
+            <blockquote>
+                <strong>Art. 19:</strong> "É vedado à União, aos Estados, ao Distrito Federal e aos Municípios:<br>
+                I - estabelecer cultos religiosos ou igrejas, subvencioná-los, embaraçar-lhes o funcionamento ou manter com eles ou seus representantes relações de dependência ou aliança, ressalvada, na forma da lei, a colaboração de interesse público;"
+            </blockquote>
+
+            <h4>4.1.2 Análise Detalhada</h4>
+            <h5>a) Sujeitos da Vedação</h5>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Ente Federativo</th><th>Vedação</th></tr></thead>
+                    <tbody>
+                        <tr><td>União</td><td>✓</td></tr>
+                        <tr><td>Estados</td><td>✓</td></tr>
+                        <tr><td>Distrito Federal</td><td>✓</td></tr>
+                        <tr><td>Municípios</td><td>✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h5>b) Condutas Vedadas</h5>
+            <ol>
+                <li><strong>Estabelecer</strong> cultos religiosos ou igrejas</li>
+                <li><strong>Subvencionar</strong> cultos religiosos ou igrejas</li>
+                <li><strong>Embaraçar</strong> o funcionamento de cultos religiosos ou igrejas</li>
+                <li>Manter relações de <strong>dependência ou aliança</strong> com cultos ou igrejas</li>
+            </ol>
+
+            <h4>4.1.3 Exceção: Colaboração de Interesse Público</h4>
+            <p>A única ressalva é a <strong>colaboração de interesse público</strong>, que deve ser prevista em lei.</p>
+            <p><strong>Exemplos de colaboração de interesse público:</strong></p>
+            <ul>
+                <li>Celebração de convênios com igrejas para prestação de serviços sociais</li>
+                <li>Parcerias para programas de assistência social</li>
+                <li>Acordos para preservação de patrimônio histórico-religioso</li>
+            </ul>
+
+            <h4>4.1.4 Estudo de Caso</h4>
+            <div class="card">
+                <p><strong>Questão de prova (CESPE):</strong></p>
+                <p>"Lei estadual que determine culto religioso obrigatório, subvencione igrejas cristãs ou crie embaraços a outras religiões é integralmente inconstitucional?"</p>
+                <p><strong>Resposta:</strong> <span style="color:#f0883e;">SIM</span>. É vedado ao Estado (incluindo os estados-membros) estabelecer cultos religiosos, subvencioná-los ou embaraçar-lhes o funcionamento, conforme art. 19, I da CF/88.</p>
+                <p><strong>Raciocínio jurídico:</strong></p>
+                <ol>
+                    <li>O Brasil é um <strong>Estado laico</strong> (não tem religião oficial)</li>
+                    <li>A vedação aplica-se a todos os entes federativos</li>
+                    <li>A única exceção é a colaboração de interesse público, na forma da lei</li>
+                    <li>No caso, a lei estadual viola frontalmente a vedação constitucional</li>
+                </ol>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 5 -->
+        <section id="cap5">
+            <h2>Capítulo 5: PARTIDOS POLÍTICOS</h2>
+
+            <h3>5.1 Financiamento e Participação Política</h3>
+            <h4>5.1.1 Percentual para Candidaturas de Pessoas Pretas e Pardas</h4>
+            <blockquote>
+                <strong>Art. 17, §9º (incluído pela EC 133/2024):</strong> "Os recursos do Fundo Especial de Financiamento de Campanha (FEFC) e do fundo partidário destinados às campanhas eleitorais deverão ser aplicados, no mínimo, na proporção de trinta por cento em candidaturas de pessoas pretas e pardas."
+            </blockquote>
+            <p><strong>Percentual:</strong> <span class="mnemonic">30%</span> (trinta por cento) dos recursos do FEFC e do fundo partidário.</p>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode confundir este percentual com outros:</p>
+            </div>
+
+            <h4>5.1.2 Quadro Comparativo: Percentuais de Financiamento</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Destinação</th><th>Percentual</th><th>Base Legal</th></tr></thead>
+                    <tbody>
+                        <tr><td>Candidaturas de pessoas pretas e pardas</td><td><strong>30%</strong></td><td>Art. 17, §9º (EC 133/2024)</td></tr>
+                        <tr><td>Participação política das mulheres</td><td><strong>5%</strong> do fundo partidário</td><td>Art. 17, §7º</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>5.1.3 Cláusula de Barreira</h4>
+            <p>A cláusula de barreira (ou cláusula de desempenho) exige:</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Requisito</th><th>Percentual</th></tr></thead>
+                    <tbody>
+                        <tr><td>Votos válidos para Deputado Federal</td><td><strong>3%</strong> (três por cento)</td></tr>
+                        <tr><td>Distribuição</td><td>Em pelo menos <strong>1/3</strong> das unidades da Federação</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 6 -->
+        <section id="cap6">
+            <h2>Capítulo 6: MUNICÍPIOS</h2>
+
+            <h3>6.1 Limites de Despesa com Vereadores</h3>
+            <h4>6.1.1 Art. 29, VII da CF/88</h4>
+            <blockquote>
+                <strong>Art. 29, VII:</strong> "o total da despesa com a remuneração dos vereadores não poderá ultrapassar o montante de cinco por cento da receita do município."
+            </blockquote>
+            <p><strong>Percentual:</strong> <span class="mnemonic">5%</span> (cinco por cento) da receita do município</p>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode afirmar outro percentual (ex.: 3%, 8%, 10%). O correto é 5%.</p>
+            </div>
+
+            <h3>6.2 Número de Vereadores</h3>
+            <h4>6.2.1 Art. 29, IV da CF/88</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>População do Município</th><th>Número de Vereadores</th></tr></thead>
+                    <tbody>
+                        <tr><td>Até 15.000 habitantes</td><td>9</td></tr>
+                        <tr><td>De 15.001 a 30.000</td><td>11</td></tr>
+                        <tr><td>De 30.001 a 50.000</td><td>13</td></tr>
+                        <tr><td>De 50.001 a 80.000</td><td>15</td></tr>
+                        <tr><td>De 80.001 a 120.000</td><td>17</td></tr>
+                        <tr><td>De 120.001 a 160.000</td><td>19</td></tr>
+                        <tr><td>De 160.001 a 300.000</td><td>21</td></tr>
+                        <tr><td>De 300.001 a 450.000</td><td>23</td></tr>
+                        <tr><td>De 450.001 a 600.000</td><td>25</td></tr>
+                        <tr><td>De 600.001 a 750.000</td><td>27</td></tr>
+                        <tr><td>De 750.001 a 900.000</td><td>29</td></tr>
+                        <tr><td>De 900.001 a 1.050.000</td><td>31</td></tr>
+                        <tr><td>De 1.050.001 a 1.200.000</td><td>33</td></tr>
+                        <tr><td>De 1.200.001 a 1.350.000</td><td>35</td></tr>
+                        <tr><td>De 1.350.001 a 1.500.000</td><td>37</td></tr>
+                        <tr><td>De 1.500.001 a 1.800.000</td><td>39</td></tr>
+                        <tr><td>De 1.800.001 a 2.100.000</td><td>41</td></tr>
+                        <tr><td>De 2.100.001 a 2.400.000</td><td>43</td></tr>
+                        <tr><td>De 2.400.001 a 3.000.000</td><td>45</td></tr>
+                        <tr><td>De 3.000.001 a 5.000.000</td><td>47</td></tr>
+                        <tr><td>De 5.000.001 a 6.000.000</td><td>49</td></tr>
+                        <tr><td>Acima de 6.000.000</td><td>49 (máximo)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="warning">
+                <p><strong>⚠️ ATENÇÃO:</strong> O número de vereadores é sempre <strong>ímpar</strong>.</p>
+                <p><strong>Pegadinha de banca:</strong> A banca pode afirmar que municípios com mais de 5 milhões de habitantes têm de 42 a 55 vereadores – <strong>ERRADO</strong>. O limite máximo é 49 vereadores (art. 29, IV, 'u'). O número é sempre ímpar.</p>
+            </div>
+
+            <h3>6.3 Subsídio dos Vereadores</h3>
+            <h4>6.3.1 Art. 29, VI, 'f' da CF/88</h4>
+            <blockquote>
+                <strong>Art. 29, VI, 'f':</strong> "o subsídio dos Vereadores será fixado pelas respectivas Câmaras Municipais em cada legislatura para a subsequente, observado o que dispõe esta Constituição, observados os critérios fixados na respectiva Lei Orgânica e os seguintes limites máximos: [...] o subsídio dos Vereadores será de, no máximo, setenta e cinco por cento do subsídio dos Deputados Estaduais."
+            </blockquote>
+            <p><strong>Percentual:</strong> <span class="mnemonic">75%</span> (setenta e cinco por cento) do subsídio dos Deputados Estaduais</p>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode afirmar que é 30% do subsídio dos Deputados Estaduais – <strong>ERRADO</strong>. O correto é 75%.</p>
+            </div>
+
+            <h3>6.4 Limite de Gastos da Câmara Municipal</h3>
+            <h4>6.4.1 Art. 29-A, §1º da CF/88</h4>
+            <blockquote>
+                <strong>Art. 29-A, §1º:</strong> "A Câmara Municipal não gastará mais de setenta por cento de sua receita com folha de pagamento, incluído o gasto com o subsídio de seus Vereadores."
+            </blockquote>
+            <p><strong>Percentual:</strong> <span class="mnemonic">70%</span> (setenta por cento) da receita da Câmara</p>
+
+            <h3>6.5 Iniciativa Popular no Município</h3>
+            <h4>6.5.1 Art. 29, XIII da CF/88</h4>
+            <blockquote>
+                <strong>Art. 29, XIII:</strong> "a iniciativa popular de projetos de lei de interesse específico do Município, da cidade ou de bairros, através de manifestação de, pelo menos, cinco por cento do eleitorado."
+            </blockquote>
+            <p><strong>Percentual:</strong> <span class="mnemonic">5%</span> (cinco por cento) do eleitorado municipal</p>
+
+            <h4>6.5.2 Quadro Comparativo: Iniciativa Popular</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Âmbito</th><th>Percentual do Eleitorado</th><th>Distribuição Geográfica</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Federal</strong></td><td>1%</td><td>Distribuído em pelo menos 5 estados, com 0,3% em cada</td></tr>
+                        <tr><td><strong>Estadual</strong></td><td>Não previsto na CF/88 (cada estado disciplina)</td><td>—</td></tr>
+                        <tr><td><strong>Municipal</strong></td><td>5%</td><td>Não exige distribuição geográfica</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode confundir o percentual municipal (5%) com o federal (1%). Também pode afirmar que a iniciativa popular municipal exige 1% – <strong>ERRADO</strong>. O art. 29, XIII exige 5%.</p>
+            </div>
+
+            <h3>6.6 Quadro Resumo: Municípios</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Dispositivo</th><th>Conteúdo</th><th>Percentual/Número</th></tr></thead>
+                    <tbody>
+                        <tr><td>Art. 29, VII</td><td>Despesa total com remuneração dos vereadores</td><td><strong>5%</strong> da receita do município</td></tr>
+                        <tr><td>Art. 29, IV</td><td>Número de vereadores</td><td>Sempre <strong>ímpar</strong>; máximo 49</td></tr>
+                        <tr><td>Art. 29, VI, 'f'</td><td>Subsídio máximo dos vereadores</td><td><strong>75%</strong> do subsídio dos Deputados Estaduais</td></tr>
+                        <tr><td>Art. 29-A, §1º</td><td>Gastos da Câmara com folha de pagamento</td><td><strong>70%</strong> da receita da Câmara</td></tr>
+                        <tr><td>Art. 29, XIII</td><td>Iniciativa popular municipal</td><td><strong>5%</strong> do eleitorado</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 7 -->
+        <section id="cap7">
+            <h2>Capítulo 7: CONTROLE DE CONSTITUCIONALIDADE</h2>
+
+            <h3>7.1 Ação Direta de Inconstitucionalidade (ADI)</h3>
+            <h4>7.1.1 Cabimento e Requisitos</h4>
+            <p>A ADI é o principal instrumento de controle concentrado de constitucionalidade perante o Supremo Tribunal Federal.</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Requisito</th><th>Conteúdo</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Norma impugnada</strong></td><td>Lei ou ato normativo federal ou estadual</td></tr>
+                        <tr><td><strong>Marco temporal</strong></td><td>Norma <strong>posterior</strong> à Constituição Federal de 1988</td></tr>
+                        <tr><td><strong>Competência</strong></td><td>STF (art. 102, I, 'a')</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>7.1.2 Normas que NÃO Cabem ADI</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Norma</th><th>Motivo</th></tr></thead>
+                    <tbody>
+                        <tr><td>Norma municipal</td><td>Incompetência do STF (salvo se a lei municipal estiver em face da Constituição Estadual – aí cabe ADI no TJ)</td></tr>
+                        <tr><td>Norma estadual anterior a 1988</td><td>Precisa ser analisada por <strong>ADPF</strong> (não por ADI)</td></tr>
+                        <tr><td>Norma federal ou estadual anterior a 1988</td><td>Só cabe ADPF</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>7.1.3 Lei Distrital: Súmula 642 do STF</h4>
+            <blockquote>
+                <strong>Súmula 642 do STF:</strong> "Não cabe ação direta de inconstitucionalidade de lei do Distrito Federal derivada de sua competência legislativa municipal."
+            </blockquote>
+            <p><strong>Interpretação:</strong></p>
+            <ul>
+                <li><strong>Competência estadual</strong> (art. 25, caput) → cabe ADI no STF (equipara-se a lei estadual)</li>
+                <li><strong>Competência municipal</strong> (art. 32, §1º) → NÃO cabe ADI no STF (equipara-se a lei municipal)</li>
+            </ul>
+
+            <h4>7.1.4 Filtros Temporal e Federativo</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Filtro</th><th>Regra</th><th>Exceção</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Temporal</strong></td><td>Norma pós-1988 → ADI</td><td>Norma pré-1988 → ADPF</td></tr>
+                        <tr><td><strong>Federativo</strong></td><td>Norma federal/estadual → ADI</td><td>Norma municipal → NÃO cabe ADI</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca explorará os filtros temporal e federativo, cobrando literalidade.</p>
+            </div>
+
+            <h4>7.1.5 Quadro Resumo: Controle Concentrado</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Instrumento</th><th>Norma Impugnada</th><th>Competência</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>ADI</strong></td><td>Norma federal ou estadual pós-1988</td><td>STF</td></tr>
+                        <tr><td><strong>ADPF</strong></td><td>Norma pré-1988 ou contra ato do Poder Público</td><td>STF</td></tr>
+                        <tr><td><strong>ADC</strong></td><td>Norma federal pós-1988 (para declarar constitucionalidade)</td><td>STF</td></tr>
+                        <tr><td><strong>ADO</strong></td><td>Omissão legislativa</td><td>STF</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 8 -->
+        <section id="cap8">
+            <h2>Capítulo 8: MINISTÉRIO PÚBLICO</h2>
+
+            <h3>8.1 Autonomia e Prerrogativas</h3>
+            <h4>8.1.1 Natureza e Função</h4>
+            <blockquote>
+                <strong>Art. 127:</strong> "O Ministério Público é instituição permanente, essencial à função jurisdicional do Estado, incumbindo-lhe a defesa da ordem jurídica, do regime democrático e dos interesses sociais e individuais indisponíveis."
+            </blockquote>
+
+            <h4>8.1.2 Autonomia do Ministério Público</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Tipo de Autonomia</th><th>Previsão</th><th>Conteúdo</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Funcional</strong></td><td>Art. 127, §2º</td><td>Independência na atuação, não sujeição a hierarquia externa</td></tr>
+                        <tr><td><strong>Administrativa</strong></td><td>Art. 127, §2º</td><td>Capacidade de auto-organização</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>8.1.3 Proposta Orçamentária</h4>
+            <blockquote>
+                <strong>Art. 127, §3º:</strong> "O Ministério Público elaborará sua proposta orçamentária dentro dos limites estabelecidos na lei de diretrizes orçamentárias."
+            </blockquote>
+            <p><strong>Características:</strong></p>
+            <ul>
+                <li>O MP tem <strong>prerrogativa</strong> de elaborar sua própria proposta orçamentária</li>
+                <li>Está <strong>sujeito aos limites da LDO</strong> (Lei de Diretrizes Orçamentárias)</li>
+                <li>O encaminhamento da proposta segue os trâmites legais</li>
+            </ul>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode afirmar que o MP pode elaborar sua proposta orçamentária sem qualquer limite – <strong>ERRADO</strong>. Deve respeitar a LDO.</p>
+            </div>
+
+            <h4>8.1.4 Órgãos do Sistema de Justiça</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Órgão</th><th>Natureza</th><th>Relação com STF</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Ministério Público</strong></td><td>Função essencial à justiça</td><td><strong>Não é vinculado</strong> ao STF</td></tr>
+                        <tr><td><strong>CNJ</strong> (Conselho Nacional de Justiça)</td><td>Órgão autônomo do Poder Judiciário</td><td><strong>Não supervisiona</strong> o STF</td></tr>
+                        <tr><td><strong>AGU</strong> (Advocacia-Geral da União)</td><td>Função essencial à justiça</td><td>—</td></tr>
+                        <tr><td><strong>Defensoria Pública</strong></td><td>Função essencial à justiça</td><td>—</td></tr>
+                        <tr><td><strong>Receita Federal</strong></td><td>Não é função essencial à justiça</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode afirmar que o MP é vinculado ao STF – <strong>ERRADO</strong>. O MP tem autonomia funcional e administrativa.</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 9 -->
+        <section id="cap9">
+            <h2>Capítulo 9: COMPETÊNCIA DA JUSTIÇA FEDERAL</h2>
+
+            <h3>9.1 Ação contra Autarquia Federal – Art. 109, §3º da CF/88</h3>
+            <h4>9.1.1 Regra Geral</h4>
+            <blockquote>
+                <strong>Art. 109:</strong> "Aos juízes federais compete processar e julgar: [...] §3º Serão processadas e julgadas na justiça estadual, no foro do domicílio dos segurados ou beneficiários, as causas em que forem parte instituição de previdência social e segurado, sempre que a comarca do domicílio não seja sede de vara federal."
+            </blockquote>
+
+            <h4>9.1.2 Análise Detalhada</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Situação</th><th>Competência</th></tr></thead>
+                    <tbody>
+                        <tr><td>Segurado do INSS na comarca com vara federal</td><td><strong>Justiça Federal</strong></td></tr>
+                        <tr><td>Segurado do INSS na comarca sem vara federal</td><td><strong>Justiça Estadual</strong> (art. 109, §3º)</td></tr>
+                        <tr><td>Ação contra autarquia federal (diferente do INSS)</td><td><strong>Justiça Federal</strong> (regra geral)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>9.1.3 Aplicação Prática</h4>
+            <div class="card">
+                <p><strong>Caso concreto:</strong></p>
+                <p>"Um segurado de autarquia federal (INSS) deseja ajuizar ação contra a autarquia, mas a comarca de seu domicílio não é sede de vara federal, apenas de vara do trabalho. Onde a ação deve ser ajuizada?"</p>
+                <p><strong>Resposta:</strong> A ação deve ser ajuizada perante a <strong>Justiça Estadual</strong>, na comarca do domicílio, caso a lei autorize essa possibilidade (art. 109, §3º da CF/88).</p>
+                <div class="warning">
+                    <p><strong>⚠️ ATENÇÃO:</strong></p>
+                    <ol>
+                        <li><strong>Não é livre escolha</strong> entre justiça estadual e federal</li>
+                        <li>A competência é da justiça estadual <strong>mediante lei autorizadora</strong> (e somente quando não houver vara federal)</li>
+                        <li>Se houver vara federal, a competência é federal (não pode optar pela estadual)</li>
+                    </ol>
+                    <p><strong>Pegadinha de banca:</strong> A banca pode afirmar que o segurado pode escolher entre Justiça Federal e Justiça Estadual – <strong>ERRADO</strong>. A Constituição estabelece a competência da Justiça Estadual como exceção, condicionada à inexistência de vara federal.</p>
+                </div>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 10 -->
+        <section id="cap10">
+            <h2>Capítulo 10: PRINCÍPIOS DA ADMINISTRAÇÃO PÚBLICA</h2>
+
+            <h3>10.1 Economicidade x Eficiência</h3>
+            <h4>10.1.1 Princípio da Eficiência</h4>
+            <blockquote>
+                <strong>Art. 37, caput (com redação dada pela EC 19/98):</strong> "A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e <strong>eficiência</strong> [...]"
+            </blockquote>
+            <p><strong>Características:</strong></p>
+            <ul>
+                <li>Está expresso no caput do art. 37</li>
+                <li>Foi incluído pela EC 19/98</li>
+                <li>Significa fazer <strong>mais com menos</strong> e com <strong>perfeição técnica</strong></li>
+            </ul>
+
+            <h4>10.1.2 Princípio da Economicidade</h4>
+            <blockquote>
+                <strong>Art. 70, caput:</strong> "A fiscalização contábil, financeira, orçamentária, operacional e patrimonial da União e das entidades da administração direta e indireta, quanto à legalidade, legitimidade, <strong>economicidade</strong>, aplicação das subvenções e renúncia de receitas, será exercida pelo Congresso Nacional, mediante controle externo, e pelo sistema de controle interno de cada Poder."
+            </blockquote>
+            <p><strong>Características:</strong></p>
+            <ul>
+                <li>Está previsto no art. 70 (controle interno)</li>
+                <li>Não está expresso no caput do art. 37</li>
+                <li>Visa à <strong>minimização dos gastos públicos sem comprometer a qualidade</strong></li>
+                <li>É um dos aspectos da fiscalização</li>
+            </ul>
+
+            <h4>10.1.3 Quadro Comparativo: Economicidade x Eficiência</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Critério</th><th>Economicidade</th><th>Eficiência</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Previsão</strong></td><td>Art. 70 (controle interno)</td><td>Art. 37, caput</td></tr>
+                        <tr><td><strong>Expresso no caput do art. 37?</strong></td><td><strong>NÃO</strong></td><td><strong>SIM</strong></td></tr>
+                        <tr><td><strong>Foco</strong></td><td>Menor custo com qualidade</td><td>Fazer mais com menos</td></tr>
+                        <tr><td><strong>Natureza</strong></td><td>Econômico-financeira</td><td>Administrativa/técnica</td></tr>
+                        <tr><td><strong>Inclusão</strong></td><td>Original da CF/88</td><td>EC 19/98</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode confundir economicidade com eficiência. Economicidade é foco no <strong>custo</strong>; eficiência é foco na <strong>qualidade e desempenho</strong>.</p>
+            </div>
+
+            <h4>10.1.4 Exemplo Prático</h4>
+            <div class="card">
+                <p>"O administrador público, ao adquirir materiais para a repartição, deve buscar o melhor preço sem comprometer a qualidade. Este é o princípio da economicidade."</p>
+                <p>"O servidor público deve executar suas tarefas com rapidez, qualidade e perfeição técnica. Este é o princípio da eficiência."</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 11 -->
+        <section id="cap11">
+            <h2>Capítulo 11: PROCESSO LEGISLATIVO – VETO PRESIDENCIAL</h2>
+
+            <h3>11.1 Veto Parcial – Art. 66, §2º da CF/88</h3>
+            <h4>11.1.1 Extensão do Veto</h4>
+            <blockquote>
+                <strong>Art. 66, §2º:</strong> "O veto parcial somente abrangerá texto integral de artigo, de parágrafo, de inciso ou de alínea."
+            </blockquote>
+            <p><strong>Permitido:</strong></p>
+            <ul>
+                <li>Veto a artigo inteiro</li>
+                <li>Veto a parágrafo inteiro</li>
+                <li>Veto a inciso inteiro</li>
+                <li>Veto a alínea inteira</li>
+            </ul>
+            <p><strong>VEDADO:</strong></p>
+            <ul>
+                <li>Veto a palavras ou expressões isoladas</li>
+                <li>Veto a fração de artigo, parágrafo, inciso ou alínea</li>
+            </ul>
+
+            <h4>11.1.2 Razão do Veto</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Motivo</th><th>Conteúdo</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Inconstitucionalidade</strong></td><td>A norma viola a Constituição</td></tr>
+                        <tr><td><strong>Contrariedade ao interesse público</strong></td><td>A norma é inconveniente/ineficiente</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>11.1.3 Características do Veto</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Característica</th><th>Conteúdo</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Prazo</strong></td><td>15 dias úteis para sanção ou veto (art. 66, §1º)</td></tr>
+                        <tr><td><strong>Rejeição</strong></td><td>Por <strong>maioria absoluta</strong> dos Deputados e Senadores (art. 66, §4º)</td></tr>
+                        <tr><td><strong>Forma</strong></td><td>Mensagem justificada ao Presidente do Senado (art. 66, §1º)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>11.1.4 Quadro Resumo: Veto</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Aspecto</th><th>Regra</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Extensão</strong></td><td>Texto integral de artigo, parágrafo, inciso ou alínea</td></tr>
+                        <tr><td><strong>Não permite</strong></td><td>Palavras ou expressões isoladas</td></tr>
+                        <tr><td><strong>Rejeição</strong></td><td>Maioria absoluta (Deputados e Senadores)</td></tr>
+                        <tr><td><strong>Não se aplica a</strong></td><td>Emendas constitucionais (art. 60, §3º)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode afirmar que:</p>
+                <ul>
+                    <li>O veto parcial permite vetar palavras isoladas – <strong>ERRADO</strong></li>
+                    <li>O veto é rejeitado por 3/5 dos parlamentares – <strong>ERRADO</strong> (é maioria absoluta)</li>
+                    <li>Emenda constitucional pode ser vetada – <strong>ERRADO</strong> (art. 60, §3º)</li>
+                </ul>
+            </div>
+
+            <h3>11.2 Veto: Principais Pegadinhas</h3>
+            <h4>11.2.1 Veto x Emenda Constitucional</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Instrumento</th><th>Sujeito a veto?</th><th>Base Legal</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Projeto de lei</strong></td><td>SIM</td><td>Art. 66</td></tr>
+                        <tr><td><strong>Emenda constitucional</strong></td><td><strong>NÃO</strong></td><td>Art. 60, §3º</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Explicação:</strong> A emenda constitucional não passa por sanção ou veto presidencial, pois o processo de aprovação é diverso (requer quórum de 3/5 em dois turnos em cada Casa).</p>
+
+            <h4>11.2.2 Maioria para Rejeição do Veto</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Tipo de Maioria</th><th>Aplicação</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Maioria absoluta</strong></td><td>Rejeição do veto (art. 66, §4º)</td></tr>
+                        <tr><td><strong>3/5</strong></td><td>Aprovação de emenda constitucional (art. 60, §2º)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode trocar a maioria para rejeição do veto (maioria absoluta) pela maioria qualificada de 3/5 (exigida para emenda constitucional).</p>
+            </div>
+
+            <h4>11.2.3 Quadro Resumo: Veto e Emenda Constitucional</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Aspecto</th><th>Veto Presidencial</th><th>Emenda Constitucional</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Aplicável a</strong></td><td>Projetos de lei</td><td>Propostas de emenda</td></tr>
+                        <tr><td><strong>Passa por sanção/veto?</strong></td><td>SIM</td><td><strong>NÃO</strong></td></tr>
+                        <tr><td><strong>Quórum para rejeição/aprovação</strong></td><td>Maioria absoluta</td><td>3/5 em dois turnos</td></tr>
+                        <tr><td><strong>Base legal</strong></td><td>Art. 66</td><td>Art. 60</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 12 -->
+        <section id="cap12">
+            <h2>Capítulo 12: PRINCÍPIOS DAS RELAÇÕES INTERNACIONAIS</h2>
+
+            <h3>12.1 Art. 4º da CF/88</h3>
+            <h4>12.1.1 Rol dos Princípios</h4>
+            <blockquote>
+                <strong>Art. 4º:</strong> "A República Federativa do Brasil rege-se nas suas relações internacionais pelos seguintes princípios:<br>
+                I - independência nacional;<br>
+                II - prevalência dos direitos humanos;<br>
+                III - autodeterminação dos povos;<br>
+                IV - não-intervenção;<br>
+                V - igualdade entre os Estados;<br>
+                VI - defesa da paz;<br>
+                VII - solução pacífica dos conflitos;<br>
+                VIII - repúdio ao terrorismo e ao racismo;<br>
+                IX - cooperação entre os povos para o progresso da humanidade;<br>
+                X - concessão de asilo político."
+            </blockquote>
+
+            <h4>12.1.2 Diferenciação: Objetivos Fundamentais x Princípios das Relações Internacionais</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Objetivos Fundamentais (Art. 3º)</th><th>Princípios das Relações Internacionais (Art. 4º)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Aplicáveis internamente</td><td>Aplicáveis externamente</td></tr>
+                        <tr><td>Ex.: promover o bem de todos sem preconceitos</td><td>Ex.: igualdade entre os Estados</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="warning">
+                <p><strong>Pegadinha de banca:</strong> A banca pode cobrar o princípio da igualdade entre os Estados como se fosse objetivo fundamental – <strong>ERRADO</strong>. É princípio das relações internacionais (art. 4º, II).</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 13 -->
+        <section id="cap13">
+            <h2>Capítulo 13: EXERCÍCIOS DE FIXAÇÃO</h2>
+
+            <h3>13.1 Questões Estilo Prova</h3>
+
+            <div class="card">
+                <p><strong>Questão 1 (FGV)</strong><br>
+                "O total da despesa com a remuneração dos vereadores não pode ultrapassar qual percentual da receita do município?"</p>
+                <p>a) 3%<br>
+                b) 5%<br>
+                c) 7%<br>
+                d) 8%<br>
+                e) 10%</p>
+                <p><strong>Resposta:</strong> b) 5% (art. 29, VII da CF/88)</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 2 (FGV)</strong><br>
+                "Em relação ao número de vereadores em municípios de mais de 5 milhões de habitantes, assinale a alternativa correta:"</p>
+                <p>a) 42 a 55<br>
+                b) 43 a 55<br>
+                c) 45 a 55<br>
+                d) 49 (máximo)<br>
+                e) 55 (máximo)</p>
+                <p><strong>Resposta:</strong> d) 49 (máximo) – art. 29, IV, 'u' da CF/88</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 3 (CESPE)</strong><br>
+                "Segundo o art. 5º, LXXVIII da CF/88, a garantia da razoável duração do processo aplica-se:"</p>
+                <p>a) apenas ao âmbito judicial<br>
+                b) apenas ao âmbito administrativo<br>
+                c) ao âmbito judicial e administrativo<br>
+                d) apenas ao processo penal<br>
+                e) apenas ao processo civil</p>
+                <p><strong>Resposta:</strong> c) ao âmbito judicial e administrativo</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 4 (FGV)</strong><br>
+                "É lícita a criação de associação civil com organização e táticas inspiradas na atuação militar, formada por pessoas com porte regular de arma de fogo, para autodefesa, observados os direitos humanos?"</p>
+                <p>a) Sim, pois é para autodefesa<br>
+                b) Sim, pois os membros têm porte regular de arma<br>
+                c) Não, pois é vedada a associação de caráter paramilitar<br>
+                d) Sim, desde que respeitados os direitos humanos<br>
+                e) Sim, pois a finalidade é lícita</p>
+                <p><strong>Resposta:</strong> c) Não, pois é vedada a associação de caráter paramilitar (art. 5º, XVII)</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 5 (CESPE)</strong><br>
+                "A lei estadual que determine culto religioso obrigatório, subvencione igrejas cristãs ou crie embaraços a outras religiões:"</p>
+                <p>a) É constitucional<br>
+                b) É inconstitucional, por violar o art. 19, I da CF/88<br>
+                c) É constitucional, desde que aprovada por 2/3<br>
+                d) É constitucional, desde que haja previsão orçamentária<br>
+                e) É constitucional, pois o Estado pode escolher uma religião oficial</p>
+                <p><strong>Resposta:</strong> b) É inconstitucional, por violar o art. 19, I da CF/88</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 6 (FGV)</strong><br>
+                "Um segurado do INSS deseja ajuizar ação contra a autarquia, mas a comarca de seu domicílio não é sede de vara federal. Onde a ação deve ser ajuizada?"</p>
+                <p>a) Na Justiça Federal<br>
+                b) Na Justiça Estadual, na comarca do domicílio<br>
+                c) Na Justiça do Trabalho<br>
+                d) Pode escolher entre Justiça Federal e Estadual<br>
+                e) No Tribunal Regional Federal</p>
+                <p><strong>Resposta:</strong> b) Na Justiça Estadual, na comarca do domicílio (art. 109, §3º)</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 7 (FGV)</strong><br>
+                "O Presidente da República pode vetar parcialmente projeto de lei. O veto parcial pode abranger:"</p>
+                <p>a) Palavras ou expressões isoladas<br>
+                b) Texto integral de artigo, parágrafo, inciso ou alínea<br>
+                c) Apenas artigos inteiros<br>
+                d) Apenas parágrafos inteiros<br>
+                e) Apenas incisos inteiros</p>
+                <p><strong>Resposta:</strong> b) Texto integral de artigo, parágrafo, inciso ou alínea (art. 66, §2º)</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 8 (FGV)</strong><br>
+                "Conforme o art. 29, XIII da CF/88, a iniciativa popular de projetos de lei de interesse específico do Município exige a manifestação de pelo menos:"</p>
+                <p>a) 1% do eleitorado<br>
+                b) 5% do eleitorado<br>
+                c) 10% do eleitorado<br>
+                d) 15% do eleitorado<br>
+                e) 20% do eleitorado</p>
+                <p><strong>Resposta:</strong> b) 5% do eleitorado</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 9 (CESPE)</strong><br>
+                "Qual princípio da Administração Pública visa à minimização dos gastos públicos sem comprometer a qualidade, não está expresso no caput do art. 37 da CF/88, mas está previsto no art. 70?"</p>
+                <p>a) Eficiência<br>
+                b) Legalidade<br>
+                c) Economicidade<br>
+                d) Moralidade<br>
+                e) Publicidade</p>
+                <p><strong>Resposta:</strong> c) Economicidade</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 10 (FGV)</strong><br>
+                "Dos recursos do Fundo Especial de Financiamento de Campanha (FEFC) e do fundo partidário destinados às campanhas eleitorais, qual percentual os partidos devem aplicar obrigatoriamente em candidaturas de pessoas pretas e pardas?"</p>
+                <p>a) 5%<br>
+                b) 10%<br>
+                c) 20%<br>
+                d) 30%<br>
+                e) 50%</p>
+                <p><strong>Resposta:</strong> d) 30% (art. 17, §9º – EC 133/2024)</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 11 (FGV)</strong><br>
+                "A iniciativa popular de projetos de lei de interesse específico do Município, da cidade ou de bairros exige a manifestação de pelo menos quantos por cento do eleitorado?"</p>
+                <p>a) 1%<br>
+                b) 5%<br>
+                c) 10%<br>
+                d) 15%</p>
+                <p><strong>Resposta:</strong> b) 5% (art. 29, XIII)</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 12 (FGV)</strong><br>
+                "Em um município com mais de 5 milhões de habitantes, o número máximo de vereadores é:"</p>
+                <p>a) 42<br>
+                b) 45<br>
+                c) 47<br>
+                d) 49</p>
+                <p><strong>Resposta:</strong> d) 49 (art. 29, IV, 'u')</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 13 (FGV)</strong><br>
+                "Em um município com 4 milhões de habitantes, o número máximo de vereadores é:"</p>
+                <p>a) 45<br>
+                b) 47<br>
+                c) 49<br>
+                d) 51</p>
+                <p><strong>Resposta:</strong> b) 47 (art. 29, IV, 't' – 3.000.001 a 5.000.000 → 47 vereadores)</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 14 (FGV)</strong><br>
+                "Sobre o subsídio dos vereadores:"</p>
+                <p>a) É fixado pela Câmara Municipal em cada legislatura para a subsequente<br>
+                b) É fixado pelo Prefeito<br>
+                c) É fixado pelo Tribunal de Contas<br>
+                d) É fixado pela Assembleia Legislativa</p>
+                <p><strong>Resposta:</strong> a) É fixado pela Câmara Municipal em cada legislatura para a subsequente (art. 29, VI)</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 15 (FGV)</strong><br>
+                "O veto presidencial é rejeitado por quórum de:"</p>
+                <p>a) Maioria absoluta dos Deputados e Senadores<br>
+                b) 3/5 dos Deputados e Senadores<br>
+                c) Maioria simples<br>
+                d) 2/3 dos Deputados e Senadores</p>
+                <p><strong>Resposta:</strong> a) Maioria absoluta dos Deputados e Senadores (art. 66, §4º)</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 16 (CESPE)</strong><br>
+                "Sobre os objetivos fundamentais da República Federativa do Brasil, assinale a alternativa correta:"</p>
+                <p>a) A promoção do bem de todos, sem preconceitos, está prevista no art. 4º, como princípio das relações internacionais<br>
+                b) A promoção do bem de todos, sem preconceitos, constitui objetivo fundamental previsto no art. 3º, IV<br>
+                c) A igualdade entre os Estados é um objetivo fundamental<br>
+                d) O desenvolvimento nacional não é objetivo fundamental</p>
+                <p><strong>Resposta:</strong> b) A promoção do bem de todos, sem preconceitos, constitui objetivo fundamental previsto no art. 3º, IV</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 17 (FGV)</strong><br>
+                "O poder, segundo o parágrafo único do art. 1º da CF/88:"</p>
+                <p>a) Emana do povo e é exercido exclusivamente por representantes eleitos<br>
+                b) Emana do povo e é exercido de forma indireta e direta<br>
+                c) Emana do povo e é exercido diretamente por meio do voto<br>
+                d) Emana do povo e é exercido apenas pela iniciativa popular<br>
+                e) Emana do povo e é exercido apenas por plebiscito e referendo</p>
+                <p><strong>Resposta:</strong> b) Emana do povo e é exercido de forma indireta e direta</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 18 (CESPE)</strong><br>
+                "Os cargos, empregos e funções públicas são acessíveis aos estrangeiros:"</p>
+                <p>a) Apenas se houver lei complementar<br>
+                b) Na forma da lei (admite-se lei ordinária)<br>
+                c) Apenas em cargos comissionados<br>
+                d) Apenas em cargos técnicos<br>
+                e) Não são acessíveis a estrangeiros</p>
+                <p><strong>Resposta:</strong> b) Na forma da lei (admite-se lei ordinária) (art. 37, I)</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 19 (FGV)</strong><br>
+                "Alguém pode ser privado de direitos por motivo de crença religiosa?"</p>
+                <p>a) Sim, em qualquer situação<br>
+                b) Sim, se recusar a cumprir obrigação legal a todos imposta e prestação alternativa<br>
+                c) Não, nunca<br>
+                d) Sim, apenas se a crença for contrária à ordem pública<br>
+                e) Sim, apenas se a crença for comprovadamente falsa</p>
+                <p><strong>Resposta:</strong> b) Sim, se recusar a cumprir obrigação legal a todos imposta e prestação alternativa (art. 5º, VIII)</p>
+            </div>
+
+            <div class="card">
+                <p><strong>Questão 20 (FGV)</strong><br>
+                "Em relação à ADI, assinale a alternativa correta:"</p>
+                <p>a) Cabe ADI contra norma municipal<br>
+                b) Cabe ADI contra norma estadual anterior a 1988<br>
+                c) Cabe ADI contra norma estadual posterior a 1988<br>
+                d) Cabe ADI contra ato do Poder Público não normativo<br>
+                e) Cabe ADI contra decreto regulamentar</p>
+                <p><strong>Resposta:</strong> c) Cabe ADI contra norma estadual posterior a 1988</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 14 -->
+        <section id="cap14">
+            <h2>Capítulo 14: RESUMO ESQUEMÁTICO</h2>
+
+            <h3>14.1 Quadro de Dados Essenciais para Prova</h3>
+
+            <h4>Municípios</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>O quê?</th><th>Quanto?</th><th>Base Legal</th></tr></thead>
+                    <tbody>
+                        <tr><td>Despesa total com vereadores</td><td><strong>5%</strong> da receita</td><td>Art. 29, VII</td></tr>
+                        <tr><td>Número de vereadores (máximo)</td><td><strong>49</strong> (sempre ímpar)</td><td>Art. 29, IV</td></tr>
+                        <tr><td>Subsídio máximo dos vereadores</td><td><strong>75%</strong> do subsídio dos Deputados Estaduais</td><td>Art. 29, VI, 'f'</td></tr>
+                        <tr><td>Gastos da Câmara com folha</td><td><strong>70%</strong> da receita da Câmara</td><td>Art. 29-A, §1º</td></tr>
+                        <tr><td>Iniciativa popular municipal</td><td><strong>5%</strong> do eleitorado</td><td>Art. 29, XIII</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Direitos Políticos (Art. 15)</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Hipótese</th><th>Natureza</th></tr></thead>
+                    <tbody>
+                        <tr><td>Cancelamento da naturalização</td><td>PERDA</td></tr>
+                        <tr><td>Incapacidade civil absoluta</td><td>SUSPENSÃO</td></tr>
+                        <tr><td>Condenação criminal transitada em julgado</td><td>SUSPENSÃO</td></tr>
+                        <tr><td>Recusa de obrigação/alternativa</td><td>PERDA</td></tr>
+                        <tr><td>Improbidade administrativa</td><td>SUSPENSÃO</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>ADI</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Requisito</th><th>Conteúdo</th></tr></thead>
+                    <tbody>
+                        <tr><td>Norma impugnada</td><td>Federal ou estadual (não municipal)</td></tr>
+                        <tr><td>Marco temporal</td><td>Pós-1988</td></tr>
+                        <tr><td>Competência</td><td>STF</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Partidos Políticos</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Destinação</th><th>Percentual</th></tr></thead>
+                    <tbody>
+                        <tr><td>Candidaturas de pessoas pretas e pardas</td><td><strong>30%</strong> (FEFC + fundo partidário)</td></tr>
+                        <tr><td>Participação política das mulheres</td><td><strong>5%</strong> (fundo partidário)</td></tr>
+                        <tr><td>Cláusula de barreira</td><td><strong>3%</strong> dos votos válidos + 1/3 das UFs</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>14.2 Principais Pegadinhas de Banca</h3>
+            <ul>
+                <li><strong>Direitos sociais (art. 6º):</strong> O meio ambiente NÃO está no rol.</li>
+                <li><strong>Direitos políticos (art. 15):</strong> A CF exige incapacidade civil ABSOLUTA (não relativa/provisória).</li>
+                <li><strong>Municípios:</strong> O número de vereadores é sempre ÍMPAR.</li>
+                <li><strong>Municípios:</strong> A despesa com vereadores é 5% da receita (não 3%, 8%, etc.).</li>
+                <li><strong>ADI:</strong> Não cabe ADI para norma municipal.</li>
+                <li><strong>ADI:</strong> Norma estadual anterior a 1988 só cabe ADPF.</li>
+                <li><strong>Veto:</strong> Não pode vetar palavras/expressões isoladas (apenas texto integral de artigo, parágrafo, inciso ou alínea).</li>
+                <li><strong>Veto:</strong> É rejeitado por maioria absoluta (não 3/5).</li>
+                <li><strong>Economicidade x Eficiência:</strong> Economicidade é foco no custo; eficiência é foco na qualidade.</li>
+                <li><strong>Razoável duração do processo:</strong> Aplica-se no âmbito judicial e administrativo.</li>
+                <li><strong>Acesso de estrangeiros a cargos públicos:</strong> Admite-se lei ordinária (não exige lei complementar).</li>
+                <li><strong>Associação paramilitar:</strong> Vedada pela CF/88 (art. 5º, XVII), independentemente de finalidade.</li>
+                <li><strong>Iniciativa popular municipal:</strong> 5% (não 1%).</li>
+                <li><strong>Justiça Federal x Estadual:</strong> Ação contra INSS sem vara federal no domicílio → Justiça Estadual (não é livre escolha).</li>
+                <li><strong>Princípios das relações internacionais:</strong> Igualdade entre Estados (art. 4º, II) – não é objetivo fundamental (art. 3º).</li>
+            </ul>
+
+            <h3>14.3 Esquema Resumo: Exercício do Poder Popular</h3>
+            <div class="diagram-figure">
+                <svg viewBox="0 0 820 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Esquema do exercício do poder popular">
+                    <defs>
+                        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d8cff"/>
+                        </marker>
+                        <style>
+                            .node-title { font-size: 15px; font-weight: 600; fill: #f0f6fc; text-anchor: middle; dominant-baseline: central; }
+                            .node-sub { font-size: 13px; fill: #c9d1d9; text-anchor: middle; dominant-baseline: central; }
+                            .node-rect { fill: #0d1117; stroke: #2d8cff; stroke-width: 2px; rx: 12px; }
+                            .node-rect-root { fill: #0d1a2b; stroke: #2d8cff; stroke-width: 3px; rx: 16px; }
+                            .edge { stroke: #2d8cff; stroke-width: 2px; fill: none; marker-end: url(#arrow); }
+                        </style>
+                    </defs>
+
+                    <!-- Raiz -->
+                    <rect x="260" y="20" width="300" height="60" class="node-rect-root" />
+                    <text x="410" y="50" class="node-title">Poder Popular (Art. 1º, p.ú.)</text>
+
+                    <!-- Setas raiz -> indireto / direto -->
+                    <line x1="350" y1="80" x2="150" y2="150" class="edge" />
+                    <line x1="470" y1="80" x2="650" y2="150" class="edge" />
+
+                    <!-- Indireto -->
+                    <rect x="50" y="150" width="200" height="60" class="node-rect" />
+                    <text x="150" y="180" class="node-title">Indireto (Representantes)</text>
+
+                    <!-- Direto -->
+                    <rect x="570" y="150" width="200" height="60" class="node-rect" />
+                    <text x="670" y="180" class="node-title">Direto (Participativo)</text>
+
+                    <!-- Setas direto -> plebiscito, referendo, iniciativa -->
+                    <line x1="610" y1="210" x2="180" y2="290" class="edge" />
+                    <line x1="670" y1="210" x2="670" y2="290" class="edge" />
+                    <line x1="730" y1="210" x2="1100" y2="290" class="edge" /> <!-- Escondida por enquanto -->
+
+                    <!-- Ajuste para caber: vamos reposicionar os filhos do direto -->
+                    <!-- Vamos refazer as coordenadas para os três filhos -->
+                    <!-- Plebiscito -->
+                    <rect x="50" y="290" width="240" height="60" class="node-rect" />
+                    <text x="170" y="320" class="node-title">Plebiscito</text>
+                    <text x="170" y="340" class="node-sub">(Antes do ato)</text>
+
+                    <!-- Referendo -->
+                    <rect x="420" y="290" width="240" height="60" class="node-rect" />
+                    <text x="540" y="320" class="node-title">Referendo</text>
+                    <text x="540" y="340" class="node-sub">(Depois do ato)</text>
+
+                    <!-- Iniciativa Popular -->
+                    <rect x="780" y="290" width="250" height="60" class="node-rect" />
+                    <text x="905" y="320" class="node-title">Iniciativa Popular</text>
+                    <text x="905" y="340" class="node-sub">(1% federal / 5% municipal)</text>
+
+                    <!-- Setas direto -> cada filho (ajustadas) -->
+                    <line x1="590" y1="210" x2="170" y2="290" class="edge" />
+                    <line x1="670" y1="210" x2="540" y2="290" class="edge" />
+                    <line x1="750" y1="210" x2="905" y2="290" class="edge" />
+
+                    <!-- Legenda opcional -->
+                    <text x="10" y="470" font-size="12" fill="#8b949e">Legenda: setas indicam formas de exercício do poder popular.</text>
+                </svg>
+            </div>
+
+            <h3>SÍNTESE FINAL PARA REVISÃO</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Tema</th><th>Informação Essencial</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Art. 3º</strong></td><td>Objetivos fundamentais: CON GA ERRA PRO</td></tr>
+                        <tr><td><strong>Art. 1º, p.ú.</strong></td><td>Poder emanado do povo, exercido direta e indiretamente</td></tr>
+                        <tr><td><strong>Art. 6º</strong></td><td>Direitos sociais (meio ambiente NÃO está)</td></tr>
+                        <tr><td><strong>Art. 15</strong></td><td>Perda e suspensão de direitos políticos</td></tr>
+                        <tr><td><strong>Art. 5º, LXXVIII</strong></td><td>Razoável duração do processo (judicial e administrativo)</td></tr>
+                        <tr><td><strong>Art. 5º, VIII</strong></td><td>Escusa de consciência com prestação alternativa</td></tr>
+                        <tr><td><strong>Art. 5º, XVII</strong></td><td>Vedação a associação paramilitar</td></tr>
+                        <tr><td><strong>Art. 5º, XXIV</strong></td><td>Desapropriação com justa e prévia indenização em dinheiro</td></tr>
+                        <tr><td><strong>Art. 19, I</strong></td><td>Estado laico: vedação a cultos religiosos oficiais</td></tr>
+                        <tr><td><strong>Art. 29</strong></td><td>Municípios: 5% (vereadores), 75% (subsídio), 49 (máx.), 5% (iniciativa)</td></tr>
+                        <tr><td><strong>Art. 37, I</strong></td><td>Acesso de estrangeiros (lei ordinária)</td></tr>
+                        <tr><td><strong>Art. 66, §2º</strong></td><td>Veto parcial: artigo, parágrafo, inciso ou alínea</td></tr>
+                        <tr><td><strong>Art. 109, §3º</strong></td><td>Ação contra INSS: Justiça Estadual se não houver vara federal</td></tr>
+                        <tr><td><strong>Art. 127</strong></td><td>MP: autonomia funcional e administrativa; proposta orçamentária</td></tr>
+                        <tr><td><strong>Art. 70</strong></td><td>Economicidade (princípio do controle interno)</td></tr>
+                        <tr><td><strong>ADI</strong></td><td>Norma federal ou estadual pós-1988 (não municipal)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+            <p style="text-align:center; color:#8b949e; font-size:0.9rem; margin-top:2rem;">
+                <em>Material desenvolvido para fins de estudo em concursos públicos. Base legal: Constituição Federal de 1988, com atualizações até a EC 133/2024.</em>
+            </p>
+            <p style="text-align:center; margin-top:1rem;">
+                <a href="#topo" style="color:#2d8cff; font-weight:500;">↥ Voltar ao topo</a>
+            </p>
+
+        </section>
+
+    </div> <!-- fim container -->
+</body>
+</html>

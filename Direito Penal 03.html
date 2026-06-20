@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila de Direito Penal - Técnico Judiciário</title>
+    <style>
+        /* RESET e VARIÁVEIS */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #12121c;
+            --bg-card: #1b1b2b;
+            --bg-code: #23233a;
+            --text: #e4e4f0;
+            --text-muted: #b0b0c8;
+            --text-light: #f0f0ff;
+            --gold: #d4b483;
+            --gold-light: #ecd8b0;
+            --blue: #6a9fb5;
+            --blue-dark: #3a7a94;
+            --green: #7bb07a;
+            --green-dark: #4d8a4c;
+            --red: #c77a7a;
+            --border: #2f2f4a;
+            --shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            --radius: 12px;
+            --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            --line-height: 1.7;
+            --max-width: 960px;
+            --transition: 0.2s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: var(--line-height);
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            width: 100%;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 2.5rem 2.8rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+
+        /* TIPOGRAFIA */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--text-light);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 2.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            color: var(--gold);
+            letter-spacing: -0.02em;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.6rem;
+            margin-top: 0.2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--gold-light);
+            margin-top: 2.8rem;
+            border-left: 6px solid var(--gold);
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--blue);
+            margin-top: 2rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-top: 1.6rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--text);
+        }
+
+        a {
+            color: var(--blue);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        a:hover {
+            color: var(--gold-light);
+            text-decoration: underline;
+        }
+
+        strong,
+        b {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        em,
+        i {
+            color: var(--text-muted);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 2.8rem 0;
+        }
+
+        /* LISTAS */
+        ul,
+        ol {
+            padding-left: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* CITAÇÕES */
+        blockquote {
+            background: var(--bg-code);
+            border-left: 6px solid var(--gold);
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            color: var(--text-muted);
+            font-style: italic;
+            quotes: none;
+        }
+
+        blockquote p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* TABELAS */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.8rem 0;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: var(--bg-code);
+        }
+
+        table thead {
+            background: #2a2a44;
+        }
+
+        table th {
+            color: var(--gold-light);
+            font-weight: 600;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        table tbody tr:hover {
+            background: rgba(106, 159, 181, 0.08);
+        }
+
+        /* CARDS / CAIXAS */
+        .card {
+            background: var(--bg-code);
+            border-radius: var(--radius);
+            padding: 1.6rem 1.8rem;
+            margin: 1.8rem 0;
+            border-left: 6px solid var(--blue);
+            border: 1px solid var(--border);
+            border-left-width: 6px;
+        }
+
+        .card.dica {
+            border-left-color: var(--green);
+            background: rgba(123, 176, 122, 0.08);
+        }
+
+        .card.dica::before {
+            content: "💡 ";
+            font-size: 1.4rem;
+        }
+
+        .card.observacao {
+            border-left-color: var(--gold);
+            background: rgba(212, 180, 131, 0.08);
+        }
+
+        .card.observacao::before {
+            content: "📌 ";
+            font-size: 1.4rem;
+        }
+
+        .card.alerta {
+            border-left-color: var(--red);
+            background: rgba(199, 122, 122, 0.08);
+        }
+
+        .card.alerta::before {
+            content: "⚠️ ";
+            font-size: 1.4rem;
+        }
+
+        .card.conceito {
+            border-left-color: var(--blue-dark);
+            background: rgba(106, 159, 181, 0.06);
+            border-left-width: 6px;
+        }
+
+        .card.conceito strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--blue);
+            margin-bottom: 0.4rem;
+        }
+
+        .card-title {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .card p:last-child,
+        .card ul:last-child {
+            margin-bottom: 0;
+        }
+
+        /* DESTAQUE TEXTO */
+        .highlight {
+            background: rgba(212, 180, 131, 0.2);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            color: var(--gold-light);
+            font-weight: 500;
+        }
+
+        .highlight-blue {
+            background: rgba(106, 159, 181, 0.2);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            color: var(--blue);
+            font-weight: 500;
+        }
+
+        /* SUMÁRIO */
+        .toc {
+            background: var(--bg-code);
+            border-radius: var(--radius);
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 2.8rem 0;
+            border: 1px solid var(--border);
+        }
+
+        .toc-title {
+            font-size: 1.4rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1.8rem;
+        }
+
+        @media (max-width: 600px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .toc-item {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .toc-item a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            transition: color var(--transition);
+            display: inline-block;
+            padding: 0.2rem 0;
+        }
+
+        .toc-item a:hover {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        .toc-item .toc-sub {
+            padding-left: 1.2rem;
+            font-size: 0.85rem;
+            display: block;
+        }
+
+        /* SVGs */
+        .svg-container {
+            background: var(--bg-code);
+            border-radius: var(--radius);
+            padding: 1.2rem;
+            margin: 1.8rem 0;
+            border: 1px solid var(--border);
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .svg-container svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 3.2rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+            .container {
+                padding: 1.2rem;
+            }
+            table {
+                font-size: 0.85rem;
+            }
+            table th,
+            table td {
+                padding: 0.5rem 0.6rem;
+            }
+            .card {
+                padding: 1.2rem;
+            }
+            .toc {
+                padding: 1.2rem;
+            }
+        }
+
+        /* LISTAS ESTILIZADAS */
+        .check-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .check-list li {
+            padding-left: 1.8rem;
+            position: relative;
+        }
+        .check-list li::before {
+            content: "✓";
+            color: var(--green);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .bullet-list li {
+            padding-left: 1.6rem;
+            position: relative;
+        }
+        .bullet-list li::before {
+            content: "▹";
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+        }
+
+        /* separador visual */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 2.4rem 0;
+        }
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="topo">
+
+        <!-- HEADER -->
+        <header>
+            <h1>APOSTILA DE DIREITO PENAL</h1>
+            <p style="font-size:1.2rem; color:var(--text-muted); margin-top:-0.2rem;">
+                Técnico Judiciário – Área Judiciária &bull; Padrão: TJCE, FCC, FGV, Cebraspe
+            </p>
+            <div style="background:var(--bg-code); border-radius:var(--radius); padding:1.2rem 1.8rem; margin:1.2rem 0 1.8rem; border-left:6px solid var(--gold);">
+                <p style="margin:0; font-style:italic; color:var(--text-light);">
+                    “Este material foi elaborado para proporcionar uma compreensão profunda, sistematizada e aplicada dos temas de Direito Penal mais cobrados em concursos públicos de alto nível.”
+                </p>
+            </div>
+        </header>
+
+        <!-- SUMÁRIO -->
+        <nav class="toc" aria-label="Sumário">
+            <div class="toc-title">📖 Sumário</div>
+            <div class="toc-grid">
+                <div class="toc-item"><a href="#parte1">I – Teoria do Crime: Ilicitude e Culpabilidade</a>
+                    <span class="toc-sub"><a href="#sec1-1">1. Estrutura Analítica do Crime</a></span>
+                    <span class="toc-sub"><a href="#sec1-2">2. Causas de Justificação × Dirimentes</a></span>
+                    <span class="toc-sub"><a href="#sec1-3">3. Legítima Defesa</a></span>
+                </div>
+                <div class="toc-item"><a href="#parte2">II – Lei Penal no Tempo e no Espaço</a>
+                    <span class="toc-sub"><a href="#sec2-1">4. Sucessão de Leis e Ultratividade</a></span>
+                    <span class="toc-sub"><a href="#sec2-2">5. Extraterritorialidade</a></span>
+                </div>
+                <div class="toc-item"><a href="#parte3">III – Concurso de Pessoas e Crimes Funcionais</a>
+                    <span class="toc-sub"><a href="#sec3-1">6. Comunicação de Circunstâncias</a></span>
+                </div>
+                <div class="toc-item"><a href="#parte4">IV – Crimes em Espécie</a>
+                    <span class="toc-sub"><a href="#sec4-1">7. Crimes contra a Pessoa</a></span>
+                    <span class="toc-sub"><a href="#sec4-2">8. Crimes contra o Patrimônio</a></span>
+                    <span class="toc-sub"><a href="#sec4-3">9. Crimes contra a Administração da Justiça</a></span>
+                </div>
+                <div class="toc-item"><a href="#parte5">V – Quadros Resumo e Macetes</a></div>
+                <div class="toc-item"><a href="#parte6">VI – Estudo de Casos Integrados</a></div>
+                <div class="toc-item"><a href="#parte7">VII – Jurisprudência Relevante</a></div>
+                <div class="toc-item"><a href="#parte8">VIII – Dicas Finais para a Prova</a></div>
+            </div>
+        </nav>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main>
+
+            <!-- ========== PARTE I ========== -->
+            <section id="parte1">
+                <h2>PARTE I – TEORIA DO CRIME: ILICITUDE E CULPABILIDADE</h2>
+
+                <section id="sec1-1">
+                    <h3>1. A ESTRUTURA ANALÍTICA DO CRIME</h3>
+                    <p>Para compreender as causas de exclusão da ilicitude e da culpabilidade, é essencial dominar a teoria geral do crime. O fato típico, ilícito e culpável é o conceito analítico de crime adotado pela doutrina majoritária (teoria tripartite). Cada um desses elementos possui funções distintas:</p>
+                    <ul>
+                        <li><strong>Fato típico</strong>: conduta (ação ou omissão) que se amolda a um tipo penal, com nexo causal e resultado, quando exigido.</li>
+                        <li><strong>Ilicitude (antijuridicidade)</strong>: contrariedade do fato típico ao ordenamento jurídico como um todo, ou seja, a ausência de uma causa que o justifique.</li>
+                        <li><strong>Culpabilidade</strong>: juízo de reprovação pessoal sobre o agente, considerando sua capacidade de entendimento, a exigibilidade de conduta diversa e a possibilidade de se lhe imputar o fato.</li>
+                    </ul>
+                    <p>A presença de uma causa de exclusão pode atingir a ilicitude ou a culpabilidade, com consequências radicalmente distintas. É nesse ponto que as bancas, especialmente a FCC, adoram confundir o candidato.</p>
+
+                    <!-- Diagrama SVG: Estrutura do Crime (CORRIGIDO) -->
+                    <div class="svg-container">
+                        <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama da estrutura analítica do crime">
+                            <defs>
+                                <style>
+                                    .box { fill: #1b1b2b; stroke: #6a9fb5; stroke-width: 2; rx: 8; }
+                                    .box-text { fill: #e4e4f0; font-family: system-ui, sans-serif; font-size: 16px; font-weight: 600; text-anchor: middle; dominant-baseline: middle; }
+                                    .arrow { stroke: #d4b483; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+                                    .label { fill: #b0b0c8; font-family: system-ui, sans-serif; font-size: 13px; text-anchor: middle; dominant-baseline: middle; }
+                                    #arrowhead { fill: #d4b483; }
+                                </style>
+                            </defs>
+                            <!-- Bloco 1 -->
+                            <rect class="box" x="150" y="20" width="400" height="60" />
+                            <text class="box-text" x="350" y="50">Fato Típico</text>
+                            <!-- Seta 1 -->
+                            <path class="arrow" d="M 350 80 L 350 110" />
+                            <text class="label" x="375" y="100">→</text>
+                            <!-- Bloco 2 -->
+                            <rect class="box" x="150" y="120" width="400" height="60" />
+                            <text class="box-text" x="350" y="150">Ilicitude (Antijuridicidade)</text>
+                            <!-- Seta 2 -->
+                            <path class="arrow" d="M 350 180 L 350 210" />
+                            <text class="label" x="375" y="200">→</text>
+                            <!-- Bloco 3 -->
+                            <rect class="box" x="150" y="220" width="400" height="60" />
+                            <text class="box-text" x="350" y="250">Culpabilidade</text>
+                            <!-- Observações -->
+                            <text class="label" x="350" y="320" font-size="14" fill="#d4b483">+ Causa de Justificação → exclui Ilicitude</text>
+                            <text class="label" x="350" y="345" font-size="14" fill="#d4b483">+ Causa Dirimente → exclui Culpabilidade</text>
+                            <!-- seta lateral indicando elementos cumulativos -->
+                            <path class="arrow" d="M 570 150 L 610 150 L 610 280 L 570 280" stroke-dasharray="4,4" />
+                            <text class="label" x="625" y="215" fill="#d4b483">elementos</text>
+                            <text class="label" x="625" y="235" fill="#d4b483">cumulativos</text>
+                        </svg>
+                    </div>
+                </section>
+
+                <section id="sec1-2">
+                    <h3>2. CAUSAS DE JUSTIFICAÇÃO (EXCLUDENTES DE ILICITUDE) × CAUSAS DIRIMENTES (EXCLUDENTES DE CULPABILIDADE)</h3>
+                    <h4>2.1. Conceitos fundamentais</h4>
+                    <p><strong>Causa de justificação</strong> (art. 23 do Código Penal) é uma situação em que a conduta típica é <span class="highlight">autorizada</span> pelo ordenamento jurídico. O fato, embora se amolde à descrição legal (típico), deixa de ser ilícito porque o Direito o considera legítimo diante das circunstâncias. O agente age em <strong>estrito cumprimento de dever legal</strong>, em <strong>legítima defesa</strong>, em <strong>estado de necessidade</strong> ou no <strong>exercício regular de um direito</strong>. Nesses casos, a conduta é lícita; o agente não comete crime e, mais do que isso, sua ação é juridicamente valorada positivamente.</p>
+                    <p><strong>Causa dirimente</strong> (excludente da culpabilidade) não torna a conduta lícita. O fato continua sendo típico e ilícito; o que se exclui é a <strong>culpabilidade</strong> do agente. Não há que se falar em reprovação pessoal, pois o agente era inimputável (doença mental, desenvolvimento mental incompleto ou retardado), agiu sob coação moral irresistível ou obediência hierárquica, ou na hipótese de inexigibilidade de conduta diversa. O fato continua sendo um ilícito penal, mas o sujeito não pode ser culpado por ele. As consequências práticas são importantes: embora não haja pena, podem ser aplicadas medidas de segurança (no caso de inimputabilidade) ou o fato pode gerar efeitos civis, pois o ilícito permanece.</p>
+
+                    <h4>2.2. Quadro comparativo essencial</h4>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr><th>Critério</th><th>Causa de Justificação (excludente de ilicitude)</th><th>Causa Dirimente (excludente de culpabilidade)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Natureza</strong></td><td>A conduta é lícita, autorizada pelo Direito.</td><td>A conduta permanece ilícita, mas o agente não é culpável.</td></tr>
+                                <tr><td><strong>Fundamento</strong></td><td>O interesse protegido pela norma cede diante de outro interesse ou bem jurídico de maior relevo, ou o Direito não pune quem age para salvar bem próprio ou de outrem em certas condições.</td><td>Falta de capacidade de entender o caráter ilícito do fato (inimputabilidade) ou inexigibilidade de conduta diversa (coação, obediência).</td></tr>
+                                <tr><td><strong>Exemplos</strong></td><td>Legítima defesa, estado de necessidade, estrito cumprimento de dever legal, exercício regular de direito.</td><td>Inimputabilidade por doença mental, menoridade penal, coação moral irresistível, obediência hierárquica (em certos casos), inexigibilidade de conduta diversa.</td></tr>
+                                <tr><td><strong>Efeitos</strong></td><td>O agente não pratica crime; não há pena nem medida de segurança. O fato é atípico na ilicitude.</td><td>Não há pena, mas pode haver medida de segurança (se inimputável). O fato ilícito pode gerar responsabilidade civil.</td></tr>
+                                <tr><td><strong>Terminologia</strong></td><td>Também chamadas de <strong>excludentes de ilicitude</strong> ou <strong>antijuridicidade</strong>.</td><td>Também chamadas de <strong>exculpantes</strong> ou <strong>causas de exclusão da culpabilidade</strong>.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card alerta">
+                        <div class="card-title">⚠️ Pegadinhas clássicas em provas (especialmente FCC)</div>
+                        <p>A FCC é conhecida por apresentar situações em que o agente age para salvar terceiro (legítima defesa de terceiro) e, nas alternativas, menciona causas dirimentes como "inimputabilidade" ou "coação irresistível". O candidato deve reconhecer que, nesses casos, a conduta é <span class="highlight">justificada</span>, não meramente desculpada.</p>
+                        <p><strong>Exemplo de pegadinha:</strong> “João, ao ver seu vizinho sendo agredido por um ladrão armado, desfere um golpe no agressor, lesionando-o. Diante disso, é correto afirmar que João agiu sob coação moral irresistível?” <strong>Resposta:</strong> Não! João agiu em legítima defesa de terceiro, causa de justificação (art. 23, II, c/c art. 25, CP). A coação moral irresistível é causa dirimente, que exclui a culpabilidade, e pressupõe que o agente tenha sido compelido por terceiro, o que não é o caso.</p>
+                    </div>
+
+                    <h4>2.4. Importância prática para o concurseiro</h4>
+                    <p>Quando uma questão descrever uma conduta que, <em>prima facie</em>, parece criminosa, mas o agente estava defendendo alguém, cumprindo um dever legal, agindo para evitar perigo iminente, etc., a resposta será sempre: <span class="highlight">exclusão da ilicitude</span> (fato justificado). Se a questão descrever uma pessoa com doença mental que pratica um fato típico, ou alguém que agiu sob ameaça de morte de outrem, a exclusão será da <span class="highlight-blue">culpabilidade</span>. A distinção é cobrada com frequência, e o erro nessa identificação leva à perda da questão.</p>
+                </section>
+
+                <section id="sec1-3">
+                    <h3>3. LEGÍTIMA DEFESA (ART. 25 DO CÓDIGO PENAL)</h3>
+                    <h4>3.1. Legítima defesa própria e de terceiro</h4>
+                    <p>A legítima defesa é a mais importante causa de justificação e uma das mais cobradas em concursos. O art. 25 do CP assim dispõe:</p>
+                    <blockquote>“Entende-se em legítima defesa quem, usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente, a direito seu ou de outrem.”</blockquote>
+                    <p>Perceba que o dispositivo abrange tanto a defesa de <strong>direito próprio</strong> quanto de <strong>direito de outrem</strong> (legítima defesa de terceiro). A lei não exige que o terceiro tenha solicitado a intervenção, nem que haja relação de parentesco ou vínculo especial entre o defensor e o defendido. Qualquer pessoa pode socorrer outrem, desde que presentes os requisitos legais.</p>
+
+                    <h4>3.2. Requisitos da legítima defesa</h4>
+                    <p>Para que a conduta seja considerada justificada, devem estar presentes, cumulativamente:</p>
+                    <ol>
+                        <li><strong>Agressão injusta</strong>: ofensa a um direito, sem amparo no ordenamento jurídico. A agressão pode ser praticada por pessoa humana, mas também pode ser proveniente de animal (quando instigado por alguém) ou de fenômeno da natureza? A doutrina majoritária entende que a legítima defesa só se configura contra agressão humana, pois o instituto pressupõe uma conduta voluntária de outrem. Contra animais, aplica-se o estado de necessidade.</li>
+                        <li><strong>Agressão atual ou iminente</strong>: atual = que está ocorrendo no momento; iminente = que está prestes a ocorrer, com probabilidade concreta. Não se admite legítima defesa contra agressão passada (já consumada) ou futura (mera expectativa). A exceção é a legítima defesa sucessiva, quando a agressão ainda perdura ou há risco de continuação.</li>
+                        <li><strong>Uso moderado dos meios necessários</strong>: proporcionalidade entre a agressão e a reação. O defensor deve utilizar os meios adequados para repelir a agressão, sem excesso. O excesso doloso ou culposo pode gerar responsabilidade penal, mas o excesso <em>escusável</em> (por perturbação emocional) pode excluir a culpabilidade.</li>
+                        <li><strong>Reação contra o agressor</strong>: a legítima defesa é dirigida contra a pessoa do agressor, não contra terceiros inocentes.</li>
+                    </ol>
+
+                    <h4>3.3. Legítima defesa de terceiro – aprofundamento</h4>
+                    <p>Na legítima defesa de terceiro, aquele que defende outrem age como se estivesse defendendo direito próprio. Não se exige que o terceiro seja inocente, mas que sua agressão seja injusta. Também não se exige que o terceiro peça socorro; a ação pode ser espontânea.</p>
+                    <div class="card conceito">
+                        <strong>Estudo de caso:</strong>
+                        <p>Maria vê seu filho sendo atacado por um cachorro feroz, solto pelo vizinho para intimidar. Maria, para proteger o filho, atira no cachorro, mas acerta a perna do vizinho. Pergunta-se: Maria agiu em legítima defesa de terceiro (filho) contra a agressão do vizinho, que utilizou o animal como instrumento. A agressão é injusta porque o vizinho não tinha direito de soltar o cão para agredir. A reação foi moderada? Se havia outros meios, pode ter havido excesso, mas a justificação permanece.</p>
+                    </div>
+                    <p><strong>Cuidado:</strong> Não confundir legítima defesa de terceiro com <strong>estado de necessidade</strong> (art. 24 CP). No estado de necessidade, a pessoa sacrifica um bem jurídico para salvar outro, em situação de perigo atual e inevitável. A diferença fundamental é que, na legítima defesa, o perigo é criado por uma agressão injusta de outrem, e a reação é dirigida contra o agressor. No estado de necessidade, o perigo pode advir de qualquer fonte (natural, animal, etc.) e a reação pode atingir terceiros inocentes. A legítima defesa é uma reação defensiva; o estado de necessidade é uma ação de salvamento.</p>
+                    <div class="card dica">
+                        <div class="card-title">📌 Resumo da legítima defesa de terceiro</div>
+                        <ul class="check-list">
+                            <li>A conduta é <span class="highlight">causa de justificação</span> (excludente de ilicitude).</li>
+                            <li>Não precisa de pedido da vítima.</li>
+                            <li>O agente atua para repelir agressão a direito de outrem, com os mesmos requisitos.</li>
+                            <li>Se preenchidos os requisitos, o agente não comete crime e sua conduta é lícita.</li>
+                        </ul>
+                    </div>
+                    <h4>3.4. Dica de prova</h4>
+                    <p>Em questões sobre legítima defesa, examine sempre se a agressão é injusta, atual ou iminente, e se a reação é moderada. Se a questão trouxer uma situação em que o agente defende um terceiro, a resposta correta será <strong>legítima defesa de terceiro</strong>, e não "estado de necessidade" ou "inexigibilidade de conduta diversa". As bancas adoram misturar conceitos de justificação e culpabilidade para induzir ao erro.</p>
+                </section>
+            </section>
+
+            <hr>
+
+            <!-- ========== PARTE II ========== -->
+            <section id="parte2">
+                <h2>PARTE II – LEI PENAL NO TEMPO E NO ESPAÇO</h2>
+
+                <section id="sec2-1">
+                    <h3>4. LEI PENAL NO TEMPO: SUCESSÃO DE LEIS E ULTRATIVIDADE</h3>
+                    <h4>4.1. Princípios gerais</h4>
+                    <p>A lei penal, como toda norma jurídica, pode ser alterada ou revogada ao longo do tempo. O Código Penal adota, no art. 2º, os seguintes princípios:</p>
+                    <ul>
+                        <li><strong>Irretroatividade da lei penal</strong>, salvo para beneficiar o réu (<em>tempus regit actum</em>).</li>
+                        <li><strong>Retroatividade da lei penal mais benigna</strong>: a lei nova que favorece o agente retroage para alcançar fatos anteriores, mesmo que já transitados em julgado.</li>
+                        <li><strong>Ultratividade da lei penal mais benigna</strong>: a lei antiga, mesmo revogada, continua a ser aplicada se for mais favorável ao réu.</li>
+                    </ul>
+                    <p>Essa é a regra geral. Entretanto, há situações especiais que envolvem <strong>leis penais em branco</strong> e <strong>leis excepcionais ou temporárias</strong>.</p>
+
+                    <h4>4.2. Lei penal em branco e ultratividade – o critério do complemento</h4>
+                    <p>A lei penal em branco (ou norma penal incompleta) é aquela cujo preceito primário (conduta proibida) ou secundário (sanção) depende de complementação por outra norma, geralmente infralegal (decreto, portaria, etc.) ou de outra lei. Exemplo: crimes ambientais que dependem de definição de poluição por resoluções do CONAMA; crimes de trânsito que dependem de regulamentação do Contran.</p>
+                    <p>A questão crucial, para concursos, é saber quando o complemento da lei penal em branco atrai a ultratividade. O raciocínio é o seguinte:</p>
+                    <ul>
+                        <li>Se o complemento tem <strong>caráter regulador</strong>, em situações de <strong>anormalidade</strong> (ex.: leis excepcionais, temporárias), a norma penal em branco se submete ao regime das leis excepcionais (art. 3º do CP), que são <strong>ultrativas</strong>, ou seja, permanecem em vigor mesmo após revogadas, para alcançar fatos praticados durante sua vigência.</li>
+                        <li>Se o complemento está em <strong>situação de normalidade</strong>, ou seja, é uma norma geral e permanente, a modificação do complemento (se mais favorável ao réu) retroage obrigatoriamente, nos termos do art. 2º, <em>caput</em>, do CP.</li>
+                    </ul>
+                    <div class="card observacao">
+                        <div class="card-title">📌 Por que essa distinção?</div>
+                        <p>Porque as leis excepcionais ou temporárias são editadas para situações emergenciais (guerra, calamidade, etc.) e, por sua própria natureza, são destinadas a produzir efeitos durante o período de exceção. O art. 3º do CP estabelece que a lei excepcional ou temporária, embora revogada, continua a reger os fatos praticados durante sua vigência. Quando o complemento da lei penal em branco (ex.: uma portaria que define um estado de emergência) tem essa mesma natureza, a ultratividade se impõe.</p>
+                    </div>
+                    <p><strong>Exemplo prático:</strong> Durante uma epidemia, uma lei penal em branco proíbe a exportação de certo medicamento, e uma portaria ministerial define os critérios de exceção. A portaria é complemento da lei penal em branco e tem natureza excepcional. Se a portaria for revogada, mas os fatos praticados durante sua vigência continuam sendo punidos com base na lei penal em branco que a complementava, pois a lei excepcional é ultrativa.</p>
+                    <div class="card dica">
+                        <div class="card-title">💡 Dica de prova</div>
+                        <p>Quando a questão mencionar "lei penal em branco" e "ultratividade", verifique se o complemento é meramente regulador em situação de anormalidade. Se sim, não se submete ao critério da ultratividade comum, e sim à ultratividade das leis excepcionais. Se o complemento for de normalidade, aplica-se a retroação da lei mais benigna.</p>
+                    </div>
+
+                    <h4>4.3. Leis excepcionais e temporárias (art. 3º CP)</h4>
+                    <p>O art. 3º do CP dispõe: "A lei excepcional ou temporária, embora decorrido o período de sua duração ou cessadas as circunstâncias que a determinaram, aplica-se ao fato praticado durante sua vigência."</p>
+                    <p>Isso significa que, mesmo após revogada, a lei excepcional continua a produzir efeitos para os fatos ocorridos no período de sua vigência. Essa é uma exceção ao princípio da irretroatividade e também à ultratividade da lei mais benigna, pois a lei excepcional pode ser mais severa, mas mesmo assim continuará a ser aplicada, não podendo ser substituída por lei posterior mais benéfica. Isso porque a lei excepcional é criada para dar resposta a situações anômalas e sua eficácia temporal é rigidamente atrelada ao período de exceção.</p>
+                </section>
+
+                <section id="sec2-2">
+                    <h3>5. EXTRATERRITORIALIDADE DA LEI PENAL BRASILEIRA (ART. 7º DO CP)</h3>
+                    <p>A lei penal brasileira, em regra, aplica-se apenas aos crimes cometidos em território nacional (princípio da territorialidade – art. 5º do CP). Contudo, em certas hipóteses, a lei brasileira pode alcançar crimes cometidos no estrangeiro. O art. 7º do CP prevê duas modalidades: <strong>extraterritorialidade incondicionada</strong> (inciso I) e <strong>condicionada</strong> (inciso II e § 2º).</p>
+
+                    <h4>5.1. Extraterritorialidade incondicionada (art. 7º, I)</h4>
+                    <p>Aplica-se a lei brasileira, independentemente de qualquer condição, a crimes cometidos no estrangeiro que atentem contra:</p>
+                    <ul>
+                        <li>a vida ou a liberdade do Presidente da República;</li>
+                        <li>o patrimônio ou a fé pública da União, de Estado, de Município, de empresa pública, sociedade de economia mista, autarquia ou fundação instituída pelo Poder Público;</li>
+                        <li>a administração pública, quando praticados por funcionário público, no exercício de suas funções;</li>
+                        <li>crimes de genocídio (quando o agente for brasileiro ou residente no Brasil).</li>
+                    </ul>
+                    <p>Nesses casos, não se exige que o agente tenha ingressado no Brasil, nem que o fato seja punível no país em que foi praticado, nem qualquer outra condição. A punição ocorre mesmo que o agente tenha sido absolvido ou condenado no estrangeiro.</p>
+
+                    <h4>5.2. Extraterritorialidade condicionada (art. 7º, II e § 2º)</h4>
+                    <p>Nos demais crimes cometidos no estrangeiro, a lei brasileira aplica-se <strong>desde que cumpridas cumulativamente as seguintes condições</strong> (são cinco, todas necessárias):</p>
+                    <ol>
+                        <li><strong>Entrada do agente no território nacional</strong> – o agente deve ingressar no Brasil (não basta estar em outro país e ser processado à distância).</li>
+                        <li><strong>O fato ser punível também no país em que foi praticado</strong> – exige-se dupla tipicidade: o crime deve ser crime tanto no Brasil quanto no local da prática.</li>
+                        <li><strong>O crime estar incluído entre aqueles pelos quais a lei brasileira autoriza a extradição</strong> – ou seja, não pode ser crime político ou de opinião, que são impeditivos de extradição.</li>
+                        <li><strong>Não ter sido o agente absolvido no estrangeiro</strong> – se houve absolvição definitiva no exterior, a jurisdição brasileira não pode reabrir o caso (respeito à coisa julgada estrangeira? Mas a lei exige que não tenha sido absolvido).</li>
+                        <li><strong>Não ter sido o agente perdoado no estrangeiro ou, por outro motivo, não estar extinta a punibilidade, segundo a lei mais favorável</strong> – se houve perdão judicial, anistia, graça, ou se a prescrição já ocorreu, a punibilidade está extinta, e o Brasil não pode punir.</li>
+                    </ol>
+
+                    <!-- Diagrama SVG: Fluxo Extraterritorialidade Condicionada (CORRIGIDO) -->
+                    <div class="svg-container">
+                        <svg viewBox="0 0 760 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxograma extraterritorialidade condicionada">
+                            <defs>
+                                <style>
+                                    .box2 { fill: #1b1b2b; stroke: #6a9fb5; stroke-width: 2; rx: 8; }
+                                    .box2-text { fill: #e4e4f0; font-family: system-ui, sans-serif; font-size: 14px; font-weight: 500; text-anchor: middle; dominant-baseline: middle; }
+                                    .arrow2 { stroke: #d4b483; stroke-width: 2; fill: none; marker-end: url(#arrow2); }
+                                    .label2 { fill: #b0b0c8; font-family: system-ui, sans-serif; font-size: 12px; text-anchor: middle; }
+                                    #arrow2 { fill: #d4b483; }
+                                    .decision { fill: #2a2a44; stroke: #c77a7a; stroke-width: 2; rx: 6; }
+                                </style>
+                            </defs>
+                            <!-- Início -->
+                            <rect class="box2" x="250" y="20" width="260" height="45" />
+                            <text class="box2-text" x="380" y="47">Crime cometido no estrangeiro</text>
+                            <!-- seta -->
+                            <path class="arrow2" d="M 380 65 L 380 95" />
+
+                            <!-- Decisão 1: entrou no Brasil? -->
+                            <rect class="decision" x="270" y="100" width="220" height="45" />
+                            <text class="box2-text" x="380" y="127" font-size="13">Agente entrou no Brasil?</text>
+                            <!-- setas SIM / NÃO -->
+                            <text class="label2" x="540" y="115" fill="#7bb07a">SIM</text>
+                            <path class="arrow2" d="M 490 122 L 540 122 L 540 160 L 490 160" stroke="#7bb07a" />
+                            <text class="label2" x="230" y="115" fill="#c77a7a">NÃO</text>
+                            <path class="arrow2" d="M 270 122 L 230 122 L 230 380 L 210 380" stroke="#c77a7a" />
+
+                            <!-- Decisão 2: dupla tipicidade -->
+                            <rect class="decision" x="270" y="165" width="220" height="45" />
+                            <text class="box2-text" x="380" y="192" font-size="13">Dupla tipicidade?</text>
+                            <text class="label2" x="540" y="180" fill="#7bb07a">SIM</text>
+                            <path class="arrow2" d="M 490 187 L 540 187 L 540 225 L 490 225" stroke="#7bb07a" />
+                            <text class="label2" x="230" y="180" fill="#c77a7a">NÃO</text>
+                            <path class="arrow2" d="M 270 187 L 230 187 L 230 380" stroke="#c77a7a" />
+
+                            <!-- Decisão 3: crime extraditável -->
+                            <rect class="decision" x="270" y="230" width="220" height="45" />
+                            <text class="box2-text" x="380" y="257" font-size="13">Crime extraditável?</text>
+                            <text class="label2" x="540" y="245" fill="#7bb07a">SIM</text>
+                            <path class="arrow2" d="M 490 252 L 540 252 L 540 290 L 490 290" stroke="#7bb07a" />
+                            <text class="label2" x="230" y="245" fill="#c77a7a">NÃO</text>
+                            <path class="arrow2" d="M 270 252 L 230 252 L 230 380" stroke="#c77a7a" />
+
+                            <!-- Decisão 4: não absolvido -->
+                            <rect class="decision" x="270" y="295" width="220" height="45" />
+                            <text class="box2-text" x="380" y="322" font-size="13">Não absolvido no estrangeiro?</text>
+                            <text class="label2" x="540" y="310" fill="#7bb07a">SIM</text>
+                            <path class="arrow2" d="M 490 317 L 540 317 L 540 355 L 490 355" stroke="#7bb07a" />
+                            <text class="label2" x="230" y="310" fill="#c77a7a">NÃO</text>
+                            <path class="arrow2" d="M 270 317 L 230 317 L 230 380" stroke="#c77a7a" />
+
+                            <!-- Decisão 5: não perdoado / não extinta -->
+                            <rect class="decision" x="270" y="360" width="220" height="45" />
+                            <text class="box2-text" x="380" y="387" font-size="13">Não perdoado / não extinta?</text>
+                            <text class="label2" x="540" y="375" fill="#7bb07a">SIM</text>
+                            <path class="arrow2" d="M 490 382 L 540 382 L 540 430 L 490 430" stroke="#7bb07a" />
+                            <text class="label2" x="230" y="375" fill="#c77a7a">NÃO</text>
+                            <path class="arrow2" d="M 270 382 L 230 382 L 230 430" stroke="#c77a7a" />
+
+                            <!-- Resultado SIM -->
+                            <rect class="box2" x="270" y="435" width="220" height="45" stroke="#7bb07a" />
+                            <text class="box2-text" x="380" y="462" fill="#7bb07a">Aplica-se a lei brasileira</text>
+
+                            <!-- Resultado NÃO -->
+                            <rect class="box2" x="40" y="415" width="150" height="45" stroke="#c77a7a" />
+                            <text class="box2-text" x="115" y="442" fill="#c77a7a">Não se aplica</text>
+
+                            <!-- Linha de conexão do NÃO para o bloco final -->
+                            <path class="arrow2" d="M 230 415 L 115 415" stroke="#c77a7a" />
+                        </svg>
+                    </div>
+
+                    <div class="card dica">
+                        <div class="card-title">💡 Macete para as condições</div>
+                        <p><strong>“Entra, Puna, Extradita, Absolvido? Não, Perdão? Não”</strong> – (Entrada no Brasil; punível no país; extraditável; não absolvido; não perdoado).</p>
+                    </div>
+
+                    <p><strong>Caso prático:</strong> João, brasileiro, comete homicídio nos Estados Unidos e foge para a Holanda. Depois, viaja para o Brasil. Para que seja processado aqui, devem ser cumpridas as cinco condições: (a) entrou no Brasil; (b) o homicídio é punível nos EUA; (c) o homicídio é crime que autoriza extradição no Brasil (não é crime político); (d) não foi absolvido nos EUA; (e) não foi perdoado nem prescrito. Se todas estiverem presentes, o Brasil pode processá-lo. Trata-se de extraterritorialidade condicionada.</p>
+                    <div class="card alerta">
+                        <div class="card-title">⚠️ Dica de prova</div>
+                        <p>As bancas costumam omitir uma das condições e perguntar se a lei brasileira se aplica. A resposta é não, pois as condições são cumulativas. Também é comum confundirem com a incondicionada: se o crime for contra a vida do Presidente, a condição não se aplica.</p>
+                    </div>
+                </section>
+            </section>
+
+            <hr>
+
+            <!-- ========== PARTE III ========== -->
+            <section id="parte3">
+                <h2>PARTE III – CONCURSO DE PESSOAS E CRIMES FUNCIONAIS</h2>
+
+                <section id="sec3-1">
+                    <h3>6. COMUNICAÇÃO DE CIRCUNSTÂNCIAS E CONDIÇÕES PESSOAIS (ART. 30 CP)</h3>
+                    <p>O art. 30 do Código Penal estabelece:</p>
+                    <blockquote>“Não se comunicam as circunstâncias e as condições de caráter pessoal, salvo quando elementares do crime.”</blockquote>
+                    <p>Essa é a regra geral no concurso de agentes (coautoria e participação): cada agente responde de acordo com sua culpabilidade e com as circunstâncias que lhe são pessoais. Exemplo: se um dos autores é reincidente, essa circunstância não se comunica aos demais. Se um é funcionário público e o outro não, a qualidade de funcionário público não se comunica, a menos que seja elementar do crime.</p>
+
+                    <h4>6.1. Crime funcional e participação de particular (extraneus)</h4>
+                    <p>A grande questão, muito cobrada, é a possibilidade de um <strong>particular</strong> (extraneus) responder por crime funcional (próprio ou impróprio) quando concorre com um funcionário público (intraneus).</p>
+                    <ul>
+                        <li><strong>Crime funcional próprio</strong>: é aquele que só pode ser praticado por funcionário público, pois a qualidade de funcionário público é elementar do tipo. Exemplo: prevaricação (art. 319 CP – “retardar ou deixar de praticar, indevidamente, ato de ofício, ou praticá-lo contra disposição expressa de lei, para satisfazer interesse ou sentimento pessoal”). A conduta isolada de um particular não configura prevaricação, porque ele não tem função pública. Mas, se o particular <strong>concorre</strong> com o funcionário público, sabendo da condição deste, pode responder pelo mesmo crime, com base no art. 30, que estabelece a comunicação da circunstância elementar (qualidade de funcionário público) quando o extraneus tem ciência dela. Nesse caso, o particular responde como partícipe ou coautor do crime funcional próprio.</li>
+                        <li><strong>Crime funcional impróprio</strong>: é aquele que pode ser praticado por qualquer pessoa, mas, quando praticado por funcionário público, adquire uma qualificadora ou tem um tipo específico, geralmente mais grave. Exemplo: peculato-apropriação (art. 312, caput – “apropriar-se de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo”). A conduta isolada de um particular (apropriar-se de coisa alheia móvel) configura, em tese, apropriação indébita (art. 168 CP). Mas, se o particular concorre com o funcionário público que se apropria do bem público, ambos respondem por peculato (desde que o particular saiba da condição funcional). A qualidade de funcionário público é elementar do tipo de peculato, portanto se comunica ao particular.</li>
+                    </ul>
+
+                    <div class="card conceito">
+                        <strong>6.2. A resposta é a mesma para crimes funcionais próprios e impróprios?</strong>
+                        <p>Muitos candidatos acreditam que a resposta difere, mas, conforme entendimento dominante e o próprio art. 30, a comunicação da elementar (qualidade de funcionário público) opera tanto nos crimes próprios quanto nos impróprios, desde que o particular <strong>conheça</strong> essa condição. Portanto, a resposta é <span class="highlight">SIM</span>: o particular pode responder por crime funcional, seja próprio ou impróprio, se concorrer para a prática e tiver ciência da qualidade funcional do autor.</p>
+                        <p><strong>Cuidado:</strong> Se o particular não tiver conhecimento de que o agente é funcionário público, não se comunicará a elementar, e ele responderá, se for o caso, pelo crime comum correspondente (ex.: apropriação indébita, no caso do peculato impróprio).</p>
+                    </div>
+
+                    <div class="card dica">
+                        <div class="card-title">💡 Dica de prova</div>
+                        <p>A FCC adora perguntar: “Um particular pode responder por crime de prevaricação se concorrer com funcionário público?” A resposta é sim, desde que saiba da condição de funcionário e concorra dolosamente. Não confunda com a regra do art. 30: “circunstâncias e condições de caráter pessoal não se comunicam, salvo quando elementares”. A qualidade de funcionário público é elementar nos crimes funcionais, portanto se comunica.</p>
+                    </div>
+                </section>
+            </section>
+
+            <hr>
+
+            <!-- ========== PARTE IV ========== -->
+            <section id="parte4">
+                <h2>PARTE IV – CRIMES EM ESPÉCIE (PARTE ESPECIAL)</h2>
+
+                <section id="sec4-1">
+                    <h3>7. CRIMES CONTRA A PESSOA</h3>
+
+                    <h4>7.1. Lesão corporal (art. 129 CP) – substituição da pena</h4>
+                    <p>O crime de lesão corporal é o mais frequente nos concursos e na prática forense. O art. 129 do CP estabelece:</p>
+                    <blockquote>“Ofender a integridade corporal ou a saúde de outrem: Pena – detenção, de três meses a um ano.”</blockquote>
+                    <p>Essa é a lesão corporal <strong>leve</strong> (caput). Os §§ 1º e 2º tratam das formas <strong>grave</strong> e <strong>gravíssima</strong> (perda ou inutilização de membro, sentido ou função, deformidade permanente, aborto, etc.), com penas mais severas. O § 3º trata da lesão corporal <strong>culposa</strong>. O § 4º, da lesão corporal <strong>qualificada pelo resultado morte</strong> (lesão corporal seguida de morte). O § 5º estabelece a possibilidade de substituição da pena para a lesão corporal leve, e o § 6º prevê aumento de pena em certas situações (violência doméstica).</p>
+
+                    <h5>Substituição da pena na lesão corporal leve</h5>
+                    <p>A grande novidade (já consolidada) é a possibilidade de substituição da pena privativa de liberdade por <strong>multa</strong> ou <strong>restritiva de direitos</strong> na lesão corporal <strong>leve</strong> (art. 129, caput). O § 5º do art. 129 dispõe que:</p>
+                    <blockquote>“O juiz pode substituir a pena de detenção pela de multa, se a lesão é leve e se presentes as condições do § 4º deste artigo.” (Na verdade, o § 5º remete ao § 4º, que trata da lesão seguida de morte, mas a redação original era referente ao § 4º que tratava da substituição. A redação atual, alterada pela Lei 13.964/2019, trouxe nova redação. Vamos esclarecer.)</blockquote>
+                    <p><strong>Redação atual:</strong> Art. 129, § 5º – “O juiz poderá substituir a pena privativa de liberdade, aplicada com base no caput, pela de multa, se a lesão for leve e se presentes as condições previstas no § 4º deste artigo.” (O § 4º atualmente trata da lesão corporal seguida de morte, mas a referência é equivocada? Na verdade, a Lei 13.964/2019 alterou o § 5º, que passou a prever: “O juiz poderá substituir a pena privativa de liberdade, aplicada com base no caput, pela de multa, se a lesão for leve e se presentes as condições do § 4º deste artigo.” Contudo, o § 4º trata da lesão seguida de morte. Parece um erro de técnica legislativa, mas a doutrina entende que a substituição é cabível na lesão corporal leve, independentemente das condições do § 4º? Na verdade, a remissão correta seria ao antigo § 4º, que tratava da substituição, mas a lei alterou os parágrafos. Vamos simplificar: a Súmula 588 do STJ, de 2018, já pacificou o entendimento de que <strong>é cabível a substituição da pena privativa de liberdade por restritiva de direitos ou multa na lesão corporal leve, inclusive em contexto de violência doméstica</strong>, desde que presentes os requisitos do art. 44 do CP (crime não cometido com violência ou grave ameaça à pessoa, etc.). Mas o art. 44, I, veda a substituição para crimes cometidos com violência ou grave ameaça. A lesão corporal é crime violento? A doutrina e a jurisprudência entendem que a lesão corporal leve pode ser substituída porque a violência é inerente ao tipo, mas a vedação do art. 44, I, é para crimes cometidos com violência ou grave ameaça <em>à pessoa</em>, e a lesão corporal leve, por ser de menor potencial ofensivo, permite a substituição, desde que as condições subjetivas do art. 44 estejam presentes (réu não reincidente, circunstâncias judiciais favoráveis, etc.).</p>
+                    <div class="card dica">
+                        <div class="card-title">📌 Resumo prático</div>
+                        <p>A substituição da pena privativa de liberdade por restritiva de direitos ou multa é <span class="highlight">possível apenas na lesão corporal leve</span> (caput). <strong>Não é possível</strong> na lesão corporal grave (art. 129, §§ 1º e 2º), porque aí a violência é de maior monta, e o art. 44, I, veda a substituição para crimes cometidos com violência ou grave ameaça. Também não é possível na lesão corporal culposa (art. 129, § 6º), pois a violência culposa, embora não seja dolosa, ainda se enquadra na vedação? Na verdade, a lesão culposa admite a substituição por pena restritiva de direitos, conforme art. 44, que não veda crimes culposos. Mas o § 6º do art. 129 não prevê substituição; a substituição na culposa é possível sim, mas a lei não fez menção específica. A doutrina entende que a lesão culposa admite substituição, pois não é crime cometido com violência ou grave ameaça <em>dolosa</em>. No entanto, o enunciado da Súmula 588 refere-se à lesão corporal leve, e a banca pode cobrar especificamente: “Em qual modalidade de lesão corporal o Código Penal permite a substituição da pena?” A resposta é <strong>na lesão corporal leve</strong>, com base no art. 129, § 5º (atual).</p>
+                    </div>
+                    <div class="card alerta">
+                        <div class="card-title">⚠️ Atenção à pegadinha</div>
+                        <p>Muitos candidatos acham que a lesão corporal culposa não admite substituição, mas o art. 44 não veda os crimes culposos. Contudo, a redação do § 5º do art. 129, ao falar em “se a lesão for leve” refere-se à lesão dolosa leve, porque o caput é doloso. A lesão culposa está no § 6º, que não menciona substituição. Assim, a substituição expressa está prevista apenas para a lesão corporal leve dolosa. Se a questão perguntar “em qual modalidade”, responda <span class="highlight">“lesão corporal leve (art. 129, caput, com base no § 5º)”</span>.</p>
+                    </div>
+
+                    <h4>7.2. Maus-tratos (art. 136 CP) – tipo misto alternativo</h4>
+                    <p>O crime de maus-tratos é previsto no art. 136 do CP:</p>
+                    <blockquote>“Expor a perigo a vida ou a saúde de pessoa sob sua autoridade, guarda ou vigilância, para fim de educação, ensino, tratamento ou custódia, quer privando-a de alimentação ou cuidados indispensáveis, quer sujeitando-a a trabalho excessivo ou inadequado, quer abusando de meios de correção ou disciplina: Pena – detenção, de dois meses a um ano, ou multa.”</blockquote>
+
+                    <h5>Natureza do tipo</h5>
+                    <p>O tipo penal do art. 136 é considerado <strong>misto alternativo</strong> (ou crime de conteúdo variado). Isso significa que a lei descreve várias condutas alternativas (privar de alimentação, sujeitar a trabalho excessivo, abusar de meios de correção) como formas de execução do mesmo tipo. Na prática, se o agente pratica mais de uma dessas condutas, no mesmo contexto fático e contra a mesma vítima, configura <strong>crime único</strong>, e não concurso de crimes (art. 70 CP, que trata do concurso formal, não se aplica aqui porque o tipo já absorve as várias condutas). O agente responde por um único crime de maus-tratos, com a pena prevista.</p>
+                    <ul>
+                        <li><strong>Crime de forma vinculada:</strong> Não é de forma livre, porque a lei exige que a conduta se enquadre em uma das modalidades descritas. Não se pode condenar por maus-tratos por uma conduta que não esteja prevista.</li>
+                        <li><strong>Crime próprio:</strong> Exige que o agente tenha especial qualidade (autoridade, guarda ou vigilância para fim de educação, ensino, tratamento ou custódia). É crime próprio, mas não é crime de mão própria (pode ser cometido por intermédio de outrem, desde que este tenha conhecimento da situação).</li>
+                    </ul>
+
+                    <h5>Distinção com outros crimes</h5>
+                    <ul>
+                        <li>Se a conduta de maus-tratos causar <strong>exposição a perigo de vida</strong> de criança ou adolescente, aplica-se o art. 136 CP, pois o bem jurídico protegido é a vida e a saúde. Se houver apenas vexame ou constrangimento, sem perigo concreto, pode-se aplicar o art. 232 do Estatuto da Criança e do Adolescente (submeter criança a vexame ou constrangimento). A diferença está na presença ou não de perigo à vida ou saúde.</li>
+                    </ul>
+                    <div class="card conceito">
+                        <strong>Estudo de caso:</strong>
+                        <p>Uma professora, em sala de aula, tranca um aluno no banheiro por horas, sem alimentação, como castigo. Essa conduta se amolda ao art. 136 (privação de alimentos e cuidados indispensáveis, abuso de meios de correção), desde que a professora tenha vigilância sobre o aluno. Se o aluno passar mal, a conduta pode ser mais grave. Se a professora apenas humilhar o aluno verbalmente, sem perigo físico, pode ser outro crime (art. 232 do ECA).</p>
+                    </div>
+                </section>
+
+                <section id="sec4-2">
+                    <h3>8. CRIMES CONTRA O PATRIMÔNIO</h3>
+
+                    <h4>8.1. Exercício arbitrário das próprias razões (art. 345 CP)</h4>
+                    <p>O art. 345 do CP dispõe:</p>
+                    <blockquote>“Fazer justiça pelas próprias mãos, para satisfazer pretensão legítima, usando de violência, sem prejuízo de ação penal que caiba no crime de violência.”</blockquote>
+                    <p><strong>Elementos:</strong></p>
+                    <ul>
+                        <li><strong>Pretensão legítima</strong>: o agente tem direito a receber algo, seja crédito, seja reparação.</li>
+                        <li><strong>Uso de violência</strong>: para satisfazer essa pretensão, o agente utiliza força contra a pessoa ou o patrimônio do devedor.</li>
+                        <li><strong>Fazer justiça pelas próprias mãos</strong>: substituir o Poder Judiciário, tomando a medida coativa por conta própria.</li>
+                    </ul>
+                    <p><strong>Distinção fundamental com o roubo</strong> (art. 157 CP):</p>
+                    <ul>
+                        <li>No <strong>roubo</strong>, o agente subtrai coisa alheia móvel mediante violência ou grave ameaça, com o ânimo de <strong>assenhoramento</strong> definitivo, ou seja, de incorporar a coisa ao seu patrimônio, sem que haja uma pretensão legítima (embora possa haver, mas o roubo não exige essa pretensão; é crime contra o patrimônio em geral). O elemento subjetivo é o de obter vantagem indevida.</li>
+                        <li>No <strong>exercício arbitrário das próprias razões</strong>, o agente usa de violência para satisfazer <strong>crédito legítimo</strong> (ele realmente tem direito àquilo). A violência é empregada para forçar o pagamento, e não para se apropriar de coisa que não lhe é devida. O STJ já pacificou que, nesses casos, não se configura roubo, mas sim o crime do art. 345 (HC 211.888/TO).</li>
+                    </ul>
+                    <div class="card conceito">
+                        <strong>Exemplo clássico:</strong>
+                        <p>Profissional do sexo (prostituta) presta serviço e não recebe o pagamento combinado. Ela, então, usa de violência para tomar da carteira do cliente a quantia devida (ou bens de valor equivalente). A pretensão é legítima (recebimento pelo serviço), mas a lei não permite o uso da força para cobrança. Ela pratica o crime de exercício arbitrário das próprias razões, e não roubo, porque a motivação é o ressarcimento de crédito, e não o enriquecimento ilícito.</p>
+                    </div>
+                    <div class="card alerta">
+                        <div class="card-title">⚠️ Cuidado</div>
+                        <p>Se o crédito for <strong>ilegítimo</strong> (ex.: cobrança de dívida de jogo), não se aplica o art. 345, mas sim o roubo (pois a pretensão não é legítima). A legitimidade da pretensão é elementar do tipo. Além disso, o crime do art. 345 exige violência; se a cobrança for feita sem violência (ex.: apenas ameaça), pode configurar outro crime (ameaça, constrangimento ilegal), mas não o exercício arbitrário.</p>
+                    </div>
+
+                    <h4>8.2. Extorsão (art. 158 CP) e distinção com roubo e extorsão mediante sequestro (art. 159 CP)</h4>
+                    <p>A extorsão é o crime de constranger alguém, mediante violência ou grave ameaça, a fazer, tolerar ou deixar de fazer alguma coisa, com o intuito de obter para si ou para outrem <strong>vantagem econômica</strong> indevida.</p>
+
+                    <h5>Extorsão com restrição de liberdade (art. 158, § 3º)</h5>
+                    <p>O § 3º do art. 158 foi acrescentado pela Lei 12.653/2012 e prevê:</p>
+                    <blockquote>“Se o crime é cometido mediante a restrição da liberdade da vítima, e essa é a causa da obtenção da vantagem indevida, a pena é de reclusão, de 4 (quatro) a 10 (dez) anos, além da multa.”</blockquote>
+                    <p>Trata-se de uma qualificadora. A principal diferença para o <strong>roubo</strong> (art. 157) é que, no roubo, a colaboração da vítima é dispensável: o agente subtrai diretamente a coisa. Na extorsão, a vítima <strong>colabora</strong> com a entrega da vantagem, mediante coação (ex.: transferência bancária, Pix, assinatura de documento). Portanto, se o agente obriga a vítima a fazer um Pix, ela mesma realiza a transferência; não há subtração direta. Isso caracteriza extorsão, não roubo.</p>
+
+                    <h5>Distinção com extorsão mediante sequestro (art. 159)</h5>
+                    <p>Na extorsão mediante sequestro (art. 159), a vantagem econômica é exigida de <strong>terceiro</strong> (familiar, empresa, etc.) como condição para a liberdade da vítima. É o famoso sequestro para resgate. Na extorsão com restrição de liberdade do art. 158, § 3º, a vantagem é exigida <strong>da própria vítima</strong>, não de terceiro. Essa é a diferença essencial.</p>
+                    <div class="card conceito">
+                        <strong>Caso prático:</strong>
+                        <p>Mauro, mediante grave ameaça, obriga a vítima a fazer transferências via Pix para sua conta. Depois, para assegurar a fuga, algema a vítima e coloca um saco plástico em sua cabeça, causando asfixia e morte. Qual crime? Trata-se de <strong>extorsão com restrição de liberdade, com resultado morte</strong> (art. 158, § 3º, com a pena do art. 159, §§ 2º e 3º? Cuidado: o resultado morte na extorsão com restrição de liberdade atrai a pena do art. 159, §§ 2º e 3º (reclusão de 24 a 30 anos) por analogia? Na verdade, a lei não prevê expressamente resultado morte no § 3º do art. 158, mas a doutrina e a jurisprudência aplicam a majorante do art. 159, § 2º (que prevê pena de 24 a 30 anos para o sequestro com resultado morte) por ser crime equiparado? A rigor, o art. 158 não tem previsão de resultado morte, apenas a majorante do § 3º, cuja pena é de 4 a 10 anos. Se houver morte, o agente responderá pelo homicídio em concurso material com a extorsão? O STJ já decidiu que a extorsão com restrição de liberdade e resultado morte configura crime único, com a pena do art. 159, § 3º, por expressa previsão legal? Vamos verificar: a Lei 12.653/2012 acrescentou o § 3º ao art. 158, mas não previu resultado morte. Entretanto, o art. 159, § 3º, dispõe: “Se o crime é praticado contra menor de 18 (dezoito) anos, ou contra pessoa com deficiência mental ou física, a pena é de reclusão, de 24 (vinte e quatro) a 30 (trinta) anos.” Não se refere a resultado morte. O resultado morte no sequestro está previsto no § 2º: “Se o crime é cometido em concurso, ou resulta morte, a pena é de reclusão, de 24 (vinte e quatro) a 30 (trinta) anos.” Portanto, na extorsão com restrição de liberdade, a morte não está prevista no tipo qualificado, o que gera discussão. A doutrina majoritária entende que, se ocorrer morte, o agente responderá pelo homicídio (doloso ou culposo) em concurso material com a extorsão, a menos que se enquadre no crime de latrocínio? Mas latrocínio exige subtração de coisa móvel, o que não ocorre (a vítima transfere por Pix, não há subtração). Portanto, a resposta mais segura é: crime de extorsão com restrição de liberdade, em concurso material com homicídio (se dolo eventual) ou homicídio culposo (se morte decorrente de negligência), aplicando-se a regra do concurso de crimes (art. 69 CP). A dica para prova: fique atento à distinção: roubo (subtração direta), extorsão (colaboração da vítima), extorsão mediante sequestro (exigência a terceiro). O resultado morte na extorsão simples não tem previsão específica, portanto não pode ser aplicada a majorante do art. 159 por analogia (vedado em Direito Penal).</p>
+                    </div>
+                </section>
+
+                <section id="sec4-3">
+                    <h3>9. CRIMES CONTRA A ADMINISTRAÇÃO DA JUSTIÇA</h3>
+
+                    <h4>9.1. Coação no curso do processo (art. 344 CP)</h4>
+                    <p>O art. 344 do CP prevê:</p>
+                    <blockquote>“Usar de violência ou grave ameaça, com o fim de favorecer interesse próprio ou alheio, contra alguém que funciona ou é chamado a intervir em processo judicial, policial ou administrativo, ou em juízo arbitral: Pena – reclusão, de 1 (um) a 4 (quatro) anos, e multa, sem prejuízo da pena correspondente à violência.”</blockquote>
+
+                    <h5>Abrangência do tipo</h5>
+                    <p>O crime protege a regularidade da administração da justiça, evitando que testemunhas, jurados, peritos, juízes, promotores, advogados, etc., sejam coagidos a agir de determinada forma. A expressão <strong>“ou é chamado a intervir”</strong> é essencial: não é necessário que o processo já esteja formalmente instaurado. Basta que a pessoa seja convocada para intervir em um futuro procedimento. Por exemplo, se alguém ameaça uma testemunha antes mesmo de ela ser ouvida no inquérito policial, mas já há notícia de que será chamada, o crime pode ser configurado.</p>
+
+                    <h5>Processos abrangidos</h5>
+                    <p>O tipo refere-se a <strong>processo judicial, policial, administrativo, ou juízo arbitral</strong>. Não se restringe a processos criminais; abrange também cíveis, trabalhistas, administrativos (ex.: processo administrativo disciplinar), e até procedimentos investigatórios do Ministério Público (PIC – Procedimento Investigatório Criminal), inquérito civil, etc. A expressão é ampla.</p>
+                    <p><strong>Limitação:</strong> A mera verificação alfandegária de bagagens, por exemplo, não é considerada processo judicial, policial ou administrativo para fins deste crime. É um ato administrativo de fiscalização, mas não um processo formal.</p>
+
+                    <h5>Momento da coação</h5>
+                    <p>O crime se consuma com a coação, independentemente de a vítima ter ou não sido influenciada. O tipo exige o <strong>fim específico</strong> de favorecer interesse próprio ou alheio, ou seja, é crime doloso com elemento subjetivo especial.</p>
+                    <div class="card dica">
+                        <div class="card-title">📌 Questão típica de prova</div>
+                        <p>“É possível caracterizar o crime de coação no curso do processo se as ameaças forem proferidas antes da formalização do inquérito policial?” <strong>Sim</strong>, desde que a pessoa já tenha sido chamada a intervir, ou haja previsão de que será chamada, conforme a expressão “ou é chamada a intervir”.</p>
+                    </div>
+                </section>
+            </section>
+
+            <hr>
+
+            <!-- ========== PARTE V ========== -->
+            <section id="parte5">
+                <h2>PARTE V – QUADROS RESUMO E MACETES DE MEMORIZAÇÃO</h2>
+                <p>Para fixar os principais pontos, apresentamos tabelas sinóticas e macetes.</p>
+
+                <h3>Quadro 1 – Causas de Justificação vs. Dirimentes</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Causa de Justificação</th><th>Causa Dirimente</th></tr></thead>
+                        <tbody>
+                            <tr><td>Exclui a ilicitude (antijuridicidade).</td><td>Exclui a culpabilidade.</td></tr>
+                            <tr><td>Conduta é lícita, autorizada.</td><td>Conduta é ilícita, mas não culpável.</td></tr>
+                            <tr><td>Exemplos: legítima defesa, estado de necessidade, estrito cumprimento de dever legal, exercício regular de direito.</td><td>Exemplos: inimputabilidade, coação moral irresistível, obediência hierárquica, inexigibilidade de conduta diversa.</td></tr>
+                            <tr><td>Não há crime, não há pena, não há medida de segurança.</td><td>Não há pena, mas pode haver medida de segurança (se inimputável).</td></tr>
+                            <tr><td><span class="highlight">Macete:</span> “Justificação = Justo, certo, permitido.”</td><td><span class="highlight-blue">Macete:</span> “Dirimente = Desculpa, não é culpado.”</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Quadro 2 – Legítima Defesa de Terceiro</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Elemento</th><th>Detalhe</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Fundamento</strong></td><td>Art. 25, CP (repele agressão a direito próprio ou de outrem).</td></tr>
+                            <tr><td><strong>Natureza</strong></td><td>Causa de justificação (excludente de ilicitude).</td></tr>
+                            <tr><td><strong>Requisitos</strong></td><td>Agressão injusta, atual ou iminente; uso moderado dos meios necessários; reação contra o agressor.</td></tr>
+                            <tr><td><strong>Legítima defesa de terceiro</strong></td><td>Qualquer pessoa pode defender outrem, sem necessidade de pedido.</td></tr>
+                            <tr><td><strong>Efeito</strong></td><td>Exclusão da ilicitude, conduta lícita.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Quadro 3 – Extraterritorialidade (art. 7º CP)</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Modalidade</th><th>Condições</th><th>Exemplos</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Incondicionada</strong> (inciso I)</td><td>Nenhuma condição. Basta o crime estar previsto no inciso I.</td><td>Crime contra a vida do Presidente, contra o patrimônio da União, etc.</td></tr>
+                            <tr><td><strong>Condicionada</strong> (inciso II)</td><td>5 condições cumulativas: (a) entrada no Brasil; (b) dupla tipicidade; (c) crime extraditável; (d) não absolvido no estrangeiro; (e) não perdoado/prescrito.</td><td>Homicídio comum cometido por brasileiro no exterior.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card dica">
+                    <div class="card-title">💡 Macete para as condições</div>
+                    <p><strong>“Entra, Puna, Extradita, Absolvido? Não, Perdão? Não”</strong> – (Entrada no Brasil; punível no país; extraditável; não absolvido; não perdoado).</p>
+                </div>
+
+                <h3>Quadro 4 – Comunicação de Circunstâncias (art. 30 CP)</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Regra</th><th>Exceção</th></tr></thead>
+                        <tbody>
+                            <tr><td>Circunstâncias e condições pessoais <strong>não se comunicam</strong>.</td><td>Comunicam-se se forem <strong>elementares do crime</strong>.</td></tr>
+                            <tr><td>Exemplo: reincidência de um não se comunica aos outros.</td><td>Exemplo: qualidade de funcionário público em crime funcional comunica-se ao particular que concorre, se este tem ciência.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Quadro 5 – Lesão Corporal e Substituição da Pena</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Modalidade</th><th>Substituição?</th><th>Fundamento</th></tr></thead>
+                        <tbody>
+                            <tr><td>Lesão leve (caput)</td><td><span class="highlight">Sim</span></td><td>Art. 129, § 5º, e Súmula 588 STJ.</td></tr>
+                            <tr><td>Lesão grave (§ 1º e § 2º)</td><td><strong>Não</strong></td><td>Art. 44, I, CP (crime violento).</td></tr>
+                            <tr><td>Lesão culposa (§ 6º)</td><td>Não prevista expressamente (mas possível em tese, conforme art. 44, porém a banca costuma cobrar apenas a leve).</td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Quadro 6 – Crimes contra o Patrimônio (distinção)</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Crime</th><th>Característica</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Roubo</strong> (art. 157)</td><td>Subtração de coisa móvel mediante violência ou ameaça; colaboração da vítima é dispensável; ânimo de assenhoramento.</td></tr>
+                            <tr><td><strong>Exercício arbitrário das próprias razões</strong> (art. 345)</td><td>Uso de violência para satisfazer <strong>crédito legítimo</strong>; não há intenção de se apropriar ilicitamente.</td></tr>
+                            <tr><td><strong>Extorsão simples</strong> (art. 158)</td><td>Constrangimento para obter vantagem econômica, com colaboração da vítima (ex.: Pix).</td></tr>
+                            <tr><td><strong>Extorsão com restrição de liberdade</strong> (art. 158, § 3º)</td><td>Extorsão em que a vítima é mantida em cárcere privado para facilitar a obtenção da vantagem (da própria vítima).</td></tr>
+                            <tr><td><strong>Extorsão mediante sequestro</strong> (art. 159)</td><td>Exigência de vantagem a terceiro (resgate) como condição para liberar a vítima.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- ========== PARTE VI ========== -->
+            <section id="parte6">
+                <h2>PARTE VI – ESTUDO DE CASOS INTEGRADOS</h2>
+                <p>Para consolidar o aprendizado, apresentamos casos concretos que mesclam vários institutos. Leia atentamente, identifique os crimes, as causas de exclusão e as distinções.</p>
+
+                <div class="card conceito">
+                    <strong>Caso 1 – Legítima defesa de terceiro e comunicação de circunstâncias</strong>
+                    <p><strong>Enunciado:</strong> Paulo, policial civil, está de folga e presencia um homem armado (Carlos) tentando roubar uma senhora. Paulo, para defender a senhora, dispara contra Carlos, atingindo-o na perna. Carlos, ferido, consegue fugir, mas é preso em seguida. O amigo de Carlos, Jonas, que estava próximo e sabia que Carlos era policial militar (embora não estivesse em serviço), incentivou Carlos a praticar o roubo, fornecendo a arma. Pergunta-se:</p>
+                    <p>a) Qual a natureza da conduta de Paulo?<br>
+                    b) Jonas responde por roubo? Se sim, com qual fundamento?</p>
+                    <p><strong>Resolução:</strong><br>
+                    a) Paulo agiu em legítima defesa de terceiro (art. 25, CP), pois repeliu agressão injusta e iminente a direito alheio. Sua conduta é justificada, excluindo a ilicitude.<br>
+                    b) Jonas, mesmo não sendo o autor direto do roubo, concorreu para o crime, fornecendo a arma e incentivando. A qualidade de policial militar de Carlos não é elementar do roubo (crime comum), portanto não se comunica a Jonas. Jonas responde por roubo, na modalidade participação (art. 29, CP), com a pena do roubo, mas com as circunstâncias que lhe são pessoais. Não há comunicação de qualquer condição funcional.</p>
+                </div>
+
+                <div class="card conceito">
+                    <strong>Caso 2 – Extraterritorialidade e lei penal no tempo</strong>
+                    <p><strong>Enunciado:</strong> Maria, brasileira, viaja para a Argentina e lá, em 2020, comete um crime de estelionato contra um cidadão argentino. Em 2021, retorna ao Brasil. A lei argentina prevê pena de até 3 anos para estelionato; a lei brasileira prevê pena de 1 a 5 anos. Em 2022, o Brasil edita uma lei que extingue a punibilidade do estelionato (anistia). Maria é processada no Brasil em 2023. Pergunta-se: a lei brasileira pode ser aplicada? Quais condições devem ser observadas?</p>
+                    <p><strong>Resolução:</strong> Trata-se de extraterritorialidade condicionada (art. 7º, II). Para aplicação, devem estar presentes: entrada no Brasil (sim), dupla tipicidade (estelionato é crime nos dois países), ser crime extraditável (estelionato é), não absolvida na Argentina, não perdoada nem prescrita (a anistia concedida pelo Brasil em 2022, se for lei penal mais benéfica, retroage para fatos anteriores, mesmo que o crime tenha sido cometido no exterior? Cuidado: a anistia é lei penal que extingue a punibilidade, e, se for mais benéfica, retroage, conforme art. 2º, CP. Portanto, se a anistia abrange o estelionato, a punibilidade estará extinta, e a condição “não extinta a punibilidade” não será preenchida. Assim, a lei brasileira não será aplicada, mesmo que as outras condições estejam presentes.</p>
+                </div>
+
+                <div class="card conceito">
+                    <strong>Caso 3 – Coação no processo e extorsão</strong>
+                    <p><strong>Enunciado:</strong> Pedro, em 2023, ameaça João, que é testemunha em um processo cível de cobrança, dizendo que “se falar a verdade, vai se arrepender”. João ainda não havia sido oficialmente intimado para depor, mas já sabia que seria chamado. Pergunta-se: Pedro cometeu o crime do art. 344? E se Pedro tivesse exigido dinheiro de João para não testemunhar, qual crime?</p>
+                    <p><strong>Resolução:</strong><br>
+                    a) Sim, Pedro cometeu coação no curso do processo, pois a expressão “chamado a intervir” abrange a situação de quem ainda não foi formalmente intimado, mas há expectativa.<br>
+                    b) Se Pedro exigiu dinheiro para não testemunhar, a conduta configura extorsão (art. 158), em concurso com a coação no processo? Cuidado: o art. 344 absorve a coação, mas se a coação visa a obter vantagem econômica indevida, aplica-se a extorsão, que é crime mais específico? Na verdade, a coação no processo é crime contra a administração da justiça, enquanto a extorsão é crime contra o patrimônio. Se a coação tem o fim de obter vantagem econômica, pode ser a extorsão (constranger para obter vantagem), e a coação no processo seria um meio, mas a lei não prevê concurso formal; o agente responderá pelos dois crimes em concurso material (art. 69) se as condutas forem autônomas. A doutrina entende que, se a coação for apenas para influenciar o depoimento, sem fim econômico, é art. 344. Se houver exigência de vantagem, é extorsão.</p>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- ========== PARTE VII ========== -->
+            <section id="parte7">
+                <h2>PARTE VII – JURISPRUDÊNCIA RELEVANTE</h2>
+
+                <div class="card observacao">
+                    <div class="card-title">📌 Súmula 588 do STJ (Lesão corporal leve – substituição da pena)</div>
+                    <blockquote>“A prática de lesão corporal leve, inclusive em contexto de violência doméstica, admite a substituição da pena privativa de liberdade por restritiva de direitos ou multa, desde que presentes os requisitos do art. 44 do CP.”</blockquote>
+                    <p>Essa súmula é fundamental para responder questões sobre cabimento de substituição na lesão corporal leve, mesmo em situações de violência doméstica (anteriormente havia certa resistência, mas o STJ pacificou).</p>
+                </div>
+
+                <div class="card observacao">
+                    <div class="card-title">📌 STJ – HC 211.888/TO (Exercício arbitrário das próprias razões)</div>
+                    <p>O STJ, nesse precedente, firmou entendimento de que a utilização de violência para cobrar dívida legítima não configura roubo, mas sim o crime de exercício arbitrário das próprias razões (art. 345), desde que ausente o elemento subjetivo de assenhoramento de coisa alheia sem direito.</p>
+                </div>
+
+                <div class="card observacao">
+                    <div class="card-title">📌 STJ – Extorsão com restrição de liberdade</div>
+                    <p>Recentemente, o STJ tem decidido que a extorsão com restrição de liberdade (art. 158, § 3º) exige que a vantagem seja obtida da própria vítima; se obtida de terceiro, é extorsão mediante sequestro (art. 159). A distinção está no destinatário da exigência.</p>
+                </div>
+            </section>
+
+            <hr>
+
+            <!-- ========== PARTE VIII ========== -->
+            <section id="parte8">
+                <h2>PARTE VIII – DICAS FINAIS PARA A PROVA</h2>
+                <ol>
+                    <li><strong>Leia atentamente o enunciado</strong> e identifique a relação jurídica envolvida: se há agressão injusta, se o agente está defendendo alguém, se o fato ocorreu no exterior, etc.</li>
+                    <li><strong>Nunca confunda causas de justificação com dirimentes</strong>. Lembre-se: justificação = lícito; dirimente = ilícito, mas não culpável.</li>
+                    <li><strong>Para extraterritorialidade condicionada, decore as 5 condições</strong> e saiba que são cumulativas.</li>
+                    <li><strong>Em crimes funcionais</strong>, o particular pode ser responsabilizado se concorrer e souber da condição funcional, pois a qualidade de funcionário público é elementar.</li>
+                    <li><strong>Na lesão corporal</strong>, a substituição da pena só é possível na forma <strong>leve</strong> (caput), conforme Súmula 588.</li>
+                    <li><strong>No exercício arbitrário</strong>, a pretensão legítima é essencial; caso contrário, é roubo ou extorsão.</li>
+                    <li><strong>Na coação no processo</strong>, a expressão “chamado a intervir” amplia o momento da consumação para antes da formalização do processo.</li>
+                    <li><strong>Maus-tratos</strong>: tipo misto alternativo, crime único quando várias condutas contra a mesma vítima no mesmo contexto.</li>
+                    <li><strong>Extorsão vs. roubo</strong>: a colaboração da vítima é a chave. Se a vítima transfere Pix, é extorsão; se o agente subtrai diretamente, é roubo.</li>
+                    <li><strong>Extorsão mediante sequestro</strong>: exige exigência a terceiro.</li>
+                </ol>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p style="color:var(--text-muted); font-size:0.9rem;">
+                Este material é de uso exclusivo para fins educacionais e preparatórios para concursos públicos.<br>
+                Proibida a reprodução total ou parcial sem autorização.
+            </p>
+            <p style="margin-top:0.6rem; font-size:0.8rem; color:var(--text-muted);">
+                <a href="#topo" style="color:var(--gold);">↑ Voltar ao topo</a>
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>

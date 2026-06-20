@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Penal - Apostila Completa</title>
+    <style>
+        /* ========== RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #161b22;
+            border-radius: 28px;
+            padding: 2.5rem 2.2rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+            border: 1px solid #30363d;
+        }
+
+        /* ========== TIPOGRAFIA ========== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            color: #f0f6fc;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            letter-spacing: -0.5px;
+            margin-top: 0.2rem;
+            margin-bottom: 0.3rem;
+            border-bottom: 3px solid #30363d;
+            padding-bottom: 0.6rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-left: 6px solid #58a6ff;
+            padding-left: 1rem;
+            margin-top: 2.8rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #f0f6fc;
+            margin-top: 2rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #d2d8e0;
+            margin-top: 1.5rem;
+        }
+
+        h5 {
+            font-size: 1.05rem;
+            color: #b0b8c4;
+            margin-top: 1.2rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #c9d1d9;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        strong {
+            color: #f0f6fc;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(88, 166, 255, 0.25) 0%, rgba(88, 166, 255, 0.15) 100%);
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            color: #f0f6fc;
+            font-weight: 500;
+        }
+
+        .highlight-orange {
+            background: linear-gradient(120deg, rgba(240, 136, 62, 0.25) 0%, rgba(240, 136, 62, 0.10) 100%);
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            color: #f0883e;
+            font-weight: 500;
+        }
+
+        .highlight-green {
+            background: linear-gradient(120deg, rgba(63, 185, 80, 0.25) 0%, rgba(63, 185, 80, 0.10) 100%);
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            color: #3fb950;
+            font-weight: 500;
+        }
+
+        .highlight-red {
+            background: linear-gradient(120deg, rgba(248, 81, 73, 0.25) 0%, rgba(248, 81, 73, 0.10) 100%);
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            color: #f85149;
+            font-weight: 500;
+        }
+
+        /* ========== DIVISÓRIAS ========== */
+        .divider {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #30363d, #58a6ff, #30363d);
+            margin: 2.8rem 0;
+            border-radius: 4px;
+        }
+
+        .divider-light {
+            border: 0;
+            height: 1px;
+            background: #30363d;
+            margin: 2rem 0;
+        }
+
+        /* ========== SUMÁRIO ========== */
+        .toc {
+            background: #0d1117;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #30363d;
+        }
+
+        .toc h2 {
+            border-left: none;
+            padding-left: 0;
+            margin-top: 0;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 0.5rem;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.6rem 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .toc-grid a {
+            display: block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            color: #c9d1d9;
+            font-size: 0.95rem;
+            transition: background 0.15s;
+            border-left: 3px solid transparent;
+        }
+
+        .toc-grid a:hover {
+            background: #21262d;
+            text-decoration: none;
+            border-left-color: #58a6ff;
+        }
+
+        /* ========== BOXES ========== */
+        .box {
+            border-radius: 14px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.4rem 0;
+            border-left: 6px solid;
+            background: #0d1117;
+        }
+
+        .box-tip {
+            border-color: #3fb950;
+            background: rgba(63, 185, 80, 0.06);
+        }
+        .box-tip::before {
+            content: "💡 DICA: ";
+            font-weight: 700;
+            color: #3fb950;
+        }
+
+        .box-important {
+            border-color: #f0883e;
+            background: rgba(240, 136, 62, 0.06);
+        }
+        .box-important::before {
+            content: "⚠️ OBSERVAÇÃO: ";
+            font-weight: 700;
+            color: #f0883e;
+        }
+
+        .box-warning {
+            border-color: #f85149;
+            background: rgba(248, 81, 73, 0.06);
+        }
+        .box-warning::before {
+            content: "❗ ATENÇÃO: ";
+            font-weight: 700;
+            color: #f85149;
+        }
+
+        .box-concept {
+            border-color: #58a6ff;
+            background: rgba(88, 166, 255, 0.06);
+        }
+        .box-concept::before {
+            content: "📘 CONCEITO: ";
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .box-example {
+            border-color: #d2a8ff;
+            background: rgba(210, 168, 255, 0.06);
+        }
+        .box-example::before {
+            content: "📌 EXEMPLO: ";
+            font-weight: 700;
+            color: #d2a8ff;
+        }
+
+        .box-callout {
+            border-color: #8b949e;
+            background: rgba(139, 148, 158, 0.06);
+            border-left-color: #8b949e;
+        }
+
+        /* ========== CITAÇÕES ========== */
+        blockquote {
+            background: #0d1117;
+            border-left: 6px solid #58a6ff;
+            padding: 1rem 1.8rem;
+            margin: 1.4rem 0;
+            border-radius: 0 14px 14px 0;
+            font-style: italic;
+            color: #d2d8e0;
+            font-size: 1.05rem;
+        }
+
+        blockquote cite {
+            display: block;
+            margin-top: 0.4rem;
+            font-size: 0.9rem;
+            color: #8b949e;
+            font-style: normal;
+        }
+
+        /* ========== TABELAS ========== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.6rem 0;
+            border-radius: 14px;
+            border: 1px solid #30363d;
+            background: #0d1117;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 500px;
+        }
+
+        thead {
+            background: #21262d;
+        }
+
+        th {
+            color: #f0f6fc;
+            font-weight: 600;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid #30363d;
+        }
+
+        td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #21262d;
+            color: #c9d1d9;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: #1c2128;
+        }
+
+        .table-wrap caption {
+            caption-side: bottom;
+            padding: 0.6rem 0.2rem;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        /* ========== LISTAS ========== */
+        ul,
+        ol {
+            padding-left: 1.8rem;
+            margin: 0.8rem 0 1.2rem 0;
+            color: #c9d1d9;
+        }
+
+        ul li,
+        ol li {
+            margin-bottom: 0.3rem;
+        }
+
+        ul ul,
+        ol ol {
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        /* ========== CARDS ========== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin: 1.4rem 0;
+        }
+
+        .card {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            padding: 1.2rem 1.4rem;
+            transition: border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: #58a6ff;
+        }
+
+        .card h5 {
+            margin-top: 0;
+            color: #f0f6fc;
+            font-size: 1.1rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ========== SVG ========== */
+        .svg-container {
+            background: #0d1117;
+            border-radius: 18px;
+            border: 1px solid #30363d;
+            padding: 0.5rem;
+            margin: 1.8rem 0;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .svg-container svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* ========== BACK TO TOP ========== */
+        .back-top {
+            display: inline-block;
+            margin-top: 2.5rem;
+            padding: 0.6rem 1.6rem;
+            background: #21262d;
+            color: #c9d1d9;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            border: 1px solid #30363d;
+            transition: background 0.2s;
+        }
+
+        .back-top:hover {
+            background: #30363d;
+            text-decoration: none;
+        }
+
+        /* ========== RESPONSIVO ========== */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.8rem;
+                font-size: 15px;
+            }
+            .container {
+                padding: 1.5rem 1.2rem;
+                border-radius: 20px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+                padding-left: 0.7rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            table {
+                font-size: 0.85rem;
+                min-width: 400px;
+            }
+            .box {
+                padding: 1rem 1.2rem;
+            }
+            blockquote {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.98rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 1rem 0.8rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .box {
+                padding: 0.8rem 1rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            body {
+                font-size: 17px;
+                padding: 1.8rem 2rem;
+            }
+            .container {
+                padding: 2.2rem 2.5rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* ========== MISC ========== */
+        .subtitle {
+            color: #8b949e;
+            font-size: 1.1rem;
+            margin-top: -0.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 0.8rem;
+        }
+
+        .mono {
+            font-family: 'SF Mono', 'Consolas', monospace;
+            font-size: 0.9em;
+            background: #0d1117;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            border: 1px solid #30363d;
+        }
+
+        .small-note {
+            font-size: 0.9rem;
+            color: #8b949e;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #21262d;
+            font-size: 0.95rem;
+            color: #8b949e;
+            text-align: center;
+        }
+
+        /* Ajuste para listas dentro de boxes */
+        .box ul,
+        .box ol {
+            margin-top: 0.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Evita quebra de linha em palavras longas */
+        .break-word {
+            word-break: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ======== HEADER ======== -->
+        <header>
+            <h1>⚖️ DIREITO PENAL — APOSTILA COMPLETA</h1>
+            <div class="subtitle">Módulo: Teoria Geral do Crime e Crimes em Espécie</div>
+            <div style="color:#8b949e; font-size:1rem; margin-bottom:0.5rem;">Material para Concursos de Técnico Judiciário — Área Judiciária</div>
+        </header>
+
+        <!-- ======== SUMÁRIO ======== -->
+        <nav class="toc" aria-label="Sumário">
+            <h2>📑 Sumário</h2>
+            <div class="toc-grid">
+                <a href="#parte1">Parte I — Fundamentos</a>
+                <a href="#principios">1. Princípios Penais</a>
+                <a href="#teoria-conduta">2. Teoria da Conduta</a>
+                <a href="#inimputabilidade">3. Inimputabilidade</a>
+                <a href="#excludentes">4. Excludentes de Ilicitude</a>
+                <a href="#parte2">Parte II — Crimes em Espécie</a>
+                <a href="#crimes-administracao">5. Crimes contra a Administração</a>
+                <a href="#crimes-fe-publica">6. Crimes contra a Fé Pública</a>
+                <a href="#crimes-liberdade">7. Crimes contra a Liberdade</a>
+                <a href="#homicidio">8. Homicídio</a>
+                <a href="#extorsao">9. Extorsão mediante Sequestro</a>
+                <a href="#concurso-pessoas">10. Concurso de Pessoas</a>
+                <a href="#erros-comuns">11. Erros Comuns em Provas</a>
+                <a href="#mapa-mental">12. Mapa Mental</a>
+                <a href="#fluxo-analise">13. Fluxo de Análise</a>
+                <a href="#quadro-resumo">14. Quadro Resumo</a>
+                <a href="#dicas-finais">15. Dicas Finais</a>
+            </div>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- ======== PARTE I ======== -->
+        <section id="parte1">
+            <h2>PARTE I — FUNDAMENTOS DA TEORIA DO CRIME</h2>
+        </section>
+
+        <!-- ======== 1. PRINCÍPIOS ======== -->
+        <section id="principios">
+            <h2>1. PRINCÍPIOS PENAIS FUNDAMENTAIS</h2>
+
+            <h3>1.1. Princípio da Legalidade <span style="font-weight:400;font-size:0.9rem;color:#8b949e;">(Nullum Crimen, Nulla Poena Sine Lege)</span></h3>
+            <p>O princípio da legalidade constitui a mais importante garantia do Direito Penal, encontrando previsão no art. 5º, inciso XXXIX, da Constituição Federal: <span class="highlight">"não há crime sem lei anterior que o defina, nem pena sem prévia cominação legal"</span>.</p>
+            <p>Este princípio, também conhecido como <strong>princípio da reserva legal</strong>, estabelece que somente a lei pode criar tipos penais e cominar penas. Nenhuma outra fonte normativa (medidas provisórias, decretos, portarias, costumes) pode inovar em matéria penal incriminadora.</p>
+
+            <h4>Subprincípios Decorrentes da Legalidade</h4>
+            <p>A doutrina extrai dois importantes subprincípios da legalidade penal, que são frequentemente cobrados em concursos:</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Subprincípio</th><th>Conceito</th><th>Fundamento</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Irretroatividade da lei penal maléfica</strong> <span class="small-note">(Lex Praevia)</span></td>
+                            <td>A norma penal incriminadora não pode retroagir para atingir fatos ocorridos antes de sua vigência. Só se aplica a fatos futuros.</td>
+                            <td>Art. 5º, XL, CF + art. 2º, CP</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Taxatividade</strong> <span class="small-note">(Lex Certa)</span></td>
+                            <td>A lei penal deve ser clara, precisa e determinada, não podendo conter expressões dúbias ou imprecisas que dificultem sua compreensão.</td>
+                            <td>Garantia contra a arbitrariedade estatal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="box box-tip">
+                <strong>DICA DE PROVA (FCC):</strong> É comum a banca cobrar a origem desses subprincípios, perguntando de qual princípio maior eles decorrem. A resposta sempre é: <span class="highlight">princípio da legalidade</span>.
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 2. TEORIA DA CONDUTA ======== -->
+        <section id="teoria-conduta">
+            <h2>2. TEORIA DA CONDUTA</h2>
+
+            <h3>2.1. Conceito de Conduta no Direito Penal</h3>
+            <p>A conduta é o primeiro elemento do fato típico. Para que haja crime, é necessário que exista um comportamento humano, voluntário e dirigido a uma finalidade.</p>
+            <p>A doutrina majoritária adota a <strong>teoria finalista da ação</strong>, segundo a qual a conduta é um comportamento humano voluntário, com finalidade (direcionamento a um resultado pretendido).</p>
+
+            <h3>2.2. Causas de Exclusão da Conduta</h3>
+
+            <h4>2.2.1. Coação Física Irresistível <span class="small-note">(Vis Absoluta)</span></h4>
+            <p>Ocorre quando o agente é utilizado como mero instrumento, sem qualquer possibilidade de resistência à força física empregada por terceiro.</p>
+            <p><strong>Consequência:</strong> <span class="highlight-red">EXCLUI A CONDUTA</span> → O fato é <span class="highlight-red">ATÍPICO</span>.</p>
+
+            <div class="box box-example">
+                <strong>Exemplo prático:</strong> João é agarrado por dois homens que, utilizando sua força, movem sua mão para disparar uma arma contra Pedro. João não teve qualquer controle sobre o ato, agindo como mero instrumento. Neste caso, não há conduta, tornando o fato atípico.
+            </div>
+
+            <h4>2.2.2. Coação Moral Irresistível <span class="small-note">(Vis Compulsiva)</span></h4>
+            <p>Diferentemente da coação física, na coação moral o agente ainda possui vontade, mas esta é vencida por grave ameaça (coação). O agente atua, mas sob pressão psicológica insuportável.</p>
+            <p><strong>Consequência:</strong> <span class="highlight-orange">EXCLUI A CULPABILIDADE</span> (art. 22, CP), mas o fato permanece TÍPICO e ILÍCITO.</p>
+
+            <div class="box box-example">
+                <strong>Exemplo prático:</strong> Maria, sob ameaça de morte contra sua filha, é forçada a praticar um furto. Maria tem consciência do que faz, mas sua vontade foi vencida pela coação moral. Responde pelo crime? Não, porque a coação moral irresistível exclui a culpabilidade. Contudo, o fato continua sendo típico (furto) e ilícito.
+            </div>
+
+            <h4>2.3. Quadro Comparativo: Coação Física × Coação Moral</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Aspecto</th><th>Coação Física Irresistível (Vis Absoluta)</th><th>Coação Moral Irresistível (Vis Compulsiva)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Natureza</td><td>Força física que aniquila a vontade</td><td>Ameaça grave que vence a vontade</td></tr>
+                        <tr><td>Vontade do agente</td><td>Inexistente (age como instrumento)</td><td>Existe, mas vencida pela coação</td></tr>
+                        <tr><td>Exclusão</td><td>Da própria <strong>CONDUTA</strong></td><td>Da <strong>CULPABILIDADE</strong></td></tr>
+                        <tr><td>Consequência</td><td>Fato <span class="highlight-red">ATÍPICO</span></td><td>Fato TÍPICO e ILÍCITO, mas <span class="highlight-orange">NÃO CULPÁVEL</span></td></tr>
+                        <tr><td>Fundamento legal</td><td>Art. 13, CP (teoria da ação)</td><td>Art. 22, CP</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="box box-warning">
+                <strong>PEGADINHA DE BANCA (FCC):</strong> A FCC adora cobrar essa distinção. O examinador descreve uma situação de coação e pergunta qual a consequência. O candidato deve atentar para o tipo de coação: se a vontade foi aniquilada (vis absoluta), o fato é atípico; se a vontade foi vencida por ameaça (vis compulsiva), exclui-se a culpabilidade.
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 3. INIMPUTABILIDADE ======== -->
+        <section id="inimputabilidade">
+            <h2>3. INIMPUTABILIDADE E MEDIDA DE SEGURANÇA</h2>
+
+            <h3>3.1. Conceito de Inimputabilidade</h3>
+            <p>A inimputabilidade é causa de exclusão da culpabilidade, prevista no <strong>art. 26 do Código Penal</strong>, que dispõe:</p>
+            <blockquote>
+                “É isento de pena o agente que, por doença mental ou desenvolvimento mental incompleto ou retardado, era, ao tempo da ação ou da omissão, inteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento.”
+            </blockquote>
+
+            <h3>3.2. Requisitos da Inimputabilidade</h3>
+            <p>Para que o agente seja considerado inimputável, devem estar presentes, <strong>cumulativamente</strong>:</p>
+            <ol>
+                <li><strong>Doença mental</strong> ou <strong>desenvolvimento mental incompleto/retardado</strong> (critério biológico);</li>
+                <li><strong>Incapacidade</strong>, ao tempo da ação, de:
+                    <ul>
+                        <li>Entender o caráter ilícito do fato (critério psicológico), OU</li>
+                        <li>Determinar-se de acordo com esse entendimento (critério volitivo).</li>
+                    </ul>
+                </li>
+            </ol>
+            <div class="box box-important">
+                O sistema adotado pelo CP é o <strong>critério biopsicológico</strong>, que exige a presença simultânea do fator biológico (doença) e do fator psicológico (incapacidade).
+            </div>
+
+            <h3>3.3. Absolvição Imprópria</h3>
+            <p>Quando o juiz reconhece a inimputabilidade do agente, <strong>NÃO</strong> o absolve simplesmente. Ocorre a chamada <strong>absolvição imprópria</strong> (art. 97, CP), que significa:</p>
+            <ul>
+                <li>O agente é <strong>absolvido da pena</strong> (porque inimputável);</li>
+                <li>Mas, se presente <strong>periculosidade</strong>, deverá receber <strong>medida de segurança</strong>.</li>
+            </ul>
+
+            <h4>O que é periculosidade?</h4>
+            <p>Periculosidade é a probabilidade de o agente voltar a praticar crimes. Nos termos do art. 97, §1º, do CP, a periculosidade do inimputável é <strong>presumida</strong> quando o fato é cometido com violência ou grave ameaça.</p>
+
+            <h3>3.4. Caso Concreto: Aplicação da Absolvição Imprópria</h3>
+            <div class="box box-example">
+                <strong>Situação hipotética:</strong> Gustavo, portador de transtorno mental grave que o tornava inteiramente incapaz de entender o caráter ilícito do fato ao tempo da ação, praticou lesão corporal em contexto de violência doméstica. O juiz o absolveu, mas aplicou medida de segurança.<br><br>
+                <strong>Pergunta:</strong> A decisão está correta?<br>
+                <strong>Resposta:</strong> <span class="highlight-green">SIM</span>. Trata-se de absolvição imprópria: o agente é inimputável nos termos do art. 26 do CP (isento de pena) e, diante da periculosidade (crime cometido com violência), deve receber medida de segurança conforme art. 97 do CP. A inimputabilidade não impede a aplicação da medida de segurança.
+            </div>
+
+            <div class="box box-concept">
+                <strong>ESQUEMA DE FIXAÇÃO:</strong>
+                <pre style="background:#0d1117;padding:0.8rem;border-radius:10px;border:1px solid #30363d;color:#c9d1d9;margin-top:0.5rem;font-family:inherit;white-space:pre-wrap;word-break:break-word;">
+Inimputabilidade (art. 26) → Isenção de pena (absolvição imprópria)
+                         ↓
+                  Se PERIGOSO → Medida de segurança (art. 97)
+                  Se NÃO PERIGOSO → Absolvição pura (sem medida)
+                </pre>
+            </div>
+
+            <h3>3.5. Tabela Resumo: Causas de Exclusão</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Causa de Exclusão</th><th>Elemento excluído</th><th>Consequência</th><th>Fundamento</th></tr></thead>
+                    <tbody>
+                        <tr><td>Coação física irresistível</td><td><span class="highlight-red">CONDUTA</span></td><td>Fato atípico</td><td>Teoria da ação</td></tr>
+                        <tr><td>Coação moral irresistível</td><td><span class="highlight-orange">CULPABILIDADE</span></td><td>Fato típico e ilícito, mas não culpável</td><td>Art. 22, CP</td></tr>
+                        <tr><td>Legítima defesa</td><td><span class="highlight-green">ILICITUDE</span></td><td>Fato típico, mas não ilícito</td><td>Art. 23, II, CP</td></tr>
+                        <tr><td>Inimputabilidade</td><td><span class="highlight-orange">CULPABILIDADE</span></td><td>Medida de segurança (absolvição imprópria)</td><td>Art. 26, CP</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 4. EXCLUDENTES ======== -->
+        <section id="excludentes">
+            <h2>4. EXCLUDENTES DE ILICITUDE</h2>
+
+            <h3>4.1. Conceito e Fundamento Legal</h3>
+            <p>A ilicitude (ou antijuridicidade) é um dos elementos do fato típico. Uma conduta pode ser típica (enquadrar-se em um tipo penal), mas não ser ilícita quando amparada por uma causa de exclusão da ilicitude.</p>
+            <p>O <strong>art. 23 do Código Penal</strong> estabelece as causas excludentes da ilicitude:</p>
+            <blockquote>
+                “Não há crime quando o agente pratica o fato:<br>
+                I — em estado de necessidade;<br>
+                II — em legítima defesa;<br>
+                III — em estrito cumprimento de dever legal ou no exercício regular de direito.”
+            </blockquote>
+
+            <h3>4.2. Legítima Defesa (Art. 25, CP)</h3>
+            <p>A legítima defesa é a mais cobrada das excludentes em concursos. Seu conceito legal está no <strong>art. 25 do CP</strong>:</p>
+            <blockquote>
+                “Entende-se em legítima defesa quem, usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente, a direito seu ou de outrem.”
+            </blockquote>
+
+            <h4>Requisitos da Legítima Defesa:</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Requisito</th><th>Explicação</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Agressão injusta</strong></td><td>A agressão deve ser contrária ao direito, sem justa causa</td></tr>
+                        <tr><td><strong>Agressão atual ou iminente</strong></td><td>Atual = está ocorrendo; Iminente = prestes a ocorrer (não admite agressão passada ou futura)</td></tr>
+                        <tr><td><strong>Defesa de direito próprio ou de terceiro</strong></td><td>Pode ser usada para proteger qualquer direito (patrimonial, moral, físico etc.)</td></tr>
+                        <tr><td><strong>Meios necessários</strong></td><td>Os meios empregados devem ser adequados para repelir a agressão</td></tr>
+                        <tr><td><strong>Moderação</strong></td><td>Os meios devem ser usados com proporcionalidade (não pode haver excesso)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>4.3. Caso Concreto: Legítima Defesa em Situação de Roubo</h3>
+            <div class="box box-example">
+                <strong>Situação hipotética:</strong> Nino, ao ser vítima de uma tentativa de roubo com arma de fogo, desfere dois socos no agressor e o desarma, usando moderadamente os meios necessários.<br><br>
+                <strong>Pergunta:</strong> Por qual causa de exclusão de ilicitude ele age e qual o fundamento legal?<br>
+                <strong>Resposta:</strong> Nino age sob <span class="highlight">legítima defesa</span>, prevista no art. 25 do CP. A agressão injusta (tentativa de roubo) é atual, e Nino usou moderadamente dos meios necessários para repelir a agressão. A legítima defesa exclui a ilicitude (art. 23, II, CP).
+            </div>
+
+            <div class="box box-important">
+                <strong>OBSERVAÇÃO IMPORTANTE:</strong> A legítima defesa NÃO se confunde com:
+                <ul>
+                    <li><strong>Estado de necessidade</strong> (onde o perigo não deriva de conduta humana);</li>
+                    <li><strong>Estrito cumprimento do dever legal</strong> (agente público agindo em função);</li>
+                    <li><strong>Exercício regular de direito</strong> (atividade permitida pela lei).</li>
+                </ul>
+            </div>
+
+            <h3>4.4. Efeitos da Excludente de Ilicitude</h3>
+            <p>Quando o agente age amparado por uma causa excludente da ilicitude:</p>
+            <ul>
+                <li>O fato continua sendo <strong>TÍPICO</strong> (enquadra-se na descrição legal);</li>
+                <li>Mas não é <strong>ILÍCITO</strong> (é justificado);</li>
+                <li>Consequentemente, não há <strong>CRIME</strong> (crime = fato típico + ilícito + culpável).</li>
+            </ul>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== PARTE II ======== -->
+        <section id="parte2">
+            <h2>PARTE II — CRIMES EM ESPÉCIE</h2>
+        </section>
+
+        <!-- ======== 5. CRIMES CONTRA A ADMINISTRAÇÃO ======== -->
+        <section id="crimes-administracao">
+            <h2>5. CRIMES CONTRA A ADMINISTRAÇÃO PÚBLICA</h2>
+
+            <h3>5.1. Visão Geral dos Crimes Contra a Administração</h3>
+            <p>Os crimes contra a administração pública estão previstos no Título XI do Código Penal (arts. 312 a 359-H). Subdividem-se em:</p>
+            <ol>
+                <li><strong>Crimes praticados por funcionário público contra a administração em geral</strong> (arts. 312 a 326);</li>
+                <li><strong>Crimes praticados por particular contra a administração em geral</strong> (arts. 327 a 337);</li>
+                <li><strong>Crimes contra a administração da justiça</strong> (arts. 338 a 359).</li>
+            </ol>
+
+            <h3>5.2. Resistência (Art. 329, CP)</h3>
+            <blockquote>
+                “Opor-se à execução de ato legal, mediante violência ou ameaça a funcionário público competente para executá-lo ou a quem lhe esteja prestando auxílio:”<br>
+                <cite>Pena — reclusão, de 2 (dois) a 4 (quatro) anos.</cite>
+            </blockquote>
+
+            <h4>Elementos do Crime de Resistência:</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Elemento</th><th>Descrição</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Sujeito ativo</strong></td><td>Qualquer pessoa (crime comum)</td></tr>
+                        <tr><td><strong>Sujeito passivo</strong></td><td>Funcionário público ou quem lhe presta auxílio</td></tr>
+                        <tr><td><strong>Núcleo do tipo</strong></td><td>“Opor-se” (resistir, recusar a colaboração)</td></tr>
+                        <tr><td><strong>Elementar</strong></td><td><span class="highlight-red">Violência ou ameaça</span> contra o funcionário</td></tr>
+                        <tr><td><strong>Contexto</strong></td><td>Durante a execução de ato legal</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box box-important">A violência ou ameaça é elementar do tipo. Sem ela, não há crime de resistência.</div>
+
+            <h3>5.3. Desobediência (Art. 330, CP)</h3>
+            <blockquote>
+                “Desobedecer a ordem legal de funcionário público:”<br>
+                <cite>Pena — detenção, de 15 (quinze) dias a 6 (seis) meses, e multa.</cite>
+            </blockquote>
+
+            <h4>Elementos do Crime de Desobediência:</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Elemento</th><th>Descrição</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Sujeito ativo</strong></td><td>Qualquer pessoa</td></tr>
+                        <tr><td><strong>Sujeito passivo</strong></td><td>Funcionário público</td></tr>
+                        <tr><td><strong>Núcleo do tipo</strong></td><td>“Desobedecer” (descumprir, não acatar)</td></tr>
+                        <tr><td><strong>Contexto</strong></td><td>Ordem legal de funcionário público</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box box-tip">
+                <strong>DIFERENÇA CRUCIAL:</strong> A desobediência <span class="highlight-orange">NÃO</span> exige violência ou ameaça. Basta o descumprimento da ordem, sem agressão.
+            </div>
+
+            <h3>5.4. Desacato (Art. 331, CP)</h3>
+            <blockquote>
+                “Desacatar funcionário público no exercício da função ou em razão dela:”<br>
+                <cite>Pena — detenção, de 6 (seis) meses a 2 (dois) anos, ou multa.</cite>
+            </blockquote>
+
+            <h4>Elementos do Crime de Desacato:</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Elemento</th><th>Descrição</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Sujeito ativo</strong></td><td>Qualquer pessoa</td></tr>
+                        <tr><td><strong>Sujeito passivo</strong></td><td>Funcionário público</td></tr>
+                        <tr><td><strong>Núcleo do tipo</strong></td><td>Ofender (a dignidade ou o decoro)</td></tr>
+                        <tr><td><strong>Contexto</strong></td><td>No exercício da função ou em razão dela</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box box-important">
+                <strong>OBSERVAÇÃO HISTÓRICA:</strong> O crime de desacato tem sido objeto de controvérsia doutrinária e jurisprudencial, com correntes defendendo sua inconstitucionalidade por violação à liberdade de expressão. Apesar disso, ainda é previsto no CP e cobrado em concursos.
+            </div>
+
+            <h3>5.5. Quadro Comparativo: Resistência × Desobediência × Desacato</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Aspecto</th><th>Resistência (art. 329)</th><th>Desobediência (art. 330)</th><th>Desacato (art. 331)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Conduta</td><td>Opor-se (resistir ativamente)</td><td>Desobedecer (não cumprir)</td><td>Ofender (dignidade/decoro)</td></tr>
+                        <tr><td>Exige violência/ameaça?</td><td><span class="highlight-red">SIM</span> (elementar)</td><td><span class="highlight-orange">NÃO</span></td><td><span class="highlight-orange">NÃO</span></td></tr>
+                        <tr><td>Contexto</td><td>Execução de ato legal</td><td>Ordem legal</td><td>No exercício da função</td></tr>
+                        <tr><td>Pena</td><td>Reclusão 2–4 anos</td><td>Detenção 15d–6m + multa</td><td>Detenção 6m–2a ou multa</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>5.6. Caso Concreto: Distinção entre Resistência e Desobediência</h3>
+            <div class="box box-example">
+                <strong>Situação 1:</strong> Um manifestante se acorrenta a uma árvore em protesto, sem violência ou ameaça, e os funcionários públicos presentes não lhe dão qualquer determinação.<br><br>
+                <strong>Análise:</strong> A conduta é <span class="highlight-red">penalmente atípica</span>, pois:
+                <ul>
+                    <li>Para resistência (art. 329): falta a violência/ameaça;</li>
+                    <li>Para desobediência (art. 330): falta a ordem legal.</li>
+                </ul>
+                Portanto, não há crime.
+            </div>
+            <div class="box box-example">
+                <strong>Situação 2:</strong> Um motociclista, ao ser abordado por policiais em blitz, foge sem agredir ninguém.<br><br>
+                <strong>Análise:</strong> Trata-se de <span class="highlight">desobediência</span> (art. 330), pois houve descumprimento da ordem legal (parar o veículo) sem violência ou ameaça. O fato de ter fugido, sem agressão, não configura resistência.
+            </div>
+
+            <div class="box box-tip">
+                <strong>MACETE PARA PROVAS (FCC):</strong>
+                <ul>
+                    <li><strong>Resistência</strong> = SEMPRE exige violência ou ameaça (é a “resistência ativa”)</li>
+                    <li><strong>Desobediência</strong> = mero descumprimento de ordem (é a “resistência passiva”)</li>
+                    <li><strong>Fuga em abordagem policial sem agressão</strong> = DESOBEDIÊNCIA</li>
+                </ul>
+            </div>
+
+            <h3>5.7. Corrupção Ativa (Art. 333, CP)</h3>
+            <blockquote>
+                “Oferecer ou prometer vantagem indevida a funcionário público, para determiná-lo a praticar, omitir ou retardar ato de ofício:”<br>
+                <cite>Pena — reclusão, de 2 (dois) a 12 (doze) anos, e multa.</cite>
+            </blockquote>
+            <h4>Características:</h4>
+            <ul>
+                <li><strong>Sujeito ativo:</strong> Particular (qualquer pessoa)</li>
+                <li><strong>Sujeito passivo:</strong> Funcionário público</li>
+                <li><strong>Núcleo do tipo:</strong> “Oferecer” ou “prometer” vantagem indevida</li>
+                <li><strong>Elemento subjetivo:</strong> Dolo específico (determinar o funcionário a agir)</li>
+            </ul>
+            <div class="box box-important">O crime se consuma com o simples oferecimento ou promessa, independentemente de o funcionário aceitar ou não.</div>
+
+            <h3>5.8. Corrupção Passiva (Art. 317, CP)</h3>
+            <blockquote>
+                “Solicitar ou receber, para si ou para outrem, direta ou indiretamente, ainda que fora da função ou antes de assumi-la, mas em razão dela, vantagem indevida, ou aceitar promessa de tal vantagem:”<br>
+                <cite>Pena — reclusão, de 2 (dois) a 12 (doze) anos, e multa.</cite>
+            </blockquote>
+            <h4>Características:</h4>
+            <ul>
+                <li><strong>Sujeito ativo:</strong> Funcionário público (crime próprio)</li>
+                <li><strong>Sujeito passivo:</strong> Estado (administração pública)</li>
+                <li><strong>Núcleo do tipo:</strong> “Solicitar”, “receber” ou “aceitar promessa”</li>
+                <li><strong>Elemento subjetivo:</strong> Dolo</li>
+            </ul>
+
+            <h3>5.9. Quadro Comparativo: Corrupção Ativa × Corrupção Passiva</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Aspecto</th><th>Corrupção Ativa (art. 333)</th><th>Corrupção Passiva (art. 317)</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Quem age?</strong></td><td>Particular</td><td>Funcionário público</td></tr>
+                        <tr><td><strong>Conduta típica</strong></td><td>OFERECER ou PROMETER</td><td>SOLICITAR ou RECEBER</td></tr>
+                        <tr><td><strong>Iniciativa</strong></td><td>Do particular</td><td>Do funcionário</td></tr>
+                        <tr><td><strong>Crime</strong></td><td>Comum</td><td>Próprio (funcionário público)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="box box-tip">
+                <strong>MACETE PARA PROVAS:</strong>
+                <ul>
+                    <li><strong>Corrupção ATIVA</strong> = particular AGE (oferece)</li>
+                    <li><strong>Corrupção PASSIVA</strong> = funcionário PEDE ou RECEBE</li>
+                </ul>
+            </div>
+
+            <div class="box box-example">
+                <strong>CASO CONCRETO:</strong> Luiz ofereceu dinheiro a um policial para que este deixasse de realizar uma fiscalização em seu estabelecimento. O policial recusou a proposta.<br><br>
+                <strong>Análise:</strong> Luiz cometeu <span class="highlight">corrupção ativa</span> (art. 333), pois ofereceu vantagem indevida a funcionário público. O crime se consumou com o oferecimento, independentemente da recusa do policial.
+            </div>
+
+            <h3>5.10. Peculato (Art. 312, CP)</h3>
+            <blockquote>
+                “Apropriar-se o funcionário público de dinheiro, valor ou qualquer outro bem móvel, público ou particular, de que tem a posse em razão do cargo, ou desviá-lo, em proveito próprio ou alheio:”<br>
+                <cite>Pena — reclusão, de 2 (dois) a 12 (doze) anos, e multa.</cite>
+            </blockquote>
+
+            <h4>Modalidades de Peculato:</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Modalidade</th><th>Descrição</th><th>Exemplo</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Apropriação</strong></td><td>O funcionário se apropria de bem que está sob sua posse em razão do cargo</td><td>Caio se apropria de um automóvel que estava sob sua guarda como servidor</td></tr>
+                        <tr><td><strong>Desvio</strong></td><td>O funcionário desvia o bem para finalidade diversa da prevista</td><td>Funcionário usa dinheiro público para pagar dívida pessoal</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Elementos do Peculato:</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Elemento</th><th>Descrição</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Sujeito ativo</strong></td><td>Funcionário público (crime próprio)</td></tr>
+                        <tr><td><strong>Sujeito passivo</strong></td><td>Estado (bem público) ou particular (bem particular sob posse do Estado)</td></tr>
+                        <tr><td><strong>Objeto material</strong></td><td>Dinheiro, valor ou outro bem móvel</td></tr>
+                        <tr><td><strong>Posse</strong></td><td>Em razão do cargo (posse direta, não mera detenção)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="box box-example">
+                <strong>CASO CONCRETO:</strong> Caio, funcionário público, se apropria de um automóvel que estava sob sua posse em razão do cargo e tenta vendê-lo no mercado paralelo.<br><br>
+                <strong>Análise:</strong> Caio cometeu o crime de <span class="highlight">peculato na modalidade apropriação</span>, previsto no art. 312, caput, do CP. A conduta não se confunde com:
+                <ul>
+                    <li><strong>Exercício arbitrário das próprias razões</strong> (art. 345);</li>
+                    <li><strong>Advocacia administrativa</strong> (art. 321);</li>
+                    <li><strong>Excesso de exação</strong> (art. 316).</li>
+                </ul>
+            </div>
+            <div class="box box-important">O peculato é crime <strong>formal</strong> (consuma-se com a apropriação ou desvio, independentemente do efetivo prejuízo) e <strong>doloso</strong> (não admite modalidade culposa, salvo a forma prevista no §2º).</div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 6. CRIMES CONTRA A FÉ PÚBLICA ======== -->
+        <section id="crimes-fe-publica">
+            <h2>6. CRIMES CONTRA A FÉ PÚBLICA</h2>
+
+            <h3>6.1. Falsa Identidade (Art. 307, CP)</h3>
+            <blockquote>
+                “Atribuir-se ou atribuir a terceiro falsa identidade para obter vantagem, em proveito próprio ou alheio, ou para causar dano a outrem:”<br>
+                <cite>Pena — reclusão, de 2 (dois) a 5 (cinco) anos, e multa.</cite>
+            </blockquote>
+
+            <h4>Elementos da Falsa Identidade:</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Elemento</th><th>Descrição</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Sujeito ativo</strong></td><td>Qualquer pessoa</td></tr>
+                        <tr><td><strong>Núcleo do tipo</strong></td><td>Atribuir-se ou atribuir a terceiro falsa identidade</td></tr>
+                        <tr><td><strong>Elemento subjetivo</strong></td><td>Dolo específico: obter vantagem ou causar dano</td></tr>
+                        <tr><td><strong>Objeto</strong></td><td>Não exige documento falso</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box box-important">A falsa identidade <span class="highlight-orange">NÃO EXIGE</span> documento falso. Basta a atribuição de identidade falsa, mesmo que verbalmente.</div>
+
+            <h3>6.2. Falsidade Ideológica (Art. 299, CP)</h3>
+            <blockquote>
+                “Omitir, em documento público ou particular, declaração que dele devia constar, ou nele inserir ou fazer inserir declaração falsa ou diversa da que devia ser escrita, com o fim de prejudicar direito, criar obrigação ou alterar a verdade sobre fato juridicamente relevante:”<br>
+                <cite>Pena — reclusão, de 1 (um) a 5 (cinco) anos, e multa.</cite>
+            </blockquote>
+
+            <h4>Elementos da Falsidade Ideológica:</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Elemento</th><th>Descrição</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Sujeito ativo</strong></td><td>Qualquer pessoa (crime comum)</td></tr>
+                        <tr><td><strong>Núcleo do tipo</strong></td><td>Omitir declaração devida ou inserir declaração falsa</td></tr>
+                        <tr><td><strong>Objeto</strong></td><td>Documento público ou particular</td></tr>
+                        <tr><td><strong>Elemento subjetivo</strong></td><td>Dolo específico: prejudicar direito, criar obrigação ou alterar a verdade</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box box-important">A falsidade ideológica <span class="highlight-red">SEMPRE ENVOLVE DOCUMENTO</span>.</div>
+
+            <h3>6.3. Quadro Comparativo: Falsa Identidade × Falsidade Ideológica</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Aspecto</th><th>Falsa Identidade (art. 307)</th><th>Falsidade Ideológica (art. 299)</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Exige documento?</strong></td><td><span class="highlight-orange">NÃO</span></td><td><span class="highlight-red">SIM</span></td></tr>
+                        <tr><td><strong>Conduta</strong></td><td>Atribuir falsa identidade</td><td>Inserir/omitir declaração falsa em documento</td></tr>
+                        <tr><td><strong>Finalidade</strong></td><td>Obter vantagem ou causar dano</td><td>Prejudicar direito, criar obrigação ou alterar a verdade</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="box box-example">
+                <strong>CASO CONCRETO:</strong> José Bonifácio se passou por Pedro de Alcântara em uma audiência para obter vantagem.<br><br>
+                <strong>Análise:</strong> José cometeu <span class="highlight">falsa identidade</span> (art. 307), pois atribuiu a si falsa identidade para obter vantagem, sem necessidade de documento falso.
+            </div>
+            <div class="box box-example">
+                <strong>CASO CONCRETO 2:</strong> Maria, ao preencher um formulário público, insere declaração falsa sobre sua renda para obter benefício previdenciário.<br><br>
+                <strong>Análise:</strong> Maria cometeu <span class="highlight">falsidade ideológica</span> (art. 299), pois inseriu declaração falsa em documento público, alterando a verdade sobre fato juridicamente relevante.
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 7. CRIMES CONTRA A LIBERDADE ======== -->
+        <section id="crimes-liberdade">
+            <h2>7. CRIMES CONTRA A LIBERDADE PESSOAL</h2>
+
+            <h3>7.1. Intimidação Sistemática (Bullying) — Art. 146-A, CP</h3>
+            <p>O crime de intimidação sistemática, popularmente conhecido como <strong>bullying</strong>, foi inserido no Código Penal pela Lei nº 13.185/2015 (atualizada).</p>
+            <blockquote>
+                “Intimidar sistematicamente, por meio de violência física ou psicológica, uma ou mais pessoas, de forma individual ou em grupo, mediante atos de humilhação ou discriminação:”
+            </blockquote>
+
+            <h4>Formas e Penas:</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Forma</th><th>Conduta</th><th>Pena</th><th>Natureza</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Básica (caput)</strong></td><td>Bullying tradicional</td><td>Multa</td><td>Contravenção penal</td></tr>
+                        <tr><td><strong>Qualificada (§ único)</strong></td><td>Cyberbullying (por rede social, aplicativos, jogos online)</td><td>Reclusão 2–4 anos + multa</td><td>Crime</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Elementos do Cyberbullying:</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Elemento</th><th>Descrição</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Meio</strong></td><td>Rede social, aplicativos, jogos online ou qualquer ambiente digital</td></tr>
+                        <tr><td><strong>Conduta</strong></td><td>Intimidação sistemática com humilhação ou discriminação</td></tr>
+                        <tr><td><strong>Natureza</strong></td><td>Crime (não contravenção)</td></tr>
+                        <tr><td><strong>Pena</strong></td><td>Reclusão de 2 a 4 anos + multa</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="box box-example">
+                <strong>CASO CONCRETO:</strong> Maria sofreu humilhações repetitivas por meio de redes sociais, com postagens ofensivas e difamatórias.<br><br>
+                <strong>Análise:</strong> Trata-se de <span class="highlight">intimidação sistemática qualificada</span> (cyberbullying), prevista no parágrafo único do art. 146-A, com pena de reclusão de 2 a 4 anos e multa.
+            </div>
+            <div class="box box-important">A forma básica (bullying tradicional) é considerada <strong>contravenção penal</strong> (pena de multa), enquanto o cyberbullying é <strong>crime</strong>.</div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 8. HOMICÍDIO ======== -->
+        <section id="homicidio">
+            <h2>8. HOMICÍDIO (ART. 121, CP)</h2>
+
+            <h3>8.1. Formas do Homicídio</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Forma</th><th>Artigo</th><th>Pena</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Simples</strong></td><td>Art. 121, caput</td><td>Reclusão de 6 a 20 anos</td></tr>
+                        <tr><td><strong>Privilegiado</strong></td><td>Art. 121, §1º</td><td>Reclusão de 6 a 20 anos (reduzida)</td></tr>
+                        <tr><td><strong>Qualificado</strong></td><td>Art. 121, §2º</td><td>Reclusão de 12 a 30 anos</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>8.2. Qualificadoras do Homicídio (Art. 121, §2º)</h3>
+            <p>As qualificadoras são circunstâncias que aumentam a pena do homicídio, elevando o limite máximo para 30 anos.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Inciso</th><th>Qualificadora</th><th>Descrição</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>I</strong></td><td>Motivo torpe</td><td>Motivo fútil, mesquinho, desprezível</td></tr>
+                        <tr><td><strong>II</strong></td><td>Motivo fútil</td><td>Motivo insignificante, desproporcional</td></tr>
+                        <tr><td><strong>III</strong></td><td>Emprego de veneno, fogo, explosivo, asfixia, tortura ou outro meio insidioso ou cruel</td><td>Meios que dificultam a defesa ou causam sofrimento</td></tr>
+                        <tr><td><strong>IV</strong></td><td>Recurso que dificultou ou impossibilitou a defesa da vítima</td><td>Emboscada, surpresa, etc.</td></tr>
+                        <tr><td><strong>V</strong></td><td>Para assegurar a execução, ocultação, impunidade ou vantagem de outro crime</td><td>Conexão com outro delito</td></tr>
+                        <tr><td><strong>VI</strong></td><td>Contra mulher por razões da condição de sexo feminino</td><td>Feminicídio</td></tr>
+                        <tr><td><strong>VII</strong></td><td>Contra autoridade ou agente de segurança pública</td><td>Em razão das funções</td></tr>
+                        <tr><td><strong>VIII</strong></td><td>Com emprego de arma de fogo de uso restrito ou proibido</td><td>Arma de fogo especial</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>8.3. Caso Concreto: Homicídio Triplamente Qualificado</h3>
+            <div class="box box-example">
+                <strong>Situação hipotética:</strong> João mata um policial militar por razão de suas funções, usando arma de fogo de uso restrito e recurso que impossibilitou a defesa da vítima.<br><br>
+                <strong>Análise:</strong> João praticou homicídio com três qualificadoras:
+                <ol>
+                    <li><strong>Inciso IV</strong> — recurso que dificultou ou tornou impossível a defesa da vítima;</li>
+                    <li><strong>Inciso VII</strong> — contra agente de segurança pública em razão das funções;</li>
+                    <li><strong>Inciso VIII</strong> — com emprego de arma de fogo de uso restrito.</li>
+                </ol>
+                As qualificadoras podem ser <strong>cumuladas</strong>, resultando em homicídio <span class="highlight-red">triplamente qualificado</span>, com pena de <strong>12 a 30 anos de reclusão</strong>.
+            </div>
+            <div class="box box-important">A pena máxima de 30 anos para o homicídio qualificado resulta da soma das qualificadoras (no caso do triplamente qualificado, a pena-base será elevada considerando todas as qualificadoras).</div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 9. EXTORSÃO MEDIANTE SEQUESTRO ======== -->
+        <section id="extorsao">
+            <h2>9. EXTORSÃO MEDIANTE SEQUESTRO (ART. 159, CP)</h2>
+
+            <h3>9.1. Tipo Penal</h3>
+            <blockquote>
+                “Sequestrar pessoa com o fim de obter, para si ou para outrem, qualquer vantagem, como condição ou preço do resgate:”<br>
+                <cite>Pena — reclusão, de 8 (oito) a 15 (quinze) anos.</cite>
+            </blockquote>
+
+            <h3>9.2. Qualificadoras do Art. 159, §1º</h3>
+            <p>As qualificadoras elevam a pena para reclusão de <strong>12 a 20 anos</strong>:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Qualificadora</th><th>Descrição</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>A</strong></td><td>O sequestro dura mais de 24 horas</td></tr>
+                        <tr><td><strong>B</strong></td><td>A vítima é menor de 18 anos ou maior de 60 anos</td></tr>
+                        <tr><td><strong>C</strong></td><td>O crime é cometido por bando ou quadrilha</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>9.3. Caso Concreto: Extorsão Mediante Sequestro Qualificada</h3>
+            <div class="box box-example">
+                <strong>Situação hipotética:</strong> Vítima de 62 anos é sequestrada e mantida em cativeiro por 12 horas. Os criminosos exigem resgate.<br><br>
+                <strong>Análise:</strong> Trata-se de <span class="highlight">extorsão mediante sequestro qualificada</span>, pois incide a qualificadora da <strong>idade</strong> (vítima maior de 60 anos — inciso B), ainda que a duração (12 horas) não atinja o prazo de 24 horas.<br><br>
+                <strong>Pena aplicável:</strong> Reclusão de 12 a 20 anos.
+            </div>
+            <div class="box box-important">A qualificadora da idade (menor de 18 ou maior de 60) se aplica independentemente da duração do sequestro. Já a qualificadora do prazo (mais de 24 horas) exige que o sequestro ultrapasse esse limite temporal.</div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 10. CONCURSO DE PESSOAS ======== -->
+        <section id="concurso-pessoas">
+            <h2>10. CONCURSO DE PESSOAS</h2>
+
+            <h3>10.1. Cooperação Dolosamente Distinta (Art. 29, §2º, CP)</h3>
+            <p>O art. 29, caput, do CP estabelece que todos os concorrentes respondem pelo crime, mas o §2º traz uma regra especial:</p>
+            <blockquote>
+                “Se algum dos concorrentes quis participar de crime menos grave, e a este se limitou a sua participação, responderá por este crime.”
+            </blockquote>
+
+            <h4>Regra da Cooperação Dolosamente Distinta:</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Situação</th><th>Consequência</th></tr></thead>
+                    <tbody>
+                        <tr><td>O concorrente quis participar de crime menos grave</td><td>Responde APENAS pelo crime pretendido (menos grave)</td></tr>
+                        <tr><td>O resultado mais grave foi <strong>PREVISÍVEL</strong></td><td>Pena aumentada até a metade</td></tr>
+                        <tr><td>O resultado mais grave foi <strong>IMPREVISÍVEL</strong></td><td>Responde apenas pelo crime menos grave (sem aumento)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>10.2. Caso Concreto: Aplicação do Art. 29, §2º</h3>
+            <div class="box box-example">
+                <strong>Situação hipotética:</strong> Pedro e João combinam de praticar um furto. Pedro fica do lado de fora como “olheiro”, enquanto João entra na residência. Durante o furto, João é surpreendido e mata o morador, configurando latrocínio. Pedro não tinha como prever que João mataria alguém.<br><br>
+                <strong>Análise:</strong>
+                <ul>
+                    <li>João responde por <strong>latrocínio</strong> (furto + homicídio);</li>
+                    <li>Pedro, que quis participar apenas do furto e o resultado mais grave (morte) não lhe era previsível, responde <span class="highlight">APENAS POR FURTO</span>, nos termos do art. 29, §2º, CP.</li>
+                </ul>
+                <strong>Consequência:</strong> NÃO se aplica o aumento de pena, pois o resultado não era previsível.
+            </div>
+            <div class="box box-warning">O aumento de pena até a metade (previsto no §2º) NÃO é automático. Só incide se o resultado mais grave for <strong>PREVISÍVEL</strong> para o concorrente que participou do crime menos grave. Se imprevisível, responde apenas pelo crime menos grave, sem aumento.</div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 11. ERROS COMUNS ======== -->
+        <section id="erros-comuns">
+            <h2>11. ERROS COMUNS EM PROVAS</h2>
+
+            <h3>11.1. Erro na Aplicação da Cooperação Dolosamente Distinta</h3>
+            <p><strong>Erro:</strong> Aplicar automaticamente o aumento de pena de até metade quando ocorre resultado mais grave.</p>
+            <p><strong>Correção:</strong> O aumento só se aplica se o resultado mais grave for <span class="highlight-orange">PREVISÍVEL</span> para o concorrente. Se imprevisível, responde apenas pelo crime pretendido.</p>
+
+            <h3>11.2. Erro na Distinção entre Resistência e Desobediência</h3>
+            <p><strong>Erro:</strong> Considerar que fuga de abordagem policial sem agressão é resistência.</p>
+            <p><strong>Correção:</strong> Fuga sem agressão configura <span class="highlight">desobediência</span> (art. 330), pois não há violência ou ameaça (elementar da resistência — art. 329).</p>
+
+            <h3>11.3. Erro na Distinção entre Falsa Identidade e Falsidade Ideológica</h3>
+            <p><strong>Erro:</strong> Confundir as duas figuras por envolverem mentira.</p>
+            <p><strong>Correção:</strong></p>
+            <ul>
+                <li><strong>Falsa identidade:</strong> NÃO exige documento (atribuição verbal de identidade falsa);</li>
+                <li><strong>Falsidade ideológica:</strong> SEMPRE envolve documento (inserção de declaração falsa em documento).</li>
+            </ul>
+
+            <h3>11.4. Erro na Distinção entre Corrupção Ativa e Passiva</h3>
+            <p><strong>Erro:</strong> Confundir os sujeitos que tomam a iniciativa.</p>
+            <p><strong>Correção:</strong></p>
+            <ul>
+                <li><strong>Corrupção ATIVA:</strong> particular OFERECE (iniciativa do particular);</li>
+                <li><strong>Corrupção PASSIVA:</strong> funcionário SOLICITA ou RECEBE (iniciativa do funcionário).</li>
+            </ul>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 12. MAPA MENTAL SVG ======== -->
+        <section id="mapa-mental">
+            <h2>12. MAPA MENTAL — CRIMES CONTRA A ADMINISTRAÇÃO</h2>
+            <div class="svg-container">
+                <svg viewBox="0 0 1200 920" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa mental dos crimes contra a administração pública">
+                    <!-- Linhas de conexão -->
+                    <defs>
+                        <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#58a6ff"/>
+                        </marker>
+                        <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+                            <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+                        </filter>
+                    </defs>
+
+                    <!-- Raiz -->
+                    <rect x="420" y="20" width="360" height="60" rx="12" fill="#21262d" stroke="#58a6ff" stroke-width="2" filter="url(#shadow)"/>
+                    <text x="600" y="58" text-anchor="middle" fill="#f0f6fc" font-size="20" font-weight="700">Crimes contra a Administração</text>
+
+                    <!-- Linhas raiz → filhos -->
+                    <line x1="600" y1="80" x2="230" y2="140" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x1="600" y1="80" x2="600" y2="140" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+                    <line x1="600" y1="80" x2="970" y2="140" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+                    <!-- Filho 1: Funcionário -->
+                    <rect x="90" y="145" width="280" height="55" rx="10" fill="#1c2128" stroke="#3fb950" stroke-width="2" filter="url(#shadow)"/>
+                    <text x="230" y="180" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="600">Praticados por Funcionário</text>
+
+                    <!-- Filho 2: Particular -->
+                    <rect x="460" y="145" width="280" height="55" rx="10" fill="#1c2128" stroke="#f0883e" stroke-width="2" filter="url(#shadow)"/>
+                    <text x="600" y="180" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="600">Praticados por Particular</text>
+
+                    <!-- Filho 3: Qualquer Pessoa -->
+                    <rect x="830" y="145" width="280" height="55" rx="10" fill="#1c2128" stroke="#d2a8ff" stroke-width="2" filter="url(#shadow)"/>
+                    <text x="970" y="180" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="600">Praticados por Qualquer Pessoa</text>
+
+                    <!-- Sub-filhos do Funcionário -->
+                    <line x1="230" y1="200" x2="230" y2="250" stroke="#3fb950" stroke-width="2" marker-end="url(#arrow)"/>
+                    <rect x="90" y="255" width="280" height="50" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+                    <text x="230" y="286" text-anchor="middle" fill="#c9d1d9" font-size="15">Peculato (art. 312)</text>
+
+                    <line x1="230" y1="305" x2="230" y2="340" stroke="#3fb950" stroke-width="2" marker-end="url(#arrow)"/>
+                    <rect x="90" y="345" width="280" height="50" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+                    <text x="230" y="376" text-anchor="middle" fill="#c9d1d9" font-size="15">Corrupção Passiva (art. 317)</text>
+
+                    <!-- Sub-filhos do Particular -->
+                    <line x1="520" y1="200" x2="520" y2="250" stroke="#f0883e" stroke-width="2" marker-end="url(#arrow)"/>
+                    <rect x="390" y="255" width="260" height="50" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+                    <text x="520" y="286" text-anchor="middle" fill="#c9d1d9" font-size="15">Resistência (art. 329)</text>
+
+                    <line x1="520" y1="305" x2="520" y2="340" stroke="#f0883e" stroke-width="2" marker-end="url(#arrow)"/>
+                    <rect x="390" y="345" width="260" height="50" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+                    <text x="520" y="376" text-anchor="middle" fill="#c9d1d9" font-size="15">Desobediência (art. 330)</text>
+
+                    <line x1="520" y1="395" x2="520" y2="430" stroke="#f0883e" stroke-width="2" marker-end="url(#arrow)"/>
+                    <rect x="390" y="435" width="260" height="50" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+                    <text x="520" y="466" text-anchor="middle" fill="#c9d1d9" font-size="15">Desacato (art. 331)</text>
+
+                    <line x1="520" y1="485" x2="520" y2="520" stroke="#f0883e" stroke-width="2" marker-end="url(#arrow)"/>
+                    <rect x="390" y="525" width="260" height="50" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+                    <text x="520" y="556" text-anchor="middle" fill="#c9d1d9" font-size="15">Corrupção Ativa (art. 333)</text>
+
+                    <!-- Sub-filhos do Qualquer Pessoa -->
+                    <line x1="970" y1="200" x2="970" y2="250" stroke="#d2a8ff" stroke-width="2" marker-end="url(#arrow)"/>
+                    <rect x="830" y="255" width="280" height="50" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+                    <text x="970" y="286" text-anchor="middle" fill="#c9d1d9" font-size="15">Falsa Identidade (art. 307)</text>
+
+                    <!-- Legenda -->
+                    <rect x="30" y="860" width="1140" height="50" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+                    <text x="600" y="892" text-anchor="middle" fill="#8b949e" font-size="13">Legenda: 🟢 Funcionário público  🟠 Particular  🟣 Qualquer pessoa</text>
+                </svg>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 13. FLUXO DE ANÁLISE SVG ======== -->
+        <section id="fluxo-analise">
+            <h2>13. FLUXO DE ANÁLISE PARA RESOLUÇÃO DE QUESTÕES</h2>
+            <div class="svg-container">
+                <svg viewBox="0 0 900 820" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxograma de análise para resolução de questões">
+                    <defs>
+                        <marker id="arrow2" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#58a6ff"/>
+                        </marker>
+                        <filter id="shadow2" x="-5%" y="-5%" width="115%" height="115%">
+                            <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+                        </filter>
+                    </defs>
+
+                    <!-- Nós -->
+                    <rect x="300" y="10" width="300" height="54" rx="12" fill="#21262d" stroke="#58a6ff" stroke-width="2" filter="url(#shadow2)"/>
+                    <text x="450" y="44" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="600">1. IDENTIFICAR A CONDUTA</text>
+
+                    <line x1="450" y1="64" x2="450" y2="94" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow2)"/>
+
+                    <rect x="300" y="98" width="300" height="54" rx="12" fill="#21262d" stroke="#58a6ff" stroke-width="2" filter="url(#shadow2)"/>
+                    <text x="450" y="132" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="600">2. VERIFICAR SE É TÍPICA</text>
+
+                    <line x1="450" y1="152" x2="450" y2="182" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow2)"/>
+
+                    <rect x="300" y="186" width="300" height="54" rx="12" fill="#21262d" stroke="#58a6ff" stroke-width="2" filter="url(#shadow2)"/>
+                    <text x="450" y="220" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="600">3. ANALISAR ELEMENTOS DO TIPO</text>
+
+                    <line x1="450" y1="240" x2="450" y2="270" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow2)"/>
+
+                    <rect x="300" y="274" width="300" height="54" rx="12" fill="#21262d" stroke="#f0883e" stroke-width="2" filter="url(#shadow2)"/>
+                    <text x="450" y="308" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="600">4. EXCLUDENTES?</text>
+
+                    <line x1="450" y1="328" x2="450" y2="358" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow2)"/>
+
+                    <rect x="300" y="362" width="300" height="54" rx="12" fill="#21262d" stroke="#58a6ff" stroke-width="2" filter="url(#shadow2)"/>
+                    <text x="450" y="396" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="600">5. IDENTIFICAR O CRIME</text>
+
+                    <line x1="450" y1="416" x2="450" y2="446" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow2)"/>
+
+                    <rect x="300" y="450" width="300" height="54" rx="12" fill="#21262d" stroke="#58a6ff" stroke-width="2" filter="url(#shadow2)"/>
+                    <text x="450" y="484" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="600">6. VERIFICAR QUALIFICADORAS</text>
+
+                    <line x1="450" y1="504" x2="450" y2="534" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow2)"/>
+
+                    <rect x="300" y="538" width="300" height="54" rx="12" fill="#21262d" stroke="#58a6ff" stroke-width="2" filter="url(#shadow2)"/>
+                    <text x="450" y="572" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="600">7. CONSULTAR PENAS</text>
+
+                    <line x1="450" y1="592" x2="450" y2="622" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow2)"/>
+
+                    <rect x="300" y="626" width="300" height="54" rx="12" fill="#1c2128" stroke="#3fb950" stroke-width="3" filter="url(#shadow2)"/>
+                    <text x="450" y="660" text-anchor="middle" fill="#f0f6fc" font-size="18" font-weight="700">8. RESOLVER A QUESTÃO</text>
+
+                    <!-- Setas laterais para decisões -->
+                    <path d="M 600 301 L 680 301 L 680 110 L 600 110" stroke="#f0883e" stroke-width="2" fill="none" stroke-dasharray="6,4" marker-end="url(#arrow2)"/>
+                    <text x="690" y="220" fill="#f0883e" font-size="12" transform="rotate(90,690,220)">reavaliar</text>
+                </svg>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 14. QUADRO RESUMO ======== -->
+        <section id="quadro-resumo">
+            <h2>14. QUADRO RESUMO — PRINCIPAIS CRIMES E PENAS</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Crime</th><th>Artigo</th><th>Pena</th><th>Observação</th></tr></thead>
+                    <tbody>
+                        <tr><td>Resistência</td><td>329</td><td>Reclusão 2–4 anos</td><td>Exige violência/ameaça</td></tr>
+                        <tr><td>Desobediência</td><td>330</td><td>Detenção 15d–6m + multa</td><td>Sem violência/ameaça</td></tr>
+                        <tr><td>Desacato</td><td>331</td><td>Detenção 6m–2a ou multa</td><td>Ofensa à dignidade</td></tr>
+                        <tr><td>Corrupção Ativa</td><td>333</td><td>Reclusão 2–12 anos + multa</td><td>Particular oferece</td></tr>
+                        <tr><td>Corrupção Passiva</td><td>317</td><td>Reclusão 2–12 anos + multa</td><td>Funcionário solicita/recebe</td></tr>
+                        <tr><td>Peculato</td><td>312</td><td>Reclusão 2–12 anos + multa</td><td>Apropriação/desvio</td></tr>
+                        <tr><td>Falsa Identidade</td><td>307</td><td>Reclusão 2–5 anos + multa</td><td>Não exige documento</td></tr>
+                        <tr><td>Falsidade Ideológica</td><td>299</td><td>Reclusão 1–5 anos + multa</td><td>Exige documento</td></tr>
+                        <tr><td>Homicídio Qualificado</td><td>121, §2º</td><td>Reclusão 12–30 anos</td><td>Três qualificadoras possíveis</td></tr>
+                        <tr><td>Extorsão mediante sequestro</td><td>159</td><td>Reclusão 8–15 anos</td><td>Qualificadora: 12–20 anos</td></tr>
+                        <tr><td>Intimidação sistemática (cyber)</td><td>146-A, § único</td><td>Reclusão 2–4 anos + multa</td><td>Meio digital</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ======== 15. DICAS FINAIS ======== -->
+        <section id="dicas-finais">
+            <h2>15. DICAS FINAIS PARA PROVAS DA FCC</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h5>🔍 Leitura atenta</h5>
+                    <p>Leia atentamente a palavra <span class="highlight-red">“violência”</span> ou <span class="highlight-red">“ameaça”</span> no enunciado para distinguir resistência (art. 329) de desobediência (art. 330).</p>
+                </div>
+                <div class="card">
+                    <h5>🧑‍⚖️ Sujeito da iniciativa</h5>
+                    <p>Identifique o sujeito que toma a iniciativa para distinguir corrupção ativa (particular) de corrupção passiva (funcionário).</p>
+                </div>
+                <div class="card">
+                    <h5>📄 Presença de documento</h5>
+                    <p>Verifique a presença de documento para distinguir falsa identidade (sem documento) de falsidade ideológica (com documento).</p>
+                </div>
+                <div class="card">
+                    <h5>⚖️ Qualificadoras do homicídio</h5>
+                    <p>Atente para as qualificadoras do homicídio: elas podem ser cumuladas (triplamente qualificado).</p>
+                </div>
+                <div class="card">
+                    <h5>🧩 Cooperação dolosamente distinta</h5>
+                    <p>Lembre-se: na cooperação dolosamente distinta, o aumento de pena só se aplica se o resultado mais grave for <span class="highlight-orange">previsível</span>.</p>
+                </div>
+                <div class="card">
+                    <h5>🔄 Coação física × moral</h5>
+                    <p>Distinção entre coação física e moral: física = exclui conduta (fato atípico); moral = exclui culpabilidade (fato típico e ilícito).</p>
+                </div>
+                <div class="card">
+                    <h5>🧠 Inimputabilidade</h5>
+                    <p>O agente é isento de pena, mas pode receber medida de segurança se perigoso (absolvição imprópria).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== RODAPÉ ======== -->
+        <hr class="divider-light">
+
+        <div class="footer-note">
+            <p style="margin-bottom:0.4rem;"><strong>FIM DA APOSTILA</strong></p>
+            <p style="font-size:0.9rem; color:#8b949e;">
+                Material elaborado com base na legislação vigente e doutrina majoritária, com foco em concursos públicos para Técnico Judiciário — Área Judiciária.<br>
+                Este material é de uso exclusivo para estudo e preparação para concursos.<br>
+                <span style="color:#586069;">Última atualização: 2026</span>
+            </p>
+            <a href="#" class="back-top">⬆ Voltar ao topo</a>
+        </div>
+
+    </div>
+    <!-- fim container -->
+</body>
+</html>

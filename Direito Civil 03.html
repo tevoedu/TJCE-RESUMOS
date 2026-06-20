@@ -1,0 +1,3128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Civil Aplicado · Técnico Judiciário</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-primary: #12121a;
+            --bg-card: #1c1c2e;
+            --bg-surface: #252540;
+            --bg-elevated: #2d2d4a;
+            --text-primary: #e8e4dc;
+            --text-secondary: #c4bdb3;
+            --text-muted: #9a9287;
+            --text-heading: #f2ece4;
+            --gold: #d4a853;
+            --gold-dim: rgba(212, 168, 83, 0.15);
+            --gold-glow: rgba(212, 168, 83, 0.08);
+            --sage: #7a9b8e;
+            --terracotta: #b87a6a;
+            --blue-dim: #4a6a8a;
+            --border-subtle: #2d2d44;
+            --border-medium: #3d3d5a;
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
+            --radius: 16px;
+            --radius-sm: 8px;
+            --font: 'Georgia', 'Times New Roman', serif;
+            --font-sans: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            --transition: 0.2s ease;
+        }
+
+        html {
+            font-size: 18px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.75;
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c49a40;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            color: var(--text-heading);
+            line-height: 1.3;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 3rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-subtle);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            color: var(--gold);
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            color: var(--text-heading);
+        }
+
+        h5 {
+            font-size: 1.1rem;
+            margin-top: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        a:hover {
+            color: #e8c060;
+            text-decoration: underline;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .header .badge {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: var(--gold-dim);
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(212, 168, 83, 0.2);
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #f2ece4 0%, #d4a853 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .subtitle {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+        }
+
+        .header .meta {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* ===== TOC ===== */
+        .toc {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 2rem 2rem 1.5rem;
+            margin: 2rem 0 3rem;
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-card);
+        }
+
+        .toc-title {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .toc-title svg {
+            flex-shrink: 0;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1.5rem;
+        }
+
+        .toc-item {
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid rgba(45, 45, 68, 0.4);
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .toc-item .num {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.8rem;
+            min-width: 2.2rem;
+            opacity: 0.7;
+        }
+
+        .toc-item a {
+            color: var(--text-secondary);
+            transition: color var(--transition);
+        }
+        .toc-item a:hover {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 1.25rem 1rem 3rem;
+            }
+        }
+
+        /* ===== CHAPTER MARKER ===== */
+        .chapter-marker {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .chapter-marker .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+
+        .chapter-marker .label {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+            margin: 2.5rem 0;
+        }
+
+        .divider-gold {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 3rem 0 2.5rem;
+            opacity: 0.4;
+        }
+
+        /* ===== CARDS ===== */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 1.75rem 2rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-card);
+            transition: border-color var(--transition);
+        }
+
+        .card:hover {
+            border-color: var(--border-medium);
+        }
+
+        .card-gold {
+            border-left: 4px solid var(--gold);
+            background: var(--gold-dim);
+        }
+
+        .card-sage {
+            border-left: 4px solid var(--sage);
+            background: rgba(122, 155, 142, 0.08);
+        }
+
+        .card-terracotta {
+            border-left: 4px solid var(--terracotta);
+            background: rgba(184, 122, 106, 0.08);
+        }
+
+        .card-blue {
+            border-left: 4px solid var(--blue-dim);
+            background: rgba(74, 106, 138, 0.08);
+        }
+
+        .card-title {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-gold .card-title {
+            color: var(--gold);
+        }
+        .card-sage .card-title {
+            color: var(--sage);
+        }
+        .card-terracotta .card-title {
+            color: var(--terracotta);
+        }
+        .card-blue .card-title {
+            color: var(--blue-dim);
+        }
+
+        .card p:last-child,
+        .card ul:last-child,
+        .card ol:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== CALL OUT / HIGHLIGHT ===== */
+        .highlight {
+            background: rgba(212, 168, 83, 0.18);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+            color: #f0e6c8;
+            font-weight: 500;
+        }
+
+        .highlight-gold {
+            background: rgba(212, 168, 83, 0.25);
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            color: #f2e6c8;
+        }
+
+        /* ===== QUOTE ===== */
+        .quote {
+            font-family: var(--font-sans);
+            background: var(--bg-surface);
+            border-radius: var(--radius-sm);
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--gold);
+            font-style: italic;
+            color: var(--text-secondary);
+            position: relative;
+        }
+
+        .quote::before {
+            content: '\201C';
+            font-size: 3rem;
+            font-family: Georgia, serif;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: 0.2rem;
+            left: 0.8rem;
+            line-height: 1;
+        }
+
+        .quote p {
+            margin-bottom: 0;
+            padding-left: 1.5rem;
+        }
+
+        .quote .source {
+            display: block;
+            margin-top: 0.75rem;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 0.9rem;
+            padding-left: 1.5rem;
+        }
+
+        /* ===== TABLES ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-card);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            min-width: 500px;
+        }
+
+        thead {
+            background: var(--bg-surface);
+        }
+
+        th {
+            text-align: left;
+            padding: 0.9rem 1rem;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--gold);
+            border-bottom: 2px solid var(--border-medium);
+        }
+
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(212, 168, 83, 0.04);
+        }
+
+        /* ===== LISTS ===== */
+        ul,
+        ol {
+            padding-left: 1.5rem;
+            margin: 0.75rem 0 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        ul li::marker {
+            color: var(--gold);
+        }
+
+        .list-check {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .list-check li {
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .list-check li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* ===== INLINE CODE / LAW ===== */
+        .law {
+            font-family: var(--font-sans);
+            background: var(--bg-surface);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
+            white-space: nowrap;
+        }
+
+        .article {
+            font-family: var(--font-sans);
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* ===== MARCATEXTO ===== */
+        .marker {
+            background: linear-gradient(120deg, rgba(212, 168, 83, 0.3) 0%, rgba(212, 168, 83, 0.3) 100%);
+            padding: 0.05rem 0.25rem;
+            border-radius: 2px;
+            color: #f2ece4;
+            font-weight: 500;
+        }
+
+        .marker-green {
+            background: linear-gradient(120deg, rgba(122, 155, 142, 0.3) 0%, rgba(122, 155, 142, 0.3) 100%);
+            padding: 0.05rem 0.25rem;
+            border-radius: 2px;
+        }
+
+        .marker-terracotta {
+            background: linear-gradient(120deg, rgba(184, 122, 106, 0.3) 0%, rgba(184, 122, 106, 0.3) 100%);
+            padding: 0.05rem 0.25rem;
+            border-radius: 2px;
+        }
+
+        /* ===== DICA / ATENÇÃO ===== */
+        .tip-box {
+            background: var(--bg-surface);
+            border-radius: var(--radius-sm);
+            padding: 1.25rem 1.5rem;
+            margin: 1.25rem 0;
+            border: 1px solid var(--border-subtle);
+            position: relative;
+        }
+
+        .tip-box .label {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            display: inline-block;
+            padding: 0.15rem 0.75rem;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-box.dica .label {
+            background: rgba(212, 168, 83, 0.2);
+            color: var(--gold);
+            border: 1px solid rgba(212, 168, 83, 0.2);
+        }
+
+        .tip-box.atencao .label {
+            background: rgba(184, 122, 106, 0.2);
+            color: var(--terracotta);
+            border: 1px solid rgba(184, 122, 106, 0.2);
+        }
+
+        .tip-box.importante .label {
+            background: rgba(74, 106, 138, 0.2);
+            color: #8ab4d8;
+            border: 1px solid rgba(74, 106, 138, 0.2);
+        }
+
+        .tip-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== SVG CONTAINERS ===== */
+        .diagram-container {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border-subtle);
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .diagram-container svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .diagram-title {
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* ===== RESPONSIVE TWEAKS ===== */
+        @media (max-width: 768px) {
+            html {
+                font-size: 16px;
+            }
+            .container {
+                padding: 1rem 1rem 3rem;
+            }
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            .card {
+                padding: 1.25rem 1.25rem;
+            }
+            .quote {
+                padding: 1.25rem 1.25rem;
+            }
+            .quote::before {
+                font-size: 2rem;
+                top: 0.5rem;
+                left: 0.5rem;
+            }
+            .quote p {
+                padding-left: 1rem;
+            }
+            .quote .source {
+                padding-left: 1rem;
+            }
+            .toc {
+                padding: 1.25rem 1.25rem 1rem;
+            }
+            table {
+                font-size: 0.82rem;
+                min-width: 400px;
+            }
+            th,
+            td {
+                padding: 0.6rem 0.75rem;
+            }
+            .chapter-marker .label {
+                font-size: 0.65rem;
+            }
+            .diagram-container {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 15px;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 0.75rem 0.75rem 2.5rem;
+            }
+            .card {
+                padding: 1rem 1rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .toc-item {
+                font-size: 0.85rem;
+            }
+            table {
+                font-size: 0.75rem;
+                min-width: 320px;
+            }
+            th,
+            td {
+                padding: 0.4rem 0.5rem;
+            }
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+            }
+            .container {
+                max-width: 100%;
+                padding: 0.5in;
+            }
+            .card,
+            .toc,
+            .diagram-container,
+            .quote,
+            .tip-box {
+                background: #f5f5f5 !important;
+                border-color: #ccc !important;
+                color: #111 !important;
+                box-shadow: none !important;
+            }
+            .header h1 {
+                -webkit-text-fill-color: #111 !important;
+                background: none !important;
+                color: #111 !important;
+            }
+            .gold {
+                color: #b8860b !important;
+            }
+            .highlight,
+            .marker,
+            .marker-green,
+            .marker-terracotta {
+                background: #f0e6c8 !important;
+                color: #111 !important;
+            }
+            .toc-item a {
+                color: #111 !important;
+            }
+            .law {
+                background: #eee !important;
+                border-color: #ccc !important;
+                color: #111 !important;
+            }
+            .chapter-marker .line {
+                background: #ccc !important;
+            }
+            .divider,
+            .divider-gold {
+                background: #ccc !important;
+            }
+            .quote::before {
+                color: #b8860b !important;
+            }
+            .tip-box.dica .label {
+                background: #f0e6c8 !important;
+                color: #b8860b !important;
+                border-color: #b8860b !important;
+            }
+            .tip-box.atencao .label {
+                background: #f0d0c8 !important;
+                color: #a0522d !important;
+                border-color: #a0522d !important;
+            }
+            .tip-box.importante .label {
+                background: #c8d8e8 !important;
+                color: #2a4a6a !important;
+                border-color: #2a4a6a !important;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-note {
+            font-family: var(--font-sans);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-subtle);
+            letter-spacing: 0.02em;
+        }
+
+        .footer-note strong {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .footer-note .quote-final {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* ===== TABLE OF CONTENTS ANCHOR OFFSET ===== */
+        .anchor-offset {
+            scroll-margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <div class="badge">Técnico Judiciário · Área Judiciária</div>
+            <h1>Direito Civil Aplicado</h1>
+            <p class="subtitle">para Concursos Públicos de Alto Nível</p>
+            <p class="meta">Foco: TJCE · FCC · FGV · Cebraspe</p>
+        </header>
+
+        <!-- ===== SUMÁRIO ===== -->
+        <nav class="toc" aria-label="Sumário">
+            <div class="toc-title">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="6" x2="20" y2="6" stroke="#d4a853"/>
+                    <line x1="4" y1="12" x2="20" y2="12" stroke="#d4a853"/>
+                    <line x1="4" y1="18" x2="14" y2="18" stroke="#d4a853"/>
+                </svg>
+                Sumário
+            </div>
+            <div class="toc-grid">
+                <div class="toc-item"><span class="num">Cap. 1</span><a href="#cap1">Domicílio Civil</a></div>
+                <div class="toc-item"><span class="num">Cap. 2</span><a href="#cap2">Classificação dos Bens</a></div>
+                <div class="toc-item"><span class="num">Cap. 3</span><a href="#cap3">Pessoa Natural e Capacidade Civil</a></div>
+                <div class="toc-item"><span class="num">Cap. 4</span><a href="#cap4">Morte Presumida</a></div>
+                <div class="toc-item"><span class="num">Cap. 5</span><a href="#cap5">Vícios do Negócio Jurídico</a></div>
+                <div class="toc-item"><span class="num">Cap. 6</span><a href="#cap6">Associações</a></div>
+                <div class="toc-item"><span class="num">Cap. 7</span><a href="#cap7">Revisão e Macetes</a></div>
+            </div>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 1                                                    -->
+        <!-- ============================================================ -->
+        <div class="chapter-marker anchor-offset" id="cap1">
+            <span class="label">Capítulo 1</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Domicílio Civil</h1>
+
+        <h2>1.1 Conceito e Fundamentos</h2>
+
+        <p>O domicílio é um dos institutos mais relevantes do Direito Civil, especialmente para concursos públicos, pois define o local onde a pessoa jurídica ou natural fixa sua residência com ânimo definitivo, determinando, entre outros aspectos, o foro competente para demandas judiciais, a aplicação de normas e a prática de atos da vida civil.</p>
+
+        <p>A disciplina do domicílio encontra-se nos arts. 70 a 78 do Código Civil, sendo o art. 70 o dispositivo central que estabelece:</p>
+
+        <div class="quote">
+            <p><strong>Art. 70.</strong> O domicílio da pessoa natural é o lugar onde ela estabelece a sua residência com ânimo definitivo.</p>
+        </div>
+
+        <p>Dessa definição, extraem-se dois elementos fundamentais:</p>
+
+        <ul>
+            <li><strong>Elemento objetivo (corpus):</strong> a residência, ou seja, o local onde a pessoa habita de forma estável.</li>
+            <li><strong>Elemento subjetivo (animus):</strong> a intenção de permanecer naquele local de modo definitivo, com o propósito de ali estabelecer o centro de sua vida civil.</li>
+        </ul>
+
+        <p>É importante destacar que o domicílio não se confunde com a residência. Enquanto a residência é mero fato material (habitar um lugar), o domicílio exige, além da habitação, a intenção de fixação definitiva. Por isso, uma pessoa pode ter várias residências, mas apenas um domicílio (salvo exceções legais).</p>
+
+        <div class="tip-box dica">
+            <span class="label">Dica de Prova</span>
+            <p>A FGV e o Cebraspe frequentemente exploram a diferença entre residência e domicílio. Lembre-se: <span class="highlight">residência é elemento fático; domicílio é elemento jurídico</span>, que combina fato e intenção.</p>
+        </div>
+
+        <h2>1.2 Domicílio da Pessoa Natural</h2>
+
+        <p>O Código Civil estabelece regras específicas para a fixação do domicílio da pessoa natural, conforme sua situação particular:</p>
+
+        <h3>Domicílio Geral (Art. 70)</h3>
+        <p>É o lugar onde a pessoa estabelece sua residência com ânimo definitivo. É o domicílio ordinário, que acompanha a pessoa em sua vida civil.</p>
+
+        <h3>Domicílio Necessário ou Legal</h3>
+        <p>Determinadas pessoas não podem escolher livremente seu domicílio, por imposição legal. São os casos previstos no art. 76 do CC:</p>
+        <ul>
+            <li><strong>Incapazes:</strong> domicílio de seus representantes legais ou assistentes.</li>
+            <li><strong>Militares da ativa:</strong> domicílio onde servirem.</li>
+            <li><strong>Servidores públicos:</strong> domicílio onde exercem permanentemente suas funções.</li>
+            <li><strong>Presos:</strong> domicílio onde cumprirem a pena.</li>
+            <li><strong>Marítimos:</strong> domicílio onde estiver registrada a embarcação.</li>
+        </ul>
+
+        <div class="tip-box atencao">
+            <span class="label">Atenção</span>
+            <p>O art. 76 estabelece <span class="highlight">domicílio necessário</span>, ou seja, a pessoa não pode escolher outro local para fins civis, sendo o domicílio fixado por força de lei.</p>
+        </div>
+
+        <h3>Domicílio Voluntário</h3>
+        <p>É o escolhido pela pessoa capaz, que pode livremente fixar sua residência com ânimo definitivo em qualquer lugar do território nacional. Admite-se, inclusive, a mudança de domicílio a qualquer tempo, pela alteração dos elementos objetivo e subjetivo.</p>
+
+        <h2>1.3 Domicílio Profissional (Art. 72, CC)</h2>
+
+        <p>O art. 72 do Código Civil trata de uma espécie especial de domicílio, intimamente ligado ao exercício da profissão:</p>
+
+        <div class="quote">
+            <p><strong>Art. 72.</strong> É também considerado domicílio da pessoa natural, para todos os efeitos legais, o lugar onde exerce sua profissão.</p>
+            <p><strong>Parágrafo único.</strong> Se a pessoa exercer profissão em lugares diversos, cada um deles constituirá domicílio para as relações que lhe corresponderem.</p>
+        </div>
+
+        <h3>O que dispõe o art. 72?</h3>
+
+        <p>O dispositivo estabelece que o <strong>lugar onde a pessoa exerce sua profissão também é considerado seu domicílio</strong>, mas com uma particularidade fundamental: esse domicílio é válido <strong>para todas as relações concernentes a essa atividade</strong>.</p>
+
+        <p>Isso significa que, para os negócios jurídicos, demandas judiciais ou obrigações relacionadas ao exercício profissional, o local da profissão equipara-se ao domicílio civil da pessoa, permitindo, por exemplo, que seja citada ou processada naquele local.</p>
+
+        <h3>Aplicação prática</h3>
+
+        <p>Imagine a seguinte situação: um médico reside na cidade de Campinas, mas atende em seu consultório particular na cidade de São Paulo, de segunda a sexta-feira. Caso o médico seja acionado judicialmente por suposto erro médico ocorrido em seu consultório paulistano, ele poderá ser demandado tanto em seu domicílio geral (Campinas) quanto em seu domicílio profissional (São Paulo), pois a relação jurídica está vinculada à atividade profissional exercida na capital.</p>
+
+        <h3>Parágrafo único: atividade profissional em lugares diversos</h3>
+
+        <p>A regra do parágrafo único do art. 72 é de extrema importância: "Se a pessoa exercer profissão em lugares diversos, cada um deles constituirá domicílio para as relações que lhe corresponderem."</p>
+
+        <p>Assim, o mesmo médico que atende em São Paulo e também em Barueri possuirá <strong>dois domicílios profissionais</strong>, cada qual para as relações que lhe corresponderem. Se o erro médico ocorreu no atendimento em Barueri, a ação poderá ser ajuizada no domicílio profissional de Barueri; se ocorreu em São Paulo, no domicílio profissional de São Paulo.</p>
+
+        <h3>Natureza do domicílio profissional</h3>
+
+        <p>O domicílio profissional é uma espécie de <strong>domicílio voluntário com característica especial</strong>, pois decorre automaticamente do exercício da profissão em local diverso da residência. <strong>Não depende de contrato ou escolha expressa</strong>; basta que a pessoa exerça sua atividade profissional de forma habitual naquele local.</p>
+
+        <div class="tip-box dica">
+            <span class="label">Dica de Prova</span>
+            <p>O domicílio profissional é <span class="highlight">automático</span>, decorrente do exercício da profissão. Não se confunde com o domicílio especial, que é fruto de escolha contratual ou declaração de vontade.</p>
+        </div>
+
+        <h2>1.4 Domicílio Especial</h2>
+
+        <p>O domicílio especial, também denominado <strong>domicílio contratual ou convencional</strong>, está previsto no art. 78 do Código Civil:</p>
+
+        <div class="quote">
+            <p><strong>Art. 78.</strong> Nos contratos escritos, poderão os contratantes especificar domicílio onde se exercitem e cumpram os direitos e obrigações deles resultantes.</p>
+        </div>
+
+        <h3>Características do domicílio especial</h3>
+
+        <ol>
+            <li><strong>Depende de manifestação de vontade:</strong> as partes, por meio de cláusula contratual expressa, elegem um foro ou domicílio específico para solução de controvérsias e cumprimento de obrigações.</li>
+            <li><strong>Natureza negocial:</strong> é fruto de acordo entre as partes, inserido em contrato escrito.</li>
+            <li><strong>Limitação:</strong> o domicílio especial não se sobrepõe ao domicílio geral para todas as relações da pessoa, mas apenas para as relações decorrentes daquele contrato específico.</li>
+            <li><strong>Exemplo clássico:</strong> cláusula de eleição de foro em contratos empresariais, onde as partes elegem a comarca de São Paulo para dirimir qualquer controvérsia, mesmo que residam em estados diversos.</li>
+        </ol>
+
+        <h3>Diferença entre domicílio profissional e domicílio especial</h3>
+
+        <p>A distinção entre essas duas figuras é <strong>frequentemente cobrada em provas da FGV</strong>, e o erro é comum entre candidatos que não dominam a matéria.</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Critério</th>
+                        <th>Domicílio Profissional</th>
+                        <th>Domicílio Especial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Origem</strong></td>
+                        <td>Automática, decorrente do exercício da profissão (art. 72)</td>
+                        <td>Contratual, por escolha das partes (art. 78)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dependência</strong></td>
+                        <td>Independe de manifestação de vontade; é consequência da atividade habitual</td>
+                        <td>Depende de cláusula expressa em contrato escrito</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Natureza</strong></td>
+                        <td>Legal</td>
+                        <td>Negocial</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Efeitos</strong></td>
+                        <td>Para todas as relações concernentes à atividade profissional</td>
+                        <td>Apenas para as relações decorrentes do contrato específico</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exemplo</strong></td>
+                        <td>Médico que atende em São Paulo tem domicílio profissional naquela cidade</td>
+                        <td>Cláusula de eleição de foro em contrato de compra e venda</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tip-box atencao">
+            <span class="label">Pegadinha Clássica da FGV</span>
+            <p>O fato de uma pessoa atender profissionalmente em outra cidade gera <span class="highlight">domicílio profissional</span> (art. 72), <strong>não especial</strong> (art. 78), pois não depende de contrato, apenas da atividade habitual. A banca explora a confusão entre os institutos, induzindo o candidato a pensar que há necessidade de escolha contratual para caracterizar o domicílio profissional.</p>
+        </div>
+
+        <h2>1.5 Distinções Cruciais para Provas</h2>
+
+        <h3>Quadro-resumo dos tipos de domicílio</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Fundamento</th>
+                        <th>Característica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Geral (ordinário)</strong></td>
+                        <td>Art. 70</td>
+                        <td>Residência com ânimo definitivo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Necessário (legal)</strong></td>
+                        <td>Art. 76</td>
+                        <td>Imposto por lei (incapazes, militares, servidores, presos, marítimos)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Profissional</strong></td>
+                        <td>Art. 72</td>
+                        <td>Local do exercício da profissão, para relações concernentes à atividade</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Especial (contratual)</strong></td>
+                        <td>Art. 78</td>
+                        <td>Elegido pelas partes em contrato escrito</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Situação hipotética para fixação</h3>
+
+        <div class="card card-gold">
+            <div class="card-title">Caso Concreto</div>
+            <p><strong>Joana</strong> é advogada, reside em Brasília/DF, mas atende clientes em seu escritório na cidade de Goiânia/GO, de segunda a quinta-feira. Além disso, possui contrato de prestação de serviços com uma empresa sediada em Belo Horizonte/MG, onde as partes elegeram o foro de Belo Horizonte para solução de eventuais controvérsias.</p>
+            <p><strong>Pergunta:</strong> Qual o domicílio de Joana para uma ação judicial relacionada a um erro profissional ocorrido em Goiânia?</p>
+            <p><strong>Resposta:</strong> Joana possui domicílio geral em Brasília (residência com ânimo definitivo), domicílio profissional em Goiânia (para relações concernentes à atividade profissional exercida naquela cidade) e domicílio especial em Belo Horizonte (apenas para as relações do contrato específico). Para a ação relacionada ao erro profissional em Goiânia, <strong>tanto Brasília quanto Goiânia</strong> são domicílios válidos, sendo Goiânia o domicílio profissional.</p>
+        </div>
+
+        <h3>Erros comuns em provas</h3>
+
+        <ol>
+            <li><strong>Confundir domicílio profissional com especial:</strong> lembre-se: o profissional decorre do exercício da atividade; o especial decorre de contrato.</li>
+            <li><strong>Achar que o domicílio profissional substitui o geral:</strong> não substitui; é um domicílio <strong>adicional</strong>, específico para as relações da profissão.</li>
+            <li><strong>Ignorar o parágrafo único do art. 72:</strong> quando a pessoa exerce profissão em lugares diversos, <strong>cada local é domicílio para as relações que lhe corresponderem</strong>.</li>
+            <li><strong>Exigir contrato ou eleição de foro para domicílio profissional:</strong> desnecessário, pois ele é automático.</li>
+        </ol>
+
+        <!-- ===== SVG: Domicílio ===== -->
+        <div class="diagram-container">
+            <div class="diagram-title">Mapa Mental · Domicílio Civil</div>
+            <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa mental do domicílio civil">
+                <defs>
+                    <style>
+                        .dm-bg {
+                            fill: #1c1c2e;
+                        }
+                        .dm-node {
+                            fill: #252540;
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .dm-node-gold {
+                            fill: rgba(212, 168, 83, 0.12);
+                            stroke: #d4a853;
+                            stroke-width: 1.8;
+                            rx: 10;
+                        }
+                        .dm-text {
+                            fill: #e8e4dc;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 13px;
+                            font-weight: 500;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .dm-text-gold {
+                            fill: #d4a853;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 13px;
+                            font-weight: 700;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .dm-text-small {
+                            fill: #c4bdb3;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 11px;
+                            font-weight: 400;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .dm-line {
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            fill: none;
+                        }
+                        .dm-line-gold {
+                            stroke: #d4a853;
+                            stroke-width: 1.5;
+                            fill: none;
+                            opacity: 0.5;
+                        }
+                    </style>
+                </defs>
+                <rect width="800" height="520" rx="12" class="dm-bg" />
+
+                <!-- Central -->
+                <rect x="300" y="20" width="200" height="48" class="dm-node-gold" />
+                <text x="400" y="44" class="dm-text-gold">DOMICÍLIO CIVIL</text>
+
+                <!-- Linhas centrais -->
+                <line x1="400" y1="68" x2="400" y2="92" class="dm-line-gold" />
+                <line x1="400" y1="92" x2="100" y2="92" class="dm-line" />
+                <line x1="400" y1="92" x2="700" y2="92" class="dm-line" />
+
+                <!-- Geral -->
+                <rect x="20" y="96" width="160" height="40" class="dm-node" />
+                <text x="100" y="116" class="dm-text">Geral (Art. 70)</text>
+                <line x1="100" y1="136" x2="100" y2="158" class="dm-line" />
+                <rect x="30" y="160" width="140" height="32" class="dm-node" />
+                <text x="100" y="176" class="dm-text-small">Residência + ânimo</text>
+
+                <!-- Profissional -->
+                <rect x="240" y="96" width="160" height="40" class="dm-node" />
+                <text x="320" y="116" class="dm-text">Profissional (Art. 72)</text>
+                <line x1="320" y1="136" x2="320" y2="158" class="dm-line" />
+                <rect x="210" y="160" width="220" height="56" class="dm-node" />
+                <text x="320" y="176" class="dm-text-small">Local da profissão</text>
+                <text x="320" y="194" class="dm-text-small">p/ relações da atividade</text>
+                <line x1="320" y1="216" x2="320" y2="238" class="dm-line" />
+                <rect x="230" y="240" width="180" height="32" class="dm-node" />
+                <text x="320" y="256" class="dm-text-small">Automático · sem contrato</text>
+
+                <!-- Especial -->
+                <rect x="540" y="96" width="160" height="40" class="dm-node" />
+                <text x="620" y="116" class="dm-text">Especial (Art. 78)</text>
+                <line x1="620" y1="136" x2="620" y2="158" class="dm-line" />
+                <rect x="510" y="160" width="220" height="56" class="dm-node" />
+                <text x="620" y="176" class="dm-text-small">Contratual · eleição de foro</text>
+                <text x="620" y="194" class="dm-text-small">manifestação de vontade</text>
+                <line x1="620" y1="216" x2="620" y2="238" class="dm-line" />
+                <rect x="530" y="240" width="180" height="32" class="dm-node" />
+                <text x="620" y="256" class="dm-text-small">Apenas p/ contrato específico</text>
+
+                <!-- Necessário -->
+                <rect x="240" y="300" width="160" height="40" class="dm-node" />
+                <text x="320" y="320" class="dm-text">Necessário (Art. 76)</text>
+                <line x1="320" y1="340" x2="320" y2="362" class="dm-line" />
+                <rect x="160" y="364" width="320" height="120" class="dm-node" />
+                <text x="320" y="380" class="dm-text-small">Incapazes · Militares da ativa</text>
+                <text x="320" y="398" class="dm-text-small">Servidores públicos · Presos</text>
+                <text x="320" y="416" class="dm-text-small">Marítimos</text>
+                <text x="320" y="440" class="dm-text-small" style="fill:#9a9287;font-size:10px;">imposto por lei</text>
+
+                <!-- Linhas do necessário -->
+                <line x1="400" y1="92" x2="400" y2="300" class="dm-line" style="opacity:0.15;" />
+                <line x1="400" y1="300" x2="320" y2="300" class="dm-line" />
+            </svg>
+        </div>
+
+        <div class="divider-gold"></div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 2                                                    -->
+        <!-- ============================================================ -->
+        <div class="chapter-marker anchor-offset" id="cap2">
+            <span class="label">Capítulo 2</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Classificação dos Bens</h1>
+
+        <h2>2.1 Bens Imóveis: Conceito e Espécies</h2>
+
+        <p>O Código Civil, nos arts. 79 a 81, estabelece a classificação dos bens imóveis, que se dividem em três categorias:</p>
+
+        <h3>A) Bens Imóveis por Natureza (Art. 79)</h3>
+
+        <div class="quote">
+            <p><strong>Art. 79.</strong> São bens imóveis o solo e tudo quanto se lhe incorporar natural ou artificialmente.</p>
+        </div>
+
+        <p>São bens imóveis por natureza:</p>
+        <ul>
+            <li><strong>O solo</strong> (terra, terreno, gleba);</li>
+            <li><strong>Tudo quanto se incorporar ao solo:</strong>
+                <ul>
+                    <li><strong>Naturalmente:</strong> árvores, plantas, frutos pendentes, etc. (acessão física natural);</li>
+                    <li><strong>Artificialmente:</strong> construções, edificações, plantações, etc. (acessão física artificial).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4>Exemplos práticos</h4>
+
+        <ul>
+            <li><strong>Cerca-viva:</strong> é bem imóvel por natureza ou acessão física artificial, pois está incorporada ao solo (art. 79).</li>
+            <li><strong>Piscina:</strong> é bem imóvel por acessão física artificial, pois está incorporada ao solo.</li>
+            <li><strong>Terreno:</strong> é bem imóvel por natureza (art. 79).</li>
+            <li><strong>Árvores frutíferas:</strong> são bens imóveis por natureza, enquanto estiverem incorporadas ao solo.</li>
+        </ul>
+
+        <div class="tip-box atencao">
+            <span class="label">Atenção</span>
+            <p>Os frutos pendentes (ex.: frutos ainda nas árvores) também são bens imóveis por natureza. Quando colhidos (separados do solo), tornam-se bens móveis.</p>
+        </div>
+
+        <h3>B) Bens Imóveis por Acessão Física Artificial</h3>
+
+        <p>Trata-se da incorporação artificial ao solo, como edificações, construções, plantações, benfeitorias, etc. A regra é que, uma vez incorporados ao solo, perdem sua individualidade e tornam-se imóveis.</p>
+
+        <h3>C) Bens Imóveis por Destinação (Art. 81)</h3>
+
+        <div class="quote">
+            <p><strong>Art. 81.</strong> Não perdem o caráter de imóveis:</p>
+            <p>I - As edificações que, separadas do solo, mas conservarem a sua unidade, forem transferidas para outro local;</p>
+            <p>II - Os materiais provisoriamente separados de um prédio para nele se reempregarem.</p>
+        </div>
+
+        <h2>2.2 Bens Móveis: Conceito e Espécies (Arts. 82 a 84)</h2>
+
+        <h3>A) Bens Móveis por Natureza (Art. 82)</h3>
+
+        <div class="quote">
+            <p><strong>Art. 82.</strong> São móveis os bens suscetíveis de movimento próprio ou de remoção por força alheia.</p>
+        </div>
+
+        <p>São exemplos: veículos, livros, roupas, animais, etc.</p>
+
+        <h3>B) Bens Móveis por Destinação (Art. 83)</h3>
+
+        <div class="quote">
+            <p><strong>Art. 83.</strong> Consideram-se móveis para os efeitos legais:</p>
+            <p>I - As energias que tenham valor econômico;</p>
+            <p>II - Os direitos reais sobre objetos móveis e as ações correspondentes;</p>
+            <p>III - Os direitos pessoais de caráter patrimonial e respectivas ações.</p>
+        </div>
+
+        <h4>Energia eólica</h4>
+
+        <p>A energia eólica (energia dos ventos) é considerada <strong>bem móvel</strong>, nos termos do art. 83, I, pois as energias que tenham valor econômico são consideradas móveis para os efeitos legais.</p>
+
+        <div class="tip-box dica">
+            <span class="label">Dica de Prova</span>
+            <p>A FGV frequentemente cobra a classificação da energia eólica como bem móvel. O candidato pode ficar tentado a classificá-la como imóvel por estar relacionada ao solo, mas a lei é clara: <span class="highlight">energias com valor econômico são bens móveis</span>.</p>
+        </div>
+
+        <h3>C) Bens Móveis por Antecipação (Art. 84)</h3>
+
+        <div class="quote">
+            <p><strong>Art. 84.</strong> Os materiais destinados a alguma construção, enquanto não forem empregados, conservam sua qualidade de móveis.</p>
+        </div>
+
+        <p>Assim, os tijolos, telhas, cimentos, vergalhões, etc., que foram adquiridos para uma construção, <strong>enquanto não forem efetivamente empregados (incorporados ao solo), permanecem bens móveis</strong>.</p>
+
+        <div class="card card-sage">
+            <div class="card-title">Exemplo</div>
+            <p>João comprou 5.000 tijolos para construir sua casa. Enquanto os tijolos estiverem estocados no terreno, aguardando o início da construção, são bens móveis. Somente quando forem assentados (incorporados à construção) é que se tornarão bens imóveis.</p>
+        </div>
+
+        <h2>2.3 Bens Imóveis por Destinação (Art. 81, II)</h2>
+
+        <p>Este dispositivo é um dos mais cobrados em concursos e, frequentemente, gera confusão nos candidatos.</p>
+
+        <div class="quote">
+            <p><strong>Art. 81, II:</strong> Não perdem o caráter de imóveis os materiais provisoriamente separados de um prédio para nele se reempregarem.</p>
+        </div>
+
+        <h3>Interpretação do dispositivo</h3>
+
+        <p>A regra do art. 81, II tem como fundamento a <strong>intenção de recolocação</strong>. Vejamos os elementos essenciais:</p>
+
+        <ol>
+            <li><strong>Materiais separados de um prédio:</strong> são elementos que já faziam parte da construção e foram retirados.</li>
+            <li><strong>Provisoriedade:</strong> a separação é temporária, não definitiva.</li>
+            <li><strong>Destinação ao reemprego:</strong> a intenção é recolocar os materiais no mesmo prédio.</li>
+            <li><strong>Não perdem a qualidade de imóveis:</strong> mesmo separados fisicamente, enquanto houver o propósito de reutilização na mesma construção, os materiais continuam sendo bens imóveis.</li>
+        </ol>
+
+        <h4>Exemplos práticos</h4>
+
+        <div class="card card-gold">
+            <div class="card-title">Caso 1 · Telhas retiradas para reforma</div>
+            <p>Um imóvel passa por reforma. As telhas são retiradas do telhado, limpas e armazenadas provisoriamente no quintal para serem recolocadas após a conclusão da reforma.</p>
+            <p><strong>Classificação:</strong> As telhas são bens <strong>imóveis por destinação</strong> (art. 81, II), pois foram provisoriamente separadas do prédio para nele se reempregarem.</p>
+        </div>
+
+        <div class="card card-terracotta">
+            <div class="card-title">Caso 2 · Telhas quebradas e descartadas</div>
+            <p>Durante a reforma, algumas telhas se quebram e são descartadas, sendo substituídas por telhas novas.</p>
+            <p><strong>Classificação:</strong> As telhas quebradas descartadas <strong>perdem a qualidade de imóveis</strong> e tornam-se bens <strong>móveis</strong>, pois não há mais intenção de reemprego.</p>
+        </div>
+
+        <div class="card card-blue">
+            <div class="card-title">Caso 3 · Vidros retirados para restauração</div>
+            <p>Os vidros de uma janela histórica são retirados provisoriamente para restauração, com a intenção de serem recolocados após o trabalho.</p>
+            <p><strong>Classificação:</strong> Vidros retirados provisoriamente para restauração e que serão reempregados são bens <strong>imóveis por destinação</strong> (art. 81, II).</p>
+        </div>
+
+        <h2>2.4 Materiais de Construção: O Grande Desafio das Provas</h2>
+
+        <p>A distinção entre as três situações envolvendo materiais de construção é uma das <strong>pegadinhas mais frequentes</strong> em provas da FGV, Cebraspe e FCC.</p>
+
+        <h3>Quadro comparativo: materiais de construção</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Situação</th>
+                        <th>Classificação</th>
+                        <th>Fundamento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Materiais já incorporados ao prédio (ex.: telhas no telhado, tijolos na parede)</td>
+                        <td><strong>Bens imóveis</strong> (por acessão ou por natureza, conforme o caso)</td>
+                        <td>Art. 79 (incorporação ao solo)</td>
+                    </tr>
+                    <tr>
+                        <td>Materiais <strong>provisoriamente separados</strong> do prédio para nele se reempregarem (ex.: telhas retiradas para reforma e que serão recolocadas)</td>
+                        <td><strong>Bens imóveis por destinação</strong></td>
+                        <td>Art. 81, II</td>
+                    </tr>
+                    <tr>
+                        <td>Materiais <strong>destinados à construção mas ainda não empregados</strong> (ex.: tijolos novos estocados)</td>
+                        <td><strong>Bens móveis</strong></td>
+                        <td>Art. 84</td>
+                    </tr>
+                    <tr>
+                        <td>Materiais <strong>separados do prédio e descartados</strong> (ex.: telhas quebradas e jogadas fora)</td>
+                        <td><strong>Bens móveis</strong> (perdem a qualidade de imóveis)</td>
+                        <td>Interpretação do art. 81, II (perda da intenção de reemprego)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Esquema de raciocínio para provas</h3>
+
+        <div class="card card-gold">
+            <div class="card-title">Fluxo de Decisão</div>
+            <div style="font-family:var(--font-sans);font-size:0.92rem;color:var(--text-secondary);line-height:1.8;">
+                <p><strong>MATERIAL DE CONSTRUÇÃO</strong></p>
+                <p style="padding-left:1.5rem;">├── Já foi incorporado ao solo?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;├── SIM → <span class="highlight">BEM IMÓVEL</span> (art. 79)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;└── NÃO → Continua no próximo passo</p>
+                <p style="padding-left:1.5rem;">├── Foi retirado de um prédio e há intenção de recolocação?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;├── SIM → <span class="highlight">BEM IMÓVEL POR DESTINAÇÃO</span> (art. 81, II)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;└── NÃO (foi descartado ou há perda da intenção) → <span class="marker-terracotta">BEM MÓVEL</span></p>
+                <p style="padding-left:1.5rem;">└── Foi adquirido para construção mas ainda não foi empregado?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;├── SIM → <span class="marker-terracotta">BEM MÓVEL</span> (art. 84)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;└── NÃO → Verificar outra classificação</p>
+            </div>
+        </div>
+
+        <div class="tip-box atencao">
+            <span class="label">Pegadinha Clássica</span>
+            <p>Confundir "materiais provisoriamente separados para reemprego" (art. 81, II - <span class="highlight">continuam imóveis</span>) com "materiais destinados a construção mas ainda não empregados" (art. 84 - <span class="marker-terracotta">são móveis</span>) e com "materiais descartados" (perdem a qualidade de imóveis).</p>
+        </div>
+
+        <h4>Exemplo integrador</h4>
+
+        <div class="card card-gold">
+            <div class="card-title">Caso Concreto</div>
+            <p>Maria possui uma casa com telhado de telhas de cerâmica. Ela decide fazer uma reforma. As telhas são retiradas, limpas e armazenadas no quintal para serem recolocadas após a reforma. Algumas telhas estão quebradas e são descartadas. Maria também compra 1.000 telhas novas para substituir as quebradas, mas elas ainda estão na loja de materiais de construção.</p>
+            <p><strong>Classificação:</strong></p>
+            <ol>
+                <li><strong>Telhas retiradas para reforma e que serão recolocadas:</strong> bens imóveis por destinação (art. 81, II).</li>
+                <li><strong>Telhas quebradas e descartadas:</strong> bens móveis (perderam a qualidade de imóveis).</li>
+                <li><strong>Telhas novas na loja (ainda não empregadas):</strong> bens móveis (art. 84).</li>
+            </ol>
+        </div>
+
+        <h2>2.5 Energias com Valor Econômico</h2>
+
+        <p>O art. 83, I do CC estabelece que:</p>
+
+        <div class="quote">
+            <p><strong>Art. 83, I:</strong> Consideram-se móveis para os efeitos legais as energias que tenham valor econômico.</p>
+        </div>
+
+        <p>Isso significa que:</p>
+        <ul>
+            <li><strong>Energia elétrica:</strong> bem móvel.</li>
+            <li><strong>Energia eólica (dos ventos):</strong> bem móvel.</li>
+            <li><strong>Energia solar (captada):</strong> bem móvel.</li>
+            <li><strong>Energia hidráulica (explorada):</strong> bem móvel.</li>
+        </ul>
+
+        <p>O fundamento é que, embora a fonte da energia possa ser imóvel (ex.: um rio, o solo, o vento), a energia propriamente dita, quando captada e com valor econômico, é tratada como bem móvel para os efeitos legais.</p>
+
+        <div class="tip-box dica">
+            <span class="label">Dica de Prova</span>
+            <p>Questões sobre energia eólica são recorrentes. Lembre-se: <span class="highlight">"energia eólica = bem móvel (art. 83, I)"</span>.</p>
+        </div>
+
+        <h2>2.6 Quadro-Síntese para Revisão</h2>
+
+        <h3>Classificação dos bens imóveis e móveis</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bem</th>
+                        <th>Classificação</th>
+                        <th>Fundamento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cerca-viva</td>
+                        <td>Imóvel (natureza/acessão artificial)</td>
+                        <td>Art. 79</td>
+                    </tr>
+                    <tr>
+                        <td>Piscina</td>
+                        <td>Imóvel (acessão artificial)</td>
+                        <td>Art. 79</td>
+                    </tr>
+                    <tr>
+                        <td>Terreno</td>
+                        <td>Imóvel (natureza)</td>
+                        <td>Art. 79</td>
+                    </tr>
+                    <tr>
+                        <td>Telhas retiradas para reforma (reemprego)</td>
+                        <td>Imóvel por destinação</td>
+                        <td>Art. 81, II</td>
+                    </tr>
+                    <tr>
+                        <td>Vidros retirados para restauração (reemprego)</td>
+                        <td>Imóvel por destinação</td>
+                        <td>Art. 81, II</td>
+                    </tr>
+                    <tr>
+                        <td>Telhas quebradas e descartadas</td>
+                        <td>Móvel</td>
+                        <td>Perda da destinação</td>
+                    </tr>
+                    <tr>
+                        <td>Vasos de plantas (não incorporados)</td>
+                        <td>Móvel</td>
+                        <td>Art. 82</td>
+                    </tr>
+                    <tr>
+                        <td>Tijolos fabricados mas não empregados</td>
+                        <td>Móvel</td>
+                        <td>Art. 84</td>
+                    </tr>
+                    <tr>
+                        <td>Energia eólica</td>
+                        <td>Móvel</td>
+                        <td>Art. 83, I</td>
+                    </tr>
+                    <tr>
+                        <td>Materiais destinados à construção (estocados)</td>
+                        <td>Móvel</td>
+                        <td>Art. 84</td>
+                    </tr>
+                    <tr>
+                        <td>Edificações separadas e transferidas</td>
+                        <td>Imóvel por destinação</td>
+                        <td>Art. 81, I</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== SVG: Bens ===== -->
+        <div class="diagram-container">
+            <div class="diagram-title">Mapa Mental · Classificação dos Bens</div>
+            <svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa mental da classificação dos bens">
+                <defs>
+                    <style>
+                        .bm-bg {
+                            fill: #12121a;
+                        }
+                        .bm-node {
+                            fill: #1c1c2e;
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .bm-node-gold {
+                            fill: rgba(212, 168, 83, 0.10);
+                            stroke: #d4a853;
+                            stroke-width: 1.8;
+                            rx: 10;
+                        }
+                        .bm-node-sage {
+                            fill: rgba(122, 155, 142, 0.08);
+                            stroke: #7a9b8e;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .bm-text {
+                            fill: #e8e4dc;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 13px;
+                            font-weight: 600;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .bm-text-gold {
+                            fill: #d4a853;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 14px;
+                            font-weight: 700;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .bm-text-small {
+                            fill: #c4bdb3;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 11px;
+                            font-weight: 400;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .bm-line {
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            fill: none;
+                        }
+                        .bm-line-gold {
+                            stroke: #d4a853;
+                            stroke-width: 1.5;
+                            fill: none;
+                            opacity: 0.4;
+                        }
+                    </style>
+                </defs>
+                <rect width="800" height="460" rx="12" class="bm-bg" />
+
+                <!-- Central -->
+                <rect x="300" y="16" width="200" height="44" class="bm-node-gold" />
+                <text x="400" y="38" class="bm-text-gold">BENS</text>
+
+                <!-- Linhas principais -->
+                <line x1="400" y1="60" x2="200" y2="60" class="bm-line" />
+                <line x1="400" y1="60" x2="600" y2="60" class="bm-line" />
+                <line x1="400" y1="60" x2="400" y2="84" class="bm-line-gold" />
+
+                <!-- Imóveis -->
+                <rect x="80" y="64" width="240" height="40" class="bm-node" />
+                <text x="200" y="84" class="bm-text">IMÓVEIS</text>
+                <line x1="200" y1="104" x2="200" y2="128" class="bm-line" />
+
+                <rect x="60" y="130" width="280" height="56" class="bm-node" />
+                <text x="200" y="146" class="bm-text-small">Por natureza (Art. 79)</text>
+                <text x="200" y="164" class="bm-text-small" style="fill:#9a9287;">solo + incorporado natural/artificial</text>
+                <line x1="200" y1="186" x2="200" y2="210" class="bm-line" />
+
+                <rect x="60" y="212" width="280" height="32" class="bm-node" />
+                <text x="200" y="228" class="bm-text-small">Por acessão artificial</text>
+                <line x1="200" y1="244" x2="200" y2="268" class="bm-line" />
+
+                <rect x="40" y="270" width="320" height="56" class="bm-node" />
+                <text x="200" y="286" class="bm-text-small">Por destinação (Art. 81)</text>
+                <text x="200" y="304" class="bm-text-small" style="fill:#9a9287;">I - edificações transferidas · II - materiais p/ reemprego</text>
+                <line x1="200" y1="326" x2="200" y2="350" class="bm-line" />
+
+                <rect x="80" y="352" width="240" height="32" class="bm-node-sage" />
+                <text x="200" y="368" class="bm-text-small" style="fill:#7a9b8e;">Art. 81, II: separado c/ intenção = imóvel</text>
+
+                <!-- Móveis -->
+                <rect x="480" y="64" width="240" height="40" class="bm-node" />
+                <text x="600" y="84" class="bm-text">MÓVEIS</text>
+                <line x1="600" y1="104" x2="600" y2="128" class="bm-line" />
+
+                <rect x="460" y="130" width="280" height="32" class="bm-node" />
+                <text x="600" y="146" class="bm-text-small">Por natureza (Art. 82)</text>
+                <line x1="600" y1="162" x2="600" y2="186" class="bm-line" />
+
+                <rect x="460" y="188" width="280" height="56" class="bm-node" />
+                <text x="600" y="204" class="bm-text-small">Por destinação (Art. 83)</text>
+                <text x="600" y="222" class="bm-text-small" style="fill:#9a9287;">I - energias · II - direitos reais · III - direitos pessoais</text>
+                <line x1="600" y1="244" x2="600" y2="268" class="bm-line" />
+
+                <rect x="460" y="270" width="280" height="56" class="bm-node" />
+                <text x="600" y="286" class="bm-text-small">Por antecipação (Art. 84)</text>
+                <text x="600" y="304" class="bm-text-small" style="fill:#9a9287;">materiais destinados à construção ainda não empregados</text>
+                <line x1="600" y1="326" x2="600" y2="350" class="bm-line" />
+
+                <rect x="480" y="352" width="240" height="32" class="bm-node-sage" />
+                <text x="600" y="368" class="bm-text-small" style="fill:#7a9b8e;">Art. 84: novo p/ construir = móvel</text>
+
+                <!-- Linha de conexão energia -->
+                <line x1="600" y1="244" x2="600" y2="270" class="bm-line-gold" />
+            </svg>
+        </div>
+
+        <div class="divider-gold"></div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 3                                                    -->
+        <!-- ============================================================ -->
+        <div class="chapter-marker anchor-offset" id="cap3">
+            <span class="label">Capítulo 3</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Pessoa Natural e Capacidade Civil</h1>
+
+        <h2>3.1 Personalidade e Capacidade: Distinções Essenciais</h2>
+
+        <p>Antes de adentrarmos nas regras de capacidade, é fundamental compreender a distinção entre personalidade e capacidade civil, pois são conceitos frequentemente confundidos em provas.</p>
+
+        <h3>Personalidade Civil</h3>
+        <ul>
+            <li><strong>Conceito:</strong> é a aptidão genérica para ser titular de direitos e obrigações.</li>
+            <li><strong>Início:</strong> com o nascimento com vida (art. 2º, CC).</li>
+            <li><strong>Característica:</strong> é atributo de toda pessoa humana, independentemente de idade, saúde ou condição.</li>
+            <li><strong>Irrenunciável e indissociável:</strong> a personalidade acompanha a pessoa desde o nascimento até a morte.</li>
+        </ul>
+
+        <h3>Capacidade Civil</h3>
+        <ul>
+            <li><strong>Conceito:</strong> é a aptidão específica para exercer, por si só, os atos da vida civil (praticar negócios jurídicos, contratar, casar, etc.).</li>
+            <li><strong>Modalidades:</strong>
+                <ul>
+                    <li><strong>Capacidade de direito (de gozo):</strong> é a própria personalidade; todos têm capacidade de direito.</li>
+                    <li><strong>Capacidade de fato (de exercício):</strong> é a aptidão para exercer pessoalmente os direitos; aqui sim há restrições legais.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>A regra geral é que <strong>toda pessoa é capaz de direitos e obrigações</strong>, mas a capacidade de fato pode ser limitada pela idade, por enfermidade ou por deficiência (art. 1º CC c/c arts. 3º e 4º).</p>
+
+        <div class="tip-box dica">
+            <span class="label">Dica de Prova</span>
+            <p>Personalidade = ser titular de direitos. Capacidade = exercer esses direitos. A primeira é universal; a segunda pode ser restringida pela lei.</p>
+        </div>
+
+        <h2>3.2 Emancipação: Causas e Efeitos</h2>
+
+        <p>A emancipação é o instituto pelo qual o menor de 18 anos (mas com pelo menos 16 anos completos) adquire plena capacidade civil, equiparando-se ao maior de idade para todos os atos da vida civil.</p>
+
+        <h3>Causas legais de emancipação (Art. 5º, parágrafo único, CC)</h3>
+
+        <div class="quote">
+            <p><strong>Art. 5º, parágrafo único.</strong> Cessará, para os menores, a incapacidade:</p>
+            <p>I - Pelo casamento;</p>
+            <p>II - Pelo exercício de emprego público efetivo;</p>
+            <p>III - Pela colação de grau em curso de ensino superior;</p>
+            <p>IV - Pelo estabelecimento civil ou comercial, ou pela existência de relação de emprego, desde que, em função deles, o menor com 16 anos completos tenha economia própria.</p>
+        </div>
+
+        <h4>I - Casamento</h4>
+        <p>O casamento é a causa mais comum de emancipação. Para que produza efeitos, o casamento deve ser válido e o menor deve ter pelo menos 16 anos (idade núbil, art. 1.520, CC).</p>
+        <p><strong>Efeito:</strong> A emancipação opera-se automaticamente com a celebração do casamento. O menor emancipado pode praticar todos os atos da vida civil, inclusive contratar, sem assistência de seus pais ou tutores.</p>
+        <div class="tip-box atencao">
+            <span class="label">Atenção</span>
+            <p>O casamento <strong>antes dos 16 anos</strong> é nulo (art. 1.520, CC) e não produz emancipação.</p>
+        </div>
+
+        <h4>II - Exercício de emprego público efetivo</h4>
+        <p>O menor que tomar posse em cargo público efetivo (não comissionado, não temporário) e passar a exercê-lo adquire plena capacidade civil.</p>
+        <p><strong>Requisitos:</strong></p>
+        <ul>
+            <li>Cargo público <strong>efetivo</strong> (concursado);</li>
+            <li>Efetivo exercício (não basta a nomeação ou posse, é necessário exercer o cargo);</li>
+            <li>O menor deve ter, no mínimo, 16 anos (requisito implícito).</li>
+        </ul>
+
+        <h4>III - Colação de grau em curso de ensino superior</h4>
+        <p>A colação de grau em curso superior (bacharelado, licenciatura ou tecnólogo) emancipa o menor, desde que tenha pelo menos 16 anos.</p>
+        <p><strong>Atenção:</strong></p>
+        <ul>
+            <li>Não basta a conclusão do curso; é necessária a <strong>colação de grau</strong> (ato solene de entrega do diploma).</li>
+            <li>Cursos de pós-graduação não emancipam (apenas graduação).</li>
+        </ul>
+
+        <h4>IV - Estabelecimento civil ou comercial com economia própria</h4>
+        <p>O menor que estabelecer negócio próprio (civil ou comercial) e tiver economia própria (renda suficiente para sua subsistência) adquire capacidade plena.</p>
+        <p><strong>Requisitos:</strong></p>
+        <ul>
+            <li>Estabelecimento civil ou comercial;</li>
+            <li>Economia própria (renda que lhe garanta independência financeira);</li>
+            <li>Idade mínima de 16 anos.</li>
+        </ul>
+
+        <h3>Efeitos da emancipação</h3>
+        <p>Uma vez emancipado, o menor:</p>
+        <ul>
+            <li><strong>Torna-se absolutamente capaz</strong> para todos os atos da vida civil (equipara-se ao maior de 18 anos);</li>
+            <li><strong>Pode praticar negócios jurídicos</strong> sem assistência ou representação;</li>
+            <li><strong>Responde por suas obrigações</strong> com seu patrimônio próprio.</li>
+        </ul>
+
+        <h3>Quadro-resumo: causas de emancipação</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Causa</th>
+                        <th>Fundamento</th>
+                        <th>Observação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Casamento</td>
+                        <td>Art. 5º, I</td>
+                        <td>Deve ser válido e com 16 anos ou mais</td>
+                    </tr>
+                    <tr>
+                        <td>Emprego público efetivo</td>
+                        <td>Art. 5º, II</td>
+                        <td>Somente cargo efetivo; exercício efetivo</td>
+                    </tr>
+                    <tr>
+                        <td>Colação de grau em ensino superior</td>
+                        <td>Art. 5º, III</td>
+                        <td>Apenas graduação; ato solene da colação</td>
+                    </tr>
+                    <tr>
+                        <td>Estabelecimento civil/comercial com economia própria</td>
+                        <td>Art. 5º, IV</td>
+                        <td>Idade mínima de 16 anos e economia própria</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tip-box dica">
+            <span class="label">Dica de Prova</span>
+            <p>Os incisos <span class="highlight">I (casamento)</span> e <span class="highlight">III (colação de grau)</span> são os mais cobrados pela FGV e FCC.</p>
+        </div>
+
+        <h2>3.3 Capacidade da Pessoa com Deficiência após o EPD</h2>
+
+        <p>O Estatuto da Pessoa com Deficiência (Lei 13.146/2015 - EPD) promoveu uma <strong>revolução</strong> no tratamento da capacidade civil das pessoas com deficiência, alterando significativamente os arts. 3º e 4º do Código Civil.</p>
+
+        <h3>A situação antes do EPD</h3>
+
+        <p>Antes da Lei 13.146/2015, o art. 3º, II do CC considerava <strong>absolutamente incapazes</strong> os "enfermos ou deficientes mentais, sem o necessário discernimento", e o art. 4º, II considerava <strong>relativamente incapazes</strong> os "pródigos" e "silvícolas" (revogado).</p>
+
+        <p>Essa redação excluía os deficientes mentais do exercício de sua capacidade civil, tratando-os como absolutamente incapazes, independentemente do grau de sua deficiência.</p>
+
+        <h3>A situação após o EPD</h3>
+
+        <p>Com a alteração promovida pela Lei 13.146/2015, a redação dos arts. 3º e 4º do CC foi completamente modificada:</p>
+
+        <div class="quote">
+            <p><strong>Art. 3º.</strong> São absolutamente incapazes de exercer pessoalmente os atos da vida civil os menores de 16 (dezesseis) anos.</p>
+            <p class="source" style="padding-left:0;font-size:0.8rem;color:var(--text-muted);">(Redação dada pela Lei 13.146/2015 - excluiu os deficientes mentais da absoluta incapacidade)</p>
+        </div>
+
+        <div class="quote">
+            <p><strong>Art. 4º.</strong> São incapazes, relativamente a certos atos ou à maneira de os exercer:</p>
+            <p>I - os maiores de 16 (dezesseis) e menores de 18 (dezoito) anos;</p>
+            <p>II - os ébrios habituais e os viciados em tóxico;</p>
+            <p>III - aqueles que, por causa transitória ou permanente, não puderem exprimir sua vontade;</p>
+            <p>IV - os pródigos.</p>
+            <p class="source" style="padding-left:0;font-size:0.8rem;color:var(--text-muted);">(Redação dada pela Lei 13.146/2015)</p>
+        </div>
+
+        <h3>Regra geral: a deficiência não afeta a capacidade</h3>
+
+        <p>A grande mudança trazida pelo EPD é que <strong>a deficiência, por si só, não afeta a plena capacidade civil</strong> das pessoas.</p>
+
+        <p>Isso significa que:</p>
+        <ol>
+            <li>A pessoa com deficiência mental leve, se maior de 16 anos, <strong>não é mais considerada relativamente incapaz</strong> apenas por essa condição.</li>
+            <li>A incapacidade absoluta (art. 3º) restringe-se <strong>exclusivamente aos menores de 16 anos</strong>.</li>
+            <li>A incapacidade relativa (art. 4º) subsiste apenas para:
+                <ul>
+                    <li>Maiores de 16 e menores de 18 anos (inciso I);</li>
+                    <li>Ébrios habituais e viciados em tóxico (inciso II);</li>
+                    <li>Aqueles que, por causa transitória ou permanente, <strong>não puderem exprimir sua vontade</strong> (inciso III);</li>
+                    <li>Pródigos (inciso IV).</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>O critério para a incapacidade relativa</h3>
+
+        <p>O art. 4º, III estabelece o critério fundamental: a pessoa será considerada relativamente incapaz se, por causa transitória ou permanente, <strong>não puder exprimir sua vontade</strong>.</p>
+
+        <p>Isso significa que:</p>
+        <ul>
+            <li><strong>Não é a deficiência em si</strong> que gera incapacidade.</li>
+            <li>É a <strong>impossibilidade de expressar a vontade</strong>.</li>
+            <li>Se a pessoa com deficiência tem discernimento e consegue expressar sua vontade, <strong>é plenamente capaz</strong>.</li>
+        </ul>
+
+        <h4>Aplicação prática</h4>
+
+        <div class="card card-sage">
+            <div class="card-title">Exemplo 1</div>
+            <p><strong>João</strong> tem 20 anos e síndrome de Down leve. Consegue compreender atos da vida civil, expressar sua vontade e administrar seus próprios negócios.</p>
+            <p><strong>Capacidade:</strong> João é <strong>plenamente capaz</strong>, pois a deficiência, por si só, não afeta a capacidade civil (art. 3º c/c art. 4º, III). Sua deficiência não o impede de exprimir sua vontade.</p>
+        </div>
+
+        <div class="card card-terracotta">
+            <div class="card-title">Exemplo 2</div>
+            <p><strong>Maria</strong> tem 25 anos e sofre de demência grave, em estágio avançado, que a impede de compreender atos da vida civil e expressar sua vontade.</p>
+            <p><strong>Capacidade:</strong> Maria é <strong>relativamente incapaz</strong>, pois não pode exprimir sua vontade por causa permanente (art. 4º, III).</p>
+        </div>
+
+        <h3>Curatela e tomada de decisão apoiada</h3>
+
+        <p>O EPD também introduziu a <strong>tomada de decisão apoiada</strong> (arts. 1.783-A a 1.783-D do CC), um mecanismo menos gravoso que a curatela, que permite à pessoa com deficiência exercer sua capacidade com o apoio de pessoas de sua confiança.</p>
+
+        <ul>
+            <li><strong>Curatela:</strong> reserva-se para atos de natureza patrimonial e negocial, sendo excepcional e restrita (art. 1.782, CC).</li>
+            <li><strong>Tomada de decisão apoiada:</strong> permite que a pessoa com deficiência pratique atos da vida civil com o auxílio de apoiadores, mas mantendo sua autonomia.</li>
+        </ul>
+
+        <div class="tip-box dica">
+            <span class="label">Dica de Prova</span>
+            <p>O EPD veda a curatela para decisões relativas ao corpo, à sexualidade, ao casamento, à reprodução e à guarda dos filhos (art. 1.782, § 3º, CC). Essas matérias são frequentemente cobradas.</p>
+        </div>
+
+        <!-- ===== SVG: Capacidade ===== -->
+        <div class="diagram-container">
+            <div class="diagram-title">Mapa Mental · Capacidade Civil</div>
+            <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa mental da capacidade civil">
+                <defs>
+                    <style>
+                        .cc-bg {
+                            fill: #12121a;
+                        }
+                        .cc-node {
+                            fill: #1c1c2e;
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .cc-node-gold {
+                            fill: rgba(212, 168, 83, 0.10);
+                            stroke: #d4a853;
+                            stroke-width: 1.8;
+                            rx: 10;
+                        }
+                        .cc-node-sage {
+                            fill: rgba(122, 155, 142, 0.08);
+                            stroke: #7a9b8e;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .cc-text {
+                            fill: #e8e4dc;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 13px;
+                            font-weight: 600;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .cc-text-gold {
+                            fill: #d4a853;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 14px;
+                            font-weight: 700;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .cc-text-small {
+                            fill: #c4bdb3;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 11px;
+                            font-weight: 400;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .cc-line {
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            fill: none;
+                        }
+                        .cc-line-gold {
+                            stroke: #d4a853;
+                            stroke-width: 1.5;
+                            fill: none;
+                            opacity: 0.4;
+                        }
+                    </style>
+                </defs>
+                <rect width="800" height="420" rx="12" class="cc-bg" />
+
+                <!-- Central -->
+                <rect x="280" y="14" width="240" height="44" class="cc-node-gold" />
+                <text x="400" y="36" class="cc-text-gold">CAPACIDADE CIVIL</text>
+
+                <!-- Linhas -->
+                <line x1="400" y1="58" x2="400" y2="82" class="cc-line-gold" />
+                <line x1="400" y1="82" x2="140" y2="82" class="cc-line" />
+                <line x1="400" y1="82" x2="660" y2="82" class="cc-line" />
+                <line x1="400" y1="82" x2="400" y2="82" class="cc-line" style="opacity:0;" />
+
+                <!-- Absolutamente -->
+                <rect x="40" y="86" width="200" height="40" class="cc-node" />
+                <text x="140" y="106" class="cc-text">Absolutamente Incapazes</text>
+                <line x1="140" y1="126" x2="140" y2="150" class="cc-line" />
+                <rect x="50" y="152" width="180" height="48" class="cc-node" />
+                <text x="140" y="168" class="cc-text-small">Menores de 16 anos</text>
+                <text x="140" y="184" class="cc-text-small" style="fill:#9a9287;">(Art. 3º)</text>
+
+                <!-- Relativamente -->
+                <rect x="300" y="86" width="200" height="40" class="cc-node" />
+                <text x="400" y="106" class="cc-text">Relativamente Incapazes</text>
+                <line x1="400" y1="126" x2="400" y2="150" class="cc-line" />
+                <rect x="260" y="152" width="280" height="104" class="cc-node" />
+                <text x="400" y="168" class="cc-text-small">I - 16 a 18 anos</text>
+                <text x="400" y="186" class="cc-text-small">II - Ébrios habituais e viciados</text>
+                <text x="400" y="204" class="cc-text-small">III - Não podem exprimir vontade</text>
+                <text x="400" y="222" class="cc-text-small">IV - Pródigos</text>
+                <text x="400" y="244" class="cc-text-small" style="fill:#9a9287;font-size:10px;">(Art. 4º)</text>
+
+                <!-- Emancipação -->
+                <rect x="560" y="86" width="200" height="40" class="cc-node-sage" />
+                <text x="660" y="106" class="cc-text" style="fill:#7a9b8e;">Emancipação (Art. 5º)</text>
+                <line x1="660" y1="126" x2="660" y2="150" class="cc-line" />
+                <rect x="530" y="152" width="260" height="120" class="cc-node" />
+                <text x="660" y="168" class="cc-text-small">I - Casamento</text>
+                <text x="660" y="186" class="cc-text-small">II - Emprego público efetivo</text>
+                <text x="660" y="204" class="cc-text-small">III - Colação de grau (superior)</text>
+                <text x="660" y="222" class="cc-text-small">IV - Estabelecimento c/ economia própria</text>
+                <text x="660" y="244" class="cc-text-small" style="fill:#9a9287;font-size:10px;">16 anos completos · plena capacidade</text>
+
+                <!-- Seta de EPD -->
+                <rect x="300" y="310" width="200" height="36" class="cc-node-gold" style="stroke:#7a9b8e;fill:rgba(122,155,142,0.06);" />
+                <text x="400" y="328" class="cc-text-small" style="fill:#7a9b8e;">EPD (Lei 13.146/2015)</text>
+                <line x1="400" y1="300" x2="400" y2="310" class="cc-line-gold" style="stroke:#7a9b8e;opacity:0.4;" />
+                <rect x="200" y="356" width="400" height="44" class="cc-node" style="stroke:#7a9b8e;fill:rgba(122,155,142,0.04);" />
+                <text x="400" y="372" class="cc-text-small">Deficiência, por si só, NÃO afeta a capacidade</text>
+                <text x="400" y="390" class="cc-text-small" style="fill:#9a9287;">Art. 4º, III: o critério é a impossibilidade de exprimir a vontade</text>
+            </svg>
+        </div>
+
+        <div class="divider-gold"></div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 4                                                    -->
+        <!-- ============================================================ -->
+        <div class="chapter-marker anchor-offset" id="cap4">
+            <span class="label">Capítulo 4</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Morte Presumida</h1>
+
+        <h2>4.1 Morte Presumida com Decretação de Ausência</h2>
+
+        <p>A morte presumida é uma ficção jurídica que declara a morte de uma pessoa desaparecida, para fins de abertura de sucessão, dissolução do vínculo conjugal e outros efeitos.</p>
+
+        <p>Antes de adentrarmos na morte presumida sem ausência, é importante compreender que o Código Civil prevê, no art. 6º, a <strong>morte presumida com decretação de ausência</strong>:</p>
+
+        <div class="quote">
+            <p><strong>Art. 6º.</strong> A existência da pessoa natural termina com a morte; presume-se esta, quanto aos ausentes, nos casos em que a lei autoriza a abertura de sucessão definitiva.</p>
+        </div>
+
+        <p>A decretação de ausência é um processo judicial que:</p>
+        <ol>
+            <li>Declara a ausência da pessoa (desaparecimento sem notícias);</li>
+            <li>Nomeia curador para os bens do ausente;</li>
+            <li>Após determinado prazo, pode declarar a morte presumida e abrir a sucessão.</li>
+        </ol>
+
+        <h2>4.2 Morte Presumida sem Decretação de Ausência (Art. 7º, CC)</h2>
+
+        <p>O art. 7º do Código Civil traz uma exceção à regra geral, permitindo a declaração de morte presumida <strong>sem a necessidade de decretação de ausência</strong>, em situações específicas:</p>
+
+        <div class="quote">
+            <p><strong>Art. 7º.</strong> Pode ser declarada a morte presumida, sem decretação de ausência:</p>
+            <p>I - Se for extremamente provável a morte de quem estava em perigo de vida;</p>
+            <p>II - Se alguém, desaparecido em campanha ou feito prisioneiro, não for encontrado até dois anos após o término da guerra.</p>
+            <p><strong>Parágrafo único.</strong> A declaração da morte presumida, nesses casos, somente poderá ser requerida depois de esgotadas as buscas e averiguações, devendo a sentença fixar a data provável do falecimento.</p>
+        </div>
+
+        <h3>Análise do inciso I: perigo extremo</h3>
+
+        <div class="quote">
+            <p><strong>Art. 7º, I:</strong> Se for extremamente provável a morte de quem estava em perigo de vida.</p>
+        </div>
+
+        <p><strong>Requisitos para a declaração:</strong></p>
+
+        <ol>
+            <li><strong>Perigo de vida:</strong> a pessoa estava em situação de risco extremo (ex.: incêndio, desabamento, naufrágio, enchente, deslizamento, acidente aéreo, etc.).</li>
+            <li><strong>Probabilidade extrema de morte:</strong> a situação é de tal gravidade que a morte é altamente provável.</li>
+            <li><strong>Esgotamento das buscas e averiguações:</strong> não basta o perigo; é necessário que as autoridades tenham realizado todas as buscas possíveis e que a pessoa não tenha sido encontrada (parágrafo único).</li>
+            <li><strong>Não se exige a localização do corpo:</strong> a morte pode ser declarada mesmo sem o corpo, desde que comprovado o perigo extremo.</li>
+        </ol>
+
+        <p><strong>Não se exige prazo mínimo para a declaração</strong></p>
+
+        <p>Diferentemente do inciso II, a lei não estabelece prazo mínimo de espera. Basta que as buscas estejam esgotadas.</p>
+
+        <div class="card card-gold">
+            <div class="card-title">Exemplo prático</div>
+            <p>Desabamento de um prédio na cidade. As equipes de resgate realizam buscas por dias, mas uma pessoa não é encontrada. Diante da gravidade do desastre, é extremamente provável que a pessoa tenha morrido.</p>
+            <p><strong>Solução:</strong> Pode-se requerer a declaração de morte presumida <strong>sem decretação de ausência</strong>, com fundamento no art. 7º, I, pois a pessoa estava em perigo de vida e as buscas já foram esgotadas. Não se exige o prazo de 2 anos.</p>
+        </div>
+
+        <h3>Análise do inciso II: desaparecimento em guerra</h3>
+
+        <div class="quote">
+            <p><strong>Art. 7º, II:</strong> Se alguém, desaparecido em campanha ou feito prisioneiro, não for encontrado até dois anos após o término da guerra.</p>
+        </div>
+
+        <p><strong>Requisitos para a declaração:</strong></p>
+
+        <ol>
+            <li><strong>Desaparecimento em campanha militar:</strong> a pessoa estava em zona de guerra (combate, operação militar).</li>
+            <li><strong>Prisioneiro de guerra:</strong> a pessoa foi capturada e não há notícias de seu paradeiro.</li>
+            <li><strong>Prazo de 2 anos após o término da guerra:</strong> é necessário aguardar o prazo de 2 anos contados do fim do conflito.</li>
+            <li><strong>Esgotamento das buscas:</strong> também é necessário, conforme parágrafo único.</li>
+        </ol>
+
+        <p><strong>Prazo de 2 anos após o término da guerra</strong></p>
+
+        <p>O prazo de 2 anos mencionado no art. 7º, II aplica-se <strong>exclusivamente ao caso de desaparecimento em campanha militar ou feito prisioneiro em guerra</strong>, não se exigindo para desastres civis.</p>
+
+        <div class="card card-blue">
+            <div class="card-title">Exemplo prático</div>
+            <p>Durante uma guerra, um soldado brasileiro é feito prisioneiro pelo inimigo. A guerra termina em 2024, mas o soldado não é encontrado.</p>
+            <p><strong>Solução:</strong> Pode-se requerer a declaração de morte presumida <strong>em 2026</strong> (2 anos após o término da guerra), com fundamento no art. 7º, II. O prazo é exigido neste caso específico.</p>
+        </div>
+
+        <h2>4.3 Distinção entre os Incisos I e II do Art. 7º</h2>
+
+        <p>A FGV e outras bancas frequentemente exploram a diferença entre os dois incisos, e o erro mais comum é aplicar o prazo de 2 anos do inciso II para situações de desastre civil.</p>
+
+        <h3>Quadro comparativo</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Critério</th>
+                        <th>Inciso I</th>
+                        <th>Inciso II</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Situação</strong></td>
+                        <td>Perigo extremo de vida (ex.: incêndio, desabamento, naufrágio)</td>
+                        <td>Desaparecimento em campanha ou prisioneiro de guerra</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Prazo</strong></td>
+                        <td><strong>Não há prazo mínimo</strong>; exige-se apenas o esgotamento das buscas</td>
+                        <td><strong>2 anos após o término da guerra</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Corpo</strong></td>
+                        <td>Não é necessário encontrar o corpo</td>
+                        <td>Não é necessário encontrar o corpo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fundamento</strong></td>
+                        <td>Probabilidade extrema de morte</td>
+                        <td>Desaparecimento em contexto bélico</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Macete para memorizar</h3>
+
+        <div class="card card-gold">
+            <div class="card-title">Macete</div>
+            <p><strong>"Perigo extremo sem cadáver"</strong> → Incêndio, naufrágio, desabamento, enchente (inciso I).</p>
+            <p><strong>"Guerra com sumiço"</strong> → Desaparecido em campanha ou feito prisioneiro; aí sim espera-se 2 anos após o término da guerra (inciso II).</p>
+            <p>Em desastres civis, esgotadas as buscas, já se pode requerer a declaração de morte presumida, <strong>sem necessidade de aguardar qualquer prazo de ausência</strong>.</p>
+        </div>
+
+        <h3>Erros comuns em provas</h3>
+
+        <ol>
+            <li><strong>Aplicar o prazo de 2 anos para desastres civis:</strong> NÃO! O prazo do inciso II é exclusivo para situações de guerra.</li>
+            <li><strong>Exigir corpo para declaração:</strong> O parágrafo único do art. 7º não exige corpo; apenas o esgotamento das buscas.</li>
+            <li><strong>Exigir decretação de ausência prévia:</strong> O art. 7º é exceção à regra; permite a declaração sem ausência.</li>
+            <li><strong>Confundir os incisos:</strong> Lembre-se: "civil = sem prazo; guerra = 2 anos".</li>
+        </ol>
+
+        <!-- ===== SVG: Morte Presumida ===== -->
+        <div class="diagram-container">
+            <div class="diagram-title">Morte Presumida · Art. 7º</div>
+            <svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama da morte presumida">
+                <defs>
+                    <style>
+                        .mp-bg {
+                            fill: #12121a;
+                        }
+                        .mp-node {
+                            fill: #1c1c2e;
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .mp-node-gold {
+                            fill: rgba(212, 168, 83, 0.10);
+                            stroke: #d4a853;
+                            stroke-width: 1.8;
+                            rx: 10;
+                        }
+                        .mp-node-sage {
+                            fill: rgba(122, 155, 142, 0.08);
+                            stroke: #7a9b8e;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .mp-text {
+                            fill: #e8e4dc;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 13px;
+                            font-weight: 600;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .mp-text-gold {
+                            fill: #d4a853;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 14px;
+                            font-weight: 700;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .mp-text-small {
+                            fill: #c4bdb3;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 11px;
+                            font-weight: 400;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .mp-line {
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            fill: none;
+                        }
+                        .mp-line-gold {
+                            stroke: #d4a853;
+                            stroke-width: 1.5;
+                            fill: none;
+                            opacity: 0.4;
+                        }
+                        .mp-arrow {
+                            fill: none;
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            marker-end: url(#arrow-mp);
+                        }
+                    </style>
+                    <marker id="arrow-mp" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#3d3d5a" />
+                    </marker>
+                    <marker id="arrow-mp-gold" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#d4a853" />
+                    </marker>
+                </defs>
+                <rect width="800" height="340" rx="12" class="mp-bg" />
+
+                <!-- Título -->
+                <rect x="260" y="14" width="280" height="40" class="mp-node-gold" />
+                <text x="400" y="34" class="mp-text-gold">MORTE PRESUMIDA (Art. 7º)</text>
+
+                <!-- Linhas -->
+                <line x1="400" y1="54" x2="400" y2="78" class="mp-line-gold" />
+                <line x1="400" y1="78" x2="200" y2="78" class="mp-line" />
+                <line x1="400" y1="78" x2="600" y2="78" class="mp-line" />
+
+                <!-- Inciso I -->
+                <rect x="50" y="82" width="300" height="44" class="mp-node" />
+                <text x="200" y="104" class="mp-text">Inciso I · Perigo Extremo</text>
+                <line x1="200" y1="126" x2="200" y2="150" class="mp-line" />
+                <rect x="50" y="152" width="300" height="56" class="mp-node" />
+                <text x="200" y="168" class="mp-text-small">Incêndio · Naufrágio · Desabamento</text>
+                <text x="200" y="186" class="mp-text-small" style="fill:#9a9287;">Não exige prazo · só esgotamento das buscas</text>
+                <line x1="200" y1="208" x2="200" y2="230" class="mp-line" />
+                <rect x="70" y="232" width="260" height="40" class="mp-node-sage" />
+                <text x="200" y="252" class="mp-text-small" style="fill:#7a9b8e;">✓ Sem decretação de ausência</text>
+
+                <!-- Inciso II -->
+                <rect x="450" y="82" width="300" height="44" class="mp-node" />
+                <text x="600" y="104" class="mp-text">Inciso II · Guerra</text>
+                <line x1="600" y1="126" x2="600" y2="150" class="mp-line" />
+                <rect x="450" y="152" width="300" height="56" class="mp-node" />
+                <text x="600" y="168" class="mp-text-small">Campanha militar · Prisioneiro de guerra</text>
+                <text x="600" y="186" class="mp-text-small" style="fill:#9a9287;">Prazo: 2 anos após o término da guerra</text>
+                <line x1="600" y1="208" x2="600" y2="230" class="mp-line" />
+                <rect x="470" y="232" width="260" height="40" class="mp-node-sage" />
+                <text x="600" y="252" class="mp-text-small" style="fill:#7a9b8e;">✓ Sem decretação de ausência</text>
+
+                <!-- Parágrafo único -->
+                <rect x="200" y="286" width="400" height="36" class="mp-node" style="stroke:#7a9b8e;fill:rgba(122,155,142,0.04);" />
+                <text x="400" y="304" class="mp-text-small" style="fill:#7a9b8e;">Parágrafo único: esgotadas as buscas e averiguações</text>
+            </svg>
+        </div>
+
+        <div class="divider-gold"></div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 5                                                    -->
+        <!-- ============================================================ -->
+        <div class="chapter-marker anchor-offset" id="cap5">
+            <span class="label">Capítulo 5</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Vícios do Negócio Jurídico</h1>
+
+        <h2>5.1 Estado de Perigo (Art. 156, CC)</h2>
+
+        <p>O estado de perigo é um dos vícios do negócio jurídico que pode levar à anulação do ato.</p>
+
+        <div class="quote">
+            <p><strong>Art. 156.</strong> Configura-se o estado de perigo quando alguém, premido da necessidade de salvar-se, ou a pessoa de sua família, de grave dano conhecido pela outra parte, assume obrigação excessivamente onerosa.</p>
+            <p><strong>Parágrafo único.</strong> Tratando-se de pessoa não pertencente à família do declarante, o juiz decidirá segundo as circunstâncias.</p>
+        </div>
+
+        <h3>Elementos do estado de perigo</h3>
+
+        <ol>
+            <li><strong>Situação de perigo:</strong> a pessoa está premida pela necessidade de salvar-se ou salvar sua família de <strong>grave dano</strong> (risco de vida, integridade física, saúde, etc.).</li>
+            <li><strong>Conhecimento da outra parte:</strong> a parte que se beneficia do negócio <strong>conhece</strong> a situação de perigo da outra.</li>
+            <li><strong>Obrigação excessivamente onerosa:</strong> a pessoa assume uma obrigação desproporcional, muito além do que seria razoável.</li>
+            <li><strong>Vítima:</strong> o perigo deve ser à <strong>pessoa</strong> (vida, integridade física) ou à família do declarante (cônjuge, ascendentes, descendentes).</li>
+        </ol>
+
+        <h4>Exemplos de estado de perigo</h4>
+
+        <div class="card card-gold">
+            <div class="card-title">Exemplo 1</div>
+            <p>Uma pessoa está em um incêndio em seu apartamento. Um vizinho se oferece para resgatá-la, mas exige que ela lhe pague R$ 100.000,00 pelo resgate. A pessoa, desesperada, aceita.</p>
+            <p><strong>Classificação:</strong> Estado de perigo (art. 156). A pessoa estava premida da necessidade de salvar-se (sua vida) e assumiu obrigação excessivamente onerosa (R$ 100.000,00), conhecida pelo vizinho.</p>
+        </div>
+
+        <div class="card card-sage">
+            <div class="card-title">Exemplo 2</div>
+            <p>Uma mãe tem seu filho doente e precisa de um medicamento de alto custo. A farmácia, sabendo da situação, cobra R$ 50.000,00 por um medicamento que custa R$ 10.000,00. A mãe, desesperada para salvar o filho, aceita pagar.</p>
+            <p><strong>Classificação:</strong> Estado de perigo (art. 156). A mãe estava premida da necessidade de salvar seu filho (pessoa de sua família) de grave dano (morte) e assumiu obrigação excessivamente onerosa, conhecida pela farmácia.</p>
+        </div>
+
+        <div class="card card-blue">
+            <div class="card-title">Exemplo 3 (caso especial)</div>
+            <p>Uma pessoa está em perigo e assume obrigação onerosa para salvar seu amigo (não pertencente à família).</p>
+            <p><strong>Classificação:</strong> O parágrafo único permite que o juiz decida segundo as circunstâncias, podendo ou não caracterizar o estado de perigo, dependendo da análise caso a caso.</p>
+        </div>
+
+        <h2>5.2 Lesão (Art. 157, CC)</h2>
+
+        <p>A lesão é outro vício do negócio jurídico, intimamente ligado à desproporção entre as prestações.</p>
+
+        <div class="quote">
+            <p><strong>Art. 157.</strong> Ocorre a lesão quando uma pessoa, sob premente necessidade, ou por inexperiência, se obriga a prestação manifestamente desproporcional ao valor da prestação oposta.</p>
+            <p><strong>§ 1º.</strong> Aprecia-se a desproporção segundo os valores vigentes ao tempo em que foi celebrado o negócio.</p>
+            <p><strong>§ 2º.</strong> Não se decretará a anulação do negócio, se for oferecido suplemento suficiente, ou se a parte favorecida concordar com a redução do proveito.</p>
+        </div>
+
+        <h3>Elementos da lesão</h3>
+
+        <ol>
+            <li><strong>Premente necessidade ou inexperiência:</strong> a pessoa se encontra em situação de necessidade econômica (passa por dificuldades financeiras) ou é inexperiente no negócio.</li>
+            <li><strong>Prestação manifestamente desproporcional:</strong> a prestação assumida é muito superior ao valor da prestação oposta.</li>
+            <li><strong>Desproporção objetiva:</strong> a desproporção deve ser evidente, manifesta, saltar aos olhos.</li>
+            <li><strong>Avaliação segundo valores vigentes:</strong> a desproporção é aferida no momento da celebração do negócio (§ 1º).</li>
+        </ol>
+
+        <h4>Exemplos de lesão</h4>
+
+        <div class="card card-terracotta">
+            <div class="card-title">Exemplo 1</div>
+            <p>Em situação de calamidade, um comerciante cobra o triplo do valor normal por alimentos e água.</p>
+            <p><strong>Classificação:</strong> Lesão (art. 157). A pessoa, sob premente necessidade (calamidade), assumiu prestação manifestamente desproporcional.</p>
+        </div>
+
+        <div class="card card-terracotta">
+            <div class="card-title">Exemplo 2</div>
+            <p>Uma pessoa inexperiente (um jovem sem conhecimento do mercado) vende um imóvel avaliado em R$ 500.000,00 por R$ 200.000,00, por não ter noção de seu valor real.</p>
+            <p><strong>Classificação:</strong> Lesão (art. 157). A pessoa, por inexperiência, assumiu prestação manifestamente desproporcional.</p>
+        </div>
+
+        <h3>Efeitos da lesão</h3>
+
+        <ul>
+            <li>O negócio é <strong>anulável</strong> (art. 171, II, CC).</li>
+            <li>O prazo para pleitear a anulação é de <strong>4 anos</strong> (art. 178, I, CC).</li>
+            <li>O § 2º permite a <strong>manutenção do negócio</strong> se a parte favorecida oferecer suplemento suficiente para equalizar as prestações, ou concordar com redução do proveito.</li>
+        </ul>
+
+        <h2>5.3 Distinção entre Estado de Perigo e Lesão</h2>
+
+        <p>A distinção entre estado de perigo e lesão é <strong>frequentemente cobrada em provas</strong>, especialmente pela FGV. O erro mais comum é confundir as duas figuras.</p>
+
+        <h3>Quadro comparativo</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Critério</th>
+                        <th>Estado de Perigo (Art. 156)</th>
+                        <th>Lesão (Art. 157)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Motivação</strong></td>
+                        <td>Perigo de <strong>grave dano à pessoa ou família</strong> (vida, integridade física, saúde)</td>
+                        <td><strong>Premente necessidade econômica</strong> ou <strong>inexperiência</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Objeto</strong></td>
+                        <td>Salvar a si ou a família</td>
+                        <td>Obter vantagem econômica ou evitar prejuízo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Natureza do risco</strong></td>
+                        <td><strong>Pessoal</strong> (vida, integridade)</td>
+                        <td><strong>Econômica</strong> (patrimonial)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conhecimento da outra parte</strong></td>
+                        <td>Exigido (a outra parte deve conhecer o perigo)</td>
+                        <td>Não é exigido conhecimento específico (a desproporção é objetiva)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exemplo clássico</strong></td>
+                        <td>Cobrar R$ 100.000,00 para salvar pessoa em incêndio</td>
+                        <td>Cobrar o triplo por alimentos em calamidade</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tip-box atencao">
+            <span class="label">Pegadinha Clássica</span>
+            <p>Cobrar preço abusivo de desabrigados (necessidade econômica) é <span class="highlight">lesão</span>, não estado de perigo. No estado de perigo, o risco é à <strong>pessoa</strong> (vida, saúde); na lesão, o risco é <strong>econômico</strong> (calamidade financeira).</p>
+        </div>
+
+        <h4>Exemplos de distinção</h4>
+
+        <div class="card card-gold">
+            <div class="card-title">Caso 1</div>
+            <p>Em uma enchente, um barqueiro cobra R$ 10.000,00 para resgatar uma pessoa que está prestes a se afogar, sabendo da situação.</p>
+            <p><strong>Classificação:</strong> Estado de perigo (risco à vida). A pessoa está premida da necessidade de salvar-se de grave dano (afogamento) e assume obrigação excessivamente onerosa.</p>
+        </div>
+
+        <div class="card card-terracotta">
+            <div class="card-title">Caso 2</div>
+            <p>Na mesma enchente, um comerciante cobra R$ 50,00 por um litro de água mineral, sabendo que as pessoas estão desabrigadas e necessitadas.</p>
+            <p><strong>Classificação:</strong> Lesão (necessidade econômica). As pessoas, sob premente necessidade (falta de água), assumem prestação manifestamente desproporcional (preço abusivo), mas o risco é econômico, não pessoal.</p>
+        </div>
+
+        <h3>Esquema de raciocínio</h3>
+
+        <div class="card card-gold">
+            <div class="card-title">Fluxo de Decisão</div>
+            <div style="font-family:var(--font-sans);font-size:0.92rem;color:var(--text-secondary);line-height:1.8;">
+                <p><strong>VÍCIOS DO NEGÓCIO JURÍDICO</strong></p>
+                <p style="padding-left:1.5rem;">Qual é o motivo da desproporção?</p>
+                <p style="padding-left:3rem;">├── Risco à vida, integridade física ou saúde?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;├── SIM → <span class="highlight">ESTADO DE PERIGO</span> (art. 156)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;└── NÃO → Continua no próximo passo</p>
+                <p style="padding-left:3rem;">└── Necessidade econômica ou inexperiência?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;├── SIM → <span class="marker-terracotta">LESÃO</span> (art. 157)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;└── NÃO → Verificar outro vício</p>
+            </div>
+        </div>
+
+        <!-- ===== SVG: Estado de Perigo vs Lesão ===== -->
+        <div class="diagram-container">
+            <div class="diagram-title">Comparação · Estado de Perigo vs Lesão</div>
+            <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparação entre estado de perigo e lesão">
+                <defs>
+                    <style>
+                        .vl-bg {
+                            fill: #12121a;
+                        }
+                        .vl-node {
+                            fill: #1c1c2e;
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .vl-node-gold {
+                            fill: rgba(212, 168, 83, 0.10);
+                            stroke: #d4a853;
+                            stroke-width: 1.8;
+                            rx: 10;
+                        }
+                        .vl-node-sage {
+                            fill: rgba(122, 155, 142, 0.08);
+                            stroke: #7a9b8e;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .vl-node-terra {
+                            fill: rgba(184, 122, 106, 0.08);
+                            stroke: #b87a6a;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .vl-text {
+                            fill: #e8e4dc;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 13px;
+                            font-weight: 600;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .vl-text-gold {
+                            fill: #d4a853;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 14px;
+                            font-weight: 700;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .vl-text-small {
+                            fill: #c4bdb3;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 11px;
+                            font-weight: 400;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .vl-line {
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            fill: none;
+                        }
+                        .vl-line-gold {
+                            stroke: #d4a853;
+                            stroke-width: 1.5;
+                            fill: none;
+                            opacity: 0.4;
+                        }
+                    </style>
+                </defs>
+                <rect width="800" height="380" rx="12" class="vl-bg" />
+
+                <!-- Título -->
+                <rect x="250" y="14" width="300" height="40" class="vl-node-gold" />
+                <text x="400" y="34" class="vl-text-gold">Estado de Perigo vs Lesão</text>
+
+                <!-- Linhas -->
+                <line x1="400" y1="54" x2="400" y2="78" class="vl-line-gold" />
+                <line x1="400" y1="78" x2="200" y2="78" class="vl-line" />
+                <line x1="400" y1="78" x2="600" y2="78" class="vl-line" />
+
+                <!-- Estado de Perigo -->
+                <rect x="40" y="82" width="320" height="44" class="vl-node" />
+                <text x="200" y="104" class="vl-text">Estado de Perigo (Art. 156)</text>
+                <line x1="200" y1="126" x2="200" y2="150" class="vl-line" />
+                <rect x="40" y="152" width="320" height="100" class="vl-node-gold" />
+                <text x="200" y="168" class="vl-text-small">⚡ Risco à vida / integridade física</text>
+                <text x="200" y="186" class="vl-text-small">⚡ Salvar a si ou à família</text>
+                <text x="200" y="204" class="vl-text-small">⚡ Outra parte deve conhecer o perigo</text>
+                <text x="200" y="222" class="vl-text-small" style="fill:#9a9287;">Ex: resgate em incêndio</text>
+                <line x1="200" y1="252" x2="200" y2="276" class="vl-line" />
+                <rect x="80" y="278" width="240" height="40" class="vl-node-sage" />
+                <text x="200" y="298" class="vl-text-small" style="fill:#7a9b8e;">Negócio anulável</text>
+
+                <!-- Lesão -->
+                <rect x="440" y="82" width="320" height="44" class="vl-node" />
+                <text x="600" y="104" class="vl-text">Lesão (Art. 157)</text>
+                <line x1="600" y1="126" x2="600" y2="150" class="vl-line" />
+                <rect x="440" y="152" width="320" height="100" class="vl-node-terra" />
+                <text x="600" y="168" class="vl-text-small">💰 Necessidade econômica</text>
+                <text x="600" y="186" class="vl-text-small">💰 Inexperiência</text>
+                <text x="600" y="204" class="vl-text-small">💰 Desproporção objetiva</text>
+                <text x="600" y="222" class="vl-text-small" style="fill:#9a9287;">Ex: preço abusivo em calamidade</text>
+                <line x1="600" y1="252" x2="600" y2="276" class="vl-line" />
+                <rect x="480" y="278" width="240" height="40" class="vl-node-sage" />
+                <text x="600" y="298" class="vl-text-small" style="fill:#7a9b8e;">Negócio anulável · prazo: 4 anos</text>
+
+                <!-- Dica extra -->
+                <rect x="200" y="330" width="400" height="34" class="vl-node" style="stroke:#7a9b8e;fill:rgba(122,155,142,0.04);" />
+                <text x="400" y="347" class="vl-text-small" style="fill:#7a9b8e;">⚠️ Não confunda: risco pessoal = estado de perigo · risco econômico = lesão</text>
+            </svg>
+        </div>
+
+        <div class="divider-gold"></div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 6                                                    -->
+        <!-- ============================================================ -->
+        <div class="chapter-marker anchor-offset" id="cap6">
+            <span class="label">Capítulo 6</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Associações</h1>
+
+        <h2>6.1 Natureza e Características</h2>
+
+        <p>As associações são disciplinadas nos arts. 53 a 61 do Código Civil, sendo uma das espécies de pessoas jurídicas de direito privado sem fins econômicos.</p>
+
+        <div class="quote">
+            <p><strong>Art. 53.</strong> Constituem-se as associações pela união de pessoas que se organizem para fins não econômicos.</p>
+            <p><strong>Parágrafo único.</strong> Não há, entre os associados, direitos e obrigações recíprocos.</p>
+        </div>
+
+        <h3>Características essenciais</h3>
+
+        <ol>
+            <li><strong>Fins não econômicos:</strong> as associações não visam lucro (não são empresas). Seus objetivos são culturais, educacionais, esportivos, religiosos, assistenciais, etc.</li>
+            <li><strong>União de pessoas:</strong> são formadas por pessoas físicas que se organizam em torno de um objetivo comum.</li>
+            <li><strong>Inexistência de direitos e obrigações recíprocos:</strong> conforme parágrafo único do art. 53, os associados não têm direitos ou obrigações uns contra os outros em razão da associação.</li>
+        </ol>
+
+        <div class="card card-sage">
+            <div class="card-title">Exemplo</div>
+            <p>Em uma associação de moradores, não há direito de um associado cobrar do outro o pagamento de contribuição ou a prestação de serviços. Eventuais cobranças devem ser feitas pela associação (pessoa jurídica) aos associados, mas não entre os associados individualmente.</p>
+        </div>
+
+        <ol start="4">
+            <li><strong>Personalidade jurídica própria:</strong> a associação é pessoa jurídica distinta de seus membros, com patrimônio próprio e responsabilidade limitada (em regra).</li>
+        </ol>
+
+        <h2>6.2 Direitos e Obrigações dos Associados</h2>
+
+        <p>O art. 55 do Código Civil estabelece a regra geral sobre os direitos dos associados:</p>
+
+        <div class="quote">
+            <p><strong>Art. 55.</strong> Os associados devem ter iguais direitos, mas o estatuto poderá instituir categorias com vantagens especiais.</p>
+        </div>
+
+        <h3>Análise do dispositivo</h3>
+
+        <p><strong>Regra geral:</strong> todos os associados têm <strong>iguais direitos</strong> (princípio da igualdade).</p>
+        <p><strong>Exceção:</strong> o estatuto (documento constitutivo da associação) pode instituir <strong>categorias com vantagens especiais</strong>.</p>
+
+        <div class="card card-gold">
+            <div class="card-title">Exemplo</div>
+            <p>Uma associação de ex-alunos pode ter a categoria "sócio fundador" com vantagens como mensalidade reduzida, acesso a espaços exclusivos, direito a voto em assembleias especiais, etc. Isso é permitido, desde que previsto no estatuto.</p>
+        </div>
+
+        <h3>Obrigações dos associados</h3>
+
+        <ul>
+            <li><strong>Cumprir o estatuto:</strong> os associados devem obedecer às normas internas da associação.</li>
+            <li><strong>Contribuições:</strong> pagar as contribuições estatutárias (mensalidades, anuidades, etc.).</li>
+            <li><strong>Participação:</strong> participar das atividades da associação, conforme previsto.</li>
+        </ul>
+
+        <h2>6.3 Transmissibilidade da Qualidade de Associado</h2>
+
+        <p>O art. 56 do Código Civil trata de um tema fundamental e <strong>frequentemente cobrado em provas</strong>:</p>
+
+        <div class="quote">
+            <p><strong>Art. 56.</strong> A qualidade de associado é intransmissível, se o estatuto não dispuser em contrário.</p>
+        </div>
+
+        <h3>Regra: intransmissibilidade</h3>
+
+        <p>A regra geral é que a qualidade de associado <strong>não pode ser transmitida</strong> a terceiros (herdeiros, sucessores, etc.). Isso significa que, em caso de morte ou desligamento do associado, a vaga não é automaticamente ocupada por outra pessoa.</p>
+
+        <h3>Exceção: previsão estatutária</h3>
+
+        <p>A transmissão só ocorrerá se o <strong>estatuto expressamente permitir</strong>. A lei estabelece que a intransmissibilidade é a regra, e a transmissibilidade é exceção.</p>
+
+        <h3>Importância da regra</h3>
+
+        <p>Essa regra se justifica porque as associações são constituídas por pessoas que se unem em torno de um objetivo comum, com características pessoais e afinidades que não são automaticamente transferíveis. A associação tem interesse na pessoa do associado, não apenas em sua contribuição financeira.</p>
+
+        <div class="card card-gold">
+            <div class="card-title">Exemplo</div>
+            <p>Uma associação de colecionadores de selos tem como associado João, que falece. Seu filho Pedro deseja assumir a vaga do pai.</p>
+            <p><strong>Solução:</strong> Pedro só poderá se tornar associado se o estatuto da associação expressamente permitir a transmissão da qualidade de associado. Caso contrário, a regra é a intransmissibilidade, e Pedro deverá solicitar seu ingresso como novo associado, sujeito à aprovação da associação.</p>
+        </div>
+
+        <h3>Erro comum em provas</h3>
+
+        <p>Muitos candidatos acreditam que a qualidade de associado é <strong>transmissível</strong> (como herança). A FGV explora exatamente o oposto: a regra é a <strong>intransmissibilidade</strong>, salvo disposição estatutária em contrário.</p>
+
+        <div class="tip-box dica">
+            <span class="label">Dica de Prova</span>
+            <p>A regra é <span class="highlight">INTRANSMISSÍVEL</span>. A transmissibilidade é exceção e deve estar prevista no estatuto.</p>
+        </div>
+
+        <!-- ===== SVG: Associações ===== -->
+        <div class="diagram-container">
+            <div class="diagram-title">Mapa Mental · Associações (Arts. 53–61)</div>
+            <svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa mental das associações">
+                <defs>
+                    <style>
+                        .as-bg {
+                            fill: #12121a;
+                        }
+                        .as-node {
+                            fill: #1c1c2e;
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .as-node-gold {
+                            fill: rgba(212, 168, 83, 0.10);
+                            stroke: #d4a853;
+                            stroke-width: 1.8;
+                            rx: 10;
+                        }
+                        .as-node-sage {
+                            fill: rgba(122, 155, 142, 0.08);
+                            stroke: #7a9b8e;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .as-text {
+                            fill: #e8e4dc;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 13px;
+                            font-weight: 600;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .as-text-gold {
+                            fill: #d4a853;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 14px;
+                            font-weight: 700;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .as-text-small {
+                            fill: #c4bdb3;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 11px;
+                            font-weight: 400;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .as-line {
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            fill: none;
+                        }
+                        .as-line-gold {
+                            stroke: #d4a853;
+                            stroke-width: 1.5;
+                            fill: none;
+                            opacity: 0.4;
+                        }
+                    </style>
+                </defs>
+                <rect width="800" height="340" rx="12" class="as-bg" />
+
+                <!-- Central -->
+                <rect x="280" y="14" width="240" height="44" class="as-node-gold" />
+                <text x="400" y="36" class="as-text-gold">ASSOCIAÇÕES (Art. 53)</text>
+
+                <line x1="400" y1="58" x2="400" y2="82" class="as-line-gold" />
+                <line x1="400" y1="82" x2="140" y2="82" class="as-line" />
+                <line x1="400" y1="82" x2="660" y2="82" class="as-line" />
+
+                <!-- Características -->
+                <rect x="40" y="86" width="200" height="40" class="as-node" />
+                <text x="140" y="106" class="as-text">Características</text>
+                <line x1="140" y1="126" x2="140" y2="150" class="as-line" />
+                <rect x="30" y="152" width="220" height="80" class="as-node" />
+                <text x="140" y="168" class="as-text-small">Fins não econômicos</text>
+                <text x="140" y="186" class="as-text-small">União de pessoas</text>
+                <text x="140" y="204" class="as-text-small">Personalidade jurídica própria</text>
+                <text x="140" y="222" class="as-text-small" style="fill:#9a9287;">Art. 53, § único: sem direitos recíprocos</text>
+
+                <!-- Direitos -->
+                <rect x="300" y="86" width="200" height="40" class="as-node" />
+                <text x="400" y="106" class="as-text">Direitos (Art. 55)</text>
+                <line x1="400" y1="126" x2="400" y2="150" class="as-line" />
+                <rect x="290" y="152" width="220" height="80" class="as-node" />
+                <text x="400" y="168" class="as-text-small">Iguais direitos</text>
+                <text x="400" y="186" class="as-text-small">(regra geral)</text>
+                <text x="400" y="204" class="as-text-small" style="fill:#7a9b8e;">Estatuto pode criar</text>
+                <text x="400" y="222" class="as-text-small" style="fill:#7a9b8e;">categorias c/ vantagens especiais</text>
+
+                <!-- Transmissibilidade -->
+                <rect x="560" y="86" width="200" height="40" class="as-node-sage" />
+                <text x="660" y="106" class="as-text" style="fill:#7a9b8e;">Transmissibilidade (Art. 56)</text>
+                <line x1="660" y1="126" x2="660" y2="150" class="as-line" />
+                <rect x="550" y="152" width="220" height="80" class="as-node" />
+                <text x="660" y="168" class="as-text-small" style="fill:#d4a853;">Regra: INTRANSMISSÍVEL</text>
+                <text x="660" y="186" class="as-text-small" style="fill:#9a9287;">Exceção:</text>
+                <text x="660" y="204" class="as-text-small" style="fill:#7a9b8e;">se estatuto dispuser em contrário</text>
+                <text x="660" y="222" class="as-text-small" style="fill:#9a9287;">→ só com previsão estatutária</text>
+
+                <!-- Dica final -->
+                <rect x="200" y="280" width="400" height="40" class="as-node" style="stroke:#7a9b8e;fill:rgba(122,155,142,0.04);" />
+                <text x="400" y="300" class="as-text-small" style="fill:#7a9b8e;">⚠️ A qualidade de associado NÃO se transmite como herança</text>
+            </svg>
+        </div>
+
+        <div class="divider-gold"></div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 7                                                    -->
+        <!-- ============================================================ -->
+        <div class="chapter-marker anchor-offset" id="cap7">
+            <span class="label">Capítulo 7</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Revisão e Macetes para a Prova</h1>
+
+        <h2>7.1 Macetes de Memorização</h2>
+
+        <h3>Domicílio</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Macete</th>
+                        <th>Significado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"Domicílio profissional é automático"</td>
+                        <td>Decorre do exercício da profissão, sem necessidade de contrato</td>
+                    </tr>
+                    <tr>
+                        <td>"Profissional ≠ Especial"</td>
+                        <td>Profissional = atividade; Especial = contrato</td>
+                    </tr>
+                    <tr>
+                        <td>"Em lugares diversos, cada qual para sua relação"</td>
+                        <td>Parágrafo único do art. 72</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Bens</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Macete</th>
+                        <th>Significado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"Na reforma, separado com intenção de recolocar = imóvel"</td>
+                        <td>Art. 81, II</td>
+                    </tr>
+                    <tr>
+                        <td>"Novo para construir = móvel"</td>
+                        <td>Art. 84</td>
+                    </tr>
+                    <tr>
+                        <td>"Descartado = móvel"</td>
+                        <td>Perde a qualidade de imóvel</td>
+                    </tr>
+                    <tr>
+                        <td>"Energia eólica = bem móvel"</td>
+                        <td>Art. 83, I</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Emancipação</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Macete</th>
+                        <th>Significado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"Casar, trabalhar (público), formar e negociar"</td>
+                        <td>Causas de emancipação</td>
+                    </tr>
+                    <tr>
+                        <td>"Casamento e formatura são os mais cobrados"</td>
+                        <td>Foco de provas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Capacidade da Pessoa com Deficiência</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Macete</th>
+                        <th>Significado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"Deficiência não incapacita; falta de vontade sim"</td>
+                        <td>Art. 4º, III</td>
+                    </tr>
+                    <tr>
+                        <td>"Só menor de 16 é absolutamente incapaz"</td>
+                        <td>Art. 3º (após EPD)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Morte Presumida</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Macete</th>
+                        <th>Significado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"Perigo extremo sem cadáver"</td>
+                        <td>Inciso I (desastres civis)</td>
+                    </tr>
+                    <tr>
+                        <td>"Guerra com sumiço, 2 anos"</td>
+                        <td>Inciso II (desaparecimento em guerra)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Vícios do Negócio Jurídico</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Macete</th>
+                        <th>Significado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"Estado de perigo = risco de vida"</td>
+                        <td>Art. 156</td>
+                    </tr>
+                    <tr>
+                        <td>"Lesão = necessidade econômica ou inexperiência"</td>
+                        <td>Art. 157</td>
+                    </tr>
+                    <tr>
+                        <td>"Cobrança abusiva em calamidade = lesão"</td>
+                        <td>Erro comum da FGV</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>Associação</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Macete</th>
+                        <th>Significado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"Associado não deve ao associado"</td>
+                        <td>Art. 53, parágrafo único</td>
+                    </tr>
+                    <tr>
+                        <td>"Igualdade, mas estatuto pode criar categorias"</td>
+                        <td>Art. 55</td>
+                    </tr>
+                    <tr>
+                        <td>"Regra: intransmissível; exceção: estatuto permite"</td>
+                        <td>Art. 56</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>7.2 Quadro de Pegadinhas Frequentes</h2>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tema</th>
+                        <th>Pegadinha</th>
+                        <th>Resposta Correta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Domicílio profissional vs especial</td>
+                        <td>Atender em outra cidade = domicílio especial</td>
+                        <td><span class="highlight">Profissional</span> (art. 72)</td>
+                    </tr>
+                    <tr>
+                        <td>Materiais de construção</td>
+                        <td>Tijolos estocados = imóveis</td>
+                        <td><span class="marker-terracotta">Móveis</span> (art. 84)</td>
+                    </tr>
+                    <tr>
+                        <td>Materiais de construção</td>
+                        <td>Telhas retiradas para reforma = móveis</td>
+                        <td><span class="highlight">Imóveis por destinação</span> (art. 81, II)</td>
+                    </tr>
+                    <tr>
+                        <td>Morte presumida</td>
+                        <td>Prazo de 2 anos para desastre civil</td>
+                        <td><span class="highlight">Não há prazo</span> (art. 7º, I)</td>
+                    </tr>
+                    <tr>
+                        <td>Morte presumida</td>
+                        <td>Prazo de 2 anos para guerra</td>
+                        <td><span class="highlight">Sim</span> (art. 7º, II)</td>
+                    </tr>
+                    <tr>
+                        <td>Capacidade</td>
+                        <td>Deficiência mental = absoluta incapacidade</td>
+                        <td><span class="highlight">Não</span> (após EPD)</td>
+                    </tr>
+                    <tr>
+                        <td>Estado de perigo vs lesão</td>
+                        <td>Cobrar preço abusivo em calamidade = estado de perigo</td>
+                        <td><span class="marker-terracotta">Lesão</span> (risco econômico)</td>
+                    </tr>
+                    <tr>
+                        <td>Associação</td>
+                        <td>Qualidade de associado é transmissível</td>
+                        <td><span class="highlight">Regra: intransmissível</span> (art. 56)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>7.3 Mapas Mentais Textuais</h2>
+
+        <h3>Domicílio</h3>
+
+        <div class="card card-gold">
+            <div class="card-title">Domicílio (Arts. 70–78)</div>
+            <div style="font-family:var(--font-sans);font-size:0.92rem;color:var(--text-secondary);line-height:1.8;">
+                <p><strong>Geral (Art. 70)</strong> → Residência + ânimo definitivo</p>
+                <p><strong>Profissional (Art. 72)</strong> → Local do exercício da profissão · para relações concernentes à atividade · lugares diversos = cada um para sua relação</p>
+                <p><strong>Especial (Art. 78)</strong> → Contratual (eleição de foro) · decorrente de manifestação de vontade</p>
+                <p><strong>Necessário (Art. 76)</strong> → Incapazes · Militares da ativa · Servidores públicos · Presos · Marítimos</p>
+            </div>
+        </div>
+
+        <h3>Bens</h3>
+
+        <div class="card card-gold">
+            <div class="card-title">Bens</div>
+            <div style="font-family:var(--font-sans);font-size:0.92rem;color:var(--text-secondary);line-height:1.8;">
+                <p><strong>IMÓVEIS</strong></p>
+                <p style="padding-left:1.5rem;">Por natureza (Art. 79): solo e incorporado natural/artificialmente</p>
+                <p style="padding-left:1.5rem;">Por acessão artificial: construções, plantações, etc.</p>
+                <p style="padding-left:1.5rem;">Por destinação (Art. 81): I - edificações separadas e transferidas · II - materiais provisoriamente separados para reemprego</p>
+                <p><strong>MÓVEIS</strong></p>
+                <p style="padding-left:1.5rem;">Por natureza (Art. 82): suscetíveis de movimento</p>
+                <p style="padding-left:1.5rem;">Por destinação (Art. 83): I - energias com valor econômico · II - direitos reais sobre móveis · III - direitos pessoais patrimoniais</p>
+                <p style="padding-left:1.5rem;">Por antecipação (Art. 84): materiais destinados à construção ainda não empregados</p>
+            </div>
+        </div>
+
+        <h3>Capacidade Civil</h3>
+
+        <div class="card card-gold">
+            <div class="card-title">Capacidade Civil (Arts. 3º e 4º)</div>
+            <div style="font-family:var(--font-sans);font-size:0.92rem;color:var(--text-secondary);line-height:1.8;">
+                <p><strong>ABSOLUTAMENTE INCAPAZES (Art. 3º)</strong> → Menores de 16 anos</p>
+                <p><strong>RELATIVAMENTE INCAPAZES (Art. 4º)</strong></p>
+                <p style="padding-left:1.5rem;">I - Maiores de 16 e menores de 18</p>
+                <p style="padding-left:1.5rem;">II - Ébrios habituais e viciados em tóxico</p>
+                <p style="padding-left:1.5rem;">III - Que não podem exprimir sua vontade</p>
+                <p style="padding-left:1.5rem;">IV - Pródigos</p>
+                <p><strong>EMANCIPAÇÃO (Art. 5º)</strong> → I - Casamento · II - Emprego público efetivo · III - Colação de grau em ensino superior · IV - Estabelecimento com economia própria</p>
+            </div>
+        </div>
+
+        <h3>Morte Presumida</h3>
+
+        <div class="card card-gold">
+            <div class="card-title">Morte Presumida (Art. 7º)</div>
+            <div style="font-family:var(--font-sans);font-size:0.92rem;color:var(--text-secondary);line-height:1.8;">
+                <p><strong>INCISO I - PERIGO EXTREMO</strong> → Ex.: incêndio, desabamento, naufrágio · Não exige prazo mínimo · Exige esgotamento das buscas</p>
+                <p><strong>INCISO II - GUERRA</strong> → Ex.: campanha militar, prisioneiro · Prazo: 2 anos após término da guerra · Exige esgotamento das buscas</p>
+            </div>
+        </div>
+
+        <h2>7.4 Dicas Finais para a Prova</h2>
+
+        <ol>
+            <li><strong>Leia a literalidade da lei:</strong> A FGV e o Cebraspe exigem conhecimento exato do texto dos dispositivos. Uma palavra pode mudar a resposta.</li>
+            <li><strong>Atente-se às exceções:</strong> As bancas adoram explorar exceções. Por exemplo: a regra no art. 56 é a intransmissibilidade; a exceção é a previsão estatutária.</li>
+            <li><strong>Diferencie conceitos próximos:</strong> Domicílio profissional vs. especial; estado de perigo vs. lesão; morte presumida inciso I vs. II.</li>
+            <li><strong>Decore os artigos-chave:</strong> Art. 72 (domicílio profissional), art. 81, II (materiais separados), art. 84 (materiais destinados), art. 7º (morte presumida), art. 5º (emancipação), art. 156 (estado de perigo), art. 157 (lesão), art. 53 e 56 (associações).</li>
+            <li><strong>Aplique o EPD:</strong> Lembre-se de que a Lei 13.146/2015 alterou a capacidade das pessoas com deficiência. Deficiência, por si só, não incapacita.</li>
+            <li><strong>Fique atento aos prazos:</strong> O prazo de 2 anos do art. 7º, II é <strong>exclusivo para situações de guerra</strong>. Não aplique para desastres civis.</li>
+            <li><strong>Diferencie materiais de construção:</strong> Esse é um tema de alta incidência e com pegadinhas clássicas. Pratique com exemplos.</li>
+        </ol>
+
+        <!-- ===== SVG: Revisão final ===== -->
+        <div class="diagram-container">
+            <div class="diagram-title">Pontos-Chave para a Prova</div>
+            <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pontos-chave para a prova">
+                <defs>
+                    <style>
+                        .rk-bg {
+                            fill: #12121a;
+                        }
+                        .rk-node {
+                            fill: #1c1c2e;
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            rx: 10;
+                        }
+                        .rk-node-gold {
+                            fill: rgba(212, 168, 83, 0.10);
+                            stroke: #d4a853;
+                            stroke-width: 1.8;
+                            rx: 10;
+                        }
+                        .rk-text {
+                            fill: #e8e4dc;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 12px;
+                            font-weight: 500;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .rk-text-gold {
+                            fill: #d4a853;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 13px;
+                            font-weight: 700;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .rk-text-small {
+                            fill: #c4bdb3;
+                            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+                            font-size: 10px;
+                            font-weight: 400;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                        .rk-line {
+                            stroke: #3d3d5a;
+                            stroke-width: 1.5;
+                            fill: none;
+                        }
+                        .rk-line-gold {
+                            stroke: #d4a853;
+                            stroke-width: 1.5;
+                            fill: none;
+                            opacity: 0.3;
+                        }
+                    </style>
+                </defs>
+                <rect width="800" height="280" rx="12" class="rk-bg" />
+
+                <rect x="280" y="14" width="240" height="40" class="rk-node-gold" />
+                <text x="400" y="34" class="rk-text-gold">FIQUE ATENTO!</text>
+
+                <line x1="400" y1="54" x2="400" y2="74" class="rk-line-gold" />
+                <line x1="400" y1="74" x2="110" y2="74" class="rk-line" />
+                <line x1="400" y1="74" x2="690" y2="74" class="rk-line" />
+
+                <!-- Coluna 1 -->
+                <rect x="30" y="78" width="160" height="32" class="rk-node" />
+                <text x="110" y="94" class="rk-text">Domicílio Profissional</text>
+                <line x1="110" y1="110" x2="110" y2="130" class="rk-line" />
+                <rect x="30" y="132" width="160" height="40" class="rk-node" style="fill:rgba(212,168,83,0.05);" />
+                <text x="110" y="148" class="rk-text-small">Art. 72 · automático</text>
+                <text x="110" y="163" class="rk-text-small" style="fill:#9a9287;">sem contrato</text>
+
+                <!-- Coluna 2 -->
+                <rect x="210" y="78" width="180" height="32" class="rk-node" />
+                <text x="300" y="94" class="rk-text">Materiais de Construção</text>
+                <line x1="300" y1="110" x2="300" y2="130" class="rk-line" />
+                <rect x="210" y="132" width="180" height="40" class="rk-node" style="fill:rgba(184,122,106,0.05);" />
+                <text x="300" y="148" class="rk-text-small">Art. 81, II · separado p/ reemprego</text>
+                <text x="300" y="163" class="rk-text-small" style="fill:#9a9287;">= imóvel · Art. 84 = móvel</text>
+
+                <!-- Coluna 3 -->
+                <rect x="410" y="78" width="180" height="32" class="rk-node" />
+                <text x="500" y="94" class="rk-text">Morte Presumida</text>
+                <line x1="500" y1="110" x2="500" y2="130" class="rk-line" />
+                <rect x="410" y="132" width="180" height="40" class="rk-node" style="fill:rgba(122,155,142,0.05);" />
+                <text x="500" y="148" class="rk-text-small">Inciso I · sem prazo</text>
+                <text x="500" y="163" class="rk-text-small" style="fill:#9a9287;">Inciso II · 2 anos (guerra)</text>
+
+                <!-- Coluna 4 -->
+                <rect x="610" y="78" width="160" height="32" class="rk-node" />
+                <text x="690" y="94" class="rk-text">Associação</text>
+                <line x1="690" y1="110" x2="690" y2="130" class="rk-line" />
+                <rect x="610" y="132" width="160" height="40" class="rk-node" style="fill:rgba(122,155,142,0.05);" />
+                <text x="690" y="148" class="rk-text-small">Art. 56 · intransmissível</text>
+                <text x="690" y="163" class="rk-text-small" style="fill:#9a9287;">exceção: estatuto</text>
+
+                <!-- Linha inferior -->
+                <line x1="110" y1="172" x2="690" y2="172" class="rk-line" style="opacity:0.15;" />
+                <rect x="200" y="192" width="400" height="36" class="rk-node" style="stroke:#7a9b8e;fill:rgba(122,155,142,0.04);" />
+                <text x="400" y="210" class="rk-text-small" style="fill:#7a9b8e;">⚠️ Leia a literalidade da lei · atenção às exceções · diferencie conceitos próximos</text>
+
+                <rect x="220" y="236" width="360" height="30" class="rk-node" style="stroke:#d4a853;fill:rgba(212,168,83,0.04);" />
+                <text x="400" y="251" class="rk-text-small" style="fill:#d4a853;">Decore os artigos-chave e pratique com exemplos</text>
+            </svg>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="footer-note">
+            <p><strong>Fim da Apostila</strong></p>
+            <p style="font-size:0.75rem;color:var(--text-muted);margin-top:0.25rem;">Material preparado com base na doutrina e jurisprudência dos Tribunais Superiores, com foco em concursos públicos para Técnico Judiciário – Área Judiciária.</p>
+            <p style="font-size:0.7rem;color:var(--text-muted);margin-top:0.25rem;">Referências: Código Civil (Lei 10.406/2002) · Lei 13.146/2015 (EPD) · Doutrina de Direito Civil · Jurisprudência do STJ e STF</p>
+            <div class="quote-final">"O sucesso nos concursos não é fruto da sorte, mas da disciplina, da perseverança e do estudo inteligente."</div>
+            <p style="font-size:0.7rem;color:var(--text-muted);margin-top:1rem;">Bons estudos!</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

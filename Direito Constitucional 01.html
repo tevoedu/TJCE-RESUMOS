@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila Digital - Direito Constitucional e Administrativo</title>
+    <style>
+        /* ── Reset e Base ── */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #e6edf3;
+            font-family: 'Georgia', 'Times New Roman', 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem 4rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #161b22;
+            border-radius: 32px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+            border: 1px solid #30363d;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.8rem 2rem;
+            }
+            .container {
+                padding: 1.5rem 1.2rem;
+                border-radius: 20px;
+            }
+            html {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.2rem 0.8rem;
+            }
+            html {
+                font-size: 14px;
+            }
+        }
+
+        /* ── Tipografia ── */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #f0f6fc;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            letter-spacing: -0.02em;
+            margin-top: 0.5rem;
+            border-bottom: 2px solid #30363d;
+            padding-bottom: 0.75rem;
+        }
+        h2 {
+            font-size: 1.9rem;
+            border-left: 6px solid #58a6ff;
+            padding-left: 1rem;
+            margin-top: 2.8rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            color: #d2dbe8;
+            margin-top: 2rem;
+        }
+        h4 {
+            font-size: 1.25rem;
+            color: #b8c4d6;
+            margin-top: 1.6rem;
+            font-weight: 600;
+        }
+        h5 {
+            font-size: 1.05rem;
+            color: #9aaec9;
+            margin-top: 1.4rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #58a6ff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #79c0ff;
+            text-decoration: underline;
+        }
+
+        /* ── Sumário ── */
+        .toc {
+            background: #0d1117;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 2.5rem;
+            border: 1px solid #30363d;
+        }
+        .toc h2 {
+            border-left: none;
+            padding-left: 0;
+            margin-top: 0;
+            font-size: 1.6rem;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 0.5rem;
+        }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 2rem;
+            margin-top: 0.8rem;
+        }
+        .toc-grid a {
+            display: block;
+            padding: 0.25rem 0;
+            font-size: 0.95rem;
+            color: #c9d1d9;
+            border-bottom: 1px dashed #21262d;
+        }
+        .toc-grid a:hover {
+            color: #58a6ff;
+            border-bottom-color: #58a6ff;
+        }
+        @media (max-width: 600px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
+            }
+        }
+
+        /* ── Cards e Boxes ── */
+        .card {
+            background: #0d1117;
+            border-radius: 16px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.8rem 0;
+            border: 1px solid #30363d;
+        }
+
+        .tip-box {
+            background: #0d1f2b;
+            border-left: 6px solid #39d2c0;
+            border-radius: 12px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.6rem 0;
+        }
+        .tip-box strong {
+            color: #39d2c0;
+        }
+
+        .important-box {
+            background: #1f0d1a;
+            border-left: 6px solid #f85149;
+            border-radius: 12px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.6rem 0;
+        }
+        .important-box strong {
+            color: #f85149;
+        }
+
+        .trap-box {
+            background: #1f1a0d;
+            border-left: 6px solid #d29922;
+            border-radius: 12px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.6rem 0;
+        }
+        .trap-box strong {
+            color: #d29922;
+        }
+
+        .case-box {
+            background: #111b29;
+            border-left: 6px solid #58a6ff;
+            border-radius: 12px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.6rem 0;
+        }
+        .case-box strong {
+            color: #58a6ff;
+        }
+
+        .mnemonic-box {
+            background: #1a1b2e;
+            border: 2px solid #bc8cff;
+            border-radius: 16px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.6rem 0;
+            text-align: center;
+        }
+        .mnemonic-box .mnemonic {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #bc8cff;
+            letter-spacing: 0.1em;
+        }
+        .mnemonic-box .meaning {
+            color: #d2dbe8;
+            font-size: 1rem;
+        }
+
+        .quote {
+            background: #0d1117;
+            border-radius: 12px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.6rem 0;
+            font-style: italic;
+            border-left: 4px solid #58a6ff;
+            color: #c9d1d9;
+        }
+        .quote .author {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-weight: 600;
+            color: #8b949e;
+        }
+
+        .highlight {
+            background: rgba(88, 166, 255, 0.2);
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            color: #79c0ff;
+            font-weight: 500;
+        }
+
+        .highlight-green {
+            background: rgba(63, 185, 80, 0.2);
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            color: #3fb950;
+            font-weight: 500;
+        }
+
+        .highlight-orange {
+            background: rgba(210, 153, 34, 0.2);
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            color: #d29922;
+            font-weight: 500;
+        }
+
+        .highlight-red {
+            background: rgba(248, 81, 73, 0.2);
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            color: #f85149;
+            font-weight: 500;
+        }
+
+        .highlight-purple {
+            background: rgba(188, 140, 255, 0.2);
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            color: #bc8cff;
+            font-weight: 500;
+        }
+
+        /* ── Tabelas ── */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.8rem 0;
+            border-radius: 14px;
+            border: 1px solid #30363d;
+            background: #0d1117;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 500px;
+        }
+        th {
+            background: #21262d;
+            color: #f0f6fc;
+            font-weight: 700;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid #30363d;
+        }
+        td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #21262d;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover td {
+            background: #161b22;
+        }
+
+        /* ── Listas ── */
+        ul,
+        ol {
+            padding-left: 1.8rem;
+            margin: 0.8rem 0 1.2rem;
+        }
+        li {
+            margin-bottom: 0.4rem;
+        }
+        ul ul,
+        ol ol {
+            margin: 0.3rem 0 0.3rem 1.5rem;
+        }
+
+        .checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+        .checklist li::before {
+            content: "✓ ";
+            color: #3fb950;
+            font-weight: 700;
+        }
+
+        .bullet-star {
+            list-style: none;
+            padding-left: 0;
+        }
+        .bullet-star li::before {
+            content: "✦ ";
+            color: #d29922;
+            font-weight: 700;
+        }
+
+        /* ── Separadores ── */
+        .divider {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #30363d, transparent);
+            margin: 2.5rem 0;
+        }
+
+        .divider-thick {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #58a6ff, transparent);
+            margin: 2.8rem 0;
+        }
+
+        /* ── SVG Responsivo ── */
+        .svg-container {
+            background: #0d1117;
+            border-radius: 16px;
+            padding: 1rem;
+            margin: 1.8rem 0;
+            border: 1px solid #30363d;
+            overflow-x: auto;
+            text-align: center;
+        }
+        .svg-container svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* ── Badge ── */
+        .badge {
+            display: inline-block;
+            background: #21262d;
+            color: #8b949e;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.15rem 0.7rem;
+            border-radius: 20px;
+            margin-right: 0.5rem;
+            border: 1px solid #30363d;
+        }
+
+        /* ── Capa ── */
+        .cover {
+            text-align: center;
+            padding: 1.5rem 0 2rem;
+            border-bottom: 2px solid #30363d;
+            margin-bottom: 2rem;
+        }
+        .cover h1 {
+            font-size: 2.8rem;
+            border: none;
+            padding: 0;
+            margin: 0.5rem 0;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #f0f6fc, #58a6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cover .sub {
+            font-size: 1.2rem;
+            color: #8b949e;
+            margin-top: 0.2rem;
+            border-top: 1px solid #21262d;
+            padding-top: 0.8rem;
+            display: inline-block;
+        }
+        .cover .meta {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-top: 0.8rem;
+            letter-spacing: 0.02em;
+        }
+
+        @media (max-width: 600px) {
+            .cover h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* ── Misc ── */
+        .inline-code {
+            background: #21262d;
+            padding: 0.1rem 0.5rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #f0f6fc;
+        }
+
+        .small-note {
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.2rem 0;
+        }
+        @media (max-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* ── Scroll suave e foco ── */
+        :target {
+            scroll-margin-top: 2rem;
+        }
+
+        /* ── Impressão ── */
+        @media print {
+            body {
+                background: #fff;
+                color: #000;
+                padding: 0.5in;
+            }
+            .container {
+                background: #fff;
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+            .cover h1 {
+                -webkit-text-fill-color: #000;
+                background: none;
+                color: #000;
+            }
+            .toc,
+            .card,
+            .tip-box,
+            .important-box,
+            .trap-box,
+            .case-box,
+            .mnemonic-box,
+            .quote,
+            .svg-container {
+                background: #f5f5f5;
+                border-color: #ccc;
+                color: #000;
+            }
+            .toc a,
+            a {
+                color: #0055cc;
+            }
+            .badge {
+                background: #eee;
+                color: #333;
+            }
+            .highlight,
+            .highlight-green,
+            .highlight-orange,
+            .highlight-red,
+            .highlight-purple {
+                background: #e0e0e0;
+                color: #000;
+            }
+            .inline-code {
+                background: #eee;
+                color: #000;
+            }
+            th {
+                background: #ddd;
+                color: #000;
+            }
+            td {
+                border-bottom-color: #ccc;
+            }
+            .divider,
+            .divider-thick {
+                background: #ccc;
+            }
+            .mnemonic-box .mnemonic {
+                color: #5a3d8a;
+            }
+            .table-wrap {
+                border-color: #ccc;
+            }
+            .footer {
+                border-top-color: #ccc;
+                color: #333;
+            }
+            .cover .sub,
+            .cover .meta,
+            .small-note {
+                color: #333;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: #000;
+            }
+            h2 {
+                border-left-color: #0055cc;
+            }
+            .tip-box {
+                border-left-color: #008080;
+            }
+            .important-box {
+                border-left-color: #cc0000;
+            }
+            .trap-box {
+                border-left-color: #cc8800;
+            }
+            .case-box {
+                border-left-color: #0055cc;
+            }
+            .mnemonic-box {
+                border-color: #5a3d8a;
+            }
+            .quote {
+                border-left-color: #0055cc;
+                color: #000;
+            }
+            .quote .author {
+                color: #333;
+            }
+            .cover {
+                border-bottom-color: #ccc;
+            }
+            .container {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ============================================================
+        CAPA
+        ============================================================ -->
+        <div class="cover">
+            <h1>DIREITO CONSTITUCIONAL<br>E ADMINISTRATIVO</h1>
+            <div class="sub">Tópicos Especiais para Técnico Judiciário – Área Judiciária</div>
+            <div class="meta">Material Premium para Concursos de Alto Nível</div>
+        </div>
+
+        <!-- ============================================================
+        SUMÁRIO
+        ============================================================ -->
+        <div class="toc">
+            <h2>📑 Sumário</h2>
+            <div class="toc-grid">
+                <a href="#sec1">1. Organização do Estado e Bens Públicos</a>
+                <a href="#sec1-1">&nbsp;&nbsp;1.1. Estrutura Federativa</a>
+                <a href="#sec1-2">&nbsp;&nbsp;1.2. Bens da União</a>
+                <a href="#sec1-3">&nbsp;&nbsp;1.3. Competências Legislativas</a>
+                <a href="#sec2">2. Direitos e Garantias Fundamentais</a>
+                <a href="#sec2-1">&nbsp;&nbsp;2.1. Nacionalidade e EC 131/2023</a>
+                <a href="#sec2-2">&nbsp;&nbsp;2.2. Princípios Penais Constitucionais</a>
+                <a href="#sec2-3">&nbsp;&nbsp;2.3. Classificação das Constituições</a>
+                <a href="#sec3">3. Administração Pública e Servidores</a>
+                <a href="#sec3-1">&nbsp;&nbsp;3.1. Princípios Expressos (LIMPE)</a>
+                <a href="#sec3-2">&nbsp;&nbsp;3.2. Vedação de Vinculação Remuneratória</a>
+                <a href="#sec3-3">&nbsp;&nbsp;3.3. Teto Remuneratório nos Estados</a>
+                <a href="#sec3-4">&nbsp;&nbsp;3.4. Cargos: Efetivo × Vitalício</a>
+                <a href="#sec3-5">&nbsp;&nbsp;3.5. Classificação de Órgãos Públicos</a>
+                <a href="#sec4">4. Poder Judiciário</a>
+                <a href="#sec4-1">&nbsp;&nbsp;4.1. Tribunais Regionais Federais</a>
+                <a href="#sec4-2">&nbsp;&nbsp;4.2. Proposta Orçamentária do Judiciário</a>
+                <a href="#sec4-3">&nbsp;&nbsp;4.3. Competências do STF</a>
+                <a href="#sec4-4">&nbsp;&nbsp;4.4. Ministério Público</a>
+                <a href="#sec5">5. Quadro Resumo e Macetes</a>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ============================================================
+        SEÇÃO 1
+        ============================================================ -->
+        <h1 id="sec1">1. Organização do Estado e Bens Públicos</h1>
+
+        <!-- 1.1 -->
+        <h2 id="sec1-1">1.1. Estrutura Federativa e Reorganização Territorial</h2>
+
+        <h3>1.1.1. A Forma Federativa Brasileira</h3>
+        <p>A República Federativa do Brasil, como estabelece o art. 1º da Constituição Federal de 1988, é formada pela união indissolúvel dos Estados, Municípios e do Distrito Federal. Essa indissolubilidade é <span class="highlight">cláusula pétrea</span> (art. 60, §4º, I), ou seja, não pode ser objeto de emenda constitucional tendente a aboli-la.</p>
+        <p>Isso significa que <span class="highlight-red">NÃO EXISTE DIREITO DE SECESSÃO</span> no ordenamento jurídico brasileiro. Diferentemente de outros países que admitem a separação unilateral de seus entes federados, o Brasil adota a <span class="highlight">FORMA FEDERATIVA COMO ELEMENTO CONSTITUTIVO PERMANENTE</span>.</p>
+
+        <h3>1.1.2. Desmembramento de Estado para Formação de Novo Estado</h3>
+        <p>Apesar da indissolubilidade, a Constituição prevê a possibilidade de <span class="highlight">REORGANIZAÇÃO TERRITORIAL</span>, incluindo o desmembramento de Estados para a formação de novos entes federativos.</p>
+
+        <h4>O QUE A CONSTITUIÇÃO EXIGE?</h4>
+        <p>Nos termos do art. 18, §3º, da CF/88, o desmembramento de Estado para formação de novo Estado depende de:</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>REQUISITO</th><th>DESCRIÇÃO</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>1. Consulta prévia</strong></td><td>Aprovação da população diretamente interessada mediante <span class="highlight">PLEBISCITO</span></td></tr>
+                    <tr><td><strong>2. Norma federal</strong></td><td>Edição de <span class="highlight">LEI COMPLEMENTAR</span> pelo Congresso Nacional</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="trap-box">
+            <strong>⚡ ATENÇÃO À DIFERENÇA!</strong>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem 1rem; margin-top:0.5rem;">
+                <div><span class="badge">DESMEMBRAMENTO DE ESTADO</span><br>Plebiscito + Lei Complementar Federal<br><span class="small-note">Competência do Congresso Nacional</span></div>
+                <div><span class="badge">CRIAÇÃO DE MUNICÍPIOS</span><br>Lei Estadual + Estudo de Viabilidade + Consulta prévia<br><span class="small-note">Competência da Assembleia Legislativa Estadual</span></div>
+            </div>
+        </div>
+
+        <div class="important-box">
+            <strong>⚠ ERRO COMUM EM PROVA:</strong> Muitos candidatos confundem o procedimento de criação de municípios (que exige lei estadual e estudo de viabilidade, além de consulta prévia) com o procedimento de desmembramento de Estado. A FCC adora explorar essa diferença!
+        </div>
+
+        <h4>1.1.3. Caso Prático – Desmembramento do Estado do Pará</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> O Estado do Pará deseja se desmembrar para formar o Estado do Carajás, com capital em Marabá. A Assembleia Legislativa do Pará aprova, por maioria absoluta, a criação do novo Estado e encaminha a proposta diretamente ao Presidente da República.<br><br>
+            <strong>PERGUNTA:</strong> Esse procedimento está correto?<br><br>
+            <strong>RESPOSTA:</strong> ❌ <span class="highlight-red">NÃO.</span> O procedimento correto exige:<br>
+            1. Realização de plebiscito com a população diretamente interessada (população do Pará e de áreas que formariam o novo Estado);<br>
+            2. Aprovação da criação por lei complementar editada pelo Congresso Nacional, e não pelo Presidente da República ou pela Assembleia Legislativa Estadual.
+        </div>
+
+        <hr class="divider">
+
+        <!-- 1.2 -->
+        <h2 id="sec1-2">1.2. Bens da União: Distinções Cruciais</h2>
+
+        <h3>1.2.1. O Art. 20 da Constituição Federal</h3>
+        <p>O art. 20 da CF/88 enumera os bens que pertencem à União. São eles:</p>
+        <ul class="bullet-star">
+            <li><span class="highlight">Terras tradicionalmente ocupadas por povos originários</span>;</li>
+            <li><span class="highlight">Recursos naturais da plataforma continental e Zona Econômica Exclusiva (ZEE)</span>;</li>
+            <li><span class="highlight">Lagos e rios</span> que banhem mais de um Estado ou sirvam de limites com outros países;</li>
+            <li><span class="highlight">Ilhas fluviais e lacustres</span> nas zonas limítrofes com outros países;</li>
+            <li><span class="highlight">Cavidades naturais subterrâneas e sítios arqueológicos</span>;</li>
+            <li><span class="highlight">Terrenos de marinha</span> e seus acrescidos;</li>
+            <li><span class="highlight">Potencial de energia hidráulica</span>.</li>
+        </ul>
+
+        <h3>1.2.2. A Grande Pegadinha: Patrimônio Nacional x Bem da União</h3>
+        <p>O art. 225, §4º, da CF/88 estabelece que a <span class="highlight">MATA ATLÂNTICA</span> é patrimônio nacional. Da mesma forma, são considerados patrimônio nacional:</p>
+        <ul>
+            <li><span class="highlight-green">Amazônia</span>;</li>
+            <li><span class="highlight-green">Pantanal</span>;</li>
+            <li><span class="highlight-green">Mata Atlântica</span>;</li>
+            <li><span class="highlight-green">Serra do Mar</span>;</li>
+            <li><span class="highlight-green">Zona Costeira</span>.</li>
+        </ul>
+
+        <div class="mnemonic-box">
+            <div class="mnemonic">APASZ</div>
+            <div class="meaning"><strong>A</strong>mazônia · <strong>P</strong>antanal · <strong>A</strong>tlântica (Mata) · <strong>S</strong>erra do Mar · <strong>Z</strong>ona Costeira</div>
+        </div>
+
+        <div class="important-box">
+            <strong>⚠ IMPORTANTE:</strong> Ser "patrimônio nacional" significa que esses biomas recebem proteção ambiental especial do Estado, devendo ser preservados para as presentes e futuras gerações. No entanto, <span class="highlight-red">ISSO NÃO SIGNIFICA QUE AS TERRAS PERTENCEM À UNIÃO!</span><br><br>
+            As terras onde se localiza a Mata Atlântica, por exemplo, podem ser:<br>
+            • Particulares (propriedade privada);<br>
+            • Estaduais;<br>
+            • Municipais;<br>
+            • Ou, eventualmente, da União.
+        </div>
+
+        <div class="trap-box">
+            <strong>🔴 A PEGADINHA DA FCC:</strong> A banca costuma afirmar que a Mata Atlântica é bem da União por ser patrimônio nacional. Isso é <span class="highlight-red">ERRADO</span>. O candidato que marcar essa opção cai na armadilha!
+        </div>
+
+        <h4>1.2.3. Quadro Comparativo – Bens da União x Patrimônio Nacional</h4>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>BENS DA UNIÃO (ART. 20, CF)</th><th>PATRIMÔNIO NACIONAL (ART. 225, §4º)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Terras indígenas</td><td>Amazônia</td></tr>
+                    <tr><td>Recursos da plataforma continental</td><td>Pantanal</td></tr>
+                    <tr><td>Recursos da ZEE</td><td>Mata Atlântica</td></tr>
+                    <tr><td>Rios que banhem mais de um Estado</td><td>Serra do Mar</td></tr>
+                    <tr><td>Cavidades naturais subterrâneas</td><td>Zona Costeira</td></tr>
+                    <tr><td>Sítios arqueológicos</td><td>(outros ecossistemas relevantes)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>1.2.4. Caso Prático – Mata Atlântica e Propriedade Privada</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> João é proprietário de um sítio localizado em área de Mata Atlântica, no interior de São Paulo. O IBAMA autua João por desmatamento ilegal, mas a União ajuíza ação para declarar a propriedade do imóvel como bem da União.<br><br>
+            <strong>PERGUNTA:</strong> Procede a pretensão da União?<br><br>
+            <strong>RESPOSTA:</strong> ❌ <span class="highlight-red">NÃO.</span> A proteção constitucional da Mata Atlântica como patrimônio nacional impõe deveres de preservação ambiental ao proprietário, mas <span class="highlight">NÃO TRANSFORMA A PROPRIEDADE EM BEM DA UNIÃO</span>. A propriedade pode ser privada, estadual ou municipal.
+        </div>
+
+        <hr class="divider">
+
+        <!-- 1.3 -->
+        <h2 id="sec1-3">1.3. Competências Legislativas: O Jogo das Atribuições</h2>
+
+        <h3>1.3.1. Competência Privativa da União (Art. 22, CF)</h3>
+        <p>A União tem competência para legislar <span class="highlight">PRIVATIVAMENTE</span> sobre determinadas matérias, conforme o art. 22 da CF/88. Isso significa que <span class="highlight-red">ESTADOS E MUNICÍPIOS NÃO PODEM LEGISLAR</span> sobre esses temas, salvo autorização expressa em lei complementar federal.</p>
+        <ul>
+            <li>Direito civil;</li>
+            <li>Direito comercial;</li>
+            <li>Direito penal;</li>
+            <li>Direito processual (sentido amplo);</li>
+            <li>Direito eleitoral;</li>
+            <li>Direito do trabalho;</li>
+            <li>Direito aeronáutico.</li>
+        </ul>
+
+        <h3>1.3.2. Competência Concorrente (Art. 24, CF)</h3>
+        <p>Diferentemente da competência privativa, a competência concorrente permite que <span class="highlight">UNIÃO, ESTADOS E DISTRITO FEDERAL</span> legislem sobre determinadas matérias, observando a seguinte divisão:</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>NÍVEL</th><th>ATRIBUIÇÃO</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>União</strong></td><td>Estabelece <span class="highlight">NORMAS GERAIS</span></td></tr>
+                    <tr><td><strong>Estados/DF</strong></td><td>Suplementam as normas gerais, atendendo às peculiaridades locais</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>1.3.3. A Distinção Mais Cobrada pela FCC</h3>
+        <p>A banca adora explorar a diferença entre:</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>COMPETÊNCIA PRIVATIVA (ART. 22, I)</th><th>COMPETÊNCIA CONCORRENTE (ART. 24, XI)</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="highlight">Direito processual</span></td><td><span class="highlight-green">Procedimentos em matéria processual</span></td></tr>
+                    <tr><td>Normas gerais do processo (CPC, CPP)</td><td>Questões acessórias e operacionais</td></tr>
+                    <tr><td>Uniformidade nacional</td><td>Prazos internos, custas, organização local</td></tr>
+                    <tr><td>Exemplo: prazos processuais previstos no CPC</td><td>Exemplo: prazos para protocolo de petições no balcão do tribunal</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tip-box">
+            <strong>💡 EXPLICAÇÃO DETALHADA:</strong><br>
+            O <span class="highlight">DIREITO PROCESSUAL</span> (art. 22, I) trata das normas fundamentais que regem a tramitação dos processos em todo o território nacional. É por isso que o Código de Processo Civil e o Código de Processo Penal são leis federais, aplicáveis em todos os Estados.<br><br>
+            Os <span class="highlight-green">PROCEDIMENTOS EM MATÉRIA PROCESSUAL</span> (art. 24, XI) tratam de questões mais específicas e operacionais, que podem variar de acordo com a realidade de cada Estado. Por exemplo:<br>
+            • Prazos para cumprimento de diligências internas;<br>
+            • Organização das secretarias dos tribunais;<br>
+            • Valores de custas processuais;<br>
+            • Horário de funcionamento do fórum;<br>
+            • Distribuição de processos entre varas.
+        </div>
+
+        <h4>1.3.4. Erro Comum em Provas (PEGADINHA)</h4>
+        <div class="trap-box">
+            <strong>🔴 AFIRMAÇÃO ERRADA:</strong> "Os Estados não podem legislar sobre procedimentos em matéria processual."<br><br>
+            <strong>🟢 AFIRMAÇÃO CORRETA:</strong> "Os Estados podem legislar sobre procedimentos em matéria processual, suplementando as normas gerais da União."<br><br>
+            <strong>🔴 AFIRMAÇÃO ERRADA:</strong> "Legislar sobre direito processual é competência concorrente."<br><br>
+            <strong>🟢 AFIRMAÇÃO CORRETA:</strong> "Legislar sobre direito processual é competência privativa da União."
+        </div>
+
+        <h4>1.3.5. Caso Prático – Lei Estadual de Custas</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> O Estado do Ceará edita uma lei estabelecendo que as custas processuais para ações de valor inferior a 20 salários mínimos serão isentas. A União, por meio da Procuradoria-Geral Federal, questiona a constitucionalidade da lei, argumentando que a matéria é de competência privativa da União (art. 22, I).<br><br>
+            <strong>PERGUNTA:</strong> A lei estadual é constitucional?<br><br>
+            <strong>RESPOSTA:</strong> ✅ <span class="highlight-green">SIM.</span> A fixação de custas processuais e isenções é matéria de <span class="highlight">PROCEDIMENTOS EM MATÉRIA PROCESSUAL</span> (art. 24, XI), sendo competência concorrente. O Estado pode suplementar a legislação federal, desde que não contrarie as normas gerais estabelecidas pela União.
+        </div>
+
+        <hr class="divider-thick">
+
+        <!-- ============================================================
+        SEÇÃO 2
+        ============================================================ -->
+        <h1 id="sec2">2. Direitos e Garantias Fundamentais</h1>
+
+        <!-- 2.1 -->
+        <h2 id="sec2-1">2.1. Direitos de Nacionalidade e a EC 131/2023</h2>
+
+        <h3>2.1.1. O Impacto da EC 131/2023</h3>
+        <p>A Emenda Constitucional nº 131, de 2023, promoveu uma alteração significativa no tratamento da perda da nacionalidade brasileira.</p>
+
+        <div class="card">
+            <p><span class="highlight-red">ANTES DA EC 131/2023:</span><br>
+            O brasileiro que adquirisse voluntariamente outra nacionalidade <span class="highlight-red">PERDIA AUTOMATICAMENTE</span> a nacionalidade brasileira, salvo em duas exceções:<br>
+            1. Reconhecimento de nacionalidade originária pela lei estrangeira (ex: italiano que nasce no Brasil);<br>
+            2. Imposição de naturalização pela lei estrangeira como condição para permanência em seu território.</p>
+            <hr style="border-color:#30363d; margin:0.8rem 0;">
+            <p><span class="highlight-green">DEPOIS DA EC 131/2023:</span><br>
+            A aquisição voluntária de outra nacionalidade <span class="highlight-green">NÃO GERA MAIS PERDA AUTOMÁTICA</span> da nacionalidade brasileira.</p>
+        </div>
+
+        <h3>2.1.2. Hipóteses Atuais de Perda da Nacionalidade</h3>
+        <p>Com a EC 131/2023, o art. 12, §4º e §5º, da CF/88 estabelece que um brasileiro (nato ou naturalizado) <span class="highlight-red">SÓ PERDE A NACIONALIDADE</span> em duas situações:</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>HIPÓTESE</th><th>DESCRIÇÃO</th><th>QUEM DECIDE</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1. Cancelamento da naturalização</strong></td><td>Em caso de <span class="highlight">FRAUDE</span> no processo de naturalização ou atentado contra a ordem constitucional</td><td>Sentença judicial transitada em julgado</td></tr>
+                    <tr><td><strong>2. Pedido expresso de renúncia</strong></td><td>Requerimento voluntário perante autoridade brasileira competente, desde que <span class="highlight">NÃO ACARRETE APATRIDIA</span></td><td>Autoridade brasileira competente</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="important-box">
+            <strong>🌍 O Princípio da Não Apatridia</strong><br>
+            A vedação à apatridia é um princípio fundamental do Direito Internacional dos Direitos Humanos. A apatridia ocorre quando uma pessoa não possui nacionalidade de nenhum país, ficando desprovida de proteção diplomática e de direitos básicos.<br><br>
+            <strong>POR QUE A EC 131/2023 PROIBE A PERDA DA NACIONALIDADE POR AQUISIÇÃO VOLUNTÁRIA?</strong><br>
+            Para evitar que o brasileiro se torne <span class="highlight">APÁTRIDA</span> (sem nenhuma nacionalidade). Mesmo que adquira outra nacionalidade, mantém a brasileira, garantindo que sempre terá pelo menos uma nacionalidade.
+        </div>
+
+        <h4>2.1.4. Quadro Comparativo – Nacionalidade Brasileira</h4>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>BRASILEIRO NATO</th><th>BRASILEIRO NATURALIZADO</th></tr></thead>
+                <tbody>
+                    <tr><td>Nascido no Brasil (mesmo de pais estrangeiros)</td><td>Estrangeiro que adquiriu a nacionalidade brasileira</td></tr>
+                    <tr><td>Não perde a nacionalidade por aquisição voluntária de outra</td><td>Não perde a nacionalidade por aquisição voluntária de outra</td></tr>
+                    <tr><td>Só perde por renúncia expressa ou cancelamento da naturalização (se for o caso)</td><td>Só perde por renúncia expressa ou cancelamento da naturalização</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>2.1.5. Caso Prático – Dupla Nacionalidade</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> Maria, brasileira nata, decide se naturalizar italiana para obter cidadania europeia e trabalhar na Itália. Após obter a nacionalidade italiana, ela se preocupa em perder a brasileira.<br><br>
+            <strong>PERGUNTA:</strong> Maria perdeu a nacionalidade brasileira?<br><br>
+            <strong>RESPOSTA:</strong> ❌ <span class="highlight-red">NÃO.</span> Com a EC 131/2023, a aquisição voluntária de outra nacionalidade não gera mais perda automática da nacionalidade brasileira. Maria continua sendo brasileira nata, agora com dupla nacionalidade (brasileira e italiana).
+        </div>
+
+        <hr class="divider">
+
+        <!-- 2.2 -->
+        <h2 id="sec2-2">2.2. Princípios Penais Constitucionais</h2>
+
+        <h3>2.2.1. O Art. 5º da CF/88 e seus Princípios Penais</h3>
+        <p>O art. 5º da Constituição Federal é o "Caderno de Garantias" do cidadão brasileiro. Em relação ao Direito Penal, ele estabelece princípios fundamentais que protegem o indivíduo contra o poder punitivo do Estado.</p>
+
+        <h4>2.2.2. Análise Detalhada das Afirmativas</h4>
+
+        <div class="card">
+            <p><strong>I.</strong> Nenhuma pena passa da pessoa do condenado, mas a obrigação de reparar o dano e o perdimento de bens podem ser estendidos aos sucessores.</p>
+            <p><span class="badge" style="background:#f85149;color:#fff;">ERRADA</span> <span class="highlight-red">PARCIALMENTE CORRETO, MAS COM UM ERRO GRAVE:</span></p>
+            <p>O art. 5º, XLV, da CF estabelece:<br>
+            <span class="quote" style="border-left-color:#f85149;font-style:normal;background:#1a0d0d;">"nenhuma pena passará da pessoa do condenado, podendo a obrigação de reparar o dano e a decretação do perdimento de bens ser, nos termos da lei, estendidas aos sucessores e contra eles executadas, até o limite do valor do patrimônio transferido".</span></p>
+            <p><span class="highlight-red">ERRO DA AFIRMATIVA:</span> A afirmativa diz "a obrigação de reparar o dano e <span class="highlight-red">O PERDIMENTO DE BENS</span> podem ser estendidos aos sucessores". O correto é que a <span class="highlight">OBRIGAÇÃO DE REPARAR O DANO</span> e a <span class="highlight">DECRETAÇÃO DO PERDIMENTO DE BENS</span> podem ser estendidas.</p>
+            <p><strong>QUAL A DIFERENÇA?</strong><br>
+            • <span class="highlight">Reparação do dano</span>: é um efeito <span class="highlight">CIVIL</span> da condenação (indenização à vítima);<br>
+            • <span class="highlight">Perdimento de bens</span>: é um efeito <span class="highlight">PENAL</span> (perda de bens em favor do Estado);<br>
+            • <span class="highlight-red">MULTA</span>: é <span class="highlight-red">PENA</span> propriamente dita e <span class="highlight-red">NÃO SE ESTENDE AOS SUCESSORES</span>.</p>
+            <div class="trap-box" style="margin-top:0.8rem;">
+                <strong>🔴 A PEGADINHA DA FCC:</strong> A banca troca "perdimento de bens" por "multa" para induzir o candidato ao erro. A multa é pena e não passa da pessoa do condenado.
+            </div>
+        </div>
+
+        <div class="card">
+            <p><strong>II.</strong> É proibida a pena de morte, salvo em caso de guerra declarada.</p>
+            <p><span class="badge" style="background:#d29922;color:#fff;">ATENÇÃO</span> O art. 5º, XLVII, da CF estabelece:<br>
+            "não haverá penas: (...) a) de morte, <span class="highlight">salvo em caso de guerra declarada</span>, nos termos do art. 84, XIX".</p>
+            <p>A afirmativa está <span class="highlight-green">CORRETA</span>, pois a pena de morte é proibida no Brasil, com a única exceção de guerra declarada.</p>
+            <p><span class="highlight-orange">MAS ATENÇÃO AO ENUNCIADO DA QUESTÃO ORIGINAL:</span><br>
+            No flashcard original, a afirmativa foi considerada <span class="highlight-red">ERRADA</span> pela banca. Por quê?<br>
+            Isso ocorre porque a afirmativa <strong>II</strong> do flashcard foi redigida de forma diferente:</p>
+            <div style="background:#1a1a0d;padding:0.5rem 1rem;border-radius:8px;margin:0.5rem 0;">
+                <span class="highlight-green">"II. É proibida a pena de morte, salvo em caso de guerra declarada." – CORRETA</span>
+            </div>
+            <div style="background:#1a0d0d;padding:0.5rem 1rem;border-radius:8px;margin:0.5rem 0;">
+                <span class="highlight-red">"II. É proibida a pena de morte, sendo admitida em caso de guerra declarada no território nacional." – ERRADA</span>
+            </div>
+            <p>A diferença sutil: a guerra deve ser <span class="highlight">DECLARADA</span> (ato formal do Presidente da República, autorizado pelo Congresso Nacional), e não "no território nacional". A CF não restringe a guerra ao território nacional.</p>
+        </div>
+
+        <div class="card">
+            <p><strong>III.</strong> A prática do racismo é crime inafiançável e imprescritível.</p>
+            <p><span class="badge" style="background:#3fb950;color:#fff;">CORRETA</span> O art. 5º, XLII, da CF estabelece:<br>
+            "a prática do racismo constitui crime inafiançável e imprescritível, sujeito à pena de reclusão, nos termos da lei".</p>
+            <ul>
+                <li><span class="highlight">Inafiançável</span>: não cabe fiança, mesmo que o crime seja de menor potencial ofensivo;</li>
+                <li><span class="highlight">Imprescritível</span>: não há prazo para prescrição da pretensão punitiva, ou seja, o Estado pode punir o agente a qualquer tempo;</li>
+                <li><span class="highlight">Pena de reclusão</span>: não cabe pena restritiva de direitos ou multa como pena principal.</li>
+            </ul>
+            <p><span class="small-note">EXCEÇÃO: A Lei nº 7.716/89 define os crimes de racismo. Atualmente, a injúria racial (ofensa a uma pessoa específica) é crime de racismo e também é inafiançável e imprescritível, conforme entendimento do STF.</span></p>
+        </div>
+
+        <div class="card">
+            <p><strong>IV.</strong> A lei penal não retroagirá, salvo para beneficiar o réu.</p>
+            <p><span class="badge" style="background:#3fb950;color:#fff;">CORRETA</span> O art. 5º, XL, da CF estabelece:<br>
+            "a lei penal não retroagirá, salvo para beneficiar o réu".</p>
+            <p>Este é o princípio da <span class="highlight">RETROATIVIDADE BENÉFICA DA LEI PENAL</span>. Se uma nova lei penal for mais favorável ao réu, ela retroage para alcançar fatos ocorridos antes de sua vigência.</p>
+            <p><strong>EXEMPLO:</strong><br>
+            • Lei A (antiga): pena de 5 a 10 anos de reclusão;<br>
+            • Lei B (nova): pena de 2 a 5 anos de reclusão;<br>
+            • O réu cometeu o crime antes da Lei B, mas é julgado depois.<br>
+            <span class="highlight-green">RESULTADO:</span> Aplica-se a Lei B (mais benéfica), mesmo sendo posterior ao crime.</p>
+        </div>
+
+        <h4>2.2.3. Resumo das Afirmativas</h4>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>AFIRMATIVA</th><th>JULGAMENTO</th><th>FUNDAMENTO</th></tr></thead>
+                <tbody>
+                    <tr><td>I</td><td><span class="highlight-red">❌ Errada</span></td><td>A multa é pena e não se estende aos sucessores</td></tr>
+                    <tr><td>II</td><td><span class="highlight-red">❌ Errada</span></td><td>(na redação original da questão) – exige guerra declarada</td></tr>
+                    <tr><td>III</td><td><span class="highlight-green">✅ Correta</span></td><td>Art. 5º, XLII – crime inafiançável e imprescritível</td></tr>
+                    <tr><td>IV</td><td><span class="highlight-green">✅ Correta</span></td><td>Art. 5º, XL – retroatividade da lei penal benéfica</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-weight:700;color:#f0f6fc;">RESPOSTA CORRETA: III e IV.</p>
+
+        <h4>2.2.4. Caso Prático – Retroação da Lei Penal</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> João praticou crime de furto em 2020, com pena de 2 a 6 anos de reclusão. Em 2024, uma nova lei reduz a pena para 1 a 3 anos de reclusão. João é denunciado em 2025.<br><br>
+            <strong>PERGUNTA:</strong> Qual pena deve ser aplicada?<br><br>
+            <strong>RESPOSTA:</strong> Aplica-se a nova lei (pena de 1 a 3 anos), pois é mais benéfica ao réu e retroage para alcançar fatos anteriores. Isso decorre do princípio da retroatividade da lei penal benéfica (art. 5º, XL, CF).
+        </div>
+
+        <hr class="divider">
+
+        <!-- 2.3 -->
+        <h2 id="sec2-3">2.3. Classificação das Constituições: Força Normativa</h2>
+
+        <h3>2.3.1. A Classificação Ontológica de Karl Loewenstein</h3>
+        <p>Karl Loewenstein, cientista político alemão, desenvolveu uma classificação das constituições baseada na <span class="highlight">FORÇA NORMATIVA</span>, ou seja, na capacidade efetiva do texto constitucional de regular a vida política e social.</p>
+
+        <h3>2.3.2. As Três Categorias</h3>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>CLASSIFICAÇÃO</th><th>CARACTERÍSTICAS</th><th>EXEMPLO</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="highlight">CONSTITUIÇÃO NORMATIVA</span></td><td>Possui efetiva força normativa. O texto constitucional reflete a realidade política e social. É respeitada e aplicada na prática.</td><td>Constituição dos EUA (na visão de Loewenstein)</td></tr>
+                    <tr><td><span class="highlight-orange">CONSTITUIÇÃO NOMINAL</span></td><td>Existe formalmente, mas carece de efetividade. O texto está avançado, mas não se compatibiliza com a realidade social. É uma "constituição de fachada" ou "educativa".</td><td>Muitas constituições latino-americanas</td></tr>
+                    <tr><td><span class="highlight-red">CONSTITUIÇÃO SEMÂNTICA</span></td><td>Serve apenas para justificar e legitimar o poder dominante. O texto é adaptado para manter o regime no poder.</td><td>Constituições de regimes totalitários</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>2.3.3. A Constituição Nominal em Detalhe</h3>
+        <div class="important-box">
+            A <span class="highlight-orange">CONSTITUIÇÃO NOMINAL</span> é aquela que:<br>
+            <ol>
+                <li><span class="highlight">EXISTE COMO DOCUMENTO</span>: está escrita, promulgada, publicada;</li>
+                <li><span class="highlight-red">CARECE DE FORÇA NORMATIVA EFETIVA</span>: não consegue regular efetivamente o processo político;</li>
+                <li><span class="highlight-orange">É AVANÇADA EM RELAÇÃO À REALIDADE</span>: o texto prevê direitos e garantias que não são efetivamente aplicados;</li>
+                <li><span class="highlight">É "DE FACHADA" OU "EDUCATIVA"</span>: serve como aspiração, mas não como realidade.</li>
+            </ol>
+        </div>
+
+        <div class="tip-box">
+            <strong>💡 EXEMPLO PRÁTICO:</strong> Uma Constituição que prevê amplos direitos sociais (educação, saúde, moradia), mas o Estado não tem capacidade financeira ou estrutural para implementá-los. O texto existe, mas a realidade é completamente diferente.
+        </div>
+
+        <h3>2.3.4. Como a FCC Cobra Esse Tema</h3>
+        <p>A banca costuma apresentar um enunciado descrevendo um <span class="highlight-orange">DESCOMPASSO ENTRE A LEI E A REALIDADE</span>:</p>
+        <div class="quote">
+            "Uma Constituição promulgada com texto avançado, mas que se mostra incompatível com a realidade social e política, não conseguindo regular efetivamente o processo político, é classificada como:"
+        </div>
+        <p><span class="highlight-green">RESPOSTA:</span> CONSTITUIÇÃO NOMINAL.</p>
+
+        <div class="trap-box">
+            <strong>🔴 PALAVRAS-CHAVE QUE INDICAM CONSTITUIÇÃO NOMINAL:</strong><br>
+            • Descompasso entre lei e realidade;<br>
+            • Constituição de fachada;<br>
+            • Constituição educativa;<br>
+            • Incompatibilidade com a realidade social;<br>
+            • Falta de efetividade.
+        </div>
+
+        <h4>2.3.5. Quadro Comparativo – Exemplos na Prova</h4>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>DESCRIÇÃO NO ENUNCIADO</th><th>RESPOSTA</th></tr></thead>
+                <tbody>
+                    <tr><td>"Constituição que realmente rege o processo político"</td><td><span class="highlight">NORMATIVA</span></td></tr>
+                    <tr><td>"Constituição que existe, mas não consegue regular efetivamente a realidade"</td><td><span class="highlight-orange">NOMINAL</span></td></tr>
+                    <tr><td>"Constituição que serve apenas para legitimar o poder dominante"</td><td><span class="highlight-red">SEMÂNTICA</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider-thick">
+
+        <!-- ============================================================
+        SEÇÃO 3
+        ============================================================ -->
+        <h1 id="sec3">3. Administração Pública e Servidores</h1>
+
+        <!-- 3.1 -->
+        <h2 id="sec3-1">3.1. Princípios Expressos: O Mnemônico LIMPE</h2>
+
+        <h3>3.1.1. Os Princípios do Caput do Art. 37</h3>
+        <p>O art. 37, caput, da CF/88 estabelece os princípios expressos da Administração Pública:</p>
+        <div class="quote" style="border-left-color:#bc8cff;">
+            "A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de <strong>legalidade, impessoalidade, moralidade, publicidade e eficiência</strong>."
+        </div>
+
+        <div class="mnemonic-box">
+            <div class="mnemonic">LIMPE</div>
+            <div class="meaning">
+                <strong>L</strong>egalidade · <strong>I</strong>mpessoalidade · <strong>M</strong>oralidade · <strong>P</strong>ublicidade · <strong>E</strong>ficiência (incluído pela EC 19/98)
+            </div>
+        </div>
+
+        <h4>3.1.2. Significado de Cada Princípio</h4>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>PRINCÍPIO</th><th>SIGNIFICADO</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="highlight">Legalidade</span></td><td>A Administração só pode fazer o que a lei permite (princípio da legalidade estrita)</td></tr>
+                    <tr><td><span class="highlight">Impessoalidade</span></td><td>A atuação administrativa deve ser objetiva, sem favorecimentos pessoais</td></tr>
+                    <tr><td><span class="highlight">Moralidade</span></td><td>A Administração deve agir com ética, probidade, boa-fé</td></tr>
+                    <tr><td><span class="highlight">Publicidade</span></td><td>A Administração deve dar transparência a seus atos (salvo sigilo)</td></tr>
+                    <tr><td><span class="highlight">Eficiência</span></td><td>A Administração deve buscar o melhor resultado com o menor custo (EC 19/98)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>3.1.3. Princípios Implícitos vs. Expressos</h4>
+        <div class="important-box">
+            <strong>⚠ IMPORTANTE:</strong> Os princípios do LIMPE são os <span class="highlight">ÚNICOS</span> que estão literalmente escritos no caput do art. 37. Qualquer outro princípio mencionado na doutrina ou na jurisprudência é considerado <span class="highlight-orange">IMPLÍCITO</span> na Constituição.
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>PRINCÍPIOS EXPRESSOS (LIMPE)</th><th>PRINCÍPIOS IMPLÍCITOS</th></tr></thead>
+                <tbody>
+                    <tr><td>Legalidade</td><td>Supremacia do interesse público</td></tr>
+                    <tr><td>Impessoalidade</td><td>Razoabilidade</td></tr>
+                    <tr><td>Moralidade</td><td>Proporcionalidade</td></tr>
+                    <tr><td>Publicidade</td><td>Autotutela</td></tr>
+                    <tr><td>Eficiência</td><td>Segurança jurídica</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>3.1.4. Caso Prático – Princípio da Publicidade</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> O Tribunal de Justiça de um Estado publica edital de concurso apenas no Diário Oficial do Estado, sem divulgação em outros meios. Um candidato alega violação ao princípio da publicidade.<br><br>
+            <strong>PERGUNTA:</strong> Procede a alegação?<br><br>
+            <strong>RESPOSTA:</strong> ✅ <span class="highlight-green">SIM.</span> Embora a publicidade no Diário Oficial seja uma forma de publicidade, o princípio da publicidade (art. 37) exige <span class="highlight">TRANSPARÊNCIA EFETIVA</span>. A Administração deve utilizar meios que garantam amplo conhecimento dos atos públicos. A FCC já cobrou que a publicidade deve ser "ampla" e "efetiva", não meramente formal.
+        </div>
+
+        <hr class="divider">
+
+        <!-- 3.2 -->
+        <h2 id="sec3-2">3.2. Vedação de Vinculação Remuneratória</h2>
+
+        <h3>3.2.1. O Art. 37, XIII, da CF/88</h3>
+        <div class="quote" style="border-left-color:#d29922;">
+            "é vedada a vinculação ou equiparação de quaisquer espécies remuneratórias para o efeito de remuneração de pessoal do serviço público."
+        </div>
+
+        <h3>3.2.2. Objetivo da Vedação</h3>
+        <p>O objetivo dessa norma é impedir o chamado <span class="highlight-orange">"EFEITO CASCATA"</span>, ou seja:</p>
+        <div class="important-box">
+            Quando uma categoria profissional obtém um reajuste salarial, isso não pode gerar automaticamente o reajuste de outra categoria, apenas porque estão "vinculadas" ou "equiparadas".
+        </div>
+        <p><strong>EXEMPLO DO EFEITO CASCATA:</strong><br>
+        • Os juízes federais obtêm um reajuste de 10%;<br>
+        • Automaticamente, os procuradores federais exigem o mesmo reajuste, com base no art. 37, XIII;<br>
+        • O aumento se espalha por toda a Administração, gerando impacto orçamentário descontrolado.</p>
+
+        <h4>3.2.3. Distinção Conceitual</h4>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>VINCULAÇÃO</th><th>EQUIPARAÇÃO</th></tr></thead>
+                <tbody>
+                    <tr><td>Atrela uma remuneração a um <span class="highlight">ÍNDICE</span> ou a <span class="highlight">OUTRA CARREIRA</span></td><td>Trata <span class="highlight">IGUALMENTE</span> cargos distintos para fins salariais</td></tr>
+                    <tr><td>Exemplo: "o vencimento do cargo X será reajustado pelo mesmo índice do cargo Y"</td><td>Exemplo: "o vencimento do cargo X será igual ao do cargo Y"</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="trap-box">
+            <strong>🔴 PEGADINHA DA FCC:</strong> A banca afirma que o art. 37, XIII, veda a vinculação ou equiparação de <span class="highlight-red">VENDAVAL</span> remuneratória. Não é "venda", mas "vedação" mesmo.
+        </div>
+
+        <h4>3.2.5. Caso Prático – Equiparação Salarial</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> Os servidores do Poder Judiciário de um Estado reivindicam reajuste salarial com base no reajuste concedido aos servidores do Poder Executivo. Alegam que, por serem ambos servidores públicos estaduais, devem ter o mesmo reajuste.<br><br>
+            <strong>PERGUNTA:</strong> Procede a reivindicação?<br><br>
+            <strong>RESPOSTA:</strong> ❌ <span class="highlight-red">NÃO.</span> O art. 37, XIII, da CF veda a vinculação ou equiparação de espécies remuneratórias. O reajuste de uma categoria não se estende automaticamente a outra. Cada cargo tem sua própria política remuneratória, e o aumento de um não gera efeito cascata.
+        </div>
+
+        <hr class="divider">
+
+        <!-- 3.3 -->
+        <h2 id="sec3-3">3.3. Teto Remuneratório nos Estados</h2>
+
+        <h3>3.3.1. O Art. 37, §12, da CF/88</h3>
+        <div class="quote" style="border-left-color:#58a6ff;">
+            "Os Estados e o Distrito Federal poderão fixar, por emenda às respectivas Constituições e Lei Orgânica, como limite único, o subsídio mensal dos Desembargadores do respectivo Tribunal de Justiça, limitado a 90,25% do subsídio mensal dos Ministros do Supremo Tribunal Federal, para os fins do disposto no inciso XI."
+        </div>
+
+        <h4>3.3.2. Entendendo o Dispositivo</h4>
+        <p>O teto remuneratório no âmbito da União é o subsídio dos Ministros do STF (art. 37, XI, CF).</p>
+        <p>No âmbito dos Estados, há <span class="highlight">DUAS POSSIBILIDADES</span>:</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>POSSIBILIDADE</th><th>TETO</th><th>FUNDAMENTO</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>1. Teto geral da União</strong></td><td>Subsídio dos Ministros do STF</td><td>Art. 37, XI (aplicação direta)</td></tr>
+                    <tr><td><strong>2. Teto estadual específico</strong></td><td>Subsídio dos Desembargadores do TJ local, limitado a <span class="highlight">90,25%</span> do subsídio dos Ministros do STF</td><td>Art. 37, §12 (facultativo)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="important-box">
+            <strong>⚠ OBSERVAÇÃO IMPORTANTE:</strong> A faculdade do art. 37, §12, <span class="highlight-red">NÃO SE APLICA AOS SUBSÍDIOS DOS DEPUTADOS ESTADUAIS</span>. O teto para deputados estaduais é o subsídio dos Deputados Federais (art. 27, §2º, CF).
+        </div>
+
+        <h4>3.3.3. Quadro Comparativo – Tetos Remuneratórios</h4>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>ENTE</th><th>TETO</th><th>FUNDAMENTO</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>União</strong></td><td>Subsídio dos Ministros do STF</td><td>Art. 37, XI</td></tr>
+                    <tr><td><strong>Estados/DF</strong></td><td>Subsídio dos Desembargadores do TJ local (máximo 90,25% do STF) <em>ou</em> Subsídio dos Ministros do STF</td><td>Art. 37, §12</td></tr>
+                    <tr><td><strong>Municípios</strong></td><td>Subsídio do Prefeito</td><td>Art. 37, XI c/c art. 29, V</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>3.3.4. Caso Prático – Teto Remuneratório Estadual</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> A Constituição do Estado do Paraná estabelece, por emenda, o teto remuneratório único com base no subsídio mensal dos Desembargadores do Tribunal de Justiça do Paraná. O subsídio dos Desembargadores corresponde a 95% do subsídio dos Ministros do STF.<br><br>
+            <strong>PERGUNTA:</strong> Essa emenda é constitucional?<br><br>
+            <strong>RESPOSTA:</strong> ❌ <span class="highlight-red">NÃO.</span> A CF, no art. 37, §12, exige que o subsídio dos Desembargadores seja limitado a <span class="highlight">90,25%</span> do subsídio dos Ministros do STF. Estabelecer 95% viola o limite constitucional.
+        </div>
+
+        <hr class="divider">
+
+        <!-- 3.4 -->
+        <h2 id="sec3-4">3.4. Classificação de Cargos Públicos: Efetivo x Vitalício</h2>
+
+        <h4>3.4.1. Conceitos Fundamentais</h4>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>CARGO EFETIVO</th><th>CARGO VITALÍCIO</th></tr></thead>
+                <tbody>
+                    <tr><td>Exige concurso público de provas ou provas e títulos</td><td>Exige concurso público (para ingresso)</td></tr>
+                    <tr><td>Adquire <span class="highlight">ESTABILIDADE</span> após 3 anos de efetivo exercício</td><td>Adquire <span class="highlight-purple">VITALICIEDADE</span> após 2 anos de exercício (magistrados)</td></tr>
+                    <tr><td>Só perde o cargo por: (a) sentença judicial transitada em julgado; (b) processo administrativo com direito à ampla defesa</td><td>Só perde o cargo por: (a) sentença judicial transitada em julgado</td></tr>
+                    <tr><td>Exemplo: Analista Judiciário, Técnico Judiciário</td><td>Exemplo: Juiz Federal, Juiz Estadual, Desembargador</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>3.4.2. Estabilidade (Art. 41, CF)</h4>
+        <p>O servidor público que ingressa no serviço público por concurso público adquire <span class="highlight">ESTABILIDADE</span> após <span class="highlight">3 (TRÊS) ANOS</span> de efetivo exercício.</p>
+        <div class="important-box">
+            <strong>COM ESTABILIDADE, O SERVIDOR SÓ PERDE O CARGO POR:</strong><br>
+            1. Sentença judicial transitada em julgado; ou<br>
+            2. Processo administrativo disciplinar com direito à ampla defesa.
+        </div>
+        <p><span class="highlight-orange">ANTES DOS 3 ANOS:</span> O servidor não tem estabilidade e pode ser exonerado a qualquer tempo, desde que observado o devido processo legal.</p>
+
+        <h4>3.4.3. Vitaliciedade (Art. 95, I, CF)</h4>
+        <p>Os magistrados (juízes, desembargadores, ministros) têm garantia de <span class="highlight-purple">VITALICIEDADE</span>, que protege o juiz contra pressões externas e garante sua independência funcional.</p>
+        <p><span class="highlight">A VITALICIEDADE É ADQUIRIDA APÓS 2 (DOIS) ANOS DE EXERCÍCIO.</span></p>
+        <div class="important-box">
+            <strong>COM VITALICIEDADE, O MAGISTRADO SÓ PERDE O CARGO POR:</strong><br>
+            1. Sentença judicial transitada em julgado (é a única forma de perda de cargo).
+        </div>
+        <p><span class="highlight-orange">DURANTE OS 2 ANOS:</span> O magistrado não tem vitaliciedade e está sujeito a perda do cargo por deliberação do tribunal ao qual está vinculado.</p>
+
+        <h4>3.4.4. Quadro Comparativo Detalhado</h4>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>ASPECTO</th><th>CARGO EFETIVO</th><th>CARGO VITALÍCIO</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Ingresso</strong></td><td>Concurso público</td><td>Concurso público</td></tr>
+                    <tr><td><strong>Garantia</strong></td><td>Estabilidade (3 anos)</td><td>Vitaliciedade (2 anos)</td></tr>
+                    <tr><td><strong>Perda do cargo</strong></td><td>Sentença judicial ou PAD</td><td>Sentença judicial</td></tr>
+                    <tr><td><strong>Exemplos</strong></td><td>Analista, Técnico, Agente Administrativo</td><td>Juiz, Desembargador, Ministro</td></tr>
+                    <tr><td><strong>Pode ser removido?</strong></td><td>Sim, por interesse da administração</td><td>Sim, apenas por iniciativa do próprio juiz ou por interesse público (art. 93, VIII)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="trap-box">
+            <strong>🔴 A PEGADINHA DA FCC:</strong> A banca costuma confundir os conceitos de estabilidade e vitaliciedade:<br><br>
+            <span class="highlight-red">AFIRMAÇÃO ERRADA:</span> "Todo cargo de concurso é vitalício."<br>
+            <span class="highlight-green">AFIRMAÇÃO CORRETA:</span> "Apenas cargos específicos (magistrados, MP, TC) são vitalícios. Os demais cargos são efetivos e conferem estabilidade."<br><br>
+            <span class="highlight-red">AFIRMAÇÃO ERRADA:</span> "A estabilidade é adquirida em 2 anos."<br>
+            <span class="highlight-green">AFIRMAÇÃO CORRETA:</span> "A estabilidade é adquirida em 3 anos."<br><br>
+            <span class="highlight-red">AFIRMAÇÃO ERRADA:</span> "O juiz só perde o cargo por PAD."<br>
+            <span class="highlight-green">AFIRMAÇÃO CORRETA:</span> "O juiz só perde o cargo por sentença judicial transitada em julgado."
+        </div>
+
+        <h4>3.4.6. Caso Prático – Perda de Cargo</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> Um Juiz Federal, com 10 anos de exercício, é acusado de corrupção. O Conselho Nacional de Justiça (CNJ) instaura processo administrativo disciplinar (PAD) e decide pela perda do cargo.<br><br>
+            <strong>PERGUNTA:</strong> O procedimento está correto?<br><br>
+            <strong>RESPOSTA:</strong> ❌ <span class="highlight-red">NÃO.</span> O juiz vitalício só perde o cargo por <span class="highlight">SENTENÇA JUDICIAL TRANSITADA EM JULGADO</span>. O PAD pode ser instaurado para apurar a conduta, mas a perda do cargo depende de sentença judicial. Isso protege a independência do magistrado.
+        </div>
+
+        <hr class="divider">
+
+        <!-- 3.5 -->
+        <h2 id="sec3-5">3.5. Classificação de Órgãos Públicos</h2>
+
+        <h3>3.5.1. A Classificação de Hely Lopes Meirelles</h3>
+        <p>Hely Lopes Meirelles, administrativista brasileiro, classificou os órgãos públicos em quatro categorias, com base em sua <span class="highlight">POSIÇÃO ESTATAL</span> e <span class="highlight">GRAU DE AUTONOMIA</span>.</p>
+
+        <h4>3.5.2. As Quatro Categorias</h4>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>CLASSIFICAÇÃO</th><th>DESCRIÇÃO</th><th>EXEMPLOS</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="highlight">ÓRGÃOS INDEPENDENTES</span></td><td>Situam-se no <span class="highlight">ÁPICE</span> do Poder, não se subordinam hierarquicamente a nenhum outro órgão. Possuem autonomia administrativa, financeira e funcional.</td><td>Tribunal de Justiça, STF, Congresso Nacional</td></tr>
+                    <tr><td><span class="highlight-green">ÓRGÃOS AUTÔNOMOS</span></td><td>Subordinam-se aos órgãos independentes, mas possuem <span class="highlight">AMPLA AUTONOMIA</span> administrativa, financeira e técnica.</td><td>Secretarias de Estado, Procuradorias, Ministérios</td></tr>
+                    <tr><td><span class="highlight-orange">ÓRGÃOS SUPERIORES</span></td><td>Possuem poder de <span class="highlight">DIREÇÃO</span> e <span class="highlight">DECISÃO</span>, mas estão subordinados hierarquicamente.</td><td>Gabinetes de Ministros, Diretorias de Departamento</td></tr>
+                    <tr><td><span class="small-note">ÓRGÃOS SUBALTERNOS</span></td><td>Possuem função de <span class="highlight">EXECUÇÃO</span>, sem poder decisório relevante.</td><td>Seções, Divisões, Repartições Públicas</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>3.5.3. O Tribunal de Justiça como Órgão Independente</h4>
+        <p>O Tribunal de Justiça de um Estado é classificado como <span class="highlight">ÓRGÃO INDEPENDENTE</span> porque:</p>
+        <ol>
+            <li><span class="highlight">ESTÁ NO ÁPICE DO PODER JUDICIÁRIO ESTADUAL</span>: não se subordina hierarquicamente a nenhum outro órgão estadual;</li>
+            <li><span class="highlight">POSSUI AUTONOMIA ADMINISTRATIVA</span>: pode organizar seus serviços, elaborar seu orçamento, etc.;</li>
+            <li><span class="highlight">POSSUI AUTONOMIA FINANCEIRA</span>: pode administrar seus recursos financeiros;</li>
+            <li><span class="highlight">POSSUI AUTONOMIA FUNCIONAL</span>: pode decidir suas questões internas e julgar processos.</li>
+        </ol>
+
+        <h4>3.5.4. Hierarquia dos Órgãos Públicos (SVG)</h4>
+        <div class="svg-container">
+            <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                <!-- Fundo -->
+                <rect width="720" height="400" fill="#0d1117" rx="12"/>
+
+                <!-- Linhas de conexão -->
+                <line x1="360" y1="50" x2="360" y2="80" stroke="#30363d" stroke-width="2"/>
+                <line x1="360" y1="80" x2="180" y2="110" stroke="#30363d" stroke-width="2"/>
+                <line x1="360" y1="80" x2="540" y2="110" stroke="#30363d" stroke-width="2"/>
+                <line x1="180" y1="140" x2="180" y2="170" stroke="#30363d" stroke-width="2"/>
+                <line x1="180" y1="170" x2="90" y2="200" stroke="#30363d" stroke-width="2"/>
+                <line x1="180" y1="170" x2="270" y2="200" stroke="#30363d" stroke-width="2"/>
+                <line x1="540" y1="140" x2="540" y2="170" stroke="#30363d" stroke-width="2"/>
+                <line x1="540" y1="170" x2="450" y2="200" stroke="#30363d" stroke-width="2"/>
+                <line x1="540" y1="170" x2="630" y2="200" stroke="#30363d" stroke-width="2"/>
+                <line x1="90" y1="230" x2="90" y2="260" stroke="#30363d" stroke-width="2"/>
+                <line x1="270" y1="230" x2="270" y2="260" stroke="#30363d" stroke-width="2"/>
+                <line x1="450" y1="230" x2="450" y2="260" stroke="#30363d" stroke-width="2"/>
+                <line x1="630" y1="230" x2="630" y2="260" stroke="#30363d" stroke-width="2"/>
+
+                <!-- Nível 1: ÓRGÃO INDEPENDENTE -->
+                <rect x="230" y="20" width="260" height="50" rx="10" fill="#21262d" stroke="#58a6ff" stroke-width="2"/>
+                <text x="360" y="50" fill="#f0f6fc" font-size="16" font-weight="700" text-anchor="middle" font-family="Georgia,serif">ÓRGÃO INDEPENDENTE</text>
+                <text x="360" y="78" fill="#8b949e" font-size="11" text-anchor="middle">Tribunal de Justiça</text>
+
+                <!-- Nível 2: ÓRGÃO AUTÔNOMO -->
+                <rect x="80" y="110" width="200" height="40" rx="8" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+                <text x="180" y="135" fill="#f0f6fc" font-size="14" font-weight="600" text-anchor="middle" font-family="Georgia,serif">ÓRGÃO AUTÔNOMO</text>
+                <text x="180" y="158" fill="#8b949e" font-size="10" text-anchor="middle">Secretaria do TJ</text>
+
+                <rect x="440" y="110" width="200" height="40" rx="8" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+                <text x="540" y="135" fill="#f0f6fc" font-size="14" font-weight="600" text-anchor="middle" font-family="Georgia,serif">ÓRGÃO AUTÔNOMO</text>
+                <text x="540" y="158" fill="#8b949e" font-size="10" text-anchor="middle">Procuradoria do Estado</text>
+
+                <!-- Nível 3: ÓRGÃO SUPERIOR -->
+                <rect x="30" y="200" width="120" height="40" rx="8" fill="#21262d" stroke="#d29922" stroke-width="2"/>
+                <text x="90" y="225" fill="#f0f6fc" font-size="13" font-weight="600" text-anchor="middle" font-family="Georgia,serif">SUPERIOR</text>
+                <text x="90" y="248" fill="#8b949e" font-size="9" text-anchor="middle">Diretoria do Foro</text>
+
+                <rect x="210" y="200" width="120" height="40" rx="8" fill="#21262d" stroke="#d29922" stroke-width="2"/>
+                <text x="270" y="225" fill="#f0f6fc" font-size="13" font-weight="600" text-anchor="middle" font-family="Georgia,serif">SUPERIOR</text>
+                <text x="270" y="248" fill="#8b949e" font-size="9" text-anchor="middle">Gabinete do Corregedor</text>
+
+                <rect x="390" y="200" width="120" height="40" rx="8" fill="#21262d" stroke="#d29922" stroke-width="2"/>
+                <text x="450" y="225" fill="#f0f6fc" font-size="13" font-weight="600" text-anchor="middle" font-family="Georgia,serif">SUPERIOR</text>
+                <text x="450" y="248" fill="#8b949e" font-size="9" text-anchor="middle">Comissão de Concurso</text>
+
+                <rect x="570" y="200" width="120" height="40" rx="8" fill="#21262d" stroke="#d29922" stroke-width="2"/>
+                <text x="630" y="225" fill="#f0f6fc" font-size="13" font-weight="600" text-anchor="middle" font-family="Georgia,serif">SUPERIOR</text>
+                <text x="630" y="248" fill="#8b949e" font-size="9" text-anchor="middle">Núcleo de Gestão</text>
+
+                <!-- Nível 4: ÓRGÃO SUBALTERNO -->
+                <rect x="30" y="270" width="120" height="40" rx="8" fill="#21262d" stroke="#8b949e" stroke-width="2"/>
+                <text x="90" y="295" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle" font-family="Georgia,serif">SUBALTERNO</text>
+                <text x="90" y="318" fill="#8b949e" font-size="9" text-anchor="middle">Seção de Distribuição</text>
+
+                <rect x="210" y="270" width="120" height="40" rx="8" fill="#21262d" stroke="#8b949e" stroke-width="2"/>
+                <text x="270" y="295" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle" font-family="Georgia,serif">SUBALTERNO</text>
+                <text x="270" y="318" fill="#8b949e" font-size="9" text-anchor="middle">Divisão de Protocolo</text>
+
+                <rect x="390" y="270" width="120" height="40" rx="8" fill="#21262d" stroke="#8b949e" stroke-width="2"/>
+                <text x="450" y="295" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle" font-family="Georgia,serif">SUBALTERNO</text>
+                <text x="450" y="318" fill="#8b949e" font-size="9" text-anchor="middle">Seção de Expedição</text>
+
+                <rect x="570" y="270" width="120" height="40" rx="8" fill="#21262d" stroke="#8b949e" stroke-width="2"/>
+                <text x="630" y="295" fill="#e6edf3" font-size="12" font-weight="600" text-anchor="middle" font-family="Georgia,serif">SUBALTERNO</text>
+                <text x="630" y="318" fill="#8b949e" font-size="9" text-anchor="middle">Setor de Arquivo</text>
+
+                <!-- Legenda -->
+                <rect x="30" y="360" width="14" height="14" fill="none" stroke="#58a6ff" stroke-width="2" rx="3"/>
+                <text x="50" y="372" fill="#8b949e" font-size="11" font-family="Georgia,serif">Independente</text>
+                <rect x="150" y="360" width="14" height="14" fill="none" stroke="#3fb950" stroke-width="2" rx="3"/>
+                <text x="170" y="372" fill="#8b949e" font-size="11" font-family="Georgia,serif">Autônomo</text>
+                <rect x="270" y="360" width="14" height="14" fill="none" stroke="#d29922" stroke-width="2" rx="3"/>
+                <text x="290" y="372" fill="#8b949e" font-size="11" font-family="Georgia,serif">Superior</text>
+                <rect x="380" y="360" width="14" height="14" fill="none" stroke="#8b949e" stroke-width="2" rx="3"/>
+                <text x="400" y="372" fill="#8b949e" font-size="11" font-family="Georgia,serif">Subalterno</text>
+            </svg>
+        </div>
+
+        <div class="trap-box">
+            <strong>🔴 PEGADINHA DA FCC:</strong> A banca pode afirmar que o Tribunal de Justiça é órgão autônomo. Na verdade, ele é <span class="highlight">independente</span>, pois não se subordina a nenhum outro órgão estadual.
+        </div>
+
+        <h4>3.5.6. Caso Prático – Autonomia do TJ</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> O Governador de um Estado determina que o Tribunal de Justiça deve reduzir seu orçamento em 20%, sob pena de contingenciamento. O Presidente do TJ recusa, alegando autonomia financeira.<br><br>
+            <strong>PERGUNTA:</strong> Está correta a posição do Presidente do TJ?<br><br>
+            <strong>RESPOSTA:</strong> ✅ <span class="highlight-green">SIM.</span> O Tribunal de Justiça, como órgão independente, possui autonomia administrativa e financeira. O Governador não pode impor unilateralmente reduções orçamentárias ao Poder Judiciário, que tem sua própria proposta orçamentária encaminhada pelo Presidente do TJ.
+        </div>
+
+        <hr class="divider-thick">
+
+        <!-- ============================================================
+        SEÇÃO 4
+        ============================================================ -->
+        <h1 id="sec4">4. Poder Judiciário</h1>
+
+        <!-- 4.1 -->
+        <h2 id="sec4-1">4.1. Composição dos Tribunais Regionais Federais</h2>
+
+        <h3>4.1.1. O Art. 107 da CF/88</h3>
+        <div class="quote" style="border-left-color:#58a6ff;">
+            "Os Tribunais Regionais Federais compõem-se de, no mínimo, <strong>sete juízes</strong>, recrutados, quando possível, na respectiva região, e nomeados pelo <strong>Presidente da República</strong> dentre brasileiros com mais de <strong>trinta</strong> e menos de <strong>setenta anos</strong> de idade, sendo:"
+        </div>
+
+        <h4>4.1.2. Regra de Composição</h4>
+        <p>Os TRFs compõem-se de:</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>GRUPO</th><th>PROPORÇÃO</th><th>REQUISITOS</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="highlight">1/5 (um quinto)</span></td><td>Advogados e membros do Ministério Público Federal</td><td>+ de 10 anos de atuação</td></tr>
+                    <tr><td><span class="highlight">4/5 (quatro quintos)</span></td><td>Juízes federais</td><td>+ de 5 anos de exercício, por antiguidade e merecimento alternadamente</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>4.1.3. Requisitos para o Cargo</h4>
+        <ul>
+            <li><span class="highlight">NACIONALIDADE</span>: brasileiro;</li>
+            <li><span class="highlight">IDADE</span>: mais de 30 anos e menos de 70 anos;</li>
+            <li><span class="highlight">NÚMERO MÍNIMO</span>: 7 juízes.</li>
+        </ul>
+
+        <h4>4.1.4. A Nomeação</h4>
+        <p>Os membros dos TRFs são nomeados pelo <span class="highlight">PRESIDENTE DA REPÚBLICA</span>.</p>
+        <div class="important-box">
+            <strong>⚠ ATENÇÃO:</strong> Não é o Presidente do STF que nomeia os membros dos TRFs. Essa é uma pegadinha recorrente.
+        </div>
+
+        <h4>4.1.5. Quadro Comparativo – Nomeação no Poder Judiciário</h4>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>CARGO</th><th>NOMEADO POR</th></tr></thead>
+                <tbody>
+                    <tr><td>Ministros do STF</td><td>Presidente da República (com sabatina no Senado)</td></tr>
+                    <tr><td>Ministros do STJ</td><td>Presidente da República (com sabatina no Senado)</td></tr>
+                    <tr><td>Desembargadores do TRF</td><td><span class="highlight">Presidente da República</span></td></tr>
+                    <tr><td>Juízes Federais</td><td>Presidente da República (após concurso)</td></tr>
+                    <tr><td>Desembargadores do TJ</td><td>Presidente da República (para o quinto constitucional); Governador do Estado (para os demais)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>4.1.6. Caso Prático – Nomeação para TRF</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> O Presidente do STF, diante de vaga no Tribunal Regional Federal da 1ª Região, nomeia um advogado com 15 anos de atuação para ocupar a vaga destinada ao quinto constitucional.<br><br>
+            <strong>PERGUNTA:</strong> A nomeação está correta?<br><br>
+            <strong>RESPOSTA:</strong> ❌ <span class="highlight-red">NÃO.</span> A nomeação para o TRF é de competência do <span class="highlight">PRESIDENTE DA REPÚBLICA</span>, e não do Presidente do STF. Além disso, o advogado deve ter mais de 10 anos de atuação (atende ao requisito) e ter sido indicado em lista tríplice.
+        </div>
+
+        <hr class="divider">
+
+        <!-- 4.2 -->
+        <h2 id="sec4-2">4.2. Proposta Orçamentária do Judiciário</h2>
+
+        <h3>4.2.1. O Fluxo Orçamentário</h3>
+        <p>A proposta orçamentária do Poder Judiciário estadual, aprovada pelo Tribunal de Justiça, segue um fluxo específico:</p>
+
+        <div class="svg-container">
+            <svg viewBox="0 0 780 380" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                <rect width="780" height="380" fill="#0d1117" rx="12"/>
+
+                <!-- Setas -->
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#58a6ff"/>
+                    </marker>
+                </defs>
+
+                <!-- Caixas -->
+                <rect x="290" y="20" width="200" height="50" rx="10" fill="#21262d" stroke="#58a6ff" stroke-width="2"/>
+                <text x="390" y="48" fill="#f0f6fc" font-size="14" font-weight="700" text-anchor="middle" font-family="Georgia,serif">PODER JUDICIÁRIO (TJ)</text>
+                <text x="390" y="64" fill="#8b949e" font-size="10" text-anchor="middle">Elabora proposta orçamentária</text>
+
+                <line x1="390" y1="70" x2="390" y2="95" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+                <rect x="290" y="100" width="200" height="40" rx="8" fill="#21262d" stroke="#bc8cff" stroke-width="2"/>
+                <text x="390" y="125" fill="#f0f6fc" font-size="13" font-weight="600" text-anchor="middle" font-family="Georgia,serif">Tribunal de Justiça aprova</text>
+
+                <line x1="390" y1="140" x2="390" y2="165" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+                <rect x="270" y="170" width="240" height="40" rx="8" fill="#21262d" stroke="#d29922" stroke-width="2"/>
+                <text x="390" y="195" fill="#f0f6fc" font-size="13" font-weight="600" text-anchor="middle" font-family="Georgia,serif">ENCAMINHA AO PODER EXECUTIVO (GOVERNADOR)</text>
+
+                <line x1="390" y1="210" x2="390" y2="235" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+                <rect x="240" y="240" width="300" height="40" rx="8" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+                <text x="390" y="265" fill="#f0f6fc" font-size="12" font-weight="600" text-anchor="middle" font-family="Georgia,serif">Governador consolida todas as propostas orçamentárias</text>
+                <text x="390" y="280" fill="#8b949e" font-size="9" text-anchor="middle">(Executivo, Judiciário, Legislativo, MP, Defensoria)</text>
+
+                <line x1="390" y1="280" x2="390" y2="305" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow)"/>
+
+                <rect x="260" y="310" width="260" height="40" rx="8" fill="#21262d" stroke="#f85149" stroke-width="2"/>
+                <text x="390" y="335" fill="#f0f6fc" font-size="13" font-weight="600" text-anchor="middle" font-family="Georgia,serif">Assembleia Legislativa vota e aprova a LOA</text>
+
+                <!-- Legenda -->
+                <circle cx="30" cy="30" r="6" fill="#58a6ff"/>
+                <text x="42" y="34" fill="#8b949e" font-size="11" font-family="Georgia,serif">Fluxo orçamentário</text>
+            </svg>
+        </div>
+
+        <h4>4.2.2. Por que o Executivo Consolida?</h4>
+        <p>A sistemática de consolidação das propostas orçamentárias pelo Poder Executivo visa:</p>
+        <ol>
+            <li><span class="highlight">PLANEJAMENTO UNITÁRIO</span>: evitar que o Legislativo receba projetos isolados de cada Poder;</li>
+            <li><span class="highlight">CONTROLE FISCAL</span>: garantir que o orçamento total não ultrapasse os limites legais;</li>
+            <li><span class="highlight">INTEGRAÇÃO</span>: promover a harmonização entre as necessidades de cada Poder.</li>
+        </ol>
+
+        <div class="trap-box">
+            <strong>🔴 PEGADINHA DA FCC:</strong> A banca pode afirmar que a proposta é enviada diretamente à Assembleia Legislativa. É <span class="highlight-red">ERRADO</span>. O fluxo exige a consolidação pelo Executivo.
+        </div>
+
+        <h4>4.2.4. Caso Prático – Proposta Orçamentária do TJ</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> O Presidente do Tribunal de Justiça do Estado do Ceará, após aprovação da proposta orçamentária pelo Pleno do TJ, encaminha diretamente o documento à Assembleia Legislativa, para que seja votada em regime de urgência.<br><br>
+            <strong>PERGUNTA:</strong> O procedimento está correto?<br><br>
+            <strong>RESPOSTA:</strong> ❌ <span class="highlight-red">NÃO.</span> A proposta orçamentária do Judiciário estadual deve ser encaminhada ao <span class="highlight">PODER EXECUTIVO</span> (Governador), que a consolida com as propostas dos demais Poderes e órgãos autônomos em um único projeto de lei orçamentária anual e o envia à Assembleia Legislativa.
+        </div>
+
+        <hr class="divider">
+
+        <!-- 4.3 -->
+        <h2 id="sec4-3">4.3. Competências do STF</h2>
+
+        <h3>4.3.1. O Art. 102 da CF/88</h3>
+        <p>O art. 102 da CF/88 elenca as competências do Supremo Tribunal Federal (STF), tanto para processar e julgar originariamente (inciso I) quanto em recurso ordinário (inciso II).</p>
+
+        <h4>4.3.2. Competência Originária do STF (Art. 102, I)</h4>
+        <p>O STF processa e julga originariamente, entre outras:</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>HIPÓTESE</th><th>DESCRIÇÃO</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="highlight">Mandado de segurança</span></td><td>Contra atos do Presidente da República, do Congresso Nacional, do STF, do PGR</td></tr>
+                    <tr><td><span class="highlight">Ações diretas</span></td><td>ADI, ADC, ADO, ADPF</td></tr>
+                    <tr><td><span class="highlight">Litígios</span></td><td>Entre Estado estrangeiro e União; entre um Estado e outro</td></tr>
+                    <tr><td><span class="highlight">Magistratura</span></td><td>Ações em que toda a magistratura seja interessada</td></tr>
+                    <tr><td><span class="highlight">Crimes comuns</span></td><td>Do Presidente da República, Vice, Ministros do STF, PGR</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>4.3.3. A EXCEÇÃO: Homologação de Sentenças Estrangeiras</h4>
+        <div class="important-box">
+            <strong>⚠ ATENÇÃO:</strong> A homologação de sentenças estrangeiras e a concessão de exequatur a cartas rogatórias <span class="highlight-red">NÃO SÃO MAIS DE COMPETÊNCIA DO STF</span>.<br><br>
+            Essa competência foi transferida para o <span class="highlight">SUPERIOR TRIBUNAL DE JUSTIÇA (STJ)</span> pela Emenda Constitucional nº 45/2004 (art. 105, I, "i", CF/88).
+        </div>
+
+        <h4>4.3.4. Quadro Comparativo – Competências do STF e do STJ</h4>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>COMPETÊNCIA</th><th>STF</th><th>STJ</th></tr></thead>
+                <tbody>
+                    <tr><td>Homologação de sentenças estrangeiras</td><td><span class="highlight-red">❌</span></td><td><span class="highlight-green">✅</span></td></tr>
+                    <tr><td>Concessão de exequatur a cartas rogatórias</td><td><span class="highlight-red">❌</span></td><td><span class="highlight-green">✅</span></td></tr>
+                    <tr><td>ADI</td><td><span class="highlight-green">✅</span></td><td><span class="highlight-red">❌</span></td></tr>
+                    <tr><td>Recurso extraordinário</td><td><span class="highlight-green">✅</span></td><td><span class="highlight-red">❌</span></td></tr>
+                    <tr><td>Recurso especial</td><td><span class="highlight-red">❌</span></td><td><span class="highlight-green">✅</span></td></tr>
+                    <tr><td>Habeas corpus contra ato de Ministro do STF</td><td><span class="highlight-green">✅</span></td><td><span class="highlight-red">❌</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>4.3.5. Caso Prático – Homologação de Sentença Estrangeira</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> Uma empresa brasileira obtém sentença favorável na Justiça da Itália e deseja homologá-la no Brasil para executá-la contra uma empresa brasileira.<br><br>
+            <strong>PERGUNTA:</strong> Qual tribunal é competente?<br><br>
+            <strong>RESPOSTA:</strong> O <span class="highlight">STJ</span>, e não o STF. A competência para homologar sentenças estrangeiras foi transferida do STF para o STJ pela EC 45/2004.
+        </div>
+
+        <hr class="divider">
+
+        <!-- 4.4 -->
+        <h2 id="sec4-4">4.4. Ministério Público: Estrutura e Ramos</h2>
+
+        <h3>4.4.1. O Art. 128 da CF/88</h3>
+        <div class="quote" style="border-left-color:#bc8cff;">
+            "O Ministério Público abrange: I – o Ministério Público da União, que compreende: a) o Ministério Público Federal; b) o Ministério Público do Trabalho; c) o Ministério Público Militar; d) o Ministério Público do Distrito Federal e Territórios; II – os Ministérios Públicos dos Estados."
+        </div>
+
+        <h4>4.4.2. Ramos do Ministério Público da União (MPU)</h4>
+        <p>O MPU é composto por <span class="highlight">4 (QUATRO) RAMOS</span>:</p>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>RAMO</th><th>ATUAÇÃO PERANTE</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="highlight">Ministério Público Federal (MPF)</span></td><td>Justiça Federal</td></tr>
+                    <tr><td><span class="highlight">Ministério Público do Trabalho (MPT)</span></td><td>Justiça do Trabalho</td></tr>
+                    <tr><td><span class="highlight">Ministério Público Militar (MPM)</span></td><td>Justiça Militar da União</td></tr>
+                    <tr><td><span class="highlight">Ministério Público do Distrito Federal e Territórios (MPDFT)</span></td><td>Justiça do DF e Territórios</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>4.4.3. O Ministério Público Eleitoral (MPE)</h4>
+        <div class="important-box">
+            <strong>⚠ IMPORTANTE:</strong> O Ministério Público Eleitoral <span class="highlight-red">NÃO COMPÕE O MPU COMO RAMO AUTÔNOMO</span>.<br><br>
+            <strong>O QUE É O MPE ENTÃO?</strong><br>
+            O MPE é uma <span class="highlight">FUNÇÃO</span> exercida por membros do MPF e dos MPs estaduais, <span class="highlight">PERANTE A JUSTIÇA ELEITORAL</span>.
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>INSTÂNCIA</th><th>QUEM ATUA COMO MPE</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Tribunal Superior Eleitoral (TSE)</strong></td><td>Membros do <span class="highlight">MPF</span></td></tr>
+                    <tr><td><strong>Tribunal Regional Eleitoral (TRE)</strong></td><td>Membros do <span class="highlight">MPF</span></td></tr>
+                    <tr><td><strong>Zonas Eleitorais</strong></td><td>Membros dos <span class="highlight">MPs estaduais</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="trap-box">
+            <strong>🔴 ERRO COMUM EM PROVAS (PEGADINHA):</strong><br><br>
+            <span class="highlight-red">AFIRMAÇÃO ERRADA:</span> "O Ministério Público Eleitoral é um ramo do MPU."<br>
+            <span class="highlight-green">AFIRMAÇÃO CORRETA:</span> "O MPU é composto pelo MPF, MPT, MPM e MPDFT. O MPE não é ramo autônomo."<br><br>
+            <span class="highlight-red">AFIRMAÇÃO ERRADA:</span> "O MPE tem carreira própria."<br>
+            <span class="highlight-green">AFIRMAÇÃO CORRETA:</span> "O MPE é uma função exercida por membros do MPF e dos MPs estaduais."
+        </div>
+
+        <h4>4.4.5. Esquema do Ministério Público Brasileiro (SVG)</h4>
+        <div class="svg-container">
+            <svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                <rect width="800" height="460" fill="#0d1117" rx="12"/>
+
+                <defs>
+                    <marker id="arrow2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#58a6ff"/>
+                    </marker>
+                </defs>
+
+                <!-- Título -->
+                <text x="400" y="35" fill="#f0f6fc" font-size="20" font-weight="700" text-anchor="middle" font-family="Georgia,serif">MINISTÉRIO PÚBLICO BRASILEIRO</text>
+
+                <!-- MPU -->
+                <rect x="250" y="60" width="300" height="50" rx="10" fill="#21262d" stroke="#58a6ff" stroke-width="2"/>
+                <text x="400" y="88" fill="#f0f6fc" font-size="15" font-weight="700" text-anchor="middle" font-family="Georgia,serif">MINISTÉRIO PÚBLICO DA UNIÃO (MPU)</text>
+
+                <line x1="400" y1="110" x2="400" y2="135" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow2)"/>
+
+                <!-- 4 Ramos do MPU -->
+                <rect x="60" y="140" width="160" height="50" rx="8" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+                <text x="140" y="162" fill="#f0f6fc" font-size="13" font-weight="600" text-anchor="middle" font-family="Georgia,serif">MPF</text>
+                <text x="140" y="180" fill="#8b949e" font-size="9" text-anchor="middle">Justiça Federal</text>
+
+                <rect x="240" y="140" width="160" height="50" rx="8" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+                <text x="320" y="162" fill="#f0f6fc" font-size="13" font-weight="600" text-anchor="middle" font-family="Georgia,serif">MPT</text>
+                <text x="320" y="180" fill="#8b949e" font-size="9" text-anchor="middle">Justiça do Trabalho</text>
+
+                <rect x="420" y="140" width="160" height="50" rx="8" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+                <text x="500" y="162" fill="#f0f6fc" font-size="13" font-weight="600" text-anchor="middle" font-family="Georgia,serif">MPM</text>
+                <text x="500" y="180" fill="#8b949e" font-size="9" text-anchor="middle">Justiça Militar da União</text>
+
+                <rect x="600" y="140" width="160" height="50" rx="8" fill="#21262d" stroke="#3fb950" stroke-width="2"/>
+                <text x="680" y="162" fill="#f0f6fc" font-size="13" font-weight="600" text-anchor="middle" font-family="Georgia,serif">MPDFT</text>
+                <text x="680" y="180" fill="#8b949e" font-size="9" text-anchor="middle">Justiça do DF e Territórios</text>
+
+                <!-- Linhas do MPU para os ramos -->
+                <line x1="300" y1="110" x2="140" y2="140" stroke="#30363d" stroke-width="2"/>
+                <line x1="340" y1="110" x2="320" y2="140" stroke="#30363d" stroke-width="2"/>
+                <line x1="460" y1="110" x2="500" y2="140" stroke="#30363d" stroke-width="2"/>
+                <line x1="500" y1="110" x2="680" y2="140" stroke="#30363d" stroke-width="2"/>
+
+                <!-- Ministérios Públicos dos Estados -->
+                <rect x="250" y="220" width="300" height="50" rx="10" fill="#21262d" stroke="#d29922" stroke-width="2"/>
+                <text x="400" y="248" fill="#f0f6fc" font-size="15" font-weight="700" text-anchor="middle" font-family="Georgia,serif">MINISTÉRIOS PÚBLICOS DOS ESTADOS</text>
+                <text x="400" y="264" fill="#8b949e" font-size="9" text-anchor="middle">MP/AC, MP/AL, ... (26 Estados)</text>
+
+                <line x1="400" y1="270" x2="400" y2="295" stroke="#d29922" stroke-width="2" marker-end="url(#arrow2)"/>
+
+                <!-- Exemplos -->
+                <rect x="200" y="300" width="100" height="40" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+                <text x="250" y="325" fill="#e6edf3" font-size="12" text-anchor="middle" font-family="Georgia,serif">MP/AC</text>
+                <rect x="320" y="300" width="100" height="40" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+                <text x="370" y="325" fill="#e6edf3" font-size="12" text-anchor="middle" font-family="Georgia,serif">MP/AL</text>
+                <rect x="440" y="300" width="100" height="40" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+                <text x="490" y="325" fill="#e6edf3" font-size="12" text-anchor="middle" font-family="Georgia,serif">...</text>
+                <rect x="560" y="300" width="100" height="40" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+                <text x="610" y="325" fill="#e6edf3" font-size="12" text-anchor="middle" font-family="Georgia,serif">MP/SP</text>
+
+                <!-- MPE (destacado) -->
+                <rect x="250" y="380" width="300" height="50" rx="10" fill="#1f0d1a" stroke="#f85149" stroke-width="2" stroke-dasharray="6 4"/>
+                <text x="400" y="408" fill="#f85149" font-size="15" font-weight="700" text-anchor="middle" font-family="Georgia,serif">MINISTÉRIO PÚBLICO ELEITORAL (MPE)</text>
+                <text x="400" y="424" fill="#8b949e" font-size="10" text-anchor="middle">FUNÇÃO – NÃO É RAMO AUTÔNOMO!</text>
+
+                <line x1="400" y1="350" x2="400" y2="380" stroke="#f85149" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow2)"/>
+
+                <!-- Legenda -->
+                <rect x="30" y="30" width="14" height="14" fill="none" stroke="#58a6ff" stroke-width="2" rx="3"/>
+                <text x="50" y="42" fill="#8b949e" font-size="11" font-family="Georgia,serif">MPU</text>
+                <rect x="130" y="30" width="14" height="14" fill="none" stroke="#3fb950" stroke-width="2" rx="3"/>
+                <text x="150" y="42" fill="#8b949e" font-size="11" font-family="Georgia,serif">Ramos do MPU</text>
+                <rect x="270" y="30" width="14" height="14" fill="none" stroke="#d29922" stroke-width="2" rx="3"/>
+                <text x="290" y="42" fill="#8b949e" font-size="11" font-family="Georgia,serif">MPs Estaduais</text>
+                <rect x="430" y="30" width="14" height="14" fill="none" stroke="#f85149" stroke-width="2" rx="3"/>
+                <text x="450" y="42" fill="#8b949e" font-size="11" font-family="Georgia,serif">MPE (função)</text>
+            </svg>
+        </div>
+
+        <h4>4.4.6. Caso Prático – Atuação do MPE</h4>
+        <div class="case-box">
+            <strong>📌 SITUAÇÃO HIPOTÉTICA:</strong> Um concurso para membro do Ministério Público Eleitoral é aberto, com requisitos específicos e carreira própria.<br><br>
+            <strong>PERGUNTA:</strong> Esse concurso é válido?<br><br>
+            <strong>RESPOSTA:</strong> ❌ <span class="highlight-red">NÃO.</span> O MPE não possui carreira própria. É uma função exercida por membros do MPF (TSE e TREs) e dos MPs estaduais (zonas eleitorais). Não existe cargo de "Promotor Eleitoral" ou "Procurador Eleitoral" como carreira autônoma.
+        </div>
+
+        <hr class="divider-thick">
+
+        <!-- ============================================================
+        SEÇÃO 5
+        ============================================================ -->
+        <h1 id="sec5">5. Quadro Resumo e Macetes para Prova</h1>
+
+        <h2>5.1. Mnemônicos Essenciais</h2>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>MNEMÔNICO</th><th>SIGNIFICADO</th><th>APLICAÇÃO</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="highlight">LIMPE</span></td><td>Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência</td><td>Princípios expressos da Adm. Pública (art. 37, caput)</td></tr>
+                    <tr><td><span class="highlight">APASZ</span></td><td>Amazônia, Pantanal, Atlântica, Serra do Mar, Zona Costeira</td><td>Patrimônio nacional (art. 225, §4º) – <span class="highlight-red">NÃO</span> são bens da União!</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>5.2. Quadro Comparativo – Conceitos que a Banca Adora Confundir</h2>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>CONCEITO A</th><th>CONCEITO B</th><th>DIFERENÇA</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="highlight">Bem da União</span> (art. 20)</td><td><span class="highlight-orange">Patrimônio Nacional</span> (art. 225, §4º)</td><td>O primeiro é propriedade da União; o segundo é apenas proteção ambiental</td></tr>
+                    <tr><td><span class="highlight">Direito Processual</span> (art. 22, I)</td><td><span class="highlight-green">Procedimentos Processuais</span> (art. 24, XI)</td><td>O primeiro é competência privativa; o segundo é concorrente</td></tr>
+                    <tr><td><span class="highlight">Estabilidade</span> (art. 41)</td><td><span class="highlight-purple">Vitaliciedade</span> (art. 95, I)</td><td>Estabilidade após 3 anos; vitaliciedade após 2 anos</td></tr>
+                    <tr><td><span class="highlight">Perda de cargo efetivo</span></td><td><span class="highlight-red">Perda de cargo vitalício</span></td><td>Efetivo: sentença ou PAD; Vitalício: apenas sentença</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>5.3. Macetes para Memorização</h2>
+
+        <div class="card">
+            <h4 style="margin-top:0;">5.3.1. Nacionalidade e EC 131/2023</h4>
+            <p><span class="highlight">MACETE:</span> "Agora pode adquirir outra nacionalidade sem medo de ser feliz (e sem perder a brasileira)!"</p>
+            <ul>
+                <li><span class="highlight-red">ANTES</span>: perdia automaticamente.</li>
+                <li><span class="highlight-green">DEPOIS</span>: não perde mais, exceto por fraude ou renúncia expressa (desde que não cause apatridia).</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4 style="margin-top:0;">5.3.2. TRFs e Nomeação</h4>
+            <p><span class="highlight">MACETE:</span> "Quem nomeia o TRF é o Presidente da República, não o Presidente do STF!"</p>
+        </div>
+
+        <div class="card">
+            <h4 style="margin-top:0;">5.3.3. Ministério Público</h4>
+            <p><span class="highlight">MACETE:</span> "MPU tem 4: MPF, MPT, MPM e MPDFT. O MPE é função, não carreira!"</p>
+        </div>
+
+        <div class="card">
+            <h4 style="margin-top:0;">5.3.4. Orçamento do Judiciário</h4>
+            <p><span class="highlight">MACETE:</span> "TJ aprova → Governador consolida → Assembleia vota."</p>
+        </div>
+
+        <h2>5.4. Erros Comuns em Prova (PEGADINHAS DA FCC)</h2>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>PEGADINHA</th><th>O QUE A FCC FAZ</th><th>COMO EVITAR</th></tr></thead>
+                <tbody>
+                    <tr><td><span class="highlight-red">Mata Atlântica como bem da União</span></td><td>Afirma que a Mata Atlântica é bem da União por ser patrimônio nacional</td><td>Lembre-se: patrimônio nacional ≠ bem da União. Use APASZ!</td></tr>
+                    <tr><td><span class="highlight-red">Direito processual como competência concorrente</span></td><td>Afirma que legislar sobre direito processual é competência concorrente</td><td>Lembre-se: direito processual = art. 22, I (privativo); procedimentos = art. 24, XI (concorrente)</td></tr>
+                    <tr><td><span class="highlight-red">MPE como ramo do MPU</span></td><td>Afirma que o MPE compõe o MPU</td><td>Lembre-se: MPU tem 4 ramos; MPE é função!</td></tr>
+                    <tr><td><span class="highlight-red">Nomeação do TRF pelo STF</span></td><td>Afirma que o Presidente do STF nomeia os TRFs</td><td>Lembre-se: é o Presidente da República!</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>5.5. Dicas para o Dia da Prova</h2>
+        <ol class="checklist">
+            <li><strong>LEIA O ENUNCIADO COM ATENÇÃO</strong>: palavras como "exceto", "incorreto", "não" são decisivas.</li>
+            <li><strong>FIQUE ATENTO À LITERALIDADE</strong>: a FCC cobra muito o texto exato da Constituição.</li>
+            <li><span class="highlight-red">NÃO CONFUNDA "PATRIMÔNIO NACIONAL" COM "BEM DA UNIÃO"</span>: essa é uma das pegadinhas mais recorrentes.</li>
+            <li><span class="highlight">DISTINGA "DIREITO PROCESSUAL" DE "PROCEDIMENTOS"</span>: essa diferença sutil pode decidir a questão.</li>
+            <li><span class="highlight">MNEMÔNICOS SALVAM!</span> Decore LIMPE e APASZ.</li>
+            <li><span class="highlight">FIQUE DE OLHO NAS EMENDAS CONSTITUCIONAIS</span>: a EC 131/2023 mudou a nacionalidade; a EC 45/2004 transferiu a homologação de sentenças estrangeiras para o STJ.</li>
+        </ol>
+
+        <hr class="divider">
+
+        <!-- ============================================================
+        REFERÊNCIAS
+        ============================================================ -->
+        <div style="margin-top:2.5rem; padding-top:1.5rem; border-top:2px solid #30363d;">
+            <h2 style="border-left:6px solid #8b949e; padding-left:1rem; margin-top:0;">📚 Referências</h2>
+            <ul style="color:#8b949e; font-size:0.95rem;">
+                <li>Constituição da República Federativa do Brasil de 1988.</li>
+                <li>Emenda Constitucional nº 45/2004.</li>
+                <li>Emenda Constitucional nº 131/2023.</li>
+                <li>MEIRELLES, Hely Lopes. Direito Administrativo Brasileiro.</li>
+                <li>LOEWENSTEIN, Karl. Teoría de la Constitución.</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p style="margin-bottom:0.2rem;">Este material foi desenvolvido com foco em concursos públicos de alto nível, especialmente para cargos de Técnico Judiciário – Área Judiciária, com base no padrão de cobrança da FCC, FGV, Cebraspe e bancas similares.</p>
+            <p style="margin-top:0.5rem;"><span class="badge">BONS ESTUDOS!</span></p>
+        </div>
+
+    </div>
+    <!-- fim container -->
+
+</body>
+</html>

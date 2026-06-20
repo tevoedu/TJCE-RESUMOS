@@ -1,0 +1,2067 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
+    <title>Apostila de Direito Administrativo</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-page: #1a1a24;
+            --bg-surface: #232233;
+            --bg-elevated: #2d2c42;
+            --bg-card: #2a2940;
+            --bg-highlight: #3b3a5a;
+            --text-primary: #e8e4f0;
+            --text-secondary: #bcb8d0;
+            --text-muted: #8e8aaa;
+            --accent-gold: #d4b87a;
+            --accent-blue: #7aacd4;
+            --accent-green: #7ac4a0;
+            --accent-coral: #d48a7a;
+            --accent-purple: #b08ad4;
+            --accent-teal: #7ac4c4;
+            --border-subtle: #3a3850;
+            --border-medium: #4a4870;
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --font-sans: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --max-width: 820px;
+            --transition: 0.25s ease;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-page);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 0 20px 60px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-page);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-gold);
+            border-radius: 8px;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 8px;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+        }
+
+        h2 {
+            font-size: 1.65rem;
+            margin-top: 2.6rem;
+            margin-bottom: 0.9rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border-subtle);
+            color: var(--accent-gold);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 0.6rem;
+            color: var(--accent-blue);
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-secondary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        a:hover {
+            color: #e8d09a;
+        }
+
+        strong,
+        b {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        em,
+        i {
+            color: var(--accent-teal);
+        }
+
+        /* ===== HEADER / COVER ===== */
+        .cover {
+            padding: 3rem 0 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 2.5rem;
+        }
+
+        .cover .badge {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: #1a1a24;
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            margin-bottom: 1rem;
+        }
+
+        .cover h1 {
+            font-size: 2.6rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .cover .subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+        }
+
+        .cover .meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 1.2rem;
+            margin-top: 1.2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cover .meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc {
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            padding: 1.8rem 2rem;
+            margin-bottom: 2.8rem;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .toc h2 {
+            border-bottom: none;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.3rem 1.5rem;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            padding: 0.25rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            border-bottom: 1px solid transparent;
+            transition: color var(--transition);
+        }
+        .toc-item:hover {
+            color: var(--accent-gold);
+        }
+        .toc-item .num {
+            color: var(--accent-gold);
+            font-weight: 600;
+            min-width: 1.6rem;
+            font-size: 0.85rem;
+        }
+        .toc-item .label {
+            flex: 1;
+        }
+
+        @media (max-width: 600px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .cover h1 {
+                font-size: 1.9rem;
+            }
+        }
+
+        /* ===== CHAPTER DIVIDER ===== */
+        .chapter-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 3.5rem 0 2rem;
+        }
+        .chapter-divider .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+        }
+        .chapter-divider .badge-chap {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            background: var(--bg-surface);
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-subtle);
+            white-space: nowrap;
+        }
+
+        /* ===== CARDS / CALLOUTS ===== */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.8rem;
+            margin: 1.6rem 0;
+            border-left: 4px solid var(--accent-gold);
+            box-shadow: var(--shadow-card);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .card-blue {
+            border-left-color: var(--accent-blue);
+        }
+        .card-green {
+            border-left-color: var(--accent-green);
+        }
+        .card-coral {
+            border-left-color: var(--accent-coral);
+        }
+        .card-purple {
+            border-left-color: var(--accent-purple);
+        }
+        .card-teal {
+            border-left-color: var(--accent-teal);
+        }
+
+        .card-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--text-primary);
+        }
+
+        .card-title .icon {
+            flex-shrink: 0;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== HIGHLIGHT (text marker) ===== */
+        .hl {
+            background: rgba(212, 184, 122, 0.2);
+            padding: 0.05rem 0.3rem;
+            border-radius: 4px;
+            color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .hl-blue {
+            background: rgba(122, 172, 212, 0.2);
+            color: var(--accent-blue);
+        }
+        .hl-green {
+            background: rgba(122, 196, 160, 0.2);
+            color: var(--accent-green);
+        }
+        .hl-coral {
+            background: rgba(212, 138, 122, 0.2);
+            color: var(--accent-coral);
+        }
+        .hl-purple {
+            background: rgba(176, 138, 212, 0.2);
+            color: var(--accent-purple);
+        }
+
+        /* ===== TABLES ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.6rem 0;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-surface);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            min-width: 480px;
+        }
+
+        thead {
+            background: var(--bg-elevated);
+        }
+
+        th {
+            text-align: left;
+            padding: 0.8rem 1.2rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            border-bottom: 2px solid var(--border-medium);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        td {
+            padding: 0.7rem 1.2rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* ===== LISTS ===== */
+        ul,
+        ol {
+            padding-left: 1.6rem;
+            margin: 0.8rem 0 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        ul ul,
+        ol ol {
+            margin: 0.2rem 0 0.4rem;
+        }
+
+        .list-check {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list-check li {
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        .list-check li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .list-x {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list-x li {
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        .list-x li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: var(--accent-coral);
+            font-weight: 700;
+        }
+
+        /* ===== QUOTE ===== */
+        .quote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            padding: 1.2rem 2rem;
+            margin: 1.6rem 0;
+            background: var(--bg-surface);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--accent-purple);
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .quote .attrib {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+        }
+
+        /* ===== SVG diagrams ===== */
+        .diagram {
+            display: flex;
+            justify-content: center;
+            margin: 1.8rem 0;
+            background: var(--bg-surface);
+            border-radius: var(--radius-md);
+            padding: 1.2rem;
+            border: 1px solid var(--border-subtle);
+            overflow-x: auto;
+        }
+
+        .diagram svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== MACETE BOX ===== */
+        .macete {
+            background: linear-gradient(135deg, #2a2538, #1f1e32);
+            border: 1px solid var(--accent-gold);
+            border-radius: var(--radius-md);
+            padding: 1.4rem 1.8rem;
+            margin: 1.6rem 0;
+            position: relative;
+        }
+        .macete::before {
+            content: "💡";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: var(--bg-page);
+            padding: 0 0.5rem;
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+        }
+        .macete .label {
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .macete p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== PEGADINHA ===== */
+        .pegadinha {
+            background: var(--bg-surface);
+            border-radius: var(--radius-md);
+            padding: 1.2rem 1.8rem;
+            margin: 1.2rem 0;
+            border-left: 4px solid var(--accent-coral);
+        }
+        .pegadinha .label {
+            font-weight: 700;
+            color: var(--accent-coral);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .pegadinha .wrong {
+            color: var(--accent-coral);
+        }
+        .pegadinha .right {
+            color: var(--accent-green);
+        }
+
+        /* ===== EXERCISE ===== */
+        .exercise {
+            background: var(--bg-surface);
+            border-radius: var(--radius-md);
+            padding: 1.6rem 1.8rem;
+            margin: 1.6rem 0;
+            border: 1px solid var(--border-subtle);
+        }
+        .exercise .q {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .exercise .options {
+            padding-left: 1.2rem;
+            margin: 0.4rem 0 0.8rem;
+            list-style: lower-alpha;
+            color: var(--text-secondary);
+        }
+        .exercise .options li {
+            margin-bottom: 0.15rem;
+        }
+        .exercise .answer {
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--accent-green);
+        }
+        .exercise .answer strong {
+            color: var(--accent-gold);
+        }
+
+        /* ===== INLINE SVG ICONS ===== */
+        .icon-svg {
+            display: inline-block;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 680px) {
+            body {
+                padding: 0 12px 40px;
+            }
+            .container {
+                padding: 0 4px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            h3 {
+                font-size: 1.15rem;
+            }
+            .cover h1 {
+                font-size: 2rem;
+            }
+            .card {
+                padding: 1.2rem 1.2rem;
+            }
+            .toc {
+                padding: 1.2rem 1.2rem;
+            }
+            .cover .meta {
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            .diagram {
+                padding: 0.6rem;
+            }
+            .table-wrap table {
+                font-size: 0.82rem;
+                min-width: 360px;
+            }
+            th,
+            td {
+                padding: 0.5rem 0.8rem;
+            }
+            .quote {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.95rem;
+            }
+            .exercise {
+                padding: 1.2rem 1.2rem;
+            }
+            .macete {
+                padding: 1rem 1.2rem;
+            }
+            .pegadinha {
+                padding: 0.8rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            .cover h1 {
+                font-size: 1.6rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+                padding: 20px;
+            }
+            .container {
+                max-width: 100%;
+            }
+            .cover,
+            .toc,
+            .card,
+            .macete,
+            .pegadinha,
+            .exercise,
+            .quote,
+            .diagram {
+                background: #f5f5f5;
+                border-color: #ccc;
+                color: #111;
+                box-shadow: none;
+            }
+            .cover h1,
+            h2,
+            h3,
+            h4,
+            p,
+            li,
+            td,
+            th {
+                color: #111 !important;
+            }
+            .hl {
+                background: #e8e0c0;
+                color: #111;
+            }
+            .toc-item .num {
+                color: #b8860b;
+            }
+            .cover .badge {
+                background: #b8860b;
+                color: #fff;
+            }
+            .chapter-divider .badge-chap {
+                background: #f0f0f0;
+                border-color: #ccc;
+            }
+            .table-wrap {
+                border-color: #ccc;
+            }
+            thead {
+                background: #e0e0e0;
+            }
+            th {
+                color: #111;
+                border-bottom-color: #999;
+            }
+            td {
+                border-bottom-color: #ddd;
+            }
+            .macete::before {
+                background: #fff;
+            }
+            .exercise .answer {
+                border-top-color: #ccc;
+            }
+            .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .quote {
+                border-left-color: #6a4c9c;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ===== COVER ===== -->
+        <header class="cover">
+            <div class="badge">📘 Material Preparatório</div>
+            <h1>Direito Administrativo</h1>
+            <p class="subtitle">Tópicos Especiais para Técnico Judiciário – Área Judiciária</p>
+            <div class="meta">
+                <span>📄 FCC · FGV · CEBRASPE</span>
+                <span>🎯 Alto Nível</span>
+                <span>📖 13 Capítulos</span>
+            </div>
+        </header>
+
+        <!-- ===== TOC ===== -->
+        <nav class="toc" aria-label="Sumário">
+            <h2>Sumário</h2>
+            <div class="toc-grid">
+                <div class="toc-item"><span class="num">01</span><span class="label">Servidor Público e Mandato Eletivo</span></div>
+                <div class="toc-item"><span class="num">02</span><span class="label">Concessão de Serviços Públicos</span></div>
+                <div class="toc-item"><span class="num">03</span><span class="label">Improbidade – Prazos Prescricionais</span></div>
+                <div class="toc-item"><span class="num">04</span><span class="label">Cargos e Funções Públicas</span></div>
+                <div class="toc-item"><span class="num">05</span><span class="label">Poder Regulamentar – Decreto Autônomo</span></div>
+                <div class="toc-item"><span class="num">06</span><span class="label">Licitações – ETP e Termo de Referência</span></div>
+                <div class="toc-item"><span class="num">07</span><span class="label">Bens e Serviços Comuns</span></div>
+                <div class="toc-item"><span class="num">08</span><span class="label">Contratação Integrada</span></div>
+                <div class="toc-item"><span class="num">09</span><span class="label">Motivação dos Atos Administrativos</span></div>
+                <div class="toc-item"><span class="num">10</span><span class="label">Consórcios Públicos</span></div>
+                <div class="toc-item"><span class="num">11</span><span class="label">Sistema de Registro de Preços</span></div>
+                <div class="toc-item"><span class="num">12</span><span class="label">Macetes e Pegadinhas</span></div>
+                <div class="toc-item"><span class="num">13</span><span class="label">Exercícios de Fixação</span></div>
+            </div>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 1 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 01</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Servidor Público e Mandato Eletivo</h1>
+
+        <h2>1.1 Introdução ao Tema</h2>
+        <p>O exercício de mandato eletivo por servidores públicos é uma das situações mais complexas no âmbito do Direito Administrativo e Constitucional. A Constituição Federal, em seu artigo 38, estabelece regras específicas que equilibram o direito do servidor de participar da vida política do país com a necessidade de preservar a regularidade do serviço público.</p>
+        <p>Este tema é recorrente em provas de concursos jurídicos, especialmente na FCC, que costuma explorar as nuances da acumulação de remunerações, a contagem de tempo de serviço e as limitações impostas pela incompatibilidade de horários.</p>
+
+        <h2>1.2 Servidor Público Vereador – O Marco Legal (Art. 38, III, CF/88)</h2>
+        <p>A Constituição Federal trata da situação do servidor público que se elege para o cargo de vereador de forma distinta do tratamento dado aos ocupantes de mandatos do Poder Executivo ou Legislativo em âmbito estadual e federal. Essa distinção se justifica pela natureza do mandato de vereador, que é exercido em regime de <strong>dedicação parcial</strong>, em regra.</p>
+
+        <h3>1.2.1 Havendo Compatibilidade de Horários</h3>
+        <p><strong>Regra geral:</strong> Quando o exercício do mandato de vereador for compatível com os horários do cargo, emprego ou função pública, o servidor <strong>perceberá as vantagens de seu cargo</strong>, sem prejuízo da remuneração do cargo eletivo.</p>
+        <p><strong>Efeito prático:</strong> O servidor <strong>acumula as duas remunerações licitamente</strong>, ou seja, recebe integralmente:</p>
+        <ul>
+            <li>Os vencimentos e vantagens do seu cargo público (efetivo ou comissionado);</li>
+            <li>A remuneração do mandato de vereador.</li>
+        </ul>
+        <p><strong>Fundamento jurídico:</strong> Art. 38, III, primeira parte, CF/88.</p>
+
+        <h3>1.2.2 Não Havendo Compatibilidade de Horários</h3>
+        <p><strong>Regra alternativa:</strong> Se os horários do cargo público e do mandato eletivo forem incompatíveis, o servidor <strong>será afastado</strong> do cargo, emprego ou função.</p>
+        <p><strong>Consequência:</strong> Nessa hipótese, o servidor <strong>deve optar</strong> por uma das remunerações:</p>
+        <ol>
+            <li>A remuneração do cargo público; <strong>ou</strong></li>
+            <li>A remuneração do mandato de vereador.</li>
+        </ol>
+        <p><strong>Proibição:</strong> Não é permitida a acumulação das duas remunerações quando houver incompatibilidade de horários.</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 38, III, segunda parte, CF/88.</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Situação</th>
+                        <th>Afastamento?</th>
+                        <th>Acumulação de Remunerações?</th>
+                        <th>Base Legal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Compatibilidade de horários</td>
+                        <td>Não</td>
+                        <td>Sim (acumula ambas)</td>
+                        <td>Art. 38, III, 1ª parte, CF/88</td>
+                    </tr>
+                    <tr>
+                        <td>Incompatibilidade de horários</td>
+                        <td>Sim</td>
+                        <td>Não (opção por uma)</td>
+                        <td>Art. 38, III, 2ª parte, CF/88</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pegadinha">
+            <span class="label">⚠️ Pega-dinha de Prova – Incompatibilidade de Horários</span>
+            <p><span class="wrong">❌ Erro comum:</span> Muitos candidatos afirmam que, mesmo sem compatibilidade de horários, o servidor pode acumular as duas remunerações.</p>
+            <p><span class="right">✅ Correto:</span> Na hipótese de incompatibilidade, o servidor é <strong>afastado do cargo público</strong> e deve <strong>optar</strong> entre a remuneração do cargo e a do mandato, não podendo acumulá-las.</p>
+            <p><strong>Dica de prova:</strong> A FCC gosta de inverter essas regras. Atenção à literalidade do art. 38, III, CF/88!</p>
+        </div>
+
+        <h2>1.4 Contagem de Tempo de Serviço – Promoção por Merecimento (Art. 38, IV, CF/88)</h2>
+        <p>Durante o afastamento para exercício de mandato eletivo, o servidor tem seu tempo de serviço contado para todos os efeitos legais, com uma <strong>única e relevante exceção</strong>.</p>
+
+        <h3>1.4.1 Regra Geral: Contagem Integral</h3>
+        <p>O período de afastamento é computado como tempo de serviço para:</p>
+        <ul>
+            <li>Aposentadoria;</li>
+            <li>Disponibilidade;</li>
+            <li>Anuênios, triênios e demais vantagens temporais;</li>
+            <li>Progressão funcional por antiguidade;</li>
+            <li>Demais efeitos legais que dependam de tempo de serviço.</li>
+        </ul>
+
+        <h3>1.4.2 Exceção: Promoção por Merecimento</h3>
+        <p><strong>O tempo de serviço no mandato eletivo NÃO é contado para promoção por merecimento.</strong></p>
+        <p><strong>Razão:</strong> A promoção por merecimento exige avaliação do desempenho do servidor no exercício de suas funções no cargo público. Como o servidor está afastado, não é possível avaliar seu desempenho para fins de merecimento.</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 38, IV, CF/88.</p>
+        <p><span class="hl">Palavra-gatilho:</span> "EXCETO" – a contagem é para todos os fins, <strong>exceto</strong> promoção por merecimento.</p>
+
+        <div class="diagram">
+            <svg width="680" height="360" viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" style="background:transparent;">
+                <rect x="0" y="0" width="680" height="360" rx="12" fill="#232233" stroke="#3a3850" stroke-width="1" />
+                <text x="340" y="40" text-anchor="middle" fill="#d4b87a" font-size="18" font-weight="700" font-family="Segoe UI, sans-serif">Servidor Público Vereador (Art. 38, CF/88)</text>
+
+                <!-- Linha principal vertical -->
+                <line x1="340" y1="60" x2="340" y2="320" stroke="#3a3850" stroke-width="2" />
+
+                <!-- Ramo 1: Compatibilidade -->
+                <line x1="340" y1="80" x2="140" y2="80" stroke="#3a3850" stroke-width="2" />
+                <circle cx="340" cy="80" r="6" fill="#d4b87a" />
+                <rect x="30" y="60" width="220" height="48" rx="8" fill="#2d2c42" stroke="#7ac4a0" stroke-width="1.5" />
+                <text x="140" y="80" text-anchor="middle" fill="#7ac4a0" font-size="13" font-weight="600" font-family="Segoe UI, sans-serif">Compatibilidade</text>
+                <text x="140" y="98" text-anchor="middle" fill="#bcb8d0" font-size="11" font-family="Segoe UI, sans-serif">Acumula as duas remunerações</text>
+
+                <!-- Ramo 2: Incompatibilidade -->
+                <line x1="340" y1="130" x2="540" y2="130" stroke="#3a3850" stroke-width="2" />
+                <circle cx="340" cy="130" r="6" fill="#d4b87a" />
+                <rect x="430" y="110" width="220" height="48" rx="8" fill="#2d2c42" stroke="#d48a7a" stroke-width="1.5" />
+                <text x="540" y="130" text-anchor="middle" fill="#d48a7a" font-size="13" font-weight="600" font-family="Segoe UI, sans-serif">Incompatibilidade</text>
+                <text x="540" y="148" text-anchor="middle" fill="#bcb8d0" font-size="11" font-family="Segoe UI, sans-serif">Afastamento + opção por uma</text>
+
+                <!-- Ramo 3: Contagem de tempo -->
+                <line x1="340" y1="180" x2="340" y2="200" stroke="#3a3850" stroke-width="2" />
+                <circle cx="340" cy="180" r="6" fill="#d4b87a" />
+                <rect x="180" y="200" width="320" height="48" rx="8" fill="#2d2c42" stroke="#b08ad4" stroke-width="1.5" />
+                <text x="340" y="220" text-anchor="middle" fill="#b08ad4" font-size="13" font-weight="600" font-family="Segoe UI, sans-serif">Contagem de Tempo de Serviço</text>
+                <text x="340" y="238" text-anchor="middle" fill="#bcb8d0" font-size="11" font-family="Segoe UI, sans-serif">Contado para todos os efeitos legais</text>
+
+                <!-- Sub-ramo: Exceção -->
+                <line x1="340" y1="250" x2="340" y2="270" stroke="#3a3850" stroke-width="1.5" stroke-dasharray="4 4" />
+                <rect x="150" y="270" width="380" height="44" rx="8" fill="#2d2c42" stroke="#d48a7a" stroke-width="1.5" stroke-dasharray="4 4" />
+                <text x="340" y="288" text-anchor="middle" fill="#d48a7a" font-size="12" font-weight="600" font-family="Segoe UI, sans-serif">EXCEÇÃO: não contado para promoção por merecimento</text>
+                <text x="340" y="304" text-anchor="middle" fill="#8e8aaa" font-size="10" font-family="Segoe UI, sans-serif">Art. 38, IV, CF/88</text>
+            </svg>
+        </div>
+
+        <div class="card card-teal">
+            <div class="card-title">
+                <span class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7ac4c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="M12 8v4" />
+                        <path d="M12 16h.01" />
+                    </svg>
+                </span>
+                Estudo de Caso Prático
+            </div>
+            <p><strong>Caso 1:</strong> João é técnico judiciário do Tribunal de Justiça do Estado do Ceará (TJCE), ocupante de cargo efetivo, com carga horária de 8h às 17h. Ele se elegeu vereador na cidade de Fortaleza. As sessões da Câmara Municipal ocorrem das 18h às 22h, e as reuniões de comissão são realizadas pela manhã, das 9h às 12h.</p>
+            <p><strong>Pergunta:</strong> João pode acumular as remunerações do cargo de técnico e do mandato de vereador?</p>
+            <p><strong>Análise:</strong> Há compatibilidade de horários? <strong>Não totalmente.</strong> As reuniões de comissão ocorrem no mesmo horário do expediente no TJCE. Portanto, João precisará ser afastado para participar das atividades matutinas da Câmara. Consequência: João deve ser afastado do cargo de técnico judiciário e optar entre a remuneração do TJCE e a do mandato de vereador.</p>
+            <p><span class="hl">Dica:</span> A incompatibilidade de horários não precisa ser total. Se houver qualquer conflito que impeça o exercício simultâneo das duas funções, aplica-se a regra do afastamento e da opção.</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 2 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 02</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Concessão de Serviços Públicos</h1>
+
+        <h2>2.1 Introdução</h2>
+        <p>A concessão de serviços públicos é um instrumento de descentralização administrativa por meio do qual o Estado transfere a execução de serviços públicos a particulares, mediante licitação, preservando, contudo, a titularidade do serviço. O tema é regulado pela Lei 8.987/95 (Lei de Concessões) e pela Lei 13.460/2017 (Código de Defesa do Usuário dos Serviços Públicos).</p>
+        <p>A FCC costuma cobrar a fiscalização dos serviços concedidos, a responsabilidade civil das concessionárias e os deveres de transparência e publicidade.</p>
+
+        <h2>2.2 Fiscalização dos Serviços Concedidos – Participação dos Usuários</h2>
+
+        <h3>2.2.1 Quem Fiscaliza?</h3>
+        <p><strong>Regra:</strong> A fiscalização dos serviços concedidos é exercida pelo <strong>poder concedente</strong> (União, Estados, Distrito Federal ou Municípios).</p>
+        <p><strong>Participação dos usuários:</strong> A fiscalização ocorre <strong>com a participação dos usuários a título de cooperação</strong>.</p>
+        <p><strong>Significado:</strong> Os usuários não exercem fiscalização de forma autônoma ou substitutiva ao poder concedente. Eles atuam como colaboradores, auxiliando o poder público na detecção de irregularidades.</p>
+
+        <h3>2.2.2 Instrumentos de Participação</h3>
+        <p>Os usuários podem levar ao conhecimento do poder concedente as irregularidades verificadas na prestação do serviço, por meio de:</p>
+        <ul>
+            <li>Denúncias;</li>
+            <li>Reclamações;</li>
+            <li>Ouvidorias;</li>
+            <li>Consultas públicas.</li>
+        </ul>
+        <p><strong>Fundamento jurídico:</strong> Art. 3º e art. 7º da Lei 8.987/95.</p>
+
+        <h3>2.2.3 Controle Social</h3>
+        <p>A FCC costuma cobrar a ideia de <strong>controle social</strong>, que é a participação da sociedade na fiscalização dos serviços públicos, inclusive os concedidos. Trata-se de um princípio que reforça a transparência e a accountability.</p>
+
+        <h2>2.3 Transparência nas Tarifas – Divulgação de Tabela de Preços</h2>
+
+        <h3>2.3.1 Obrigação da Concessionária</h3>
+        <p>A concessionária deve divulgar, em seu <strong>sítio eletrônico</strong>, de forma clara e acessível:</p>
+        <ol>
+            <li><strong>Tabela com o valor das tarifas praticadas;</strong></li>
+            <li><strong>Evolução das revisões ou reajustes realizados nos últimos cinco anos.</strong></li>
+        </ol>
+
+        <h3>2.3.2 Princípios Aplicáveis</h3>
+        <ul>
+            <li><strong>Modicidade tarifária:</strong> As tarifas devem ser justas e compatíveis com a qualidade do serviço;</li>
+            <li><strong>Publicidade:</strong> A informação deve ser amplamente acessível aos usuários.</li>
+        </ul>
+
+        <h3>2.3.3 Fundamento Jurídico</h3>
+        <ul>
+            <li>Lei 8.987/95 (normas gerais sobre concessões);</li>
+            <li>Lei 13.460/2017 (Código de Defesa do Usuário dos Serviços Públicos).</li>
+        </ul>
+        <p><span class="hl">Dica de prova:</span> A FCC pode cobrar a literalidade dessa obrigação. Fique atento ao prazo de <strong>cinco anos</strong> e ao meio de divulgação (<strong>sítio eletrônico</strong>).</p>
+
+        <h2>2.4 Responsabilidade Civil das Concessionárias</h2>
+
+        <h3>2.4.1 Natureza da Responsabilidade</h3>
+        <p>A responsabilidade civil da concessionária por danos causados aos usuários é <strong>OBJETIVA</strong>.</p>
+        <p><strong>Fundamento jurídico:</strong></p>
+        <ul>
+            <li>Art. 37, §6º, CF/88: "As pessoas jurídicas de direito público e as de direito privado prestadoras de serviços públicos responderão pelos danos que seus agentes, nessa qualidade, causarem a terceiros, assegurado o direito de regresso contra o responsável nos casos de dolo ou culpa."</li>
+            <li>Art. 25 da Lei 8.987/95: "Ressalvados os casos de força maior e caso fortuito, a concessionária responde pelos danos causados aos usuários e a terceiros."</li>
+        </ul>
+
+        <h3>2.4.2 A Fiscalização não Atenua a Responsabilidade</h3>
+        <p><strong>Regra importante:</strong> A submissão da concessionária à fiscalização do poder concedente <strong>não atenua nem exclui</strong> sua responsabilidade por danos.</p>
+        <p><strong>Efeito:</strong> A concessionária responde integralmente pelos danos que causar, independentemente de ter sido ou não fiscalizada adequadamente pelo poder público.</p>
+        <p><strong>Exemplo:</strong> Se uma concessionária de energia elétrica causar danos a um usuário por falha na prestação do serviço, ela será responsabilizada objetivamente, ainda que o poder concedente tenha deixado de fiscalizar adequadamente a qualidade do serviço.</p>
+
+        <div class="pegadinha">
+            <span class="label">⚠️ Pega-dinha de Prova – Fiscalização e Responsabilidade</span>
+            <p><span class="wrong">❌ Erro comum:</span> Afirmar que a fiscalização do poder concedente divide ou atenua a responsabilidade da concessionária.</p>
+            <p><span class="right">✅ Correto:</span> A fiscalização é um dever do poder concedente, mas não interfere na responsabilidade objetiva da concessionária. Ambas as responsabilidades são independentes.</p>
+            <p><strong>Dica de prova:</strong> A FCC adora essa pegadinha. A alternativa correta será aquela que afirmar que a fiscalização não exclui ou atenua a responsabilidade civil da concessionária.</p>
+        </div>
+
+        <div class="diagram">
+            <svg width="680" height="280" viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg" style="background:transparent;">
+                <rect x="0" y="0" width="680" height="280" rx="12" fill="#232233" stroke="#3a3850" stroke-width="1" />
+                <text x="340" y="36" text-anchor="middle" fill="#d4b87a" font-size="18" font-weight="700" font-family="Segoe UI, sans-serif">Concessão de Serviços Públicos</text>
+
+                <!-- Coluna 1: Fiscalização -->
+                <rect x="30" y="60" width="186" height="190" rx="10" fill="#2d2c42" stroke="#7ac4c4" stroke-width="1.5" />
+                <text x="123" y="88" text-anchor="middle" fill="#7ac4c4" font-size="14" font-weight="700" font-family="Segoe UI, sans-serif">Fiscalização</text>
+                <line x1="50" y1="98" x2="196" y2="98" stroke="#3a3850" stroke-width="1" />
+                <text x="123" y="118" text-anchor="middle" fill="#bcb8d0" font-size="12" font-family="Segoe UI, sans-serif">Titular:</text>
+                <text x="123" y="136" text-anchor="middle" fill="#e8e4f0" font-size="12" font-weight="600" font-family="Segoe UI, sans-serif">Poder Concedente</text>
+                <text x="123" y="162" text-anchor="middle" fill="#bcb8d0" font-size="12" font-family="Segoe UI, sans-serif">Participação dos</text>
+                <text x="123" y="180" text-anchor="middle" fill="#bcb8d0" font-size="12" font-family="Segoe UI, sans-serif">usuários:</text>
+                <text x="123" y="198" text-anchor="middle" fill="#e8e4f0" font-size="12" font-weight="600" font-family="Segoe UI, sans-serif">Cooperação</text>
+                <text x="123" y="224" text-anchor="middle" fill="#8e8aaa" font-size="10" font-family="Segoe UI, sans-serif">(controle social)</text>
+
+                <!-- Coluna 2: Transparência -->
+                <rect x="246" y="60" width="186" height="190" rx="10" fill="#2d2c42" stroke="#d4b87a" stroke-width="1.5" />
+                <text x="339" y="88" text-anchor="middle" fill="#d4b87a" font-size="14" font-weight="700" font-family="Segoe UI, sans-serif">Transparência</text>
+                <line x1="266" y1="98" x2="412" y2="98" stroke="#3a3850" stroke-width="1" />
+                <text x="339" y="118" text-anchor="middle" fill="#bcb8d0" font-size="12" font-family="Segoe UI, sans-serif">Divulgação:</text>
+                <text x="339" y="136" text-anchor="middle" fill="#e8e4f0" font-size="12" font-weight="600" font-family="Segoe UI, sans-serif">Sítio eletrônico</text>
+                <text x="339" y="162" text-anchor="middle" fill="#bcb8d0" font-size="12" font-family="Segoe UI, sans-serif">Conteúdo: tarifas +</text>
+                <text x="339" y="180" text-anchor="middle" fill="#bcb8d0" font-size="12" font-family="Segoe UI, sans-serif">evolução 5 anos</text>
+                <text x="339" y="206" text-anchor="middle" fill="#bcb8d0" font-size="12" font-family="Segoe UI, sans-serif">Princípios:</text>
+                <text x="339" y="224" text-anchor="middle" fill="#e8e4f0" font-size="12" font-weight="600" font-family="Segoe UI, sans-serif">Modicidade + Publicidade</text>
+
+                <!-- Coluna 3: Responsabilidade -->
+                <rect x="462" y="60" width="186" height="190" rx="10" fill="#2d2c42" stroke="#d48a7a" stroke-width="1.5" />
+                <text x="555" y="88" text-anchor="middle" fill="#d48a7a" font-size="14" font-weight="700" font-family="Segoe UI, sans-serif">Responsabilidade</text>
+                <line x1="482" y1="98" x2="628" y2="98" stroke="#3a3850" stroke-width="1" />
+                <text x="555" y="118" text-anchor="middle" fill="#bcb8d0" font-size="12" font-family="Segoe UI, sans-serif">Natureza:</text>
+                <text x="555" y="136" text-anchor="middle" fill="#e8e4f0" font-size="12" font-weight="600" font-family="Segoe UI, sans-serif">Objetiva</text>
+                <text x="555" y="162" text-anchor="middle" fill="#bcb8d0" font-size="12" font-family="Segoe UI, sans-serif">Art. 37, §6º, CF/88</text>
+                <text x="555" y="180" text-anchor="middle" fill="#bcb8d0" font-size="12" font-family="Segoe UI, sans-serif">Art. 25, Lei 8.987/95</text>
+                <text x="555" y="206" text-anchor="middle" fill="#d48a7a" font-size="12" font-weight="600" font-family="Segoe UI, sans-serif">Fiscalização NÃO</text>
+                <text x="555" y="224" text-anchor="middle" fill="#d48a7a" font-size="12" font-weight="600" font-family="Segoe UI, sans-serif">atenua/exclui</text>
+            </svg>
+        </div>
+
+        <div class="card card-coral">
+            <div class="card-title">
+                <span class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d48a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                </span>
+                Estudo de Caso Prático
+            </div>
+            <p><strong>Caso 2:</strong> A concessionária "Águas Limpas" presta serviços de abastecimento de água no município de Fortaleza. Em determinado dia, um cano estourou na via pública, causando danos materiais a um veículo estacionado nas proximidades. O proprietário do veículo acionou a concessionária judicialmente. Em sua defesa, a concessionária alegou que o poder concedente não fiscalizou adequadamente a manutenção dos dutos, o que teria contribuído para o acidente.</p>
+            <p><strong>Pergunta:</strong> A alegação da concessionária é válida para excluir ou atenuar sua responsabilidade?</p>
+            <p><strong>Resposta:</strong> Não. A responsabilidade da concessionária é objetiva, e a fiscalização pelo poder concedente não atenua nem exclui sua responsabilidade. A concessionária responde integralmente pelos danos causados, independentemente de falha na fiscalização.</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 3 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 03</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Improbidade Administrativa – Prazos Prescricionais (Lei 8.429/92)</h1>
+
+        <h2>3.1 Introdução</h2>
+        <p>A Lei 8.429/92, com a redação dada pela Lei 14.230/2021, estabelece as normas gerais sobre improbidade administrativa. Uma das alterações mais significativas diz respeito aos <strong>prazos prescricionais</strong>, que foram unificados e ampliados, substituindo os prazos anteriores de 5 anos.</p>
+        <p>Este tema é recorrente em concursos, especialmente na FCC, que costuma cobrar os prazos de forma detalhada e com pegadinhas relacionadas à lei antiga.</p>
+
+        <h2>3.2 Prazo Prescricional da Ação de Improbidade</h2>
+
+        <h3>3.2.1 Regra Geral: 8 Anos</h3>
+        <p>O prazo prescricional da ação de improbidade administrativa é de <strong>8 (oito) anos</strong>, contados:</p>
+        <ul>
+            <li>Da <strong>ocorrência do fato</strong>; ou</li>
+            <li>Nas infrações <strong>permanentes</strong>, do dia em que <strong>cessou a permanência</strong>.</li>
+        </ul>
+        <p><strong>Fundamento jurídico:</strong> Art. 23, <em>caput</em>, da Lei 8.429/92.</p>
+
+        <h3>3.2.2 O que são Infrações Permanentes?</h3>
+        <p>São infrações que se prolongam no tempo, como:</p>
+        <ul>
+            <li>Percebimento indevido de vantagens por vários meses;</li>
+            <li>Manutenção de situação irregular que gera vantagem ilícita.</li>
+        </ul>
+        <p>Nesses casos, o prazo prescricional só começa a correr quando a conduta ilícita cessa.</p>
+
+        <h2>3.3 Suspensão do Prazo Prescricional</h2>
+
+        <h3>3.3.1 Inquérito Civil ou Processo Administrativo</h3>
+        <p>A instauração de <strong>inquérito civil</strong> ou <strong>processo administrativo</strong> para apurar ato de improbidade <strong>suspende</strong> o curso do prazo prescricional.</p>
+        <p><strong>Prazo de suspensão:</strong> No máximo <strong>180 (cento e oitenta) dias corridos</strong>.</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 23, §1º, Lei 8.429/92.</p>
+
+        <h3>3.3.2 Efeito da Suspensão</h3>
+        <p>Durante a suspensão, o prazo prescricional <strong>não corre</strong>. Após o término do período de suspensão, o prazo volta a correr pelo tempo restante.</p>
+        <p><strong>Exemplo:</strong> Se restavam 5 anos para prescrever e o inquérito civil suspendeu por 180 dias, após o fim da suspensão, o prazo continuará correndo pelos 5 anos restantes (não se reinicia do zero).</p>
+
+        <h2>3.4 Prazo para Conclusão do Inquérito Civil</h2>
+
+        <h3>3.4.1 Regra: 365 Dias</h3>
+        <p>O inquérito civil destinado a apurar ato de improbidade deve ser concluído no prazo de <strong>365 (trezentos e sessenta e cinco) dias corridos</strong>.</p>
+
+        <h3>3.4.2 Prorrogação: Uma Única Vez</h3>
+        <p>O prazo de 365 dias pode ser prorrogado <strong>uma única vez</strong>, por igual período (mais 365 dias).</p>
+        <p><strong>Prazo total máximo:</strong> 730 dias (365 + 365).</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 23, §2º, Lei 8.429/92.</p>
+
+        <h2>3.5 Prazo para Propositura da Ação</h2>
+
+        <h3>3.5.1 Regra: 30 Dias</h3>
+        <p>Encerrado o inquérito civil, se não for caso de arquivamento, a ação de improbidade deve ser proposta no prazo de <strong>30 (trinta) dias</strong>.</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 23, §3º, Lei 8.429/92.</p>
+
+        <h3>3.5.2 Arquivamento</h3>
+        <p>Se o inquérito civil concluir pela inexistência de ato de improbidade ou por insuficiência de provas, o Ministério Público deve requerer o arquivamento, nos termos da lei.</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Prazo</th>
+                        <th>Período</th>
+                        <th>Base Legal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Prescrição da ação</td>
+                        <td>8 anos</td>
+                        <td>Art. 23, <em>caput</em></td>
+                    </tr>
+                    <tr>
+                        <td>Suspensão da prescrição (inquérito civil/PAD)</td>
+                        <td>Máx. 180 dias</td>
+                        <td>Art. 23, §1º</td>
+                    </tr>
+                    <tr>
+                        <td>Conclusão do inquérito civil</td>
+                        <td>365 dias (prorrogável +365)</td>
+                        <td>Art. 23, §2º</td>
+                    </tr>
+                    <tr>
+                        <td>Propositura da ação após inquérito</td>
+                        <td>30 dias</td>
+                        <td>Art. 23, §3º</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pegadinha">
+            <span class="label">⚠️ Pega-dinhas de Prova – Prazos da Lei de Improbidade</span>
+            <p><span class="wrong">❌ Afirmar que o prazo prescricional é de 5 anos</span> – Era o prazo da lei antiga. Com a Lei 14.230/2021, o prazo é de 8 anos.</p>
+            <p><span class="wrong">❌ Dizer que a suspensão é de 90 dias</span> – A suspensão é de <strong>até 180 dias</strong>, não 90.</p>
+            <p><span class="wrong">❌ Afirmar que o prazo para conclusão do inquérito é de 45 dias</span> – Antigamente era 45 dias, mas hoje é 365 dias.</p>
+            <p><span class="wrong">❌ Dizer que a ação deve ser proposta em 45 dias</span> – O prazo atual é de <strong>30 dias</strong>.</p>
+            <p><span class="hl">Palavras-gatilho:</span></p>
+            <ul>
+                <li><strong>"Lei 14.230/2021"</strong> → sempre associar aos novos prazos (8 anos, 180 dias, 365 dias, 30 dias).</li>
+                <li><strong>"Suspensão"</strong> → 180 dias corridos.</li>
+                <li><strong>"Inquérito civil"</strong> → 365 dias + prorrogação única de 365 dias.</li>
+            </ul>
+        </div>
+
+        <div class="macete">
+            <span class="label">🧠 Macete</span>
+            <p><strong>"8, 180, 365, 30"</strong> – Prescrição em 8 anos, suspensão por até 180 dias, conclusão do inquérito em 365 dias, propositura da ação em 30 dias.</p>
+            <p style="margin-top:0.4rem;color:var(--text-muted);font-size:0.9rem;">Decore essa sequência e você nunca mais errará os prazos da Lei de Improbidade.</p>
+        </div>
+
+        <div class="card card-blue">
+            <div class="card-title">
+                <span class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7aacd4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </span>
+                Estudo de Caso Prático
+            </div>
+            <p><strong>Caso 3:</strong> Em 1º de janeiro de 2024, o Ministério Público instaurou inquérito civil para apurar suposta prática de ato de improbidade administrativa por um prefeito municipal. Em 30 de maio de 2024, o inquérito ainda não havia sido concluído.</p>
+            <p><strong>Pergunta:</strong> O prazo para conclusão do inquérito foi respeitado?</p>
+            <p><strong>Resposta:</strong> Sim. O prazo é de 365 dias corridos. Até 30 de maio de 2024, transcorreram apenas 150 dias, portanto, o inquérito ainda está dentro do prazo legal.</p>
+            <hr style="border-color:var(--border-subtle);margin:0.8rem 0;" />
+            <p><strong>Caso 4:</strong> O mesmo inquérito foi concluído em 31 de dezembro de 2024, e o Ministério Público entendeu que havia elementos suficientes para a propositura da ação. Em 15 de fevereiro de 2025, a ação ainda não havia sido ajuizada.</p>
+            <p><strong>Pergunta:</strong> Há risco de preclusão/prescrição?</p>
+            <p><strong>Resposta:</strong> Sim. O prazo para propositura da ação após o encerramento do inquérito é de <strong>30 dias</strong>. Se o inquérito foi concluído em 31/12/2024, o prazo para ajuizar a ação se encerraria em 30/01/2025. O ajuizamento em 15/02/2025 é intempestivo.</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 4 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 04</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Administração Pública – Cargos e Funções</h1>
+
+        <h2>4.1 Introdução</h2>
+        <p>A estruturação da Administração Pública envolve a criação de cargos, empregos e funções, com atribuições e requisitos específicos. O art. 37, V, da CF/88 estabelece as regras para as funções de confiança e os cargos em comissão.</p>
+        <p>Este tema é cobrado em concursos de forma direta, explorando a distinção entre funções de confiança e cargos em comissão, bem como a exigência de que sejam preenchidos, em parte, por servidores de carreira.</p>
+
+        <h2>4.2 Funções de Confiança e Cargos em Comissão</h2>
+
+        <h3>4.2.1 Destinação</h3>
+        <p>As funções de confiança e os cargos em comissão destinam-se <strong>exclusivamente</strong> às atribuições de:</p>
+        <ul>
+            <li><strong>Direção;</strong></li>
+            <li><strong>Chefia;</strong></li>
+            <li><strong>Assessoramento.</strong></li>
+        </ul>
+        <p><strong>Não se destinam a:</strong> Atividades técnicas, operacionais ou de execução direta de serviços públicos.</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 37, V, CF/88.</p>
+
+        <h3>4.2.2 Distinção entre Função de Confiança e Cargo em Comissão</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Função de Confiança</th>
+                        <th>Cargo em Comissão</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Titularidade</td>
+                        <td>Ocupada <strong>exclusivamente</strong> por servidor ocupante de cargo efetivo</td>
+                        <td>Pode ser ocupada por servidor efetivo ou por pessoa estranha à Administração</td>
+                    </tr>
+                    <tr>
+                        <td>Natureza</td>
+                        <td>É um encargo a mais atribuído ao servidor efetivo</td>
+                        <td>É um cargo, com denominação própria, criado por lei</td>
+                    </tr>
+                    <tr>
+                        <td>Exigência</td>
+                        <td>O servidor deve estar no exercício do cargo efetivo</td>
+                        <td>Pode ser preenchido por qualquer pessoa que atenda aos requisitos legais</td>
+                    </tr>
+                    <tr>
+                        <td>Vínculo</td>
+                        <td>Acessório ao cargo efetivo</td>
+                        <td>Autônomo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>4.2.3 Percentual Mínimo para Servidores de Carreira</h3>
+        <p><strong>Regra:</strong> Os cargos em comissão devem ser preenchidos, em <strong>percentual mínimo</strong>, por <strong>servidores de carreira</strong>.</p>
+        <p><strong>Razão:</strong> Evitar o apadrinhamento político e garantir que os cargos de direção, chefia e assessoramento sejam ocupados por profissionais com conhecimento da estrutura e funcionamento da Administração Pública.</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 37, V, <em>in fine</em>, CF/88.</p>
+
+        <div class="pegadinha">
+            <span class="label">⚠️ Pega-dinha de Prova</span>
+            <p><span class="wrong">❌ Erro comum:</span> Afirmar que as funções de confiança podem ser ocupadas por pessoas estranhas à Administração.</p>
+            <p><span class="right">✅ Correto:</span> As funções de confiança são exercidas <strong>exclusivamente</strong> por servidores ocupantes de cargo efetivo.</p>
+            <p><span class="wrong">❌ Erro comum:</span> Dizer que os cargos em comissão destinam-se a qualquer atribuição.</p>
+            <p><span class="right">✅ Correto:</span> Os cargos em comissão destinam-se <strong>exclusivamente</strong> a direção, chefia e assessoramento.</p>
+        </div>
+
+        <div class="card card-purple">
+            <div class="card-title">
+                <span class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b08ad4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                </span>
+                Estudo de Caso Prático
+            </div>
+            <p><strong>Caso 5:</strong> O Governador do Estado editou decreto criando 50 cargos em comissão para ocupação de funções de assessoramento técnico. O decreto determinou que todos os cargos seriam preenchidos por pessoas estranhas à Administração.</p>
+            <p><strong>Pergunta:</strong> O decreto está em conformidade com a CF/88?</p>
+            <p><strong>Resposta:</strong> Não. Embora os cargos em comissão possam ser preenchidos por pessoas estranhas à Administração, a CF/88 exige que um <strong>percentual mínimo</strong> seja reservado para servidores de carreira. A previsão de 100% de ocupação por pessoas estranhas é inconstitucional.</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 5 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 05</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Poder Regulamentar – Decreto Autônomo</h1>
+
+        <h2>5.1 Introdução</h2>
+        <p>O poder regulamentar é a prerrogativa do Chefe do Poder Executivo de expedir decretos e regulamentos para a fiel execução das leis. Tradicionalmente, o poder regulamentar era visto como <strong>meramente executório</strong>, sem capacidade de inovar na ordem jurídica.</p>
+        <p>No entanto, a Emenda Constitucional nº 32/2001 introduziu a figura do <strong>decreto autônomo</strong>, que representa uma exceção à regra da não inovação.</p>
+
+        <h2>5.2 Regra Geral: Não Inovação</h2>
+        <p>Em regra, o poder regulamentar <strong>não pode inovar na ordem jurídica</strong>, ou seja, não pode criar direitos, obrigações, proibições ou sanções que não estejam previstos em lei.</p>
+        <p>Os atos regulamentares (decretos, resoluções, portarias, instruções normativas) devem limitar-se a:</p>
+        <ul>
+            <li><strong>Explicitar o conteúdo da lei;</strong></li>
+            <li><strong>Detalhar a execução da lei;</strong></li>
+            <li><strong>Estabelecer procedimentos administrativos.</strong></li>
+        </ul>
+        <p><strong>Caráter infralegal:</strong> Os regulamentos são atos secundários, subordinados à lei, e não podem contrariá-la ou extrapolá-la.</p>
+
+        <h2>5.3 Exceção: Decreto Autônomo (Art. 84, VI, CF/88)</h2>
+
+        <h3>5.3.1 O que é o Decreto Autônomo?</h3>
+        <p>O decreto autônomo é um ato normativo primário, com capacidade de inovar na ordem jurídica, independentemente de lei prévia.</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 84, VI, CF/88 (com a redação da EC 32/2001).</p>
+
+        <h3>5.3.2 Hipóteses de Utilização</h3>
+        <p>O decreto autônomo pode dispor sobre:</p>
+        <ol>
+            <li><strong>Organização e funcionamento da administração federal</strong>, desde que não implique:
+                <ul>
+                    <li>Aumento de despesa; ou</li>
+                    <li>Criação ou extinção de órgãos públicos.</li>
+                </ul>
+            </li>
+            <li><strong>Extinção de funções ou cargos públicos</strong>, quando vagos.</li>
+        </ol>
+
+        <h3>5.3.3 Requisitos do Decreto Autônomo</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Requisito</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Não pode aumentar despesa</td>
+                        <td>O decreto não pode criar obrigações financeiras que onerem o orçamento</td>
+                    </tr>
+                    <tr>
+                        <td>Não pode criar ou extinguir órgãos</td>
+                        <td>A criação/extinção de órgãos exige lei em sentido formal</td>
+                    </tr>
+                    <tr>
+                        <td>Pode extinguir cargos vagos</td>
+                        <td>Somente cargos sem ocupante podem ser extintos por decreto</td>
+                    </tr>
+                    <tr>
+                        <td>Não pode criar cargos</td>
+                        <td>Criação de cargos exige lei específica</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>5.3.4 Outros Atos Regulamentares</h3>
+        <ul>
+            <li><strong>Resoluções;</strong></li>
+            <li><strong>Portarias;</strong></li>
+            <li><strong>Instruções Normativas.</strong></li>
+        </ul>
+        <p>Esses atos <strong>não inovam na ordem jurídica</strong>, sendo meramente infralegais.</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ato</th>
+                        <th>Inova na Ordem Jurídica?</th>
+                        <th>Natureza</th>
+                        <th>Base Legal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Decreto Autônomo</td>
+                        <td>Sim</td>
+                        <td>Norma primária</td>
+                        <td>Art. 84, VI, CF/88</td>
+                    </tr>
+                    <tr>
+                        <td>Decreto Regulamentar</td>
+                        <td>Não</td>
+                        <td>Norma secundária</td>
+                        <td>Art. 84, IV, CF/88</td>
+                    </tr>
+                    <tr>
+                        <td>Resolução</td>
+                        <td>Não</td>
+                        <td>Ato infralegal</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <td>Portaria</td>
+                        <td>Não</td>
+                        <td>Ato infralegal</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <td>Instrução Normativa</td>
+                        <td>Não</td>
+                        <td>Ato infralegal</td>
+                        <td>–</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="macete">
+            <span class="label">🧠 Macete</span>
+            <p><strong>"Decreto Autônomo é a Exceção"</strong> – O <strong>decreto autônomo</strong> é a única exceção à regra de que o poder regulamentar não inova na ordem jurídica.</p>
+            <p style="margin-top:0.4rem;color:var(--text-muted);font-size:0.9rem;">Dica de prova: A FCC cobra a literalidade do art. 84, VI, CF/88. Fique atento aos requisitos: organização e funcionamento da administração; sem aumento de despesa; sem criação/extinção de órgãos; extinção de cargos/funções vagos.</p>
+        </div>
+
+        <div class="card card-green">
+            <div class="card-title">
+                <span class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7ac4a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <polyline points="10 9 9 9 8 9" />
+                    </svg>
+                </span>
+                Estudo de Caso Prático
+            </div>
+            <p><strong>Caso 6:</strong> O Presidente da República editou decreto dispondo sobre a estrutura organizacional do Ministério da Justiça, criando uma nova superintendência para tratar de assuntos de direito administrativo. O decreto não aumentou despesas, mas criou um novo órgão.</p>
+            <p><strong>Pergunta:</strong> O decreto é válido?</p>
+            <p><strong>Resposta:</strong> Não. O decreto autônomo pode dispor sobre organização e funcionamento da administração, desde que não crie ou extinga órgãos públicos. A criação de um novo órgão exige lei em sentido formal (art. 84, VI, CF/88).</p>
+            <hr style="border-color:var(--border-subtle);margin:0.8rem 0;" />
+            <p><strong>Caso 7:</strong> O Presidente da República editou decreto extinguindo 100 cargos comissionados que estavam vagos há mais de 5 anos.</p>
+            <p><strong>Pergunta:</strong> O decreto é válido?</p>
+            <p><strong>Resposta:</strong> Sim. O decreto autônomo pode extinguir cargos públicos quando vagos, desde que não haja aumento de despesa nem criação/extinção de órgãos.</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 6 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 06</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Licitações – Termo de Referência e Estudo Técnico Preliminar</h1>
+
+        <h2>6.1 Introdução</h2>
+        <p>A Lei 14.133/2021 (Nova Lei de Licitações e Contratos Administrativos) trouxe importantes inovações no planejamento das contratações públicas, estabelecendo etapas preparatórias que devem ser observadas antes da realização do certame licitatório.</p>
+        <p>Dois documentos fundamentais nesse processo são o <strong>Estudo Técnico Preliminar (ETP)</strong> e o <strong>Termo de Referência (TR)</strong>. Embora relacionados, possuem funções distintas que a banca IBFC (e eventualmente a FCC) costumam confundir.</p>
+
+        <h2>6.2 Estudo Técnico Preliminar (ETP)</h2>
+
+        <h3>6.2.1 Definição</h3>
+        <p>O Estudo Técnico Preliminar constitui a <strong>primeira etapa do planejamento</strong> de uma contratação.</p>
+
+        <h3>6.2.2 Função</h3>
+        <p>O ETP tem por objetivo:</p>
+        <ul>
+            <li>Caracterizar o <strong>interesse público</strong> na contratação;</li>
+            <li>Analisar a <strong>viabilidade técnica e econômica</strong> da solução proposta;</li>
+            <li>Identificar a <strong>melhor solução</strong> para atender à necessidade da Administração.</li>
+        </ul>
+
+        <h3>6.2.3 Natureza</h3>
+        <p>O ETP é um documento de análise e planejamento, que antecede a definição detalhada do objeto.</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 6º, XXIII, Lei 14.133/21.</p>
+
+        <h2>6.3 Termo de Referência (TR)</h2>
+
+        <h3>6.3.1 Definição</h3>
+        <p>O Termo de Referência é o documento que <strong>detalha o objeto</strong> da contratação, após a solução já ter sido definida no ETP.</p>
+
+        <h3>6.3.2 Conteúdo</h3>
+        <p>O TR deve conter, entre outros:</p>
+        <ul>
+            <li><strong>Descrição detalhada do objeto;</strong></li>
+            <li><strong>Critérios de medição e pagamento;</strong></li>
+            <li><strong>Prazos de execução;</strong></li>
+            <li><strong>Garantias e seguros;</strong></li>
+            <li><strong>Penalidades aplicáveis.</strong></li>
+        </ul>
+
+        <h3>6.3.3 Natureza</h3>
+        <p>O TR é um documento de <strong>especificação técnica</strong>, que serve de base para a elaboração do edital.</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Estudo Técnico Preliminar (ETP)</th>
+                        <th>Termo de Referência (TR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Etapa</td>
+                        <td>Primeira etapa do planejamento</td>
+                        <td>Após definição da solução</td>
+                    </tr>
+                    <tr>
+                        <td>Função</td>
+                        <td>Analisar viabilidade e alternativas</td>
+                        <td>Detalhar o objeto e as condições de execução</td>
+                    </tr>
+                    <tr>
+                        <td>Conteúdo</td>
+                        <td>Interesse público, viabilidade técnica/econômica, alternativas</td>
+                        <td>Descrição do objeto, medição, pagamento, prazos</td>
+                    </tr>
+                    <tr>
+                        <td>Natureza</td>
+                        <td>Planejamento e análise</td>
+                        <td>Especificação técnica</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pegadinha">
+            <span class="label">⚠️ Pega-dinha de Prova – ETP e TR</span>
+            <p><span class="wrong">❌ Erro comum:</span> Afirmar que o Termo de Referência é a primeira etapa do planejamento.</p>
+            <p><span class="right">✅ Correto:</span> O Estudo Técnico Preliminar é a primeira etapa. O Termo de Referência vem depois, para detalhar a solução já escolhida.</p>
+            <p><strong>Dica de prova:</strong> A IBFC costuma cobrar essa distinção. Na FCC, também pode aparecer. Lembre-se: <span class="hl">ETP antes, TR depois</span>.</p>
+        </div>
+
+        <div class="card card-teal">
+            <div class="card-title">
+                <span class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7ac4c4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 16v-4" />
+                        <path d="M12 8h.01" />
+                    </svg>
+                </span>
+                Estudo de Caso Prático
+            </div>
+            <p><strong>Caso 8:</strong> O órgão público "X" pretende contratar uma empresa para prestação de serviços de limpeza e conservação. O setor de compras elaborou um documento descrevendo detalhadamente os serviços, a quantidade de funcionários, os materiais a serem utilizados e os critérios de pagamento. Esse documento foi o primeiro a ser elaborado no planejamento da contratação.</p>
+            <p><strong>Pergunta:</strong> O documento elaborado pelo setor de compras é adequado como primeira etapa do planejamento?</p>
+            <p><strong>Resposta:</strong> Não. O documento descrito é um Termo de Referência (detalhamento do objeto), mas a primeira etapa do planejamento deveria ser o Estudo Técnico Preliminar (análise de viabilidade e alternativas). A Administração deve primeiro analisar se a contratação é viável e qual a melhor solução, para só depois detalhar o objeto.</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 7 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 07</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Licitações – Bens e Serviços Comuns</h1>
+
+        <h2>7.1 Conceito</h2>
+        <p>Bens e serviços comuns são aqueles cujos <strong>padrões de desempenho e qualidade</strong> podem ser <strong>objetivamente definidos</strong> pelo edital, por meio de <strong>especificações usuais de mercado</strong>.</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 6º, XIII, Lei 14.133/21.</p>
+
+        <h2>7.2 Características dos Bens e Serviços Comuns</h2>
+        <ul>
+            <li><strong>Padronização:</strong> O mercado oferece bens e serviços com características homogêneas;</li>
+            <li><strong>Definição objetiva:</strong> O edital pode definir os padrões de qualidade sem margem para subjetividade;</li>
+            <li><strong>Competitividade:</strong> Admite-se a participação de diversos fornecedores em condições similares.</li>
+        </ul>
+
+        <h2>7.3 Exemplos Práticos</h2>
+        <ul>
+            <li><strong>Materiais de escritório padrão</strong> (papel A4, canetas esferográficas, pastas arquivo);</li>
+            <li><strong>Serviços de limpeza simples</strong> (sem complexidade técnica elevada);</li>
+            <li><strong>Alimentação coletiva</strong> (refeições com padrões nutricionais definidos);</li>
+            <li><strong>Combustíveis</strong> (gasolina comum, diesel).</li>
+        </ul>
+
+        <div class="pegadinha">
+            <span class="label">⚠️ Pega-dinha de Prova</span>
+            <p><span class="wrong">❌ Erro comum:</span> Afirmar que bens e serviços comuns são aqueles de baixo valor ou de rápida execução.</p>
+            <p><span class="right">✅ Correto:</span> O critério não é o valor ou a duração, mas a <strong>possibilidade de definição objetiva dos padrões</strong> pelo edital.</p>
+            <p><strong>Dica de prova:</strong> A FCC pode cobrar a definição literal do art. 6º, XIII, da Lei 14.133/21.</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 8 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 08</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Licitações – Contratação Integrada</h1>
+
+        <h2>8.1 Conceito</h2>
+        <p>A contratação integrada é um regime de execução de obras e serviços de engenharia em que o contratado é responsável por:</p>
+        <ol>
+            <li><strong>Elaborar e desenvolver os projetos básico e executivo;</strong></li>
+            <li><strong>Executar as obras e serviços de engenharia;</strong></li>
+            <li><strong>Fornecer bens ou prestar serviços especiais;</strong></li>
+            <li><strong>Realizar montagem, teste, pré-operação e demais operações necessárias para a entrega final do objeto.</strong></li>
+        </ol>
+        <p><strong>Fundamento jurídico:</strong> Art. 6º, XXXII, Lei 14.133/21.</p>
+
+        <h2>8.2 Características da Contratação Integrada</h2>
+        <ul>
+            <li><strong>Responsabilidade única:</strong> O contratado é responsável por todas as fases do empreendimento;</li>
+            <li><strong>Entrega "chave na mão":</strong> O objeto deve ser entregue pronto para operação;</li>
+            <li><strong>Redução de risco para a Administração:</strong> O contratado assume os riscos relacionados ao projeto e à execução.</li>
+        </ul>
+
+        <h2>8.3 Hipóteses de Utilização</h2>
+        <p>A contratação integrada é admitida para obras e serviços de engenharia de <strong>grande vulto</strong> ou de <strong>alta complexidade técnica</strong>, que justifiquem a concentração de responsabilidades em um único contratado.</p>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 9 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 09</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Atos Administrativos – Motivação</h1>
+
+        <h2>9.1 Introdução</h2>
+        <p>A motivação é um dos requisitos essenciais dos atos administrativos, consistindo na <strong>exposição dos motivos de fato e de direito</strong> que justificam a prática do ato. O princípio da motivação está consagrado na Lei 9.784/1999 (Lei do Processo Administrativo Federal), que estabelece regras gerais para a Administração Pública Federal.</p>
+        <p>A FCC costuma cobrar as exceções à motivação, especialmente os <strong>atos de mero expediente</strong>, que não precisam ser motivados.</p>
+
+        <h2>9.2 Regra Geral: Motivação Obrigatória</h2>
+        <p>Em regra, todos os atos administrativos devem ser motivados, especialmente aqueles que:</p>
+        <ol>
+            <li><strong>Importem em anulação, revogação, suspensão ou convalidação;</strong></li>
+            <li><strong>Envolvam decisões em concursos ou seleções públicas;</strong></li>
+            <li><strong>Imponham ou agravem deveres, encargos ou sanções;</strong></li>
+            <li><strong>Neguem, limitem ou afetem direitos;</strong></li>
+            <li><strong>Declarem nulidade de ato administrativo.</strong></li>
+        </ol>
+        <p><strong>Fundamento jurídico:</strong> Art. 50, Lei 9.784/99.</p>
+
+        <h2>9.3 Exceção: Atos de Mero Expediente</h2>
+
+        <h3>9.3.1 O que são Atos de Mero Expediente?</h3>
+        <p>São atos que:</p>
+        <ul>
+            <li><strong>Impulsionam o processo administrativo;</strong></li>
+            <li><strong>Não possuem conteúdo decisório;</strong></li>
+            <li><strong>Não afetam direitos do administrado.</strong></li>
+        </ul>
+
+        <h3>9.3.2 Exemplos</h3>
+        <ul>
+            <li>Despachos de mero andamento processual;</li>
+            <li>Juntada de documentos;</li>
+            <li>Intimações para manifestação;</li>
+            <li>Prorrogação de prazo por determinação legal.</li>
+        </ul>
+
+        <h3>9.3.3 Fundamento Jurídico</h3>
+        <p>Art. 50, Lei 9.784/99: "Os atos administrativos deverão ser motivados, com indicação dos fatos e dos fundamentos jurídicos, quando: ... §1º A motivação é dispensável para atos de mero expediente."</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Exigem Motivação</th>
+                        <th>Dispensam Motivação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Atos que importem anulação, revogação, suspensão ou convalidação</td>
+                        <td>Atos de mero expediente (impulsionam o processo, sem decisão)</td>
+                    </tr>
+                    <tr>
+                        <td>Decisões em concursos ou seleções públicas</td>
+                        <td>Atos de mero impulso processual</td>
+                    </tr>
+                    <tr>
+                        <td>Atos que imponham ou agravem deveres, encargos ou sanções</td>
+                        <td>–</td>
+                    </tr>
+                    <tr>
+                        <td>Atos que neguem, limitem ou afetem direitos</td>
+                        <td>–</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pegadinha">
+            <span class="label">⚠️ Pega-dinha de Prova – Motivação</span>
+            <p><span class="wrong">❌ Erro comum:</span> Afirmar que todo ato administrativo exige motivação.</p>
+            <p><span class="right">✅ Correto:</span> A regra é a motivação, mas há exceção para os <strong>atos de mero expediente</strong>.</p>
+            <p><strong>Dica de prova:</strong> A FCC explora essa exceção de forma recorrente. Sempre que a questão mencionar "ato de mero expediente" ou "mero impulso processual", a resposta provavelmente é "dispensa motivação".</p>
+        </div>
+
+        <div class="card card-blue">
+            <div class="card-title">
+                <span class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7aacd4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                    </svg>
+                </span>
+                Estudo de Caso Prático
+            </div>
+            <p><strong>Caso 9:</strong> O chefe de um departamento público determina a juntada de um documento aos autos de um processo administrativo, por meio de despacho. Esse despacho é um ato que apenas impulsiona o processo, sem decidir sobre qualquer direito.</p>
+            <p><strong>Pergunta:</strong> Esse despacho precisa ser motivado?</p>
+            <p><strong>Resposta:</strong> Não. Trata-se de ato de mero expediente, que dispensa motivação, pois não possui conteúdo decisório nem afeta direitos do administrado.</p>
+            <hr style="border-color:var(--border-subtle);margin:0.8rem 0;" />
+            <p><strong>Caso 10:</strong> O mesmo chefe de departamento, após análise do processo, decide indeferir o pedido de um administrado, negando-lhe um benefício previsto em lei.</p>
+            <p><strong>Pergunta:</strong> Esse indeferimento precisa ser motivado?</p>
+            <p><strong>Resposta:</strong> Sim. O ato que nega, limita ou afeta direitos deve ser motivado, com indicação dos fatos e fundamentos jurídicos.</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 10 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 10</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Consórcios Públicos</h1>
+
+        <h2>10.1 Introdução</h2>
+        <p>Os consórcios públicos são associações de entes federativos para a realização de objetivos de interesse comum, especialmente a gestão associada de serviços públicos. A matéria é regulada pela Lei 11.107/2005, que estabelece as normas para a formação, funcionamento e extinção dos consórcios públicos.</p>
+        <p>A FCC costuma cobrar aspectos relacionados ao contrato de programa, à arrecadação de tarifas e à destinação de bens em caso de retirada do ente.</p>
+
+        <h2>10.2 Contrato de Programa</h2>
+
+        <h3>10.2.1 Definição</h3>
+        <p>O contrato de programa é um instrumento jurídico que regula as obrigações de um ente da Federação para com o consórcio público, especialmente no âmbito da gestão associada.</p>
+
+        <h3>10.2.2 Obrigatoriedade</h3>
+        <p>É <strong>obrigatória</strong> a constituição de contrato de programa quando:</p>
+        <ol>
+            <li>Houver <strong>gestão associada</strong> de serviços públicos; <strong>e</strong></li>
+            <li>Houver <strong>transferência total ou parcial de bens</strong> necessários à continuidade dos serviços transferidos.</li>
+        </ol>
+        <p><strong>Fundamento jurídico:</strong> Art. 13, Lei 11.107/2005.</p>
+
+        <h3>10.2.3 Efeitos do Contrato de Programa</h3>
+        <p>O contrato de programa estabelece os direitos e obrigações das partes, especialmente quanto à:</p>
+        <ul>
+            <li>Transferência de bens;</li>
+            <li>Prestação de serviços;</li>
+            <li>Financiamento e contrapartidas;</li>
+            <li>Prazo e condições de vigência.</li>
+        </ul>
+
+        <h2>10.3 Arrecadação de Tarifas</h2>
+
+        <h3>10.3.1 Atividades do Consórcio</h3>
+        <p>Os consórcios públicos podem exercer atividades de:</p>
+        <ul>
+            <li><strong>Arrecadação de tarifas</strong> pela prestação de serviços;</li>
+            <li><strong>Arrecadação de preços públicos</strong> pelo uso ou outorga de uso de bens públicos por eles administrados.</li>
+        </ul>
+
+        <h3>10.3.2 Documentos de Cobrança</h3>
+        <p>Para tanto, os consórcios podem emitir documentos de cobrança, como faturas, boletos e guias.</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 2º, §2º, Lei 11.107/2005.</p>
+        <p><span class="hl">Dica de prova:</span> A assertiva que disser que o consórcio não pode arrecadar tarifas está errada.</p>
+
+        <h2>10.4 Retirada do Ente e Destinação de Bens</h2>
+
+        <h3>10.4.1 Regra: Não Devolução Automática</h3>
+        <p>Quando um ente consorciado se retira do consórcio, os bens que foram destinados ao consórcio <strong>não são automaticamente revertidos ou retrocedidos</strong>.</p>
+
+        <h3>10.4.2 Exceção: Previsão Contratual</h3>
+        <p>A devolução dos bens somente ocorrerá se houver:</p>
+        <ul>
+            <li><strong>Expressa previsão no contrato de consórcio público;</strong></li>
+            <li><strong>Expressa previsão no instrumento de transferência ou de alienação</strong> dos bens.</li>
+        </ul>
+        <p><strong>Fundamento jurídico:</strong> Art. 11, §1º, Lei 11.107/2005.</p>
+
+        <h3>10.4.3 Importância da Previsão Contratual</h3>
+        <p>A regra da não devolução automática visa proteger a continuidade do serviço público e a estabilidade do consórcio, evitando que a retirada de um ente comprometa a prestação dos serviços.</p>
+
+        <div class="macete">
+            <span class="label">🧠 Macete</span>
+            <p><strong>"Contrato de programa: obrigatório se transferência de bens; bens não voltam automaticamente."</strong></p>
+            <p style="margin-top:0.4rem;color:var(--text-muted);font-size:0.9rem;">A devolução de bens ao ente que se retira só ocorre com previsão expressa no contrato ou instrumento de transferência.</p>
+        </div>
+
+        <div class="card card-green">
+            <div class="card-title">
+                <span class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7ac4a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                </span>
+                Estudo de Caso Prático
+            </div>
+            <p><strong>Caso 11:</strong> O Estado "X" e o Município "Y" constituíram um consórcio público para gestão associada de serviços de saneamento básico. O Estado "X" transferiu uma estação de tratamento de água para o consórcio. Cinco anos depois, o Estado "X" decide se retirar do consórcio.</p>
+            <p><strong>Pergunta:</strong> O Estado "X" tem direito à devolução automática da estação de tratamento?</p>
+            <p><strong>Resposta:</strong> Não. Os bens transferidos ao consórcio não são automaticamente revertidos ou retrocedidos. A devolução somente ocorrerá se houver previsão expressa nesse sentido no contrato de consórcio ou no instrumento de transferência.</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 11 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 11</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Sistema de Registro de Preços</h1>
+
+        <h2>11.1 Introdução</h2>
+        <p>O Sistema de Registro de Preços (SRP) é um mecanismo de contratação pública que permite à Administração registrar os preços de bens e serviços para futuras aquisições, sem a necessidade de realizar nova licitação a cada contratação.</p>
+        <p>A Lei 14.133/2021 dedicou capítulo específico ao SRP (arts. 82 a 86), estabelecendo regras detalhadas sobre a ata de registro de preços, o prazo de vigência, a obrigatoriedade de contratar e a possibilidade de preços diferenciados.</p>
+
+        <h2>11.2 Prazo de Vigência da Ata de Registro de Preços</h2>
+
+        <h3>11.2.1 Regra: 1 Ano</h3>
+        <p>O prazo de vigência da ata de registro de preços é de <strong>1 (um) ano</strong>, contado da data de sua assinatura.</p>
+
+        <h3>11.2.2 Prorrogação: +1 Ano</h3>
+        <p>A ata pode ser prorrogada por igual período <strong>(mais 1 ano)</strong>, desde que comprovado que o preço registrado continua vantajoso para a Administração.</p>
+
+        <h3>11.2.3 Prazo Máximo Total</h3>
+        <p><strong>Prazo máximo total:</strong> 2 anos (1 + 1).</p>
+        <p><strong>Proibição:</strong> Não é permitido prever vigência inicial de 24 meses sem a prorrogação.</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 84, Lei 14.133/21.</p>
+
+        <h2>11.3 Possibilidade de Preços Diferentes</h2>
+
+        <h3>11.3.1 Regra: Preços Diferentes são Permitidos</h3>
+        <p>É permitido prever no edital de registro de preços <strong>preços diferentes para o mesmo objeto</strong>, quando o objeto for realizado ou entregue em <strong>locais diferentes</strong>.</p>
+
+        <h3>11.3.2 Razão: Custos Logísticos</h3>
+        <p>A diferenciação de preços visa refletir os custos logísticos envolvidos na entrega ou execução do objeto em regiões distintas.</p>
+        <p><strong>Exemplo:</strong> O custo de entrega de um medicamento em uma capital pode ser menor do que o custo de entrega no interior do estado, devido à distância, à infraestrutura viária ou a tributos locais.</p>
+        <p><strong>Fundamento jurídico:</strong> Art. 82, III, "a", Lei 14.133/21.</p>
+
+        <h2>11.4 Obrigatoriedade de Contratar</h2>
+
+        <h3>11.4.1 Regra: Não Há Obrigatoriedade</h3>
+        <p>A existência de preços registrados <strong>não obriga a Administração a contratar</strong>.</p>
+
+        <h3>11.4.2 Implicações para o Licitante</h3>
+        <ul>
+            <li>O licitante vencedor assume o <strong>compromisso de fornecimento</strong> pelo preço registrado;</li>
+            <li>A Administração, por sua vez, pode realizar licitação específica de forma <strong>motivada</strong>, mesmo com preços registrados.</li>
+        </ul>
+        <p><strong>Fundamento jurídico:</strong> Art. 83, Lei 14.133/21.</p>
+
+        <h3>11.4.3 Característica do SRP</h3>
+        <p>A faculdade de contratar é uma característica essencial do Sistema de Registro de Preços, que visa dar flexibilidade à Administração para ajustar suas contratações às necessidades efetivas.</p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Regra</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vigência da ata</td>
+                        <td>1 ano, prorrogável por mais 1 ano (total: 2 anos)</td>
+                    </tr>
+                    <tr>
+                        <td>Preços diferentes</td>
+                        <td>Permitidos para locais diferentes (refletem custos logísticos)</td>
+                    </tr>
+                    <tr>
+                        <td>Obrigatoriedade de contratar</td>
+                        <td>Não existe; Administração pode realizar licitação específica</td>
+                    </tr>
+                    <tr>
+                        <td>Compromisso do fornecedor</td>
+                        <td>O licitante vencedor assume o compromisso de fornecimento pelo preço registrado</td>
+                    </tr>
+                    <tr>
+                        <td>Quantitativo</td>
+                        <td>O licitante pode ofertar quantitativo inferior ao máximo do edital</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pegadinha">
+            <span class="label">⚠️ Pega-dinha de Prova – SRP</span>
+            <p><span class="wrong">❌ Erro comum:</span> Afirmar que o prazo inicial de vigência da ata pode ser de 2 anos.</p>
+            <p><span class="right">✅ Correto:</span> O prazo inicial é de <strong>1 ano</strong>, prorrogável por mais <strong>1 ano</strong>.</p>
+            <p><span class="wrong">❌ Erro comum:</span> Dizer que a Administração é obrigada a contratar pelo preço registrado.</p>
+            <p><span class="right">✅ Correto:</span> A Administração <strong>não é obrigada</strong> a contratar; pode realizar licitação específica de forma motivada.</p>
+            <p><span class="wrong">❌ Erro comum:</span> Afirmar que é vedado prever preços diferentes para o mesmo objeto.</p>
+            <p><span class="right">✅ Correto:</span> É <strong>permitido</strong> prever preços diferentes para locais de entrega diferentes.</p>
+            <p><strong>Dica de prova:</strong> A FCC cobra o prazo e a obrigatoriedade de contratar. Lembre-se do macete: <span class="hl">"1 + 1 = 2 anos, mas não obriga a comprar"</span>.</p>
+        </div>
+
+        <div class="card card-coral">
+            <div class="card-title">
+                <span class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d48a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                </span>
+                Estudo de Caso Prático
+            </div>
+            <p><strong>Caso 12:</strong> A Administração Pública realizou licitação para registro de preços de materiais de limpeza. A ata de registro de preços foi assinada em 1º de janeiro de 2024, com vigência até 1º de janeiro de 2026.</p>
+            <p><strong>Pergunta:</strong> A vigência da ata está adequada à Lei 14.133/21?</p>
+            <p><strong>Resposta:</strong> Não. O prazo de vigência da ata é de 1 ano, prorrogável por mais 1 ano, totalizando 2 anos. No entanto, a prorrogação não é automática; depende de comprovação de que o preço continua vantajoso. Além disso, a ata não pode ser assinada com vigência inicial de 2 anos (deve ser 1 ano + prorrogação).</p>
+            <hr style="border-color:var(--border-subtle);margin:0.8rem 0;" />
+            <p><strong>Caso 13:</strong> A Administração possui preços registrados para aquisição de papel A4. No entanto, surge a necessidade de adquirir papel A3, que não estava previsto na ata.</p>
+            <p><strong>Pergunta:</strong> A Administração pode adquirir o papel A3 utilizando o Sistema de Registro de Preços?</p>
+            <p><strong>Resposta:</strong> Não, se o papel A3 não estiver previsto na ata. O Sistema de Registro de Preços registra preços para objetos específicos. A Administração pode realizar licitação específica para o papel A3, mas não pode utilizar a ata de registro de preços para adquirir objeto diverso.</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 12 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 12</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Quadro Geral de Macetes e Pegadinhas</h1>
+
+        <div class="card card-gold" style="border-left-color:var(--accent-gold);">
+            <div class="card-title">
+                <span class="icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d4b87a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                        <path d="M2 17l10 5 10-5" />
+                        <path d="M2 12l10 5 10-5" />
+                    </svg>
+                </span>
+                Resumo dos Macetes
+            </div>
+
+            <p><strong>Servidor Público Vereador:</strong> <span class="hl">"Compatível acumula; incompatível opta"</span> – Se houver compatibilidade de horários, acumula as remunerações; se incompatível, afasta e opta.</p>
+            <p><strong>Concessão de Serviços Públicos:</strong> <span class="hl">"Fiscalização não exime"</span> – A fiscalização do poder concedente não exonera a concessionária de sua responsabilidade objetiva.</p>
+            <p><strong>Improbidade (Prazos):</strong> <span class="hl">"8, 180, 365, 30"</span> – Prescrição em 8 anos, suspensão por até 180 dias, conclusão do inquérito em 365 dias, propositura da ação em 30 dias.</p>
+            <p><strong>Funções de Confiança e Cargos em Comissão:</strong> <span class="hl">"Função é para efetivo; comissão pode ser para estranho, mas com percentual mínimo de carreira."</span></p>
+            <p><strong>Poder Regulamentar:</strong> <span class="hl">"Decreto autônomo é a exceção"</span> – Apenas o decreto autônomo inova na ordem jurídica.</p>
+            <p><strong>ETP x TR:</strong> <span class="hl">"ETP primeiro; TR depois"</span> – O Estudo Técnico Preliminar é a primeira etapa do planejamento; o Termo de Referência vem depois.</p>
+            <p><strong>Bens e Serviços Comuns:</strong> <span class="hl">"Comum = definição objetiva"</span> – A característica marcante é a possibilidade de definição objetiva dos padrões no edital.</p>
+            <p><strong>Motivação:</strong> <span class="hl">"Mero expediente dispensa"</span> – A motivação é dispensada para atos de mero expediente.</p>
+            <p><strong>Consórcios Públicos:</strong> <span class="hl">"Contrato de programa: obrigatório se transferência de bens; bens não voltam automaticamente."</span></p>
+            <p><strong>Registro de Preços:</strong> <span class="hl">"1+1 = 2, mas não obriga a comprar"</span> – A ata tem vigência de 1 ano, prorrogável por mais 1, mas a Administração não é obrigada a contratar.</p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 13 -->
+        <!-- ============================================================ -->
+        <div class="chapter-divider">
+            <span class="line"></span>
+            <span class="badge-chap">Capítulo 13</span>
+            <span class="line"></span>
+        </div>
+
+        <h1>Exercícios de Fixação</h1>
+
+        <h2>13.1 Questões Objetivas</h2>
+
+        <!-- Questão 1 -->
+        <div class="exercise">
+            <p class="q">Questão 1 (FCC – adaptada): Em relação ao servidor público investido no mandato de vereador, havendo compatibilidade de horários, é correto afirmar que:</p>
+            <ol class="options">
+                <li>O servidor será afastado do cargo, emprego ou função, sendo-lhe facultado optar pela sua remuneração.</li>
+                <li>O servidor perceberá as vantagens de seu cargo, emprego ou função, sem prejuízo da remuneração do cargo eletivo.</li>
+                <li>O servidor não perceberá as vantagens de seu cargo, mas receberá a remuneração do mandato eletivo.</li>
+                <li>O servidor deverá optar entre a remuneração do cargo público e a do mandato eletivo.</li>
+                <li>O servidor perceberá apenas as vantagens do cargo público, sendo vedado receber a remuneração do mandato.</li>
+            </ol>
+            <div class="answer"><strong>Resposta:</strong> b) O servidor perceberá as vantagens de seu cargo, emprego ou função, sem prejuízo da remuneração do cargo eletivo (art. 38, III, primeira parte, CF/88).</div>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="exercise">
+            <p class="q">Questão 2 (FCC – adaptada): O prazo prescricional da ação de improbidade administrativa, após a Lei 14.230/2021, é de:</p>
+            <ol class="options">
+                <li>5 anos.</li>
+                <li>8 anos.</li>
+                <li>10 anos.</li>
+                <li>15 anos.</li>
+                <li>3 anos.</li>
+            </ol>
+            <div class="answer"><strong>Resposta:</strong> b) 8 anos (art. 23, <em>caput</em>, Lei 8.429/92).</div>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="exercise">
+            <p class="q">Questão 3 (FCC – adaptada): Com relação à fiscalização dos serviços concedidos, a Lei 8.987/95 estabelece que:</p>
+            <ol class="options">
+                <li>A fiscalização é exercida exclusivamente pelos usuários dos serviços.</li>
+                <li>A fiscalização é exercida exclusivamente pelo poder concedente, sem participação dos usuários.</li>
+                <li>A fiscalização é exercida pelo poder concedente, com a participação dos usuários a título de cooperação.</li>
+                <li>A fiscalização é exercida pela concessionária, com supervisão do poder concedente.</li>
+                <li>A fiscalização é exercida por uma comissão mista, composta por representantes do poder concedente e da concessionária.</li>
+            </ol>
+            <div class="answer"><strong>Resposta:</strong> c) A fiscalização é exercida pelo poder concedente, com a participação dos usuários a título de cooperação (arts. 3º e 7º, Lei 8.987/95).</div>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="exercise">
+            <p class="q">Questão 4 (FCC – adaptada): Em regra, os atos administrativos devem ser motivados, conforme dispõe a Lei 9.784/1999. Contudo, há exceção:</p>
+            <ol class="options">
+                <li>A motivação é obrigatória para atos que importem anulação, revogação, suspensão ou convalidação.</li>
+                <li>A motivação é obrigatória para decisões em concursos ou seleções públicas.</li>
+                <li>A motivação é dispensada para atos de mero expediente.</li>
+                <li>A motivação é obrigatória para atos que imponham ou agravem deveres, encargos ou sanções.</li>
+                <li>A motivação é obrigatória para atos que neguem, limitem ou afetem direitos.</li>
+            </ol>
+            <div class="answer"><strong>Resposta:</strong> c) A motivação é dispensada para atos de mero expediente (art. 50, §1º, Lei 9.784/99).</div>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="exercise">
+            <p class="q">Questão 5 (FCC – adaptada): No Sistema de Registro de Preços, o prazo de vigência da ata é de:</p>
+            <ol class="options">
+                <li>2 anos, prorrogável por igual período.</li>
+                <li>1 ano, prorrogável por igual período.</li>
+                <li>2 anos, sem possibilidade de prorrogação.</li>
+                <li>6 meses, prorrogável por mais 6 meses.</li>
+                <li>3 anos, prorrogável por mais 1 ano.</li>
+            </ol>
+            <div class="answer"><strong>Resposta:</strong> b) 1 ano, prorrogável por igual período (art. 84, Lei 14.133/21).</div>
+        </div>
+
+        <h2>13.2 Questões Discursivas</h2>
+
+        <!-- Questão 6 -->
+        <div class="exercise">
+            <p class="q">Questão 6: Ana é servidora pública efetiva do Tribunal de Justiça do Estado do Ceará, ocupante do cargo de Técnica Judiciária, com carga horária de 8h às 17h. Nas eleições municipais, foi eleita vereadora. As sessões da Câmara Municipal ocorrem das 18h às 22h, e as reuniões de comissão são realizadas das 9h às 12h.</p>
+            <p>a) Ana pode acumular as duas remunerações (cargo público e mandato de vereadora)? Justifique.</p>
+            <p>b) Como será contado o tempo de serviço durante o mandato?</p>
+            <div class="answer">
+                <p><strong>Resposta:</strong></p>
+                <p>a) <strong>Parcialmente.</strong> Embora as sessões da Câmara sejam compatíveis (18h às 22h), as reuniões de comissão (9h às 12h) ocorrem no mesmo horário do expediente no TJCE. Portanto, há incompatibilidade de horários, o que exige o afastamento de Ana do cargo de Técnica Judiciária e a opção por uma das remunerações.</p>
+                <p>b) O tempo de serviço será contado para todos os efeitos legais, <strong>exceto</strong> para promoção por merecimento (art. 38, IV, CF/88).</p>
+            </div>
+        </div>
+
+        <!-- Questão 7 -->
+        <div class="exercise">
+            <p class="q">Questão 7: A concessionária "Transporte Rápido" presta serviços de transporte público de passageiros no município de Fortaleza. Em um dia de chuva intensa, um ônibus da concessionária perdeu o controle e colidiu contra um poste, causando danos materiais a dois veículos estacionados nas proximidades. Os proprietários dos veículos acionaram a concessionária judicialmente. Em sua defesa, a concessionária alegou que o poder concedente não fiscalizou adequadamente as condições de manutenção e segurança dos veículos.</p>
+            <p>Pergunta: A alegação da concessionária é válida para excluir ou atenuar sua responsabilidade?</p>
+            <div class="answer">
+                <p><strong>Resposta:</strong> Não. A responsabilidade da concessionária é objetiva (art. 37, §6º, CF/88, e art. 25, Lei 8.987/95), e a fiscalização pelo poder concedente não atenua nem exclui essa responsabilidade. A concessionária responde integralmente pelos danos causados, independentemente de falha na fiscalização.</p>
+            </div>
+        </div>
+
+        <!-- Questão 8 -->
+        <div class="exercise">
+            <p class="q">Questão 8: O Presidente da República editou decreto dispondo sobre a organização interna de um Ministério, criando uma nova secretaria para tratar de assuntos de direito administrativo, sem aumento de despesa.</p>
+            <p>Pergunta: O decreto é válido? Justifique com base no art. 84, VI, da CF/88.</p>
+            <div class="answer">
+                <p><strong>Resposta:</strong> Não. O decreto autônomo pode dispor sobre organização e funcionamento da administração federal, desde que não implique aumento de despesa ou criação/extinção de órgãos públicos. A criação de uma nova secretaria configura criação de órgão público, o que exige lei em sentido formal.</p>
+            </div>
+        </div>
+
+        <!-- ===== FINAL ===== -->
+        <div style="margin-top:4rem;padding:2rem 0;border-top:1px solid var(--border-subtle);text-align:center;">
+            <p style="color:var(--text-muted);font-size:0.95rem;max-width:560px;margin:0 auto;">
+                Este material foi elaborado com o objetivo de transformar o conteúdo fragmentado em uma apostila teórica completa, didática e aprofundada, voltada para a preparação em concursos de alto nível.
+            </p>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.8rem;">
+                <span class="hl">Bons estudos e sucesso na sua preparação!</span>
+            </p>
+        </div>
+
+    </div>
+    <!-- /container -->
+</body>
+</html>

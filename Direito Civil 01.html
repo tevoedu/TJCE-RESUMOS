@@ -1,0 +1,2753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila de Direito Civil e LINDB</title>
+    <style>
+        /* ===== RESET ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===== THEME ===== */
+        :root {
+            --bg-primary: #15121a;
+            --bg-secondary: #1e1a26;
+            --bg-card: #25202e;
+            --bg-card-hover: #2f283c;
+            --bg-code: #1a1722;
+            --bg-highlight: rgba(201, 168, 76, 0.18);
+            --bg-info: rgba(74, 111, 165, 0.15);
+            --bg-tip: rgba(80, 180, 120, 0.13);
+            --bg-warning: rgba(210, 140, 60, 0.15);
+            --bg-quote: #1f1a2a;
+            --text-primary: #e8ddd0;
+            --text-secondary: #c5b9a8;
+            --text-muted: #988c7c;
+            --text-inverse: #1a1722;
+            --gold: #c9a84c;
+            --gold-light: #e8d48a;
+            --gold-dark: #a8893a;
+            --blue: #6b8cae;
+            --blue-light: #8facc9;
+            --purple: #7c6b8e;
+            --purple-light: #a08bb3;
+            --green: #6baa8a;
+            --green-light: #8fc9ad;
+            --orange: #c98a4c;
+            --red: #b55a5a;
+            --border-subtle: rgba(200, 180, 160, 0.08);
+            --border-card: rgba(200, 180, 160, 0.12);
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.45);
+            --radius: 14px;
+            --radius-sm: 8px;
+            --font-sans: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --transition: 0.25s ease;
+        }
+
+        /* ===== BASE ===== */
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 2rem 1.5rem 4rem;
+            max-width: 980px;
+            margin: 0 auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-dark);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 2.8rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border-subtle);
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--gold-light);
+        }
+        h4 {
+            font-size: 1.2rem;
+            margin-top: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: var(--blue-light);
+        }
+        h5 {
+            font-size: 1rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        a:hover {
+            color: var(--gold-light);
+            text-decoration: underline;
+        }
+
+        strong,
+        b {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        em,
+        i {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-subtle), transparent);
+            margin: 2.8rem 0;
+        }
+
+        .divider-elegant {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 3rem 0 2.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .divider-elegant::before,
+        .divider-elegant::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-subtle));
+        }
+        .divider-elegant::after {
+            background: linear-gradient(to left, transparent, var(--border-subtle));
+        }
+
+        /* ===== HEADER / COVER ===== */
+        .cover {
+            text-align: center;
+            padding: 3.5rem 1rem 3rem;
+            margin-bottom: 3rem;
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-card);
+            position: relative;
+            overflow: hidden;
+        }
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: -60%;
+            left: -60%;
+            width: 220%;
+            height: 220%;
+            background: radial-gradient(ellipse at 30% 40%, rgba(201, 168, 76, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cover-icon {
+            margin-bottom: 1.2rem;
+            display: inline-block;
+        }
+        .cover h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            background: linear-gradient(to right, var(--gold-light), var(--gold), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .cover .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.6rem;
+            position: relative;
+        }
+        .cover .meta {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            position: relative;
+        }
+        .cover .meta span {
+            display: inline-block;
+            margin: 0 0.4rem;
+        }
+
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc {
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-card);
+            padding: 2rem 2.2rem;
+            margin-bottom: 3rem;
+        }
+        .toc-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.05em;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.3rem 1.5rem;
+        }
+        .toc-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            padding: 0.3rem 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            transition: color var(--transition);
+            border-bottom: 1px solid transparent;
+        }
+        .toc-item:hover {
+            color: var(--gold-light);
+        }
+        .toc-item .num {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.85rem;
+            min-width: 2rem;
+            flex-shrink: 0;
+        }
+        .toc-item a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        .toc-item a:hover {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+        @media (max-width: 640px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .toc {
+                padding: 1.5rem;
+            }
+            .cover h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* ===== CHAPTER HEADERS ===== */
+        .chapter-number {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: rgba(201, 168, 76, 0.1);
+            padding: 0.2rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 0.5rem;
+            border: 1px solid rgba(201, 168, 76, 0.15);
+        }
+        .chapter-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 0.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .chapter-title .highlight {
+            color: var(--gold);
+        }
+        .chapter-sub {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1.8rem;
+            font-weight: 300;
+        }
+
+        /* ===== CARDS ===== */
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-card);
+            padding: 1.6rem 2rem;
+            margin: 1.8rem 0;
+            box-shadow: var(--shadow-card);
+            transition: border-color var(--transition);
+        }
+        .card:hover {
+            border-color: rgba(201, 168, 76, 0.15);
+        }
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== INFO / TIP / WARNING BOXES ===== */
+        .box {
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.6rem;
+            margin: 1.4rem 0;
+            border-left: 4px solid var(--gold);
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-left-width: 4px;
+        }
+        .box-title {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .box-info {
+            border-left-color: var(--blue);
+            background: var(--bg-info);
+        }
+        .box-info .box-title {
+            color: var(--blue-light);
+        }
+
+        .box-tip {
+            border-left-color: var(--green);
+            background: var(--bg-tip);
+        }
+        .box-tip .box-title {
+            color: var(--green-light);
+        }
+
+        .box-warning {
+            border-left-color: var(--orange);
+            background: var(--bg-warning);
+        }
+        .box-warning .box-title {
+            color: var(--orange);
+        }
+
+        .box-important {
+            border-left-color: var(--gold);
+            background: var(--bg-highlight);
+        }
+        .box-important .box-title {
+            color: var(--gold-light);
+        }
+
+        .box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== QUOTE ===== */
+        blockquote {
+            background: var(--bg-quote);
+            border-left: 4px solid var(--gold);
+            padding: 1.2rem 1.8rem;
+            margin: 1.6rem 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--text-secondary);
+            position: relative;
+        }
+        blockquote::before {
+            content: '\201C';
+            font-size: 2.6rem;
+            color: var(--gold);
+            font-style: normal;
+            line-height: 0.6;
+            display: block;
+            margin-bottom: -0.2rem;
+        }
+        blockquote footer {
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+        }
+
+        /* ===== TABLES ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.6rem 0;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-card);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: var(--bg-card);
+        }
+        thead {
+            background: var(--bg-secondary);
+            border-bottom: 2px solid var(--gold-dark);
+        }
+        th {
+            padding: 0.8rem 1.2rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--gold-light);
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        td {
+            padding: 0.7rem 1.2rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tbody tr:hover {
+            background: var(--bg-secondary);
+        }
+        tbody tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        /* ===== LISTS ===== */
+        ul,
+        ol {
+            margin: 0.8rem 0 1.2rem 1.6rem;
+            color: var(--text-secondary);
+        }
+        li {
+            margin-bottom: 0.3rem;
+        }
+        li::marker {
+            color: var(--gold);
+        }
+
+        .list-check {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list-check li {
+            display: flex;
+            align-items: baseline;
+            gap: 0.6rem;
+            padding: 0.25rem 0;
+        }
+        .list-check li::before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9a84c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") center/contain no-repeat;
+            margin-top: 0.1rem;
+        }
+
+        /* ===== HIGHLIGHT TEXT (marker) ===== */
+        .marker {
+            background: linear-gradient(120deg, rgba(201, 168, 76, 0.25) 0%, rgba(201, 168, 76, 0.25) 100%);
+            padding: 0.05rem 0.3rem;
+            border-radius: 3px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* ===== CALL OUT ===== */
+        .callout {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.6rem;
+            margin: 1.2rem 0;
+            border: 1px solid var(--border-card);
+        }
+        .callout-icon {
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .callout-content {
+            flex: 1;
+        }
+        .callout-content p:last-child {
+            margin-bottom: 0;
+        }
+        .callout-content strong {
+            color: var(--gold-light);
+        }
+
+        /* ===== INLINE CODE / TERM ===== */
+        .term {
+            color: var(--gold-light);
+            font-weight: 500;
+        }
+        .law {
+            color: var(--blue-light);
+            font-weight: 500;
+        }
+
+        /* ===== SVG DIAGRAMS ===== */
+        .diagram-container {
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-card);
+            padding: 1.5rem 1rem;
+            margin: 1.8rem 0;
+            text-align: center;
+            overflow-x: auto;
+        }
+        .diagram-container svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .diagram-caption {
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* ===== COMPARISON GRID ===== */
+        .comp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.4rem 0;
+        }
+        .comp-item {
+            background: var(--bg-card);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem 1.4rem;
+            border: 1px solid var(--border-card);
+        }
+        .comp-item h5 {
+            color: var(--gold-light);
+            margin-top: 0;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .comp-item p {
+            font-size: 0.92rem;
+            margin-bottom: 0.2rem;
+        }
+        .comp-item ul {
+            margin: 0.3rem 0 0 1.2rem;
+            font-size: 0.92rem;
+        }
+        @media (max-width: 600px) {
+            .comp-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.2rem 1rem 3rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+            .chapter-title {
+                font-size: 1.7rem;
+            }
+            .cover h1 {
+                font-size: 2rem;
+            }
+            .cover .subtitle {
+                font-size: 1rem;
+            }
+            .card {
+                padding: 1.2rem 1.2rem;
+            }
+            .box {
+                padding: 1rem 1.2rem;
+            }
+            .toc {
+                padding: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0.8rem 0.7rem 2.5rem;
+                font-size: 0.95rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .chapter-title {
+                font-size: 1.4rem;
+            }
+            .cover h1 {
+                font-size: 1.6rem;
+            }
+            .cover {
+                padding: 2rem 0.8rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .comp-grid {
+                grid-template-columns: 1fr;
+            }
+            table {
+                font-size: 0.82rem;
+            }
+            th,
+            td {
+                padding: 0.5rem 0.7rem;
+            }
+        }
+
+        /* ===== PRINT / TABLET OPTIMIZATION ===== */
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+                padding: 0.5in;
+            }
+            .cover,
+            .toc,
+            .card,
+            .box,
+            .diagram-container,
+            .callout,
+            .comp-item {
+                background: #f5f0eb !important;
+                border-color: #ccc !important;
+                color: #111 !important;
+            }
+            .cover h1 {
+                -webkit-text-fill-color: #8a6d2b !important;
+                color: #8a6d2b !important;
+                background: none !important;
+            }
+            .gold {
+                color: #8a6d2b !important;
+            }
+            .marker {
+                background: #f0e4c0 !important;
+            }
+            .chapter-number {
+                background: #e8ddd0 !important;
+                color: #8a6d2b !important;
+                border-color: #c9a84c !important;
+            }
+            * {
+                color: #111 !important;
+            }
+            .toc-item .num {
+                color: #8a6d2b !important;
+            }
+            a {
+                color: #8a6d2b !important;
+            }
+            .table-wrap {
+                border-color: #ccc !important;
+            }
+            table {
+                background: #faf8f5 !important;
+            }
+            thead {
+                background: #e8ddd0 !important;
+            }
+            th {
+                color: #5a4420 !important;
+            }
+            td {
+                border-bottom-color: #ddd !important;
+                color: #222 !important;
+            }
+            .divider-elegant {
+                color: #666;
+            }
+            .divider-elegant::before,
+            .divider-elegant::after {
+                background: #ccc !important;
+            }
+            blockquote {
+                background: #f5f0eb !important;
+                border-left-color: #8a6d2b !important;
+            }
+            blockquote::before {
+                color: #8a6d2b !important;
+            }
+            .box-info {
+                background: #e8edf5 !important;
+                border-left-color: #4a6fa5 !important;
+            }
+            .box-tip {
+                background: #e8f5ee !important;
+                border-left-color: #4a8a6a !important;
+            }
+            .box-warning {
+                background: #f5ede0 !important;
+                border-left-color: #c98a4c !important;
+            }
+            .box-important {
+                background: #f5f0e0 !important;
+                border-left-color: #c9a84c !important;
+            }
+            .callout {
+                background: #f5f0eb !important;
+            }
+            .list-check li::before {
+                filter: none !important;
+            }
+            hr {
+                background: #ddd !important;
+            }
+            .cover::before {
+                display: none !important;
+            }
+            .toc-item {
+                border-bottom-color: #eee !important;
+            }
+            .diagram-container svg {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+        }
+
+        /* ===== HELPER ===== */
+        .text-gold {
+            color: var(--gold);
+        }
+        .text-muted {
+            color: var(--text-muted);
+        }
+        .mt-0 {
+            margin-top: 0;
+        }
+        .mb-0 {
+            margin-bottom: 0;
+        }
+        .gap-1 {
+            gap: 0.5rem;
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-center {
+            align-items: center;
+        }
+        .inline-flex {
+            display: inline-flex;
+            align-items: center;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* ===== LISTA DE VERIFICAÇÃO ===== */
+        .checklist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1.5rem;
+            padding: 0;
+            list-style: none;
+            margin: 0.8rem 0 1.2rem;
+        }
+        .checklist li {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            padding: 0.2rem 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .checklist li::before {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236baa8a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") center/contain no-repeat;
+            margin-top: 0.1rem;
+        }
+        @media (max-width: 600px) {
+            .checklist {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== BIBLIOGRAFIA ===== */
+        .bibliografia {
+            list-style: none;
+            padding-left: 0;
+        }
+        .bibliografia li {
+            padding: 0.2rem 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .bibliografia li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- COVER                                                         -->
+    <!-- ============================================================ -->
+    <header class="cover">
+        <div class="cover-icon">
+            <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                <line x1="9" y1="8" x2="16" y2="8" />
+                <line x1="9" y1="12" x2="14" y2="12" />
+                <line x1="9" y1="16" x2="12" y2="16" />
+            </svg>
+        </div>
+        <h1>APOSTILA DE DIREITO CIVIL E LINDB</h1>
+        <p class="subtitle">TÉCNICO JUDICIÁRIO – ÁREA JUDICIÁRIA</p>
+        <p class="meta"><span>Material Teórico Completo para Concursos Públicos de Alto Nível</span></p>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- SUMÁRIO                                                       -->
+    <!-- ============================================================ -->
+    <nav class="toc" aria-label="Sumário">
+        <div class="toc-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="21" y2="6" />
+                <line x1="8" y1="12" x2="21" y2="12" />
+                <line x1="8" y1="18" x2="21" y2="18" />
+                <line x1="3" y1="6" x2="3.01" y2="6" />
+                <line x1="3" y1="12" x2="3.01" y2="12" />
+                <line x1="3" y1="18" x2="3.01" y2="18" />
+            </svg>
+            SUMÁRIO
+        </div>
+        <div class="toc-grid">
+            <div class="toc-item"><span class="num">1</span><a href="#cap1">Teoria Geral dos Bens</a></div>
+            <div class="toc-item"><span class="num">1.1</span><a href="#cap1-1">Conceito e Classificação</a></div>
+            <div class="toc-item"><span class="num">1.2</span><a href="#cap1-2">Bens Fungíveis e Consumíveis</a></div>
+            <div class="toc-item"><span class="num">1.3</span><a href="#cap1-3">Bens Imóveis e Móveis</a></div>
+            <div class="toc-item"><span class="num">1.4</span><a href="#cap1-4">Bens Principais e Acessórios</a></div>
+            <div class="toc-item"><span class="num">2</span><a href="#cap2">Domicílio Civil</a></div>
+            <div class="toc-item"><span class="num">2.1</span><a href="#cap2-1">Conceito e Elementos</a></div>
+            <div class="toc-item"><span class="num">2.2</span><a href="#cap2-2">Domicílio da Pessoa Natural</a></div>
+            <div class="toc-item"><span class="num">2.3</span><a href="#cap2-3">Domicílio da Pessoa Jurídica</a></div>
+            <div class="toc-item"><span class="num">2.4</span><a href="#cap2-4">Domicílio Profissional</a></div>
+            <div class="toc-item"><span class="num">2.5</span><a href="#cap2-5">Domicílio Necessário</a></div>
+            <div class="toc-item"><span class="num">3</span><a href="#cap3">Direitos da Personalidade</a></div>
+            <div class="toc-item"><span class="num">3.1</span><a href="#cap3-1">Conceito e Características</a></div>
+            <div class="toc-item"><span class="num">3.2</span><a href="#cap3-2">Irrenunciabilidade</a></div>
+            <div class="toc-item"><span class="num">3.3</span><a href="#cap3-3">Limitações e Efeitos</a></div>
+            <div class="toc-item"><span class="num">4</span><a href="#cap4">Negócio Jurídico</a></div>
+            <div class="toc-item"><span class="num">4.1</span><a href="#cap4-1">Conceito e Estrutura</a></div>
+            <div class="toc-item"><span class="num">4.2</span><a href="#cap4-2">Requisitos de Validade</a></div>
+            <div class="toc-item"><span class="num">4.3</span><a href="#cap4-3">Nulidade e Anulabilidade</a></div>
+            <div class="toc-item"><span class="num">4.4</span><a href="#cap4-4">Atos Ilícitos e Excludentes</a></div>
+            <div class="toc-item"><span class="num">4.5</span><a href="#cap4-5">Abuso de Direito</a></div>
+            <div class="toc-item"><span class="num">5</span><a href="#cap5">Responsabilidade Civil</a></div>
+            <div class="toc-item"><span class="num">5.1</span><a href="#cap5-1">Conceito e Fundamentos</a></div>
+            <div class="toc-item"><span class="num">5.2</span><a href="#cap5-2">Contratual e Extracontratual</a></div>
+            <div class="toc-item"><span class="num">5.3</span><a href="#cap5-3">Requisitos da Responsabilidade</a></div>
+            <div class="toc-item"><span class="num">6</span><a href="#cap6">Curatela e Medidas de Apoio</a></div>
+            <div class="toc-item"><span class="num">6.1</span><a href="#cap6-1">Conceito e Finalidade</a></div>
+            <div class="toc-item"><span class="num">6.2</span><a href="#cap6-2">Tomada de Decisão Apoiada</a></div>
+            <div class="toc-item"><span class="num">6.3</span><a href="#cap6-3">Tutela × Curatela</a></div>
+            <div class="toc-item"><span class="num">7</span><a href="#cap7">LINDB</a></div>
+            <div class="toc-item"><span class="num">7.1</span><a href="#cap7-1">Direito Adquirido, Ato Jurídico Perfeito</a></div>
+            <div class="toc-item"><span class="num">7.2</span><a href="#cap7-2">Interpretação de Normas</a></div>
+            <div class="toc-item"><span class="num">7.3</span><a href="#cap7-3">Revisão de Atos e Segurança Jurídica</a></div>
+        </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 1                                                    -->
+    <!-- ============================================================ -->
+    <section id="cap1">
+        <span class="chapter-number">Capítulo 1</span>
+        <h2 class="chapter-title">Teoria Geral dos <span class="highlight">Bens</span></h2>
+        <p class="chapter-sub">Fundamentos da Classificação dos Bens no Código Civil</p>
+
+        <!-- 1.1 -->
+        <h3 id="cap1-1">1.1 Conceito e Classificação dos Bens</h3>
+        <p>O Código Civil brasileiro dedica todo o seu Livro II da Parte Geral à disciplina dos bens jurídicos. Para o estudo de concursos públicos, especialmente para o Tribunal de Justiça do Estado do Ceará (TJCE) e bancas como FCC, FGV e Cebraspe, compreender a classificação dos bens é absolutamente essencial, pois as questões frequentemente exploram as diferenças sutis entre as diversas categorias.</p>
+        <div class="card">
+            <div class="card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Conceito de Bem
+            </div>
+            <p>Em sentido jurídico, <strong>bem</strong> é tudo aquilo que pode ser objeto de relação jurídica, ou seja, tudo que pode ser apropriado pelo homem e ter valor econômico ou afetivo. Nem toda coisa é um bem jurídico: <em>coisa</em> é gênero, e <em>bem</em> é espécie, representando a coisa que possui utilidade e pode ser objeto de direito.</p>
+        </div>
+
+        <hr>
+
+        <!-- 1.2 -->
+        <h3 id="cap1-2">1.2 Bens Fungíveis e Consumíveis</h3>
+
+        <h4>1.2.1 Bens Fungíveis</h4>
+        <p>O <span class="law">art. 85 do Código Civil</span> estabelece o conceito fundamental de bens fungíveis:</p>
+        <blockquote>
+            "São fungíveis os bens móveis que podem ser substituídos por outros da mesma espécie, qualidade e quantidade."
+        </blockquote>
+        <p><strong>Análise Detalhada do Conceito:</strong></p>
+        <p>A fungibilidade está diretamente relacionada à substituibilidade do bem. Quando falamos em bens fungíveis, estamos nos referindo àqueles que podem ser trocados sem prejuízo para o credor, pois não possuem individualidade própria que os torne insubstituíveis.</p>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Características Essenciais dos Bens Fungíveis
+            </div>
+            <ol>
+                <li><strong>São necessariamente móveis</strong> – o Código Civil não admite bens imóveis fungíveis, pois a imobilidade confere à coisa uma individualidade que a torna insubstituível.</li>
+                <li><strong>Substituibilidade</strong> – podem ser substituídos por outros da mesma espécie, qualidade e quantidade.</li>
+                <li><strong>Desindividualização</strong> – não importa qual bem específico será entregue, desde que corresponda às mesmas características.</li>
+            </ol>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Bens Fungíveis</th><th>Bens Infungíveis</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Grãos de arroz</td><td>Obras de arte</td></tr>
+                    <tr><td>Moedas (idênticas)</td><td>Veículo com chassi único</td></tr>
+                    <tr><td>Sacos de cimento</td><td>Imóvel determinado</td></tr>
+                    <tr><td>Combustível</td><td>Animal de estimação</td></tr>
+                    <tr><td>Dinheiro (cédulas)</td><td>Relógio de coleção</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>1.2.2 Bens Consumíveis</h4>
+        <p>O <span class="law">art. 86 do Código Civil</span> define os bens consumíveis:</p>
+        <blockquote>
+            "São consumíveis os bens móveis cujo uso importa destruição imediata da própria substância, sendo também considerados tais os destinados à alienação."
+        </blockquote>
+        <p><strong>Análise Detalhada:</strong></p>
+        <p>A consumibilidade está ligada à exaustão do bem pelo uso. Um bem é consumível quando seu uso normal implica sua destruição, transformação ou desaparecimento.</p>
+        <div class="box box-tip">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                Duas Categorias de Bens Consumíveis
+            </div>
+            <ol>
+                <li><strong>Consumíveis por natureza</strong> – aqueles cujo uso importa destruição imediata da substância (ex.: alimentos, combustível).</li>
+                <li><strong>Consumíveis por destinação</strong> – aqueles que, embora não se destruam com o uso, são destinados à alienação (ex.: mercadorias em estoque).</li>
+            </ol>
+        </div>
+
+        <h4>1.2.3 Relação entre Fungibilidade e Consumibilidade</h4>
+        <div class="box box-important">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Atenção: Conceitos Distintos
+            </div>
+            <p><strong>É fundamental compreender que fungibilidade e consumibilidade são conceitos distintos</strong>, embora frequentemente confundidos em provas:</p>
+        </div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Aspecto</th><th>Bens Fungíveis</th><th>Bens Consumíveis</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Critério</strong></td><td>Substituibilidade</td><td>Exaustão pelo uso</td></tr>
+                    <tr><td><strong>Podem ser imóveis?</strong></td><td>Não</td><td>Não</td></tr>
+                    <tr><td><strong>Exemplo clássico</strong></td><td>Grãos, dinheiro</td><td>Alimentos, combustível</td></tr>
+                    <tr><td><strong>Relacionamento</strong></td><td>Podem ser consumíveis ou não</td><td>Podem ser fungíveis ou não</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- DIAGRAMA: Classificação dos Bens Móveis (CORRIGIDO) -->
+        <div class="diagram-container">
+            <svg viewBox="0 0 820 480" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <style>
+                        .diag-box-bg { fill: #25202e; stroke: #3a3348; stroke-width: 1.5; rx: 8; }
+                        .diag-box-gold { fill: #2a242f; stroke: #c9a84c; stroke-width: 1.5; rx: 8; }
+                        .diag-line { stroke: #4a4058; stroke-width: 1.5; }
+                        .diag-arrow { fill: none; stroke: #4a4058; stroke-width: 1.5; marker-end: url(#arrow); }
+                        .diag-text-title { font-family: 'Segoe UI', system-ui, sans-serif; fill: #e8ddd0; font-size: 14px; font-weight: 600; }
+                        .diag-text-sub { font-family: 'Segoe UI', system-ui, sans-serif; fill: #c5b9a8; font-size: 12px; }
+                        .diag-text-sm { font-family: 'Segoe UI', system-ui, sans-serif; fill: #c5b9a8; font-size: 11px; }
+                        .diag-text-gold { fill: #c9a84c; }
+                        .diag-text-green { fill: #8fc9ad; }
+                        .diag-text-blue { fill: #8facc9; }
+                    </style>
+                    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                        <polygon points="0 0, 8 3, 0 6" fill="#4a4058" />
+                    </marker>
+                </defs>
+
+                <!-- Raiz -->
+                <rect x="290" y="20" width="240" height="44" class="diag-box-gold" />
+                <text x="410" y="48" text-anchor="middle" class="diag-text-title" fill="#c9a84c">BENS MÓVEIS</text>
+
+                <!-- Linhas da raiz para os ramos -->
+                <line x1="330" y1="64" x2="210" y2="120" class="diag-line" />
+                <line x1="410" y1="64" x2="410" y2="120" class="diag-line" />
+                <line x1="490" y1="64" x2="610" y2="120" class="diag-line" />
+
+                <!-- Ramo Fungíveis -->
+                <foreignObject x="40" y="120" width="300" height="70">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#25202e; border:1.5px solid #c9a84c; border-radius:8px; padding:10px; color:#e8ddd0; font-family:'Segoe UI',sans-serif; font-size:14px; font-weight:600; text-align:center; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; word-wrap:break-word; overflow-wrap:break-word;">
+                        FUNGÍVEIS (art. 85)
+                        <span style="font-size:12px; font-weight:400; color:#c5b9a8; display:block; margin-top:2px;">Substituíveis por outros da mesma<br/>espécie, qualidade e quantidade</span>
+                    </div>
+                </foreignObject>
+
+                <!-- Linhas de Fungíveis para subnós -->
+                <line x1="190" y1="190" x2="100" y2="240" class="diag-line" />
+                <line x1="190" y1="190" x2="280" y2="240" class="diag-line" />
+
+                <!-- Subnós Fungíveis -->
+                <foreignObject x="20" y="240" width="160" height="50">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#25202e; border:1px solid #3a3348; border-radius:6px; padding:6px; color:#c5b9a8; font-family:'Segoe UI',sans-serif; font-size:12px; text-align:center; height:100%; display:flex; align-items:center; justify-content:center; word-wrap:break-word; overflow-wrap:break-word;">
+                        Ex: arroz, feijão,<br/>dinheiro
+                    </div>
+                </foreignObject>
+                <foreignObject x="200" y="240" width="160" height="50">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#25202e; border:1px solid #3a3348; border-radius:6px; padding:6px; color:#c9a84c; font-family:'Segoe UI',sans-serif; font-size:12px; text-align:center; height:100%; display:flex; align-items:center; justify-content:center; word-wrap:break-word; overflow-wrap:break-word;">
+                        OBS: Nem todo fungível<br/>é consumível
+                    </div>
+                </foreignObject>
+
+                <!-- Ramo Consumíveis -->
+                <foreignObject x="480" y="120" width="300" height="70">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#25202e; border:1.5px solid #8fc9ad; border-radius:8px; padding:10px; color:#e8ddd0; font-family:'Segoe UI',sans-serif; font-size:14px; font-weight:600; text-align:center; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; word-wrap:break-word; overflow-wrap:break-word;">
+                        CONSUMÍVEIS (art. 86)
+                        <span style="font-size:12px; font-weight:400; color:#c5b9a8; display:block; margin-top:2px;">Uso importa destruição imediata<br/>ou destinados à alienação</span>
+                    </div>
+                </foreignObject>
+
+                <!-- Linhas de Consumíveis para subnós -->
+                <line x1="630" y1="190" x2="540" y2="240" class="diag-line" />
+                <line x1="630" y1="190" x2="720" y2="240" class="diag-line" />
+
+                <!-- Subnós Consumíveis -->
+                <foreignObject x="460" y="240" width="160" height="50">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#25202e; border:1px solid #3a3348; border-radius:6px; padding:6px; color:#c5b9a8; font-family:'Segoe UI',sans-serif; font-size:12px; text-align:center; height:100%; display:flex; align-items:center; justify-content:center; word-wrap:break-word; overflow-wrap:break-word;">
+                        Ex: alimentos,<br/>bebidas
+                    </div>
+                </foreignObject>
+                <foreignObject x="640" y="240" width="160" height="50">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#25202e; border:1px solid #3a3348; border-radius:6px; padding:6px; color:#c9a84c; font-family:'Segoe UI',sans-serif; font-size:12px; text-align:center; height:100%; display:flex; align-items:center; justify-content:center; word-wrap:break-word; overflow-wrap:break-word;">
+                        OBS: Nem todo consumível<br/>é fungível
+                    </div>
+                </foreignObject>
+
+                <!-- Ramo Infungíveis/Inconsumíveis (implícito) -->
+                <foreignObject x="300" y="340" width="220" height="40">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#1e1a26; border:1px solid #3a3348; border-radius:6px; padding:4px; color:#988c7c; font-family:'Segoe UI',sans-serif; font-size:12px; text-align:center; height:100%; display:flex; align-items:center; justify-content:center;">
+                        Infungíveis / Inconsumíveis
+                    </div>
+                </foreignObject>
+                <line x1="410" y1="310" x2="410" y2="340" class="diag-line" style="stroke-dasharray:4,4;" />
+            </svg>
+            <p class="diagram-caption">Relação entre Fungibilidade e Consumibilidade</p>
+        </div>
+
+        <div class="box box-warning">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Pegadinha Clássica de Prova FCC
+            </div>
+            <p>A FCC adora explorar a seguinte distinção: o <strong>dinheiro</strong> (cédulas) é <span class="marker">fungível</span>, mas <span class="marker">não é consumível</span>, pois seu uso (pagamento) não destrói a substância do bem. Por outro lado, um alimento perecível é <strong>consumível</strong> e geralmente <strong>fungível</strong> (um saco de arroz pode ser substituído por outro).</p>
+        </div>
+
+        <hr>
+
+        <!-- 1.3 -->
+        <h3 id="cap1-3">1.3 Bens Imóveis e Móveis</h3>
+
+        <h4>1.3.1 Bens Imóveis</h4>
+        <p>O <span class="law">art. 79 do Código Civil</span> estabelece:</p>
+        <blockquote>
+            "São bens imóveis o solo e tudo quanto se lhe incorporar natural ou artificialmente."
+        </blockquote>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 9 12 3 21 9 21 21 3 21 3 9"/><line x1="9" y1="21" x2="9" y2="15"/><line x1="15" y1="21" x2="15" y2="15"/></svg>
+                Classificação dos Bens Imóveis
+            </div>
+            <ul>
+                <li><strong>A) Imóveis por Natureza</strong> (art. 79, 1ª parte): o solo em si mesmo. Ex.: terrenos, glebas.</li>
+                <li><strong>B) Imóveis por Acessão Natural</strong> (art. 79, 2ª parte): tudo que se incorpora naturalmente ao solo. Ex.: árvores, plantas, frutos pendentes.</li>
+                <li><strong>C) Imóveis por Acessão Artificial</strong> (art. 79, 2ª parte): tudo que se incorpora artificialmente ao solo. Ex.: edificações, construções.</li>
+                <li><strong>D) Imóveis por Destinação</strong> (art. 80): imóveis por determinação legal, considerando-se sua finalidade econômica ou social. Ex.: máquinas e utensílios fixados ao solo.</li>
+            </ul>
+        </div>
+
+        <h4>1.3.2 Bens Móveis</h4>
+        <p>O <span class="law">art. 82 do Código Civil</span> define:</p>
+        <blockquote>
+            "São móveis os bens suscetíveis de movimento próprio, ou de remoção por força alheia, sem alteração da substância ou da destinação econômico-social."
+        </blockquote>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                Classificação dos Bens Móveis
+            </div>
+            <ul>
+                <li><strong>A) Móveis por Natureza</strong> (art. 82): suscetíveis de movimento próprio (animais) ou de remoção sem alteração da substância (móveis, utensílios).</li>
+                <li><strong>B) Móveis por Antecipação</strong> (art. 84): bens que, embora imóveis por natureza, são considerados móveis para efeitos legais. Ex.: materiais de demolição, frutos colhidos.</li>
+                <li><strong>C) Semoventes</strong> (art. 82, parágrafo único): animais considerados bens móveis. Ex.: gado, cavalos.</li>
+            </ul>
+        </div>
+
+        <h4>1.3.3 Aplicação Prática: Sistema de Irrigação</h4>
+        <div class="box box-important">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Questão Clássica de Concurso
+            </div>
+            <p><strong>Um sistema de irrigação fixo, ligado ao solo de uma fazenda, é classificado como bem móvel ou imóvel?</strong></p>
+            <p><strong>Resolução:</strong> O sistema de irrigação fixo é <span class="marker">bem imóvel por acessão artificial</span>, nos termos do art. 79 do Código Civil. O fato de integrar-se ao solo de forma permanente, com tubulações enterradas e estrutura fixa, faz com que se incorpore ao imóvel, perdendo sua individualidade como bem móvel.</p>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Bem</th><th>Classificação</th><th>Fundamento</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Sistema de irrigação fixo</td><td>Imóvel (acessão artificial)</td><td>Art. 79</td></tr>
+                    <tr><td>Colheitadeira (não fixada)</td><td>Móvel (pertence)</td><td>Art. 93</td></tr>
+                    <tr><td>Árvores frutíferas</td><td>Imóvel (acessão natural)</td><td>Art. 79</td></tr>
+                    <tr><td>Casa de madeira fixada ao solo</td><td>Imóvel</td><td>Art. 79</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <!-- 1.4 -->
+        <h3 id="cap1-4">1.4 Bens Principais e Acessórios</h3>
+
+        <h4>1.4.1 Conceitos Fundamentais</h4>
+        <div class="comp-grid">
+            <div class="comp-item">
+                <h5>Bem Principal (art. 92)</h5>
+                <p>É aquele que existe por si mesmo, com existência própria e autônoma.</p>
+                <p><strong>Exemplos:</strong> imóvel, árvore, veículo.</p>
+            </div>
+            <div class="comp-item">
+                <h5>Bem Acessório (art. 93)</h5>
+                <p>É aquele cuja existência pressupõe a do principal.</p>
+                <p><strong>Exemplos:</strong> frutos, pertenças, benfeitorias.</p>
+            </div>
+        </div>
+
+        <h4>1.4.2 Pertences (art. 93)</h4>
+        <blockquote>
+            "São pertenças os bens que, não constituindo parte integrante, se destinam, de modo duradouro, ao uso, ao serviço ou ao aformoseamento de outro."
+        </blockquote>
+        <div class="box box-tip">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                Características das Pertences
+            </div>
+            <ol>
+                <li>Não são partes integrantes do principal.</li>
+                <li>Têm destinação duradoura.</li>
+                <li>Servem ao uso, serviço ou embelezamento do principal.</li>
+                <li>Podem ser retirados sem destruição.</li>
+            </ol>
+        </div>
+        <p><strong>Exemplos:</strong> máquinas em uma fábrica, aparelhos de ar-condicionado em um edifício, obras de arte em uma residência, equipamentos de escritório.</p>
+        <div class="box box-important">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Regra do Art. 94
+            </div>
+            <blockquote style="margin:0;border-left-color:var(--gold);">
+                "Os negócios jurídicos que dizem respeito ao bem principal não abrangem as pertenças, salvo se o contrário resultar da lei, da manifestação de vontade, ou das circunstâncias do caso."
+            </blockquote>
+            <p style="margin-top:0.5rem;">Isso significa que, em regra, a venda de um imóvel <strong>não</strong> inclui automaticamente seus pertences, a menos que expressamente previsto.</p>
+        </div>
+
+        <h4>1.4.3 Benfeitorias</h4>
+        <p><strong>Conceito (art. 96):</strong> São obras ou serviços realizados em um bem para conservá-lo, melhorá-lo ou embelezá-lo.</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Tipo</th><th>Conceito</th><th>Exemplo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Necessárias</strong></td><td>Destinadas a conservar o bem ou evitar sua deterioração</td><td>Conserto de telhado, reforço estrutural</td></tr>
+                    <tr><td><strong>Úteis</strong></td><td>Aumentam ou facilitam o uso do bem</td><td>Instalação de piscina, construção de garagem</td></tr>
+                    <tr><td><strong>Voluptuárias</strong></td><td>Destinadas ao recreio ou embelezamento, sem utilidade prática</td><td>Jardim ornamental, fonte decorativa</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="box box-warning">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Regra de Indenização (art. 97)
+            </div>
+            <p>"As benfeitorias necessárias dão direito à indenização; as úteis, se houver expressa convenção, e as voluptuárias, se houver expressa convenção."</p>
+        </div>
+
+        <hr>
+
+        <!-- RESUMO ESQUEMÁTICO – CLASSIFICAÇÃO DOS BENS -->
+        <div class="card" style="border-color:rgba(201,168,76,0.2);">
+            <div class="card-title" style="font-size:1.1rem;justify-content:center;border-bottom:1px solid var(--border-subtle);padding-bottom:0.5rem;margin-bottom:0.8rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                RESUMO ESQUEMÁTICO – CLASSIFICAÇÃO DOS BENS
+            </div>
+            <div style="font-size:0.95rem;color:var(--text-secondary);">
+                <p><strong style="color:var(--gold-light);">CLASSIFICAÇÃO DOS BENS (CC/02)</strong></p>
+                <ul style="margin-left:1.2rem;">
+                    <li><strong style="color:var(--gold-light);">Quanto à Fungibilidade</strong>
+                        <ul>
+                            <li><span class="marker">Fungíveis</span> (art. 85) → Substituíveis por outros da mesma espécie, qualidade, quantidade</li>
+                            <li><span class="marker">Infungíveis</span> → Insubstituíveis (obra de arte)</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Quanto à Consumibilidade</strong>
+                        <ul>
+                            <li><span class="marker">Consumíveis</span> (art. 86) → Uso importa destruição imediata</li>
+                            <li><span class="marker">Inconsumíveis</span> → Uso não destrói a substância</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Quanto à Mobilidade</strong>
+                        <ul>
+                            <li><span class="marker">Imóveis</span> (art. 79) → Solo + acessões (naturais e artificiais)
+                                <ul>
+                                    <li>Por natureza</li>
+                                    <li>Por acessão</li>
+                                    <li>Por destinação (art. 80)</li>
+                                </ul>
+                            </li>
+                            <li><span class="marker">Móveis</span> (art. 82) → Suscetíveis de remoção
+                                <ul>
+                                    <li>Por natureza</li>
+                                    <li>Por antecipação (art. 84)</li>
+                                    <li>Semoventes</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Quanto à Dependência</strong>
+                        <ul>
+                            <li><span class="marker">Principais</span> (existem por si)</li>
+                            <li><span class="marker">Acessórios</span>
+                                <ul>
+                                    <li>Pertences (art. 93)</li>
+                                    <li>Benfeitorias (arts. 96-97)
+                                        <ul>
+                                            <li>Necessárias</li>
+                                            <li>Úteis</li>
+                                            <li>Voluptuárias</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box box-tip">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                DICAS DE PROVA – BENS
+            </div>
+            <ol>
+                <li><strong>FCC adora cobrar a distinção entre fungíveis e consumíveis</strong> – decore que fungíveis são substituíveis (art. 85) e consumíveis são destruíveis pelo uso (art. 86). O dinheiro é fungível, mas <strong>não é consumível</strong>!</li>
+                <li><strong>Sistema de irrigação fixo = imóvel por acessão artificial</strong> – questão clássica que aparece com frequência.</li>
+                <li><strong>Colheitadeira = pertence (bem móvel)</strong> – mesmo que usada em atividade agrícola, se não fixada ao solo, é móvel.</li>
+                <li><strong>Árvores frutíferas = imóveis por acessão natural</strong> – até serem colhidas, são imóveis.</li>
+                <li><strong>Benfeitorias necessárias SEMPRE dão direito à indenização</strong> – as úteis e voluptuárias só se houver convenção expressa (art. 97).</li>
+            </ol>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 2                                                    -->
+    <!-- ============================================================ -->
+    <section id="cap2">
+        <span class="chapter-number">Capítulo 2</span>
+        <h2 class="chapter-title">Domicílio <span class="highlight">Civil</span></h2>
+        <p class="chapter-sub">Conceito, Elementos e Espécies</p>
+
+        <h3 id="cap2-1">2.1 Conceito e Elementos do Domicílio</h3>
+        <p>O domicílio é um dos institutos mais cobrados em concursos para a área judiciária, especialmente pela FCC e Cebraspe. Compreender suas nuances é fundamental para resolver questões que envolvem competência territorial, citação, e direitos processuais.</p>
+        <div class="card">
+            <div class="card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1"/></svg>
+                Conceito de Domicílio
+            </div>
+            <p>O domicílio da pessoa natural é o lugar onde ela estabelece residência com <strong>ânimo definitivo</strong> (art. 70 do Código Civil). Essa definição contém dois elementos essenciais que devem ser analisados separadamente.</p>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Elemento</th><th>Descrição</th><th>Fundamento</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Elemento Objetivo (Corpus)</strong></td><td>Residência habitual, permanência física no local</td><td>Art. 70, 1ª parte</td></tr>
+                    <tr><td><strong>Elemento Subjetivo (Animus)</strong></td><td>Ânimo definitivo, intenção de permanecer</td><td>Art. 70, 2ª parte</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-important">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Distinção Fundamental – Domicílio × Residência
+            </div>
+            <div class="table-wrap" style="margin:0.5rem 0 0;">
+                <table style="font-size:0.92rem;">
+                    <thead>
+                        <tr><th>Aspecto</th><th>Domicílio</th><th>Residência</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Elemento subjetivo</strong></td><td>Exige ânimo definitivo</td><td>Não exige ânimo definitivo</td></tr>
+                        <tr><td><strong>Estabilidade</strong></td><td>Permanência duradoura</td><td>Pode ser eventual ou temporária</td></tr>
+                        <tr><td><strong>Efeitos jurídicos</strong></td><td>Define competência, foro, citação</td><td>Não produz os mesmos efeitos</td></tr>
+                        <tr><td><strong>Exemplo</strong></td><td>Casa onde a pessoa mora com a família</td><td>Hotel onde a pessoa se hospeda em viagem</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3 id="cap2-2">2.2 Domicílio da Pessoa Natural</h3>
+        <p>O art. 70 do Código Civil estabelece a regra geral:</p>
+        <blockquote>
+            "O domicílio da pessoa natural é o lugar onde ela estabelece a sua residência com ânimo definitivo."
+        </blockquote>
+
+        <h4>2.2.1 Domicílio Voluntário</h4>
+        <p>É aquele escolhido livremente pela pessoa, conforme sua vontade. O art. 71 estabelece:</p>
+        <blockquote>
+            "Se, porém, a pessoa natural tiver diversas residências, onde, alternadamente, viva, considerar-se-á domicílio qualquer delas."
+        </blockquote>
+        <p><strong>Consequência:</strong> A pessoa pode ter mais de um domicílio voluntário (<em>domicílio plúrimo</em>).</p>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Exemplo
+            </div>
+            <p>Um empresário que mantém residência em São Paulo (onde está sua empresa) e no Rio de Janeiro (onde está sua família), alternando sua presença entre as duas cidades, terá domicílio em ambas.</p>
+        </div>
+
+        <h4 id="cap2-5">2.2.2 Domicílio Necessário (ou Legal)</h4>
+        <p>O art. 76 do Código Civil estabelece hipóteses em que a lei determina o domicílio da pessoa, independentemente de sua vontade:</p>
+        <blockquote>
+            "Art. 76. Têm domicílio necessário o incapaz, o servidor público, o militar, o marítimo e o preso."
+        </blockquote>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Sujeito</th><th>Domicílio</th><th>Fundamento</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Incapaz</td><td>Do seu representante ou assistente</td><td>Art. 76, I</td></tr>
+                    <tr><td>Servidor público</td><td>Do lugar onde exerce permanentemente suas funções</td><td>Art. 76, II</td></tr>
+                    <tr><td>Militar</td><td>Do lugar onde serve</td><td>Art. 76, III</td></tr>
+                    <tr><td>Marítimo</td><td>Do lugar onde o navio estiver matriculado</td><td>Art. 76, IV</td></tr>
+                    <tr><td>Preso</td><td>Do lugar onde cumpre a sentença</td><td>Art. 76, V</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <h3 id="cap2-3">2.3 Domicílio da Pessoa Jurídica</h3>
+        <p>O art. 75 do Código Civil disciplina o domicílio das pessoas jurídicas:</p>
+        <blockquote>
+            "Art. 75. Quanto às pessoas jurídicas, o domicílio é:<br>
+            I – da União, o Distrito Federal;<br>
+            II – dos Estados e Territórios, as respectivas capitais;<br>
+            III – do Município, o lugar onde funcione a administração municipal;<br>
+            IV – das demais pessoas jurídicas, o lugar onde funcionarem as respectivas diretorias e administrações, ou onde elegerem domicílio especial no seu estatuto ou atos constitutivos."
+        </blockquote>
+
+        <div class="comp-grid">
+            <div class="comp-item">
+                <h5>Pessoas Jurídicas de Direito Público</h5>
+                <ul>
+                    <li><strong>União</strong> → Distrito Federal (Brasília)</li>
+                    <li><strong>Estados</strong> → Respectivas capitais</li>
+                    <li><strong>Territórios</strong> → Respectivas capitais</li>
+                    <li><strong>Municípios</strong> → Local da administração municipal</li>
+                </ul>
+            </div>
+            <div class="comp-item">
+                <h5>Pessoas Jurídicas de Direito Privado</h5>
+                <p>O domicílio é:</p>
+                <ol>
+                    <li>O lugar onde funcionam as diretorias e administrações; ou</li>
+                    <li>O lugar eleito como domicílio especial no estatuto ou atos constitutivos.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="box box-important">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Parágrafo 1º do art. 75 – Domicílio dos Estabelecimentos
+            </div>
+            <blockquote style="margin:0 0 0.5rem;border-left-color:var(--gold);">
+                "Art. 75, §1º. Tendo a pessoa jurídica diversos estabelecimentos em lugares diferentes, cada um deles será considerado domicílio para os atos nele praticados."
+            </blockquote>
+            <p><strong>Importância Prática:</strong> Essa regra é de extrema importância para o direito do consumidor, pois permite que o consumidor ajuíze ação no local onde o serviço foi prestado ou o produto foi adquirido, facilitando o acesso à justiça.</p>
+            <p><strong>Exemplo:</strong> Uma empresa com sede em São Paulo e filiais no Rio de Janeiro e Belo Horizonte. Se um consumidor adquire um produto na filial do Rio de Janeiro, o domicílio da empresa para aquela relação jurídica é o Rio de Janeiro.</p>
+        </div>
+
+        <hr>
+
+        <h3 id="cap2-4">2.4 Domicílio Profissional e Casos Especiais</h3>
+
+        <h4>2.4.1 Domicílio Profissional (art. 72)</h4>
+        <blockquote>
+            "Art. 72. É também domicílio da pessoa natural, quanto às relações concernentes à profissão, o lugar onde esta é exercida.<br>
+            Parágrafo único: Se a pessoa exercitar profissão em lugares diversos, cada um deles constituirá domicílio para as relações que lhe corresponderem."
+        </blockquote>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Aplicação Prática
+            </div>
+            <p><strong>Exemplo 1:</strong> Um médico que mantém consultório em São Paulo, mas reside em Campinas. Para as relações profissionais (contratos com pacientes, responsabilidade civil profissional), seu domicílio é São Paulo.</p>
+            <p><strong>Exemplo 2:</strong> Um advogado que atua em São Paulo, Campinas e Santos. Cada local será domicílio para as relações que lhe corresponderem.</p>
+        </div>
+
+        <h4>2.4.2 Caso Especial – Emancipado e Domicílio Profissional</h4>
+        <div class="box box-warning">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Questão Clássica FCC
+            </div>
+            <p><strong>Júlio, emancipado e com 17 anos, exerce atividade empresarial em São Paulo, mas reside com os pais em Belo Horizonte. Onde é seu domicílio para as relações profissionais?</strong></p>
+            <p><strong>Resolução:</strong> Para as relações concernentes à profissão, o domicílio é o lugar onde a profissão é exercida (art. 72). Júlio, sendo <span class="marker">emancipado</span>, tem capacidade plena (art. 5º, parágrafo único, do CC) e pode ter São Paulo como domicílio profissional.</p>
+            <p><strong>Elementos Chave:</strong></p>
+            <ol>
+                <li><strong>Emancipação</strong> → Capacidade plena.</li>
+                <li><strong>Domicílio profissional</strong> → Lugar do exercício da profissão (art. 72).</li>
+                <li><strong>Cada local de exercício</strong> → Constitui domicílio para as relações que lhe corresponderem.</li>
+            </ol>
+            <p><strong>Pegadinha da FCC:</strong> Não confundir a residência com os pais (Belo Horizonte) com o domicílio profissional (São Paulo). A emancipação confere capacidade plena, permitindo ao menor atuar profissionalmente com autonomia.</p>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+
+        <!-- QUADRO-RESUMO DOMICÍLIO -->
+        <div class="card" style="border-color:rgba(201,168,76,0.2);">
+            <div class="card-title" style="font-size:1.1rem;justify-content:center;border-bottom:1px solid var(--border-subtle);padding-bottom:0.5rem;margin-bottom:0.8rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                QUADRO-RESUMO – DOMICÍLIO
+            </div>
+            <div style="font-size:0.95rem;color:var(--text-secondary);">
+                <p><strong style="color:var(--gold-light);">DOMICÍLIO (arts. 70-78, CC)</strong></p>
+                <ul style="margin-left:1.2rem;">
+                    <li><strong style="color:var(--gold-light);">Pessoa Natural</strong>
+                        <ul>
+                            <li><span class="marker">Voluntário</span> (art. 70) → Residência + ânimo definitivo</li>
+                            <li><span class="marker">Plúrimo</span> (art. 71) → Diversas residências alternadas</li>
+                            <li><span class="marker">Profissional</span> (art. 72) → Local do exercício da profissão</li>
+                            <li><span class="marker">Necessário</span> (art. 76)
+                                <ul>
+                                    <li>Incapaz → Representante</li>
+                                    <li>Servidor público → Local das funções</li>
+                                    <li>Militar → Local do serviço</li>
+                                    <li>Marítimo → Matrícula do navio</li>
+                                    <li>Preso → Local da pena</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Pessoa Jurídica</strong> (art. 75)
+                        <ul>
+                            <li>União → DF</li>
+                            <li>Estado/Território → Capital</li>
+                            <li>Município → Administração municipal</li>
+                            <li>Demais → Diretoria/Administração ou estatuto</li>
+                            <li>§1º → Cada estabelecimento é domicílio para atos ali praticados</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box box-tip">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                DICAS DE PROVA – DOMICÍLIO
+            </div>
+            <ol>
+                <li><strong>Domicílio ≠ Residência</strong> – FCC adora essa distinção. Residência é mera permanência; domicílio exige ânimo definitivo.</li>
+                <li><strong>Emancipado tem capacidade plena</strong> – pode ter domicílio profissional independente dos pais (art. 72).</li>
+                <li><strong>Domicílio plúrimo</strong> – tanto pessoa natural (art. 71) quanto jurídica (art. 75, §1º) podem ter múltiplos domicílios.</li>
+                <li><strong>Domicílio necessário do incapaz</strong> – é o do representante, não o seu próprio (art. 76, I).</li>
+                <li><strong>Art. 75, §1º</strong> – cada estabelecimento da PJ é domicílio para os atos ali praticados, facilitando o acesso do consumidor à justiça.</li>
+            </ol>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 3                                                    -->
+    <!-- ============================================================ -->
+    <section id="cap3">
+        <span class="chapter-number">Capítulo 3</span>
+        <h2 class="chapter-title">Direitos da <span class="highlight">Personalidade</span></h2>
+        <p class="chapter-sub">Características, Irrenunciabilidade e Limitações</p>
+
+        <h3 id="cap3-1">3.1 Conceito e Características</h3>
+        <p>Os direitos da personalidade constituem um dos temas mais relevantes do Código Civil, especialmente após o advento do Código Civil de 2002, que dedicou um capítulo específico a eles (arts. 11 a 21).</p>
+        <div class="card">
+            <div class="card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Conceito
+            </div>
+            <p>Direitos da personalidade são direitos subjetivos que protegem os atributos essenciais da pessoa humana, garantindo sua dignidade, integridade e desenvolvimento.</p>
+        </div>
+        <div class="box box-important">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Fundamento Constitucional
+            </div>
+            <p>O art. 1º, III, da Constituição Federal estabelece a <strong>dignidade da pessoa humana</strong> como fundamento da República, servindo como base principiológica para todos os direitos da personalidade.</p>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Característica</th><th>Descrição</th><th>Consequência</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Inatos</strong></td><td>Nascem com a pessoa</td><td>Não dependem de reconhecimento estatal</td></tr>
+                    <tr><td><strong>Vitalícios</strong></td><td>Acompanham a pessoa durante toda a vida</td><td>Extinguem-se com a morte</td></tr>
+                    <tr><td><strong>Absolutos</strong></td><td>Oponíveis erga omnes</td><td>Todos devem respeitá-los</td></tr>
+                    <tr><td><strong>Indisponíveis</strong></td><td>Não podem ser negociados livremente</td><td>Proteção contra renúncia</td></tr>
+                    <tr><td><strong>Irrenunciáveis</strong></td><td>Não podem ser objeto de renúncia</td><td>Art. 11, caput</td></tr>
+                    <tr><td><strong>Intransmissíveis</strong></td><td>Não podem ser transferidos a terceiros</td><td>Art. 11, caput</td></tr>
+                    <tr><td><strong>Imprescritíveis</strong></td><td>Não se perdem com o tempo</td><td>Não há prescrição</td></tr>
+                    <tr><td><strong>Inalienáveis</strong></td><td>Não podem ser vendidos</td><td>Proteção da integridade pessoal</td></tr>
+                    <tr><td><strong>Inexpropriáveis</strong></td><td>Não podem ser tomados</td><td>Proteção contra o Estado</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <h3 id="cap3-2">3.2 Irrenunciabilidade e Intransmissibilidade</h3>
+
+        <h4>3.2.1 Fundamentação Legal</h4>
+        <p>O <span class="law">art. 11 do Código Civil</span> estabelece a regra fundamental:</p>
+        <blockquote>
+            "Art. 11. Com exceção dos casos previstos em lei, os direitos da personalidade são intransmissíveis e irrenunciáveis, não podendo o seu exercício sofrer limitação voluntária."
+        </blockquote>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Leitura Detalhada
+            </div>
+            <p>O artigo é claro ao estabelecer a <strong>regra geral</strong> (irrenunciabilidade e intransmissibilidade) e a <strong>exceção</strong> (casos previstos em lei). A interpretação literal do dispositivo é fundamental para concursos, especialmente FCC.</p>
+        </div>
+
+        <h4>3.2.2 Irrenunciabilidade</h4>
+        <p><strong>Conceito:</strong> O titular não pode abrir mão de seus direitos da personalidade, pois estes são inerentes à condição humana.</p>
+        <div class="box box-warning">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Questão Clássica de Concurso
+            </div>
+            <p><strong>Um contrato de namoro que renuncia aos efeitos de uma união estável é considerado nulo pela doutrina e jurisprudência. Por quê?</strong></p>
+            <p><strong>Resolução:</strong> Porque os direitos da personalidade são irrenunciáveis nos termos do art. 11 do Código Civil ("com exceção dos casos previstos em lei, os direitos da personalidade são intransmissíveis e irrenunciáveis, não podendo o seu exercício sofrer limitação voluntária").</p>
+            <p>O fundamento específico da nulidade é a <span class="marker">irrenunciabilidade</span> (e não a intransmissibilidade). O contrato tentaria fazer com que a pessoa abrisse mão de direitos inerentes à sua personalidade (relacionamento afetivo, reconhecimento de união estável), o que é vedado pela lei.</p>
+        </div>
+
+        <h4>3.2.3 Intransmissibilidade</h4>
+        <p><strong>Conceito:</strong> Os direitos da personalidade não podem ser transferidos a terceiros, seja por ato entre vivos (contrato) ou por causa mortis (herança).</p>
+        <div class="box box-tip">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                Exceções Legais
+            </div>
+            <p>A própria lei pode prever casos de transmissibilidade ou renúncia, mas são excepcionais e devem estar expressamente previstas.</p>
+            <ol>
+                <li><strong>Nome</strong> → pode ser objeto de transmissão em casos específicos (ex.: nome empresarial).</li>
+                <li><strong>Imagem</strong> → pode ser utilizada por terceiros mediante autorização (art. 20, CC).</li>
+                <li><strong>Corpo</strong> → doação de órgãos (Lei 9.434/97).</li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <h3 id="cap3-3">3.3 Limitações Voluntárias</h3>
+
+        <h4>3.3.1 Proibição Geral (art. 11)</h4>
+        <p>O art. 11, caput, proíbe limitação voluntária ao exercício dos direitos da personalidade:</p>
+        <blockquote>
+            "não podendo o seu exercício sofrer limitação voluntária"
+        </blockquote>
+        <p><strong>Interpretação:</strong> A pessoa não pode, por ato de vontade, restringir seus próprios direitos da personalidade. Isso significa que cláusulas contratuais que limitem esses direitos são, em regra, <strong>nulas</strong>.</p>
+
+        <h4>3.3.2 Exceções Legais</h4>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Art. 20 – Direito à Imagem
+            </div>
+            <blockquote style="margin:0 0 0.5rem;border-left-color:var(--blue);">
+                "Salvo se autorizadas, ou se necessárias à administração da justiça ou à manutenção da ordem pública, a divulgação de escritos, a transmissão da palavra, ou a publicação, a exposição ou a utilização da imagem de uma pessoa poderão ser proibidas a seu requerimento e sem prejuízo da indenização que couber, se lhe atingirem a honra, a boa fama ou a respeitabilidade, ou se se destinarem a fins comerciais."
+            </blockquote>
+            <p><strong>Análise:</strong> A pessoa pode autorizar o uso de sua imagem, o que constitui uma limitação voluntária permitida pela lei.</p>
+        </div>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Art. 15 – Disposição do Próprio Corpo
+            </div>
+            <blockquote style="margin:0;border-left-color:var(--blue);">
+                "Ninguém pode ser constrangido a submeter-se, com risco de vida, a tratamento médico ou a intervenção cirúrgica."
+            </blockquote>
+            <p style="margin-top:0.5rem;"><strong>Interpretação:</strong> Embora a regra geral proteja a integridade corporal, a lei permite a doação de órgãos, sangue, tecidos, etc., mediante consentimento (Lei 9.434/97), o que também constitui exceção à indisponibilidade absoluta.</p>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+
+        <!-- QUADRO-RESUMO DIREITOS DA PERSONALIDADE -->
+        <div class="card" style="border-color:rgba(201,168,76,0.2);">
+            <div class="card-title" style="font-size:1.1rem;justify-content:center;border-bottom:1px solid var(--border-subtle);padding-bottom:0.5rem;margin-bottom:0.8rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                QUADRO-RESUMO – DIREITOS DA PERSONALIDADE
+            </div>
+            <div style="font-size:0.95rem;color:var(--text-secondary);">
+                <p><strong style="color:var(--gold-light);">DIREITOS DA PERSONALIDADE (arts. 11-21, CC)</strong></p>
+                <ul style="margin-left:1.2rem;">
+                    <li><strong style="color:var(--gold-light);">Características</strong>
+                        <ul>
+                            <li>Inatos, Vitalícios, Absolutos, Indisponíveis</li>
+                            <li>Irrenunciáveis, Intransmissíveis, Imprescritíveis, Inalienáveis, Inexpropriáveis</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Exceções à Irrenunciabilidade (art. 11)</strong>
+                        <ul>
+                            <li>Casos previstos em lei</li>
+                            <li>Ex.: uso da imagem (art. 20), nome empresarial</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Exercício</strong>
+                        <ul>
+                            <li>Regra: não pode sofrer limitação voluntária</li>
+                            <li>Exceções: autorização para uso de imagem, doação de órgãos</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Tutela Jurídica</strong>
+                        <ul>
+                            <li>Ação de indenização por danos à personalidade</li>
+                            <li>Ação de proibição (art. 20)</li>
+                            <li>Ação de reparação por danos morais</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box box-tip">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                DICAS DE PROVA – DIREITOS DA PERSONALIDADE
+            </div>
+            <ol>
+                <li><strong>"Com exceção dos casos previstos em lei"</strong> – decore essa expressão do art. 11. A FCC cobra literalidade!</li>
+                <li><strong>Irrenunciabilidade ≠ Intransmissibilidade</strong> – o contrato de namoro que renuncia aos efeitos da união estável é nulo por <strong>irrenunciabilidade</strong> (não por intransmissibilidade).</li>
+                <li><strong>Imagem</strong> – pode ser autorizada (art. 20), mas a autorização não torna o direito alienável em caráter absoluto.</li>
+                <li><strong>Corpo</strong> – regra: indisponível; exceção: doação de órgãos (Lei 9.434/97).</li>
+                <li><strong>Nome</strong> – regra: intransmissível e irrenunciável; exceção: nome empresarial pode ser transmitido.</li>
+            </ol>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 4                                                    -->
+    <!-- ============================================================ -->
+    <section id="cap4">
+        <span class="chapter-number">Capítulo 4</span>
+        <h2 class="chapter-title">Negócio <span class="highlight">Jurídico</span></h2>
+        <p class="chapter-sub">Conceito, Requisitos de Validade, Nulidade e Anulabilidade</p>
+
+        <h3 id="cap4-1">4.1 Conceito e Estrutura</h3>
+
+        <h4>4.1.1 Conceito de Negócio Jurídico</h4>
+        <div class="card">
+            <div class="card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                Conceito
+            </div>
+            <p>O negócio jurídico é a manifestação de vontade destinada a produzir efeitos jurídicos, admitidos pelo ordenamento, conforme a intenção de seu autor.</p>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Elemento</th><th>Descrição</th><th>Fundamento</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Existência</strong></td><td>Manifestação de vontade</td><td>Sujeito, objeto, forma</td></tr>
+                    <tr><td><strong>Validade</strong></td><td>Requisitos do art. 104</td><td>Agente, objeto, forma</td></tr>
+                    <tr><td><strong>Eficácia</strong></td><td>Produção de efeitos</td><td>Condição, termo, encargo</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- DIAGRAMA: Teoria do Fato Jurídico (CORRIGIDO) -->
+        <div class="diagram-container">
+            <svg viewBox="0 0 820 400" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <style>
+                        .diag-box-bg { fill: #25202e; stroke: #3a3348; stroke-width: 1.5; rx: 8; }
+                        .diag-box-gold { fill: #2a242f; stroke: #c9a84c; stroke-width: 1.5; rx: 8; }
+                        .diag-line { stroke: #4a4058; stroke-width: 1.5; }
+                        .diag-text-title { font-family: 'Segoe UI', system-ui, sans-serif; fill: #e8ddd0; font-size: 14px; font-weight: 600; }
+                        .diag-text-sub { font-family: 'Segoe UI', system-ui, sans-serif; fill: #c5b9a8; font-size: 12px; }
+                        .diag-text-sm { font-family: 'Segoe UI', system-ui, sans-serif; fill: #c5b9a8; font-size: 11px; }
+                    </style>
+                </defs>
+
+                <!-- Raiz -->
+                <rect x="260" y="20" width="300" height="44" class="diag-box-gold" />
+                <text x="410" y="48" text-anchor="middle" class="diag-text-title" fill="#c9a84c">FATO JURÍDICO (lato sensu)</text>
+
+                <!-- Linhas da raiz -->
+                <line x1="310" y1="64" x2="190" y2="130" class="diag-line" />
+                <line x1="410" y1="64" x2="410" y2="130" class="diag-line" />
+                <line x1="510" y1="64" x2="630" y2="130" class="diag-line" />
+
+                <!-- Ramo esquerdo: Fato jurídico em sentido estrito -->
+                <foreignObject x="40" y="130" width="300" height="60">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#25202e; border:1.5px solid #8fc9ad; border-radius:8px; padding:8px; color:#e8ddd0; font-family:'Segoe UI',sans-serif; font-size:14px; font-weight:600; text-align:center; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; word-wrap:break-word; overflow-wrap:break-word;">
+                        FATO JURÍDICO EM SENTIDO ESTRITO
+                        <span style="font-size:12px; font-weight:400; color:#c5b9a8; display:block;">Efeitos independentes da vontade</span>
+                    </div>
+                </foreignObject>
+
+                <!-- Linhas do ramo esquerdo -->
+                <line x1="190" y1="190" x2="110" y2="250" class="diag-line" />
+                <line x1="190" y1="190" x2="270" y2="250" class="diag-line" />
+
+                <!-- Subnós do ramo esquerdo -->
+                <foreignObject x="30" y="250" width="160" height="50">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#25202e; border:1px solid #3a3348; border-radius:6px; padding:6px; color:#c5b9a8; font-family:'Segoe UI',sans-serif; font-size:12px; text-align:center; height:100%; display:flex; align-items:center; justify-content:center; word-wrap:break-word; overflow-wrap:break-word;">
+                        Acontecimentos<br/>naturais
+                    </div>
+                </foreignObject>
+                <foreignObject x="190" y="250" width="160" height="50">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#25202e; border:1px solid #3a3348; border-radius:6px; padding:6px; color:#c5b9a8; font-family:'Segoe UI',sans-serif; font-size:12px; text-align:center; height:100%; display:flex; align-items:center; justify-content:center; word-wrap:break-word; overflow-wrap:break-word;">
+                        Acontecimentos humanos<br/>involuntários
+                    </div>
+                </foreignObject>
+
+                <!-- Ramo direito: Ato Jurídico -->
+                <foreignObject x="480" y="130" width="300" height="60">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#25202e; border:1.5px solid #e8d48a; border-radius:8px; padding:8px; color:#e8ddd0; font-family:'Segoe UI',sans-serif; font-size:14px; font-weight:600; text-align:center; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; word-wrap:break-word; overflow-wrap:break-word;">
+                        ATO JURÍDICO
+                        <span style="font-size:12px; font-weight:400; color:#c5b9a8; display:block;">Efeitos decorrentes da vontade humana</span>
+                    </div>
+                </foreignObject>
+
+                <!-- Linhas do ramo direito -->
+                <line x1="630" y1="190" x2="550" y2="250" class="diag-line" />
+                <line x1="630" y1="190" x2="710" y2="250" class="diag-line" />
+
+                <!-- Subnós do ramo direito -->
+                <foreignObject x="460" y="250" width="180" height="60">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#25202e; border:1px solid #e8d48a; border-radius:6px; padding:6px; color:#e8ddd0; font-family:'Segoe UI',sans-serif; font-size:12px; text-align:center; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; word-wrap:break-word; overflow-wrap:break-word;">
+                        <span style="font-weight:600; color:#e8d48a;">Lícitos</span>
+                        <span style="font-size:11px; color:#c5b9a8;">Negócio Jurídico /<br/>Ato em sentido estrito</span>
+                    </div>
+                </foreignObject>
+                <foreignObject x="640" y="250" width="180" height="60">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="background:#25202e; border:1px solid #b55a5a; border-radius:6px; padding:6px; color:#e8ddd0; font-family:'Segoe UI',sans-serif; font-size:12px; text-align:center; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; word-wrap:break-word; overflow-wrap:break-word;">
+                        <span style="font-weight:600; color:#b55a5a;">Ilícitos (art. 186)</span>
+                        <span style="font-size:11px; color:#c5b9a8;">Responsabilidade civil</span>
+                    </div>
+                </foreignObject>
+            </svg>
+            <p class="diagram-caption">Teoria do Fato Jurídico</p>
+        </div>
+
+        <hr>
+
+        <h3 id="cap4-2">4.2 Requisitos de Validade do Negócio Jurídico</h3>
+
+        <h4>4.2.1 Fundamentação Legal – Art. 104</h4>
+        <p>O <span class="law">art. 104 do Código Civil</span> estabelece os requisitos de validade do negócio jurídico:</p>
+        <blockquote>
+            "Art. 104. A validade do negócio jurídico requer:<br>
+            I – agente capaz;<br>
+            II – objeto lícito, possível, determinado ou determinável;<br>
+            III – forma prescrita ou não defesa em lei."
+        </blockquote>
+
+        <div class="comp-grid">
+            <div class="comp-item">
+                <h5>Agente Capaz (Inciso I)</h5>
+                <p>O agente deve ter capacidade para praticar o ato, ou seja, deve estar no pleno gozo de seus direitos e possuir discernimento para manifestar vontade válida.</p>
+                <p><strong>Capacidade de Direito:</strong> Aptidão para titularizar direitos e deveres (art. 1º, CC).</p>
+                <p><strong>Capacidade de Fato:</strong> Aptidão para exercer pessoalmente os direitos (art. 3º e 4º, CC).</p>
+            </div>
+            <div class="comp-item">
+                <h5>Objeto Lícito, Possível, Determinado ou Determinável (Inciso II)</h5>
+                <ul>
+                    <li><strong>Lícito:</strong> Não contrário à lei, à moral ou aos bons costumes.</li>
+                    <li><strong>Possível:</strong> Física ou juridicamente possível.</li>
+                    <li><strong>Determinado ou Determinável:</strong> Especificado com precisão ou identificável posteriormente.</li>
+                </ul>
+            </div>
+            <div class="comp-item" style="grid-column:1/2;">
+                <h5>Forma Prescrita ou Não Defesa em Lei (Inciso III)</h5>
+                <ul>
+                    <li><strong>Forma prescrita:</strong> Quando a lei exige determinada forma. Ex.: compra e venda de imóvel (art. 108, CC) → escritura pública.</li>
+                    <li><strong>Forma não defesa:</strong> Quando a lei não exige forma especial. Ex.: contrato de prestação de serviços.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box box-warning">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                OBSERVAÇÃO ATUALIZADA
+            </div>
+            <p>Com o Estatuto da Pessoa com Deficiência (Lei 13.146/2015), houve alteração significativa no regime de incapacidades. O art. 3º foi alterado para estabelecer que <strong>todos são capazes</strong> para os atos da vida civil, ressalvadas as hipóteses de curatela. O art. 4º também foi alterado, reduzindo significativamente as hipóteses de incapacidade relativa.</p>
+        </div>
+
+        <hr>
+
+        <h3 id="cap4-3">4.3 Nulidade e Anulabilidade</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Aspecto</th><th>Nulidade (arts. 166-168)</th><th>Anulabilidade (arts. 171-179)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Conceito</strong></td><td>Sanção mais grave, vício insanável</td><td>Sanção menos grave, vício sanável</td></tr>
+                    <tr><td><strong>Vícios</strong></td><td>Art. 166 (I a IV)</td><td>Art. 171, I e II</td></tr>
+                    <tr><td><strong>Preclusão</strong></td><td>Não se convalesce</td><td>Pode convalescer</td></tr>
+                    <tr><td><strong>Prazo</strong></td><td>Não tem prazo para arguição</td><td>Prazo decadencial de 4 anos (art. 179)</td></tr>
+                    <tr><td><strong>Caráter</strong></td><td>Absoluto (interesse público)</td><td>Relativo (interesse privado)</td></tr>
+                    <tr><td><strong>Alegação</strong></td><td>Pode ser de ofício pelo juiz</td><td>Só pode ser alegada pela parte</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-important">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Correlação Art. 104 × Art. 166
+            </div>
+            <div class="table-wrap" style="margin:0.5rem 0 0;">
+                <table style="font-size:0.92rem;">
+                    <thead>
+                        <tr><th>Art. 104 (Requisitos)</th><th>Art. 166 (Nulidades)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>I – Agente capaz</td><td>I – Pessoa absolutamente incapaz</td></tr>
+                        <tr><td>II – Objeto lícito, possível, determinado</td><td>II – Objeto ilícito, impossível, indeterminável</td></tr>
+                        <tr><td>II – Objeto lícito</td><td>III – Motivo ilícito</td></tr>
+                        <tr><td>III – Forma prescrita ou não defesa</td><td>IV – Forma prescrita em lei não observada</td></tr>
+                        <tr><td>III – Forma prescrita</td><td>V – Solenidade essencial preterida</td></tr>
+                        <tr><td>–</td><td>VI – Fraude à lei imperativa</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="box box-tip">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                Convalidação (art. 172)
+            </div>
+            <blockquote style="margin:0 0 0.3rem;border-left-color:var(--green);">
+                "Art. 172. O negócio anulável pode ser confirmado pelas partes, salvo direito de terceiro."
+            </blockquote>
+            <p><strong>Formas de Convalidação:</strong></p>
+            <ol>
+                <li><strong>Confirmação expressa</strong> – manifestação clara de vontade.</li>
+                <li><strong>Confirmação tácita</strong> – execução voluntária do negócio (art. 173).</li>
+            </ol>
+            <p><strong>Prazo para Anulação (art. 179):</strong> "Quando a lei dispuser que determinado ato é anulável, sem estabelecer prazo para pleitear-se a anulação, será este de quatro anos, contado da data da conclusão do ato."</p>
+        </div>
+
+        <hr>
+
+        <h3 id="cap4-4">4.4 Atos Ilícitos e Excludentes de Ilicitude</h3>
+
+        <h4>4.4.1 Conceito de Ato Ilícito (art. 186)</h4>
+        <blockquote>
+            "Art. 186. Aquele que, por ação ou omissão voluntária, negligência ou imprudência, violar direito e causar dano a outrem, ainda que exclusivamente moral, comete ato ilícito."
+        </blockquote>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Elementos do Ato Ilícito
+            </div>
+            <ol>
+                <li>Ação ou omissão voluntária (conduta)</li>
+                <li>Culpa (negligência, imprudência, imperícia) ou dolo</li>
+                <li>Violação de direito</li>
+                <li>Dano (material ou moral)</li>
+                <li>Nexo causal entre a conduta e o dano</li>
+            </ol>
+        </div>
+
+        <h4>4.4.2 Excludentes de Ilicitude (art. 188)</h4>
+        <blockquote>
+            "Art. 188. Não constituem atos ilícitos:<br>
+            I – os praticados em legítima defesa ou no exercício regular de um direito reconhecido;<br>
+            II – a deterioração ou destruição da coisa alheia, ou a lesão a pessoa, a fim de remover perigo iminente.<br>
+            Parágrafo único. No caso do inciso II, o ato será legítimo, somente quando as circunstâncias o tornarem absolutamente necessário, desde que não exceda os limites do indispensável para a remoção do perigo."
+        </blockquote>
+
+        <div class="comp-grid">
+            <div class="comp-item">
+                <h5>Legítima Defesa (art. 188, I)</h5>
+                <p>Reação a agressão injusta, atual ou iminente. Deve ser proporcional à agressão.</p>
+                <p><strong>Exemplo:</strong> pessoa que se defende de um assalto.</p>
+            </div>
+            <div class="comp-item">
+                <h5>Exercício Regular de Direito (art. 188, I)</h5>
+                <p>Exercício de direito reconhecido pela lei, dentro dos limites legais.</p>
+                <p><strong>Exemplo:</strong> cobrança judicial de dívida.</p>
+            </div>
+            <div class="comp-item" style="grid-column:1/2;">
+                <h5>Estado de Necessidade (art. 188, II)</h5>
+                <p>Ação para remover perigo iminente, absolutamente necessária, sem exceder os limites do indispensável.</p>
+                <p><strong>Exemplo:</strong> pessoa que quebra a janela de uma casa para salvar alguém de um incêndio.</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3 id="cap4-5">4.5 Abuso de Direito (art. 187)</h3>
+        <blockquote>
+            "Art. 187. Também comete ato ilícito o titular de um direito que, ao exercê-lo, excede manifestamente os limites impostos pelo seu fim econômico ou social, pela boa-fé ou pelos bons costumes."
+        </blockquote>
+        <div class="box box-important">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Elementos do Abuso de Direito
+            </div>
+            <ol>
+                <li><strong>Existência de um direito</strong> – o sujeito tem um direito subjetivo.</li>
+                <li><strong>Exercício do direito</strong> – atuação dentro do que aparentemente lhe é permitido.</li>
+                <li><strong>Excesso manifesto</strong> – ultrapassagem dos limites do fim econômico/social, boa-fé ou bons costumes.</li>
+            </ol>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Situação</th><th>Direito exercido</th><th>Excesso</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Proprietário que cerca sua terra</td><td>Direito de propriedade</td><td>Impede acesso a praia (tradição de uso público)</td></tr>
+                    <tr><td>Cobrador que expõe devedor</td><td>Direito de cobrar</td><td>Exposição vexatória, constrangimento</td></tr>
+                    <tr><td>Empresa que demite empregado</td><td>Direito potestativo</td><td>Discriminação</td></tr>
+                    <tr><td>Dono de imóvel que constrói muro</td><td>Direito de construir</td><td>Impede ventilação/iluminação do vizinho</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+
+        <!-- QUADRO-RESUMO NEGÓCIO JURÍDICO -->
+        <div class="card" style="border-color:rgba(201,168,76,0.2);">
+            <div class="card-title" style="font-size:1.1rem;justify-content:center;border-bottom:1px solid var(--border-subtle);padding-bottom:0.5rem;margin-bottom:0.8rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                QUADRO-RESUMO – NEGÓCIO JURÍDICO
+            </div>
+            <div style="font-size:0.95rem;color:var(--text-secondary);">
+                <ul style="margin-left:1.2rem;">
+                    <li><strong style="color:var(--gold-light);">Requisitos de Validade (art. 104)</strong>
+                        <ul>
+                            <li>Agente capaz</li>
+                            <li>Objeto lícito, possível, determinado/determinável</li>
+                            <li>Forma prescrita ou não defesa em lei</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Invalidade</strong>
+                        <ul>
+                            <li><span class="marker">Nulidade</span> (art. 166) – Vício grave: incapacidade absoluta, objeto ilícito, forma prescrita não observada, fraude à lei.</li>
+                            <li><span class="marker">Anulabilidade</span> (art. 171) – Vício menos grave: incapacidade relativa, vícios de consentimento (erro, dolo, coação, etc.).</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Atos Ilícitos</strong>
+                        <ul>
+                            <li>Art. 186 – Ato ilícito propriamente dito</li>
+                            <li>Art. 187 – Abuso de direito</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Excludentes de Ilicitude (art. 188)</strong>
+                        <ul>
+                            <li>Legítima defesa</li>
+                            <li>Exercício regular de direito</li>
+                            <li>Estado de necessidade</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box box-tip">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                DICAS DE PROVA – NEGÓCIO JURÍDICO
+            </div>
+            <ol>
+                <li><strong>Art. 104</strong> – decore os três incisos: agente capaz, objeto lícito/possível/determinado ou determinável, forma prescrita ou não defesa em lei.</li>
+                <li><strong>Nulidade (art. 166) × Anulabilidade (art. 171)</strong> – a FCC cobra muito essa distinção. Nulidade: vício grave, insanável, pode ser de ofício. Anulabilidade: vício menos grave, sanável, prazo decadencial de 4 anos.</li>
+                <li><strong>Estado de necessidade não é ato ilícito</strong> – pegadinha clássica: muitas questões consideram o estado de necessidade como ilícito. Na verdade, é excludente (art. 188, II).</li>
+                <li><strong>Abuso de direito é ato ilícito</strong> – art. 187. O titular de um direito que o exerce com excesso comete ato ilícito.</li>
+                <li><strong>Legítima defesa e exercício regular de direito</strong> – ambas são excludentes, mas o exercício regular deve ser dentro dos limites legais.</li>
+                <li><strong>Convalidação do negócio anulável</strong> – art. 172: pode ser confirmado pelas partes, salvo direito de terceiro.</li>
+            </ol>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 5                                                    -->
+    <!-- ============================================================ -->
+    <section id="cap5">
+        <span class="chapter-number">Capítulo 5</span>
+        <h2 class="chapter-title">Responsabilidade <span class="highlight">Civil</span></h2>
+        <p class="chapter-sub">Conceito, Fundamentos, Contratual e Extracontratual</p>
+
+        <h3 id="cap5-1">5.1 Conceito e Fundamentos</h3>
+
+        <h4>5.1.1 Conceito</h4>
+        <div class="card">
+            <div class="card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Conceito
+            </div>
+            <p>A responsabilidade civil é o dever de reparar o dano causado a outrem em decorrência de uma conduta (ação ou omissão) contrária ao ordenamento jurídico.</p>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Fundamento</th><th>Descrição</th><th>Fundamento Legal</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Teoria Subjetiva</strong></td><td>Exige culpa (dolo ou negligência)</td><td>Art. 186, CC</td></tr>
+                    <tr><td><strong>Teoria Objetiva</strong></td><td>Independe de culpa (risco)</td><td>Art. 927, parágrafo único, CC</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>5.1.2 Evolução Histórica</h4>
+        <p>A responsabilidade civil evoluiu da teoria da culpa (subjetiva) para a teoria do risco (objetiva) em determinadas situações, especialmente quando a atividade desenvolvida envolve risco para terceiros.</p>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Marcos Legais
+            </div>
+            <ul>
+                <li><strong>Código Civil de 1916</strong> → Predominância da teoria subjetiva.</li>
+                <li><strong>Código Civil de 2002</strong> → Manutenção da teoria subjetiva como regra, mas com introdução expressa da teoria objetiva no parágrafo único do art. 927.</li>
+                <li><strong>Código de Defesa do Consumidor (Lei 8.078/90)</strong> → Responsabilidade objetiva do fornecedor.</li>
+                <li><strong>Lei 6.494/77</strong> → Responsabilidade objetiva do Estado.</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h3 id="cap5-2">5.2 Responsabilidade Contratual e Extracontratual</h3>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Aspecto</th><th>Contratual</th><th>Extracontratual (Aquiliana)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Origem</strong></td><td>Descumprimento de contrato</td><td>Violação de dever geral de não causar dano</td></tr>
+                    <tr><td><strong>Fundamento</strong></td><td>Arts. 389, 475, CC</td><td>Arts. 186, 927, CC</td></tr>
+                    <tr><td><strong>Dano</strong></td><td>Inadimplemento</td><td>Conduta ilícita</td></tr>
+                    <tr><td><strong>Culpa</strong></td><td>Presumida</td><td>Deve ser provada (regra)</td></tr>
+                    <tr><td><strong>Prazo prescricional</strong></td><td>Varia conforme o contrato</td><td>3 anos (art. 206, §3º, V, CC)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>5.2.2 Responsabilidade Extracontratual (Aquiliana)</h4>
+        <p><span class="law">Art. 927 do Código Civil:</span></p>
+        <blockquote>
+            "Art. 927. Aquele que, por ato ilícito (arts. 186 e 187), causar dano a outrem, fica obrigado a repará-lo.<br>
+            Parágrafo único. Haverá obrigação de reparar o dano, independentemente de culpa, nos casos especificados em lei, ou quando a atividade normalmente desenvolvida pelo autor do dano implicar, por sua natureza, risco para os direitos de outrem."
+        </blockquote>
+
+        <h4>5.2.3 O Dever de Indenizar Independe de Contrato</h4>
+        <div class="box box-warning">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Questão Clássica de Concurso
+            </div>
+            <p><strong>O dever de indenizar por ato ilícito exige vínculo contratual entre as partes?</strong></p>
+            <p><strong>Resposta:</strong> Não, o dever de indenizar <span class="marker">independe de contrato</span>, conforme arts. 186 e 927 do Código Civil: aquele que, por ação ou omissão voluntária, negligência ou imprudência, violar direito e causar dano a outrem, fica obrigado a repará-lo.</p>
+        </div>
+
+        <div class="comp-grid">
+            <div class="comp-item">
+                <h5>Responsabilidade Aquiliana (Extracontratual)</h5>
+                <ul>
+                    <li>Fundamentada no dever geral de não causar dano a outrem.</li>
+                    <li>Não exige relação jurídica prévia entre as partes.</li>
+                    <li>Exemplos: acidente de trânsito, dano causado por animal, lesão corporal.</li>
+                </ul>
+            </div>
+            <div class="comp-item">
+                <h5>Responsabilidade Contratual</h5>
+                <ul>
+                    <li>Fundamentada no descumprimento de obrigação assumida.</li>
+                    <li>Exige relação contratual prévia.</li>
+                    <li>Exemplos: inadimplemento de contrato de locação, descumprimento de contrato de prestação de serviços.</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <h3 id="cap5-3">5.3 Requisitos da Responsabilidade Civil</h3>
+
+        <h4>5.3.1 Conduta (Ação ou Omissão)</h4>
+        <div class="comp-grid">
+            <div class="comp-item">
+                <h5>Ação</h5>
+                <p>Comportamento positivo, fazer algo.</p>
+                <p><strong>Exemplo:</strong> Atropelar alguém, difamar, invadir propriedade.</p>
+            </div>
+            <div class="comp-item">
+                <h5>Omissão</h5>
+                <p>Comportamento negativo, deixar de fazer algo que tinha o dever de fazer.</p>
+                <p><strong>Exemplo:</strong> Não prestar socorro, não cuidar de animal que causa dano.</p>
+            </div>
+        </div>
+
+        <h4>5.3.2 Culpa</h4>
+        <p><strong>Conceito:</strong> A culpa é a falta de diligência que o agente deveria ter empregado na conduta.</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Espécie</th><th>Conceito</th><th>Exemplo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Dolo</strong></td><td>Intenção de causar o dano</td><td>Pessoa que atropela alguém de propósito</td></tr>
+                    <tr><td><strong>Culpa lato sensu</strong></td><td>Negligência, imprudência ou imperícia</td><td>–</td></tr>
+                    <tr><td><strong>Negligência</strong></td><td>Omissão, descuido</td><td>Motorista que não freia a tempo</td></tr>
+                    <tr><td><strong>Imprudência</strong></td><td>Ação precipitada, sem cautela</td><td>Motorista que ultrapassa em local proibido</td></tr>
+                    <tr><td><strong>Imperícia</strong></td><td>Falta de habilidade técnica</td><td>Médico que realiza cirurgia sem treinamento</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>5.3.3 Dano</h4>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Classificação do Dano
+            </div>
+            <ul>
+                <li><strong>Dano material</strong> – Prejuízo econômico, perda ou diminuição patrimonial. Ex.: lucros cessantes, danos emergentes.</li>
+                <li><strong>Dano moral</strong> – Lesão a direitos da personalidade, dor, sofrimento. Ex.: ofensa à honra, imagem, intimidade.</li>
+                <li><strong>Dano estético</strong> – Lesão à aparência física. Ex.: cicatrizes, deformidades.</li>
+                <li><strong>Dano existencial</strong> – Lesão ao projeto de vida. Ex.: impedimento de exercer atividade profissional.</li>
+            </ul>
+        </div>
+
+        <h4>5.3.4 Nexo Causal</h4>
+        <p><strong>Conceito:</strong> O nexo causal é o vínculo entre a conduta do agente e o dano sofrido pela vítima.</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Teoria</th><th>Conceito</th><th>Aplicação</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Equivalência dos antecedentes</strong></td><td>Toda condição é causa</td><td>Pouco usada no Direito Civil</td></tr>
+                    <tr><td><strong>Causa adequada</strong></td><td>Só é causa o antecedente que concorre para o resultado</td><td>Adotada pelo CC/02</td></tr>
+                    <tr><td><strong>Causalidade direta e imediata</strong></td><td>Só o que determina diretamente o dano</td><td>Restritiva</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+
+        <!-- QUADRO-RESUMO RESPONSABILIDADE CIVIL -->
+        <div class="card" style="border-color:rgba(201,168,76,0.2);">
+            <div class="card-title" style="font-size:1.1rem;justify-content:center;border-bottom:1px solid var(--border-subtle);padding-bottom:0.5rem;margin-bottom:0.8rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                QUADRO-RESUMO – RESPONSABILIDADE CIVIL
+            </div>
+            <div style="font-size:0.95rem;color:var(--text-secondary);">
+                <ul style="margin-left:1.2rem;">
+                    <li><strong style="color:var(--gold-light);">Por Culpa – Subjetiva (art. 186)</strong>
+                        <ul>
+                            <li>Conduta (ação/omissão voluntária)</li>
+                            <li>Culpa (negligência, imprudência, imperícia)</li>
+                            <li>Violação de direito</li>
+                            <li>Dano</li>
+                            <li>Nexo causal</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Sem Culpa – Objetiva (art. 927, parágrafo único)</strong>
+                        <ul>
+                            <li>Casos especificados em lei: CDC (fornecedor), Estado (art. 37, §6º, CF), dano ambiental</li>
+                            <li>Atividade de risco</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Responsabilidade Contratual</strong> – Descumprimento de obrigação contratual (art. 389)</li>
+                    <li><strong style="color:var(--gold-light);">Responsabilidade Extracontratual</strong> – Violação de dever geral de não causar dano (art. 186)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box box-tip">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                DICAS DE PROVA – RESPONSABILIDADE CIVIL
+            </div>
+            <ol>
+                <li><strong>O dever de indenizar independe de contrato</strong> – art. 186. Responsabilidade aquiliana não exige vínculo contratual.</li>
+                <li><strong>Responsabilidade objetiva</strong> – art. 927, parágrafo único: atividade de risco ou casos especificados em lei.</li>
+                <li><strong>Culpa presumida na responsabilidade contratual</strong> – o devedor deve provar que não houve culpa.</li>
+                <li><strong>Prazo prescricional</strong> – responsabilidade extracontratual: 3 anos (art. 206, §3º, V, CC).</li>
+                <li><strong>Excludentes de responsabilidade</strong> – caso fortuito, força maior, culpa exclusiva da vítima, fato de terceiro.</li>
+            </ol>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 6                                                    -->
+    <!-- ============================================================ -->
+    <section id="cap6">
+        <span class="chapter-number">Capítulo 6</span>
+        <h2 class="chapter-title">Curatela e Medidas de <span class="highlight">Apoio</span></h2>
+        <p class="chapter-sub">Conceito, Finalidade e Distinções Fundamentais</p>
+
+        <h3 id="cap6-1">6.1 Conceito e Finalidade da Curatela</h3>
+
+        <h4>6.1.1 Conceito</h4>
+        <div class="card">
+            <div class="card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                Conceito
+            </div>
+            <p>A curatela é uma medida de proteção destinada a pessoas que, embora maiores, não têm plena capacidade para os atos da vida civil, necessitando de um curador para representá-las ou assisti-las em determinados atos.</p>
+            <p><strong>Fundamento Legal:</strong> Art. 1.767 a 1.783 do Código Civil (com as alterações do Estatuto da Pessoa com Deficiência - Lei 13.146/2015).</p>
+        </div>
+
+        <h4>6.1.2 Hipóteses de Curatela (art. 1.767, com alterações)</h4>
+        <blockquote>
+            "Art. 1.767. Estão sujeitos à curatela:<br>
+            I – aqueles que, por enfermidade ou deficiência mental, não tiverem o necessário discernimento para os atos da vida civil;<br>
+            II – aqueles que, por outra causa duradoura, não puderem exprimir a sua vontade;<br>
+            III – os pródigos."
+        </blockquote>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Hipótese</th><th>Descrição</th><th>Exemplo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Enfermidade ou deficiência mental</strong></td><td>Falta de discernimento</td><td>Demência avançada, Alzheimer</td></tr>
+                    <tr><td><strong>Causa duradoura</strong></td><td>Impossibilidade de exprimir vontade</td><td>Coma, estado vegetativo</td></tr>
+                    <tr><td><strong>Pródigos</strong></td><td>Gastadores descontrolados</td><td>Pessoa que dilapida patrimônio</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>6.1.3 Aplicação Prática</h4>
+        <div class="box box-warning">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Questão Clássica de Concurso
+            </div>
+            <p><strong>Sueli tem Alzheimer precoce, faculdades parcialmente preservadas, mas precisa de representante para gerir patrimônio. Qual a medida jurídica adequada?</strong></p>
+            <p><strong>Resolução:</strong> A <span class="marker">curatela</span>, com nomeação de curador(es), considerando-a relativamente incapaz para os atos da vida civil.</p>
+            <p><strong>Análise:</strong></p>
+            <ul>
+                <li>A curatela é adequada para pessoas com faculdades parcialmente preservadas.</li>
+                <li>O curador atuará como representante para os atos patrimoniais.</li>
+                <li>A curatela pode ser limitada a determinados atos (curatela restrita).</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h3 id="cap6-2">6.2 Tomada de Decisão Apoiada</h3>
+
+        <h4>6.2.1 Conceito (art. 1.783-A, CC)</h4>
+        <blockquote>
+            "Art. 1.783-A. A tomada de decisão apoiada é o processo pelo qual a pessoa com deficiência elege pelo menos 2 (duas) pessoas idôneas, com as quais mantenha vínculos e que gozem de sua confiança, para prestar-lhe apoio na tomada de decisão sobre atos da vida civil, fornecendo-lhes os elementos e informações necessários para que possa exercer sua capacidade."
+        </blockquote>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Características da Tomada de Decisão Apoiada
+            </div>
+            <ol>
+                <li><strong>Voluntariedade</strong> – a pessoa escolhe livremente os apoiadores.</li>
+                <li><strong>Autonomia</strong> – a pessoa mantém a capacidade plena.</li>
+                <li><strong>Apoio</strong> – os apoiadores auxiliam na tomada de decisões.</li>
+                <li><strong>Mínimo de 2 apoiadores</strong> – para garantir pluralidade e evitar influência indevida.</li>
+            </ol>
+        </div>
+
+        <h4>6.2.2 Distinção entre Curatela e Tomada de Decisão Apoiada</h4>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Aspecto</th><th>Curatela</th><th>Tomada de Decisão Apoiada</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Capacidade</strong></td><td>Relativamente incapaz</td><td>Capaz</td></tr>
+                    <tr><td><strong>Atuação</strong></td><td>Representação ou assistência</td><td>Apoio na tomada de decisões</td></tr>
+                    <tr><td><strong>Escolha</strong></td><td>Feita pelo juiz</td><td>Feita pela própria pessoa</td></tr>
+                    <tr><td><strong>Ato jurídico</strong></td><td>Curador pratica atos em nome da pessoa</td><td>Pessoa pratica atos com auxílio</td></tr>
+                    <tr><td><strong>Autonomia</strong></td><td>Limitada</td><td>Mantida integralmente</td></tr>
+                    <tr><td><strong>Fundamento</strong></td><td>Art. 1.767</td><td>Art. 1.783-A</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <h3 id="cap6-3">6.3 Tutela e Curatela: Distinções Fundamentais</h3>
+
+        <h4>6.3.1 Tutela</h4>
+        <div class="card">
+            <div class="card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                Conceito
+            </div>
+            <p>A tutela é a medida de proteção destinada a menores que não estão sob o poder familiar (órfãos, abandonados, etc.).</p>
+            <p><strong>Fundamento Legal:</strong> Arts. 1.728 a 1.766 do Código Civil.</p>
+        </div>
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Características da Tutela
+            </div>
+            <ol>
+                <li><strong>Sujeito</strong> – menores de idade.</li>
+                <li><strong>Finalidade</strong> – representação integral do menor.</li>
+                <li><strong>Nomeação</strong> – feita pelo juiz ou pelos pais em testamento.</li>
+                <li><strong>Extinção</strong> – quando o menor completa 18 anos ou quando o poder familiar é restabelecido.</li>
+            </ol>
+        </div>
+
+        <h4>6.3.2 Comparativo Tutela × Curatela</h4>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Aspecto</th><th>Tutela</th><th>Curatela</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Sujeito</strong></td><td>Menor (absolutamente incapaz)</td><td>Maior (relativamente incapaz)</td></tr>
+                    <tr><td><strong>Finalidade</strong></td><td>Representação integral</td><td>Representação ou assistência</td></tr>
+                    <tr><td><strong>Natureza</strong></td><td>Proteção de menor</td><td>Proteção de maior incapaz</td></tr>
+                    <tr><td><strong>Fundamento</strong></td><td>Falta de poder familiar</td><td>Incapacidade (enfermidade, etc.)</td></tr>
+                    <tr><td><strong>Extinção</strong></td><td>Maioridade</td><td>Cessação da incapacidade</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+
+        <!-- QUADRO-RESUMO MEDIDAS DE PROTEÇÃO -->
+        <div class="card" style="border-color:rgba(201,168,76,0.2);">
+            <div class="card-title" style="font-size:1.1rem;justify-content:center;border-bottom:1px solid var(--border-subtle);padding-bottom:0.5rem;margin-bottom:0.8rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                QUADRO-RESUMO – MEDIDAS DE PROTEÇÃO
+            </div>
+            <div style="font-size:0.95rem;color:var(--text-secondary);">
+                <ul style="margin-left:1.2rem;">
+                    <li><strong style="color:var(--gold-light);">Curatela (arts. 1.767-1.783)</strong>
+                        <ul>
+                            <li>Sujeito: Maior incapaz (relativamente)</li>
+                            <li>Hipóteses: Enfermidade/deficiência mental, causa duradoura, pródigos</li>
+                            <li>Atuação: Curador representa ou assiste</li>
+                            <li>Nomeação: Juiz</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Tomada de Decisão Apoiada (art. 1.783-A)</strong>
+                        <ul>
+                            <li>Sujeito: Pessoa com deficiência (capaz)</li>
+                            <li>Características: Voluntária, mínimo de 2 apoiadores, mantém autonomia</li>
+                            <li>Atuação: Apoio na tomada de decisões</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Tutela (arts. 1.728-1.766)</strong>
+                        <ul>
+                            <li>Sujeito: Menor (absolutamente incapaz)</li>
+                            <li>Hipótese: Falta de poder familiar</li>
+                            <li>Atuação: Tutor representa integralmente</li>
+                            <li>Extinção: Maioridade</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box box-tip">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                DICAS DE PROVA – CURATELA E MEDIDAS DE APOIO
+            </div>
+            <ol>
+                <li><strong>Curatela</strong> → maior relativamente incapaz (enfermidade, deficiência mental).</li>
+                <li><strong>Tomada de decisão apoiada</strong> → pessoa com deficiência, mas capaz (mantém autonomia).</li>
+                <li><strong>Tutela</strong> → menor (falta de poder familiar).</li>
+                <li><strong>Pródigo</strong> → sujeito à curatela (art. 1.767, III).</li>
+                <li><strong>Com o Estatuto da Pessoa com Deficiência</strong> → a curatela deve ser restrita, aplicando-se apenas aos atos que a pessoa não pode praticar sozinha.</li>
+            </ol>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAPÍTULO 7                                                    -->
+    <!-- ============================================================ -->
+    <section id="cap7">
+        <span class="chapter-number">Capítulo 7</span>
+        <h2 class="chapter-title">LINDB – Lei de Introdução às Normas do <span class="highlight">Direito Brasileiro</span></h2>
+        <p class="chapter-sub">Direito Adquirido, Interpretação de Normas e Revisão de Atos</p>
+
+        <h3 id="cap7-1">7.1 Direito Adquirido, Ato Jurídico Perfeito e Coisa Julgada</h3>
+
+        <h4>7.1.1 Fundamentação Legal (art. 6º, LINDB)</h4>
+        <blockquote>
+            "Art. 6º. A Lei em vigor terá efeito imediato e geral, respeitados o ato jurídico perfeito, o direito adquirido e a coisa julgada."
+        </blockquote>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Instituto</th><th>Conceito</th><th>Exemplo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Ato jurídico perfeito</strong></td><td>Ato consumado segundo a lei vigente ao tempo em que se realizou</td><td>Contrato de compra e venda assinado</td></tr>
+                    <tr><td><strong>Direito adquirido</strong></td><td>Direito que já se incorporou ao patrimônio do titular</td><td>Propriedade adquirida, pensão concedida</td></tr>
+                    <tr><td><strong>Coisa julgada</strong></td><td>Decisão judicial que não admite mais recurso</td><td>Sentença transitada em julgado</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>7.1.2 Aplicação Prática</h4>
+        <div class="box box-warning">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Questão Clássica de Concurso
+            </div>
+            <p><strong>João obteve licença e iniciou obra em dez/2022. Em jan/2023 publicou-se Lei X com novo recuo mínimo, entrando em vigor após 90 dias. A obra já estava em estágio avançado. A nova lei deve incidir sobre a obra?</strong></p>
+            <p><strong>Resolução:</strong> Não deve incidir porque a lei nova respeita o ato jurídico perfeito, o direito adquirido e a coisa julgada (art. 6º da LINDB).</p>
+            <p><strong>Raciocínio:</strong></p>
+            <ol>
+                <li>A licença obtida em dez/2022 constitui <strong>ato jurídico perfeito</strong>.</li>
+                <li>A obra em estágio avançado gerou <strong>direito adquirido</strong>.</li>
+                <li>A nova lei não pode retroagir para atingir situações consolidadas.</li>
+                <li>Além disso, o art. 24 da LINDB reforça: a revisão de atos já produzidos deve levar em conta as orientações gerais da época, sendo vedado declarar inválidas situações plenamente constituídas com base em mudança posterior.</li>
+            </ol>
+        </div>
+
+        <div class="box box-important">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                Proteção da Segurança Jurídica – Art. 24 da LINDB
+            </div>
+            <blockquote style="margin:0;border-left-color:var(--gold);">
+                "Art. 24. A revisão, nas esferas administrativa, controladora ou judicial, quanto à validade de ato, contrato, ajuste, processo ou norma administrativa cuja produção já se houver completado, levará em conta as orientações gerais da época, sendo vedado que, com base em mudança de orientação geral, se declarem inválidas situações plenamente constituídas."
+            </blockquote>
+            <p style="margin-top:0.5rem;"><strong>Consequência Prática:</strong></p>
+            <ul>
+                <li>O gestor não pode ser penalizado por seguir orientações vigentes na época.</li>
+                <li>Mudanças posteriores não podem desconstituir situações consolidadas.</li>
+                <li>Deve-se ponderar os efeitos concretos e os impactos financeiros.</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h3 id="cap7-2">7.2 Interpretação de Normas sobre Gestão Pública (art. 22, LINDB)</h3>
+
+        <h4>7.2.1 Fundamentação Legal</h4>
+        <blockquote>
+            "Art. 22. Na interpretação de normas sobre gestão pública, serão considerados os obstáculos e as dificuldades reais do gestor e as exigências das políticas públicas a seu cargo, sem prejuízo dos direitos dos administrados.<br>
+            §1º. Nas decisões sobre regularidade de conduta ou validade de ato, contrato, ajuste, processo ou norma administrativa, serão consideradas as circunstâncias práticas que houverem imposto, limitado ou condicionado a ação do agente.<br>
+            §3º. As sanções aplicadas ao agente serão levadas em conta na dosimetria das demais sanções de mesma natureza e relativas ao mesmo fato."
+        </blockquote>
+
+        <div class="box box-info">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                Análise Detalhada
+            </div>
+            <ul>
+                <li><strong>Caput</strong> – O intérprete deve considerar as dificuldades reais enfrentadas pelo gestor público e as exigências das políticas públicas, sem prejuízo dos direitos dos administrados.</li>
+                <li><strong>§1º</strong> – As decisões devem considerar as circunstâncias práticas que limitaram a ação do agente. Não se pode julgar o gestor com base em critérios irreais.</li>
+                <li><strong>§3º</strong> – As sanções aplicadas devem ser consideradas na dosimetria de outras sanções relativas ao mesmo fato, evitando dupla punição desproporcional.</li>
+            </ul>
+        </div>
+
+        <div class="box box-warning">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Pegadinha Clássica de Prova FCC
+            </div>
+            <p>A FCC costuma <strong>inverter</strong> a regra do art. 22, afirmando que as circunstâncias práticas devem ser <strong>desconsideradas</strong> na interpretação de normas sobre gestão pública.</p>
+            <p><strong>O correto:</strong> As circunstâncias práticas <span class="marker">devem ser consideradas</span> (art. 22, §1º).</p>
+        </div>
+
+        <hr>
+
+        <h3 id="cap7-3">7.3 Revisão de Atos Administrativos e Segurança Jurídica</h3>
+
+        <h4>7.3.1 Art. 24 da LINDB</h4>
+        <blockquote>
+            "Art. 24. A revisão, nas esferas administrativa, controladora ou judicial, quanto à validade de ato, contrato, ajuste, processo ou norma administrativa cuja produção já se houver completado, levará em conta as orientações gerais da época, sendo vedado que, com base em mudança de orientação geral, se declarem inválidas situações plenamente constituídas."
+        </blockquote>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Aspecto</th><th>Regra</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Revisão</strong></td><td>Pode ocorrer nas esferas administrativa, controladora ou judicial</td></tr>
+                    <tr><td><strong>Critério</strong></td><td>Orientação geral da época em que o ato foi produzido</td></tr>
+                    <tr><td><strong>Vedação</strong></td><td>Mudança posterior de orientação não pode invalidar situações consolidadas</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box box-tip">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                Aplicação Prática
+            </div>
+            <p><strong>Exemplo:</strong> Um servidor público recebeu determinado benefício com base na orientação vigente na época. Anos depois, a orientação mudou, e o órgão de controle quer rever o benefício.</p>
+            <p><strong>Solução:</strong></p>
+            <ul>
+                <li>A revisão deve levar em conta a orientação geral da época em que o benefício foi concedido.</li>
+                <li>Não pode ser declarado inválido com base em mudança posterior de orientação.</li>
+                <li>A segurança jurídica protege o ato já consumado.</li>
+            </ul>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+
+        <!-- QUADRO-RESUMO LINDB -->
+        <div class="card" style="border-color:rgba(201,168,76,0.2);">
+            <div class="card-title" style="font-size:1.1rem;justify-content:center;border-bottom:1px solid var(--border-subtle);padding-bottom:0.5rem;margin-bottom:0.8rem;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                QUADRO-RESUMO – LINDB
+            </div>
+            <div style="font-size:0.95rem;color:var(--text-secondary);">
+                <ul style="margin-left:1.2rem;">
+                    <li><strong style="color:var(--gold-light);">Art. 6º – Efeitos da Lei no Tempo</strong>
+                        <ul>
+                            <li>Efeito imediato e geral</li>
+                            <li>Respeito a: ato jurídico perfeito, direito adquirido, coisa julgada</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Art. 22 – Gestão Pública</strong>
+                        <ul>
+                            <li>Caput: Considerar obstáculos e dificuldades reais do gestor</li>
+                            <li>§1º: Considerar circunstâncias práticas</li>
+                            <li>§3º: Sanções aplicadas na dosimetria de outras sanções</li>
+                        </ul>
+                    </li>
+                    <li><strong style="color:var(--gold-light);">Art. 24 – Revisão de Atos</strong>
+                        <ul>
+                            <li>Levar em conta orientações gerais da época</li>
+                            <li>Vedação: Invalidar situações com base em mudança de orientação</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="box box-tip">
+            <div class="box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                DICAS DE PROVA – LINDB
+            </div>
+            <ol>
+                <li><strong>Art. 6º</strong> – decore: "efeito imediato e geral, respeitados o ato jurídico perfeito, o direito adquirido e a coisa julgada".</li>
+                <li><strong>Art. 22, caput</strong> – consideram-se os obstáculos e dificuldades reais do gestor.</li>
+                <li><strong>Art. 22, §1º</strong> – consideram-se as circunstâncias práticas que limitaram a ação do agente.</li>
+                <li><strong>Art. 24</strong> – não se pode invalidar situações consolidadas com base em mudança de orientação.</li>
+                <li><strong>Pegadinha da FCC</strong> – inverter a regra do art. 22, dizendo que as circunstâncias práticas devem ser desconsideradas.</li>
+            </ol>
+        </div>
+
+        <div class="divider-elegant">✦</div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- LISTA DE VERIFICAÇÃO                                          -->
+    <!-- ============================================================ -->
+    <section style="margin-top:3rem;">
+        <h2 style="border-bottom-color:var(--gold);">Lista de Verificação para <span class="text-gold">Revisão</span></h2>
+        <ul class="checklist">
+            <li>Classificação dos bens (fungíveis, consumíveis, imóveis, móveis)</li>
+            <li>Distinção entre fungibilidade e consumibilidade</li>
+            <li>Domicílio (elementos, espécies, pessoas jurídicas)</li>
+            <li>Direitos da personalidade (características, irrenunciabilidade)</li>
+            <li>Requisitos de validade do negócio jurídico (art. 104)</li>
+            <li>Nulidade × Anulabilidade</li>
+            <li>Atos ilícitos e excludentes (art. 188)</li>
+            <li>Abuso de direito (art. 187)</li>
+            <li>Responsabilidade civil (contratual × extracontratual)</li>
+            <li>Curatela × Tomada de decisão apoiada × Tutela</li>
+            <li>Art. 6º da LINDB (direito adquirido, ato jurídico perfeito, coisa julgada)</li>
+            <li>Art. 22 da LINDB (gestão pública)</li>
+            <li>Art. 24 da LINDB (revisão de atos)</li>
+        </ul>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- BIBLIOGRAFIA                                                  -->
+    <!-- ============================================================ -->
+    <section style="margin-top:3rem;">
+        <h2 style="border-bottom-color:var(--gold);">Bibliografia <span class="text-gold">Sugerida</span></h2>
+        <ul class="bibliografia">
+            <li>Código Civil Brasileiro (Lei 10.406/2002)</li>
+            <li>Lei de Introdução às Normas do Direito Brasileiro (Decreto-Lei 4.657/1942)</li>
+            <li>Estatuto da Pessoa com Deficiência (Lei 13.146/2015)</li>
+            <li>Constituição Federal de 1988</li>
+            <li>VENOSA, Sílvio de Salvo. <em>Direito Civil</em>. São Paulo: Atlas.</li>
+            <li>TARTUCE, Flávio. <em>Manual de Direito Civil</em>. São Paulo: Método.</li>
+            <li>GAGLIANO, Pablo Stolze; PAMPLONA FILHO, Rodolfo. <em>Novo Curso de Direito Civil</em>. São Paulo: Saraiva.</li>
+        </ul>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- NOTA FINAL                                                    -->
+    <!-- ============================================================ -->
+    <div class="divider-elegant">✦</div>
+    <div class="card" style="border-color:rgba(201,168,76,0.15);background:var(--bg-secondary);text-align:center;">
+        <p style="font-size:0.95rem;color:var(--text-muted);margin-bottom:0;">
+            Este material foi elaborado com base nos flashcards enviados e expandido com explicações detalhadas, exemplos práticos, quadros comparativos e dicas de prova, visando à preparação para concursos públicos de alto nível, especialmente para o cargo de <strong style="color:var(--text-primary);">Técnico Judiciário – Área Judiciária do TJCE</strong> e bancas FCC, FGV e Cebraspe.
+        </p>
+        <p style="font-size:0.95rem;color:var(--gold-light);margin-top:0.8rem;font-weight:500;">
+            Bons estudos e sucesso na sua aprovação!
+        </p>
+    </div>
+
+</body>
+</html>

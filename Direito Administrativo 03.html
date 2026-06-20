@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>Apostila – Administração Pública, Licitações e Serviços</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #13131f;
+            color: #e6e6f0;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            padding: 1.5rem;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem 0 4rem;
+        }
+
+        /* ===== TIPOGRAFIA ===== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: 0.01em;
+            color: #f0f0ff;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+            border-left: 6px solid #7b8cff;
+            padding-left: 1.2rem;
+        }
+
+        h2 {
+            font-size: 2.0rem;
+            margin-top: 2.8rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #3a3a5a;
+            color: #d4dcff;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2.0rem;
+            margin-bottom: 0.8rem;
+            color: #c8d0ff;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-top: 1.6rem;
+            margin-bottom: 0.4rem;
+            color: #b0bbff;
+        }
+
+        p {
+            margin-bottom: 1.0rem;
+        }
+
+        a {
+            color: #9aacff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #c0ceff;
+        }
+
+        strong {
+            color: #ffd78a;
+            font-weight: 600;
+        }
+
+        em {
+            color: #b8c4ff;
+            font-style: italic;
+        }
+
+        /* ===== SUMMÁRIO ===== */
+        .sumario {
+            background: #1e1e32;
+            border-radius: 20px;
+            padding: 1.8rem 2.2rem;
+            margin: 2.5rem 0 3rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            border: 1px solid #34345a;
+        }
+
+        .sumario h2 {
+            border-bottom: none;
+            margin-top: 0;
+            font-size: 1.7rem;
+            margin-bottom: 1.2rem;
+            color: #e0e6ff;
+        }
+
+        .sumario-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1.8rem;
+            list-style: none;
+        }
+
+        .sumario-grid li {
+            margin-bottom: 0.3rem;
+            font-size: 0.98rem;
+        }
+
+        .sumario-grid li::before {
+            content: "▹ ";
+            color: #7b8cff;
+        }
+
+        .sumario-grid a {
+            color: #d0d8ff;
+            transition: color 0.2s;
+        }
+
+        .sumario-grid a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        /* ===== CARDS / BOXES ===== */
+        .card {
+            background: #1c1c30;
+            border-radius: 16px;
+            padding: 1.6rem 2.0rem;
+            margin: 1.8rem 0;
+            border-left: 5px solid #5a6ddb;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+            transition: transform 0.1s ease;
+        }
+
+        .card-dica {
+            border-left-color: #f5b042;
+            background: #1f1e2e;
+        }
+
+        .card-observacao {
+            border-left-color: #ff7b7b;
+            background: #221e2e;
+        }
+
+        .card-conceito {
+            border-left-color: #6fcf97;
+            background: #18222a;
+        }
+
+        .card-alerta {
+            border-left-color: #ff6b6b;
+            background: #261e1e;
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .callout {
+            background: #252540;
+            border-radius: 12px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.5rem 0;
+            border: 1px solid #41416a;
+            font-style: normal;
+        }
+
+        .callout strong {
+            color: #ffd78a;
+        }
+
+        .citacao {
+            background: #1a1a2e;
+            padding: 1.2rem 2rem;
+            border-radius: 14px;
+            margin: 1.8rem 0;
+            border-left: 6px solid #8a9aff;
+            font-style: italic;
+            color: #d0d8f0;
+            quotes: "“" "”" "‘" "’";
+        }
+
+        .citacao::before {
+            content: "“";
+            font-size: 2.2rem;
+            color: #7b8cff;
+            margin-right: 0.2rem;
+            line-height: 1;
+        }
+
+        .citacao::after {
+            content: "”";
+            font-size: 2.2rem;
+            color: #7b8cff;
+            margin-left: 0.2rem;
+            line-height: 1;
+        }
+
+        .destaque-texto {
+            background: #2a2a4a;
+            padding: 0.1rem 0.5rem;
+            border-radius: 6px;
+            color: #ffe5a0;
+            font-weight: 500;
+        }
+
+        .separador {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, #3a3a6a, #6a6aaa, #3a3a6a);
+            margin: 2.8rem 0;
+            opacity: 0.6;
+        }
+
+        /* ===== TABELAS ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.8rem 0;
+            border-radius: 16px;
+            background: #18182a;
+            padding: 0.2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: #1a1a2e;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #2d2d52;
+            color: #f0f0ff;
+            font-weight: 600;
+            padding: 0.9rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid #4a4a7a;
+        }
+
+        td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #2e2e4e;
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: #22223e;
+        }
+
+        /* ===== LISTAS ===== */
+        ul,
+        ol {
+            margin: 0.6rem 0 1.2rem 1.8rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        .lista-marcador {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .lista-marcador li {
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 0.6rem;
+        }
+
+        .lista-marcador li::before {
+            content: "◆";
+            color: #7b8cff;
+            position: absolute;
+            left: 0;
+            font-size: 1.1rem;
+        }
+
+        .lista-check {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .lista-check li {
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .lista-check li::before {
+            content: "✓";
+            color: #6fcf97;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* ===== SVG ===== */
+        .diagrama {
+            background: #141425;
+            border-radius: 20px;
+            padding: 1.2rem 0.5rem;
+            margin: 2rem 0;
+            text-align: center;
+            border: 1px solid #34345a;
+        }
+
+        .diagrama svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .diagrama figcaption {
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            color: #aab0d0;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 760px) {
+            body {
+                padding: 0.8rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+                padding-left: 0.8rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+            .sumario-grid {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
+            }
+            .card {
+                padding: 1.2rem 1.2rem;
+            }
+            .table-wrap {
+                font-size: 0.85rem;
+            }
+            th,
+            td {
+                padding: 0.5rem 0.6rem;
+            }
+            .diagrama {
+                padding: 0.8rem 0.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .sumario {
+                padding: 1rem 1.2rem;
+            }
+            .citacao {
+                padding: 0.8rem 1.2rem;
+            }
+        }
+
+        /* ===== MISC ===== */
+        .badge {
+            display: inline-block;
+            background: #3a3a6a;
+            color: #e6e6ff;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            margin-right: 0.5rem;
+        }
+
+        .topico-destaque {
+            background: #1a1a30;
+            border-radius: 12px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.4rem 0;
+            border: 1px solid #3a3a5a;
+        }
+
+        .topico-destaque p:last-child {
+            margin-bottom: 0;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 650px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+        }
+
+        .footer-nota {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #2a2a4a;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #8a8aaa;
+        }
+
+        .footer-nota strong {
+            color: #b0b8dd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ===== TÍTULO PRINCIPAL ===== -->
+        <h1>APOSTILA TEÓRICA – ADMINISTRAÇÃO PÚBLICA, LICITAÇÕES, SERVIÇOS PÚBLICOS E RESPONSABILIDADE DO ESTADO</h1>
+        <p style="font-size:1.1rem; color:#b8c4ee; margin-top:-0.2rem; margin-bottom:1.8rem;">
+            Material preparado com foco em concursos públicos de alto nível – Técnico Judiciário – Área Judiciária
+            (TJCE, FCC, FGV, Cebraspe e bancas similares)
+        </p>
+
+        <!-- ===== APRESENTAÇÃO ===== -->
+        <div class="card" style="border-left-color:#9aacff;">
+            <h4>Apresentação</h4>
+            <p>Esta apostila foi desenvolvida para proporcionar uma compreensão profunda, sistematizada e aplicada dos temas centrais de Direito Administrativo que são recorrentemente cobrados em provas de concursos para o Poder Judiciário. O conteúdo foi construído a partir de conhecimentos fragmentados, organizados agora em uma linha lógica de aprendizado, com ênfase na interpretação prática, na distinção de conceitos afins, na análise de casos concretos e na identificação das "pegadinhas" típicas das bancas examinadoras.</p>
+            <p>Ao longo do material, você encontrará:</p>
+            <ul class="lista-check">
+                <li>Explicações detalhadas de cada instituto, com seus fundamentos legais e doutrinários.</li>
+                <li>Quadros comparativos e esquemas para facilitar a memorização.</li>
+                <li>Exemplos práticos e situações hipotéticas extraídas do universo dos concursos.</li>
+                <li>Dicas de prova, macetes e alertas sobre os erros mais comuns.</li>
+                <li>Jurisprudência relevante, especialmente do STF e STJ, quando pertinente.</li>
+            </ul>
+            <p>O objetivo é que, ao final do estudo, você não apenas conheça a lei seca, mas compreenda a lógica do sistema administrativo, consiga aplicar o direito aos casos concretos e esteja preparado para enfrentar questões de alto grau de dificuldade.</p>
+            <p style="font-weight:500; color:#d4dcff;">Bons estudos!</p>
+        </div>
+
+        <!-- ===== SUMÁRIO ===== -->
+        <div class="sumario" id="sumario">
+            <h2>Sumário</h2>
+            <ul class="sumario-grid">
+                <li><a href="#parte1">Parte I – Descentralização e Desconcentração</a></li>
+                <li><a href="#parte2">Parte II – Poderes da Administração</a></li>
+                <li><a href="#parte3">Parte III – Atos Administrativos</a></li>
+                <li><a href="#parte4">Parte IV – Licitações (Lei 14.133/2021)</a></li>
+                <li><a href="#parte5">Parte V – Serviços Públicos e Concessões</a></li>
+                <li><a href="#parte6">Parte VI – Responsabilidade Civil do Estado</a></li>
+                <li><a href="#parte7">Parte VII – Improbidade Administrativa</a></li>
+                <li><a href="#parte8">Parte VIII – Tribunal de Contas</a></li>
+                <li><a href="#parte9">Parte IX – Macetes Finais</a></li>
+            </ul>
+        </div>
+
+        <hr class="separador">
+
+        <!-- ============================================================ -->
+        <!-- PARTE I -->
+        <!-- ============================================================ -->
+        <h2 id="parte1">PARTE I – ESTRUTURA DA ADMINISTRAÇÃO PÚBLICA: DESCENTRALIZAÇÃO E DESCONCENTRAÇÃO</h2>
+
+        <h3>1. Noções Introdutórias</h3>
+        <p>A Administração Pública, para desempenhar suas funções de forma eficiente, organiza-se internamente por meio de dois processos distintos: a <strong>desconcentração</strong> e a <strong>descentralização</strong>. Embora ambos envolvam distribuição de competências, possuem naturezas, efeitos e regimes jurídicos completamente diferentes. A confusão entre esses institutos é uma das principais causas de erro em provas.</p>
+
+        <h4>1.1. Desconcentração Administrativa</h4>
+        <p>A desconcentração ocorre no âmbito de uma mesma pessoa jurídica, ou seja, dentro da própria Administração Direta ou dentro de uma entidade da Administração Indireta. Trata-se de uma distribuição interna de competências entre órgãos e subunidades, sem a criação de novas pessoas jurídicas.</p>
+        <div class="card">
+            <h4>Características essenciais:</h4>
+            <ul class="lista-marcador">
+                <li>Mantém-se a mesma personalidade jurídica.</li>
+                <li>Há relação de hierarquia e subordinação entre o órgão superior e os órgãos inferiores.</li>
+                <li>A criação de órgãos se dá por lei ou decreto, dentro da estrutura já existente.</li>
+            </ul>
+            <p><strong>Exemplo clássico:</strong> a criação de uma Secretaria Municipal de Saúde, com divisão em departamentos regionais, ou a criação de Coordenadorias dentro de um Ministério.</p>
+            <div class="callout">
+                <strong>Importante:</strong> A desconcentração não transfere titularidade nem execução do serviço; apenas reorganiza o trabalho internamente. O chefe do órgão superior pode avocar competências e rever atos dos subordinados, pois há relação hierárquica.
+            </div>
+        </div>
+
+        <h4>1.2. Descentralização Administrativa</h4>
+        <p>A descentralização, por sua vez, implica a transferência de atribuições de uma pessoa jurídica para outra, criando-se, portanto, uma nova pessoa jurídica (Administração Indireta) ou utilizando-se de entes já existentes (pessoas jurídicas privadas). Nesse caso, não há subordinação, mas sim um vínculo de controle finalístico ou tutela (supervisão ministerial).</p>
+        <p>A descentralização pode se dar de duas formas:</p>
+        <ul>
+            <li><strong>Descentralização por outorga (ou serviço):</strong> O poder público cria uma entidade da Administração Indireta e a ela transfere a titularidade e a execução do serviço público. A entidade passa a atuar com personalidade própria e autonomia administrativa e financeira. Exemplos: autarquias, fundações públicas de direito público, empresas públicas e sociedades de economia mista (nestas, a titularidade do serviço pode ser transferida, mas com certas peculiaridades).</li>
+            <li><strong>Descentralização por delegação (ou colaboração):</strong> O poder público transfere apenas a execução do serviço a uma pessoa jurídica de direito privado preexistente, mantendo consigo a titularidade do serviço. Essa transferência se dá por meio de contrato (concessão, permissão) ou ato unilateral (autorização). Exemplo: concessão de serviços de telefonia, energia elétrica, transporte público.</li>
+        </ul>
+
+        <div class="card card-dica">
+            <h4>📌 DICA DE PROVA (FCC e Cebraspe)</h4>
+            <p>A banca adora perguntar: <em>"A concessão de serviço público é uma forma de descentralização por outorga ou por delegação?"</em> A resposta é <strong>delegação</strong>, pois o poder concedente mantém a titularidade. Já a criação de uma autarquia é <strong>outorga</strong>, pois transfere titularidade e execução.</p>
+        </div>
+
+        <h4>Quadro comparativo essencial:</h4>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Critério</th>
+                        <th>Desconcentração</th>
+                        <th>Descentralização por Outorga</th>
+                        <th>Descentralização por Delegação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Personalidade jurídica</td><td>Única (mesma pessoa)</td><td>Criação de nova pessoa (Administração Indireta)</td><td>Entidade privada preexistente</td></tr>
+                    <tr><td>Relação com o ente central</td><td>Hierarquia e subordinação</td><td>Controle finalístico (tutela)</td><td>Controle contratual ou regulatório</td></tr>
+                    <tr><td>Transferência de titularidade</td><td>Não</td><td>Sim</td><td>Não (apenas execução)</td></tr>
+                    <tr><td>Transferência de execução</td><td>Não</td><td>Sim</td><td>Sim</td></tr>
+                    <tr><td>Prazo</td><td>Indeterminado</td><td>Indeterminado</td><td>Determinado (contrato ou ato)</td></tr>
+                    <tr><td>Exemplo</td><td>Criação de departamento em Ministério</td><td>Autarquia, fundação pública</td><td>Concessionária de energia</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== DIAGRAMA SVG: Desconcentração x Descentralização ===== -->
+        <div class="diagrama">
+            <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <marker id="seta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 Z" fill="#7b8cff" />
+                    </marker>
+                    <style>
+                        .tit { font: bold 15px 'Segoe UI', sans-serif; fill: #d4dcff; }
+                        .leg { font: 12px 'Segoe UI', sans-serif; fill: #b0b8e0; }
+                        .ret { fill: #1e1e3a; stroke: #5a6ddb; stroke-width: 1.8; rx: 12; }
+                        .ret-d { fill: #1a1a30; stroke: #f5b042; stroke-width: 1.8; rx: 12; }
+                        .seta { stroke: #7b8cff; stroke-width: 2; marker-end: url(#seta); }
+                    </style>
+                </defs>
+                <!-- Desconcentração -->
+                <rect x="30" y="20" width="200" height="90" class="ret" />
+                <text x="130" y="55" text-anchor="middle" class="tit">Desconcentração</text>
+                <text x="130" y="78" text-anchor="middle" class="leg">mesma pessoa jurídica</text>
+                <text x="130" y="98" text-anchor="middle" class="leg">hierarquia / subordinação</text>
+
+                <!-- Outorga -->
+                <rect x="280" y="20" width="200" height="90" class="ret" />
+                <text x="380" y="55" text-anchor="middle" class="tit">Outorga</text>
+                <text x="380" y="78" text-anchor="middle" class="leg">nova pessoa (Indireta)</text>
+                <text x="380" y="98" text-anchor="middle" class="leg">titularidade + execução</text>
+
+                <!-- Delegação -->
+                <rect x="520" y="20" width="180" height="90" class="ret-d" />
+                <text x="610" y="55" text-anchor="middle" class="tit">Delegação</text>
+                <text x="610" y="78" text-anchor="middle" class="leg">particular preexistente</text>
+                <text x="610" y="98" text-anchor="middle" class="leg">só execução</text>
+
+                <!-- Setas -->
+                <line x1="230" y1="65" x2="275" y2="65" class="seta" />
+                <line x1="480" y1="65" x2="515" y2="65" class="seta" />
+
+                <!-- Legenda inferior -->
+                <text x="130" y="155" text-anchor="middle" class="leg" fill="#9aacff">Administração Direta</text>
+                <text x="380" y="155" text-anchor="middle" class="leg" fill="#9aacff">Administração Indireta</text>
+                <text x="610" y="155" text-anchor="middle" class="leg" fill="#9aacff">Particular / Concessionária</text>
+
+                <line x1="30" y1="175" x2="700" y2="175" stroke="#3a3a5a" stroke-width="1" stroke-dasharray="6 6" />
+
+                <!-- Exemplos -->
+                <text x="130" y="210" text-anchor="middle" class="leg" fill="#aab0d0">Ex: departamento em Ministério</text>
+                <text x="380" y="210" text-anchor="middle" class="leg" fill="#aab0d0">Ex: Autarquia, Fundação Pública</text>
+                <text x="610" y="210" text-anchor="middle" class="leg" fill="#aab0d0">Ex: Concessionária de energia</text>
+            </svg>
+            <figcaption>Esquema comparativo: Desconcentração, Outorga e Delegação</figcaption>
+        </div>
+
+        <h3>2. Administração Indireta e Suas Entidades</h3>
+        <p>A Administração Indireta é composta por entidades com personalidade jurídica própria, criadas ou autorizadas por lei, para desempenhar atividades administrativas de forma descentralizada. Cada uma dessas entidades possui regime jurídico específico, e é fundamental conhecer a forma de criação e a natureza de cada uma.</p>
+
+        <h4>2.1. Autarquias</h4>
+        <p><strong>Conceito:</strong> Pessoa jurídica de direito público, criada por lei específica, com capacidade de autoadministração, para desempenhar atividades típicas do Estado (fiscalização, regulação, prestação de serviços públicos, etc.).</p>
+        <ul>
+            <li><strong>Criação:</strong> Lei específica – a lei cria a autarquia, definindo sua finalidade, estrutura e competências. Não necessita de registro em cartório.</li>
+            <li><strong>Natureza:</strong> Direito público.</li>
+            <li><strong>Patrimônio:</strong> Próprio, mas sujeito a regime de bens públicos (impenhorabilidade, etc.).</li>
+            <li><strong>Exemplos:</strong> INSS, IBAMA, ANVISA, Banco Central (autarquia especial), universidades federais.</li>
+        </ul>
+
+        <h4>2.2. Fundações Públicas</h4>
+        <p>As fundações públicas podem ser de direito público ou de direito privado, a depender da lei instituidora.</p>
+        <ul>
+            <li><strong>Fundação pública de direito público (fundação autárquica):</strong> Criada diretamente por lei específica, possui personalidade jurídica de direito público, destinando-se a atividades sociais e serviços públicos não privativos do Estado (ensino, pesquisa, cultura, saúde). Exemplo: Fundação Nacional do Índio (FUNAI) – embora haja discussão, a doutrina majoritária a enquadra como fundação de direito público.</li>
+            <li><strong>Fundação pública de direito privado:</strong> Criada por autorização legal, com registro de seu ato constitutivo no cartório de pessoas jurídicas. Possui personalidade de direito privado, mas com algumas prerrogativas próprias do poder público (prazo em dobro, impenhorabilidade de bens, etc.). Exemplo: algumas fundações de apoio à pesquisa (FAPESP, por exemplo, é uma fundação de direito privado sem fins lucrativos, mas com vínculo com o Estado).</li>
+        </ul>
+        <div class="callout">
+            <strong>Atenção:</strong> A banca pode perguntar: <em>"A fundação pública de direito público é criada por lei ou autorizada por lei?"</em> Resposta: <strong>criada diretamente por lei</strong>. Já a de direito privado é <strong>autorizada por lei</strong> e registrada.
+        </div>
+
+        <h4>2.3. Empresas Públicas e Sociedades de Economia Mista</h4>
+        <p>Ambas são pessoas jurídicas de direito privado, criadas para exploração de atividade econômica ou prestação de serviços públicos de relevância coletiva.</p>
+        <ul>
+            <li><strong>Empresa Pública:</strong> Capital exclusivamente público (integralmente do ente federativo). Pode adotar qualquer forma societária admitida em direito. Exemplo: Caixa Econômica Federal (é uma empresa pública federal? Sim, embora haja peculiaridades; a maioria dos doutrinadores a considera empresa pública).</li>
+            <li><strong>Sociedade de Economia Mista:</strong> Capital misto – a maioria das ações com direito a voto pertence ao poder público, mas há participação de capital privado. Deve adotar a forma de sociedade anônima. Exemplo: Petrobras (União detém a maioria das ações com direito a voto), Banco do Brasil.</li>
+        </ul>
+        <p><strong>Criação:</strong> Ambas são criadas por autorização legal e submetem-se ao registro do ato constitutivo (contrato social ou estatuto) no órgão competente (Junta Comercial ou Registro Civil de Pessoas Jurídicas). Não há criação direta por lei, como nas autarquias.</p>
+
+        <div class="card card-dica">
+            <h4>📌 MACETE PARA PROVA</h4>
+            <ul>
+                <li><strong>Autarquia</strong> → criada por lei → direito público.</li>
+                <li><strong>Fundação pública de direito público</strong> → criada por lei → direito público.</li>
+                <li><strong>Empresa pública e sociedade de economia mista</strong> → autorização legal + registro → direito privado.</li>
+                <li><strong>Fundação pública de direito privado</strong> → autorização legal + registro → direito privado.</li>
+            </ul>
+        </div>
+
+        <hr class="separador">
+
+        <!-- ============================================================ -->
+        <!-- PARTE II -->
+        <!-- ============================================================ -->
+        <h2 id="parte2">PARTE II – PODERES DA ADMINISTRAÇÃO</h2>
+        <p>A atuação da Administração Pública se manifesta por meio de poderes administrativos, que são instrumentos conferidos pelo ordenamento jurídico para que o Estado possa atingir seus fins. Esses poderes não são absolutos; devem ser exercidos nos limites da lei e com observância dos princípios constitucionais.</p>
+
+        <h3>1. Poder de Polícia</h3>
+        <h4>1.1. Conceito e Fundamento</h4>
+        <p>O poder de polícia é a atividade da Administração Pública que limita ou disciplina direitos, liberdades e propriedades em benefício do interesse público coletivo, especialmente nos campos da segurança, higiene, ordem, costumes, meio ambiente, urbanismo, etc.</p>
+        <p>O conceito legal está no art. 78 do Código Tributário Nacional (CTN):</p>
+        <div class="citacao">
+            "Considera-se poder de polícia atividade da administração pública que, limitando ou disciplinando direito, interesse ou liberdade, regula a prática de ato ou abstenção de fato, em razão de interesse público concernente à segurança, à higiene, à ordem, aos costumes, à disciplina da produção e do mercado, ao exercício de atividades econômicas dependentes de concessão ou autorização do Poder Público, à tranquilidade pública ou ao respeito à propriedade e aos direitos individuais ou coletivos."
+        </div>
+
+        <h4>1.2. Características Essenciais</h4>
+        <ul class="lista-marcador">
+            <li><strong>Atividade restritiva:</strong> Limita direitos individuais em prol do bem comum.</li>
+            <li><strong>Discricionariedade:</strong> Em regra, o agente público tem margem de escolha quanto à oportunidade e conveniência da medida (quando e como aplicar), observados os limites legais.</li>
+            <li><strong>Autoexecutoriedade:</strong> Em muitos casos, a Administração pode executar a medida coercitivamente, sem necessidade de ordem judicial (ex.: interdição de estabelecimento, apreensão de mercadorias).</li>
+            <li><strong>Coercibilidade:</strong> As medidas são impostas de forma coativa, podendo haver aplicação de multas e sanções.</li>
+        </ul>
+
+        <h4>1.3. Exemplos Práticos</h4>
+        <ul>
+            <li>Fiscalização de posturas municipais (funcionamento de comércios, horários, ruídos).</li>
+            <li>Controle de trânsito (limites de velocidade, sinalização).</li>
+            <li>Licenciamento ambiental.</li>
+            <li>Vigilância sanitária.</li>
+        </ul>
+        <div class="card card-alerta">
+            <h4>PEGADINHA DE BANCA</h4>
+            <p>O poder de polícia não se confunde com o poder disciplinar. O primeiro atua sobre a coletividade (limitação geral de direitos); o segundo atua sobre pessoas com vínculo especial com a Administração (servidores, contratados, concessionárias). Além disso, o poder de polícia pode ser exercido por qualquer pessoa jurídica de direito público (União, Estados, DF, Municípios) e, por delegação, por pessoas jurídicas de direito privado (concessionárias de serviços públicos, quando autorizadas por lei).</p>
+        </div>
+
+        <h3>2. Poder Disciplinar</h3>
+        <h4>2.1. Conceito e Aplicação</h4>
+        <p>O poder disciplinar é o poder-dever da Administração de apurar infrações e aplicar sanções aos servidores públicos e demais pessoas com vínculo jurídico que as sujeitem à disciplina administrativa. Esse poder se manifesta:</p>
+        <ul>
+            <li><strong>Internamente:</strong> Em relação a servidores públicos (estatutários, celetistas) e agentes políticos (em certa medida, como nos processos de cassação).</li>
+            <li><strong>Externamente:</strong> Em relação a particulares que mantenham relação de colaboração com a Administração, como contratados (empresas que prestam serviços), permissionários e concessionárias de serviço público.</li>
+        </ul>
+
+        <h4>2.2. Exemplo Prático</h4>
+        <p>Suponha que uma empresa contratada para a execução de uma obra pública descumpra cláusulas contratuais, causando atraso. A Administração pode aplicar sanções como advertência, multa, suspensão temporária de participação em licitações, ou até mesmo a declaração de inidoneidade, tudo com base no poder disciplinar. Aplica-se a Lei de Licitações (Lei 14.133/2021, em seu art. 156) que prevê sanções administrativas.</p>
+
+        <h4>2.3. Distinção Crucial</h4>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Poder</th><th>Destinatário</th><th>Finalidade</th><th>Exemplo</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Disciplinar</strong></td><td>Pessoas com vínculo especial (servidores, contratados, concessionários)</td><td>Punir infrações funcionais ou contratuais</td><td>Aplicar multa a empresa contratada</td></tr>
+                    <tr><td><strong>Hierárquico</strong></td><td>Órgãos e agentes internos</td><td>Organizar, coordenar, controlar, delegar e avocar competências</td><td>Dar ordens a subordinados, rever atos</td></tr>
+                    <tr><td><strong>De polícia</strong></td><td>Coletividade (todos os cidadãos)</td><td>Limitar direitos em prol do interesse público</td><td>Interditar um restaurante por irregularidades sanitárias</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="separador">
+
+        <!-- ============================================================ -->
+        <!-- PARTE III -->
+        <!-- ============================================================ -->
+        <h2 id="parte3">PARTE III – ATOS ADMINISTRATIVOS: EXTINÇÃO E CONTROLE</h2>
+
+        <h3>1. Revogação, Anulação e Convalidação</h3>
+        <p>Os atos administrativos podem ser extintos por diferentes razões, sendo fundamental distinguir a revogação da anulação, pois cada uma possui requisitos, efeitos e fundamentos próprios.</p>
+
+        <div class="grid-2col">
+            <div class="card" style="border-left-color:#f5b042;">
+                <h4>1.1. Revogação</h4>
+                <p><strong>Conceito:</strong> Extinção do ato por razões de mérito (conveniência e oportunidade), quando o ato é válido, mas se torna inoportuno ou inconveniente para a Administração.</p>
+                <p><strong>Aplicabilidade:</strong> Somente para atos discricionários (não para atos vinculados), pois apenas neles há análise de mérito.</p>
+                <p><strong>Efeitos:</strong> <em>Ex nunc</em> (não retroage), respeitando-se os direitos adquiridos. A revogação não desfaz os efeitos já produzidos.</p>
+                <p><strong>Fundamento:</strong> Súmula 473 do STF: <em>"A administração pode anular seus próprios atos, quando eivados de vícios que os tornam ilegais, ou revogá-los, por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos."</em></p>
+                <p><strong>Exemplo:</strong> O Prefeito concede uma permissão de uso de bem público para realização de evento cultural. Posteriormente, verifica que o evento trará transtornos ao trânsito e decide revogar a permissão (desde que não tenha havido direito adquirido, como construção de estruturas permanentes, etc.).</p>
+            </div>
+            <div class="card" style="border-left-color:#ff7b7b;">
+                <h4>1.2. Anulação</h4>
+                <p><strong>Conceito:</strong> Extinção do ato por vício de ilegalidade (vício de competência, forma, finalidade, objeto ou motivo, ou desvio de finalidade).</p>
+                <p><strong>Aplicabilidade:</strong> Aplica-se a atos vinculados e discricionários, desde que o vício seja de legalidade (mesmo nos discricionários, a legalidade deve ser observada).</p>
+                <p><strong>Efeitos:</strong> <em>Ex tunc</em> (retroage, pois o ato é considerado nulo desde a origem). A anulação pode ser feita pela própria Administração ou pelo Poder Judiciário.</p>
+                <p><strong>Prazo:</strong> A Administração tem o prazo de 5 anos para anular atos de que decorram efeitos favoráveis aos destinatários, salvo comprovada má-fé (art. 54 da Lei 9.784/99). Para atos que não gerem efeitos favoráveis, ou em caso de má-fé, não há prazo decadencial.</p>
+                <p><strong>Exemplo:</strong> Um servidor é nomeado para cargo público sem que tenha sido aprovado em concurso, com base em lei inconstitucional. O ato de nomeação é nulo de pleno direito, podendo ser anulado a qualquer tempo, com efeitos retroativos.</p>
+            </div>
+        </div>
+
+        <h4>1.3. Convalidação (Saneamento)</h4>
+        <p>Quando o ato administrativo possui vício sanável, a Administração pode convalidá-lo (ratificá-lo), corrigindo o defeito, desde que não tenha havido prejuízo ao interesse público ou a terceiros. A convalidação opera efeitos <em>ex tunc</em> (retroativos), mas somente se o vício for de competência (se houver delegação possível) ou de forma (desde que não essencial). Não se convalida vício de objeto, finalidade ou motivo.</p>
+        <div class="callout">
+            <strong>Exemplo:</strong> Um ato praticado por agente incompetente, mas que poderia ser delegado; o superior hierárquico pode ratificar o ato, sanando o vício.
+        </div>
+
+        <h3>2. Atos Discricionários e Controle Judicial</h3>
+        <h4>2.1. Mérito Administrativo e Separação de Poderes</h4>
+        <p>O ato discricionário é aquele em que a lei confere à Administração certa margem de liberdade para escolher, entre várias opções legais, a conduta mais adequada ao interesse público, avaliando conveniência e oportunidade (mérito).</p>
+        <p>O Poder Judiciário, em regra, não pode adentrar no mérito administrativo, pois isso violaria o princípio da separação dos Poderes (art. 2º da CF). O controle judicial limita-se à legalidade e legitimidade do ato (juridicidade), podendo verificar se os pressupostos legais foram observados, se houve abuso de poder, desvio de finalidade, ou se os motivos apresentados são falsos ou inexistentes.</p>
+        <div class="citacao">
+            SÚMULA 473 do STF: "A administração pode anular seus próprios atos, quando eivados de vícios que os tornam ilegais, ou revogá-los, por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos, e ressalvada, em todos os casos, a apreciação judicial."
+        </div>
+
+        <h4>2.2. Caso Prático</h4>
+        <p>Um Diretor de Departamento de Trânsito, com base em sua discricionariedade, decide instalar um semáforo em uma determinada interseção. Um cidadão, inconformado, questiona a decisão judicialmente, alegando que o semáforo é desnecessário. O Judiciário não poderá substituir a avaliação do administrador sobre a necessidade do semáforo, a menos que haja ilegalidade (ex.: a lei exige estudo de impacto de trânsito, e este não foi feito). Portanto, o Judiciário só pode anular o ato se constatar ilegalidade; não pode revogá-lo por inconveniência.</p>
+
+        <hr class="separador">
+
+        <!-- ============================================================ -->
+        <!-- PARTE IV -->
+        <!-- ============================================================ -->
+        <h2 id="parte4">PARTE IV – LICITAÇÕES E CONTRATOS ADMINISTRATIVOS (LEI 14.133/2021)</h2>
+
+        <h3>1. Princípios e Tratamento Diferenciado</h3>
+        <p>O novo Estatuto das Licitações (Lei 14.133/2021) consolidou as normas gerais sobre licitações e contratos administrativos, com ênfase em princípios como isonomia, competitividade, transparência, economicidade, entre outros.</p>
+
+        <h4>1.1. Princípio da Isonomia e Tratamento Diferenciado</h4>
+        <p>A isonomia (igualdade) é princípio basilar, mas admite exceções legais em favor de microempresas (ME) e empresas de pequeno porte (EPP), como forma de isonomia material – tratar desigualmente os desiguais na medida de suas desigualdades.</p>
+        <p>A Lei 14.133/2021 prevê vantagens para ME/EPP:</p>
+        <ul>
+            <li>Margem de preferência em licitações (art. 47, §1º).</li>
+            <li>Benefício de empate ficto (art. 44, §1º): se a proposta da ME/EPP for até 5% superior à melhor proposta, ela poderá apresentar nova proposta com valor igual ou inferior.</li>
+            <li>Participação exclusiva em licitações de pequeno porte (obras, serviços, compras), dentro dos limites legais.</li>
+        </ul>
+        <div class="card card-alerta">
+            <h4>PEGADINHA</h4>
+            <p>Essas exceções ao princípio da isonomia não são ilegítimas; são uma forma de promover a competição real e a inclusão produtiva, sendo compatíveis com a Constituição (art. 170, IX e art. 179).</p>
+        </div>
+
+        <h3>2. Modalidades de Licitação</h3>
+        <p>A Lei 14.133/2021 extinguiu as modalidades antigas (concorrência, tomada de preços, convite, etc.) e instituiu novas modalidades. Entre elas, o diálogo competitivo é uma inovação significativa.</p>
+
+        <h4>2.1. Diálogo Competitivo (art. 6º, XLII e arts. 32 a 34)</h4>
+        <p><strong>Conceito:</strong> Modalidade de licitação para contratação de obras, serviços e compras em que a Administração realiza diálogos com licitantes previamente selecionados mediante critérios objetivos, com o intuito de desenvolver alternativas para atender às necessidades da Administração. Os licitantes apresentam proposta final após o encerramento dos diálogos.</p>
+        <div class="card">
+            <h4>Características:</h4>
+            <ul class="lista-marcador">
+                <li>Aplicável em situações de solução técnica complexa ou inovadora, onde a Administração não tem clara definição do melhor caminho.</li>
+                <li>Os diálogos são realizados com os participantes habilitados, podendo discutir aspectos técnicos, jurídicos e financeiros.</li>
+                <li>Ao final, os participantes apresentam propostas, e a Administração as avalia.</li>
+                <li>Não se limita a negociação de preço – trata-se de discussão ampla sobre a solução.</li>
+            </ul>
+            <p><strong>Exemplo:</strong> Contratação de sistema de tecnologia da informação para integração de dados em larga escala, onde a Administração precisa conhecer as soluções do mercado antes de definir os requisitos exatos.</p>
+        </div>
+
+        <h3>3. Inexigibilidade de Licitação</h3>
+        <p>A inexigibilidade ocorre quando há inviabilidade de competição, porque o objeto é de natureza singular, ou o fornecedor é exclusivo (notória especialização).</p>
+
+        <h4>3.1. Hipóteses Legais (art. 74, III da Lei 14.133/2021)</h4>
+        <ul>
+            <li>Serviços técnicos especializados de natureza predominantemente intelectual, desde que o contratado seja de notória especialização (reconhecimento público no setor). Exemplos: treinamento de servidores, consultoria, projetos arquitetônicos, perícias, etc.</li>
+            <li>Contratação de profissional do setor artístico consagrado pela crítica (ex.: artistas, músicos, atores).</li>
+            <li>Aquisição de materiais, equipamentos ou gêneros que só possam ser fornecidos por um determinado fornecedor (ex.: peças de reposição de equipamentos patenteados).</li>
+        </ul>
+
+        <h4>3.2. Valor não impede a inexigibilidade</h4>
+        <div class="callout">
+            <strong>Muitos candidatos pensam que, se o valor é alto, a licitação é obrigatória. Isso é um erro.</strong> A inexigibilidade não tem limite de valor, desde que presentes os requisitos legais. Por exemplo, um contrato de R$ 500 mil para treinamento de servidores com uma entidade de notória especialização pode ser inexigível, pois a competição é inviável.
+        </div>
+        <div class="card card-dica">
+            <h4>Dica</h4>
+            <p>A dispensa de licitação tem limites de valor (art. 75 da Lei 14.133), mas a inexigibilidade não os tem, pois a inviabilidade de competição é o fundamento, e não o valor.</p>
+        </div>
+
+        <hr class="separador">
+
+        <!-- ============================================================ -->
+        <!-- PARTE V -->
+        <!-- ============================================================ -->
+        <h2 id="parte5">PARTE V – SERVIÇOS PÚBLICOS E CONCESSÕES</h2>
+
+        <h3>1. Conceitos Fundamentais</h3>
+        <p>Serviço público é toda atividade prestada pela Administração Pública ou por seus delegados, visando satisfazer necessidades coletivas essenciais ou relevantes, sob regime de direito público.</p>
+        <p>A prestação pode ser:</p>
+        <ul>
+            <li><strong>Direta:</strong> por órgãos da Administração Direta.</li>
+            <li><strong>Indireta:</strong> mediante descentralização por outorga (Administração Indireta) ou por delegação (concessão, permissão, autorização).</li>
+        </ul>
+
+        <h3>2. Concessão de Serviço Público</h3>
+        <p>A concessão é uma forma de delegação (descentralização por colaboração) em que o poder concedente (Administração Direta) transfere a execução do serviço a pessoa jurídica de direito privado (concessionária), por prazo determinado, mediante contrato administrativo.</p>
+        <div class="card">
+            <h4>Características:</h4>
+            <ul class="lista-marcador">
+                <li><strong>Prazo determinado:</strong> vedada a concessão por prazo indeterminado (art. 5º, §1º da Lei 8.987/95).</li>
+                <li><strong>Titularidade:</strong> permanece com o poder concedente.</li>
+                <li><strong>Riscos:</strong> a concessionária assume os riscos do negócio, sujeita à regulação e fiscalização do poder concedente.</li>
+                <li><strong>Contraprestação:</strong> tarifa paga pelos usuários (ou remuneração por outras fontes, como subsídios).</li>
+            </ul>
+        </div>
+
+        <h3>3. Extinção da Concessão</h3>
+        <p>As formas de extinção da concessão de serviço público são diversas, e é essencial distingui-las, especialmente para resolver questões sobre responsabilidade e indenização.</p>
+
+        <div class="grid-2col">
+            <div class="card" style="border-left-color:#6fcf97;">
+                <h4>3.1. Encampação</h4>
+                <p><strong>Conceito:</strong> Retomada do serviço pelo poder concedente antes do término do contrato, por razões de interesse público (conveniência e oportunidade), sem que haja culpa do concessionário.</p>
+                <p><strong>Requisitos cumulativos:</strong></p>
+                <ul>
+                    <li>Lei autorizativa específica (não basta decreto ou ato infralegal).</li>
+                    <li>Prévio pagamento da indenização devida à concessionária, abrangendo danos emergentes e lucros cessantes (art. 37 da Lei 8.987/95).</li>
+                </ul>
+                <p><strong>Observação:</strong> A encampação é uma forma de intervenção na concessão, mas não é sanção; é ato de soberania do poder concedente.</p>
+            </div>
+            <div class="card" style="border-left-color:#ff7b7b;">
+                <h4>3.2. Caducidade (ou Decadência)</h4>
+                <p><strong>Conceito:</strong> Extinção da concessão por inadimplemento do concessionário, ou seja, por descumprimento das cláusulas contratuais ou legais.</p>
+                <p><strong>Requisitos:</strong></p>
+                <ul>
+                    <li>Processo administrativo (garantia de ampla defesa e contraditório).</li>
+                    <li>Não exige lei autorizativa – a caducidade é declarada por ato administrativo do poder concedente.</li>
+                    <li>Indenização posterior, apenas pelos investimentos não amortizados ou depreciados, deduzidos os prejuízos causados à Administração.</li>
+                </ul>
+                <p><strong>Exemplo:</strong> Concessionária de transporte público que abandona a operação, deixando de atender à frota mínima exigida.</p>
+            </div>
+            <div class="card" style="border-left-color:#f5b042;">
+                <h4>3.3. Rescisão (por iniciativa do concessionário)</h4>
+                <p>O concessionário pode pedir a rescisão do contrato caso o poder concedente descumpra obrigações (ex.: descumprir as condições de equilíbrio econômico-financeiro, tarifas insuficientes, etc.).</p>
+                <p>Depende de decisão judicial (ou de acordo entre as partes), pois é uma quebra contratual por culpa do concedente.</p>
+                <p>O concessionário tem direito a indenização pelos prejuízos.</p>
+            </div>
+            <div class="card" style="border-left-color:#a67cff;">
+                <h4>3.4. Anulação</h4>
+                <p>Por ilegalidade no procedimento licitatório ou no próprio contrato.</p>
+                <p>Pode ser decretada pelo poder concedente ou pelo Poder Judiciário, com efeitos retroativos (<em>ex tunc</em>).</p>
+                <p><strong>Exemplo:</strong> Concessão outorgada sem licitação prévia, quando exigível.</p>
+            </div>
+        </div>
+
+        <h4>Quadro resumo:</h4>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Causa</th><th>Fundamento</th><th>Requer lei autorizativa?</th><th>Indenização</th><th>Efeitos</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Encampação</strong></td><td>Interesse público</td><td>Sim</td><td>Prévia (danos emergentes + lucros cessantes)</td><td><em>Ex nunc</em></td></tr>
+                    <tr><td><strong>Caducidade</strong></td><td>Culpa do concessionário</td><td>Não</td><td>Posterior (investimentos não amortizados - prejuízos)</td><td><em>Ex nunc</em></td></tr>
+                    <tr><td><strong>Rescisão</strong></td><td>Culpa do poder concedente</td><td>Não</td><td>Sim (a definir judicialmente)</td><td><em>Ex nunc</em></td></tr>
+                    <tr><td><strong>Anulação</strong></td><td>Ilegalidade</td><td>Não (mas pode ser judicial)</td><td>Se houver boa-fé, indenização por enriquecimento sem causa</td><td><em>Ex tunc</em></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card card-dica">
+            <h4>DICA DE PROVA (FCC)</h4>
+            <p>A encampação exige lei autorizativa específica e indenização prévia. A caducidade não exige lei, mas exige processo administrativo. Não confunda!</p>
+        </div>
+
+        <hr class="separador">
+
+        <!-- ============================================================ -->
+        <!-- PARTE VI -->
+        <!-- ============================================================ -->
+        <h2 id="parte6">PARTE VI – RESPONSABILIDADE CIVIL DO ESTADO</h2>
+
+        <h3>1. Regime Constitucional (art. 37, §6º da CF)</h3>
+        <div class="citacao">
+            "As pessoas jurídicas de direito público e as de direito privado prestadoras de serviços públicos responderão pelos danos que seus agentes, nessa qualidade, causarem a terceiros, assegurado o direito de regresso contra o responsável nos casos de dolo ou culpa."
+        </div>
+        <p>O dispositivo consagra a <strong>responsabilidade civil objetiva</strong> do Estado, baseada na teoria do risco administrativo – não se exige prova de culpa do agente público, bastando a comprovação do dano e do nexo causal com a atuação estatal (conduta comissiva ou omissiva).</p>
+
+        <h3>2. Elementos da Responsabilidade Objetiva</h3>
+        <ul>
+            <li>Conduta do agente público (ação ou omissão) no exercício de suas funções.</li>
+            <li>Dano a terceiro (pessoa física ou jurídica).</li>
+            <li>Nexo causal entre a conduta e o dano.</li>
+        </ul>
+        <div class="card card-observacao">
+            <h4>Excludentes:</h4>
+            <p>A responsabilidade objetiva pode ser afastada se comprovada:</p>
+            <ul>
+                <li><strong>Culpa exclusiva da vítima</strong> (a única causa do dano foi a própria conduta da vítima).</li>
+                <li><strong>Força maior ou caso fortuito</strong> (evento imprevisível e inevitável, alheio à atuação estatal) – embora haja controvérsia, a doutrina majoritária admite como excludente, mas o STJ tem mitigado essa excludente quando a Administração tinha o dever de evitar o dano.</li>
+            </ul>
+        </div>
+
+        <h3>3. Aplicação a Concessionárias de Serviço Público</h3>
+        <p>As concessionárias (pessoas jurídicas de direito privado) também respondem objetivamente pelos danos causados por seus agentes durante a prestação do serviço público. Isso porque o art. 37, §6º, alcança "as pessoas jurídicas de direito privado prestadoras de serviços públicos". Portanto, a concessionária responde independentemente de culpa do empregado.</p>
+        <p><strong>Direito de regresso:</strong> A concessionária pode ajuizar ação de regresso contra o empregado que deu causa ao dano, mas apenas se comprovar que o agente atuou com dolo ou culpa (responsabilidade subjetiva do agente). Ou seja, a concessionária paga a indenização ao terceiro, e depois pode cobrar do empregado, se este agiu com culpa.</p>
+        <div class="callout">
+            <strong>Exemplo:</strong> Um motorista de ônibus de uma concessionária de transporte público causa um acidente com vítima. A concessionária é objetivamente responsável, devendo indenizar a vítima. Posteriormente, se comprovado que o motorista dirigia em alta velocidade e desrespeitou a sinalização, a concessionária pode regredir contra ele.
+        </div>
+
+        <hr class="separador">
+
+        <!-- ============================================================ -->
+        <!-- PARTE VII -->
+        <!-- ============================================================ -->
+        <h2 id="parte7">PARTE VII – IMPROBIDADE ADMINISTRATIVA (LEI 8.429/92)</h2>
+
+        <h3>1. Visão Geral</h3>
+        <p>A Lei de Improbidade Administrativa (LIA) tipifica condutas desonestas praticadas por agentes públicos, bem como por particulares que induzam ou concorram para a prática, causando prejuízo ao erário ou enriquecimento ilícito, ou violando princípios da Administração.</p>
+
+        <h3>2. Rol de Condutas: Exemplificativo vs. Taxativo</h3>
+        <p>Essa distinção é crucial e cai com frequência em provas.</p>
+        <ul>
+            <li><strong>Art. 9 (Enriquecimento ilícito):</strong> "Constitui ato de improbidade administrativa importando enriquecimento ilícito auferir, mediante a prática de ato doloso, qualquer tipo de vantagem patrimonial indevida, notadamente quando o agente público..." (rol <strong>exemplificativo</strong> – a palavra "notadamente" indica que a lista não é exaustiva).</li>
+            <li><strong>Art. 10 (Dano ao erário):</strong> "Constitui ato de improbidade administrativa que causa lesão ao erário qualquer ação ou omissão, dolosa ou culposa, que enseje perda patrimonial, desvio, apropriação, etc., notadamente quando..." (também <strong>exemplificativo</strong>).</li>
+            <li><strong>Art. 11 (Violação aos princípios):</strong> "Constitui ato de improbidade administrativa que atenta contra os princípios da administração pública qualquer ação ou omissão que viole os deveres de honestidade, imparcialidade, legalidade, e lealdade às instituições, e caracterizada por uma das seguintes condutas:" (rol <strong>taxativo</strong> – a expressão "uma das seguintes" indica que a lista é fechada).</li>
+        </ul>
+
+        <div class="card card-dica">
+            <h4>MACETE</h4>
+            <ul>
+                <li>Arts. 9 e 10 → <span class="destaque-texto">"notadamente"</span> = exemplificativo (rol aberto).</li>
+                <li>Art. 11 → <span class="destaque-texto">"uma das seguintes"</span> = taxativo (rol fechado).</li>
+            </ul>
+            <p><strong>Mnemônico:</strong> <em>"Notadamente não esgota; uma das seguintes lista fechada."</em></p>
+        </div>
+        <div class="card card-observacao">
+            <h4>Exemplo prático</h4>
+            <p>Se um agente público praticar uma conduta que, embora não esteja prevista no art. 11, viole os princípios da Administração, não haverá improbidade por violação a princípios, pois o rol é taxativo. Porém, se a conduta causar enriquecimento ilícito ou dano ao erário, ainda que não listada, poderá ser enquadrada nos arts. 9 e 10, pois seus rol são exemplificativos.</p>
+        </div>
+
+        <hr class="separador">
+
+        <!-- ============================================================ -->
+        <!-- PARTE VIII -->
+        <!-- ============================================================ -->
+        <h2 id="parte8">PARTE VIII – TRIBUNAL DE CONTAS</h2>
+
+        <h3>1. Competência para Registrar Admissão de Pessoal (art. 71, III, CF)</h3>
+        <p>O Tribunal de Contas (TCU, TCEs, TCMs) tem competência para apreciar, para fins de registro, a legalidade dos atos de admissão de pessoal, a qualquer título, na administração direta e indireta, excetuadas as nomeações para cargos de provimento em comissão (cargos de livre nomeação e exoneração).</p>
+        <div class="card">
+            <h4>Características desse controle:</h4>
+            <ul class="lista-marcador">
+                <li><strong>Controle posterior</strong> (o ato de admissão já foi praticado, e o TC analisa sua legalidade).</li>
+                <li><strong>Controle de legalidade apenas</strong> – não examina mérito (conveniência ou oportunidade da nomeação).</li>
+                <li>Pode ser exercido de ofício (independentemente de provocação) ou por denúncia.</li>
+                <li>Se o TC constatar ilegalidade, susta o ato (não registra) e pode determinar a exoneração do servidor, se for o caso.</li>
+            </ul>
+        </div>
+        <div class="callout">
+            <strong>Exemplo:</strong> Um servidor é nomeado para cargo efetivo sem a devida comprovação de escolaridade. O TC, ao apreciar o ato, nega registro, e o ato perde eficácia. Se já tiver havido posse e exercício, a administração deve exonerar.
+        </div>
+        <div class="card card-alerta">
+            <h4>ATENÇÃO</h4>
+            <p>O controle do Tribunal de Contas sobre admissão de pessoal <strong>não se estende aos cargos em comissão</strong>, pois estes são de livre provimento. Para esses, o controle é apenas de mérito (pelo chefe do Poder Executivo) ou eventual controle judicial por ilegalidade.</p>
+        </div>
+
+        <hr class="separador">
+
+        <!-- ============================================================ -->
+        <!-- PARTE IX -->
+        <!-- ============================================================ -->
+        <h2 id="parte9">PARTE IX – MEMORIZAÇÃO INTELIGENTE E MACETES FINAIS</h2>
+
+        <div class="grid-2col">
+            <div class="card card-dica">
+                <h4>1. Outorga x Delegação</h4>
+                <p><strong>Outorga:</strong> cria nova pessoa (Administração Indireta) e transfere titularidade + execução – prazo indeterminado.</p>
+                <p><strong>Delegação:</strong> transfere apenas execução a particular preexistente – prazo determinado (contrato ou ato unilateral).</p>
+                <p><strong>Mnemônico:</strong> <em>"OUTORGA – OUTRA PESSOA (cria ente) e transfere TUDO; DELEGAÇÃO – só EXECUTA, mas o DONO (titular) é o Estado."</em></p>
+            </div>
+            <div class="card card-dica">
+                <h4>2. Rol de Condutas na Improbidade</h4>
+                <p>Arts. 9 e 10: <span class="destaque-texto">"notadamente"</span> → exemplificativo.</p>
+                <p>Art. 11: <span class="destaque-texto">"uma das seguintes"</span> → taxativo.</p>
+                <p><strong>Mnemônico:</strong> <em>"No 9 e 10, o legislador deu NOTA (notadamente) – não fechou a lista. No 11, ele SEGUIU (uma das seguintes) – lista fechada."</em></p>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <caption style="caption-side:bottom; margin-top:0.6rem; color:#aab0d0; font-size:0.9rem;">3. Revogação x Anulação</caption>
+                <thead>
+                    <tr><th>Critério</th><th>Revogação</th><th>Anulação</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Motivo</strong></td><td>Mérito (conveniência/oportunidade)</td><td>Ilegalidade</td></tr>
+                    <tr><td><strong>Atos</strong></td><td>Discricionários</td><td>Vinculados e discricionários</td></tr>
+                    <tr><td><strong>Efeitos</strong></td><td><em>Ex nunc</em></td><td><em>Ex tunc</em></td></tr>
+                    <tr><td><strong>Quem pode fazer</strong></td><td>Administração (não o Judiciário)</td><td>Administração ou Judiciário</td></tr>
+                    <tr><td><strong>Direitos adquiridos</strong></td><td>Respeitados</td><td>Não se fala em direitos adquiridos, pois o ato é nulo</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="grid-2col">
+            <div class="card card-dica">
+                <h4>4. Responsabilidade Civil: Concessionárias</h4>
+                <p><strong>Regra:</strong> responsabilidade objetiva (teoria do risco administrativo), com base no art. 37, §6º.</p>
+                <p><strong>Direito de regresso:</strong> contra o agente, caso dolo ou culpa (responsabilidade subjetiva do agente).</p>
+            </div>
+            <div class="card card-dica">
+                <h4>5. Extinção da Concessão</h4>
+                <p><strong>Encampação:</strong> interesse público → lei autorizativa + indenização prévia.</p>
+                <p><strong>Caducidade:</strong> culpa do concessionário → processo administrativo, sem lei, indenização posterior.</p>
+                <p><strong>Rescisão:</strong> culpa do poder concedente → depende de decisão judicial.</p>
+                <p><strong>Anulação:</strong> ilegalidade → efeitos retroativos.</p>
+                <p><strong>Macete:</strong> <em>"Encampação: E de Estado (interesse público), exige Lei e Pagamento antes; Caducidade: C de Culpa do concessionário, exige Processo e paga Depois."</em></p>
+            </div>
+        </div>
+
+        <hr class="separador">
+
+        <!-- ===== CONCLUSÃO ===== -->
+        <div class="card" style="border-left-color:#9aacff; background:#18182e;">
+            <h4>Conclusão</h4>
+            <p>Este material percorreu os principais tópicos de Direito Administrativo cobrados em concursos de alto nível para o Poder Judiciário. A chave para o sucesso está em compreender a lógica de cada instituto, distinguir conceitos semelhantes e aplicar o conhecimento a casos práticos. As bancas examinadoras exploram justamente as nuances, as exceções e as palavras-chave da lei.</p>
+            <p>Lembre-se:</p>
+            <ul class="lista-marcador">
+                <li>Desconcentração é interna, com hierarquia; descentralização é externa, sem hierarquia, com tutela ou controle.</li>
+                <li>Outorga transfere titularidade e execução; delegação transfere só execução.</li>
+                <li>Revogação atinge o mérito, anulação atinge a legalidade.</li>
+                <li>Improbidade: arts. 9 e 10 são exemplificativos; art. 11 é taxativo.</li>
+                <li>Concessão: encampação exige lei e indenização prévia; caducidade exige processo e indenização posterior.</li>
+            </ul>
+            <p style="font-weight:500; color:#d4dcff; margin-top:0.8rem;">Agora, revise os quadros e exemplos, pratique com questões de provas anteriores e, principalmente, treine a resolução de casos hipotéticos. Bons estudos e sucesso na sua jornada!</p>
+        </div>
+
+        <div class="footer-nota">
+            <strong>APOSTILA TEÓRICA – ADMINISTRAÇÃO PÚBLICA, LICITAÇÕES, SERVIÇOS PÚBLICOS E RESPONSABILIDADE DO ESTADO</strong><br>
+            Conteúdo integral preservado · Design otimizado para leitura em tablet
+        </div>
+
+    </div>
+</body>
+</html>

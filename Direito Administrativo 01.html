@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila de Direito Administrativo – Técnico Judiciário</title>
+    <style>
+        :root {
+            --bg: #1a1a1a;
+            --surface: #252525;
+            --surface-light: #2f2f2f;
+            --surface-lighter: #3a3a3a;
+            --text: #d8d8d8;
+            --text-strong: #eaeaea;
+            --text-muted: #a0a0a0;
+            --gold: #d4a843;
+            --gold-light: #e6c56d;
+            --blue: #7aaae2;
+            --blue-soft: #5c8ec7;
+            --red: #e07070;
+            --green: #6fbf6f;
+            --orange: #d4944c;
+            --purple: #b39ddb;
+            --border: #444;
+            --border-light: #555;
+            --highlight-gold: rgba(212, 168, 67, 0.12);
+            --highlight-blue: rgba(122, 170, 226, 0.12);
+            --highlight-red: rgba(224, 112, 112, 0.15);
+            --highlight-green: rgba(111, 191, 111, 0.12);
+            --highlight-orange: rgba(212, 148, 76, 0.15);
+            --shadow: 0 8px 20px rgba(0,0,0,0.5);
+            --radius: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #121212;
+            font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            line-height: 1.75;
+            font-size: 18px;
+            padding: 24px 16px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 860px;
+            width: 100%;
+            background: var(--bg);
+            border-radius: 18px;
+            padding: 40px 36px;
+            box-shadow: var(--shadow);
+        }
+
+        /* tipografia */
+        h1, h2, h3, h4, h5 {
+            color: var(--text-strong);
+            font-weight: 600;
+            letter-spacing: -0.2px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 0.2em;
+            color: var(--gold);
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 0.3em;
+        }
+
+        h2 {
+            font-size: 1.7em;
+            margin: 1.8em 0 0.8em 0;
+            color: var(--gold-light);
+            border-left: 5px solid var(--gold);
+            padding-left: 16px;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin: 1.5em 0 0.6em 0;
+            color: var(--blue);
+        }
+
+        h4 {
+            font-size: 1.2em;
+            margin: 1.2em 0 0.5em 0;
+            color: var(--text-strong);
+        }
+
+        p {
+            margin-bottom: 1.1em;
+            color: var(--text);
+        }
+
+        ul, ol {
+            margin: 0.8em 0 1.2em 1.5em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        strong {
+            color: var(--text-strong);
+            font-weight: 600;
+        }
+
+        /* links */
+        a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: var(--blue-soft);
+        }
+
+        /* sumário */
+        .sumario {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 28px 30px;
+            margin: 30px 0 40px 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        .sumario h2 {
+            margin-top: 0;
+            border-left: none;
+            padding-left: 0;
+            color: var(--gold);
+        }
+
+        .sumario ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .sumario li {
+            margin-bottom: 4px;
+        }
+
+        .sumario a {
+            display: inline-block;
+            padding: 4px 0;
+        }
+
+        .sumario .sub {
+            margin-left: 24px;
+            font-size: 0.95em;
+        }
+
+        /* tabelas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2em 0 1.8em 0;
+            background: var(--surface);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            font-size: 0.95em;
+        }
+
+        th {
+            background: var(--surface-lighter);
+            color: var(--text-strong);
+            font-weight: 600;
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) td {
+            background: rgba(255,255,255,0.02);
+        }
+
+        /* callouts e boxes */
+        .callout {
+            margin: 1.5em 0;
+            padding: 18px 22px;
+            border-radius: 10px;
+            border-left: 6px solid;
+            background: var(--surface);
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .callout .icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            margin-top: 2px;
+        }
+
+        .callout .content {
+            flex: 1;
+        }
+
+        .callout.dica {
+            border-color: #6fbf6f;
+            background: #1e2a1e;
+        }
+        .callout.pegadinha {
+            border-color: #e07070;
+            background: #2a1e1e;
+        }
+        .callout.associacao {
+            border-color: #b39ddb;
+            background: #23202b;
+        }
+        .callout.caso {
+            border-color: #7aaae2;
+            background: #1e242e;
+        }
+        .callout.mnemonico {
+            border-color: #d4944c;
+            background: #28221c;
+        }
+        .callout.citacao {
+            border-color: #d4a843;
+            background: #252015;
+            font-style: italic;
+        }
+
+        .callout .titulo {
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--text-strong);
+        }
+
+        /* blocos de destaque */
+        .highlight-box {
+            background: var(--highlight-gold);
+            border: 1px solid #5e4a1c;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 1.2em 0;
+            font-weight: 500;
+            color: #e6c56d;
+        }
+
+        .box-informativo {
+            background: var(--highlight-blue);
+            border: 1px solid #2e4a6e;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin: 1.2em 0;
+        }
+
+        /* separadores */
+        hr.divider {
+            border: none;
+            border-top: 2px solid var(--border-light);
+            margin: 2.5em 0;
+            opacity: 0.7;
+        }
+
+        hr.soft-divider {
+            border: none;
+            border-top: 1px dashed var(--border);
+            margin: 1.8em 0;
+        }
+
+        /* svg diagramas */
+        .diagram-container {
+            margin: 2em 0;
+            text-align: center;
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 20px;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* responsivo */
+        @media (max-width: 700px) {
+            .container {
+                padding: 24px 18px;
+            }
+            body {
+                font-size: 16px;
+                padding: 12px 8px;
+            }
+            .callout {
+                flex-direction: column;
+            }
+        }
+
+        /* cartões para casos */
+        .card {
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin: 1.2em 0;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* listas organizadas */
+        .feature-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        .feature-list li::before {
+            content: "▸";
+            color: var(--gold);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <header style="margin-bottom: 2em;">
+        <h1>APOSTILA DE DIREITO ADMINISTRATIVO PARA TÉCNICO JUDICIÁRIO</h1>
+        <p style="font-size:1.1em; color: var(--text-muted);">Material Didático para Concursos de Alto Nível</p>
+    </header>
+
+    <!-- SUMÁRIO -->
+    <nav class="sumario">
+        <h2>Sumário</h2>
+        <ul>
+            <li><a href="#parte1">PARTE I – FUNDAMENTOS TEÓRICOS E ESTRUTURAIS</a>
+                <ul class="sub">
+                    <li><a href="#cap1">Capítulo 1 – Agentes Públicos e Regime Jurídico</a></li>
+                    <li><a href="#cap2">Capítulo 2 – Poderes Administrativos</a></li>
+                    <li><a href="#cap3">Capítulo 3 – Administração Indireta</a></li>
+                    <li><a href="#cap4">Capítulo 4 – Descentralização Administrativa</a></li>
+                </ul>
+            </li>
+            <li><a href="#parte2">PARTE II – ATOS ADMINISTRATIVOS</a>
+                <ul class="sub">
+                    <li><a href="#cap5">Capítulo 5 – Espécies de Atos Administrativos</a></li>
+                    <li><a href="#cap6">Capítulo 6 – Elementos do Ato Administrativo</a></li>
+                </ul>
+            </li>
+            <li><a href="#parte3">PARTE III – CONTRATOS ADMINISTRATIVOS</a>
+                <ul class="sub">
+                    <li><a href="#cap7">Capítulo 7 – Nulidade dos Contratos Administrativos (Lei 14.133/2021)</a></li>
+                    <li><a href="#cap8">Capítulo 8 – Modalidades de Licitação (Lei 14.133/2021)</a></li>
+                </ul>
+            </li>
+            <li><a href="#parte4">PARTE IV – IMPROBIDADE ADMINISTRATIVA</a>
+                <ul class="sub">
+                    <li><a href="#cap9">Capítulo 9 – Lei de Improbidade Administrativa (Lei 8.429/92)</a></li>
+                </ul>
+            </li>
+            <li><a href="#parte5">PARTE V – CONTROLE DA ADMINISTRAÇÃO PÚBLICA</a>
+                <ul class="sub">
+                    <li><a href="#cap10">Capítulo 10 – Controle Interno</a></li>
+                </ul>
+            </li>
+            <li><a href="#parte6">PARTE VI – CASOS PRÁTICOS E APLICAÇÕES</a>
+                <ul class="sub">
+                    <li><a href="#cap11">Capítulo 11 – Análise de Situações Hipotéticas</a></li>
+                    <li><a href="#cap12">Capítulo 12 – Resumo Esquemático</a></li>
+                    <li><a href="#cap13">Capítulo 13 – Macetes e Associações</a></li>
+                    <li><a href="#cap14">Capítulo 14 – Jurisprudência Relevante</a></li>
+                </ul>
+            </li>
+            <li><a href="#anexos">ANEXOS</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- PARTE I -->
+        <section id="parte1">
+            <h2>PARTE I – FUNDAMENTOS TEÓRICOS E ESTRUTURAIS</h2>
+            <hr class="soft-divider">
+
+            <!-- Capítulo 1 -->
+            <article id="cap1">
+                <h3>CAPÍTULO 1 – AGENTES PÚBLICOS E REGIME JURÍDICO</h3>
+
+                <h4>1.1 Classificação Constitucional dos Agentes Públicos</h4>
+                <p>A compreensão da natureza jurídica dos agentes públicos é fundamental para o estudo do Direito Administrativo, especialmente em concursos para o Poder Judiciário. A Constituição Federal estabelece diferentes categorias de agentes, cada qual com regime jurídico e garantias específicas.</p>
+
+                <h4>1.1.1 Servidores Públicos Efetivos</h4>
+                <p>O servidor público efetivo é aquele que ocupa <strong>cargo público de provimento efetivo</strong>, obtido mediante <strong>aprovação em concurso público</strong> de provas ou de provas e títulos, conforme determina o art. 37, II, da CF/88.</p>
+                <p><strong>Características essenciais:</strong></p>
+                <ul>
+                    <li><strong>Ingresso obrigatório por concurso público</strong> – vedação constitucional absoluta ao acesso sem a devida aprovação</li>
+                    <li><strong>Estabilidade</strong> – após 3 anos de efetivo exercício, preenchidos os requisitos legais (art. 41, CF/88)</li>
+                    <li><strong>Regime estatutário</strong> – sujeito ao regime jurídico único estabelecido por lei</li>
+                    <li><strong>Vitaliciedade</strong> – garantia específica para magistrados e membros do Ministério Público (art. 95, I, CF/88)</li>
+                </ul>
+
+                <div class="callout dica">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6fbf6f" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.87-3.13-7-7-7z"/><path d="M9 21h6M10 18h4"/><line x1="12" y1="14" x2="12" y2="10"/><circle cx="12" cy="8" r="0.8" fill="#6fbf6f"/></svg>
+                    <div class="content">
+                        <div class="titulo">DICA DE PROVA (FGV)</div>
+                        <p>A banca FGV explora frequentemente a distinção entre cargo efetivo (estabilidade) e cargo em comissão (livre exoneração). Questões que envolvem a natureza do vínculo funcional são recorrentes.</p>
+                    </div>
+                </div>
+
+                <h4>1.1.2 Cargo Efetivo × Cargo Vitalício</h4>
+                <p>Uma das distinções mais cobradas em concursos é a diferença entre as garantias constitucionais atribuídas a diferentes categorias de agentes:</p>
+
+                <table>
+                    <thead><tr><th>Critério</th><th>Cargo Efetivo</th><th>Cargo Vitalício</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Exemplo</strong></td><td>Analista Judiciário, Técnico Judiciário</td><td>Juiz Federal, Juiz Estadual</td></tr>
+                        <tr><td><strong>Garantia</strong></td><td>Estabilidade (art. 41)</td><td>Vitaliciedade (art. 95, I)</td></tr>
+                        <tr><td><strong>Período para aquisição</strong></td><td>3 anos de efetivo exercício</td><td>2 anos de exercício (magistratura)</td></tr>
+                        <tr><td><strong>Perda</strong></td><td>Sentença judicial transitada em julgado ou procedimento administrativo disciplinar</td><td>Sentença judicial transitada em julgado</td></tr>
+                        <tr><td><strong>Base legal</strong></td><td>CF/88, art. 41</td><td>CF/88, art. 95, I</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="callout associacao">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#b39ddb" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/><path d="M12 4V2M15 6l2-2M9 6L7 4"/></svg>
+                    <div class="content">
+                        <div class="titulo">ASSOCIAÇÃO MENTAL</div>
+                        <p>"Estabilidade = 3 anos para todos; Vitaliciedade = 2 anos para magistrados e MP"</p>
+                    </div>
+                </div>
+
+                <h4>1.2 Remuneração no Serviço Público</h4>
+                <h4>1.2.1 Vedação à Vinculação ou Equiparação</h4>
+                <p>O art. 37, XIII, da CF/88 estabelece proibição expressa: <strong>vedada a vinculação ou equiparação de quaisquer espécies remuneratórias para o efeito de remuneração de pessoal do serviço público.</strong></p>
+                <p><strong>Entendimento do STF:</strong></p>
+                <p>O Supremo Tribunal Federal, no julgamento da <strong>ADPF 328</strong>, consolidou o entendimento de que:</p>
+                <ul>
+                    <li>A vedação é absoluta para efeito de remuneração</li>
+                    <li>A EC 19/1998 revogou o antigo §1º do art. 39, que permitia tal vinculação</li>
+                    <li>Não se pode utilizar a remuneração de uma carreira como parâmetro para outra</li>
+                </ul>
+
+                <div class="callout pegadinha">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#e07070" stroke-width="2"><path d="M12 2L2 22h20L12 2z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17.5" r="0.7" fill="#e07070"/></svg>
+                    <div class="content">
+                        <div class="titulo">PEGADINHA DE BANCA</div>
+                        <p>A questão que afirma ser permitida a equiparação para fins de "isonomia" está incorreta. O princípio da isonomia não autoriza a vinculação remuneratória entre carreiras distintas.</p>
+                    </div>
+                </div>
+            </article>
+
+            <hr class="divider">
+
+            <!-- Capítulo 2 -->
+            <article id="cap2">
+                <h3>CAPÍTULO 2 – PODERES ADMINISTRATIVOS</h3>
+                <h4>2.1 Classificação dos Poderes</h4>
+                <p>Os poderes administrativos são instrumentos conferidos à Administração Pública para o cumprimento de suas finalidades. A identificação correta de cada poder é essencial para resolver questões práticas.</p>
+
+                <h4>2.1.1 Poder Hierárquico</h4>
+                <p><strong>Conceito:</strong> Poder de estruturação, coordenação, direção e fiscalização da atividade administrativa, exercido na relação vertical entre superior e subordinado.</p>
+                <p><strong>Manifestações:</strong></p>
+                <ul>
+                    <li><strong>Ordenar</strong> – expedição de ordens gerais ou específicas</li>
+                    <li><strong>Fiscalizar</strong> – controlar e acompanhar a atuação dos subordinados</li>
+                    <li><strong>Delegar</strong> – transferir atribuições a agentes subordinados</li>
+                    <li><strong>Avocar</strong> – chamar para si competência originalmente atribuída a subordinado</li>
+                </ul>
+
+                <div class="callout caso">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#7aaae2" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 9h8M8 13h6M8 17h4"/></svg>
+                    <div class="content">
+                        <div class="titulo">CASO PRÁTICO</div>
+                        <p>O Chefe de um setor avoca temporariamente a competência de um servidor subordinado para decidir determinado processo. Esta situação configura exercício do <strong>poder hierárquico</strong>.</p>
+                    </div>
+                </div>
+
+                <h4>2.1.2 Poder Disciplinar</h4>
+                <p><strong>Conceito:</strong> Poder-dever da Administração de aplicar penalidades a servidores públicos e demais pessoas que mantenham relação de sujeição especial com o Poder Público.</p>
+                <p><strong>Características fundamentais:</strong></p>
+                <ul>
+                    <li><strong>Instrumento de interesse público</strong> – não é privilégio pessoal do agente superior</li>
+                    <li><strong>Poder-dever</strong> – a Administração tem o dever de aplicá-lo, não mera faculdade</li>
+                    <li><strong>Relação de sujeição especial</strong> – exige vínculo específico (servidor público, contratado, etc.)</li>
+                    <li><strong>Processo regular</strong> – necessidade de ampla defesa e contraditório</li>
+                </ul>
+                <div class="callout pegadinha">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#e07070" stroke-width="2"><path d="M12 2L2 22h20L12 2z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17.5" r="0.7" fill="#e07070"/></svg>
+                    <div class="content">
+                        <div class="titulo">DISTINÇÃO ESSENCIAL</div>
+                        <p>As sanções aplicadas a quem não possui vínculo com a Administração decorrem do <strong>poder de polícia</strong>, não do poder disciplinar. Para o poder disciplinar, exige-se a relação de sujeição especial.</p>
+                    </div>
+                </div>
+
+                <h4>2.1.3 Poder de Polícia</h4>
+                <p><strong>Conceito:</strong> Atividade do Estado consistente em condicionar, limitar ou restringir o exercício de direitos individuais em benefício do interesse público.</p>
+                <p><strong>Fases:</strong></p>
+                <ol>
+                    <li><strong>Consentimento (ordem)</strong> – licenças, autorizações, permissões</li>
+                    <li><strong>Fiscalização</strong> – verificação do cumprimento das condições</li>
+                    <li><strong>Sanção</strong> – aplicação de penalidades pelo descumprimento</li>
+                </ol>
+
+                <!-- Diagrama Fluxo Poder de Polícia -->
+                <div class="diagram-container">
+                    <svg viewBox="0 0 600 100" width="100%" height="auto" role="img" aria-label="Fases do Poder de Polícia">
+                        <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#d4a843"/></marker></defs>
+                        <rect x="20" y="30" width="140" height="40" rx="6" fill="#2f2f2f" stroke="#d4a843" stroke-width="1.5"/>
+                        <text x="90" y="55" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="600">Consentimento</text>
+                        <line x1="160" y1="50" x2="210" y2="50" stroke="#d4a843" stroke-width="2" marker-end="url(#arrow)"/>
+                        <rect x="220" y="30" width="140" height="40" rx="6" fill="#2f2f2f" stroke="#d4a843" stroke-width="1.5"/>
+                        <text x="290" y="55" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="600">Fiscalização</text>
+                        <line x1="360" y1="50" x2="410" y2="50" stroke="#d4a843" stroke-width="2" marker-end="url(#arrow)"/>
+                        <rect x="420" y="30" width="140" height="40" rx="6" fill="#2f2f2f" stroke="#d4a843" stroke-width="1.5"/>
+                        <text x="490" y="55" text-anchor="middle" fill="#e0e0e0" font-size="14" font-weight="600">Sanção</text>
+                    </svg>
+                </div>
+
+                <div class="callout caso">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#7aaae2" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 9h8M8 13h6M8 17h4"/></svg>
+                    <div class="content">
+                        <div class="titulo">EXEMPLO PRÁTICO</div>
+                        <p>A concessão de licença para funcionamento de estabelecimento comercial, mediante verificação do cumprimento de requisitos legais, configura exercício do poder de polícia na fase de consentimento.</p>
+                    </div>
+                </div>
+
+                <h4>2.1.4 Exercício de Identificação – CASOS PRÁTICOS</h4>
+                <table>
+                    <thead><tr><th>Situação</th><th>Poder Administrativo</th><th>Fundamento</th></tr></thead>
+                    <tbody>
+                        <tr><td>Aplicação de multa contratual após processo administrativo</td><td><strong>Disciplinar</strong></td><td>Relação contratual com a Administração</td></tr>
+                        <tr><td>Concessão de licença mediante requisitos legais</td><td><strong>Polícia</strong></td><td>Controle de atividades particulares (consentimento)</td></tr>
+                        <tr><td>Avocação temporária de competência</td><td><strong>Hierárquico</strong></td><td>Relação vertical entre superior e subordinado</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="callout associacao">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#b39ddb" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/><path d="M12 4V2M15 6l2-2M9 6L7 4"/></svg>
+                    <div class="content">
+                        <div class="titulo">MAPA MENTAL</div>
+                        <p>Hierárquico = vertical, estruturação; Disciplinar = sanção a servidores; Polícia = limitação de direitos</p>
+                    </div>
+                </div>
+            </article>
+
+            <hr class="divider">
+
+            <!-- Capítulo 3 -->
+            <article id="cap3">
+                <h3>CAPÍTULO 3 – ADMINISTRAÇÃO INDIRETA</h3>
+                <h4>3.1 Conceito e Características</h4>
+                <p>A Administração Indireta é composta por entidades com <strong>personalidade jurídica própria</strong>, criadas para desempenhar atividades específicas, com vínculo de <strong>supervisão finalística</strong> (tutela) com o ente federativo que as criou.</p>
+                <div class="highlight-box">📌 <strong>CARACTERÍSTICA ESSENCIAL:</strong> Não existe relação de hierarquia entre a Administração Direta e a Indireta, mas sim vínculo de supervisão finalística ou tutela administrativa.</div>
+
+                <h4>3.2 Entidades da Administração Indireta</h4>
+                <h4>3.2.1 Autarquia</h4>
+                <p><strong>Natureza:</strong> Pessoa jurídica de direito público<br><strong>Criação:</strong> Lei específica<br><strong>Características:</strong> Especialização, descentralização, autonomia administrativa</p>
+                <h4>3.2.2 Fundação Pública</h4>
+                <p><strong>Natureza:</strong> Direito público ou privado<br><strong>Criação:</strong> Lei ou autorização legal<br><strong>Características:</strong> Finalidade específica, patrimônio próprio</p>
+                <h4>3.2.3 Empresa Pública</h4>
+                <p><strong>Natureza:</strong> Pessoa jurídica de direito privado<br><strong>Capital:</strong> 100% público<br><strong>Forma:</strong> Qualquer forma societária admitida em direito</p>
+                <h4>3.2.4 Sociedade de Economia Mista</h4>
+                <p><strong>Natureza:</strong> Pessoa jurídica de direito privado<br><strong>Capital:</strong> Misto (público e privado)<br><strong>Forma:</strong> Exclusivamente sociedade anônima (S.A.)<br><strong>Controle:</strong> Ações com direito a voto pertencem majoritariamente ao Estado</p>
+
+                <div class="callout caso">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#7aaae2" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 9h8M8 13h6M8 17h4"/></svg>
+                    <div class="content">
+                        <div class="titulo">EXEMPLO PRÁTICO</div>
+                        <p>Uma entidade constituída na forma de S.A., com capital misto e controle estatal, destinada à exploração de atividade econômica de relevante interesse público, corresponde a uma <strong>sociedade de economia mista</strong>.</p>
+                    </div>
+                </div>
+
+                <h4>3.3 Quadro Comparativo</h4>
+                <table>
+                    <thead><tr><th>Entidade</th><th>Direito</th><th>Capital</th><th>Forma</th><th>Criação</th></tr></thead>
+                    <tbody>
+                        <tr><td>Autarquia</td><td>Público</td><td>Público</td><td>Qualquer</td><td>Lei específica</td></tr>
+                        <tr><td>Fundação Pública</td><td>Público/Privado</td><td>Público</td><td>Qualquer</td><td>Lei/ Autorização</td></tr>
+                        <tr><td>Empresa Pública</td><td>Privado</td><td>100% público</td><td>Qualquer</td><td>Lei/ Autorização</td></tr>
+                        <tr><td>Sociedade Economia Mista</td><td>Privado</td><td>Misto</td><td>Obrigatório S.A.</td><td>Lei/ Autorização</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="callout mnemonico">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#d4944c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+                    <div class="content">
+                        <div class="titulo">Mnemônico</div>
+                        <p>"A EMPRESA PÚBLICA é 100% PÚBLICA; a SOCIEDADE DE ECONOMIA MISTA é MISTA, com S.A. obrigatória"</p>
+                    </div>
+                </div>
+            </article>
+
+            <hr class="divider">
+
+            <!-- Capítulo 4 -->
+            <article id="cap4">
+                <h3>CAPÍTULO 4 – DESCENTRALIZAÇÃO ADMINISTRATIVA</h3>
+                <h4>4.1 Conceito e Espécies</h4>
+                <p>A descentralização administrativa é a técnica de distribuição de competências entre pessoas jurídicas distintas.</p>
+                <h4>4.1.1 Descentralização Política × Administrativa</h4>
+                <table>
+                    <thead><tr><th>Descentralização Política</th><th>Descentralização Administrativa</th></tr></thead>
+                    <tbody>
+                        <tr><td>Distribuição de competências entre entes federativos</td><td>Distribuição de competências dentro de um mesmo ente</td></tr>
+                        <tr><td>Ex: União, Estados, Municípios</td><td>Ex: Autarquias, fundações</td></tr>
+                        <tr><td>Natureza constitucional</td><td>Natureza infraconstitucional</td></tr>
+                    </tbody>
+                </table>
+
+                <h4>4.1.2 Descentralização Administrativa – Espécies</h4>
+                <p><strong>Descentralização por Serviços (Outorga):</strong></p>
+                <ul>
+                    <li>Criação de entidade com personalidade jurídica própria</li>
+                    <li>Transferência da execução do serviço</li>
+                    <li>Mantém-se a titularidade com o ente criador</li>
+                    <li>Ex: Autarquias, fundações</li>
+                </ul>
+                <p><strong>Descentralização por Colaboração:</strong></p>
+                <ul>
+                    <li>Transferência da execução para particulares</li>
+                    <li>Mediante contrato ou ato administrativo</li>
+                    <li>Ex: Concessão, permissão, autorização</li>
+                </ul>
+
+                <h4>4.2 Relação com a Administração Direta</h4>
+                <div class="highlight-box">📌 <strong>CARACTERÍSTICA FUNDAMENTAL:</strong> Não existe relação de hierarquia entre a Administração Direta e a Indireta, mas sim <strong>vínculo de supervisão finalística</strong> (tutela ou controle finalístico).</div>
+                <p><strong>Características do vínculo:</strong></p>
+                <ul>
+                    <li><strong>Tutela administrativa</strong> – controle finalístico, não hierárquico</li>
+                    <li><strong>Supervisão ministerial</strong> – acompanhamento do cumprimento de finalidades</li>
+                    <li><strong>Autonomia</strong> – as entidades possuem autonomia administrativa e financeira</li>
+                    <li><strong>Personalidade jurídica própria</strong> – distinta do ente criador</li>
+                </ul>
+
+                <div class="callout pegadinha">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#e07070" stroke-width="2"><path d="M12 2L2 22h20L12 2z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17.5" r="0.7" fill="#e07070"/></svg>
+                    <div class="content">
+                        <div class="titulo">PEGADINHA DE BANCA</div>
+                        <p>Questões que afirmam existir relação de hierarquia entre Administração Direta e Indireta estão incorretas. O vínculo correto é de supervisão finalística.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <hr class="divider">
+
+        <!-- PARTE II -->
+        <section id="parte2">
+            <h2>PARTE II – ATOS ADMINISTRATIVOS</h2>
+            <hr class="soft-divider">
+
+            <article id="cap5">
+                <h3>CAPÍTULO 5 – ESPÉCIES DE ATOS ADMINISTRATIVOS</h3>
+                <h4>5.1 Classificação</h4>
+                <h4>5.1.1 Atos Normativos</h4>
+                <p><strong>Conceito:</strong> Contêm comandos gerais e abstratos, aplicáveis a número indeterminado de destinatários.</p>
+                <p><strong>Exemplos:</strong></p>
+                <ul>
+                    <li>Regimentos internos</li>
+                    <li>Decretos regulamentares</li>
+                    <li>Instruções normativas</li>
+                </ul>
+                <div class="callout caso">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#7aaae2" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 9h8M8 13h6M8 17h4"/></svg>
+                    <div class="content">
+                        <div class="titulo">CASO PRÁTICO</div>
+                        <p>O Regimento Interno editado por um Tribunal de Justiça para disciplinar o funcionamento de suas atividades classifica-se como <strong>ato normativo</strong>, pois contém comandos gerais e abstratos aplicáveis a magistrados, servidores e partes.</p>
+                    </div>
+                </div>
+
+                <h4>5.1.2 Atos Ordinatórios</h4>
+                <p><strong>Conceito:</strong> Destinados à organização interna da Administração, com alcance restrito aos subordinados.</p>
+                <p><strong>Exemplos:</strong></p>
+                <ul>
+                    <li>Portarias</li>
+                    <li>Ordens de serviço</li>
+                    <li>Circulares</li>
+                </ul>
+                <div class="callout pegadinha">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#e07070" stroke-width="2"><path d="M12 2L2 22h20L12 2z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17.5" r="0.7" fill="#e07070"/></svg>
+                    <div class="content">
+                        <div class="titulo">DISTINÇÃO IMPORTANTE</div>
+                        <p>Ato normativo tem <strong>amplitude normativa</strong> (atinge destinatários indeterminados); ato ordinatório tem <strong>alcance restrito a subordinados</strong>.</p>
+                    </div>
+                </div>
+
+                <h4>5.1.3 Atos Negociais</h4>
+                <p><strong>Conceito:</strong> Expressão da vontade da Administração que coincide com a do particular, visando à obtenção de um interesse público.</p>
+                <p><strong>Exemplos:</strong></p>
+                <ul>
+                    <li>Licenças</li>
+                    <li>Autorizações</li>
+                    <li>Permissões</li>
+                </ul>
+
+                <h4>5.2 Comparativo entre Espécies</h4>
+                <table>
+                    <thead><tr><th>Ato</th><th>Característica</th><th>Destinatários</th><th>Exemplo</th></tr></thead>
+                    <tbody>
+                        <tr><td>Normativo</td><td>Comandos gerais e abstratos</td><td>Indeterminados</td><td>Regimento Interno</td></tr>
+                        <tr><td>Ordinatório</td><td>Organização interna</td><td>Subordinados</td><td>Portaria</td></tr>
+                        <tr><td>Negocial</td><td>Convergência de vontades</td><td>Determinados</td><td>Licença</td></tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <hr class="soft-divider">
+
+            <article id="cap6">
+                <h3>CAPÍTULO 6 – ELEMENTOS DO ATO ADMINISTRATIVO</h3>
+                <h4>6.1 Elementos Essenciais</h4>
+                <p>Os elementos do ato administrativo são:</p>
+                <ol>
+                    <li><strong>Competência</strong> (sujeito) – quem pratica</li>
+                    <li><strong>Finalidade</strong> (fim) – para que</li>
+                    <li><strong>Forma</strong> (formalidade) – como</li>
+                    <li><strong>Motivo</strong> (causa) – por que</li>
+                    <li><strong>Objeto</strong> (conteúdo) – o que</li>
+                </ol>
+
+                <h4>6.2 Vinculados × Discricionários</h4>
+                <p>A distinção entre elementos vinculados e discricionários é essencial para a compreensão do controle judicial dos atos administrativos.</p>
+                <table>
+                    <thead><tr><th>Elemento</th><th>Natureza</th><th>Característica</th></tr></thead>
+                    <tbody>
+                        <tr><td>Competência</td><td><strong>Vinculado</strong></td><td>Determinada por lei, sem margem de escolha</td></tr>
+                        <tr><td>Finalidade</td><td><strong>Vinculado</strong></td><td>Sempre o interesse público</td></tr>
+                        <tr><td>Forma</td><td><strong>Vinculado</strong></td><td>Prevista em lei, salvo forma instrumental</td></tr>
+                        <tr><td>Motivo</td><td><strong>Discricionário</strong></td><td>Juízo de conveniência e oportunidade</td></tr>
+                        <tr><td>Objeto</td><td><strong>Discricionário</strong></td><td>Juízo de conveniência e oportunidade</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="callout mnemonico">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#d4944c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+                    <div class="content">
+                        <div class="titulo">MNEMÔNICO</div>
+                        <p>"VINCULADO = Co-Fi-Fo-M-Ob" (Competência, Finalidade, Forma); "DISCricionário = M-Ob" (Motivo e Objeto)</p>
+                    </div>
+                </div>
+
+                <h4>6.3 Aplicação Prática</h4>
+                <div class="callout caso">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#7aaae2" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 9h8M8 13h6M8 17h4"/></svg>
+                    <div class="content">
+                        <div class="titulo">CASO PRÁTICO</div>
+                        <p>A autoridade administrativa decide, após análise de conveniência e oportunidade, conceder ou não uma licença para funcionamento de estabelecimento. Neste caso, o <strong>motivo</strong> (existência ou não da situação que justifica a licença) e o <strong>objeto</strong> (o conteúdo da licença) são elementos <strong>discricionários</strong>.</p>
+                    </div>
+                </div>
+                <div class="callout pegadinha">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#e07070" stroke-width="2"><path d="M12 2L2 22h20L12 2z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17.5" r="0.7" fill="#e07070"/></svg>
+                    <div class="content">
+                        <div class="titulo">PEGADINHA DE BANCA (FGV)</div>
+                        <p>A questão que afirma que "a finalidade pode ser discricionária" está incorreta. A finalidade é sempre vinculada ao interesse público.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <hr class="divider">
+
+        <!-- PARTE III -->
+        <section id="parte3">
+            <h2>PARTE III – CONTRATOS ADMINISTRATIVOS</h2>
+            <hr class="soft-divider">
+
+            <article id="cap7">
+                <h3>CAPÍTULO 7 – NULIDADE DOS CONTRATOS ADMINISTRATIVOS (LEI 14.133/2021)</h3>
+                <h4>7.1 Requisitos para Declaração de Nulidade</h4>
+                <p>A Lei 14.133/2021, em seus arts. 147 e 148, estabelece requisitos cumulativos para a declaração de nulidade de contrato administrativo:</p>
+                <h4>7.1.1 Requisitos Cumulativos</h4>
+                <ol>
+                    <li><strong>Irregularidade insanável</strong> – a irregularidade no procedimento licitatório ou na execução deve ser insanável</li>
+                    <li><strong>Interesse público</strong> – a anulação deve ser medida de interesse público</li>
+                </ol>
+                <h4>7.1.2 Avaliação Prévia</h4>
+                <p>Para a declaração de nulidade, deve-se avaliar:</p>
+                <ul>
+                    <li>Impacto socioeconômico</li>
+                    <li>Custo da anulação</li>
+                    <li>Consequências para o interesse público</li>
+                </ul>
+                <h4>7.2 Efeitos da Nulidade</h4>
+                <div class="highlight-box">📌 <strong>Efeito ex tunc:</strong> A nulidade opera efeitos <strong>retroativos</strong> (ex tunc), desconstituindo os efeitos já produzidos desde a origem.</div>
+                <h4>7.3 Regras Específicas</h4>
+                <table>
+                    <thead><tr><th>Situação</th><th>Regra</th></tr></thead>
+                    <tbody>
+                        <tr><td>Irregularidade sanável</td><td>Deve-se sanar, não anular</td></tr>
+                        <tr><td>Contrato em execução</td><td>Manutenção dos efeitos até decisão final</td></tr>
+                        <tr><td>Terceiros de boa-fé</td><td>Direito à indenização</td></tr>
+                    </tbody>
+                </table>
+                <div class="callout pegadinha">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#e07070" stroke-width="2"><path d="M12 2L2 22h20L12 2z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17.5" r="0.7" fill="#e07070"/></svg>
+                    <div class="content">
+                        <div class="titulo">PEGADINHA DE BANCA</div>
+                        <p>A questão que afirma ser possível a anulação de contrato com base em simples irregularidade formal (sanável) está incorreta. A irregularidade deve ser <strong>insanável</strong>.</p>
+                    </div>
+                </div>
+            </article>
+
+            <hr class="soft-divider">
+
+            <article id="cap8">
+                <h3>CAPÍTULO 8 – MODALIDADES DE LICITAÇÃO (LEI 14.133/2021)</h3>
+                <h4>8.1 Pregão</h4>
+                <p><strong>Aplicação:</strong> Aquisição de bens e serviços <strong>comuns</strong><br><strong>Critério de julgamento:</strong> Menor preço ou maior desconto<br><strong>Modalidade:</strong> Obrigatória para bens e serviços comuns</p>
+                <p><strong>Exemplos de bens e serviços comuns:</strong></p>
+                <ul>
+                    <li>Material de escritório</li>
+                    <li>Serviços de limpeza</li>
+                    <li>Serviços de vigilância</li>
+                </ul>
+                <h4>8.2 Concurso</h4>
+                <p><strong>Aplicação:</strong> Escolha de trabalho técnico, científico ou artístico<br><strong>Julgamento:</strong> Por comissão especializada<br><strong>Remuneração:</strong> Prêmio ou remuneração</p>
+                <p><strong>Exemplos:</strong></p>
+                <ul>
+                    <li>Trabalhos de arquitetura</li>
+                    <li>Projetos artísticos</li>
+                    <li>Estudos técnicos</li>
+                </ul>
+                <h4>8.3 Concorrência</h4>
+                <p><strong>Aplicação:</strong> Obras de grande vulto<br><strong>Critério de julgamento:</strong> Menor preço ou melhor técnica<br><strong>Característica:</strong> Modalidade mais ampla e formal</p>
+                <h4>8.4 Leilão</h4>
+                <p><strong>Aplicação:</strong> Alienação de bens<br><strong>Critério de julgamento:</strong> Maior lance<br><strong>Característica:</strong> Modalidade para venda de bens</p>
+
+                <h4>8.5 Quadro Comparativo</h4>
+                <table>
+                    <thead><tr><th>Modalidade</th><th>Aplicação</th><th>Critério</th><th>Característica</th></tr></thead>
+                    <tbody>
+                        <tr><td>Pregão</td><td>Bens e serviços comuns</td><td>Menor preço/desconto</td><td>Obrigatória para comuns</td></tr>
+                        <tr><td>Concurso</td><td>Trabalho técnico/científico/artístico</td><td>Comissão especializada</td><td>Prêmio ou remuneração</td></tr>
+                        <tr><td>Concorrência</td><td>Obras de grande vulto</td><td>Menor preço/melhor técnica</td><td>Mais formal</td></tr>
+                        <tr><td>Leilão</td><td>Alienação de bens</td><td>Maior lance</td><td>Venda de bens</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="callout associacao">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#b39ddb" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/><path d="M12 4V2M15 6l2-2M9 6L7 4"/></svg>
+                    <div class="content">
+                        <div class="titulo">ASSOCIAÇÃO MENTAL</div>
+                        <p>"Pregão = comum; Concurso = técnico; Concorrência = grande; Leilão = venda"</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <hr class="divider">
+
+        <!-- PARTE IV -->
+        <section id="parte4">
+            <h2>PARTE IV – IMPROBIDADE ADMINISTRATIVA</h2>
+            <hr class="soft-divider">
+
+            <article id="cap9">
+                <h3>CAPÍTULO 9 – LEI DE IMPROBIDADE ADMINISTRATIVA (LEI 8.429/92)</h3>
+                <h4>9.1 Alterações pela Lei 14.230/2021</h4>
+                <p>A Lei 14.230/2021 promoveu alterações significativas na Lei 8.429/92, especialmente no que diz respeito aos aspectos subjetivos da improbidade.</p>
+
+                <h4>9.1.1 Exigência de Dolo Específico</h4>
+                <div class="highlight-box">📌 <strong>NOVA REDAÇÃO:</strong> O art. 1º, §1º da Lei 8.429/92 estabelece que:<br>"A mera exercício da função ou desempenho de competências públicas, sem comprovação de ato doloso com finalidade ilícita, não caracteriza ato de improbidade administrativa."</div>
+                <p><strong>Consequências da alteração:</strong></p>
+                <ol>
+                    <li><strong>Dolo específico</strong> – necessidade de vontade livre e consciente de alcançar o resultado ilícito</li>
+                    <li><strong>Modalidade culposa</strong> – não mais admitida para nenhum ato de improbidade</li>
+                    <li><strong>Vedação à interpretação extensiva</strong> – não se pode ampliar o alcance da lei</li>
+                </ol>
+
+                <h4>9.1.2 Aplicação aos Tipos de Improbidade</h4>
+                <table>
+                    <thead><tr><th>Tipo de Improbidade</th><th>Exigência</th></tr></thead>
+                    <tbody>
+                        <tr><td>Art. 9º – Enriquecimento ilícito</td><td>Dolo específico</td></tr>
+                        <tr><td>Art. 10 – Lesão ao erário</td><td>Dolo específico</td></tr>
+                        <tr><td>Art. 11 – Princípios da Administração</td><td>Dolo específico</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="callout pegadinha">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#e07070" stroke-width="2"><path d="M12 2L2 22h20L12 2z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17.5" r="0.7" fill="#e07070"/></svg>
+                    <div class="content">
+                        <div class="titulo">PEGADINHA DE BANCA</div>
+                        <p>A questão que afirma ser possível a responsabilização por ato de improbidade que atente contra os princípios da Administração na modalidade <strong>culposa</strong> (negligência) está incorreta. A Lei 14.230/2021 exige dolo específico em todos os casos.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <hr class="divider">
+
+        <!-- PARTE V -->
+        <section id="parte5">
+            <h2>PARTE V – CONTROLE DA ADMINISTRAÇÃO PÚBLICA</h2>
+            <hr class="soft-divider">
+
+            <article id="cap10">
+                <h3>CAPÍTULO 10 – CONTROLE INTERNO</h3>
+                <h4>10.1 Conceito e Manifestações</h4>
+                <p>O <strong>controle interno</strong> é exercido pela própria Administração, no âmbito de sua autotutela, visando à correção de atos e à manutenção da legalidade e do interesse público.</p>
+
+                <h4>10.1.1 Autotutela</h4>
+                <p><strong>Conceito:</strong> Poder da Administração de rever seus próprios atos, anulando-os quando ilegais ou revogando-os quando inoportunos ou inconvenientes.</p>
+                <p><strong>Manifestações:</strong></p>
+                <ul>
+                    <li><strong>Anulação</strong> – por ilegalidade, com efeitos ex tunc</li>
+                    <li><strong>Revogação</strong> – por conveniência e oportunidade, com efeitos ex nunc</li>
+                </ul>
+
+                <h4>10.1.2 Exemplos de Controle Interno</h4>
+                <div class="callout caso">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#7aaae2" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 9h8M8 13h6M8 17h4"/></svg>
+                    <div class="content">
+                        <div class="titulo">CASO PRÁTICO</div>
+                        <p>A revogação de ato administrativo que não mais atende ao interesse público, no âmbito da autotutela, configura <strong>controle interno</strong> da Administração.</p>
+                    </div>
+                </div>
+
+                <h4>10.2 Outras Formas de Controle</h4>
+                <table>
+                    <thead><tr><th>Tipo de Controle</th><th>Exemplo</th><th>Exercido por</th></tr></thead>
+                    <tbody>
+                        <tr><td>Interno</td><td>Revogação de ato</td><td>Própria Administração</td></tr>
+                        <tr><td>Judicial</td><td>Anulação pelo Judiciário</td><td>Poder Judiciário</td></tr>
+                        <tr><td>Externo</td><td>Controle por Tribunais de Contas</td><td>Tribunais de Contas</td></tr>
+                        <tr><td>Legislativo</td><td>Sustação por Casa Legislativa</td><td>Poder Legislativo</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="callout pegadinha">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#e07070" stroke-width="2"><path d="M12 2L2 22h20L12 2z"/><line x1="12" y1="10" x2="12" y2="14"/><circle cx="12" cy="17.5" r="0.7" fill="#e07070"/></svg>
+                    <div class="content">
+                        <div class="titulo">DISTINÇÃO FUNDAMENTAL</div>
+                        <p>O controle interno é exercido pela própria Administração; o externo, por outros Poderes ou órgãos independentes.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <hr class="divider">
+
+        <!-- PARTE VI -->
+        <section id="parte6">
+            <h2>PARTE VI – CASOS PRÁTICOS E APLICAÇÕES</h2>
+            <hr class="soft-divider">
+
+            <article id="cap11">
+                <h3>CAPÍTULO 11 – ANÁLISE DE SITUAÇÕES HIPOTÉTICAS</h3>
+
+                <h4>11.1 Casos Práticos – Agentes Públicos</h4>
+                <div class="card">
+                    <h4>Caso 1 – Cargo Efetivo × Cargo em Comissão</h4>
+                    <p><strong>Situação:</strong> João foi aprovado em concurso público para o cargo de Técnico Judiciário do TJCE, tomou posse e entrou em exercício. Maria foi nomeada para cargo em comissão de assessoria.</p>
+                    <p><strong>Pergunta:</strong> Qual a garantia constitucional de João e qual a natureza do vínculo de Maria?</p>
+                    <p><strong>Análise:</strong></p>
+                    <ul>
+                        <li><strong>João</strong> – servidor público ocupante de <strong>cargo efetivo</strong>, com garantia de <strong>estabilidade</strong> após 3 anos de efetivo exercício (art. 41, CF/88)</li>
+                        <li><strong>Maria</strong> – ocupante de <strong>cargo em comissão</strong>, sujeita a <strong>livre exoneração</strong> (art. 37, II, §2º, CF/88)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h4>Caso 2 – Estabilidade</h4>
+                    <p><strong>Situação:</strong> Carlos, Técnico Judiciário, completou 2 anos e 10 meses de efetivo exercício. Foi instaurado procedimento administrativo disciplinar contra ele.</p>
+                    <p><strong>Pergunta:</strong> Carlos já adquiriu estabilidade?</p>
+                    <p><strong>Resposta:</strong> Não. A estabilidade exige 3 anos de efetivo exercício (art. 41, CF/88). O servidor com menos de 3 anos ainda está em estágio probatório.</p>
+                </div>
+
+                <h4>11.2 Casos Práticos – Poderes Administrativos</h4>
+                <div class="card">
+                    <h4>Caso 3 – Identificação de Poder</h4>
+                    <p><strong>Situação I:</strong> A Administração aplica multa contratual a uma empresa prestadora de serviços, após processo administrativo que garantiu ampla defesa.</p>
+                    <p><strong>Análise:</strong> Poder <strong>disciplinar</strong> – aplicação de penalidade a quem mantém relação de sujeição especial (contrato administrativo).</p>
+                    <p><strong>Situação II:</strong> O Diretor-Geral do Tribunal determina que todos os processos de determinado setor sejam encaminhados a ele para decisão.</p>
+                    <p><strong>Análise:</strong> Poder <strong>hierárquico</strong> – avocação de competência de subordinado.</p>
+                    <p><strong>Situação III:</strong> A prefeitura concede licença para construção de um edifício, após verificar o cumprimento de todos os requisitos legais.</p>
+                    <p><strong>Análise:</strong> Poder de <strong>polícia</strong> – fase de consentimento.</p>
+                </div>
+
+                <h4>11.3 Casos Práticos – Improbidade Administrativa</h4>
+                <div class="card">
+                    <h4>Caso 4 – Dolo na Improbidade</h4>
+                    <p><strong>Situação:</strong> Um servidor, por negligência, deixou de fiscalizar um contrato, causando prejuízo ao erário.</p>
+                    <p><strong>Pergunta:</strong> Pode ser responsabilizado por ato de improbidade?</p>
+                    <p><strong>Resposta:</strong> Não. Com a Lei 14.230/2021, a improbidade exige <strong>dolo específico</strong>. A negligência (culpa) não é suficiente para caracterizar improbidade.</p>
+                </div>
+
+                <h4>11.4 Casos Práticos – Licitações</h4>
+                <div class="card">
+                    <h4>Caso 5 – Modalidade Correta</h4>
+                    <p><strong>Situação:</strong> O Tribunal de Justiça deseja adquirir material de escritório em grande quantidade e contratar um arquiteto para projetar a reforma do fórum.</p>
+                    <p><strong>Pergunta:</strong> Quais modalidades de licitação devem ser utilizadas?</p>
+                    <p><strong>Resposta:</strong></p>
+                    <ul>
+                        <li><strong>Material de escritório</strong> (bens comuns) → <strong>Pregão</strong></li>
+                        <li><strong>Projeto de arquitetura</strong> (trabalho técnico) → <strong>Concurso</strong></li>
+                    </ul>
+                </div>
+            </article>
+
+            <hr class="soft-divider">
+
+            <article id="cap12">
+                <h3>CAPÍTULO 12 – RESUMO ESQUEMÁTICO</h3>
+
+                <h4>12.1 Mapa Mental – Agentes Públicos</h4>
+                <div class="diagram-container">
+                    <svg viewBox="0 0 800 360" width="100%" height="auto" role="img" aria-label="Mapa mental agentes públicos">
+                        <rect x="280" y="10" width="240" height="36" rx="6" fill="#3a3a3a" stroke="#d4a843" stroke-width="1.5"/>
+                        <text x="400" y="33" text-anchor="middle" fill="#e6c56d" font-weight="bold" font-size="15">AGENTES PÚBLICOS</text>
+                        <!-- linhas da raiz -->
+                        <line x1="310" y1="46" x2="140" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <line x1="400" y1="46" x2="400" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <line x1="490" y1="46" x2="660" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <!-- nós nível 2 -->
+                        <rect x="40" y="90" width="200" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="140" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="14">CARGO EFETIVO</text>
+                        <rect x="300" y="90" width="200" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="400" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="14">CARGO VITALÍCIO</text>
+                        <rect x="560" y="90" width="200" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="660" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="14">CARGO EM COMISSÃO</text>
+                        <!-- subitens efetivo -->
+                        <line x1="140" y1="122" x2="140" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="30" y="150" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="140" y="169" text-anchor="middle" fill="#ccc" font-size="12">Ingresso: Concurso público</text>
+                        <line x1="140" y1="178" x2="140" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="30" y="200" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="140" y="219" text-anchor="middle" fill="#ccc" font-size="12">Garantia: Estabilidade (3 anos)</text>
+                        <line x1="140" y1="228" x2="140" y2="250" stroke="#666" stroke-width="1"/>
+                        <rect x="30" y="250" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="140" y="269" text-anchor="middle" fill="#ccc" font-size="12">Exemplo: Técnico Judiciário</text>
+                        <!-- vitalício -->
+                        <line x1="400" y1="122" x2="400" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="290" y="150" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="400" y="169" text-anchor="middle" fill="#ccc" font-size="12">Ingresso: Concurso público</text>
+                        <line x1="400" y1="178" x2="400" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="290" y="200" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="400" y="219" text-anchor="middle" fill="#ccc" font-size="12">Garantia: Vitaliciedade (2 anos)</text>
+                        <line x1="400" y1="228" x2="400" y2="250" stroke="#666" stroke-width="1"/>
+                        <rect x="290" y="250" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="400" y="269" text-anchor="middle" fill="#ccc" font-size="12">Exemplo: Juiz Federal</text>
+                        <!-- comissão -->
+                        <line x1="660" y1="122" x2="660" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="550" y="150" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="660" y="169" text-anchor="middle" fill="#ccc" font-size="12">Ingresso: Nomeação (livre)</text>
+                        <line x1="660" y1="178" x2="660" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="550" y="200" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="660" y="219" text-anchor="middle" fill="#ccc" font-size="12">Garantia: Livre exoneração</text>
+                        <line x1="660" y1="228" x2="660" y2="250" stroke="#666" stroke-width="1"/>
+                        <rect x="550" y="250" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="660" y="269" text-anchor="middle" fill="#ccc" font-size="12">Exemplo: Assessor</text>
+                    </svg>
+                </div>
+
+                <h4>12.2 Mapa Mental – Poderes Administrativos</h4>
+                <div class="diagram-container">
+                    <svg viewBox="0 0 800 360" width="100%" height="auto" role="img" aria-label="Mapa mental poderes administrativos">
+                        <rect x="280" y="10" width="240" height="36" rx="6" fill="#3a3a3a" stroke="#d4a843" stroke-width="1.5"/>
+                        <text x="400" y="33" text-anchor="middle" fill="#e6c56d" font-weight="bold" font-size="15">PODERES ADMINISTRATIVOS</text>
+                        <line x1="310" y1="46" x2="140" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <line x1="400" y1="46" x2="400" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <line x1="490" y1="46" x2="660" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <rect x="40" y="90" width="200" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="140" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="14">HIERÁRQUICO</text>
+                        <rect x="300" y="90" width="200" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="400" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="14">DISCIPLINAR</text>
+                        <rect x="560" y="90" width="200" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="660" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="14">POLÍCIA</text>
+                        <!-- hierárquico -->
+                        <line x1="140" y1="122" x2="140" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="30" y="150" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="140" y="169" text-anchor="middle" fill="#ccc" font-size="12">Relação vertical</text>
+                        <line x1="140" y1="178" x2="140" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="30" y="200" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="140" y="219" text-anchor="middle" fill="#ccc" font-size="11">Manifestações: ordenar, fiscalizar, delegar, avocar</text>
+                        <line x1="140" y1="228" x2="140" y2="250" stroke="#666" stroke-width="1"/>
+                        <rect x="30" y="250" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="140" y="269" text-anchor="middle" fill="#ccc" font-size="12">Exemplo: Avocação de competência</text>
+                        <!-- disciplinar -->
+                        <line x1="400" y1="122" x2="400" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="290" y="150" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="400" y="169" text-anchor="middle" fill="#ccc" font-size="12">Aplicação de penalidades</text>
+                        <line x1="400" y1="178" x2="400" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="290" y="200" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="400" y="219" text-anchor="middle" fill="#ccc" font-size="12">Relação de sujeição especial</text>
+                        <line x1="400" y1="228" x2="400" y2="250" stroke="#666" stroke-width="1"/>
+                        <rect x="290" y="250" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="400" y="269" text-anchor="middle" fill="#ccc" font-size="12">Exemplo: Multa contratual</text>
+                        <!-- polícia -->
+                        <line x1="660" y1="122" x2="660" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="550" y="150" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="660" y="169" text-anchor="middle" fill="#ccc" font-size="12">Limitação de direitos</text>
+                        <line x1="660" y1="178" x2="660" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="550" y="200" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="660" y="219" text-anchor="middle" fill="#ccc" font-size="11">Fases: consentimento, fiscalização, sanção</text>
+                        <line x1="660" y1="228" x2="660" y2="250" stroke="#666" stroke-width="1"/>
+                        <rect x="550" y="250" width="220" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="660" y="269" text-anchor="middle" fill="#ccc" font-size="12">Exemplo: Licença de funcionamento</text>
+                    </svg>
+                </div>
+
+                <h4>12.3 Mapa Mental – Administração Indireta</h4>
+                <div class="diagram-container">
+                    <svg viewBox="0 0 800 420" width="100%" height="auto" role="img" aria-label="Mapa mental administração indireta">
+                        <rect x="280" y="10" width="240" height="36" rx="6" fill="#3a3a3a" stroke="#d4a843" stroke-width="1.5"/>
+                        <text x="400" y="33" text-anchor="middle" fill="#e6c56d" font-weight="bold" font-size="15">ADMINISTRAÇÃO INDIRETA</text>
+                        <line x1="300" y1="46" x2="100" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <line x1="390" y1="46" x2="300" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <line x1="410" y1="46" x2="500" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <line x1="500" y1="46" x2="700" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <rect x="20" y="90" width="160" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="100" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="13">AUTARQUIA</text>
+                        <rect x="210" y="90" width="160" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="290" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="13">FUNDAÇÃO PÚBLICA</text>
+                        <rect x="420" y="90" width="160" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="500" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="13">EMPRESA PÚBLICA</text>
+                        <rect x="620" y="90" width="160" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="700" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="12">SOC. ECON. MISTA</text>
+                        <!-- autarquia -->
+                        <line x1="100" y1="122" x2="100" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="15" y="150" width="170" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="100" y="169" text-anchor="middle" fill="#ccc" font-size="11">Direito Público</text>
+                        <line x1="100" y1="178" x2="100" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="15" y="200" width="170" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="100" y="219" text-anchor="middle" fill="#ccc" font-size="11">Lei específica</text>
+                        <line x1="100" y1="228" x2="100" y2="250" stroke="#666" stroke-width="1"/>
+                        <rect x="15" y="250" width="170" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="100" y="269" text-anchor="middle" fill="#ccc" font-size="11">Exemplo: INSS</text>
+                        <!-- fundação -->
+                        <line x1="290" y1="122" x2="290" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="195" y="150" width="190" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="290" y="169" text-anchor="middle" fill="#ccc" font-size="11">Direito Público/Privado</text>
+                        <line x1="290" y1="178" x2="290" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="195" y="200" width="190" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="290" y="219" text-anchor="middle" fill="#ccc" font-size="11">Lei ou autorização</text>
+                        <line x1="290" y1="228" x2="290" y2="250" stroke="#666" stroke-width="1"/>
+                        <rect x="195" y="250" width="190" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="290" y="269" text-anchor="middle" fill="#ccc" font-size="11">Exemplo: FUNAI</text>
+                        <!-- empresa pública -->
+                        <line x1="500" y1="122" x2="500" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="410" y="150" width="180" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="500" y="169" text-anchor="middle" fill="#ccc" font-size="11">Direito Privado</text>
+                        <line x1="500" y1="178" x2="500" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="410" y="200" width="180" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="500" y="219" text-anchor="middle" fill="#ccc" font-size="11">Capital 100% público</text>
+                        <line x1="500" y1="228" x2="500" y2="250" stroke="#666" stroke-width="1"/>
+                        <rect x="410" y="250" width="180" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="500" y="269" text-anchor="middle" fill="#ccc" font-size="11">Ex: Caixa Econômica Federal</text>
+                        <!-- SEM -->
+                        <line x1="700" y1="122" x2="700" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="610" y="150" width="180" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="700" y="169" text-anchor="middle" fill="#ccc" font-size="11">Direito Privado</text>
+                        <line x1="700" y1="178" x2="700" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="610" y="200" width="180" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="700" y="219" text-anchor="middle" fill="#ccc" font-size="11">Capital misto, S.A. obrigatória</text>
+                        <line x1="700" y1="228" x2="700" y2="250" stroke="#666" stroke-width="1"/>
+                        <rect x="610" y="250" width="180" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="700" y="269" text-anchor="middle" fill="#ccc" font-size="11">Exemplo: Banco do Brasil</text>
+                    </svg>
+                </div>
+
+                <h4>12.4 Mapa Mental – Licitações</h4>
+                <div class="diagram-container">
+                    <svg viewBox="0 0 800 360" width="100%" height="auto" role="img" aria-label="Mapa mental licitações">
+                        <rect x="280" y="10" width="240" height="36" rx="6" fill="#3a3a3a" stroke="#d4a843" stroke-width="1.5"/>
+                        <text x="400" y="33" text-anchor="middle" fill="#e6c56d" font-weight="bold" font-size="15">LICITAÇÕES (Lei 14.133/2021)</text>
+                        <line x1="300" y1="46" x2="100" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <line x1="390" y1="46" x2="300" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <line x1="410" y1="46" x2="500" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <line x1="500" y1="46" x2="700" y2="90" stroke="#888" stroke-width="1.2"/>
+                        <rect x="20" y="90" width="160" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="100" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="14">PREGÃO</text>
+                        <rect x="210" y="90" width="160" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="290" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="14">CONCURSO</text>
+                        <rect x="420" y="90" width="160" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="500" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="13">CONCORRÊNCIA</text>
+                        <rect x="620" y="90" width="160" height="32" rx="5" fill="#2a2a2a" stroke="#7aaae2" stroke-width="1.2"/>
+                        <text x="700" y="111" text-anchor="middle" fill="#7aaae2" font-weight="600" font-size="14">LEILÃO</text>
+                        <!-- pregão -->
+                        <line x1="100" y1="122" x2="100" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="15" y="150" width="170" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="100" y="169" text-anchor="middle" fill="#ccc" font-size="11">Bens e serviços comuns</text>
+                        <line x1="100" y1="178" x2="100" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="15" y="200" width="170" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="100" y="219" text-anchor="middle" fill="#ccc" font-size="11">Critério: menor preço</text>
+                        <line x1="100" y1="228" x2="100" y2="250" stroke="#666" stroke-width="1"/>
+                        <rect x="15" y="250" width="170" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="100" y="269" text-anchor="middle" fill="#ccc" font-size="11">Ex: Material de escritório</text>
+                        <!-- concurso -->
+                        <line x1="290" y1="122" x2="290" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="195" y="150" width="190" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="290" y="169" text-anchor="middle" fill="#ccc" font-size="11">Trabalho técnico/cient./artístico</text>
+                        <line x1="290" y1="178" x2="290" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="195" y="200" width="190" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="290" y="219" text-anchor="middle" fill="#ccc" font-size="11">Julgamento: comissão especializada</text>
+                        <line x1="290" y1="228" x2="290" y2="250" stroke="#666" stroke-width="1"/>
+                        <rect x="195" y="250" width="190" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="290" y="269" text-anchor="middle" fill="#ccc" font-size="11">Ex: Projeto de arquitetura</text>
+                        <!-- concorrência -->
+                        <line x1="500" y1="122" x2="500" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="410" y="150" width="180" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="500" y="169" text-anchor="middle" fill="#ccc" font-size="11">Obras de grande vulto</text>
+                        <line x1="500" y1="178" x2="500" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="410" y="200" width="180" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="500" y="219" text-anchor="middle" fill="#ccc" font-size="11">Critério: menor preço/melhor técnica</text>
+                        <!-- leilão -->
+                        <line x1="700" y1="122" x2="700" y2="150" stroke="#666" stroke-width="1"/>
+                        <rect x="610" y="150" width="180" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="700" y="169" text-anchor="middle" fill="#ccc" font-size="11">Alienação de bens</text>
+                        <line x1="700" y1="178" x2="700" y2="200" stroke="#666" stroke-width="1"/>
+                        <rect x="610" y="200" width="180" height="28" rx="4" fill="#1e1e1e" stroke="#555" stroke-width="1"/>
+                        <text x="700" y="219" text-anchor="middle" fill="#ccc" font-size="11">Critério: maior lance</text>
+                    </svg>
+                </div>
+            </article>
+
+            <hr class="soft-divider">
+
+            <article id="cap13">
+                <h3>CAPÍTULO 13 – MACETES E ASSOCIAÇÕES</h3>
+                <h4>13.1 Mnemônicos</h4>
+                <ol>
+                    <li><strong>Elementos do ato administrativo:</strong> "Co-Fi-Fo-M-Ob" (vinculados) / "M-Ob" (discricionários)</li>
+                    <li><strong>Administração Indireta:</strong> "Autarquia é pública, Fundação é especial, Empresa é 100% pública, SEM é mista"</li>
+                    <li><strong>Modalidades de licitação:</strong> "Pregão é comum, Concurso é técnico, Concorrência é grande, Leilão é venda"</li>
+                    <li><strong>Poderes:</strong> "Hierárquico = H de hierarquia (vertical) / Disciplinar = D de dever (poder-dever) / Polícia = P de poder sobre particulares"</li>
+                </ol>
+
+                <h4>13.2 Associações Mentais</h4>
+                <table>
+                    <thead><tr><th>Conceito</th><th>Associação</th></tr></thead>
+                    <tbody>
+                        <tr><td>Estabilidade</td><td>3 anos (como um tripé)</td></tr>
+                        <tr><td>Vitaliciedade</td><td>2 anos (como um par)</td></tr>
+                        <tr><td>Cargo efetivo</td><td>Concurso + estabilidade</td></tr>
+                        <tr><td>Cargo em comissão</td><td>Livre nomeação + livre exoneração</td></tr>
+                        <tr><td>Sociedade de economia mista</td><td>S.A. obrigatória + capital misto</td></tr>
+                        <tr><td>Poder disciplinar</td><td>Relação de sujeição especial</td></tr>
+                        <tr><td>Poder de polícia</td><td>Consentimento + fiscalização + sanção</td></tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <hr class="soft-divider">
+
+            <article id="cap14">
+                <h3>CAPÍTULO 14 – JURISPRUDÊNCIA RELEVANTE</h3>
+
+                <h4>14.1 STF – Vinculação Remuneratória</h4>
+                <div class="callout citacao">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8"><path d="M3 21h18M3 10h18M3 3v18"/></svg>
+                    <div class="content">
+                        <div class="titulo">ADPF 328</div>
+                        <p>"É vedada a vinculação ou equiparação de quaisquer espécies remuneratórias para o efeito de remuneração de pessoal do serviço público, nos termos do art. 37, XIII, da CF/88, tendo a EC 19/1998 revogado o antigo §1º do art. 39."</p>
+                    </div>
+                </div>
+
+                <h4>14.2 STF – Estabilidade</h4>
+                <div class="callout citacao">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.8"><path d="M3 21h18M3 10h18M3 3v18"/></svg>
+                    <div class="content">
+                        <div class="titulo">Súmula Vinculante 28</div>
+                        <p>"É inconstitucional a exigência de 5 anos de efetivo exercício para aquisição de estabilidade. O prazo é de 3 anos (art. 41, CF/88)."</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <hr class="divider">
+
+        <!-- ANEXOS -->
+        <section id="anexos">
+            <h2>ANEXOS</h2>
+            <hr class="soft-divider">
+
+            <h3>Anexo I – Tabela de Prazos Essenciais</h3>
+            <table>
+                <thead><tr><th>Instituto</th><th>Prazo</th><th>Base Legal</th></tr></thead>
+                <tbody>
+                    <tr><td>Estabilidade</td><td>3 anos</td><td>Art. 41, CF/88</td></tr>
+                    <tr><td>Vitaliciedade (magistratura)</td><td>2 anos</td><td>Art. 95, I, CF/88</td></tr>
+                    <tr><td>Estágio probatório</td><td>3 anos</td><td>Art. 41, CF/88</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Anexo II – Quadro de Competências</h3>
+            <table>
+                <thead><tr><th>Entidade</th><th>Competência</th><th>Controle</th></tr></thead>
+                <tbody>
+                    <tr><td>Tribunais de Contas</td><td>Controle externo</td><td>CF/88, art. 71</td></tr>
+                    <tr><td>CNJ</td><td>Controle externo do Judiciário</td><td>EC 45/2004</td></tr>
+                    <tr><td>CGU</td><td>Controle interno</td><td>Lei 10.683/2003</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr class="divider">
+
+        <footer style="margin-top: 3em; text-align: center; color: var(--text-muted); font-size: 0.9em;">
+            <p><strong>FIM DA APOSTILA</strong></p>
+            <div class="callout dica" style="margin-top: 2em;">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#6fbf6f" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.87-3.13-7-7-7z"/><path d="M9 21h6M10 18h4"/><line x1="12" y1="14" x2="12" y2="10"/><circle cx="12" cy="8" r="0.8" fill="#6fbf6f"/></svg>
+                <div class="content">
+                    <div class="titulo">DICA FINAL PARA PROVA</div>
+                    <p>A FGV frequentemente explora a distinção entre:<br>
+                    1. Cargo efetivo × cargo em comissão<br>
+                    2. Estabilidade × vitaliciedade<br>
+                    3. Poder hierárquico × disciplinar × polícia<br>
+                    4. Administração Direta × Indireta (especialmente no que diz respeito à relação de hierarquia)<br>
+                    5. Modalidades de licitação e suas aplicações específicas<br>
+                    6. Dolo na improbidade administrativa (após Lei 14.230/2021)</p>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+</div>
+</body>
+</html>

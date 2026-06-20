@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Administrativo para Concursos Públicos - Apostila Digital</title>
+    <style>
+        :root {
+            --bg-primary: #1a1b25;
+            --bg-secondary: #212334;
+            --bg-card: #262840;
+            --bg-table: #1e2035;
+            --bg-table-alt: #232541;
+            --bg-code: #1c1d2c;
+            --bg-highlight: rgba(220, 185, 105, 0.18);
+            --bg-highlight-strong: rgba(220, 185, 105, 0.28);
+            --bg-dica: #1e2a3a;
+            --bg-pegadinha: #2d221f;
+            --bg-importante: #252230;
+            --bg-exemplo: #1e2a2a;
+            --bg-citacao: #1f2032;
+            --bg-sumario: #1e1f30;
+            --bg-resumo: #202338;
+            --bg-questao: #1f2135;
+            --text-primary: #d4cfc2;
+            --text-secondary: #b8b3a6;
+            --text-muted: #9a9585;
+            --text-heading: #e2d5a8;
+            --text-heading2: #d4c68a;
+            --text-link: #9bbddb;
+            --text-link-hover: #c4dff5;
+            --text-code: #e0c97a;
+            --text-strong: #e8ddc0;
+            --border-subtle: #353755;
+            --border-card: #3c3e5c;
+            --border-dica: #4a6a8a;
+            --border-pegadinha: #9b6b4a;
+            --border-importante: #7a6b9a;
+            --border-exemplo: #5a8a7a;
+            --border-citacao: #b8944a;
+            --border-table: #3a3c58;
+            --border-separator: #3c3e5a;
+            --accent-gold: #c9a84c;
+            --accent-blue: #6a9ec2;
+            --accent-amber: #c98a4a;
+            --accent-green: #6a9e7a;
+            --accent-purple: #8a7aba;
+            --accent-red-soft: #c9706a;
+            --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.35);
+            --shadow-elevated: 0 4px 24px rgba(0, 0, 0, 0.45);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --font-body: 'Georgia', 'Palatino Linotype', 'Book Antiqua', 'Palatino', 'Times New Roman', serif;
+            --font-heading: 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
+            --font-mono: 'SF Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
+            --max-width: 820px;
+            --line-height: 1.78;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 17px;
+        }
+
+        body {
+            background-color: #14151d;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: var(--line-height);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .page-container {
+            width: 100%;
+            max-width: var(--max-width);
+            padding: 2rem 1.5rem 4rem;
+            background: var(--bg-primary);
+            box-shadow: var(--shadow-elevated);
+            border-left: 1px solid var(--border-subtle);
+            border-right: 1px solid var(--border-subtle);
+        }
+
+        @media (min-width: 768px) {
+            .page-container {
+                padding: 2.5rem 2.5rem 5rem;
+                margin: 1.5rem auto;
+                border-radius: var(--radius-lg);
+            }
+            body {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-container {
+                padding: 1.2rem 1rem 3rem;
+                border-left: none;
+                border-right: none;
+                box-shadow: none;
+            }
+            html {
+                font-size: 15.5px;
+            }
+        }
+
+        /* HEADER PRINCIPAL */
+        .main-header {
+            text-align: center;
+            padding: 2rem 0 1.5rem;
+            border-bottom: 2px solid var(--border-separator);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .main-header::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--accent-gold);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+        .main-header h1 {
+            font-family: var(--font-heading);
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+            line-height: 1.25;
+        }
+        .main-header .subtitle {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            letter-spacing: 0.03em;
+        }
+
+        /* SUMÁRIO */
+        .sumario-wrapper {
+            background: var(--bg-sumario);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.8rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-card);
+        }
+        .sumario-wrapper h2 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--text-heading);
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .sumario-wrapper ol {
+            list-style: none;
+            counter-reset: sumario-counter;
+            padding-left: 0;
+        }
+        .sumario-wrapper ol li {
+            counter-increment: sumario-counter;
+            margin-bottom: 0.35rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .sumario-wrapper ol li::before {
+            content: counter(sumario-counter) ".";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+        }
+        .sumario-wrapper ol li a {
+            color: var(--text-link);
+            text-decoration: none;
+            font-family: var(--font-body);
+            transition: color 0.2s;
+            border-bottom: 1px dotted transparent;
+        }
+        .sumario-wrapper ol li a:hover {
+            color: var(--text-link-hover);
+            border-bottom-color: var(--text-link-hover);
+        }
+        .sumario-wrapper .sub-items {
+            list-style: none;
+            padding-left: 1.4rem;
+            margin-top: 0.25rem;
+            font-size: 0.9rem;
+        }
+        .sumario-wrapper .sub-items li {
+            counter-increment: none;
+            padding-left: 0;
+            margin-bottom: 0.2rem;
+        }
+        .sumario-wrapper .sub-items li::before {
+            content: "•";
+            color: var(--accent-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* SEÇÕES */
+        section {
+            margin-bottom: 2.8rem;
+            scroll-margin-top: 1.5rem;
+        }
+        section h2 {
+            font-family: var(--font-heading);
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-separator);
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        section h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-heading2);
+            margin-top: 1.6rem;
+            margin-bottom: 0.7rem;
+            letter-spacing: 0.01em;
+        }
+        section h4 {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #c8bfa0;
+            margin-top: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        section p {
+            margin-bottom: 0.9rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+        section strong {
+            color: var(--text-strong);
+            font-weight: 700;
+        }
+        section em {
+            color: #c5ba98;
+            font-style: italic;
+        }
+
+        /* MARCA-TEXTO */
+        .highlight {
+            background: var(--bg-highlight);
+            padding: 0.15em 0.3em;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        .highlight-strong {
+            background: var(--bg-highlight-strong);
+            padding: 0.15em 0.35em;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        /* TABELAS */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.3rem 0;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-card);
+            -webkit-overflow-scrolling: touch;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: var(--bg-table);
+            min-width: 500px;
+        }
+        table thead th {
+            background: #252745;
+            color: var(--text-heading);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid var(--border-table);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        table tbody td {
+            padding: 0.65rem 1rem;
+            border-bottom: 1px solid var(--border-table);
+            vertical-align: top;
+        }
+        table tbody tr:nth-child(even) td {
+            background: var(--bg-table-alt);
+        }
+        table tbody tr:hover td {
+            background: #2a2d48;
+            transition: background 0.2s;
+        }
+
+        /* BLOCKQUOTE / CITAÇÕES */
+        blockquote {
+            background: var(--bg-citacao);
+            border-left: 4px solid var(--border-citacao);
+            margin: 1.3rem 0;
+            padding: 1rem 1.3rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-style: italic;
+            color: #c8c0a8;
+            box-shadow: var(--shadow-card);
+        }
+        blockquote p {
+            margin-bottom: 0.3rem;
+        }
+        blockquote cite {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* BOXES */
+        .box {
+            margin: 1.3rem 0;
+            padding: 1.1rem 1.4rem;
+            border-radius: var(--radius-md);
+            border: 1px solid;
+            box-shadow: var(--shadow-card);
+            position: relative;
+        }
+        .box .box-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.5rem;
+        }
+        .box .box-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .box-dica {
+            background: var(--bg-dica);
+            border-color: var(--border-dica);
+            border-left: 5px solid var(--accent-blue);
+        }
+        .box-dica .box-title {
+            color: #8ab8d8;
+        }
+        .box-pegadinha {
+            background: var(--bg-pegadinha);
+            border-color: var(--border-pegadinha);
+            border-left: 5px solid var(--accent-amber);
+        }
+        .box-pegadinha .box-title {
+            color: #d4a074;
+        }
+        .box-importante {
+            background: var(--bg-importante);
+            border-color: var(--border-importante);
+            border-left: 5px solid var(--accent-purple);
+        }
+        .box-importante .box-title {
+            color: #b0a0d0;
+        }
+        .box-exemplo {
+            background: var(--bg-exemplo);
+            border-color: var(--border-exemplo);
+            border-left: 5px solid var(--accent-green);
+        }
+        .box-exemplo .box-title {
+            color: #8ab8a0;
+        }
+        .box p {
+            margin-bottom: 0.4rem;
+        }
+        .box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CARDS */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.3rem 0;
+        }
+        @media (max-width: 600px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 1.2rem 1.3rem;
+            box-shadow: var(--shadow-card);
+            transition: border-color 0.2s;
+        }
+        .card:hover {
+            border-color: #5a5d80;
+        }
+        .card h4 {
+            font-family: var(--font-heading);
+            color: var(--text-heading2);
+            margin-top: 0;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+        }
+        .card p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        /* SEPARADORES */
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-separator), transparent);
+            margin: 2rem 0;
+            position: relative;
+        }
+        .divider-dot {
+            border: none;
+            height: 1px;
+            background: var(--border-separator);
+            margin: 1.8rem 0;
+            position: relative;
+            text-align: center;
+        }
+        .divider-dot::after {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            position: relative;
+            top: -4px;
+        }
+
+        /* LISTAS */
+        ul,
+        ol {
+            padding-left: 1.6rem;
+            margin-bottom: 0.9rem;
+        }
+        ul li,
+        ol li {
+            margin-bottom: 0.4rem;
+        }
+        ul.checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul.checklist li::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+            margin-right: 0.6rem;
+            transform: rotate(45deg);
+            position: relative;
+            top: -1px;
+        }
+
+        /* CÓDIGO / MONO */
+        code {
+            font-family: var(--font-mono);
+            background: var(--bg-code);
+            color: var(--text-code);
+            padding: 0.15em 0.4em;
+            border-radius: 3px;
+            font-size: 0.85em;
+            border: 1px solid #2e3045;
+        }
+
+        /* SCHEMA / FLUXOGRAMA SVG */
+        .svg-diagram {
+            display: block;
+            margin: 1.5rem auto;
+            max-width: 100%;
+            background: #1c1d2e;
+            border-radius: var(--radius-md);
+            padding: 0.8rem;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-card);
+        }
+
+        /* TIMELINE */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 1.3rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.55rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-separator);
+            border-radius: 1px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.2rem;
+            padding-left: 1.2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.58rem;
+            top: 0.4rem;
+            width: 10px;
+            height: 10px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            border: 2px solid var(--bg-primary);
+            z-index: 1;
+        }
+        .timeline-item .timeline-label {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--text-heading2);
+            font-size: 0.9rem;
+            margin-bottom: 0.15rem;
+        }
+
+        /* QUESTÕES */
+        .questao-block {
+            background: var(--bg-questao);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 1.2rem 1.4rem;
+            margin: 1.3rem 0;
+            box-shadow: var(--shadow-card);
+        }
+        .questao-block .enunciado {
+            font-weight: 600;
+            color: #c8c0a8;
+            margin-bottom: 0.7rem;
+        }
+        .questao-block .alternativas {
+            margin-bottom: 0.5rem;
+        }
+        .questao-block .resolucao {
+            background: #222440;
+            padding: 0.8rem 1rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            border-left: 3px solid var(--accent-gold);
+            margin-top: 0.7rem;
+            color: #bfb898;
+        }
+        .questao-block .resolucao strong {
+            color: #e0d5a0;
+        }
+
+        /* TAG DE CERTO/ERRADO */
+        .tag-certo {
+            display: inline-block;
+            background: #2a403a;
+            color: #8ac8a0;
+            padding: 0.15em 0.6em;
+            border-radius: 3px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            font-family: var(--font-heading);
+            letter-spacing: 0.03em;
+        }
+        .tag-errado {
+            display: inline-block;
+            background: #402a2a;
+            color: #c88a8a;
+            padding: 0.15em 0.6em;
+            border-radius: 3px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            font-family: var(--font-heading);
+            letter-spacing: 0.03em;
+        }
+
+        /* RESUMO EXECUTIVO */
+        .resumo-executivo {
+            background: var(--bg-resumo);
+            border: 2px solid #4a4d6a;
+            border-radius: var(--radius-lg);
+            padding: 1.5rem 1.8rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-elevated);
+        }
+        .resumo-executivo h2 {
+            border-bottom: none;
+            margin-bottom: 1rem;
+            color: #e0d5a0;
+        }
+
+        /* FOOTER */
+        .main-footer {
+            text-align: center;
+            padding: 1.5rem 0 0;
+            border-top: 1px solid var(--border-separator);
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* SVG ICONS INLINE */
+        .svg-icon {
+            display: inline-block;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        /* RESPONSIVE TABLE WRAPPER */
+        @media (max-width: 600px) {
+            table {
+                font-size: 0.78rem;
+            }
+            table thead th,
+            table tbody td {
+                padding: 0.5rem 0.6rem;
+            }
+            section h2 {
+                font-size: 1.3rem;
+            }
+            section h3 {
+                font-size: 1.05rem;
+            }
+            .main-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+
+        <!-- HEADER -->
+        <header class="main-header">
+            <h1>DIREITO ADMINISTRATIVO<br>PARA CONCURSOS PÚBLICOS</h1>
+            <p class="subtitle">Apostila Teórica Completa para Técnico Judiciário &mdash; Área Judiciária</p>
+        </header>
+
+        <!-- SUMÁRIO -->
+        <nav class="sumario-wrapper" aria-label="Sumário">
+            <h2>Sumário</h2>
+            <ol>
+                <li>
+                    <a href="#sec1">PRINCÍPIOS DA ADMINISTRAÇÃO PÚBLICA</a>
+                    <ol class="sub-items">
+                        <li><a href="#sec1-1">Princípios Expressos (LIMPE)</a></li>
+                        <li><a href="#sec1-2">Princípios Implícitos</a></li>
+                        <li><a href="#sec1-3">Princípio da Consensualidade</a></li>
+                        <li><a href="#sec1-4">Princípio da Economicidade</a></li>
+                        <li><a href="#sec1-5">Princípio da Indisponibilidade do Interesse Público</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#sec2">ESTRUTURA ADMINISTRATIVA E ÓRGÃOS PÚBLICOS</a>
+                    <ol class="sub-items">
+                        <li><a href="#sec2-1">Desconcentração e Descentralização</a></li>
+                        <li><a href="#sec2-2">Capacidade Processual dos Órgãos Públicos</a></li>
+                        <li><a href="#sec2-3">Criação e Extinção de Órgãos Públicos</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#sec3">ATOS ADMINISTRATIVOS</a>
+                    <ol class="sub-items">
+                        <li><a href="#sec3-1">Conceito e Elementos</a></li>
+                        <li><a href="#sec3-2">Atributos do Ato Administrativo</a></li>
+                        <li><a href="#sec3-3">Autoexecutoriedade vs. Exigibilidade</a></li>
+                        <li><a href="#sec3-4">Extinção dos Atos Administrativos</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#sec4">PODER REGULAMENTAR E DECRETOS</a>
+                    <ol class="sub-items">
+                        <li><a href="#sec4-1">Decreto Regulamentar (Executivo)</a></li>
+                        <li><a href="#sec4-2">Decreto Autônomo</a></li>
+                        <li><a href="#sec4-3">Distinção e Classificação</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#sec5">LICITAÇÕES E CONTRATAÇÕES DIRETAS (LEI 14.133/2021)</a>
+                    <ol class="sub-items">
+                        <li><a href="#sec5-1">Contratos Excluídos do Regime</a></li>
+                        <li><a href="#sec5-2">Dispensa de Licitação</a></li>
+                        <li><a href="#sec5-3">Inexigibilidade de Licitação</a></li>
+                        <li><a href="#sec5-4">Rol Exemplificativo vs. Taxativo</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#sec6">SERVIDORES PÚBLICOS (LEI 8.112/1990)</a>
+                    <ol class="sub-items">
+                        <li><a href="#sec6-1">Afastamento Preventivo no Processo Disciplinar</a></li>
+                        <li><a href="#sec6-2">Acesso de Estrangeiros a Cargos Públicos</a></li>
+                    </ol>
+                </li>
+                <li><a href="#sec7">DICAS DE PROVA E MACETES</a></li>
+            </ol>
+        </nav>
+
+        <!-- SEÇÃO 1: PRINCÍPIOS -->
+        <section id="sec1">
+            <h2>1. PRINCÍPIOS DA ADMINISTRAÇÃO PÚBLICA</h2>
+            <p>Os princípios que regem a Administração Pública são verdadeiros alicerces de toda atuação estatal. Compreendê-los é essencial não apenas para a prova, mas para a prática jurídica como um todo.</p>
+
+            <h3 id="sec1-1">1.1. Princípios Expressos (LIMPE)</h3>
+            <p>O art. 37, <strong>caput</strong>, da Constituição Federal de 1988 estabelece os princípios expressos que devem nortear a Administração Pública direta e indireta de todos os Poderes:</p>
+            <blockquote>
+                <p>"Art. 37. A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de <strong>legalidade, impessoalidade, moralidade, publicidade e eficiência</strong>."</p>
+            </blockquote>
+            <p>Para memorização, utilizamos o mnemônico <strong>LIMPE</strong>:</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr><th>Letra</th><th>Princípio</th><th>Significado Essencial</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>L</strong></td><td>Legalidade</td><td>O administrador só pode fazer o que a lei permite</td></tr>
+                        <tr><td><strong>I</strong></td><td>Impessoalidade</td><td>Atuação sem favorecimentos; finalidade pública</td></tr>
+                        <tr><td><strong>M</strong></td><td>Moralidade</td><td>Atuação ética, proba e honesta</td></tr>
+                        <tr><td><strong>P</strong></td><td>Publicidade</td><td>Transparência e divulgação dos atos oficiais</td></tr>
+                        <tr><td><strong>E</strong></td><td>Eficiência</td><td>Atuação com qualidade, rapidez e economicidade</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>1.1.1. Legalidade</h4>
+            <p>A legalidade é o princípio fundamental do Estado de Direito. Para os particulares, a regra é "pode-se fazer tudo o que a lei não proíbe". Para a Administração Pública, vigora a lógica inversa: <span class="highlight">"só se pode fazer o que a lei autoriza ou determina"</span>.</p>
+            <p><strong>Importante</strong>: A legalidade administrativa exige que o ato seja praticado em conformidade não apenas com a lei em sentido estrito, mas com todo o ordenamento jurídico.</p>
+
+            <h4>1.1.2. Impessoalidade</h4>
+            <p>A impessoalidade possui dois aspectos fundamentais:</p>
+            <ol>
+                <li><strong>Finalidade pública</strong>: o ato deve visar ao interesse público, não à satisfação de interesses pessoais do agente;</li>
+                <li><strong>Atuação objetiva</strong>: a Administração não pode favorecer ou prejudicar pessoas determinadas; seus atos devem ser impessoais.</li>
+            </ol>
+            <div class="box box-pegadinha">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a074" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    PEGADINHA DE BANCA
+                </div>
+                <p>A nomeação de parentes para cargos públicos (nepotismo) viola o princípio da impessoalidade e também o da moralidade.</p>
+            </div>
+
+            <h4>1.1.3. Moralidade</h4>
+            <p>A moralidade exige que a Administração atue com probidade, honestidade e boa-fé. Não basta cumprir a lei formalmente; é necessário respeitar a ética e os valores sociais.</p>
+
+            <h4>1.1.4. Publicidade</h4>
+            <p>A publicidade é princípio expresso e garante a transparência da gestão pública. Os atos administrativos devem ser divulgados oficialmente para produzir efeitos e permitir o controle social.</p>
+            <p><strong>Fundamento</strong>: Art. 37, §3º, CF/88 (atuação em sítios eletrônicos oficiais) e Lei de Acesso à Informação (Lei 12.527/2011).</p>
+            <p><strong>EXCEÇÃO</strong>: A publicidade deve ser restrita em casos de sigilo necessário à segurança da sociedade ou do Estado.</p>
+
+            <h4>1.1.5. Eficiência</h4>
+            <p>Incluído pela Emenda Constitucional 19/1998, o princípio da eficiência impõe à Administração o dever de atuar com qualidade, rapidez, economicidade e resultados positivos.</p>
+            <div class="box box-dica">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8ab8d8" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    DICA DE PROVA
+                </div>
+                <p>A FCC costuma cobrar a data da inclusão da eficiência (EC 19/98) e também distingue eficiência (expressa) de economicidade (implícita).</p>
+            </div>
+
+            <h3 id="sec1-2">1.2. Princípios Implícitos</h3>
+            <p>Diferentemente do LIMPE, os princípios implícitos não estão expressamente previstos no art. 37, <strong>caput</strong>, mas são extraídos do sistema constitucional e da doutrina. A FCC adora explorar a diferença entre princípios expressos e implícitos!</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>PRINCÍPIOS EXPRESSOS</th><th>PRINCÍPIOS IMPLÍCITOS</th></tr></thead>
+                    <tbody>
+                        <tr><td>Legalidade</td><td>Supremacia do Interesse Público</td></tr>
+                        <tr><td>Impessoalidade</td><td>Indisponibilidade do Interesse Público</td></tr>
+                        <tr><td>Moralidade</td><td>Consensualidade</td></tr>
+                        <tr><td>Publicidade</td><td>Segurança Jurídica</td></tr>
+                        <tr><td>Eficiência</td><td>Juridicidade</td></tr>
+                        <tr><td></td><td>Economicidade</td></tr>
+                        <tr><td></td><td>Razoabilidade/Proporcionalidade</td></tr>
+                        <tr><td></td><td>Autotutela</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="divider">
+
+            <h3 id="sec1-3">1.3. Princípio da Consensualidade</h3>
+            <p>O princípio da consensualidade é <strong>implícito</strong>, decorrente do Estado Democrático de Direito. Ele representa uma evolução na relação entre Administração e administrado, substituindo gradativamente a unilateralidade e imperatividade da atuação estatal por mecanismos de diálogo e participação.</p>
+
+            <h4>Manifestações Práticas da Consensualidade</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Instrumento</th><th>Exemplo</th></tr></thead>
+                    <tbody>
+                        <tr><td>Consultas Públicas</td><td>Participação popular na elaboração de normas</td></tr>
+                        <tr><td>Audiências Públicas</td><td>Discussão de projetos de impacto ambiental</td></tr>
+                        <tr><td>Mediação</td><td>Resolução de conflitos com a Administração</td></tr>
+                        <tr><td>Arbitragem</td><td>Solução de litígios sem judicialização</td></tr>
+                        <tr><td>Termos de Ajustamento de Conduta (TAC)</td><td>Compromissos assumidos pelo particular</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box box-dica">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8ab8d8" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    DICA DE PROVA
+                </div>
+                <p>A FCC pode apresentar uma questão afirmando que a consensualidade é princípio expresso. <strong>Estará errada!</strong> O princípio é implícito.</p>
+            </div>
+
+            <h3 id="sec1-4">1.4. Princípio da Economicidade</h3>
+            <p>O princípio da economicidade, embora implícito no art. 37, <strong>caput</strong>, encontra previsão expressa no art. 70 da CF/88, que trata do controle interno:</p>
+            <blockquote>
+                <p>"Art. 70. A fiscalização contábil, financeira, orçamentária, operacional e patrimonial da União e das entidades da administração direta e indireta... será exercida pelo Congresso Nacional, mediante controle externo, e pelo sistema de controle interno de cada Poder."</p>
+            </blockquote>
+
+            <h4>Economicidade x Eficiência</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>ASPECTO</th><th>ECONOMICIDADE</th><th>EFICIÊNCIA</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Natureza</strong></td><td>Princípio implícito</td><td>Princípio expresso (EC 19/98)</td></tr>
+                        <tr><td><strong>Foco</strong></td><td>Minimização de gastos</td><td>Otimização de recursos</td></tr>
+                        <tr><td><strong>Conteúdo</strong></td><td>Custo-benefício, relação custo/resultado</td><td>Qualidade, rapidez, produtividade</td></tr>
+                        <tr><td><strong>Previsão</strong></td><td>Art. 70, CF (implícito no art. 37)</td><td>Art. 37, caput (expresso)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box box-pegadinha">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a074" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    PEGADINHA DE BANCA
+                </div>
+                <p>A FCC pode afirmar que "economicidade está expressa no art. 37". <strong>Cuidado!</strong> O que está expresso é a <strong>eficiência</strong>. A economicidade é implícita (embora conste do art. 70).</p>
+            </div>
+
+            <h3 id="sec1-5">1.5. Princípio da Indisponibilidade do Interesse Público</h3>
+            <p>O princípio da indisponibilidade do interesse público é <strong>implícito</strong> e veda ao administrador dispor, renunciar ou transacionar os interesses da coletividade. O fundamento é que o interesse público pertence à sociedade, não ao agente público.</p>
+
+            <h4>Releitura Moderna do Princípio</h4>
+            <p>Tradicionalmente, a indisponibilidade impedia qualquer forma de consenso. Atualmente, porém, doutrina e jurisprudência admitem sua <strong>releitura</strong> para permitir:</p>
+            <ul>
+                <li>Acordos administrativos (ex.: TAC)</li>
+                <li>Mediação e arbitragem</li>
+                <li>Transações com particular, desde que em benefício do interesse público</li>
+            </ul>
+            <p><strong>Fundamento</strong>: O princípio da consensualidade e a busca da eficiência convivem com a indisponibilidade, desde que preservem o núcleo essencial do interesse público.</p>
+            <div class="box box-dica">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8ab8d8" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    DICA DE PROVA
+                </div>
+                <p>A FCC pode associar instrumentos consensuais a uma "releitura" da indisponibilidade, e não aos princípios expressos (moralidade, eficiência etc.). Fique atento!</p>
+            </div>
+        </section>
+
+        <hr class="divider-dot">
+
+        <!-- SEÇÃO 2: ESTRUTURA ADMINISTRATIVA -->
+        <section id="sec2">
+            <h2>2. ESTRUTURA ADMINISTRATIVA E ÓRGÃOS PÚBLICOS</h2>
+
+            <h3 id="sec2-1">2.1. Desconcentração e Descentralização</h3>
+
+            <h4>2.1.1. Desconcentração</h4>
+            <p>A desconcentração é a distribuição interna de competências <strong>dentro da mesma pessoa jurídica</strong>. Exemplo: Ministérios, Secretarias, Departamentos.</p>
+            <p><strong>CARACTERÍSTICAS DA DESCONCENTRAÇÃO</strong>:</p>
+            <ul>
+                <li>Criação de <strong>órgãos públicos</strong> (despersonalizados)</li>
+                <li>Não há transferência de personalidade jurídica</li>
+                <li>Mantém-se a hierarquia dentro da mesma entidade</li>
+                <li>Exemplo clássico: criação de uma Coordenadoria dentro do Ministério da Educação</li>
+            </ul>
+
+            <h4>2.1.2. Descentralização</h4>
+            <p>A descentralização é a distribuição de competências para <strong>pessoas jurídicas distintas</strong> do ente central. Pode ocorrer por:</p>
+            <ol>
+                <li><strong>Outorga (descentralização administrativa)</strong>: transferência de serviços para entidades da Administração Indireta (autarquias, fundações, empresas públicas, sociedades de economia mista) &mdash; <strong>sujeitas a controle finalístico ou tutela</strong>.</li>
+                <li><strong>Delegação (descentralização colaborativa)</strong>: transferência da execução de serviços para particulares (concessão, permissão, autorização) &mdash; <strong>não há vínculo hierárquico</strong>.</li>
+            </ol>
+
+            <h4>Quadro Comparativo</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>ASPECTO</th><th>DESCONCENTRAÇÃO</th><th>DESCENTRALIZAÇÃO</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Resultado</strong></td><td>Órgãos públicos</td><td>Pessoas jurídicas</td></tr>
+                        <tr><td><strong>Personalidade</strong></td><td>Nenhuma</td><td>Própria</td></tr>
+                        <tr><td><strong>Criação</strong></td><td>Por lei ou decreto (cargos vagos)</td><td>Por lei</td></tr>
+                        <tr><td><strong>Vínculo</strong></td><td>Hierárquico</td><td>Controle finalístico ou contratual</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="divider">
+
+            <h3 id="sec2-2">2.2. Capacidade Processual dos Órgãos Públicos</h3>
+
+            <h4>Regra Geral</h4>
+            <p>Os órgãos públicos, por serem despersonalizados, <strong>em regra não possuem capacidade processual (personalidade judiciária)</strong> para figurar em juízo como autores ou réus.</p>
+
+            <h4>Exceções</h4>
+            <p>Apesar da regra geral, há exceções importantes:</p>
+            <ol>
+                <li><strong>Órgãos independentes e autônomos</strong>: têm capacidade processual para defesa de suas prerrogativas institucionais (ex.: Presidência da República, Senado Federal, STF). Exemplo clássico: <strong>mandado de segurança</strong> impetrado pelo Senado para proteger sua competência legislativa.</li>
+                <li><strong>Art. 82, III, do CDC</strong>: legitimam-se os órgãos da administração direta ou indireta para atuarem em defesa do consumidor.</li>
+                <li><strong>Legitimidade extraordinária</strong>: em situações específicas previstas em lei.</li>
+            </ol>
+            <div class="box box-pegadinha">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a074" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    PEGADINHA DE BANCA
+                </div>
+                <p>A FCC pode afirmar que "todos os órgãos públicos têm capacidade processual". <strong>Falso!</strong> A regra é a falta de capacidade; as exceções são restritas.</p>
+            </div>
+
+            <h3 id="sec2-3">2.3. Criação e Extinção de Órgãos Públicos</h3>
+
+            <h4>Regra da Reserva Legal</h4>
+            <p>A criação e extinção de órgãos públicos colegiados deve ser feita por <strong>lei</strong> (art. 48, XI, CF/88). Não se admite decreto para essa finalidade.</p>
+
+            <h4>Exceção para Extinção de Cargos Vagos</h4>
+            <p>O art. 84, VI, <strong>b</strong>, da CF/88 permite que o Presidente da República, por <strong>decreto autônomo</strong>, extinga cargos ou funções públicas quando vagos.</p>
+            <blockquote>
+                <p>Art. 84, VI &mdash; dispor, mediante decreto, sobre: <strong>b)</strong> extinção de funções ou cargos públicos, quando vagos.</p>
+            </blockquote>
+            <div class="box box-pegadinha">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a074" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    PEGADINHA DE BANCA
+                </div>
+                <p><span class="tag-errado">Errado!</span> "Órgãos públicos podem ser extintos por decreto" &mdash; Só por lei.<br>
+                    <span class="tag-certo">Correto!</span> "Cargos públicos vagos podem ser extintos por decreto" &mdash; art. 84, VI, b, CF.</p>
+            </div>
+
+            <h4>Resumo &mdash; Criação/Extinção</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>HIPÓTESE</th><th>INSTRUMENTO</th><th>FUNDAMENTO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Criação de órgão público</td><td><strong>Lei</strong></td><td>Art. 48, XI, CF</td></tr>
+                        <tr><td>Extinção de órgão público</td><td><strong>Lei</strong></td><td>Art. 48, XI, CF</td></tr>
+                        <tr><td>Extinção de cargo público <strong>vago</strong></td><td><strong>Decreto autônomo</strong></td><td>Art. 84, VI, b, CF</td></tr>
+                        <tr><td>Extinção de cargo público ocupado</td><td><strong>Lei</strong></td><td>Não se admite decreto</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr class="divider-dot">
+
+        <!-- SEÇÃO 3: ATOS ADMINISTRATIVOS -->
+        <section id="sec3">
+            <h2>3. ATOS ADMINISTRATIVOS</h2>
+
+            <h3 id="sec3-1">3.1. Conceito e Elementos</h3>
+            <p>Ato administrativo é a manifestação unilateral de vontade da Administração Pública (ou de seus delegatários) que, no exercício de suas prerrogativas, produz efeitos jurídicos imediatos, sujeita a controle.</p>
+            <p><strong>Elementos (ou requisitos) do ato administrativo</strong>:</p>
+            <ol>
+                <li><strong>Competência</strong>: sujeito apto a praticar o ato</li>
+                <li><strong>Finalidade</strong>: interesse público</li>
+                <li><strong>Forma</strong>: prescrita em lei</li>
+                <li><strong>Motivo</strong>: situação de fato e de direito que justifica o ato</li>
+                <li><strong>Objeto</strong>: conteúdo do ato</li>
+            </ol>
+
+            <h3 id="sec3-2">3.2. Atributos do Ato Administrativo</h3>
+            <p>Os atributos são características que diferenciam os atos administrativos dos atos privados:</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>ATRIBUTO</th><th>SIGNIFICADO</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Presunção de Legitimidade</strong></td><td>O ato é presumido válido até prova em contrário</td></tr>
+                        <tr><td><strong>Imperatividade</strong></td><td>Imposição unilateral de obrigações a terceiros</td></tr>
+                        <tr><td><strong>Autoexecutoriedade</strong></td><td>Execução material direta pela Administração, sem necessidade de autorização judicial</td></tr>
+                        <tr><td><strong>Exigibilidade</strong></td><td>Coerção indireta (ex.: multas, cobranças administrativas)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 id="sec3-3">3.3. Autoexecutoriedade vs. Exigibilidade</h3>
+            <p>A <strong>autoexecutoriedade</strong> e a <strong>exigibilidade</strong> são atributos distintos, embora ambos expressem a coercibilidade dos atos administrativos.</p>
+
+            <h4>Autoexecutoriedade</h4>
+            <p>Permite que a Administração execute <strong>materialmente</strong> seus próprios atos, independentemente de ordem judicial, quando: (1) <strong>Previsão legal</strong> expressa; (2) <strong>Urgência</strong> ou emergência.</p>
+            <p><strong>Exemplos</strong>: Demolição de obra irregular; Apreensão de mercadorias; Interdição de estabelecimento; Desocupação de área pública.</p>
+
+            <h4>Exigibilidade</h4>
+            <p>Consiste na aplicação de <strong>meios indiretos de coerção</strong>, como multas, advertências, notificações. A Administração impõe a obrigação, mas a <strong>execução forçada</strong> (cobrança judicial) depende do Judiciário.</p>
+            <p><strong>Exemplos</strong>: Multa de trânsito; Multa ambiental; Multa trabalhista.</p>
+
+            <h4>Quadro Comparativo</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>ASPECTO</th><th>AUTOEXECUTORIEDADE</th><th>EXIGIBILIDADE</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Natureza</strong></td><td>Execução material direta</td><td>Coerção indireta</td></tr>
+                        <tr><td><strong>Precisa de Judiciário?</strong></td><td><strong>Não</strong> (executa diretamente)</td><td><strong>Sim</strong> (para cobrança forçada)</td></tr>
+                        <tr><td><strong>Exemplo</strong></td><td>Demolição, apreensão, interdição</td><td>Multa, notificação, advertência</td></tr>
+                        <tr><td><strong>Fundamento</strong></td><td>Lei ou urgência</td><td>Lei (previsão abstrata)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>A Multa e a Autoexecutoriedade</h4>
+            <div class="box box-pegadinha">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a074" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    PEGADINHA CLÁSSICA DA FCC
+                </div>
+                <p>A multa é dotada de: <strong>Imperatividade</strong> (sim); <strong>Exigibilidade</strong> (sim); <strong>Autoexecutoriedade</strong>: a Administração <strong>NÃO</strong> pode executar materialmente a multa (não).</p>
+            </div>
+            <p><strong>COMO COBRAR A MULTA?</strong></p>
+            <ol>
+                <li>A Administração constitui o crédito (auto de infração, notificação, processo administrativo)</li>
+                <li>Inscreve em dívida ativa</li>
+                <li><strong>Execução judicial</strong> (a cobrança forçada depende do Judiciário)</li>
+            </ol>
+
+            <div class="box box-exemplo">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8ab8a0" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/></svg>
+                    EXEMPLO PRÁTICO
+                </div>
+                <p>João, agente de trânsito, aplica multa a um motorista que estacionou irregularmente. O motorista não paga. João pode apreender o carro para cobrar a multa? <strong>Não!</strong> A multa tem exigibilidade, mas não autoexecutoriedade. Para cobrar a multa, a Administração precisa ajuizar execução fiscal.</p>
+            </div>
+
+            <h3 id="sec3-4">3.4. Extinção dos Atos Administrativos</h3>
+            <p>A extinção do ato administrativo pode ocorrer por diversas causas:</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>FORMA DE EXTINÇÃO</th><th>CAUSA</th><th>EFEITOS</th><th>QUEM PODE PRATICAR</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Revogação</strong></td><td>Conveniência e oportunidade (mérito)</td><td><strong>Ex nunc</strong> (não retroage)</td><td>Administração</td></tr>
+                        <tr><td><strong>Anulação</strong></td><td>Ilegalidade (vício)</td><td><strong>Ex tunc</strong> (retroage)</td><td>Administração ou Judiciário</td></tr>
+                        <tr><td><strong>Cass ação</strong></td><td>Descumprimento de condições pelo destinatário</td><td><strong>Ex nunc</strong></td><td>Administração</td></tr>
+                        <tr><td><strong>Caducidade</strong></td><td>Norma superveniente incompatível</td><td><strong>Ex nunc</strong></td><td>Administração</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>3.4.1. Revogação</h4>
+            <p>A revogação é a extinção do ato administrativo <strong>válido</strong> por razões de <strong>conveniência e oportunidade</strong> (mérito administrativo).</p>
+            <p><strong>CARACTERÍSTICAS</strong>: Ato legal (não há vício); Baseada no mérito administrativo; Efeitos <strong>ex nunc</strong> (não retroage); Só pode ser praticada pela Administração; Discricionária.</p>
+            <div class="box box-exemplo">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8ab8a0" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/></svg>
+                    EXEMPLO PRÁTICO
+                </div>
+                <p>O Prefeito revoga permissão de uso de um terreno para construção de um parque, porque o local será usado para a construção de uma escola. A permissão era válida, mas a Administração, por conveniência, decidiu revogá-la.</p>
+            </div>
+            <div class="box box-pegadinha">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a074" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    PEGADINHA DE BANCA
+                </div>
+                <p>A revogação decorre de <strong>juízo discricionário</strong> de conveniência e oportunidade, e não de ilegalidade.</p>
+            </div>
+
+            <h4>3.4.2. Anulação</h4>
+            <p>A anulação decorre de <strong>vício de legalidade</strong> (ilegalidade) no ato administrativo. Pode ser praticada pela Administração (autotutela) ou pelo Judiciário. Efeitos <strong>ex tunc</strong> (retroagem). Vinculada (deve anular o ato ilegal).</p>
+
+            <h4>3.4.3. Cassação</h4>
+            <p>Ocorre quando o <strong>destinatário descumpre condições</strong> estabelecidas no ato. Exemplo: cassação de licença de funcionamento por descumprimento de normas de vigilância sanitária.</p>
+
+            <h4>3.4.4. Caducidade</h4>
+            <p>Ocorre por <strong>norma superveniente</strong> incompatível com o ato. Exemplo: um ato administrativo que se torna inviável devido a nova lei que proíbe determinada atividade.</p>
+        </section>
+
+        <hr class="divider-dot">
+
+        <!-- SEÇÃO 4: PODER REGULAMENTAR -->
+        <section id="sec4">
+            <h2>4. PODER REGULAMENTAR E DECRETOS</h2>
+
+            <h3 id="sec4-1">4.1. Decreto Regulamentar (Executivo)</h3>
+            <p>O decreto regulamentar (art. 84, IV, CF/88) tem como finalidade <strong>dar fiel execução à lei</strong>. É ato secundário, subordinado à lei, e <strong>NÃO inova no ordenamento jurídico</strong>.</p>
+            <blockquote>
+                <p>Art. 84, IV &mdash; sancionar, promulgar e fazer publicar as leis, bem como expedir decretos e regulamentos para sua fiel execução.</p>
+            </blockquote>
+            <p><strong>CARACTERÍSTICAS</strong>: Ato administrativo secundário; Não pode criar obrigações não previstas em lei; Não pode aumentar despesas; Subordinado à lei.</p>
+            <p><strong>EXEMPLO</strong>: Decreto regulamentando a Lei de Licitações.</p>
+
+            <h3 id="sec4-2">4.2. Decreto Autônomo</h3>
+            <p>O decreto autônomo (art. 84, VI, CF/88) <strong>inova no ordenamento jurídico</strong> porque tem fundamento direto na Constituição, sendo ato normativo <strong>primário</strong>.</p>
+            <blockquote>
+                <p>Art. 84, VI &mdash; dispor, mediante decreto, sobre: <strong>a)</strong> organização e funcionamento da administração federal, quando não implicar aumento de despesa nem criação ou extinção de órgãos públicos; <strong>b)</strong> extinção de funções ou cargos públicos, quando vagos.</p>
+            </blockquote>
+            <p><strong>CARACTERÍSTICAS</strong>: Ato normativo primário; Fundamentado diretamente na CF; <strong>Pode inovar</strong> no ordenamento; Hipóteses restritas.</p>
+
+            <h3 id="sec4-3">4.3. Distinção e Classificação</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>ASPECTO</th><th>DECRETO REGULAMENTAR</th><th>DECRETO AUTÔNOMO</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Fundamento</strong></td><td>Art. 84, IV, CF</td><td>Art. 84, VI, CF</td></tr>
+                        <tr><td><strong>Natureza</strong></td><td>Secundário</td><td>Primário</td></tr>
+                        <tr><td><strong>Inova no ordenamento?</strong></td><td><strong>Não</strong></td><td><strong>Sim</strong></td></tr>
+                        <tr><td><strong>Subordinação</strong></td><td>Subordinado à lei</td><td>Fundamentado na CF</td></tr>
+                        <tr><td><strong>Função</strong></td><td>Fiel execução da lei</td><td>Organização/estruturação</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>DICA DE PROVA &mdash; Como identificar na questão?</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Na questão aparece:</th><th>Então é:</th></tr></thead>
+                    <tbody>
+                        <tr><td>"O decreto inova no ordenamento sem lei prévia"</td><td><strong>Autônomo</strong> (primário)</td></tr>
+                        <tr><td>"O decreto é para fiel execução de lei"</td><td><strong>Regulamentar</strong> (secundário)</td></tr>
+                        <tr><td>"Organização da administração sem aumento de despesa"</td><td><strong>Autônomo</strong> (art. 84, VI, a)</td></tr>
+                        <tr><td>"Extinção de cargos vagos"</td><td><strong>Autônomo</strong> (art. 84, VI, b)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box box-pegadinha">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a074" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    PEGADINHA DE BANCA
+                </div>
+                <p>A FCC pode afirmar que "todo decreto regulamentar é autônomo". <strong>Falso!</strong> São institutos distintos.</p>
+            </div>
+
+            <!-- Fluxograma SVG: Decreto -->
+            <svg class="svg-diagram" viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxograma: O decreto inova no ordenamento? Sim -> Decreto Autônomo. Não -> Decreto Regulamentar.">
+                <rect x="190" y="15" width="260" height="52" rx="26" fill="#2a2d48" stroke="#c9a84c" stroke-width="2.2"/>
+                <text x="320" y="38" text-anchor="middle" fill="#e2d5a8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">O decreto inova no ordenamento?</text>
+                <text x="320" y="54" text-anchor="middle" fill="#b8b3a6" font-family="Segoe UI, Arial, sans-serif" font-size="11">(Inova sem lei prévia?)</text>
+                <line x1="320" y1="67" x2="320" y2="100" stroke="#c9a84c" stroke-width="2"/>
+                <line x1="120" y1="100" x2="520" y2="100" stroke="#c9a84c" stroke-width="2"/>
+                <line x1="120" y1="100" x2="120" y2="130" stroke="#6a9e7a" stroke-width="2.2"/>
+                <line x1="520" y1="100" x2="520" y2="130" stroke="#c9706a" stroke-width="2.2"/>
+                <rect x="30" y="130" width="180" height="58" rx="10" fill="#1e2a2a" stroke="#6a9e7a" stroke-width="2"/>
+                <text x="120" y="154" text-anchor="middle" fill="#8ab8a0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">SIM</text>
+                <text x="120" y="174" text-anchor="middle" fill="#d4cfc2" font-family="Segoe UI, Arial, sans-serif" font-size="12">Decreto Autônomo</text>
+                <text x="120" y="184" text-anchor="middle" fill="#9a9585" font-family="Segoe UI, Arial, sans-serif" font-size="10">(primário)</text>
+                <rect x="430" y="130" width="180" height="58" rx="10" fill="#2d221f" stroke="#c9706a" stroke-width="2"/>
+                <text x="520" y="154" text-anchor="middle" fill="#c88a8a" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">NÃO</text>
+                <text x="520" y="174" text-anchor="middle" fill="#d4cfc2" font-family="Segoe UI, Arial, sans-serif" font-size="12">Decreto Regulamentar</text>
+                <text x="520" y="184" text-anchor="middle" fill="#9a9585" font-family="Segoe UI, Arial, sans-serif" font-size="10">(secundário)</text>
+                <rect x="220" y="210" width="200" height="36" rx="8" fill="#252745" stroke="#4a4d6a" stroke-width="1.5" stroke-dasharray="6,3"/>
+                <text x="320" y="233" text-anchor="middle" fill="#9a9585" font-family="Segoe UI, Arial, sans-serif" font-size="11">Fluxograma de Decisão</text>
+            </svg>
+        </section>
+
+        <hr class="divider-dot">
+
+        <!-- SEÇÃO 5: LICITAÇÕES -->
+        <section id="sec5">
+            <h2>5. LICITAÇÕES E CONTRATAÇÕES DIRETAS (LEI 14.133/2021)</h2>
+            <p>A Lei 14.133/2021 (Nova Lei de Licitações e Contratos Administrativos) é o marco normativo atual, e as bancas, especialmente a FCC, têm cobrado intensamente seu conteúdo.</p>
+
+            <h3 id="sec5-1">5.1. Contratos Excluídos do Regime</h3>
+            <p>O art. 3º da Lei 14.133/2021 estabelece hipóteses de <strong>NÃO aplicação</strong> da lei:</p>
+            <h4>Contratos NÃO Subordinados à Lei 14.133/2021:</h4>
+            <ol>
+                <li><strong>Operação de crédito</strong>, interno ou externo (art. 3º, I)</li>
+                <li><strong>Gestão da dívida pública</strong> (art. 3º, I)</li>
+                <li><strong>Contratações com legislação própria</strong> (art. 3º, II &mdash; ex.: contratos de direito internacional)</li>
+            </ol>
+            <h4>Contratos Subordinados à Lei 14.133/2021:</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Contrato</th><th>Fundamento</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Locação</strong></td><td>Art. 2º, III</td></tr>
+                        <tr><td><strong>Concessão de uso de bem público</strong></td><td>Art. 2º, IV</td></tr>
+                        <tr><td><strong>Prestação de serviços</strong></td><td>Art. 2º, II</td></tr>
+                        <tr><td><strong>Compra</strong></td><td>Art. 2º, I</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box box-pegadinha">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a074" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    PEGADINHA DE BANCA
+                </div>
+                <p>A FCC pode perguntar "Qual contrato NÃO se subordina à Lei 14.133/2021?". A resposta correta é <strong>operação de crédito</strong> (art. 3º, I).</p>
+            </div>
+
+            <h3 id="sec5-2">5.2. Dispensa de Licitação (Art. 75)</h3>
+            <p>A dispensa de licitação ocorre quando a licitação é <strong>viável</strong> (há competição possível), mas a lei autoriza a Administração a não realizá-la.</p>
+            <p><strong>Características da Dispensa</strong>: Viabilidade de competição; Autorização legal; <strong>Rol taxativo</strong>: o art. 75 apresenta rol <strong>fechado</strong> (numerus clausus).</p>
+            <p><strong>Hipóteses Clássicas (Art. 75)</strong>: Valor pequeno; Situações de emergência; Contratação de remanescentes de obra; Aquisição de alimentos perecíveis; Intervenção no domínio econômico.</p>
+
+            <h3 id="sec5-3">5.3. Inexigibilidade de Licitação (Art. 74)</h3>
+            <p>A inexigibilidade ocorre quando a licitação é <strong>inviável</strong>, ou seja, não há competição possível.</p>
+            <p><strong>Características da Inexigibilidade</strong>: Inviabilidade de competição; <strong>Rol exemplificativo</strong>: o art. 74 apresenta rol <strong>aberto</strong> (exemplificativo), indicado pela expressão "em especial nos casos de".</p>
+            <p><strong>Hipóteses Clássicas (Art. 74)</strong>: Fornecedor exclusivo; Objeto de natureza singular (serviços técnicos especializados com notória especialização); Contratação de artista consagrado pela crítica.</p>
+
+            <h3 id="sec5-4">5.4. Rol Exemplificativo vs. Taxativo</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>ASPECTO</th><th>DISPENSA</th><th>INEXIGIBILIDADE</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Rol</strong></td><td><strong>Taxativo</strong> (fechado)</td><td><strong>Exemplificativo</strong> (aberto)</td></tr>
+                        <tr><td><strong>Competição</strong></td><td>Viável</td><td>Inviável</td></tr>
+                        <tr><td><strong>Fundamento</strong></td><td>Art. 75</td><td>Art. 74</td></tr>
+                        <tr><td><strong>Natureza do rol</strong></td><td>Numerus clausus</td><td>Numerus apertus</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Identificação na Prova</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Afirmação da questão</th><th>Correto/Errado</th></tr></thead>
+                    <tbody>
+                        <tr><td>"O rol da dispensa é taxativo"</td><td><span class="tag-certo">Correto</span></td></tr>
+                        <tr><td>"O rol da inexigibilidade é exemplificativo"</td><td><span class="tag-certo">Correto</span></td></tr>
+                        <tr><td>"Ambos os rol são taxativos"</td><td><span class="tag-errado">Errado</span></td></tr>
+                        <tr><td>"A dispensa tem rol aberto"</td><td><span class="tag-errado">Errado</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box box-pegadinha">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a074" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    PEGADINHA DE BANCA
+                </div>
+                <p>A FCC pode apresentar uma assertiva afirmando que "tanto a dispensa quanto a inexigibilidade têm rol taxativo". Essa alternativa estará <strong>errada</strong>.</p>
+            </div>
+
+            <!-- Fluxograma SVG: Dispensa x Inexigibilidade -->
+            <svg class="svg-diagram" viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxograma: Há viabilidade de competição? Sim -> Dispensa (rol taxativo). Não -> Inexigibilidade (rol exemplificativo).">
+                <rect x="170" y="15" width="300" height="52" rx="26" fill="#2a2d48" stroke="#c9a84c" stroke-width="2.2"/>
+                <text x="320" y="38" text-anchor="middle" fill="#e2d5a8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600">Há viabilidade de competição?</text>
+                <text x="320" y="54" text-anchor="middle" fill="#b8b3a6" font-family="Segoe UI, Arial, sans-serif" font-size="11">(É possível promover disputa?)</text>
+                <line x1="320" y1="67" x2="320" y2="100" stroke="#c9a84c" stroke-width="2"/>
+                <line x1="110" y1="100" x2="530" y2="100" stroke="#c9a84c" stroke-width="2"/>
+                <line x1="110" y1="100" x2="110" y2="130" stroke="#6a9e7a" stroke-width="2.2"/>
+                <line x1="530" y1="100" x2="530" y2="130" stroke="#c9706a" stroke-width="2.2"/>
+                <rect x="20" y="130" width="180" height="58" rx="10" fill="#1e2a2a" stroke="#6a9e7a" stroke-width="2"/>
+                <text x="110" y="154" text-anchor="middle" fill="#8ab8a0" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">SIM</text>
+                <text x="110" y="174" text-anchor="middle" fill="#d4cfc2" font-family="Segoe UI, Arial, sans-serif" font-size="12">Dispensa</text>
+                <text x="110" y="184" text-anchor="middle" fill="#9a9585" font-family="Segoe UI, Arial, sans-serif" font-size="10">rol taxativo</text>
+                <rect x="440" y="130" width="180" height="58" rx="10" fill="#2d221f" stroke="#c9706a" stroke-width="2"/>
+                <text x="530" y="154" text-anchor="middle" fill="#c88a8a" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">NÃO</text>
+                <text x="530" y="174" text-anchor="middle" fill="#d4cfc2" font-family="Segoe UI, Arial, sans-serif" font-size="12">Inexigibilidade</text>
+                <text x="530" y="184" text-anchor="middle" fill="#9a9585" font-family="Segoe UI, Arial, sans-serif" font-size="10">rol exemplificativo</text>
+                <rect x="230" y="210" width="180" height="32" rx="8" fill="#252745" stroke="#4a4d6a" stroke-width="1.5" stroke-dasharray="6,3"/>
+                <text x="320" y="231" text-anchor="middle" fill="#9a9585" font-family="Segoe UI, Arial, sans-serif" font-size="11">Fluxograma de Decisão</text>
+            </svg>
+        </section>
+
+        <hr class="divider-dot">
+
+        <!-- SEÇÃO 6: SERVIDORES PÚBLICOS -->
+        <section id="sec6">
+            <h2>6. SERVIDORES PÚBLICOS (LEI 8.112/1990)</h2>
+
+            <h3 id="sec6-1">6.1. Afastamento Preventivo do Servidor</h3>
+            <p>O afastamento preventivo é medida cautelar prevista no processo disciplinar para evitar que o servidor influa na apuração dos fatos (art. 147, Lei 8.112/1990).</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>ASPECTO</th><th>REGRA</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Autorização</strong></td><td>A autoridade instauradora pode determinar</td></tr>
+                        <tr><td><strong>Prazo máximo</strong></td><td>Até <strong>60 dias</strong></td></tr>
+                        <tr><td><strong>Prorrogação</strong></td><td>Por igual prazo (<strong>+ 60 dias</strong>)</td></tr>
+                        <tr><td><strong>Remuneração</strong></td><td><strong>Sem prejuízo</strong> (remunerado)</td></tr>
+                        <tr><td><strong>Natureza</strong></td><td>Cautelar (preventiva)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Esquema do Afastamento em SVG Timeline -->
+            <svg class="svg-diagram" viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Esquema do afastamento preventivo: 1. Autoridade determina afastamento. 2. Prazo de 60 dias com remuneração. 3. Prorrogação de mais 60 dias. 4. Retorno ou nova decisão.">
+                <text x="320" y="24" text-anchor="middle" fill="#e2d5a8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Esquema do Afastamento Preventivo</text>
+                <line x1="50" y1="55" x2="590" y2="55" stroke="#3a3c58" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="80" cy="55" r="14" fill="#1a1b25" stroke="#c9a84c" stroke-width="2.5"/>
+                <text x="80" y="60" text-anchor="middle" fill="#e2d5a8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">1</text>
+                <circle cx="250" cy="55" r="14" fill="#1a1b25" stroke="#c9a84c" stroke-width="2.5"/>
+                <text x="250" y="60" text-anchor="middle" fill="#e2d5a8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">2</text>
+                <circle cx="420" cy="55" r="14" fill="#1a1b25" stroke="#c9a84c" stroke-width="2.5"/>
+                <text x="420" y="60" text-anchor="middle" fill="#e2d5a8" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">3</text>
+                <circle cx="560" cy="55" r="14" fill="#1a1b25" stroke="#c9706a" stroke-width="2.5"/>
+                <text x="560" y="60" text-anchor="middle" fill="#c88a8a" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700">4</text>
+                <text x="80" y="90" text-anchor="middle" fill="#d4cfc2" font-family="Segoe UI, Arial, sans-serif" font-size="11">Autoridade instauradora</text>
+                <text x="80" y="106" text-anchor="middle" fill="#9a9585" font-family="Segoe UI, Arial, sans-serif" font-size="10">determina afastamento</text>
+                <text x="250" y="90" text-anchor="middle" fill="#d4cfc2" font-family="Segoe UI, Arial, sans-serif" font-size="11">Prazo: até 60 dias</text>
+                <text x="250" y="106" text-anchor="middle" fill="#9a9585" font-family="Segoe UI, Arial, sans-serif" font-size="10">(com remuneração)</text>
+                <text x="420" y="90" text-anchor="middle" fill="#d4cfc2" font-family="Segoe UI, Arial, sans-serif" font-size="11">Prorrogação: +60 dias</text>
+                <text x="420" y="106" text-anchor="middle" fill="#9a9585" font-family="Segoe UI, Arial, sans-serif" font-size="10">(com remuneração)</text>
+                <text x="560" y="90" text-anchor="middle" fill="#d4cfc2" font-family="Segoe UI, Arial, sans-serif" font-size="11">Se não encerrado:</text>
+                <text x="560" y="106" text-anchor="middle" fill="#9a9585" font-family="Segoe UI, Arial, sans-serif" font-size="10">retorna ou nova decisão</text>
+                <rect x="55" y="130" width="530" height="50" rx="8" fill="#252745" stroke="#4a4d6a" stroke-width="1.5" stroke-dasharray="6,3"/>
+                <text x="320" y="152" text-anchor="middle" fill="#b8b3a6" font-family="Segoe UI, Arial, sans-serif" font-size="11">Art. 147, Lei 8.112/1990 &mdash; Medida cautelar, sem prejuízo da remuneração</text>
+                <text x="320" y="170" text-anchor="middle" fill="#9a9585" font-family="Segoe UI, Arial, sans-serif" font-size="10">Prazo total máximo de afastamento: 120 dias</text>
+            </svg>
+
+            <h4>Lei 8.112/1990 x Lei 9.784/1999</h4>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>ASPECTO</th><th>LEI 8.112/1990 (Servidores)</th><th>LEI 9.784/1999 (Processo Adm.)</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Prazo de afastamento</strong></td><td><strong>60 dias</strong> (prorrogável por igual)</td><td><strong>90 dias</strong> (prorrogável por igual)</td></tr>
+                        <tr><td><strong>Aplica-se a</strong></td><td>Servidores federais</td><td>Processos em geral</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box box-dica">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8ab8d8" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    DICA DE PROVA
+                </div>
+                <p>Não confunda os prazos! A FCC cobra o prazo de <strong>60 dias</strong> para afastamento preventivo de servidor (Lei 8.112/1990).</p>
+            </div>
+
+            <h3 id="sec6-2">6.2. Acesso de Estrangeiros a Cargos Públicos</h3>
+            <p>O art. 37, I, da CF/88 estabelece:</p>
+            <blockquote>
+                <p>"Art. 37, I &mdash; os cargos, empregos e funções públicos são acessíveis aos brasileiros que preencham os requisitos estabelecidos em lei, assim como aos estrangeiros, na forma da lei."</p>
+            </blockquote>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>ASPECTO</th><th>REGRA</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Espécie normativa</strong></td><td><strong>Lei ordinária</strong> (CF usa "lei" genericamente)</td></tr>
+                        <tr><td><strong>Possibilidade</strong></td><td>Acesso é possível, mas depende de lei</td></tr>
+                        <tr><td><strong>Vedação total?</strong></td><td>Não! A CF permite, na forma da lei</td></tr>
+                        <tr><td><strong>Lei complementar?</strong></td><td>Não! É lei ordinária</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Hipóteses de Acesso</strong>: Cargos técnicos e científicos; Cargos de professor; Cargos de pesquisador (observar restrições para cargos que envolvam segurança nacional).</p>
+            <div class="box box-pegadinha">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a074" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    PEGADINHA DE BANCA
+                </div>
+                <p><span class="tag-errado">Errado!</span> "Estrangeiros não podem acessar cargos públicos" &mdash; A CF admite.<br>
+                    <span class="tag-errado">Errado!</span> "Depende de lei complementar" &mdash; É lei ordinária.</p>
+            </div>
+        </section>
+
+        <hr class="divider-dot">
+
+        <!-- SEÇÃO 7: DICAS DE PROVA -->
+        <section id="sec7">
+            <h2>7. DICAS DE PROVA E MACETES</h2>
+
+            <h3>7.1. Mnemônicos Essenciais</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>LIMPE (Princípios Expressos)</h4>
+                    <p><strong>L</strong>egalidade &bull; <strong>I</strong>mpessoalidade &bull; <strong>M</strong>oralidade &bull; <strong>P</strong>ublicidade &bull; <strong>E</strong>ficiência</p>
+                </div>
+                <div class="card">
+                    <h4>Decretos na Prova</h4>
+                    <p>"Inova no ordenamento" &rarr; <strong>Autônomo</strong><br>"Fiel execução da lei" &rarr; <strong>Regulamentar</strong></p>
+                </div>
+                <div class="card">
+                    <h4>Dispensa × Inexigibilidade</h4>
+                    <p>Dispensa &rarr; Rol <strong>Taxativo</strong><br>Inexigibilidade &rarr; Rol <strong>Exemplificativo</strong></p>
+                </div>
+            </div>
+
+            <h3>7.2. Pegadinhas Mais Cobradas pela FCC</h3>
+            <ol>
+                <li><strong>Eficiência × Economicidade</strong>: Eficiência = <strong>expressa</strong> (EC 19/98); Economicidade = <strong>implícita</strong> (art. 70, CF)</li>
+                <li><strong>Multa e Autoexecutoriedade</strong>: Multa tem exigibilidade, mas <strong>não tem autoexecutoriedade</strong></li>
+                <li><strong>Criação de Órgãos</strong>: Criação/extinção de órgãos = <strong>lei</strong>; Extinção de cargos vagos = <strong>decreto autônomo</strong></li>
+                <li><strong>Dispensa × Inexigibilidade</strong>: Dispensa = rol taxativo; Inexigibilidade = rol exemplificativo</li>
+                <li><strong>Consensualidade</strong>: É princípio <strong>implícito</strong>, não expresso</li>
+            </ol>
+
+            <h3>7.3. Fluxograma de Decisão na Prova</h3>
+            <p><strong>Para Identificar o Regime do Decreto</strong> &mdash; vide fluxograma na Seção 4.3.</p>
+            <p><strong>Para Identificar Dispensa/Inexigibilidade</strong> &mdash; vide fluxograma na Seção 5.4.</p>
+
+            <h3>7.4. Casos Práticos Integrados</h3>
+
+            <div class="box box-exemplo">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8ab8a0" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/></svg>
+                    Caso 1 &mdash; Afastamento Preventivo
+                </div>
+                <p>Joaquim, servidor público federal, está sendo investigado em processo disciplinar. A autoridade instauradora determina seu afastamento preventivo por 60 dias. É possível prorrogar? Com ou sem remuneração?</p>
+                <p><strong>Resolução</strong>: Prorrogação: <strong>sim</strong>, por igual prazo (+ 60 dias). Remuneração: <strong>sem prejuízo</strong>. Fundamento: art. 147, Lei 8.112/1990.</p>
+            </div>
+
+            <div class="box box-exemplo">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8ab8a0" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/></svg>
+                    Caso 2 &mdash; Autoexecutoriedade da Multa
+                </div>
+                <p>A Administração aplica multa ambiental a uma empresa. A empresa não paga. A Administração pode, por autoexecutoriedade, apreender bens da empresa para quitar a multa?</p>
+                <p><strong>Resolução</strong>: <strong>Não</strong>. A multa tem exigibilidade, mas não autoexecutoriedade. Para cobrar a multa, precisa do Judiciário.</p>
+            </div>
+
+            <div class="box box-exemplo">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8ab8a0" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="9" y1="9" x2="15" y2="9"/><line x1="9" y1="13" x2="15" y2="13"/></svg>
+                    Caso 3 &mdash; Criação de Órgão por Decreto
+                </div>
+                <p>O Presidente da República pretende criar, por decreto, um novo órgão público para fiscalizar concessões de serviços públicos. Isso é possível?</p>
+                <p><strong>Resolução</strong>: <strong>Não</strong>. A criação de órgão público depende de <strong>lei</strong> (art. 48, XI, CF). Decreto autônomo só pode extinguir cargos vagos.</p>
+            </div>
+        </section>
+
+        <hr class="divider-dot">
+
+        <!-- RESUMO EXECUTIVO -->
+        <section class="resumo-executivo" id="resumo">
+            <h2>RESUMO EXECUTIVO PARA REVISÃO</h2>
+
+            <h3>Princípios da Administração Pública</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>EXPRESSOS (LIMPE)</th><th>IMPLÍCITOS</th></tr></thead>
+                    <tbody>
+                        <tr><td>Legalidade</td><td>Supremacia do Interesse Público</td></tr>
+                        <tr><td>Impessoalidade</td><td>Indisponibilidade do Interesse Público</td></tr>
+                        <tr><td>Moralidade</td><td>Consensualidade</td></tr>
+                        <tr><td>Publicidade</td><td>Segurança Jurídica</td></tr>
+                        <tr><td>Eficiência (EC 19/98)</td><td>Economicidade (art. 70, CF)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Atributos do Ato Administrativo</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>ATRIBUTO</th><th>SIGNIFICADO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Presunção de Legitimidade</td><td>Presume-se válido</td></tr>
+                        <tr><td>Imperatividade</td><td>Imposição unilateral</td></tr>
+                        <tr><td>Autoexecutoriedade</td><td>Execução material direta (sem Judiciário)</td></tr>
+                        <tr><td>Exigibilidade</td><td>Coerção indireta (multas)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Lei 14.133/2021 &mdash; Pontos-chave</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>HIPÓTESE</th><th>REGRA</th></tr></thead>
+                    <tbody>
+                        <tr><td>Operação de crédito</td><td><strong>Excluída</strong> (art. 3º, I)</td></tr>
+                        <tr><td>Locação, compra, concessão</td><td><strong>Subordinam-se</strong> (art. 2º)</td></tr>
+                        <tr><td>Dispensa de licitação</td><td><strong>Rol taxativo</strong> (art. 75)</td></tr>
+                        <tr><td>Inexigibilidade de licitação</td><td><strong>Rol exemplificativo</strong> (art. 74)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Servidor Público</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>HIPÓTESE</th><th>PRAZO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Afastamento preventivo (Lei 8.112/1990)</td><td>60 dias, prorrogável por mais 60</td></tr>
+                        <tr><td>Acesso de estrangeiro</td><td>Lei ordinária (art. 37, I, CF)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr class="divider-dot">
+
+        <!-- QUESTÕES COMENTADAS -->
+        <section id="questoes">
+            <h2>QUESTÕES COMENTADAS</h2>
+
+            <div class="questao-block">
+                <p class="enunciado">Questão 1 (FCC &mdash; Adaptada)</p>
+                <p>A Administração Pública deve obediência, entre outros, aos princípios da legalidade, impessoalidade, moralidade, publicidade, eficiência e economicidade. Com relação a esses princípios, é correto afirmar:</p>
+                <div class="alternativas">
+                    <p>a) Todos são princípios expressos no art. 37, caput, da CF/88.</p>
+                    <p>b) Economicidade é princípio implícito, previsto no art. 70 da CF/88.</p>
+                    <p>c) Legalidade é princípio implícito, pois não consta do caput do art. 37.</p>
+                    <p>d) Eficiência foi incluída pela EC 45/2004.</p>
+                    <p>e) Publicidade não é princípio, mas mera formalidade.</p>
+                </div>
+                <div class="resolucao">
+                    <p><strong>Resolução</strong>: Alternativa <strong>B</strong>.</p>
+                    <p>A: Errada &mdash; Economicidade é implícita. <strong>B: Correta</strong> &mdash; Economicidade é implícita (art. 70, CF). C: Errada &mdash; Legalidade é expressa. D: Errada &mdash; Eficiência foi incluída pela EC 19/98. E: Errada &mdash; Publicidade é princípio expresso.</p>
+                </div>
+            </div>
+
+            <div class="questao-block">
+                <p class="enunciado">Questão 2 (FCC &mdash; Adaptada)</p>
+                <p>A respeito da autoexecutoriedade e exigibilidade dos atos administrativos, considere:</p>
+                <p>I. A multa tem autoexecutoriedade.</p>
+                <p>II. A demolição de obra irregular por determinação da Administração é exemplo de autoexecutoriedade.</p>
+                <p>III. A cobrança judicial de multa não paga demonstra que a multa não tem autoexecutoriedade.</p>
+                <p>Está correto o que se afirma em:</p>
+                <div class="alternativas">
+                    <p>a) I, II e III. &nbsp; b) I e II, apenas. &nbsp; c) II e III, apenas. &nbsp; d) I e III, apenas. &nbsp; e) II, apenas.</p>
+                </div>
+                <div class="resolucao">
+                    <p><strong>Resolução</strong>: Alternativa <strong>C</strong>. I: Errada &mdash; A multa tem exigibilidade, não autoexecutoriedade. II: Correta. III: Correta.</p>
+                </div>
+            </div>
+
+            <div class="questao-block">
+                <p class="enunciado">Questão 3 (FCC &mdash; Adaptada)</p>
+                <p>Sobre a criação e extinção de órgãos públicos, é correto afirmar:</p>
+                <div class="alternativas">
+                    <p>a) A criação de órgãos públicos pode ser feita por decreto.</p>
+                    <p>b) A extinção de órgãos públicos, quando vagos, pode ser feita por decreto autônomo.</p>
+                    <p>c) A criação e extinção de órgãos públicos dependem de lei.</p>
+                    <p>d) A extinção de cargos públicos ocupados pode ser feita por decreto do Presidente.</p>
+                    <p>e) Órgãos públicos não precisam de lei para serem criados.</p>
+                </div>
+                <div class="resolucao">
+                    <p><strong>Resolução</strong>: Alternativa <strong>C</strong>. A: Errada &mdash; Depende de lei. B: Errada &mdash; Extinção de órgãos = lei; cargos vagos = decreto. <strong>C: Correta</strong> &mdash; Art. 48, XI, CF. D e E: Erradas.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider-dot">
+
+        <!-- CONSIDERAÇÕES FINAIS -->
+        <section id="consideracoes">
+            <h2>CONSIDERAÇÕES FINAIS</h2>
+            <p>Esta apostila foi elaborada para proporcionar uma compreensão profunda dos temas mais cobrados em concursos públicos para cargos de Técnico Judiciário &mdash; Área Judiciária, especialmente no padrão da FCC, FGV e Cebraspe.</p>
+
+            <div class="box box-importante">
+                <div class="box-title">
+                    <svg class="svg-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b0a0d0" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="8 12 11 15 16 9"/></svg>
+                    DICAS FINAIS PARA A PROVA
+                </div>
+                <ol>
+                    <li>Memorize o LIMPE e saiba diferenciar princípios expressos de implícitos</li>
+                    <li>Não confunda autoexecutoriedade com exigibilidade</li>
+                    <li>Fique atento aos prazos (60 dias para servidor; 90 dias para PA)</li>
+                    <li>Saiba a diferença entre decreto autônomo e regulamentar</li>
+                    <li>Entenda a distinção entre dispensa (taxativa) e inexigibilidade (exemplificativa)</li>
+                    <li>Revise as exceções da Lei 14.133/2021 (operação de crédito excluída)</li>
+                    <li>Lembre-se: criação de órgão = lei; extinção de cargo vago = decreto autônomo</li>
+                </ol>
+            </div>
+            <p>Bons estudos e sucesso na sua aprovação!</p>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="main-footer">
+            <p>Material elaborado com base nos conteúdos programáticos para concursos públicos de Técnico Judiciário &mdash; Área Judiciária. Todas as informações estão em conformidade com a legislação vigente e jurisprudência dominante.</p>
+            <p style="margin-top:0.4rem;color:#6a6570;">&copy; 2026 &mdash; Apostila Digital Premium</p>
+        </footer>
+
+    </div>
+</body>
+</html>

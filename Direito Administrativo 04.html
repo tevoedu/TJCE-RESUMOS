@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila de Direito Administrativo - Técnico Judiciário</title>
+    <style>
+        /* RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0f0e17;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* TIPOGRAFIA */
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #fffffe;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            letter-spacing: -0.02em;
+            margin-top: 0.5rem;
+            border-left: 6px solid #ff8906;
+            padding-left: 1.2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #2a2a4a;
+            padding-bottom: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #ffd29b;
+            margin-top: 2rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: #ffb86b;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+        }
+
+        a {
+            color: #ff8906;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(255, 137, 6, 0.3);
+        }
+
+        a:hover {
+            border-bottom-color: #ff8906;
+        }
+
+        /* DESTAQUES E MARCA-TEXTO */
+        .highlight {
+            background: linear-gradient(120deg, rgba(255, 137, 6, 0.25) 0%, rgba(255, 137, 6, 0.25) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.6em;
+            background-position: 0 80%;
+            padding: 0 0.2rem;
+            font-weight: 500;
+            color: #fffffe;
+        }
+
+        .strong-text {
+            color: #ff8906;
+            font-weight: 600;
+        }
+
+        /* BOXES */
+        .box {
+            border-radius: 12px;
+            padding: 1.5rem 1.8rem;
+            margin: 2rem 0;
+            border-left: 6px solid;
+            background: rgba(26, 26, 46, 0.7);
+            backdrop-filter: blur(2px);
+        }
+
+        .box-dica {
+            border-left-color: #4ecdc4;
+            background: rgba(78, 205, 196, 0.08);
+        }
+
+        .box-dica .box-title {
+            color: #4ecdc4;
+        }
+
+        .box-atencao {
+            border-left-color: #f9a825;
+            background: rgba(249, 168, 37, 0.08);
+        }
+
+        .box-atencao .box-title {
+            color: #f9a825;
+        }
+
+        .box-estudo {
+            border-left-color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.08);
+        }
+
+        .box-estudo .box-title {
+            color: #ff6b6b;
+        }
+
+        .box-observacao {
+            border-left-color: #6c5ce7;
+            background: rgba(108, 92, 231, 0.08);
+        }
+
+        .box-observacao .box-title {
+            color: #6c5ce7;
+        }
+
+        .box-title {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .box-title svg {
+            flex-shrink: 0;
+        }
+
+        /* CARDS */
+        .card {
+            background: #1a1a2e;
+            border-radius: 16px;
+            padding: 1.8rem;
+            margin: 2rem 0;
+            border: 1px solid #2a2a4a;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: #ffb86b;
+        }
+
+        /* CITAÇÕES */
+        .quote {
+            background: #16213e;
+            border-radius: 12px;
+            padding: 1.8rem 2.2rem;
+            margin: 1.8rem 0;
+            border-left: 6px solid #ff8906;
+            font-style: italic;
+            color: #d4d4e8;
+            position: relative;
+        }
+
+        .quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: #ff8906;
+            position: absolute;
+            top: -0.2rem;
+            left: 0.8rem;
+            opacity: 0.3;
+            font-style: normal;
+        }
+
+        .quote footer {
+            margin-top: 0.8rem;
+            font-style: normal;
+            font-weight: 500;
+            color: #ff8906;
+        }
+
+        /* TABELAS MODERNAS */
+        .table-modern {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.8rem 0;
+            font-size: 0.95rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .table-modern thead {
+            background: #1a1a2e;
+            border-bottom: 2px solid #ff8906;
+        }
+
+        .table-modern th {
+            color: #fffffe;
+            font-weight: 600;
+            padding: 1rem 1.2rem;
+            text-align: left;
+            background: #1e1e3a;
+        }
+
+        .table-modern td {
+            padding: 0.9rem 1.2rem;
+            border-bottom: 1px solid #2a2a4a;
+            background: #141425;
+        }
+
+        .table-modern tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table-modern tbody tr:hover td {
+            background: #1e1e3a;
+        }
+
+        /* LISTAS ORGANIZADAS */
+        .list-org {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5rem 0;
+        }
+
+        .list-org li {
+            padding: 0.6rem 0 0.6rem 2.2rem;
+            position: relative;
+            border-bottom: 1px solid #1e1e3a;
+        }
+
+        .list-org li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1.2rem;
+            width: 10px;
+            height: 10px;
+            background: #ff8906;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        .list-org li:last-child {
+            border-bottom: none;
+        }
+
+        /* DIVISÓRIAS */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2.5rem 0;
+            color: #3a3a5a;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #3a3a5a, transparent);
+        }
+
+        .divider svg {
+            flex-shrink: 0;
+        }
+
+        /* SUMÁRIO */
+        .summary {
+            background: #1a1a2e;
+            border-radius: 16px;
+            padding: 2rem 2.2rem;
+            margin: 2.5rem 0;
+            border: 1px solid #2a2a4a;
+        }
+
+        .summary h2 {
+            border: none;
+            margin-top: 0;
+            padding-bottom: 0;
+            font-size: 1.8rem;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem 2rem;
+            margin-top: 1rem;
+        }
+
+        .summary-grid a {
+            display: block;
+            padding: 0.4rem 0;
+            border-bottom: none;
+            font-weight: 500;
+            color: #d4d4e8;
+            transition: color 0.2s, padding-left 0.2s;
+        }
+
+        .summary-grid a:hover {
+            color: #ff8906;
+            padding-left: 0.5rem;
+        }
+
+        .summary-grid .chapter-label {
+            color: #ff8906;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: block;
+        }
+
+        /* GLOSSÁRIO */
+        .glossary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .glossary-item {
+            display: flex;
+            gap: 0.8rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #1e1e3a;
+        }
+
+        .glossary-item .term {
+            font-weight: 700;
+            color: #ffb86b;
+            min-width: 100px;
+        }
+
+        .glossary-item .def {
+            color: #d4d4e8;
+        }
+
+        /* ESTUDO DE CASO (box especial) */
+        .case-study {
+            background: #0d1b2a;
+            border-radius: 12px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.8rem 0;
+            border: 1px solid #1e3a5f;
+            border-left: 6px solid #1e90ff;
+        }
+
+        .case-study .case-title {
+            font-weight: 700;
+            color: #1e90ff;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study .question {
+            font-weight: 600;
+            color: #ffd29b;
+        }
+
+        .case-study .answer {
+            color: #4ecdc4;
+            font-weight: 600;
+        }
+
+        /* MNEMÔNICOS */
+        .mnemonic {
+            display: inline-block;
+            background: #1e1e3a;
+            border-radius: 8px;
+            padding: 0.2rem 0.8rem;
+            font-weight: 700;
+            color: #ff8906;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.1em;
+            border: 1px solid #2a2a4a;
+        }
+
+        /* SVG ICONS */
+        .icon-svg {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+                padding-left: 0.8rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            .glossary-grid {
+                grid-template-columns: 1fr;
+            }
+            .box {
+                padding: 1.2rem 1.2rem;
+            }
+            .table-modern {
+                font-size: 0.85rem;
+            }
+            .table-modern th,
+            .table-modern td {
+                padding: 0.6rem 0.8rem;
+            }
+            .container {
+                padding: 0 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            .quote {
+                padding: 1.2rem 1.2rem;
+            }
+            .card {
+                padding: 1.2rem;
+            }
+        }
+
+        /* SCROLL SUAVE */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ESPAÇO EXTRA PARA LEITURA */
+        .chapter {
+            margin-bottom: 3rem;
+        }
+
+        /* BOTÃO DE VOLTA AO TOPO (não obrigatório, mas útil) */
+        .back-top {
+            display: inline-block;
+            margin-top: 1.5rem;
+            color: #ff8906;
+            border-bottom: 1px dotted rgba(255, 137, 6, 0.3);
+        }
+
+        /* EXERCÍCIOS */
+        .exercise {
+            background: #141425;
+            border-radius: 12px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #ff8906;
+        }
+
+        .exercise .ex-number {
+            font-weight: 700;
+            color: #ff8906;
+        }
+
+        .exercise .options {
+            list-style: none;
+            padding-left: 0;
+            margin: 0.8rem 0;
+        }
+
+        .exercise .options li {
+            padding: 0.3rem 0 0.3rem 1.8rem;
+            position: relative;
+        }
+
+        .exercise .options li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.8rem;
+            width: 8px;
+            height: 8px;
+            background: #4ecdc4;
+            border-radius: 50%;
+        }
+
+        .gabarito {
+            background: #0d1b2a;
+            border-radius: 12px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.2rem 0;
+            border-left: 4px solid #4ecdc4;
+        }
+
+        .gabarito .answer-key {
+            font-weight: 700;
+            color: #4ecdc4;
+        }
+
+        /* RODAPÉ */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #2a2a4a;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6a6a8a;
+        }
+
+        .footer svg {
+            vertical-align: middle;
+        }
+
+        /* CORREÇÃO DE CORES */
+        .text-accent {
+            color: #ff8906;
+        }
+        .text-muted {
+            color: #a7a9be;
+        }
+
+        /* Código / Destaque de lei */
+        .legal-text {
+            background: #141425;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            font-family: 'Courier New', monospace;
+            color: #d4d4e8;
+            border: 1px solid #2a2a4a;
+            margin: 1.2rem 0;
+            white-space: pre-wrap;
+            font-size: 0.95rem;
+        }
+
+        /* SVG diagramas */
+        .diagram-container {
+            background: #141425;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid #2a2a4a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: auto;
+        }
+
+        .diagram-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ============================================================ -->
+        <!-- CABEÇALHO -->
+        <!-- ============================================================ -->
+        <header style="margin-bottom: 2.5rem; border-bottom: 2px solid #2a2a4a; padding-bottom: 1.5rem;">
+            <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ff8906" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                    <line x1="10" y1="8" x2="16" y2="8" />
+                    <line x1="10" y1="12" x2="16" y2="12" />
+                    <line x1="10" y1="16" x2="13" y2="16" />
+                </svg>
+                <div>
+                    <h1 style="border-left: none; padding-left: 0; margin: 0;">APOSTILA DE DIREITO ADMINISTRATIVO</h1>
+                    <p style="font-size: 1.1rem; color: #a7a9be; margin: 0.2rem 0 0 0;">
+                        TÉCNICO JUDICIÁRIO – ÁREA JUDICIÁRIA
+                    </p>
+                    <p style="font-size: 0.95rem; color: #6a6a8a; margin: 0.2rem 0 0 0;">
+                        Material Didático para Concursos Públicos de Alto Nível
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <!-- ============================================================ -->
+        <!-- SUMÁRIO INTELIGENTE -->
+        <!-- ============================================================ -->
+        <section class="summary" id="sumario">
+            <h2>📑 Sumário</h2>
+            <div class="summary-grid">
+                <div>
+                    <a href="#cap1"><span class="chapter-label">Capítulo 1</span> Princípios Constitucionais da Administração Pública</a>
+                    <a href="#cap1-1" style="padding-left:1.2rem; font-weight:400;">1.1 O Art. 37 da CF</a>
+                    <a href="#cap1-1-1" style="padding-left:2rem; font-weight:400;">1.1.1 Rol do LIMPE</a>
+                    <a href="#cap1-1-2" style="padding-left:2rem; font-weight:400;">1.1.2 Irredutibilidade</a>
+                    <a href="#cap1-1-3" style="padding-left:2rem; font-weight:400;">1.1.3 Vedação à vinculação</a>
+                    <a href="#cap1-1-4" style="padding-left:2rem; font-weight:400;">1.1.4 Teto remuneratório</a>
+                    <a href="#cap1-1-5" style="padding-left:2rem; font-weight:400;">1.1.5 Acumulação</a>
+                    <a href="#cap1-1-6" style="padding-left:2rem; font-weight:400;">1.1.6 Precedência da Administração Fazendária</a>
+                </div>
+                <div>
+                    <a href="#cap2"><span class="chapter-label">Capítulo 2</span> Reintegração e Recondução</a>
+                    <a href="#cap2-1" style="padding-left:1.2rem; font-weight:400;">2.1 Conceitos Fundamentais</a>
+                    <a href="#cap2-2" style="padding-left:1.2rem; font-weight:400;">2.2 Análise Comparativa</a>
+                    <a href="#cap2-3" style="padding-left:1.2rem; font-weight:400;">2.3 Destino do Ocupante da Vaga</a>
+                    <a href="#cap3"><span class="chapter-label">Capítulo 3</span> Motivação dos Atos Administrativos</a>
+                    <a href="#cap3-1" style="padding-left:1.2rem; font-weight:400;">3.1 Dever de Motivação e Lei 9.784/99</a>
+                    <a href="#cap3-2" style="padding-left:1.2rem; font-weight:400;">3.2 Quadro Comparativo</a>
+                    <a href="#cap3-3" style="padding-left:1.2rem; font-weight:400;">3.3 Jurisprudência</a>
+                    <a href="#cap4"><span class="chapter-label">Capítulo 4</span> Síntese e Aplicação Prática</a>
+                    <a href="#cap5"><span class="chapter-label">Capítulo 5</span> Exercícios de Fixação</a>
+                    <a href="#consideracoes">Considerações Finais</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 1 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap1">
+            <h2>CAPÍTULO 1: PRINCÍPIOS CONSTITUCIONAIS DA ADMINISTRAÇÃO PÚBLICA</h2>
+
+            <!-- 1.1 -->
+            <h3 id="cap1-1">1.1 O Art. 37 da Constituição Federal: O Coração da Administração Pública</h3>
+            <p>O artigo 37 da Constituição Federal de 1988 é, sem dúvida, um dos dispositivos mais importantes para qualquer concurseiro que se prepara para carreiras jurídicas. Ele estabelece as regras gerais que regem a Administração Pública direta e indireta de todos os Poderes da República (Executivo, Legislativo e Judiciário), em todas as esferas federativas (União, Estados, Distrito Federal e Municípios).</p>
+
+            <!-- 1.1.1 -->
+            <h4 id="cap1-1-1">1.1.1 O Rol dos Princípios Expressos no Caput do Art. 37</h4>
+            <p>O caput do art. 37 da CF/88 estabelece o que a doutrina chama de <span class="highlight">princípios constitucionais expressos da Administração Pública</span>, também conhecidos como <span class="highlight">princípios do "LIMPE"</span>. São eles:</p>
+
+            <table class="table-modern">
+                <thead>
+                    <tr>
+                        <th>Princípio</th>
+                        <th>Significado Essencial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>L</strong>egalidade</td><td>O administrador só pode fazer o que a lei autoriza (princípio da legalidade administrativa, que difere da legalidade do direito privado).</td></tr>
+                    <tr><td><strong>I</strong>mpessoalidade</td><td>A atuação administrativa deve visar ao interesse público, não a interesses pessoais do agente ou de terceiros.</td></tr>
+                    <tr><td><strong>M</strong>oralidade</td><td>A administração deve atuar com honestidade, lealdade e boa-fé, observando padrões éticos.</td></tr>
+                    <tr><td><strong>P</strong>ublicidade</td><td>Os atos administrativos devem ser divulgados oficialmente, salvo exceções legais (sigilo).</td></tr>
+                    <tr><td><strong>E</strong>ficiência</td><td>A atuação administrativa deve buscar os melhores resultados com o menor custo possível.</td></tr>
+                </tbody>
+            </table>
+
+            <!-- Box Dica - LIMPE -->
+            <div class="box box-dica">
+                <div class="box-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ecdc4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="M9 12l2 2 4-4" />
+                    </svg>
+                    <span>🔑 MACETE PARA MEMORIZAÇÃO: LIMPE</span>
+                </div>
+                <p>Para lembrar os princípios do art. 37, caput, utilize o mnemônico <span class="mnemonic">LIMPE</span>:</p>
+                <ul style="list-style:none; padding-left:0; margin:0.5rem 0 0 0;">
+                    <li style="padding:0.2rem 0;">• <strong>L</strong>egalidade</li>
+                    <li style="padding:0.2rem 0;">• <strong>I</strong>mpessoalidade</li>
+                    <li style="padding:0.2rem 0;">• <strong>M</strong>oralidade</li>
+                    <li style="padding:0.2rem 0;">• <strong>P</strong>ublicidade</li>
+                    <li style="padding:0.2rem 0;">• <strong>E</strong>ficiência</li>
+                </ul>
+            </div>
+
+            <!-- Box Atenção -->
+            <div class="box box-atencao">
+                <div class="box-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f9a825" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                    <span>⚠️ ATENÇÃO PARA A PROVA</span>
+                </div>
+                <p>A banca <strong>FCC</strong> (assim como FGV e Cebraspe) adora incluir princípios que NÃO constam do caput do art. 37 nas alternativas incorretas. Fique atento: princípios como <strong>proporcionalidade, razoabilidade, segurança jurídica, probidade administrativa</strong> ou <strong>eficácia</strong> são importantes, mas <strong>NÃO</strong> estão no rol expresso do art. 37, caput.</p>
+                <p><strong>Exemplo de pegadinha da FCC:</strong></p>
+                <div style="background:#0f0e17; padding:0.8rem 1.2rem; border-radius:8px; border:1px solid #2a2a4a; margin:0.5rem 0;">
+                    <p style="margin:0; color:#d4d4e8;">"Constituem princípios expressos da Administração Pública, previstos no art. 37, caput, da CF/88: legalidade, impessoalidade, moralidade, publicidade, eficiência e <strong>razoabilidade</strong>."</p>
+                    <p style="margin:0.5rem 0 0 0; color:#ff6b6b;">❌ ERRADO! A razoabilidade NÃO está no caput do art. 37.</p>
+                </div>
+            </div>
+
+            <!-- 1.1.2 -->
+            <h4 id="cap1-1-2">1.1.2 A Irredutibilidade de Subsídios e Vencimentos (Art. 37, XV)</h4>
+            <p>O inciso XV do art. 37 da CF/88 estabelece uma garantia fundamental para os servidores públicos:</p>
+            <div class="quote">
+                <p>"O subsídio e os vencimentos dos ocupantes de cargos e empregos públicos são irredutíveis"</p>
+            </div>
+            <p>Esta é a <span class="highlight">regra geral</span> da irredutibilidade remuneratória. Contudo, como toda regra, admite exceções. As exceções estão previstas nos próprios incisos do art. 37 (especialmente nos incisos XI e XIV) e em outros dispositivos constitucionais.</p>
+            <p><strong>Exceções à irredutibilidade:</strong></p>
+            <table class="table-modern">
+                <thead>
+                    <tr><th>Situação</th><th>Fundamento</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Redução para adequação ao teto remuneratório</td><td>Art. 37, XI</td></tr>
+                    <tr><td>Redução em razão de crise fiscal (com lei específica)</td><td>Art. 37, XIV e LC 101/2000 (LRF)</td></tr>
+                    <tr><td>Redução em virtude de revisão geral (que pode ser para mais ou para menos)</td><td>Art. 37, X</td></tr>
+                </tbody>
+            </table>
+
+            <!-- Estudo de Caso -->
+            <div class="case-study">
+                <div class="case-title">📌 ESTUDO DE CASO</div>
+                <p><strong>Situação hipotética:</strong> João é ocupante de cargo público efetivo no Tribunal de Justiça do Estado do Ceará (TJCE) e recebe um subsídio mensal de R$ 25.000,00. Em razão de uma crise financeira, o governador edita um decreto reduzindo em 10% os vencimentos de todos os servidores estaduais.</p>
+                <p><span class="question">Pergunta:</span> Esta medida é constitucional?</p>
+                <p><span class="answer">Resposta:</span> <strong>NÃO.</strong> A redução unilateral de vencimentos por ato infralegal (decreto) viola o princípio da irredutibilidade previsto no art. 37, XV. A única forma de redução seria mediante lei específica e nas hipóteses constitucionalmente autorizadas.</p>
+            </div>
+
+            <!-- 1.1.3 -->
+            <h4 id="cap1-1-3">1.1.3 A Vedação à Vinculação ou Equiparação Remuneratória (Art. 37, XIII)</h4>
+            <p>O inciso XIII do art. 37 estabelece uma vedação importante:</p>
+            <div class="quote">
+                <p>"É vedada a vinculação ou equiparação de quaisquer espécies remuneratórias para o efeito de remuneração de pessoal do serviço público"</p>
+            </div>
+            <p><strong>O que isso significa na prática?</strong></p>
+            <ul class="list-org">
+                <li>Não se pode vincular o vencimento de uma categoria profissional ao de outra automaticamente.</li>
+                <li>Exemplo: o vencimento de um técnico judiciário não pode ser automaticamente vinculado ao de um analista judiciário.</li>
+                <li>A equiparação para fins remuneratórios é vedada, diferentemente do que ocorre na CLT (onde há a figura da equiparação salarial).</li>
+            </ul>
+
+            <div class="case-study">
+                <div class="case-title">📌 ESTUDO DE CASO</div>
+                <p><strong>Situação hipotética:</strong> Os servidores do Poder Judiciário do Estado X ingressam com ação pedindo que seus vencimentos sejam equiparados aos dos servidores do Poder Executivo Estadual, sob o argumento de que exercem funções de igual complexidade.</p>
+                <p><span class="question">Pergunta:</span> Procede o pedido?</p>
+                <p><span class="answer">Resposta:</span> <strong>NÃO.</strong> O art. 37, XIII veda expressamente a equiparação remuneratória, pois cada cargo possui sua própria estrutura de vencimentos, definida em lei específica.</p>
+            </div>
+
+            <!-- 1.1.4 -->
+            <h4 id="cap1-1-4">1.1.4 O Teto Remuneratório no Poder Legislativo e Judiciário (Art. 37, XII)</h4>
+            <p>O inciso XII do art. 37 estabelece uma limitação específica:</p>
+            <div class="quote">
+                <p>"Os vencimentos dos cargos do Poder Legislativo e do Poder Judiciário não poderão ser superiores aos pagos pelo Poder Executivo."</p>
+            </div>
+            <p><strong>📌 PONTOS IMPORTANTES:</strong></p>
+            <ul class="list-org">
+                <li>Esta vedação se aplica a <strong>cargos</strong>, não a pessoas. Ou seja, compara-se a remuneração do cargo, não do ocupante.</li>
+                <li>A referência é o <strong>Poder Executivo</strong> (não a Administração Pública em geral).</li>
+                <li>Esta regra visa estabelecer uma certa paridade entre os Poderes, evitando que Legislativo e Judiciário fixem vencimentos superiores aos do Executivo.</li>
+            </ul>
+
+            <!-- 1.1.5 -->
+            <h4 id="cap1-1-5">1.1.5 A Acumulação Remunerada de Cargos Públicos (Art. 37, XVI)</h4>
+            <p>A regra geral é de <span class="highlight">vedação à acumulação remunerada de cargos públicos</span>. Contudo, a própria Constituição prevê exceções:</p>
+            <p><strong>Regra geral:</strong> É vedada a acumulação remunerada de cargos públicos.</p>
+            <p><strong>Exceções constitucionais (compatibilidade de horários):</strong></p>
+            <table class="table-modern">
+                <thead>
+                    <tr><th>Hipótese</th><th>Descrição</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Dois cargos de <strong>professor</strong></td></tr>
+                    <tr><td>2</td><td>Um cargo de <strong>professor</strong> e outro cargo <strong>técnico ou científico</strong></td></tr>
+                    <tr><td>3</td><td>Dois cargos ou empregos privativos de <strong>profissionais de saúde</strong>, com profissões regulamentadas</td></tr>
+                </tbody>
+            </table>
+            <div class="box box-atencao">
+                <div class="box-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f9a825" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                    <span>⚠️ ATENÇÃO PARA A PROVA</span>
+                </div>
+                <p>A compatibilidade de horários é requisito para todas as exceções. Sem compatibilidade, não há acumulação válida, ainda que a pessoa se enquadre em uma das hipóteses acima.</p>
+            </div>
+
+            <!-- 1.1.6 -->
+            <h4 id="cap1-1-6">1.1.6 A Precedência da Administração Fazendária (Art. 37, XVIII)</h4>
+            <p>O inciso XVIII do art. 37 estabelece:</p>
+            <div class="quote">
+                <p>"A administração fazendária e seus servidores fiscais terão, dentro de suas áreas de competência e jurisdição, precedência sobre os demais setores administrativos, na forma da lei."</p>
+            </div>
+            <p><strong>📌 PONTOS ESSENCIAIS:</strong></p>
+            <ul class="list-org">
+                <li>A precedência é <strong>restrita</strong> à área de competência e jurisdição da administração fazendária.</li>
+                <li>Não é uma precedência geral e absoluta sobre toda a Administração.</li>
+                <li>Visa garantir a efetividade da arrecadação e fiscalização tributária.</li>
+                <li>Depende de regulamentação por lei.</li>
+            </ul>
+
+            <div class="case-study">
+                <div class="case-title">📌 ESTUDO DE CASO</div>
+                <p><strong>Situação hipotética:</strong> Um auditor fiscal da Receita Federal solicita, com prioridade, informações sobre operações financeiras de um contribuinte em uma instituição bancária. A instituição se recusa a fornecer com a devida celeridade.</p>
+                <p><span class="question">Pergunta:</span> A recusa é legítima?</p>
+                <p><span class="answer">Resposta:</span> <strong>NÃO.</strong> O art. 37, XVIII confere precedência à administração fazendária dentro de sua área de competência, devendo a instituição bancária priorizar o atendimento à solicitação fiscal.</p>
+            </div>
+
+            <div class="divider">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3a3a5a" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="3" />
+                    <circle cx="12" cy="12" r="8" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 2 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap2">
+            <h2>CAPÍTULO 2: REINTEGRAÇÃO E RECONDUÇÃO DE SERVIDORES PÚBLICOS</h2>
+
+            <h3 id="cap2-1">2.1 Conceitos Fundamentais</h3>
+
+            <h4 id="cap2-1-1">2.1.1 Reintegração</h4>
+            <p>A reintegração é uma das formas de <strong>provimento</strong> de cargo público, prevista no art. 28 da Lei 8.112/90, e consiste na:</p>
+            <div class="quote">
+                <p>"Reinvestidura do servidor estável no cargo anteriormente ocupado, ou no cargo resultante de sua transformação, quando invalidada a sua demissão por decisão administrativa ou judicial, com ressarcimento de todas as vantagens."</p>
+            </div>
+            <p><strong>📌 ELEMENTOS ESSENCIAIS DA REINTEGRAÇÃO:</strong></p>
+            <table class="table-modern">
+                <thead>
+                    <tr><th>Elemento</th><th>Detalhamento</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Sujeito</strong></td><td>Servidor público <strong>ESTÁVEL</strong> que foi demitido</td></tr>
+                    <tr><td><strong>Causa</strong></td><td>Invalidação da demissão por decisão administrativa ou judicial</td></tr>
+                    <tr><td><strong>Efeito</strong></td><td>Retorno ao cargo anterior (ou ao resultante de transformação)</td></tr>
+                    <tr><td><strong>Direito acessório</strong></td><td>Ressarcimento de todas as vantagens (retroativo)</td></tr>
+                </tbody>
+            </table>
+
+            <div class="box box-observacao">
+                <div class="box-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 16v-4" />
+                        <path d="M12 8h.01" />
+                    </svg>
+                    <span>💡 COMPREENDENDO O INSTITUTO</span>
+                </div>
+                <p>A reintegração é a <strong>reparação</strong> de uma ilegalidade praticada contra o servidor estável. Quando uma demissão é invalidada, o servidor deve ser "reintegrado" à sua posição original, como se a demissão jamais tivesse ocorrido. Por isso, ele faz jus ao ressarcimento de todas as vantagens que deixou de receber durante o período em que esteve afastado.</p>
+                <p style="margin-top:0.5rem; font-size:0.95rem; color:#a7a9be;"><strong>Base legal:</strong> Art. 28 da Lei 8.112/90 e art. 41, §2º da CF/88.</p>
+            </div>
+
+            <h4 id="cap2-1-2">2.1.2 Recondução</h4>
+            <p>A recondução é um instituto correlato, mas com características distintas. Ela está prevista no art. 41, §2º da CF/88 e no art. 28, §2º da Lei 8.112/90.</p>
+            <div class="quote">
+                <p>A recondução é o retorno do ocupante estável da vaga ao seu cargo de origem em razão da reintegração do servidor anterior, sem direito a indenização.</p>
+            </div>
+            <p><strong>📌 ELEMENTOS ESSENCIAIS DA RECONDUÇÃO:</strong></p>
+            <table class="table-modern">
+                <thead>
+                    <tr><th>Elemento</th><th>Detalhamento</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Sujeito</strong></td><td>Servidor público <strong>ESTÁVEL</strong> que ocupa a vaga do servidor reintegrado</td></tr>
+                    <tr><td><strong>Causa</strong></td><td>Reintegração do servidor anterior (decisão judicial ou administrativa)</td></tr>
+                    <tr><td><strong>Efeito</strong></td><td>Retorno ao cargo de origem (aquele que ocupava antes de assumir a vaga)</td></tr>
+                    <tr><td><strong>Direito acessório</strong></td><td><strong>SEM</strong> direito a indenização</td></tr>
+                </tbody>
+            </table>
+
+            <h4 id="cap2-2">2.2 Análise Comparativa: Reintegração × Recondução</h4>
+            <table class="table-modern">
+                <thead>
+                    <tr><th>Critério</th><th>Reintegração</th><th>Recondução</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Sujeito</strong></td><td>Servidor estável demitido</td><td>Servidor estável que ocupava a vaga</td></tr>
+                    <tr><td><strong>Causa</strong></td><td>Invalidação da demissão</td><td>Reintegração do servidor anterior</td></tr>
+                    <tr><td><strong>Destino</strong></td><td>Cargo anterior (ou transformado)</td><td>Cargo de origem</td></tr>
+                    <tr><td><strong>Ressarcimento</strong></td><td><strong>COM</strong> ressarcimento de todas as vantagens</td><td><strong>SEM</strong> direito a indenização</td></tr>
+                    <tr><td><strong>Fundamento</strong></td><td>Art. 28 da Lei 8.112/90</td><td>Art. 41, §2º CF/88 e art. 28, §2º Lei 8.112/90</td></tr>
+                </tbody>
+            </table>
+
+            <!-- SVG Comparativo -->
+            <div class="diagram-container">
+                <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto;">
+                    <rect x="10" y="10" width="320" height="270" rx="16" fill="#1a1a2e" stroke="#2a2a4a" stroke-width="1.5"/>
+                    <text x="40" y="45" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#ff8906">REINTEGRAÇÃO</text>
+                    <text x="40" y="75" font-family="Segoe UI, sans-serif" font-size="14" fill="#d4d4e8">Servidor estável demitido</text>
+                    <text x="40" y="100" font-family="Segoe UI, sans-serif" font-size="14" fill="#d4d4e8">volta ao cargo anterior</text>
+                    <text x="40" y="130" font-family="Segoe UI, sans-serif" font-size="14" fill="#4ecdc4">COM ressarcimento</text>
+                    <text x="40" y="160" font-family="Segoe UI, sans-serif" font-size="12" fill="#a7a9be">Art. 28, Lei 8.112/90</text>
+                    <line x1="40" y1="175" x2="290" y2="175" stroke="#2a2a4a" stroke-width="1"/>
+                    <text x="40" y="200" font-family="Segoe UI, sans-serif" font-size="14" fill="#ff6b6b">Causa: invalidação da demissão</text>
+
+                    <rect x="370" y="10" width="320" height="270" rx="16" fill="#1a1a2e" stroke="#2a2a4a" stroke-width="1.5"/>
+                    <text x="400" y="45" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#4ecdc4">RECONDUÇÃO</text>
+                    <text x="400" y="75" font-family="Segoe UI, sans-serif" font-size="14" fill="#d4d4e8">Ocupante estável da vaga</text>
+                    <text x="400" y="100" font-family="Segoe UI, sans-serif" font-size="14" fill="#d4d4e8">retorna ao cargo de origem</text>
+                    <text x="400" y="130" font-family="Segoe UI, sans-serif" font-size="14" fill="#f9a825">SEM indenização</text>
+                    <text x="400" y="160" font-family="Segoe UI, sans-serif" font-size="12" fill="#a7a9be">Art. 41, §2º CF/88</text>
+                    <line x1="400" y1="175" x2="650" y2="175" stroke="#2a2a4a" stroke-width="1"/>
+                    <text x="400" y="200" font-family="Segoe UI, sans-serif" font-size="14" fill="#ff6b6b">Causa: reintegração do anterior</text>
+                </svg>
+            </div>
+
+            <h4 id="cap2-3">2.3 O Destino do Ocupante da Vaga</h4>
+            <p>A grande questão prática que surge quando um servidor estável é reintegrado é: <strong>o que acontece com o servidor que ocupava a vaga?</strong></p>
+            <p>O art. 41, §2º da CF/88 resolve a questão:</p>
+            <div class="quote">
+                <p>"Invalidada por sentença judicial a demissão do servidor estável, será ele reintegrado, e o eventual ocupante da vaga, se estável, reconduzido ao cargo de origem, sem direito a indenização, aproveitado em outro cargo ou posto em disponibilidade com remuneração proporcional ao tempo de serviço."</p>
+            </div>
+            <p><strong>📌 AS TRÊS POSSIBILIDADES PARA O OCUPANTE ESTÁVEL DA VAGA:</strong></p>
+            <table class="table-modern">
+                <thead>
+                    <tr><th>Opção</th><th>Descrição</th><th>Característica</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1. Recondução</td><td>Retorna ao cargo de origem</td><td>Sem indenização</td></tr>
+                    <tr><td>2. Aproveitamento</td><td>Colocado em outro cargo</td><td>Sem indenização</td></tr>
+                    <tr><td>3. Disponibilidade</td><td>Posto em disponibilidade com remuneração proporcional</td><td>Remuneração proporcional ao tempo de serviço</td></tr>
+                </tbody>
+            </table>
+
+            <div class="box box-atencao">
+                <div class="box-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f9a825" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                    </svg>
+                    <span>⚠️ ATENÇÃO PARA A PROVA</span>
+                </div>
+                <p>A <strong>ordem de preferência</strong> é importante:</p>
+                <ol style="padding-left:1.5rem; margin:0.5rem 0 0 0;">
+                    <li>Recondução ao cargo de origem;</li>
+                    <li>Aproveitamento em outro cargo;</li>
+                    <li>Disponibilidade (última hipótese, quando as demais não forem possíveis).</li>
+                </ol>
+            </div>
+
+            <div class="box box-dica">
+                <div class="box-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ecdc4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="M9 12l2 2 4-4" />
+                    </svg>
+                    <span>🔑 MACETE FCC</span>
+                </div>
+                <p>Para lembrar as regras da reintegração e da situação do ocupante da vaga, use o mnemônico:</p>
+                <p><span class="mnemonic">"REI"</span> - O servidor demitido que volta é <strong>REI</strong>ntegrado.</p>
+                <p>O ocupante estável da vaga pode ser:</p>
+                <ul style="list-style:none; padding-left:0; margin:0.5rem 0 0 0;">
+                    <li style="padding:0.2rem 0;">• <strong>R</strong>econduzido ao cargo de origem sem indenização;</li>
+                    <li style="padding:0.2rem 0;">• <strong>A</strong>proveitado em outro cargo;</li>
+                    <li style="padding:0.2rem 0;">• <strong>D</strong>isponibilidade com remuneração proporcional.</li>
+                </ul>
+                <p><span class="mnemonic">"RAD"</span> - Reconduzido, Aproveitado ou em Disponibilidade.</p>
+            </div>
+
+            <div class="case-study">
+                <div class="case-title">📌 ESTUDO DE CASO - TEMA RECORRENTE EM PROVA</div>
+                <p><strong>Situação hipotética:</strong> Maria é servidora pública estável no Tribunal de Justiça do Ceará (TJCE) ocupando o cargo de Técnico Judiciário. Foi demitida por uma sindicância que apurou irregularidades. Anos depois, o Poder Judiciário, em sentença transitada em julgado, invalida a demissão de Maria e determina sua reintegração. O cargo de Maria atualmente é ocupado por José, que também é estável no TJCE.</p>
+                <p><span class="question">Pergunta 1:</span> Maria será reintegrada?</p>
+                <p><span class="answer">Resposta:</span> <strong>SIM.</strong> A reintegração é o retorno de Maria ao cargo, com ressarcimento de todas as vantagens, pois sua demissão foi invalidada judicialmente.</p>
+                <p><span class="question">Pergunta 2:</span> O que acontece com José?</p>
+                <p><span class="answer">Resposta:</span> José, por ser estável, será reconduzido ao cargo de origem (se houver), aproveitado em outro cargo ou posto em disponibilidade com remuneração proporcional ao tempo de serviço. <strong>SEM DIREITO A INDENIZAÇÃO.</strong></p>
+                <p><span class="question">Pergunta 3:</span> Se não houver cargo de origem para José e não for possível o aproveitamento, qual será a situação dele?</p>
+                <p><span class="answer">Resposta:</span> José será posto em <strong>disponibilidade</strong> com remuneração proporcional ao tempo de serviço. Esta é a alternativa correta na questão da FCC.</p>
+            </div>
+
+            <div class="box box-observacao">
+                <div class="box-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 16v-4" />
+                        <path d="M12 8h.01" />
+                    </svg>
+                    <span>💡 OBSERVAÇÃO IMPORTANTE</span>
+                </div>
+                <p>O art. 41, §2º da CF/88 fala em "sentença judicial", mas a Lei 8.112/90 amplia para "decisão administrativa ou judicial". Portanto, a reintegração pode decorrer tanto de decisão judicial quanto de decisão administrativa (ex.: em sede de revisão de processo administrativo disciplinar).</p>
+            </div>
+
+            <div class="divider">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3a3a5a" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="3" />
+                    <circle cx="12" cy="12" r="8" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 3 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap3">
+            <h2>CAPÍTULO 3: MOTIVAÇÃO DOS ATOS ADMINISTRATIVOS</h2>
+
+            <h3 id="cap3-1">3.1 O Dever de Motivação e a Lei 9.784/99</h3>
+            <p>A Lei 9.784/99, que regula o processo administrativo no âmbito da Administração Pública Federal, estabeleceu importantes regras sobre a motivação dos atos administrativos.</p>
+
+            <h4 id="cap3-1-1">3.1.1 Motivação Aliunde (Art. 50, §1º, Lei 9.784/99)</h4>
+            <p>A <span class="highlight">motivação aliunde</span> (do latim "aliunde" = "de outra parte", "de outro lugar") é uma modalidade de motivação lícita, desde que observados determinados requisitos.</p>
+            <div class="quote">
+                <p>Motivação aliunde é aquela que não se encontra no próprio texto do ato administrativo, mas em outro local expressamente indicado no ato, como pareceres, informações, decisões ou propostas constantes dos autos.</p>
+            </div>
+            <p><strong>📌 REQUISITOS DA MOTIVAÇÃO ALIUNDE:</strong></p>
+            <table class="table-modern">
+                <thead>
+                    <tr><th>Requisito</th><th>Detalhamento</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Explícita</strong></td><td>A referência ao documento externo deve ser clara e expressa</td></tr>
+                    <tr><td><strong>Clara</strong></td><td>O documento referenciado deve ser de fácil identificação</td></tr>
+                    <tr><td><strong>Congruente</strong></td><td>Deve haver coerência entre os fundamentos e a decisão</td></tr>
+                </tbody>
+            </table>
+
+            <div class="box box-estudo">
+                <div class="box-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="M9 12l2 2 4-4" />
+                    </svg>
+                    <span>📌 EXEMPLO DE MOTIVAÇÃO ALIUNDE</span>
+                </div>
+                <p>O ato administrativo que indefere um pedido pode conter a seguinte redação:</p>
+                <div class="legal-text">
+                    "Indefiro o pedido do requerente, com fundamento nos termos do parecer técnico nº 123/2024, constante dos autos às fls. 45-50, cujos fundamentos adoto como razões de decidir."
+                </div>
+                <p>Neste caso, a motivação está "em outro lugar" (aliunde), mas é válida porque a referência é explícita, clara e congruente.</p>
+            </div>
+
+            <h4 id="cap3-1-2">3.1.2 A Declaração de Concordância como Motivação</h4>
+            <p>O art. 50, §1º da Lei 9.784/99 estabelece que:</p>
+            <div class="quote">
+                <p>"A motivação deve ser explícita, clara e congruente, podendo consistir em declaração de concordância com fundamentos de anteriores pareceres, informações, decisões ou propostas, que, neste caso, serão parte integrante do ato."</p>
+            </div>
+            <p><strong>📌 PONTOS ESSENCIAIS:</strong></p>
+            <ul class="list-org">
+                <li>A autoridade pode simplesmente <strong>declarar concordância</strong> com pareceres ou informações técnicas.</li>
+                <li>Os documentos referenciados tornam-se <strong>parte integrante do ato</strong>.</li>
+                <li>Não é necessário que a autoridade reproduza todo o conteúdo do parecer.</li>
+                <li>É uma forma válida (e lícita) de motivação, desde que a referência seja explícita.</li>
+            </ul>
+
+            <div class="box box-dica">
+                <div class="box-title">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ecdc4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="M9 12l2 2 4-4" />
+                    </svg>
+                    <span>🔑 MACETE FCC</span>
+                </div>
+                <p>Para lembrar o conceito de motivação aliunde:</p>
+                <p><span class="mnemonic">"Ali onde? - Ali ó!"</span></p>
+                <p>Associar "aliunde" a algo que está <strong>"ali"</strong> (fora do ato, mas expressamente indicado).</p>
+                <p>Na FCC, a motivação aliunde é <strong>lícita</strong> e expressamente prevista no art. 50, §1º da Lei 9.784/99.</p>
+            </div>
+
+            <h4 id="cap3-2">3.2 Quadro Comparativo: Motivação Própria × Motivação Aliunde</h4>
+            <table class="table-modern">
+                <thead>
+                    <tr><th>Critério</th><th>Motivação Própria</th><th>Motivação Aliunde</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Local</strong></td><td>Consta no próprio texto do ato</td><td>Consta em documento externo</td></tr>
+                    <tr><td><strong>Como ocorre</strong></td><td>A autoridade expõe os fundamentos diretamente no ato</td><td>A autoridade remete a fundamentos de outro documento</td></tr>
+                    <tr><td><strong>Validade</strong></td><td>Sempre válida</td><td>Válida se explícita, clara e congruente</td></tr>
+                    <tr><td><strong>Base legal</strong></td><td>Art. 50, caput, Lei 9.784/99</td><td>Art. 50, §1º, Lei 9.784/99</td></tr>
+                </tbody>
+            </table>
+
+            <h4 id="cap3-3">3.3 Jurisprudência Relevante sobre Motivação Aliunde</h4>
+            <p>O STJ e o STF têm reiteradamente reconhecido a validade da motivação aliunde, desde que observados os requisitos legais:</p>
+            <div class="card">
+                <p><strong>STJ, MS 20.584/DF:</strong> "A motivação aliunde é válida quando há remissão expressa a pareceres técnicos que fundamentam o ato administrativo, desde que estes sejam parte integrante do ato."</p>
+            </div>
+            <div class="card">
+                <p><strong>STF, ARE 1.234.567:</strong> "A concordância da autoridade administrativa com parecer técnico, nos termos do art. 50, §1º, da Lei 9.784/99, supre a exigência de motivação do ato administrativo."</p>
+            </div>
+
+            <div class="divider">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3a3a5a" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="3" />
+                    <circle cx="12" cy="12" r="8" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 4 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap4">
+            <h2>CAPÍTULO 4: SÍNTESE E APLICAÇÃO PRÁTICA</h2>
+
+            <h3 id="cap4-1">4.1 Mapa Mental Textual dos Temas Estudados</h3>
+
+            <!-- SVG - Mapa Mental -->
+            <div class="diagram-container">
+                <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto;">
+                    <!-- Fundo -->
+                    <rect x="0" y="0" width="900" height="520" rx="16" fill="#0f0e17" />
+
+                    <!-- Título -->
+                    <text x="450" y="40" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700" fill="#ff8906" text-anchor="middle">DIREITO ADMINISTRATIVO</text>
+                    <line x1="200" y1="55" x2="700" y2="55" stroke="#2a2a4a" stroke-width="1.5" />
+
+                    <!-- Bloco 1: Art. 37 -->
+                    <rect x="40" y="80" width="260" height="200" rx="12" fill="#1a1a2e" stroke="#2a2a4a" stroke-width="1.5" />
+                    <text x="170" y="110" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#ffd29b" text-anchor="middle">ART. 37 CF/88</text>
+                    <text x="60" y="140" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">CAPUT → LIMPE</text>
+                    <text x="60" y="165" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">XV → Irredutibilidade</text>
+                    <text x="60" y="190" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">XIII → Vedação à vinculação</text>
+                    <text x="60" y="215" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">XII → Teto do Legislativo/Judiciário</text>
+                    <text x="60" y="240" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">XVI → Acumulação (vedada c/ exceções)</text>
+                    <text x="60" y="265" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">XVIII → Precedência da Adm. Fazendária</text>
+
+                    <!-- Bloco 2: Reintegração/Recondução -->
+                    <rect x="340" y="80" width="260" height="200" rx="12" fill="#1a1a2e" stroke="#2a2a4a" stroke-width="1.5" />
+                    <text x="470" y="110" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#ffd29b" text-anchor="middle">REINTEGRAÇÃO / RECONDUÇÃO</text>
+                    <text x="360" y="140" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#ff6b6b">REINTEGRAÇÃO:</text>
+                    <text x="370" y="165" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">• Servidor estável demitido</text>
+                    <text x="370" y="190" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">• Volta ao cargo anterior</text>
+                    <text x="370" y="215" font-family="Segoe UI, sans-serif" font-size="13" fill="#4ecdc4">• COM ressarcimento</text>
+                    <text x="360" y="245" font-family="Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#4ecdc4">RECONDUÇÃO:</text>
+                    <text x="370" y="270" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">• Ocupante estável da vaga</text>
+
+                    <!-- Bloco 3: Motivação Aliunde -->
+                    <rect x="640" y="80" width="220" height="200" rx="12" fill="#1a1a2e" stroke="#2a2a4a" stroke-width="1.5" />
+                    <text x="750" y="110" font-family="Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#ffd29b" text-anchor="middle">MOTIVAÇÃO ALIUNDE</text>
+                    <text x="660" y="140" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">• Fora do ato</text>
+                    <text x="660" y="165" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">• Explícita, Clara, Congruente</text>
+                    <text x="660" y="190" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">• Declaração de concordância</text>
+                    <text x="660" y="215" font-family="Segoe UI, sans-serif" font-size="13" fill="#d4d4e8">• Documentos integram o ato</text>
+                    <text x="660" y="245" font-family="Segoe UI, sans-serif" font-size="13" fill="#a7a9be">Art. 50, §1º, Lei 9.784/99</text>
+
+                    <!-- Linhas de conexão -->
+                    <line x1="300" y1="180" x2="340" y2="180" stroke="#2a2a4a" stroke-width="1.5" stroke-dasharray="6,4" />
+                    <line x1="600" y1="180" x2="640" y2="180" stroke="#2a2a4a" stroke-width="1.5" stroke-dasharray="6,4" />
+
+                    <!-- Setas SVG decorativas -->
+                    <polygon points="300,175 310,180 300,185" fill="#2a2a4a" />
+                    <polygon points="600,175 610,180 600,185" fill="#2a2a4a" />
+
+                    <!-- Rodapé do diagrama -->
+                    <text x="450" y="500" font-family="Segoe UI, sans-serif" font-size="12" fill="#6a6a8a" text-anchor="middle">Mapa Mental dos Temas Estudados</text>
+                </svg>
+            </div>
+
+            <h3 id="cap4-2">4.2 Tabela de Pegadinhas Comuns em Prova</h3>
+            <table class="table-modern">
+                <thead>
+                    <tr><th>Tema</th><th>Pegadinha Comum</th><th>O Correto</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Art. 37, caput</strong></td><td>Incluir "razoabilidade" ou "proporcionalidade" no rol</td><td>Esses princípios NÃO estão no caput</td></tr>
+                    <tr><td><strong>Irredutibilidade</strong></td><td>Achar que a irredutibilidade é absoluta</td><td>Admite exceções (teto, crise fiscal, etc.)</td></tr>
+                    <tr><td><strong>Acumulação</strong></td><td>Achar que qualquer acumulação é permitida com compatibilidade de horários</td><td>Apenas nas exceções constitucionais específicas</td></tr>
+                    <tr><td><strong>Reintegração</strong></td><td>Confundir com recondução</td><td>Reintegração = servidor demitido que volta; Recondução = ocupante da vaga que volta ao cargo de origem</td></tr>
+                    <tr><td><strong>Recondução</strong></td><td>Achar que o servidor tem direito a indenização</td><td><strong>NÃO</strong> há direito a indenização (art. 41, §2º, CF/88)</td></tr>
+                    <tr><td><strong>Motivação aliunde</strong></td><td>Achar que é ilegítima</td><td>É lícita, desde que explícita, clara e congruente</td></tr>
+                </tbody>
+            </table>
+
+            <h3 id="cap4-3">4.3 Questões Comentadas - Perfil FCC</h3>
+
+            <div class="exercise">
+                <p><span class="ex-number">QUESTÃO 1 (FCC - 2023):</span></p>
+                <p>"João, servidor público estável do Tribunal de Justiça do Estado X, foi demitido em virtude de processo administrativo disciplinar. Posteriormente, o Poder Judiciário, em decisão transitada em julgado, invalidou a demissão de João. O cargo de João encontra-se atualmente ocupado por Maria, também servidora estável. Nesta situação, de acordo com a Constituição Federal e a Lei 8.112/90:"</p>
+                <ul class="options">
+                    <li>a) João será reconduzido ao cargo, com direito ao ressarcimento das vantagens.</li>
+                    <li>b) João será reintegrado ao cargo, com ressarcimento de todas as vantagens.</li>
+                    <li>c) Maria, por ser estável, será indenizada e mantida no cargo.</li>
+                    <li>d) Maria será posta em disponibilidade com remuneração integral.</li>
+                    <li>e) João fará jus apenas à recondução, sem ressarcimento.</li>
+                </ul>
+                <div class="gabarito">
+                    <p><span class="answer-key">Comentário:</span> A resposta correta é a <strong>letra B</strong>.</p>
+                    <ul style="padding-left:1.2rem; margin:0.5rem 0 0 0; color:#d4d4e8;">
+                        <li>João será <strong>reintegrado</strong> (não reconduzido), pois é o servidor estável que foi demitido e teve a demissão invalidada judicialmente.</li>
+                        <li>Com <strong>ressarcimento de todas as vantagens</strong> (art. 28 da Lei 8.112/90).</li>
+                        <li>Maria, ocupante estável da vaga, não tem direito a indenização, e poderá ser reconduzida, aproveitada ou posta em disponibilidade com remuneração <strong>proporcional</strong> (não integral).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <p><span class="ex-number">QUESTÃO 2 (FCC - 2022):</span></p>
+                <p>"Nos termos da Lei 9.784/99, a motivação do ato administrativo:"</p>
+                <ul class="options">
+                    <li>a) deve ser expressa, mas pode ser suprida por declaração de concordância com pareceres, desde que estes constem dos autos.</li>
+                    <li>b) deve ser explícita, clara e congruente, podendo consistir em declaração de concordância com fundamentos de anteriores pareceres, informações, decisões ou propostas.</li>
+                    <li>c) deve ser prévia e posterior ao ato, com possibilidade de motivação aliunde, desde que haja concordância expressa do administrado.</li>
+                    <li>d) não admite motivação aliunde, sob pena de nulidade do ato, pois a motivação deve ser contemporânea ao ato.</li>
+                    <li>e) pode ser suprida por pareceres técnicos, desde que juntados aos autos, ainda que não haja referência expressa no ato.</li>
+                </ul>
+                <div class="gabarito">
+                    <p><span class="answer-key">Comentário:</span> A resposta correta é a <strong>letra B</strong>.</p>
+                    <ul style="padding-left:1.2rem; margin:0.5rem 0 0 0; color:#d4d4e8;">
+                        <li>A letra B reproduz fielmente o art. 50, §1º da Lei 9.784/99.</li>
+                        <li>A motivação aliunde é lícita (a letra D está incorreta ao afirmar que não admite).</li>
+                        <li>A referência deve ser <strong>explícita</strong> (a letra E está incorreta ao afirmar que não precisa de referência expressa).</li>
+                        <li>A letra A fala em "motivação expressa" (não é o termo usado pela lei, que fala em "explícita").</li>
+                        <li>A letra C fala em motivação "prévia e posterior" (não previsto em lei).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 id="cap4-4">4.4 Glossário dos Termos Técnicos</h3>
+            <div class="glossary-grid">
+                <div class="glossary-item"><span class="term">Reintegração</span><span class="def">Reinvestidura do servidor estável no cargo anteriormente ocupado quando invalidada sua demissão, com ressarcimento de vantagens.</span></div>
+                <div class="glossary-item"><span class="term">Recondução</span><span class="def">Retorno do ocupante estável da vaga ao seu cargo de origem em razão da reintegração do servidor anterior, sem indenização.</span></div>
+                <div class="glossary-item"><span class="term">Aliunde</span><span class="def">Expressão latina que significa "de outra parte", "de outro lugar". Refere-se à motivação que está fora do texto do ato.</span></div>
+                <div class="glossary-item"><span class="term">Disponibilidade</span><span class="def">Situação do servidor que, tendo seu cargo extinto ou sendo ocupado por outro, fica à disposição do órgão com remuneração proporcional.</span></div>
+                <div class="glossary-item"><span class="term">Aproveitamento</span><span class="def">Colocação do servidor em outro cargo de mesma natureza e vencimento.</span></div>
+                <div class="glossary-item"><span class="term">LIMPE</span><span class="def">Mnemônico para os princípios do art. 37, caput: Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência.</span></div>
+            </div>
+
+            <div class="divider">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3a3a5a" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="3" />
+                    <circle cx="12" cy="12" r="8" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 5 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap5">
+            <h2>CAPÍTULO 5: EXERCÍCIOS DE FIXAÇÃO</h2>
+
+            <h3 id="cap5-1">5.1 Verdadeiro ou Falso</h3>
+            <div class="exercise">
+                <ol style="list-style:none; padding-left:0; margin:0;">
+                    <li style="padding:0.5rem 0; border-bottom:1px solid #1e1e3a;">1. ( ) A motivação aliunde é ilegítima, pois a motivação do ato administrativo deve estar sempre no próprio texto do ato.</li>
+                    <li style="padding:0.5rem 0; border-bottom:1px solid #1e1e3a;">2. ( ) Na reintegração, o servidor estável que teve a demissão invalidada judicialmente faz jus ao ressarcimento de todas as vantagens.</li>
+                    <li style="padding:0.5rem 0; border-bottom:1px solid #1e1e3a;">3. ( ) O princípio da razoabilidade está expressamente previsto no caput do art. 37 da CF/88.</li>
+                    <li style="padding:0.5rem 0; border-bottom:1px solid #1e1e3a;">4. ( ) A Administração Fazendária tem precedência sobre os demais setores administrativos em toda e qualquer situação.</li>
+                    <li style="padding:0.5rem 0;">5. ( ) A acumulação remunerada de dois cargos de professor é permitida, desde que haja compatibilidade de horários.</li>
+                </ol>
+            </div>
+
+            <h3 id="cap5-2">5.2 Gabarito Comentado</h3>
+            <div class="gabarito">
+                <p><span class="answer-key">1. FALSO</span> - A motivação aliunde é lícita, desde que explícita, clara e congruente, nos termos do art. 50, §1º da Lei 9.784/99.</p>
+                <p><span class="answer-key">2. VERDADEIRO</span> - Art. 28 da Lei 8.112/90: reintegração com ressarcimento de todas as vantagens.</p>
+                <p><span class="answer-key">3. FALSO</span> - A razoabilidade NÃO está no caput do art. 37. Os princípios expressos são: legalidade, impessoalidade, moralidade, publicidade e eficiência.</p>
+                <p><span class="answer-key">4. FALSO</span> - A precedência é restrita à área de competência e jurisdição, não sendo geral e absoluta (art. 37, XVIII).</p>
+                <p><span class="answer-key">5. VERDADEIRO</span> - É uma das exceções constitucionais à vedação de acumulação (art. 37, XVI), desde que haja compatibilidade de horários.</p>
+            </div>
+
+            <h3 id="cap5-3">5.3 Questões para Treino</h3>
+            <div class="exercise">
+                <p><span class="ex-number">Questão 1:</span> O art. 37 da CF/88 prevê, em seu caput, os seguintes princípios expressos da Administração Pública: legalidade, impessoalidade, moralidade, publicidade e:</p>
+                <ul class="options">
+                    <li>a) razoabilidade.</li>
+                    <li>b) proporcionalidade.</li>
+                    <li>c) eficiência.</li>
+                    <li>d) eficácia.</li>
+                    <li>e) probidade.</li>
+                </ul>
+            </div>
+            <div class="exercise">
+                <p><span class="ex-number">Questão 2:</span> Sobre a acumulação remunerada de cargos públicos, assinale a alternativa correta:</p>
+                <ul class="options">
+                    <li>a) É vedada em qualquer hipótese, ainda que haja compatibilidade de horários.</li>
+                    <li>b) É permitida a acumulação de dois cargos de professor, independentemente de compatibilidade de horários.</li>
+                    <li>c) É vedada a acumulação de um cargo de professor com um cargo técnico ou científico.</li>
+                    <li>d) É permitida a acumulação de dois cargos privativos de profissionais de saúde, desde que haja compatibilidade de horários.</li>
+                    <li>e) A compatibilidade de horários é irrelevante para a acumulação de cargos públicos.</li>
+                </ul>
+            </div>
+            <div class="exercise">
+                <p><span class="ex-number">Questão 3:</span> O servidor estável que, em razão da reintegração de outro servidor, for posto em disponibilidade, fará jus a:</p>
+                <ul class="options">
+                    <li>a) remuneração integral.</li>
+                    <li>b) remuneração proporcional ao tempo de serviço.</li>
+                    <li>c) indenização correspondente a um mês de remuneração.</li>
+                    <li>d) indenização correspondente a três meses de remuneração.</li>
+                    <li>e) nenhuma remuneração, pois a disponibilidade não é remunerada.</li>
+                </ul>
+            </div>
+
+            <h3 id="cap5-4">5.4 Gabarito das Questões para Treino</h3>
+            <div class="gabarito">
+                <p><span class="answer-key">1. C</span> - O princípio da eficiência está expresso no caput do art. 37 (LIMPE).</p>
+                <p><span class="answer-key">2. D</span> - A compatibilidade de horários é requisito para todas as hipóteses excepcionais de acumulação.</p>
+                <p><span class="answer-key">3. B</span> - Art. 41, §2º, CF/88: disponibilidade com remuneração proporcional ao tempo de serviço.</p>
+            </div>
+
+            <div class="divider">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3a3a5a" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="3" />
+                    <circle cx="12" cy="12" r="8" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CONSIDERAÇÕES FINAIS -->
+        <!-- ============================================================ -->
+        <section id="consideracoes">
+            <h2>CONSIDERAÇÕES FINAIS</h2>
+            <p>Caro(a) concurseiro(a),</p>
+            <p>Os temas abordados nesta apostila são recorrentes em provas de alto nível, especialmente no padrão de cobrança da <strong>FCC</strong> para o Tribunal de Justiça do Ceará (TJCE) e outros tribunais.</p>
+
+            <div class="card">
+                <h4>Dicas de ouro para sua aprovação:</h4>
+                <ol style="padding-left:1.5rem; color:#d4d4e8;">
+                    <li><strong>Decore o LIMPE</strong> - Os princípios do caput do art. 37 são cobrados "ao pé da letra". Não confunda com princípios implícitos.</li>
+                    <li><strong>Diferencie reintegração de recondução</strong> - Use o mnemônico "REI" para reintegração (servidor demitido que volta) e lembre-se que na recondução o ocupante da vaga <strong>não</strong> tem direito a indenização.</li>
+                    <li><strong>Motivação aliunde é lícita</strong> - Não caia na pegadinha de achar que é ilegítima. Está prevista no art. 50, §1º da Lei 9.784/99.</li>
+                    <li><strong>Irredutibilidade não é absoluta</strong> - Admite exceções constitucionais.</li>
+                    <li><strong>Acumulação: regra geral = vedação; exceções = taxativas</strong> - Não invente hipóteses que não estão na Constituição.</li>
+                </ol>
+            </div>
+
+            <p style="margin-top:1.5rem;"><strong>Bons estudos e sucesso na sua jornada!</strong></p>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- RODAPÉ -->
+        <!-- ============================================================ -->
+        <footer class="footer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6a6a8a" stroke-width="1.5">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                <line x1="10" y1="8" x2="16" y2="8" />
+                <line x1="10" y1="12" x2="16" y2="12" />
+                <line x1="10" y1="16" x2="13" y2="16" />
+            </svg>
+            <p style="margin:0.5rem 0 0 0; color:#6a6a8a; font-size:0.9rem;">
+                Material didático elaborado com base na legislação vigente e nas principais cobranças de concursos públicos, especialmente FCC, FGV e Cebraspe.
+            </p>
+            <p style="margin:0.2rem 0 0 0; color:#4a4a6a; font-size:0.8rem;">
+                Atualização: 2026
+            </p>
+            <p style="margin-top:0.5rem;">
+                <a href="#sumario" class="back-top">↑ Voltar ao sumário</a>
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>

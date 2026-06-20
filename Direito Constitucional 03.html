@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostila Digital - Direito Constitucional e Processual</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #12121a;
+            color: #e2e2e8;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            font-size: 1.05rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #181825;
+            border-radius: 2rem;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            border: 1px solid #2a2a3e;
+        }
+
+        /* ===== TIPOGRAFIA ===== */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 2.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            color: #f5d78e;
+            text-align: center;
+            margin-top: 0.2rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle-header {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #8ab4f8;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #2a2a3e;
+            padding-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            color: #f5d78e;
+            border-left: 6px solid #f5d78e;
+            padding-left: 1.2rem;
+            margin-top: 2.8rem;
+            margin-bottom: 1.6rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #8ab4f8;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            color: #b8c8e8;
+            margin-top: 1.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: #e2e2e8;
+        }
+
+        strong {
+            color: #f5d78e;
+            font-weight: 600;
+        }
+
+        em {
+            color: #b0b0c8;
+            font-style: italic;
+        }
+
+        a {
+            color: #6a9fb5;
+            text-decoration: none;
+            border-bottom: 1px dotted #3a5a6a;
+        }
+
+        a:hover {
+            color: #8ab4f8;
+            border-bottom-color: #8ab4f8;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, #2a2a3e, #4a4a6e, #2a2a3e);
+            margin: 2.8rem 0;
+        }
+
+        /* ===== SUMÁRIO ===== */
+        .toc {
+            background: #1e1e2e;
+            border-radius: 1.5rem;
+            padding: 1.8rem 2.2rem;
+            margin: 2rem 0 2.8rem 0;
+            border: 1px solid #2a2a3e;
+        }
+
+        .toc-title {
+            font-size: 1.6rem;
+            color: #f5d78e;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .toc-title svg {
+            flex-shrink: 0;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 2rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-grid li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #28283a;
+            font-size: 0.95rem;
+        }
+
+        .toc-grid li a {
+            color: #c8c8e0;
+            border-bottom: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .toc-grid li a:hover {
+            color: #f5d78e;
+        }
+
+        .toc-grid li a .num {
+            color: #6a9fb5;
+            font-weight: 600;
+            min-width: 2rem;
+        }
+
+        @media (max-width: 700px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 1.5rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+                padding-left: 0.8rem;
+            }
+        }
+
+        /* ===== CARDS / BOXES ===== */
+        .card {
+            background: #1e1e2e;
+            border-radius: 1.2rem;
+            padding: 1.5rem 2rem;
+            margin: 1.8rem 0;
+            border-left: 6px solid #4a4a6e;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h4 {
+            margin-top: 0;
+        }
+
+        .card-dica {
+            border-left-color: #6a9f6a;
+            background: #1e2a1e;
+        }
+        .card-dica h4 {
+            color: #8fcf8f;
+        }
+
+        .card-obs {
+            border-left-color: #bf6a6a;
+            background: #2a1e1e;
+        }
+        .card-obs h4 {
+            color: #e68a8a;
+        }
+
+        .card-importante {
+            border-left-color: #6a8fbf;
+            background: #1e1e2e;
+        }
+        .card-importante h4 {
+            color: #8ab4f8;
+        }
+
+        .card-citacao {
+            border-left-color: #b8a06a;
+            background: #1e1e1e;
+            font-style: italic;
+            color: #c8c0b0;
+            border-left-width: 8px;
+        }
+
+        .card-citacao::before {
+            content: "“";
+            font-size: 2.4rem;
+            color: #b8a06a;
+            line-height: 0.8;
+            margin-right: 0.2rem;
+        }
+
+        .highlight {
+            background: rgba(245, 215, 142, 0.2);
+            padding: 0.1rem 0.4rem;
+            border-radius: 0.3rem;
+            color: #f5d78e;
+            font-weight: 500;
+        }
+
+        .marca-texto {
+            background: #f5d78e;
+            color: #12121a;
+            padding: 0.1rem 0.5rem;
+            border-radius: 0.3rem;
+            font-weight: 600;
+        }
+
+        /* ===== TABELAS ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.8rem 0;
+            border-radius: 1rem;
+            background: #1a1a28;
+            padding: 0.2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            color: #e2e2e8;
+        }
+
+        table thead {
+            background: #2a2a42;
+        }
+
+        table th {
+            text-align: left;
+            padding: 0.9rem 1.2rem;
+            font-weight: 600;
+            color: #f5d78e;
+            border-bottom: 2px solid #3a3a5a;
+        }
+
+        table td {
+            padding: 0.8rem 1.2rem;
+            border-bottom: 1px solid #2a2a3e;
+        }
+
+        table tbody tr:hover {
+            background: #222236;
+        }
+
+        table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ===== LISTAS ===== */
+        ul,
+        ol {
+            margin: 0.8rem 0 1.2rem 1.8rem;
+            padding-left: 0.5rem;
+        }
+
+        ul li,
+        ol li {
+            margin-bottom: 0.4rem;
+            color: #d8d8e8;
+        }
+
+        ul ul,
+        ol ol {
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .list-check {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list-check li {
+            padding-left: 2rem;
+            position: relative;
+        }
+        .list-check li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6a9f6a;
+            font-weight: 700;
+        }
+
+        .list-bullet {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list-bullet li {
+            padding-left: 1.8rem;
+            position: relative;
+        }
+        .list-bullet li::before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: #f5d78e;
+            font-size: 0.9rem;
+        }
+
+        /* ===== MNEMÔNICO ===== */
+        .mnemonic {
+            background: #1a1a2a;
+            border-radius: 1.2rem;
+            padding: 1.2rem 2rem;
+            margin: 1.5rem 0;
+            border: 2px dashed #6a8fbf;
+            text-align: center;
+            font-size: 1.3rem;
+            letter-spacing: 0.04em;
+            color: #8ab4f8;
+            font-weight: 600;
+        }
+        .mnemonic span {
+            color: #f5d78e;
+            background: rgba(245, 215, 142, 0.15);
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.5rem;
+            margin: 0 0.2rem;
+        }
+
+        /* ===== DIVISÓRIAS ===== */
+        .divider-elegant {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 2.8rem 0;
+            color: #3a3a5a;
+        }
+        .divider-elegant .line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #4a4a6e, transparent);
+        }
+        .divider-elegant .diamond {
+            width: 10px;
+            height: 10px;
+            background: #4a4a6e;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        /* ===== SVG RESPONSIVO ===== */
+        .svg-container {
+            background: #14141e;
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid #2a2a3e;
+            overflow-x: auto;
+        }
+
+        .svg-container svg {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
+
+        /* ===== SCROLL SUAVE ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 600px) {
+            body {
+                padding: 0.8rem;
+            }
+            .container {
+                padding: 1.2rem 0.8rem;
+                border-radius: 1rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .subtitle-header {
+                font-size: 0.95rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+                padding-left: 0.6rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            .card {
+                padding: 1rem 1.2rem;
+            }
+            .toc {
+                padding: 1rem 1.2rem;
+            }
+            .toc-grid li {
+                font-size: 0.85rem;
+            }
+            table th,
+            table td {
+                padding: 0.5rem 0.6rem;
+                font-size: 0.85rem;
+            }
+            .mnemonic {
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #2a2a3e;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6a6a8a;
+        }
+
+        /* ===== CAIXAS DE DESTAQUE INLINE ===== */
+        .badge {
+            display: inline-block;
+            background: #2a2a42;
+            color: #c8c8e0;
+            padding: 0.1rem 0.8rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            border: 1px solid #3a3a5a;
+            margin-right: 0.4rem;
+        }
+
+        .badge-gold {
+            background: #4a3a1a;
+            color: #f5d78e;
+            border-color: #6a5a2a;
+        }
+
+        /* ===== SVG DIAGRAMAS ===== */
+        .diagram-title {
+            text-align: center;
+            font-weight: 600;
+            color: #8ab4f8;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        /* ===== CITAÇÕES LONGAS ===== */
+        blockquote {
+            background: #1a1a28;
+            border-left: 6px solid #6a8fbf;
+            padding: 1.2rem 2rem;
+            margin: 1.8rem 0;
+            border-radius: 0 1rem 1rem 0;
+            color: #c8c8e0;
+            font-style: italic;
+        }
+        blockquote p {
+            margin-bottom: 0;
+        }
+        blockquote .fonte {
+            display: block;
+            margin-top: 0.6rem;
+            font-style: normal;
+            color: #8ab4f8;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ========== CABEÇALHO ========== -->
+        <header>
+            <h1>⚖️ DIREITO CONSTITUCIONAL<br>E PROCESSUAL</h1>
+            <p class="subtitle-header">Técnico Judiciário – Área Judiciária · Material Teórico Completo para Concursos Públicos de Alto Nível</p>
+        </header>
+
+        <!-- ========== SUMÁRIO ========== -->
+        <nav class="toc" aria-label="Sumário">
+            <div class="toc-title">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f5d78e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h10" />
+                </svg>
+                SUMÁRIO
+            </div>
+            <ul class="toc-grid">
+                <li><a href="#cap1"><span class="num">1.</span> Princípios da Administração Pública</a></li>
+                <li><a href="#cap2"><span class="num">2.</span> Direitos e Garantias Fundamentais</a></li>
+                <li><a href="#cap3"><span class="num">3.</span> Organização do Estado e Competências</a></li>
+                <li><a href="#cap4"><span class="num">4.</span> Foro por Prerrogativa de Função</a></li>
+                <li><a href="#cap5"><span class="num">5.</span> Vereadores: Imunidades e Foro</a></li>
+                <li><a href="#cap6"><span class="num">6.</span> Ministério Público: Vedações e Garantias</a></li>
+                <li><a href="#cap7"><span class="num">7.</span> Atos Jurisdicionais e Fundamentação</a></li>
+                <li><a href="#cap8"><span class="num">8.</span> Partidos Políticos e Coligações</a></li>
+                <li><a href="#cap9"><span class="num">9.</span> Recursos: Especial e Extraordinário</a></li>
+                <li><a href="#cap10"><span class="num">10.</span> Alteração Territorial dos Estados</a></li>
+                <li><a href="#cap11"><span class="num">11.</span> Escusa de Consciência</a></li>
+                <li><a href="#cap12"><span class="num">12.</span> Fundamentos da República</a></li>
+                <li><a href="#cap13"><span class="num">13.</span> Remuneração de Servidores</a></li>
+                <li><a href="#cap14"><span class="num">14.</span> Quadro Resumo Geral</a></li>
+                <li><a href="#cap15"><span class="num">15.</span> Exercícios de Fixação</a></li>
+                <li><a href="#cap16"><span class="num">16.</span> Dicas Finais para a Prova</a></li>
+            </ul>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 1 -->
+        <section id="cap1">
+            <h2>CAPÍTULO 1 – PRINCÍPIOS DA ADMINISTRAÇÃO PÚBLICA</h2>
+
+            <h3>1.1. O Art. 37, Caput, da CF/88</h3>
+            <p>A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedece aos princípios da <strong>legalidade, impessoalidade, moralidade, publicidade e eficiência</strong>.</p>
+            <p>Trata-se do dispositivo mais cobrado em concursos quando o assunto é administração pública. A literalidade do art. 37, caput, é exaustiva em relação aos princípios expressos? <strong>Não</strong>, são apenas os expressamente previstos. Existem outros princípios implícitos, como razoabilidade, proporcionalidade, continuidade do serviço público, entre outros.</p>
+
+            <h3>1.2. Análise Detalhada de Cada Princípio</h3>
+            <div class="card">
+                <h4>a) Legalidade</h4>
+                <p>O administrador público só pode fazer o que a lei autoriza. Diferentemente do particular, que pode fazer tudo o que a lei não proíbe, o agente público está adstrito ao comando legal.</p>
+            </div>
+            <div class="card">
+                <h4>b) Impessoalidade</h4>
+                <p>A atuação administrativa deve visar ao interesse público, não ao interesse pessoal do agente ou de terceiros. Há duas dimensões: (i) vedação ao favorecimento ou perseguição; (ii) a atividade da administração é atribuída ao ente público, não à pessoa do agente.</p>
+            </div>
+            <div class="card">
+                <h4>c) Moralidade</h4>
+                <p>Exige probidade, boa-fé, lealdade e honestidade. A imoralidade administrativa configura ato de improbidade.</p>
+            </div>
+            <div class="card">
+                <h4>d) Publicidade</h4>
+                <p>Regra geral, os atos públicos devem ser divulgados para controle social. Exceções: sigilo quando imprescindível à segurança da sociedade e do Estado.</p>
+            </div>
+            <div class="card">
+                <h4>e) Eficiência</h4>
+                <p>Incluído pela EC 19/98, exige resultado, economicidade, qualidade e celeridade.</p>
+            </div>
+
+            <h3>1.3. Como Memorizar</h3>
+            <div class="mnemonic">
+                <span>L</span>egalidade · <span>I</span>mpessoalidade · <span>M</span>oralidade · <span>P</span>ublicidade · <span>E</span>ficiência
+                <br><span style="font-size:0.8rem; color:#6a8fbf;">Mnemônico <strong>LIMPE</strong></span>
+            </div>
+
+            <h3>1.4. Pegadinhas da FCC</h3>
+            <ul class="list-bullet">
+                <li>A FCC adora cobrar literalidade. Não confunda princípios constitucionais da administração com princípios gerais. Se a questão pergunta expressamente "previstos no caput do art. 37", só responda LIMPE.</li>
+                <li>A eficiência é relativamente nova no texto (EC 19/98). Em questões que mencionam "administração pública", pode ser que a banca tente incluir princípios como proporcionalidade, razoabilidade ou continuidade. Cuidado: estes são implícitos, mas não estão no caput do art. 37.</li>
+            </ul>
+
+            <h3>1.5. Exemplo Prático</h3>
+            <div class="card card-importante">
+                <h4>📌 Exemplo</h4>
+                <p>Suponha que um prefeito publique decreto nomeando parente para cargo comissionado sem qualquer critério objetivo. Isso viola:</p>
+                <ul class="list-check">
+                    <li>Impessoalidade (nepotismo)</li>
+                    <li>Moralidade</li>
+                    <li>Eficiência (se o parente não for qualificado)</li>
+                </ul>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 2 -->
+        <section id="cap2">
+            <h2>CAPÍTULO 2 – DIREITOS E GARANTIAS FUNDAMENTAIS</h2>
+
+            <h3>2.1. Aplicação Imediata</h3>
+            <p>O art. 5º, §1º da CF/88 estabelece que as normas definidoras de direitos e garantias fundamentais têm <strong>aplicação imediata</strong>.</p>
+
+            <h3>2.2. Características das Normas de Direitos Fundamentais</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Característica</th><th>Explicação</th></tr></thead>
+                    <tbody>
+                        <tr><td>Aplicação imediata</td><td>Não dependem de regulamentação para produzir efeitos mínimos</td></tr>
+                        <tr><td>Rol exemplificativo</td><td>Numerus apertus, podem ser ampliados</td></tr>
+                        <tr><td>Hierarquia</td><td>Não há hierarquia entre os direitos fundamentais</td></tr>
+                        <tr><td>Ampliação por tratados</td><td>Art. 5º, §2º: tratados internacionais podem ampliar o rol</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>2.3. Distinção entre Aplicação Imediata e Aplicabilidade Mediata</h3>
+            <p>A aplicação imediata (art. 5º, §1º) não significa que a norma está plenamente apta a gerar todos os efeitos. Normas programáticas, apesar de terem aplicação imediata, podem ter eficácia limitada, dependendo de integração legislativa. Ou seja:</p>
+            <ul class="list-bullet">
+                <li><strong>Aplicação imediata</strong>: a norma já é vinculante e invocável desde a promulgação.</li>
+                <li><strong>Aplicabilidade mediata</strong>: a norma, embora vigente, depende de lei posterior para concretizar plenamente seus efeitos.</li>
+            </ul>
+            <p><em>Exemplo: direito à saúde (art. 196) é de aplicação imediata, mas depende de políticas públicas – isso não significa que o direito não possa ser exigido judicialmente.</em></p>
+
+            <h3>2.4. Pegadinhas da FCC</h3>
+            <div class="card card-obs">
+                <h4>⚠️ Atenção</h4>
+                <p>A FCC frequentemente confunde:</p>
+                <ul class="list-bullet">
+                    <li>"Aplicação imediata" com "norma autoaplicável".</li>
+                    <li>Norma programática com norma sem eficácia.</li>
+                </ul>
+                <p><strong>Lembre:</strong> mesmo as normas programáticas têm aplicação imediata, mas podem ter eficácia contida ou limitada. São invocáveis, mas nem sempre plenamente exequíveis sem intermediação legislativa.</p>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 3 -->
+        <section id="cap3">
+            <h2>CAPÍTULO 3 – ORGANIZAÇÃO DO ESTADO E COMPETÊNCIAS</h2>
+
+            <h3>3.1. Competência Concorrente: Visão Geral</h3>
+            <p>A competência concorrente é um modelo de distribuição vertical de competências em que União, Estados e Distrito Federal podem legislar sobre a mesma matéria, mas em níveis distintos:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Ente</th><th>Atuação</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>União</strong></td><td>Estabelece <strong>normas gerais</strong> (art. 24, caput, CF)</td></tr>
+                        <tr><td><strong>Estados e DF</strong></td><td>Suplementam as normas gerais, atendendo peculiaridades locais</td></tr>
+                        <tr><td><strong>Municípios</strong></td><td>Suplementam a legislação federal e estadual no que couber (art. 30, II)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>3.2. O Problema da Ausência de Normas Gerais</h3>
+            <p>Inexistindo lei federal sobre normas gerais, os Estados <strong>exercem competência legislativa plena</strong> para atender a suas peculiaridades (art. 24, §3º).</p>
+            <p>Isso significa que os Estados podem legislar sobre toda a matéria, inclusive sobre aspectos que seriam próprios de normas gerais, até que a União discipline o tema.</p>
+
+            <h3>3.3. O Efeito da Lei Federal Superveniente</h3>
+            <p>A superveniência de lei federal sobre normas gerais <strong>suspende a eficácia</strong> da lei estadual no que lhe for contrário (art. 24, §4º).</p>
+
+            <h3>3.4. Distinção Crucial: Suspensão x Revogação</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Efeito</th><th>Suspensão</th><th>Revogação</th></tr></thead>
+                    <tbody>
+                        <tr><td>Natureza</td><td>Temporária</td><td>Definitiva</td></tr>
+                        <tr><td>Retorno</td><td>Pode voltar a produzir efeitos se a lei federal for revogada</td><td>Não volta</td></tr>
+                        <tr><td>Fundamento</td><td>Art. 24, §4º</td><td>Art. 2º da LINDB</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card card-importante">
+                <h4>⚡ Pegadinha clássica da FCC</h4>
+                <p>Afirmar que a lei federal superveniente <strong>revoga</strong> a lei estadual é <strong>FALSO</strong>. O correto é <strong>suspensão</strong> da eficácia.</p>
+            </div>
+
+            <h3>3.5. Exemplo Concreto</h3>
+            <div class="card card-dica">
+                <h4>💡 Exemplo</h4>
+                <p>O Estado X edita lei sobre procedimentos em matéria ambiental (competência concorrente). Não há lei federal sobre o tema. A lei estadual é plena e válida. Anos depois, a União edita lei federal estabelecendo normas gerais ambientais conflitantes com a lei estadual. O que ocorre?</p>
+                <p>A lei estadual tem sua eficácia suspensa na parte contrária à lei federal. Se a lei federal for revogada, a lei estadual "ressuscita" automaticamente.</p>
+            </div>
+
+            <h3>3.6. Matérias de Competência Concorrente</h3>
+            <p>O art. 24 elenca as matérias. As mais cobradas:</p>
+            <ul class="list-bullet">
+                <li><strong>Direito processual? NÃO!</strong> – Direito processual é competência privativa da União (art. 22, I)</li>
+                <li><strong>Procedimentos em matéria processual</strong> – SIM, são concorrentes (art. 24, XI)</li>
+                <li><strong>Custas dos serviços forenses</strong> – SIM, são concorrentes (art. 24, IV)</li>
+                <li><strong>Orçamento</strong> – SIM (art. 24, II)</li>
+            </ul>
+
+            <h3>3.7. Entendimento sobre Procedimentos x Direito Processual</h3>
+            <p>O STF e a doutrina consolidaram:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Competência</th><th>Matéria</th><th>Fundamento</th></tr></thead>
+                    <tbody>
+                        <tr><td>Privativa da União</td><td>Direito processual</td><td>Art. 22, I</td></tr>
+                        <tr><td>Concorrente</td><td>Procedimentos (normas instrumentais)</td><td>Art. 24, XI</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><em>Ou seja: a União legisla sobre a essência do processo; Estados podem legislar sobre procedimentos locais (ex.: prazos de intimação específicos, distribuição de autos, etc.).</em></p>
+
+            <h3>3.8. Macete para Competência Concorrente</h3>
+            <div class="card card-dica">
+                <h4>🧠 PENSE:</h4>
+                <ul class="list-check">
+                    <li>União = <strong>NORMA GERAL</strong> (guarda-chuva)</li>
+                    <li>Estados/DF = <strong>SUPLEMENTAÇÃO</strong> (detalhes)</li>
+                    <li>Sem lei federal = <strong>ESTADO LEGISLA PLENAMENTE</strong> (tudo)</li>
+                    <li>Lei federal superveniente = <strong>SUSPENSÃO, NÃO REVOGAÇÃO</strong></li>
+                </ul>
+            </div>
+
+            <!-- DIAGRAMA SVG: Competência Concorrente -->
+            <div class="svg-container">
+                <div class="diagram-title">Fluxo da Competência Concorrente</div>
+                <svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama da competência concorrente">
+                    <defs>
+                        <style>
+                            .d-box { fill: #1e1e2e; stroke: #4a4a6e; stroke-width: 2; rx: 12; }
+                            .d-text { fill: #e2e2e8; font-size: 14px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; dominant-baseline: central; }
+                            .d-label { fill: #8ab4f8; font-size: 13px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; dominant-baseline: central; font-weight: 600; }
+                            .d-arrow { stroke: #6a8fbf; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+                            .d-arrow-label { fill: #b0b0c8; font-size: 12px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; }
+                        </style>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#6a8fbf" />
+                        </marker>
+                    </defs>
+
+                    <!-- Caixa União -->
+                    <rect x="260" y="20" width="240" height="52" class="d-box" />
+                    <text x="380" y="46" class="d-text" font-weight="600">UNIÃO</text>
+                    <text x="380" y="68" class="d-label" font-size="12">Normas Gerais (art. 24)</text>
+
+                    <!-- Seta para Estados -->
+                    <path d="M 380 72 L 380 108" class="d-arrow" />
+                    <text x="390" y="92" class="d-arrow-label">suplementam</text>
+
+                    <!-- Caixa Estados/DF -->
+                    <rect x="210" y="108" width="340" height="52" class="d-box" stroke="#6a8fbf" />
+                    <text x="380" y="134" class="d-text" font-weight="600">ESTADOS e DF</text>
+                    <text x="380" y="156" class="d-label" font-size="12">Suplementação / peculiaridades locais</text>
+
+                    <!-- Seta para Municípios -->
+                    <path d="M 380 160 L 380 196" class="d-arrow" stroke="#7a7a9a" />
+                    <text x="390" y="180" class="d-arrow-label" fill="#7a7a9a">no que couber</text>
+
+                    <!-- Caixa Municípios -->
+                    <rect x="250" y="196" width="260" height="52" class="d-box" stroke="#7a7a9a" />
+                    <text x="380" y="222" class="d-text" font-weight="600">MUNICÍPIOS</text>
+                    <text x="380" y="244" class="d-label" font-size="12" fill="#b0b0c8">Suplementação (art. 30, II)</text>
+
+                    <!-- Retângulo de destaque: ausência de lei federal -->
+                    <rect x="40" y="270" width="680" height="44" rx="10" fill="#1a1a2a" stroke="#6a8fbf" stroke-width="1.5" stroke-dasharray="6 4" />
+                    <text x="380" y="294" class="d-text" font-size="13">
+                        <tspan font-weight="600" fill="#f5d78e">Sem lei federal:</tspan>
+                        <tspan fill="#e2e2e8"> Estados exercem competência plena (art. 24, §3º)</tspan>
+                    </text>
+                    <text x="380" y="310" class="d-text" font-size="12" fill="#b0b0c8">
+                        Lei federal superveniente → <tspan font-weight="600" fill="#e68a8a">suspende</tspan> a eficácia da lei estadual (art. 24, §4º)
+                    </text>
+                </svg>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 4 -->
+        <section id="cap4">
+            <h2>CAPÍTULO 4 – FORO POR PRERROGATIVA DE FUNÇÃO</h2>
+
+            <h3>4.1. Conceito</h3>
+            <p>Foro por prerrogativa de função, também chamado de foro especial, é a competência para julgar determinadas autoridades em razão do cargo que ocupam, por foro diverso do comum (juízo de primeiro grau).</p>
+
+            <h3>4.2. Julgamento de Juízes Estaduais</h3>
+            <p>Compete aos <strong>Tribunais de Justiça</strong> julgar os juízes estaduais e do Distrito Federal nos crimes comuns e de responsabilidade (art. 96, III, CF/88).</p>
+
+            <h3>4.3. Ressalva Importante: Justiça Eleitoral</h3>
+            <p>A competência do TJ pode ser afastada se o crime for de competência da Justiça Eleitoral (ex.: crimes eleitorais). Nesse caso, o juiz estadual será julgado pelo Tribunal Regional Eleitoral ou pelo Tribunal Superior Eleitoral, a depender do caso.</p>
+
+            <h3>4.4. Esquema Geral de Foro no Processo Penal</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Agente</th><th>Tribunal Competente</th></tr></thead>
+                    <tbody>
+                        <tr><td>Presidente da República</td><td>STF</td></tr>
+                        <tr><td>Governadores</td><td>STJ</td></tr>
+                        <tr><td>Deputados Federais e Senadores</td><td>STF</td></tr>
+                        <tr><td>Juízes Estaduais</td><td>TJ</td></tr>
+                        <tr><td>Procuradores da República</td><td>STJ (alguns) ou TRF</td></tr>
+                        <tr><td><strong>Vereadores</strong></td><td><strong style="color:#e68a8a;">NÃO POSSUEM FORO PRIVILEGIADO</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>4.5. Pegadinhas da FCC</h3>
+            <ul class="list-bullet">
+                <li>O foro por prerrogativa de função não é absoluto. A Justiça Eleitoral pode afastá-lo.</li>
+                <li><strong>Vereadores têm foro? NÃO</strong>, são julgados pelo juízo de primeiro grau.</li>
+                <li>Juízes federais são julgados pelo TRF.</li>
+            </ul>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 5 -->
+        <section id="cap5">
+            <h2>CAPÍTULO 5 – VEREADORES: IMUNIDADES E FORO</h2>
+
+            <h3>5.1. Imunidades dos Vereadores</h3>
+            <p>Os vereadores possuem <strong>imunidade material</strong> (inviolabilidade), mas <strong>não possuem imunidade formal ou foro por prerrogativa de função</strong>.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Tipo</th><th>Vereador</th><th>Deputado/Senador</th></tr></thead>
+                    <tbody>
+                        <tr><td>Imunidade material</td><td>SIM (inviolabilidade por opiniões, palavras e votos no exercício do mandato e na circunscrição do município)</td><td>SIM (inviolabilidade por opiniões, palavras e votos)</td></tr>
+                        <tr><td>Imunidade formal</td><td>NÃO</td><td>SIM</td></tr>
+                        <tr><td>Foro por prerrogativa</td><td>NÃO</td><td>SIM (STF)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>5.2. Fundamento Constitucional</h3>
+            <blockquote>
+                <p>Art. 29, VIII, CF/88: "os Vereadores são invioláveis por suas opiniões, palavras e votos no exercício do mandato e na circunscrição do Município".</p>
+            </blockquote>
+
+            <h3>5.3. Limitação Territorial</h3>
+            <p>A imunidade material dos vereadores está limitada à <strong>circunscrição do Município</strong>. Se o vereador proferir opinião fora do município sobre assuntos do mandato, não está abrangido pela inviolabilidade.</p>
+
+            <h3>5.4. Exemplo Prático</h3>
+            <div class="card card-dica">
+                <h4>📌 Exemplo</h4>
+                <p>Um vereador, em entrevista à rádio local (dentro do município), crítica duramente o prefeito, chamando-o de corrupto. Isso é imunidade material: o vereador não pode ser processado por isso, desde que as palavras tenham relação com o exercício do mandato.</p>
+                <p>Agora, se o mesmo vereador, em uma viagem a Brasília, ofende um colega vereador de outro município, isso <strong>não</strong> está coberto pela imunidade.</p>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 6 -->
+        <section id="cap6">
+            <h2>CAPÍTULO 6 – MINISTÉRIO PÚBLICO: VEDAÇÕES E GARANTIAS</h2>
+
+            <h3>6.1. Vedação ao Exercício de Outra Função Pública</h3>
+            <p>O art. 128, §5º, II, d, CF/88 veda aos membros do Ministério Público:</p>
+            <blockquote>
+                <p>"exercer, ainda que em disponibilidade, qualquer outra função pública, salvo uma de magistério"</p>
+            </blockquote>
+
+            <h3>6.2. Consequência da Violação</h3>
+            <p>Se um Promotor de Justiça deseja assumir o cargo de Secretário de Estado, não pode fazê-lo sem se afastar ou se exonerar. A vedação é absoluta: não há licença para exercer função pública diversa.</p>
+            <p><strong>Exceção:</strong> função de magistério (professor universitário), que é permitida.</p>
+
+            <h3>6.3. Comparação com Magistratura</h3>
+            <p>A mesma vedação se aplica aos magistrados (art. 95, parágrafo único, III, CF/88). É a chamada "incompatibilidade com qualquer outro cargo ou função, salvo uma de magistério".</p>
+
+            <h3>6.4. Pegadinhas</h3>
+            <div class="card card-obs">
+                <h4>⚠️ Atenção</h4>
+                <ul class="list-bullet">
+                    <li>Muitos candidatos confundem com a possibilidade de licença para tratar de interesses particulares (que é admitida para juízes, com ressalvas, mas <strong>não</strong> para membros do MP em se tratando de outra função pública).</li>
+                    <li>A proibição é "função pública", não "atividade privada". O membro do MP pode exercer atividade privada (ex.: consultoria) com restrições éticas, mas não função pública, mesmo em disponibilidade.</li>
+                </ul>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 7 -->
+        <section id="cap7">
+            <h2>CAPÍTULO 7 – ATOS JURISDICIONAIS E FUNDAMENTAÇÃO</h2>
+
+            <h3>7.1. A Obrigação de Fundamentar</h3>
+            <p>O art. 93, IX da CF/88 exige fundamentação de todas as decisões judiciais, sob pena de nulidade.</p>
+
+            <h3>7.2. Exceção: Despachos</h3>
+            <p>Despachos são atos ordinatórios de mero expediente, sem conteúdo decisório. Por isso, <strong>não necessitam de fundamentação</strong>.</p>
+
+            <h3>7.3. Espécies de Atos Judiciais</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Ato Judicial</th><th>Conteúdo</th><th>Fundamentação</th><th>Recorribilidade</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Despacho</strong></td><td>Mero expediente</td><td>Não precisa</td><td>Não cabe recurso (apenas correição parcial)</td></tr>
+                        <tr><td><strong>Decisão Interlocutória Simples</strong></td><td>Resolve questão processual</td><td>Deve ser fundamentada</td><td>Cabe agravo de instrumento</td></tr>
+                        <tr><td><strong>Decisão Interlocutória Mista</strong></td><td>Resolve parcialmente o mérito</td><td>Deve ser fundamentada</td><td>Cabe agravo de instrumento</td></tr>
+                        <tr><td><strong>Sentença</strong></td><td>Extingue o processo com ou sem resolução de mérito</td><td>Deve ser fundamentada</td><td>Cabe apelação</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>7.4. Fundamentação Concisamente</h3>
+            <p>O art. 203 do CPC estabelece que "a sentença será proferida pelo juiz, com os requisitos do art. 489", que exige fundamentação ainda que concisa. Importante: <strong>concisa ≠ ausente</strong>. Pode ser curta, mas deve demonstrar as razões da decisão.</p>
+
+            <h3>7.5. Tipos de Decisão Interlocutória (CPC/2015)</h3>
+            <ul class="list-bullet">
+                <li><strong>Decisão interlocutória simples</strong>: resolve questão processual sem mérito.</li>
+                <li><strong>Decisão interlocutória mista</strong>: resolve questão processual e também aborda o mérito parcialmente (ex.: julgamento antecipado parcial do mérito - art. 356, CPC).</li>
+            </ul>
+
+            <h3>7.6. Pegadinhas Clássicas da FCC</h3>
+            <ul class="list-bullet">
+                <li>"Despacho não precisa de fundamentação" → <span class="marca-texto">CERTO</span></li>
+                <li>"Decisão interlocutória não precisa de fundamentação" → <span class="marca-texto">ERRADO</span></li>
+                <li>"Apenas sentenças precisam ser fundamentadas" → <span class="marca-texto">ERRADO</span> (o art. 93, IX, CF fala em "decisões judiciais")</li>
+            </ul>
+
+            <h3>7.7. Quadro Resumo</h3>
+            <div class="svg-container">
+                <div class="diagram-title">Atos Judiciais – Fundamentação e Recursos</div>
+                <svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama de atos judiciais">
+                    <defs>
+                        <style>
+                            .j-box { fill: #1a1a2a; stroke: #4a4a6e; stroke-width: 2; rx: 14; }
+                            .j-box-green { stroke: #6a9f6a; }
+                            .j-box-red { stroke: #bf6a6a; }
+                            .j-box-blue { stroke: #6a8fbf; }
+                            .j-text { fill: #e2e2e8; font-size: 13px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; dominant-baseline: central; }
+                            .j-label { fill: #b0b0c8; font-size: 11px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; dominant-baseline: central; }
+                            .j-arrow { stroke: #5a5a7a; stroke-width: 2; fill: none; marker-end: url(#j-arrow); }
+                        </style>
+                        <marker id="j-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                            <polygon points="0 0, 8 3, 0 6" fill="#5a5a7a" />
+                        </marker>
+                    </defs>
+
+                    <!-- Despacho -->
+                    <rect x="40" y="30" width="160" height="70" class="j-box j-box-green" />
+                    <text x="120" y="55" class="j-text" font-weight="600">DESPACHO</text>
+                    <text x="120" y="75" class="j-label">Mero expediente</text>
+                    <text x="120" y="92" class="j-label" fill="#6a9f6a">Não fundamentado</text>
+                    <text x="120" y="106" class="j-label" fill="#b0b0c8" font-size="10">Irrecorrível</text>
+
+                    <!-- Seta -->
+                    <path d="M 200 65 L 260 65" class="j-arrow" />
+                    <text x="230" y="58" class="j-label" fill="#6a6a8a" font-size="9">distinção</text>
+
+                    <!-- Decisão Interlocutória -->
+                    <rect x="270" y="30" width="200" height="90" class="j-box j-box-blue" />
+                    <text x="370" y="55" class="j-text" font-weight="600">DECISÃO</text>
+                    <text x="370" y="75" class="j-text" font-weight="600">INTERLOCUTÓRIA</text>
+                    <text x="370" y="95" class="j-label">Resolve questão processual</text>
+                    <text x="370" y="112" class="j-label" fill="#8ab4f8">Fundamentação obrigatória</text>
+                    <text x="370" y="126" class="j-label" fill="#b0b0c8" font-size="10">Recorrível (agravo)</text>
+
+                    <!-- Seta para Sentença -->
+                    <path d="M 470 75 L 530 75" class="j-arrow" />
+                    <text x="500" y="68" class="j-label" fill="#6a6a8a" font-size="9">evolução</text>
+
+                    <!-- Sentença -->
+                    <rect x="540" y="30" width="150" height="90" class="j-box j-box-red" />
+                    <text x="615" y="60" class="j-text" font-weight="600">SENTENÇA</text>
+                    <text x="615" y="80" class="j-label">Extingue processo</text>
+                    <text x="615" y="97" class="j-label" fill="#e68a8a">Fundamentação obrigatória</text>
+                    <text x="615" y="112" class="j-label" fill="#b0b0c8" font-size="10">Recorrível (apelação)</text>
+
+                    <!-- Legenda inferior -->
+                    <rect x="60" y="150" width="580" height="40" rx="8" fill="#14141e" stroke="#2a2a3e" stroke-width="1" />
+                    <text x="350" y="175" class="j-label" fill="#b0b0c8">
+                        <tspan fill="#6a9f6a">●</tspan> Despacho: sem fundamentação
+                        <tspan fill="#8ab4f8" dx="20">●</tspan> Decisão Interlocutória: fundamentada
+                        <tspan fill="#e68a8a" dx="20">●</tspan> Sentença: fundamentada
+                    </text>
+                </svg>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 8 -->
+        <section id="cap8">
+            <h2>CAPÍTULO 8 – PARTIDOS POLÍTICOS E COLIGAÇÕES</h2>
+
+            <h3>8.1. Autonomia Partidária e Coligações</h3>
+            <p>O art. 17, §1º da CF/88 assegura aos partidos políticos autonomia para adotar coligações nas eleições majoritárias, mas <strong>veda sua celebração nas eleições proporcionais</strong>.</p>
+
+            <h3>8.2. Distinção entre Majoritárias e Proporcionais</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Eleição</th><th>Tipo</th><th>Coligação permitida?</th></tr></thead>
+                    <tbody>
+                        <tr><td>Presidente da República</td><td>Majoritária</td><td>SIM</td></tr>
+                        <tr><td>Governador</td><td>Majoritária</td><td>SIM</td></tr>
+                        <tr><td>Prefeito (cidades &gt;200 mil hab. com 2º turno)</td><td>Majoritária</td><td>SIM</td></tr>
+                        <tr><td>Senador</td><td>Majoritária</td><td>SIM</td></tr>
+                        <tr><td>Deputado Federal</td><td>Proporcional</td><td><strong style="color:#e68a8a;">NÃO (vedado)</strong></td></tr>
+                        <tr><td>Deputado Estadual</td><td>Proporcional</td><td><strong style="color:#e68a8a;">NÃO (vedado)</strong></td></tr>
+                        <tr><td>Vereador</td><td>Proporcional</td><td><strong style="color:#e68a8a;">NÃO (vedado)</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>8.3. Fundamento da Vedação</h3>
+            <p>A vedação de coligações proporcionais foi incluída pela EC 97/2017 para:</p>
+            <ul class="list-bullet">
+                <li>Evitar distorções na representação proporcional</li>
+                <li>Aumentar a fidelidade partidária</li>
+                <li>Evitar partidos "de aluguel" que servem como "puxadores de voto"</li>
+            </ul>
+
+            <h3>8.4. Pegadinhas da FCC</h3>
+            <div class="card card-obs">
+                <h4>⚠️ Atenção</h4>
+                <p>A pegadinha mais comum é achar que coligações são permitidas em todas as eleições. A FCC frequentemente explora:</p>
+                <ul class="list-bullet">
+                    <li>"Nas eleições proporcionais, a coligação é vedada, ressalvada a possibilidade de federação partidária" → atenção: <strong>federação é diferente de coligação</strong>.</li>
+                    <li>"Nas eleições majoritárias, a coligação é permitida, mas o partido pode não adotá-la" → <span class="marca-texto">correto</span> (autonomia).</li>
+                </ul>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 9 -->
+        <section id="cap9">
+            <h2>CAPÍTULO 9 – RECURSOS: ESPECIAL E EXTRAORDINÁRIO</h2>
+
+            <h3>9.1. Recurso Especial (STJ)</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Critério</th><th>Detalhe</th></tr></thead>
+                    <tbody>
+                        <tr><td>Tribunal competente</td><td>STJ (Superior Tribunal de Justiça)</td></tr>
+                        <tr><td>Hipóteses de cabimento</td><td>Art. 105, III, CF/88</td></tr>
+                        <tr><td>Principais casos</td><td>(a) decisão que contrariar lei federal; (b) julgar válido ato de governo local contestado em face de lei federal; (c) der a lei federal interpretação divergente da que lhe deu outro tribunal</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>9.2. Recurso Extraordinário (STF)</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Critério</th><th>Detalhe</th></tr></thead>
+                    <tbody>
+                        <tr><td>Tribunal competente</td><td>STF (Supremo Tribunal Federal)</td></tr>
+                        <tr><td>Hipóteses de cabimento</td><td>Art. 102, III, CF/88</td></tr>
+                        <tr><td>Principais casos</td><td>(a) decisão que violar dispositivo da Constituição; (b) julgar válida lei ou ato de governo contestado em face da Constituição; (c) julgar válida lei local contestada em face de lei federal (nesse caso, o STJ não? Cuidado, é cabível RE por ofensa reflexa à CF)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>9.3. Distinção Essencial</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Recurso</th><th>Tribunal</th><th>Objeto</th><th>Fundamento</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Especial</strong></td><td>STJ</td><td>Lei federal</td><td>Art. 105, III</td></tr>
+                        <tr><td><strong>Extraordinário</strong></td><td>STF</td><td>Constituição Federal</td><td>Art. 102, III</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>9.4. Recurso Especial por Divergência Interpretativa</h3>
+            <p>O inciso III, alínea "c" do art. 105 é a hipótese de recurso especial por divergência jurisprudencial:</p>
+            <ul class="list-bullet">
+                <li>A decisão do TJ deu à lei federal uma interpretação;</li>
+                <li>Outro tribunal (qualquer tribunal, inclusive o próprio STJ) deu interpretação divergente à mesma lei federal.</li>
+            </ul>
+
+            <h3>9.5. Repercussão Geral (RE)</h3>
+            <p>Para o RE, exige-se <strong>repercussão geral</strong> da questão constitucional (art. 102, §3º, CF/88, e art. 1.035 do CPC). Já para o REsp, não há repercussão geral, mas pode haver <strong>julgamento de recursos repetitivos</strong> (art. 1.036 do CPC).</p>
+
+            <h3>9.6. Esquema de Cabimento</h3>
+            <div class="svg-container">
+                <div class="diagram-title">Cabimento dos Recursos</div>
+                <svg viewBox="0 0 660 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxograma de recursos">
+                    <defs>
+                        <style>
+                            .r-box { fill: #1e1e2e; stroke: #4a4a6e; stroke-width: 2; rx: 12; }
+                            .r-text { fill: #e2e2e8; font-size: 15px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; dominant-baseline: central; font-weight: 600; }
+                            .r-sub { fill: #b0b0c8; font-size: 12px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; dominant-baseline: central; }
+                            .r-arrow { stroke: #6a8fbf; stroke-width: 2.5; fill: none; marker-end: url(#r-arrow); }
+                            .r-label { fill: #8ab4f8; font-size: 13px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; }
+                        </style>
+                        <marker id="r-arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#6a8fbf" />
+                        </marker>
+                    </defs>
+
+                    <!-- Decisão Judicial -->
+                    <rect x="210" y="20" width="240" height="56" class="r-box" stroke="#f5d78e" />
+                    <text x="330" y="48" class="r-text" fill="#f5d78e">Decisão Judicial</text>
+
+                    <!-- Ramificação -->
+                    <path d="M 330 76 L 330 110 L 150 110 L 150 140" class="r-arrow" />
+                    <path d="M 330 76 L 330 110 L 510 110 L 510 140" class="r-arrow" />
+
+                    <!-- Ofende a CF? -->
+                    <rect x="50" y="148" width="200" height="50" class="r-box" stroke="#6a9f6a" />
+                    <text x="150" y="173" class="r-text" fill="#6a9f6a">Ofende a CF?</text>
+                    <text x="150" y="193" class="r-sub">(art. 102, III)</text>
+
+                    <!-- Ofende lei federal? -->
+                    <rect x="410" y="148" width="200" height="50" class="r-box" stroke="#bf6a6a" />
+                    <text x="510" y="173" class="r-text" fill="#bf6a6a">Ofende lei federal?</text>
+                    <text x="510" y="193" class="r-sub">(art. 105, III)</text>
+
+                    <!-- Setas para baixo -->
+                    <path d="M 150 198 L 150 230" class="r-arrow" stroke="#6a9f6a" />
+                    <path d="M 510 198 L 510 230" class="r-arrow" stroke="#bf6a6a" />
+
+                    <!-- Resultados -->
+                    <rect x="50" y="230" width="200" height="44" class="r-box" stroke="#6a9f6a" fill="#1a2a1a" />
+                    <text x="150" y="252" class="r-text" fill="#6a9f6a">RECURSO EXTRAORDINÁRIO</text>
+                    <text x="150" y="270" class="r-sub">STF</text>
+
+                    <rect x="410" y="230" width="200" height="44" class="r-box" stroke="#bf6a6a" fill="#2a1a1a" />
+                    <text x="510" y="252" class="r-text" fill="#bf6a6a">RECURSO ESPECIAL</text>
+                    <text x="510" y="270" class="r-sub">STJ</text>
+                </svg>
+            </div>
+
+            <h3>9.7. Pegadinhas da FCC</h3>
+            <ul class="list-bullet">
+                <li>"A divergência entre tribunais estaduais sobre interpretação de lei federal enseja recurso especial" → <span class="marca-texto">CERTO</span></li>
+                <li>"A divergência entre tribunais estaduais sobre interpretação da CF enseja recurso extraordinário" → <span class="marca-texto">CERTO</span> (depende)</li>
+                <li>"O recurso especial é cabível quando a decisão viola a Constituição" → <span class="marca-texto">ERRADO</span> (isso é RE)</li>
+                <li>"O recurso extraordinário é cabível quando a decisão viola lei federal" → <span class="marca-texto">ERRADO</span> (isso é REsp)</li>
+            </ul>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 10 -->
+        <section id="cap10">
+            <h2>CAPÍTULO 10 – ALTERAÇÃO TERRITORIAL DOS ESTADOS</h2>
+
+            <h3>10.1. Requisitos Constitucionais</h3>
+            <p>O art. 18, §3º da CF/88 estabelece:</p>
+            <blockquote>
+                <p>"Os Estados podem incorporar-se entre si, subdividir-se ou desmembrar-se para se anexarem a outros, ou formarem novos Estados ou Territórios Federais, mediante aprovação da população diretamente interessada, através de <strong>plebiscito</strong>, e do Congresso Nacional, por <strong>lei complementar</strong>."</p>
+            </blockquote>
+
+            <h3>10.2. Requisitos Cumulativos</h3>
+            <ul class="list-check">
+                <li><strong>Plebiscito</strong>: consulta à população diretamente interessada (prévia à alteração)</li>
+                <li><strong>Lei complementar federal</strong>: aprovada pelo Congresso Nacional</li>
+            </ul>
+
+            <h3>10.3. Distinção Plebiscito x Referendo</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Instrumento</th><th>Momento</th><th>Finalidade</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Plebiscito</strong></td><td><span class="marca-texto">PRÉVIO</span> ao ato legislativo</td><td>Consulta prévia sobre a decisão</td></tr>
+                        <tr><td><strong>Referendo</strong></td><td>POSTERIOR ao ato legislativo</td><td>Ratificação/confirmação da decisão</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><em>Art. 49, XV e art. 18, §3º: para alteração territorial, o instrumento é <strong>plebiscito</strong>, convocado previamente.</em></p>
+
+            <h3>10.4. "População Diretamente Interessada"</h3>
+            <p>Não é a população do Estado inteiro, mas da área que será afetada pela alteração. Exemplo: se o município X quer se desmembrar do Estado A e passar para o Estado B, a consulta é feita à população do município X, não ao Estado inteiro.</p>
+
+            <h3>10.5. Exemplo Prático</h3>
+            <div class="card card-dica">
+                <h4>📌 Exemplo</h4>
+                <p>Estado do Amazonas quer criar o Estado do Alto Amazonas, desmembrando parte de seu território. Passos:</p>
+                <ol>
+                    <li>Projeto de lei complementar no Congresso Nacional.</li>
+                    <li>Antes da aprovação, realização de plebiscito na área que seria desmembrada.</li>
+                    <li>Se a população aprovar, o Congresso aprova a lei complementar.</li>
+                    <li>Nova unidade federativa é criada.</li>
+                </ol>
+            </div>
+
+            <h3>10.6. Pegadinhas da FCC</h3>
+            <ul class="list-bullet">
+                <li>A FCC gosta de trocar plebiscito por referendo. Cuidado: é <strong>plebiscito PRÉVIO</strong>.</li>
+                <li>"Aprovação do Congresso Nacional por lei ordinária" → <span class="marca-texto">ERRADO</span>, é lei complementar.</li>
+                <li>"Consulta à população do Estado inteiro" → <span class="marca-texto">ERRADO</span>, é à população diretamente interessada.</li>
+            </ul>
+
+            <!-- SVG: Timeline Alteração Territorial -->
+            <div class="svg-container">
+                <div class="diagram-title">Processo de Alteração Territorial</div>
+                <svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline alteração territorial">
+                    <defs>
+                        <style>
+                            .t-box { fill: #1e1e2e; stroke: #4a4a6e; stroke-width: 2; rx: 10; }
+                            .t-text { fill: #e2e2e8; font-size: 13px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; dominant-baseline: central; }
+                            .t-label { fill: #8ab4f8; font-size: 11px; font-family: 'Segoe UI', sans-serif; text-anchor: middle; dominant-baseline: central; }
+                            .t-arrow { stroke: #6a8fbf; stroke-width: 2.5; fill: none; marker-end: url(#t-arrow); }
+                            .t-dot { fill: #f5d78e; }
+                        </style>
+                        <marker id="t-arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+                            <polygon points="0 0, 8 3, 0 6" fill="#6a8fbf" />
+                        </marker>
+                    </defs>
+
+                    <!-- Etapa 1 -->
+                    <rect x="20" y="30" width="140" height="70" class="t-box" stroke="#6a9f6a" />
+                    <text x="90" y="55" class="t-text" font-weight="600">1. Plebiscito</text>
+                    <text x="90" y="75" class="t-label">Consulta prévia</text>
+                    <text x="90" y="92" class="t-label" fill="#b0b0c8">população interessada</text>
+                    <circle cx="90" cy="110" r="5" class="t-dot" />
+
+                    <!-- Seta -->
+                    <path d="M 160 65 L 210 65" class="t-arrow" />
+
+                    <!-- Etapa 2 -->
+                    <rect x="220" y="30" width="160" height="70" class="t-box" stroke="#6a8fbf" />
+                    <text x="300" y="55" class="t-text" font-weight="600">2. Aprovação</text>
+                    <text x="300" y="75" class="t-label">Congresso Nacional</text>
+                    <text x="300" y="92" class="t-label" fill="#b0b0c8">Lei Complementar</text>
+                    <circle cx="300" cy="110" r="5" class="t-dot" />
+
+                    <!-- Seta -->
+                    <path d="M 380 65 L 430 65" class="t-arrow" />
+
+                    <!-- Etapa 3 -->
+                    <rect x="440" y="30" width="180" height="70" class="t-box" stroke="#f5d78e" />
+                    <text x="530" y="55" class="t-text" font-weight="600">3. Criação</text>
+                    <text x="530" y="75" class="t-label">Nova unidade federativa</text>
+                    <text x="530" y="92" class="t-label" fill="#b0b0c8">Estado ou Território</text>
+                    <circle cx="530" cy="110" r="5" class="t-dot" />
+
+                    <!-- Legenda -->
+                    <text x="350" y="155" class="t-label" fill="#6a6a8a" font-size="11">
+                        <tspan fill="#6a9f6a">●</tspan> Plebiscito prévio
+                        <tspan fill="#6a8fbf" dx="16">●</tspan> Lei complementar federal
+                        <tspan fill="#f5d78e" dx="16">●</tspan> Nova unidade
+                    </text>
+                </svg>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 11 -->
+        <section id="cap11">
+            <h2>CAPÍTULO 11 – ESCUSA DE CONSCIÊNCIA E PRESTAÇÃO ALTERNATIVA</h2>
+
+            <h3>11.1. Fundamento Constitucional</h3>
+            <p>Art. 5º, VIII, CF/88:</p>
+            <blockquote>
+                <p>"ninguém será privado de direitos por motivo de crença religiosa ou de convicção filosófica ou política, salvo se as invocar para eximir-se de obrigação legal a todos imposta e recusar-se a cumprir prestação alternativa fixada em lei"</p>
+            </blockquote>
+
+            <h3>11.2. Interpretação do Dispositivo</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Elemento</th><th>Significado</th></tr></thead>
+                    <tbody>
+                        <tr><td>Proteção</td><td>Ninguém será privado de direitos por crença religiosa</td></tr>
+                        <tr><td>Exceção</td><td>Se invocar a crença para eximir-se de obrigação legal</td></tr>
+                        <tr><td>Condição para punição</td><td>Recusa à obrigação original <strong>E</strong> recusa à prestação alternativa</td></tr>
+                        <tr><td>Consequência</td><td>Pode ser privado de direitos (ex.: multa, perda de cargo)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>11.3. Prestação Alternativa</h3>
+            <p>A lei deve prever uma prestação alternativa à obrigação original para quem tem escusa de consciência. Exemplos:</p>
+            <ul class="list-bullet">
+                <li>Serviço militar obrigatório: prestação alternativa é serviço civil.</li>
+                <li>Concurso público: alternativa de não trabalhar em dia de culto, desde que compense horas.</li>
+            </ul>
+
+            <h3>11.4. Punição pela Escusa de Consciência</h3>
+            <p>A pessoa só pode ser sancionada se:</p>
+            <ol>
+                <li>Invocar a crença para eximir-se da obrigação legal; <strong>E</strong></li>
+                <li>Recusar-se a cumprir a prestação alternativa fixada em lei.</li>
+            </ol>
+            <p>Não basta invocar a crença: é preciso recusar ambas as alternativas para sofrer a privação de direitos.</p>
+
+            <h3>11.5. Exemplo Prático</h3>
+            <div class="card card-dica">
+                <h4>📌 Exemplo</h4>
+                <p>João é médico e se recusa a realizar aborto legal por convicção religiosa.</p>
+                <ul class="list-bullet">
+                    <li>A lei prevê a objeção de consciência, com a possibilidade de outro médico realizar o procedimento.</li>
+                    <li>Se João apenas recusa o procedimento, mas não impede o atendimento, não há punição.</li>
+                    <li>Se João recusa o procedimento <strong>E</strong> impede que outro médico o faça, pode sofrer sanções (responsabilidade civil e administrativa).</li>
+                </ul>
+            </div>
+
+            <h3>11.6. Pegadinhas da FCC</h3>
+            <ul class="list-bullet">
+                <li>"A escusa de consciência é absoluta" → <span class="marca-texto">ERRADO</span>, tem limites (obrigação legal a todos imposta)</li>
+                <li>"Apenas a invocação da crença já autoriza punição" → <span class="marca-texto">ERRADO</span>, é necessária a recusa da prestação alternativa</li>
+                <li>"A prestação alternativa é sempre obrigatória" → nos termos da lei, sim, para evitar a punição</li>
+            </ul>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 12 -->
+        <section id="cap12">
+            <h2>CAPÍTULO 12 – FUNDAMENTOS DA REPÚBLICA FEDERATIVA DO BRASIL</h2>
+
+            <h3>12.1. Art. 1º da CF/88</h3>
+            <p>A República Federativa do Brasil é formada pela união indissolúvel dos Estados e Municípios e do Distrito Federal, e constitui-se em Estado Democrático de Direito, tendo como fundamentos:</p>
+            <div class="card">
+                <ol style="font-weight:500; color:#f5d78e;">
+                    <li>a soberania;</li>
+                    <li>a cidadania;</li>
+                    <li>a dignidade da pessoa humana;</li>
+                    <li>os valores sociais do trabalho e da livre iniciativa;</li>
+                    <li>o pluralismo político.</li>
+                </ol>
+            </div>
+
+            <h3>12.2. Distinção: Fundamentos (art. 1º) x Objetivos (art. 3º)</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Art. 1º – Fundamentos</th><th>Art. 3º – Objetivos Fundamentais</th></tr></thead>
+                    <tbody>
+                        <tr><td>Soberania</td><td>Construir sociedade livre, justa e solidária</td></tr>
+                        <tr><td>Cidadania</td><td>Garantir desenvolvimento nacional</td></tr>
+                        <tr><td>Dignidade da pessoa humana</td><td>Erradicar pobreza e marginalização</td></tr>
+                        <tr><td>Valores sociais do trabalho e livre iniciativa</td><td>Reduzir desigualdades sociais</td></tr>
+                        <tr><td>Pluralismo político</td><td>Promover bem de todos</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>12.3. Macete para Fundamentos</h3>
+            <div class="mnemonic">
+                <span>SO</span>berania · <span>CI</span>dadania · <span>DI</span>gnidade · <span>VA</span>lores · <span>PLU</span>ralismo
+                <br><span style="font-size:0.8rem; color:#6a8fbf;">SO CI DI VA PLU</span>
+            </div>
+
+            <h3>12.4. Pegadinhas da FCC</h3>
+            <div class="card card-obs">
+                <h4>⚠️ Atenção</h4>
+                <p>A FCC costuma misturar os fundamentos (art. 1º) com os objetivos fundamentais (art. 3º) ou com os princípios (art. 37). Cuidado com o comando da questão!</p>
+                <ul class="list-bullet">
+                    <li>"A soberania é um dos objetivos fundamentais" → <span class="marca-texto">ERRADO</span>, é fundamento.</li>
+                    <li>"Erradicar a pobreza é fundamento da República" → <span class="marca-texto">ERRADO</span>, é objetivo (art. 3º).</li>
+                </ul>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 13 -->
+        <section id="cap13">
+            <h2>CAPÍTULO 13 – REMUNERAÇÃO DE SERVIDORES PÚBLICOS</h2>
+
+            <h3>13.1. Regra da Irredutibilidade</h3>
+            <p>Art. 37, XV, CF/88:</p>
+            <blockquote>
+                <p>"o subsídio e os vencimentos dos ocupantes de cargos e empregos públicos são irredutíveis, ressalvado o disposto nos incisos XI e XIV deste artigo e nos arts. 39, §4º, 150, II, 153, III, e 153, §2º, I"</p>
+            </blockquote>
+
+            <h3>13.2. Interpretação da Irredutibilidade</h3>
+            <p>A irredutibilidade é regra geral, mas não é absoluta. Admite exceções:</p>
+            <ul class="list-bullet">
+                <li>Redução para adequação à despesa total com pessoal (art. 169, CF)</li>
+                <li>Redução em caso de servidor estável e estado de necessidade (precedentes do STF)</li>
+                <li>Imposto de renda (art. 150, II) – não é redução, é tributação</li>
+            </ul>
+
+            <h3>13.3. Exceção por Necessidade de Ajuste Fiscal</h3>
+            <p>A Lei de Responsabilidade Fiscal (LC 101/2000) e o art. 169 da CF permitem a redução de vencimentos para adequação às despesas com pessoal, desde que observados os requisitos.</p>
+
+            <h3>13.4. Pegadinhas da FCC</h3>
+            <ul class="list-bullet">
+                <li>"A irredutibilidade de vencimentos é absoluta" → <span class="marca-texto">ERRADO</span>, tem exceções</li>
+                <li>"O subsídio pode ser reduzido em qualquer hipótese" → <span class="marca-texto">ERRADO</span>, apenas nas exceções legais</li>
+                <li>"Imposto de renda fere a irredutibilidade" → <span class="marca-texto">ERRADO</span>, é tributo, não redução de vencimentos</li>
+            </ul>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 14 -->
+        <section id="cap14">
+            <h2>CAPÍTULO 14 – QUADRO RESUMO GERAL PARA REVISÃO</h2>
+
+            <h3>14.1. Competência Concorrente</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Situação</th><th>Efeito</th></tr></thead>
+                    <tbody>
+                        <tr><td>Ausência de lei federal</td><td>Estados exercem competência plena</td></tr>
+                        <tr><td>Lei federal superveniente contrária</td><td>Suspende eficácia da lei estadual (não revoga)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>14.2. Princípios da Administração Pública</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Mnemônico</th><th>Princípio</th></tr></thead>
+                    <tbody>
+                        <tr><td>L</td><td>Legalidade</td></tr>
+                        <tr><td>I</td><td>Impessoalidade</td></tr>
+                        <tr><td>M</td><td>Moralidade</td></tr>
+                        <tr><td>P</td><td>Publicidade</td></tr>
+                        <tr><td>E</td><td>Eficiência</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>14.3. Foro por Prerrogativa</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Agente</th><th>Foro</th></tr></thead>
+                    <tbody>
+                        <tr><td>Vereador</td><td><strong style="color:#e68a8a;">NÃO TEM FORO PRIVILEGIADO</strong></td></tr>
+                        <tr><td>Juiz Estadual</td><td>TJ</td></tr>
+                        <tr><td>Governador</td><td>STJ</td></tr>
+                        <tr><td>Presidente</td><td>STF</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>14.4. Atos Judiciais e Fundamentação</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Ato</th><th>Fundamentação</th><th>Recurso</th></tr></thead>
+                    <tbody>
+                        <tr><td>Despacho</td><td>NÃO</td><td>Correição parcial</td></tr>
+                        <tr><td>Decisão Interlocutória</td><td>SIM</td><td>Agravo de instrumento</td></tr>
+                        <tr><td>Sentença</td><td>SIM</td><td>Apelação</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 15 -->
+        <section id="cap15">
+            <h2>CAPÍTULO 15 – EXERCÍCIOS DE FIXAÇÃO</h2>
+
+            <h3>15.1. Questões</h3>
+
+            <div class="card">
+                <h4>1. (FCC – Adaptada)</h4>
+                <p>A lei estadual que disciplina integralmente matéria de competência concorrente, diante da superveniência de lei federal sobre normas gerais contrárias:</p>
+                <ul class="list-bullet">
+                    <li>a) é revogada</li>
+                    <li>b) tem sua eficácia suspensa</li>
+                    <li>c) torna-se inconstitucional</li>
+                    <li>d) permanece válida integralmente</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h4>2. (FCC – Adaptada)</h4>
+                <p>Os vereadores, em relação ao foro por prerrogativa de função:</p>
+                <ul class="list-bullet">
+                    <li>a) são julgados pelo Tribunal de Justiça</li>
+                    <li>b) não possuem foro privilegiado</li>
+                    <li>c) são julgados pelo STJ</li>
+                    <li>d) possuem foro apenas em crimes eleitorais</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h4>3. (FCC – Adaptada)</h4>
+                <p>A alteração da integridade territorial de um Estado depende de:</p>
+                <ul class="list-bullet">
+                    <li>a) lei ordinária federal e referendo</li>
+                    <li>b) lei complementar federal e plebiscito</li>
+                    <li>c) lei complementar estadual e referendo</li>
+                    <li>d) emenda constitucional e plebiscito</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h4>4. (FCC – Adaptada)</h4>
+                <p>O princípio da administração pública inserido pela EC 19/98 é:</p>
+                <ul class="list-bullet">
+                    <li>a) legalidade</li>
+                    <li>b) impessoalidade</li>
+                    <li>c) moralidade</li>
+                    <li>d) eficiência</li>
+                </ul>
+            </div>
+
+            <h3>15.2. Gabarito</h3>
+            <div class="card card-dica">
+                <ol style="font-weight:600; color:#f5d78e;">
+                    <li>B (suspensão da eficácia)</li>
+                    <li>B (não possuem foro privilegiado)</li>
+                    <li>B (lei complementar federal + plebiscito)</li>
+                    <li>D (eficiência)</li>
+                </ol>
+            </div>
+            <div class="divider-elegant"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+        </section>
+
+        <!-- CAPÍTULO 16 -->
+        <section id="cap16">
+            <h2>CAPÍTULO 16 – DICAS FINAIS PARA A PROVA</h2>
+
+            <h3>16.1. Macetes Gerais</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Tema</th><th>Macete</th></tr></thead>
+                    <tbody>
+                        <tr><td>Princípios da Adm. Pública</td><td><strong>LIMPE</strong></td></tr>
+                        <tr><td>Fundamentos da República</td><td><strong>SO CI DI VA PLU</strong></td></tr>
+                        <tr><td>Recursos</td><td>CF = STF (RE) | Lei federal = STJ (REsp)</td></tr>
+                        <tr><td>Plebiscito x Referendo</td><td>Plebiscito é <strong>PRÉVIO</strong> (P de "pré")</td></tr>
+                        <tr><td>Competência concorrente</td><td><strong>Suspende</strong>, não revoga</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>16.2. Erros Mais Comuns nas Provas</h3>
+            <ul class="list-bullet">
+                <li>Confundir suspensão com revogação (competência concorrente)</li>
+                <li>Confundir plebiscito com referendo</li>
+                <li>Atribuir foro a vereadores</li>
+                <li>Achar que despacho precisa ser fundamentado</li>
+                <li>Confundir fundamentos (art. 1º) com objetivos (art. 3º)</li>
+                <li>Confundir recurso especial com extraordinário</li>
+            </ul>
+
+            <h3>16.3. Abordagem para Resolução de Questões</h3>
+            <ol>
+                <li><strong>Leia atentamente o comando</strong> da questão: "de acordo com a CF/88", "segundo a doutrina", "nos termos da lei" etc.</li>
+                <li><strong>Identifique o instituto</strong> cobrado.</li>
+                <li><strong>Lembre-se do dispositivo</strong> constitucional ou legal.</li>
+                <li><strong>Elimine as alternativas</strong> que trocam conceitos (ex.: revogação por suspensão, referendo por plebiscito).</li>
+                <li><strong>Verifique a literalidade</strong>: a FCC adora cobrar o texto expresso da lei.</li>
+            </ol>
+
+            <hr>
+
+            <h3>Conclusão</h3>
+            <p>Este material abordou os principais pontos da CF/88 e do CPC cobrados em concursos para Técnico Judiciário da FCC e similares. A ênfase foi dada à compreensão profunda, à distinção entre conceitos semelhantes e à aplicação prática, especialmente nas "pegadinhas" recorrentes das bancas.</p>
+            <p><strong>Lembre-se:</strong> o estudo para concursos não é apenas memorizar, mas <strong>compreender o raciocínio jurídico por trás de cada norma</strong>, para aplicar a solução correta nos casos concretos apresentados nas provas.</p>
+            <p style="font-size:1.2rem; color:#f5d78e; text-align:center; margin-top:2rem;">Bons estudos e sucesso na sua aprovação!</p>
+
+            <div class="footer-note">
+                <p>Material elaborado por Professor Especialista em Concursos Jurídicos</p>
+                <p style="font-size:0.7rem; color:#4a4a6a;">© Todos os direitos reservados – Proibida reprodução total ou parcial sem autorização</p>
+            </div>
+        </section>
+
+    </div>
+    <!-- fim container -->
+</body>
+</html>

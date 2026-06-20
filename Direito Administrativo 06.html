@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>Apostila de Direito Administrativo</title>
+    <style>
+        /* --- RESET E BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #12121e;
+            color: #e6e6f0;
+            font-family: 'Georgia', 'Times New Roman', 'Palatino', serif;
+            line-height: 1.7;
+            padding: 1.5rem 1rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: #1a1a2e;
+            padding: 2.2rem 2rem;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+
+        /* --- TIPOGRAFIA --- */
+        h1,
+        h2,
+        h3,
+        h4,
+        .toc-title {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #f0f0ff;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            text-align: center;
+            margin-bottom: 0.3rem;
+            border-bottom: 2px solid #4a4a6a;
+            padding-bottom: 0.8rem;
+            letter-spacing: 0.04em;
+        }
+
+        .subtitulo-principal {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #b8b8d0;
+            margin-bottom: 2rem;
+            font-style: italic;
+            border-bottom: 1px solid #2e2e4a;
+            padding-bottom: 1.2rem;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            margin-top: 2.6rem;
+            margin-bottom: 0.8rem;
+            padding-left: 0.5rem;
+            border-left: 6px solid #7c6cf0;
+            padding-top: 0.3rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 0.6rem;
+            color: #d4d4f0;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-top: 1.6rem;
+            margin-bottom: 0.4rem;
+            color: #c8c8e6;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        a {
+            color: #b0a8ff;
+            text-decoration: none;
+            border-bottom: 1px dotted #5a4a9a;
+        }
+
+        a:hover {
+            color: #d4ccff;
+            border-bottom: 1px solid #b0a8ff;
+        }
+
+        /* --- SUMÁRIO --- */
+        .toc {
+            background: #14142a;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin: 1.8rem 0 2.5rem;
+            border: 1px solid #2e2e52;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .toc-title {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .toc-list {
+            list-style: none;
+            columns: 2 240px;
+            column-gap: 2rem;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.4rem;
+            break-inside: avoid;
+        }
+
+        .toc-list a {
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            color: #d0d0f0;
+            display: inline-block;
+            padding: 0.2rem 0;
+            border-bottom: none;
+            transition: color 0.15s;
+        }
+
+        .toc-list a:hover {
+            color: #c4baff;
+            border-bottom: 1px solid #7c6cf0;
+        }
+
+        .toc-list .cap-num {
+            color: #8a7ae0;
+            font-weight: 600;
+            margin-right: 0.3rem;
+        }
+
+        /* --- DIVISÓRIAS --- */
+        .divider {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3a3a5a, #7c6cf0, #3a3a5a);
+            margin: 2.8rem 0;
+            opacity: 0.5;
+        }
+
+        .divider-light {
+            border: 0;
+            height: 1px;
+            background: #2a2a48;
+            margin: 1.8rem 0;
+        }
+
+        /* --- BLOCOS E CARDS --- */
+        .card {
+            background: #1e1e38;
+            border-radius: 18px;
+            padding: 1.6rem 1.8rem;
+            margin: 1.6rem 0;
+            border-left: 5px solid #6c5ce7;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+        }
+
+        .card strong {
+            color: #d4ccff;
+        }
+
+        .card-conceito {
+            background: #1a1a32;
+            border-left: 6px solid #f7b731;
+            border-radius: 18px;
+            padding: 1.4rem 1.8rem;
+            margin: 1.6rem 0;
+        }
+
+        .card-conceito h4 {
+            margin-top: 0;
+            color: #f7b731;
+        }
+
+        .dica-box {
+            background: #1a2538;
+            border-radius: 18px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.4rem 0;
+            border-left: 6px solid #4ecdc4;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .dica-box .icon-box {
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .dica-box strong {
+            color: #7eddd6;
+        }
+
+        .observacao-box {
+            background: #281e2e;
+            border-radius: 18px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.4rem 0;
+            border-left: 6px solid #ff6b6b;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .observacao-box .icon-box {
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .observacao-box strong {
+            color: #ff8a8a;
+        }
+
+        .atencao-box {
+            background: #1e1e2e;
+            border-radius: 18px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.4rem 0;
+            border: 1px solid #8a7ae0;
+            border-left: 6px solid #a29bfe;
+        }
+
+        .atencao-box strong {
+            color: #c4baff;
+        }
+
+        .citacao {
+            background: #131328;
+            border-radius: 16px;
+            padding: 1.2rem 2rem;
+            margin: 1.6rem 0;
+            font-style: italic;
+            border-left: 6px solid #6c5ce7;
+            color: #d0d0ea;
+            quotes: "“" "”" "‘" "’";
+        }
+
+        .citacao::before {
+            content: "“";
+            font-size: 2.4rem;
+            color: #7c6cf0;
+            font-style: normal;
+            line-height: 0.6;
+            margin-right: 0.2rem;
+        }
+
+        .citacao::after {
+            content: "”";
+            font-size: 2.4rem;
+            color: #7c6cf0;
+            font-style: normal;
+            line-height: 0.6;
+            margin-left: 0.2rem;
+        }
+
+        /* --- TABELAS --- */
+        .tabela-moderna {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.6rem 0;
+            font-size: 0.95rem;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .tabela-moderna thead {
+            background: #2a2a4a;
+            color: #ececff;
+            font-weight: 600;
+        }
+
+        .tabela-moderna th {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 0.03em;
+        }
+
+        .tabela-moderna td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #2a2a44;
+            background: #1a1a30;
+        }
+
+        .tabela-moderna tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tabela-moderna tbody tr:hover td {
+            background: #222242;
+        }
+
+        .tabela-moderna .destaque-linha {
+            background: #25254a;
+        }
+
+        /* --- LISTAS --- */
+        .lista-organizada {
+            padding-left: 1.8rem;
+            margin: 1rem 0 1.6rem;
+        }
+
+        .lista-organizada li {
+            margin-bottom: 0.5rem;
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.8rem;
+        }
+
+        .lista-organizada li::before {
+            content: "▹";
+            color: #8a7ae0;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .lista-organizada.lista-check li::before {
+            content: "✓";
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+
+        .lista-organizada.lista-asterisco li::before {
+            content: "✦";
+            color: #f7b731;
+        }
+
+        .lista-ordenada {
+            padding-left: 1.8rem;
+            margin: 1rem 0 1.6rem;
+        }
+
+        .lista-ordenada li {
+            margin-bottom: 0.5rem;
+            padding-left: 0.2rem;
+        }
+
+        /* --- MARCA-TEXTO --- */
+        .destaque-texto {
+            background: linear-gradient(120deg, rgba(124, 108, 240, 0.2) 0%, rgba(124, 108, 240, 0.3) 100%);
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+            color: #e6e0ff;
+            font-weight: 500;
+        }
+
+        .destaque-amarelo {
+            background: linear-gradient(120deg, rgba(247, 183, 49, 0.2) 0%, rgba(247, 183, 49, 0.3) 100%);
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+            color: #f7e7b0;
+        }
+
+        .destaque-vermelho {
+            background: linear-gradient(120deg, rgba(255, 107, 107, 0.2) 0%, rgba(255, 107, 107, 0.3) 100%);
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+            color: #ffb3b3;
+        }
+
+        /* --- SVG ICONS --- */
+        .icon-svg {
+            display: inline-block;
+            width: 1.4em;
+            height: 1.4em;
+            vertical-align: middle;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .icon-svg-lg {
+            width: 2em;
+            height: 2em;
+        }
+
+        /* --- MNEMÔNICOS --- */
+        .mnemonico-box {
+            background: #161630;
+            border-radius: 20px;
+            padding: 1.2rem 2rem;
+            margin: 1.6rem 0;
+            border: 2px dashed #6c5ce7;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            color: #d4ccff;
+            font-size: 1.2rem;
+            letter-spacing: 0.04em;
+        }
+
+        .mnemonico-box strong {
+            color: #b8acff;
+            font-size: 1.3rem;
+        }
+
+        /* --- LINKS ÂNCORA --- */
+        .anchor {
+            scroll-margin-top: 1.2rem;
+        }
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 700px) {
+            .container {
+                padding: 1.4rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            h3 {
+                font-size: 1.25rem;
+            }
+            .toc-list {
+                columns: 1;
+            }
+            .tabela-moderna {
+                font-size: 0.85rem;
+            }
+            .tabela-moderna th,
+            .tabela-moderna td {
+                padding: 0.5rem 0.6rem;
+            }
+            .card,
+            .card-conceito,
+            .dica-box,
+            .observacao-box,
+            .atencao-box {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0.6rem 0.4rem;
+            }
+            .container {
+                padding: 1rem 0.8rem;
+                border-radius: 16px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .subtitulo-principal {
+                font-size: 0.95rem;
+            }
+            .toc {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        /* --- SCROLL SUAVE --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- SVG INLINE --- */
+        .flex-svg {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* --- TABELA COMPARATIVA DESTAQUE --- */
+        .comparativo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.6rem 0;
+        }
+
+        .comparativo-item {
+            background: #1a1a34;
+            border-radius: 16px;
+            padding: 1.2rem 1.4rem;
+            border-top: 4px solid #6c5ce7;
+        }
+
+        .comparativo-item h4 {
+            margin-top: 0;
+            color: #d0c8ff;
+        }
+
+        @media (max-width: 600px) {
+            .comparativo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- TIMELINE SIMPLES --- */
+        .timeline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.8rem;
+            margin: 1.6rem 0;
+            padding: 1rem 0;
+            border-top: 2px solid #2a2a4a;
+            border-bottom: 2px solid #2a2a4a;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .timeline-item .timeline-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #6c5ce7;
+            flex-shrink: 0;
+        }
+
+        .timeline-item .timeline-dot.orange {
+            background: #f7b731;
+        }
+        .timeline-item .timeline-dot.green {
+            background: #4ecdc4;
+        }
+        .timeline-item .timeline-dot.red {
+            background: #ff6b6b;
+        }
+
+        /* --- CAIXA DE COMPARAÇÃO VISUAL (SVG) --- */
+        .svg-diagrama {
+            background: #141428;
+            border-radius: 20px;
+            padding: 1.2rem 0.8rem;
+            margin: 1.8rem 0;
+            text-align: center;
+            border: 1px solid #2e2e52;
+        }
+
+        .svg-diagrama svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* --- BOTÃO DE VOLTA AO TOPO (apenas CSS, sem JS) --- */
+        .topo-link {
+            display: inline-block;
+            margin-top: 2.2rem;
+            font-family: 'Segoe UI', sans-serif;
+            color: #8a7ae0;
+            border: 1px solid #3a3a5a;
+            border-radius: 40px;
+            padding: 0.5rem 1.8rem;
+            transition: background 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .topo-link:hover {
+            background: #2a2a4a;
+            border-color: #7c6cf0;
+            color: #c4baff;
+        }
+
+        /* --- RODAPÉ --- */
+        .footer-note {
+            margin-top: 2.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7a7a9a;
+            border-top: 1px solid #2a2a48;
+            padding-top: 1.5rem;
+            font-style: italic;
+        }
+
+        /* --- LISTA DE VERIFICAÇÃO --- */
+        .checklist {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1.2rem;
+            margin: 1.2rem 0;
+            background: #14142a;
+            padding: 1.2rem 1.8rem;
+            border-radius: 18px;
+            border: 1px solid #2e2e52;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.95rem;
+            padding: 0.2rem 0;
+        }
+
+        .checklist-item .check-svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            fill: #4ecdc4;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 600px) {
+            .checklist {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+
+        /* --- AJUSTES FINOS --- */
+        .mt-1 {
+            margin-top: 1rem;
+        }
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .flex {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .gap-1 {
+            gap: 1rem;
+        }
+        .fw-500 {
+            font-weight: 500;
+        }
+        .op-7 {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- TÍTULO PRINCIPAL -->
+        <h1>DIREITO ADMINISTRATIVO</h1>
+        <div class="subtitulo-principal">
+            As Manifestações do Poder Administrativo e o Regime Sancionatório na Lei 14.133/2021<br>
+            <span style="font-size:0.9rem; opacity:0.7;">Material Didático para Concursos Públicos — Técnico Judiciário</span>
+        </div>
+
+        <!-- SUMÁRIO -->
+        <div class="toc" id="sumario">
+            <div class="toc-title">
+                <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h10" />
+                    <rect x="2" y="2" width="20" height="20" rx="4" />
+                </svg>
+                Sumário
+            </div>
+            <ul class="toc-list">
+                <li><a href="#cap1"><span class="cap-num">I.</span> Sanções na Lei 14.133/2021</a></li>
+                <li><a href="#cap2"><span class="cap-num">II.</span> Poder Hierárquico</a></li>
+                <li><a href="#cap3"><span class="cap-num">III.</span> Direitos e Deveres do Administrado</a></li>
+                <li><a href="#cap4"><span class="cap-num">IV.</span> Lei de Acesso à Informação</a></li>
+                <li><a href="#cap5"><span class="cap-num">V.</span> Revogação e Anulação</a></li>
+                <li><a href="#cap6"><span class="cap-num">VI.</span> Modalidades de Licitação</a></li>
+                <li><a href="#cap7"><span class="cap-num">VII.</span> Intervenção do Estado na Propriedade</a></li>
+                <li><a href="#cap8"><span class="cap-num">VIII.</span> Síntese e Macetes</a></li>
+            </ul>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- CAPÍTULO I -->
+        <!-- ============================================ -->
+        <h2 class="anchor" id="cap1">CAPÍTULO I — SANÇÕES ADMINISTRATIVAS NA LEI 14.133/2021</h2>
+
+        <h3>1. O REGIME SANCIONADOR DA NOVA LEI DE LICITAÇÕES</h3>
+        <p>A Lei 14.133/2021 estabeleceu um sistema de sanções administrativas aplicáveis aos licitantes e contratados que praticarem infrações durante o procedimento licitatório ou na execução do contrato administrativo. Esse regime representa uma evolução em relação à Lei 8.666/1993, com previsões mais detalhadas e gradativas, conferindo maior segurança jurídica e proporcionalidade na aplicação das penalidades.</p>
+
+        <h4>1.1. Fundamentos e Princípios Aplicáveis</h4>
+        <p>O regime sancionador da Lei 14.133/2021 deve ser interpretado à luz dos princípios constitucionais da administração pública, especialmente:</p>
+        <ul class="lista-organizada lista-asterisco">
+            <li><span class="destaque-texto">Legalidade</span>: as sanções devem ter previsão legal expressa</li>
+            <li><span class="destaque-texto">Proporcionalidade</span>: a penalidade deve ser adequada à gravidade da infração</li>
+            <li><span class="destaque-texto">Razoabilidade</span>: a sanção deve ser justa e compatível com as circunstâncias</li>
+            <li><span class="destaque-texto">Ampla defesa e contraditório</span>: assegurados antes da aplicação da penalidade</li>
+            <li><span class="destaque-texto">Devido processo legal</span>: observância do procedimento adequado</li>
+        </ul>
+
+        <h4>1.2. Espécies de Sanções</h4>
+        <p>A Lei 14.133/2021 prevê cinco espécies de sanções administrativas, aplicáveis de forma gradativa conforme a gravidade da infração:</p>
+
+        <table class="tabela-moderna">
+            <thead>
+                <tr>
+                    <th>Sanção</th>
+                    <th>Base Legal</th>
+                    <th>Natureza</th>
+                    <th>Aplicabilidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Advertência</td><td>Art. 156, §2º</td><td>Branda</td><td>Inexecução parcial do contrato</td></tr>
+                <tr><td>Multa</td><td>Art. 156, §3º</td><td>Pecuniária</td><td>Infrações variadas (arts. 155, II a VII)</td></tr>
+                <tr><td>Impedimento de licitar e contratar</td><td>Art. 156, §4º</td><td>Restritiva</td><td>Infrações de médio potencial lesivo</td></tr>
+                <tr><td>Declaração de inidoneidade</td><td>Art. 156, §5º</td><td>Grave</td><td>Infrações de alto potencial lesivo</td></tr>
+                <tr><td>Reparação do dano</td><td>Art. 156, VII</td><td>Compensatória</td><td>Danos causados à Administração</td></tr>
+            </tbody>
+        </table>
+
+        <!-- DIVISÓRIA -->
+        <hr class="divider-light">
+
+        <h3>2. ANÁLISE DETALHADA DE CADA SANÇÃO</h3>
+
+        <h4>2.1. Advertência</h4>
+        <p>A advertência é a sanção mais branda prevista no sistema, constituindo uma verdadeira admoestação formal ao infrator. Nos termos do art. 156, §2º da Lei 14.133/2021, a advertência é aplicada <span class="destaque-texto">exclusivamente</span> para a inexecução parcial do contrato, desde que a autoridade competente não justifique a necessidade de penalidade mais severa.</p>
+
+        <div class="card-conceito">
+            <h4>Elementos essenciais da advertência</h4>
+            <ul class="lista-organizada">
+                <li>Cabimento restrito: apenas para a inexecução parcial do contrato</li>
+                <li>Infração prevista no art. 155, I da Lei</li>
+                <li>Aplicação condicionada à ausência de justificativa para penalidade mais grave</li>
+                <li>Natureza educativa e preventiva</li>
+            </ul>
+        </div>
+
+        <div class="dica-box">
+            <span class="icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 21c.9.9 2.1 1.2 3.3 1.2s2.4-.3 3.3-1.2c.9-.9 1.2-2.1 1.2-3.3 0-1.2-.3-2.4-1.2-3.3l-3.3-3.3-3.3 3.3c-.9.9-1.2 2.1-1.2 3.3s.3 2.4 1.2 3.3z" />
+                    <path d="M12 2v6M4 6h16" />
+                </svg>
+            </span>
+            <div><strong>📌 DICA DE PROVA:</strong> A advertência <span class="destaque-texto">não</span> pode ser aplicada para qualquer tipo de infração. A banca FCC frequentemente explora esse conhecimento literal, exigindo que o candidato identifique o cabimento restrito da advertência.</div>
+        </div>
+
+        <p><strong>Exemplo prático:</strong> A empresa contratada para prestar serviços de limpeza atrasa a entrega dos relatórios mensais por 5 dias, mas cumpre integralmente as demais obrigações. A autoridade pode aplicar advertência, desde que entenda desnecessária a imposição de penalidade mais grave.</p>
+
+        <hr class="divider-light">
+
+        <h4>2.2. Multa</h4>
+        <p>A multa é a sanção pecuniária aplicável às infrações listadas nos incisos II a VII do art. 155 da Lei 14.133/2021. A gradação do valor da multa deve respeitar os princípios da proporcionalidade e razoabilidade, considerando a gravidade da infração e os prejuízos causados.</p>
+
+        <div class="card">
+            <strong>Aspectos relevantes da multa:</strong>
+            <ul class="lista-organizada">
+                <li>Natureza pecuniária, podendo atingir até 30% do valor do contrato (art. 156, §3º)</li>
+                <li>Pode ser aplicada isoladamente ou cumulativamente com outras sanções (art. 156, §6º)</li>
+                <li>O valor arrecadado com a multa reverte-se ao órgão ou entidade lesionada</li>
+            </ul>
+        </div>
+
+        <div class="atencao-box">
+            <strong>⚠️ Pegadinha de banca:</strong> A multa pode ser aplicada cumulativamente com o impedimento ou com a declaração de inidoneidade? <span class="destaque-texto">SIM!</span> O art. 156, §6º expressamente autoriza a aplicação de multa cumulativamente com as demais sanções.
+        </div>
+
+        <hr class="divider-light">
+
+        <h4>2.3. Impedimento de Licitar e Contratar</h4>
+        <p>O impedimento de licitar e contratar é a sanção intermediária, aplicável às infrações de médio potencial lesivo, com duração de até <strong>3 (três) anos</strong> (art. 156, §4º da Lei 14.133/2021).</p>
+
+        <div class="card-conceito">
+            <h4>Infrações que ensejam, em regra, o impedimento</h4>
+            <ul class="lista-organizada">
+                <li>Não celebrar o contrato ou não entregar a documentação exigida (art. 155, VI)</li>
+                <li>Apresentar documentação falsa (art. 155, VII)</li>
+                <li>Praticar atos fraudulentos na execução do contrato (art. 155, V)</li>
+            </ul>
+        </div>
+
+        <p><strong>Efeitos do impedimento:</strong></p>
+        <ul class="lista-organizada lista-check">
+            <li>Vedação de participação em licitações</li>
+            <li>Vedação de celebração de contratos administrativos</li>
+            <li>Alcance ao órgão ou entidade que aplicou a sanção</li>
+        </ul>
+
+        <div class="card" style="border-left-color: #f7b731;">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="float:left; margin-right:0.6rem;">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 8v4M12 16h.01" />
+            </svg>
+            <strong>🌟 CASO PRÁTICO:</strong> A empresa "Construções XYZ" sagra-se vencedora de licitação para construção de uma escola municipal, mas, convocada para assinar o contrato, deixa de apresentar a certidão negativa de débitos trabalhistas no prazo estabelecido. A conduta configura infração do art. 155, VI, justificando a aplicação da sanção de impedimento, ressalvada a possibilidade de a autoridade, fundamentadamente, aplicar pena mais grave.
+        </div>
+
+        <hr class="divider-light">
+
+        <h4>2.4. Declaração de Inidoneidade</h4>
+        <p>A declaração de inidoneidade é a sanção mais grave do sistema, aplicável em casos de infrações de alto potencial lesivo, com duração de <strong>3 a 6 anos</strong>, e que gera efeitos perante <span class="destaque-texto">toda a Administração Pública</span> (art. 156, §5º).</p>
+
+        <div class="card-conceito">
+            <h4>Infrações que ensejam a declaração de inidoneidade</h4>
+            <ul class="lista-organizada">
+                <li>Falsificar ou adulterar documento (art. 155, VIII)</li>
+                <li>Apresentar declaração falsa sobre requisitos de habilitação (art. 155, IX)</li>
+                <li>Causar dano ao erário ou à Administração (art. 155, X)</li>
+                <li>Frustrar ou fraudar o caráter competitivo da licitação (art. 155, XI)</li>
+                <li>Praticar atos ilícitos para frustrar os objetivos da licitação (art. 155, XII)</li>
+            </ul>
+        </div>
+
+        <p><strong>Efeitos da declaração de inidoneidade:</strong></p>
+        <ul class="lista-organizada lista-check">
+            <li>Vedação de participação em licitações em toda a Administração Pública</li>
+            <li>Vedação de celebração de contratos em toda a Administração Pública</li>
+            <li>Impedimento de contratar com a Administração por 3 a 6 anos</li>
+        </ul>
+
+        <div class="observacao-box">
+            <span class="icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+            </span>
+            <div><strong>⚠️ ARMADILHA COMUM:</strong> A declaração de inidoneidade, embora prevista na Lei 14.133/2021, <span class="destaque-vermelho">não é sanção de aplicação imediata</span> para todas as infrações. A regra é que a sanção aplicável é o impedimento (art. 156, §4º), sendo a declaração de inidoneidade reservada para as infrações de maior potencial lesivo ou quando justificada a necessidade de sanção mais grave.</div>
+        </div>
+
+        <hr class="divider-light">
+
+        <h3>3. INFRAÇÕES E SANÇÕES CORRESPONDENTES</h3>
+
+        <h4>3.1. Quadro-Resumo das Infrações e Sanções</h4>
+        <table class="tabela-moderna">
+            <thead>
+                <tr><th>Infração (Art. 155)</th><th>Sanção Regra</th><th>Observações</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>I - Inexecução parcial do contrato</td><td>Advertência</td><td>Exclusiva para esta infração</td></tr>
+                <tr><td>II a VII - Infrações moderadas</td><td>Multa</td><td>Impedimento possível se justificado</td></tr>
+                <tr><td>VIII a XII - Infrações graves</td><td>Declaração de inidoneidade</td><td>Aplicação imediata</td></tr>
+                <tr class="destaque-linha"><td>VI - Não celebrar contrato ou não entregar documentação</td><td>Impedimento (§4º)</td><td>Regra geral</td></tr>
+            </tbody>
+        </table>
+
+        <h4>3.2. Aplicação Prática das Sanções</h4>
+        <div class="card" style="border-left-color: #ff6b6b;">
+            <strong>QUESTÃO COMENTADA:</strong>
+            <p>A afirmativa "Não celebrar o contrato ou não entregar a documentação exigida, quando convocado dentro do prazo de validade de sua proposta, justifica a imediata aplicação, em regra, da sanção de declaração de inidoneidade" está correta?</p>
+            <p><span class="destaque-vermelho">❌ FALSA</span></p>
+            <p><strong>Justificativa:</strong> A conduta descrita configura infração prevista no art. 155, VI da Lei 14.133/2021. Todavia, a sanção regra aplicável é o impedimento de licitar e contratar, conforme art. 156, §4º. A declaração de inidoneidade é reservada para infrações de maior potencial lesivo (art. 155, VIII a XII) ou quando a autoridade justificar a necessidade de sanção mais grave.</p>
+        </div>
+
+        <div class="mnemonico-box">
+            <strong>💡 MACETE:</strong><br>
+            <span class="destaque-texto">Impedimento</span> → Infrações do art. 155, VI (regra)<br>
+            <span class="destaque-amarelo">Inidoneidade</span> → Infrações do art. 155, VIII a XII (reserva)<br>
+            <span class="destaque-texto">Advertência</span> → Infração do art. 155, I (exclusividade)
+        </div>
+
+        <hr class="divider">
+
+        <h3>4. COBRANÇA E EXECUÇÃO DAS SANÇÕES PECUNIÁRIAS</h3>
+
+        <h4>4.1. Desconto da Garantia</h4>
+        <p>Uma questão relevante diz respeito à forma de cobrança das multas e indenizações aplicadas. Nos termos do art. 156, §8º da Lei 14.133/2021, a Administração pode descontar diretamente da garantia prestada pelo contratado os valores devidos a título de multa e indenização.</p>
+
+        <div class="card">
+            <strong>Características do desconto da garantia:</strong>
+            <ul class="lista-organizada">
+                <li>Ato de execução administrativa</li>
+                <li>Independente de decisão judicial prévia</li>
+                <li>Aplica-se à garantia de qualquer natureza (caução, seguro-garantia, fiança bancária)</li>
+                <li>Eventual insuficiência da garantia enseja cobrança judicial</li>
+            </ul>
+        </div>
+
+        <div class="observacao-box">
+            <span class="icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="4" />
+                    <line x1="8" y1="12" x2="16" y2="12" />
+                    <line x1="12" y1="8" x2="12" y2="16" />
+                </svg>
+            </span>
+            <div><strong>📌 IMPORTANTE:</strong> A dispensa de decisão judicial para o desconto da garantia constitui manifestação do princípio da autotutela administrativa, sendo a medida prevista expressamente em lei.</div>
+        </div>
+
+        <p><strong>Exemplo prático:</strong> A empresa contratada causou danos no valor de R$ 80.000,00 e teve aplicada multa de R$ 20.000,00. A garantia prestada é de R$ 100.000,00. A Administração pode descontar os R$ 100.000,00 da garantia, independentemente de decisão judicial, e cobrar o valor restante judicialmente.</p>
+
+        <hr class="divider">
+
+        <h3>5. DISTINÇÃO ENTRE SANÇÕES LICITATÓRIAS E SANÇÕES DE IMPROBIDADE</h3>
+
+        <h4>5.1. Comparativo</h4>
+        <table class="tabela-moderna">
+            <thead>
+                <tr><th>Aspecto</th><th>Sanções Licitatórias (Lei 14.133/2021)</th><th>Sanções de Improbidade (Lei 8.429/92)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Natureza</td><td>Administrativa</td><td>Civil (cível)</td></tr>
+                <tr><td>Sujeito ativo</td><td>Administração Pública</td><td>Ministério Público ou pessoa jurídica</td></tr>
+                <tr><td>Finalidade</td><td>Sancionar infrações licitatórias</td><td>Sancionar atos ímprobos</td></tr>
+                <tr><td>Sanções</td><td>Advertência, multa, impedimento, inidoneidade</td><td>Perda de direitos políticos, suspensão de direitos políticos, perda de cargo, multa civil</td></tr>
+            </tbody>
+        </table>
+
+        <h4>5.2. Erro Frequente em Provas</h4>
+        <div class="atencao-box">
+            <strong>⚠️ PEGADINHA CLÁSSICA:</strong> As bancas frequentemente apresentam alternativa afirmando que a prática de atos ilícitos para frustrar os objetivos da licitação (art. 155, XI da Lei 14.133/2021) enseja, na esfera administrativa, a suspensão dos direitos políticos e a perda do cargo público.
+            <p><span class="destaque-vermelho">❌ FALSA</span></p>
+            <p><strong>Explicação:</strong> Embora a conduta justifique a aplicação de multa e declaração de inidoneidade (art. 156, §5º), a suspensão de direitos políticos e a perda do cargo público são sanções típicas da Lei de Improbidade Administrativa (Lei 8.429/92) ou de natureza penal, <span class="destaque-vermelho">não previstas</span> na Lei de Licitações.</p>
+        </div>
+
+        <div class="mnemonico-box">
+            <strong>💡 MACETE DE MEMORIZAÇÃO:</strong><br>
+            <span class="destaque-texto">Lei 14.133/2021</span> → Sanções administrativas <strong>licitatórias</strong> (Advertência, Multa, Impedimento, Inidoneidade)<br>
+            <span class="destaque-amarelo">Lei 8.429/92</span> → Sanções de <strong>improbidade</strong> (suspensão de direitos políticos, perda de cargo)
+        </div>
+
+        <!-- FIM CAPÍTULO I -->
+        <hr class="divider">
+
+        <!-- ============================================ -->
+        <!-- CAPÍTULO II -->
+        <!-- ============================================ -->
+        <h2 class="anchor" id="cap2">CAPÍTULO II — PODER HIERÁRQUICO</h2>
+
+        <h3>1. CONCEITO E FUNDAMENTOS</h3>
+        <p>O poder hierárquico é a faculdade de que dispõe a Administração Pública para distribuir e escalonar funções de seus órgãos, ordenar e rever a atuação de seus agentes, estabelecendo relações de subordinação e coordenação entre os diversos níveis da estrutura administrativa.</p>
+
+        <h4>1.1. Características Essenciais</h4>
+        <ul class="lista-organizada lista-asterisco">
+            <li><span class="destaque-texto">Relação de subordinação</span>: existe entre órgãos e agentes de diferentes níveis hierárquicos</li>
+            <li><span class="destaque-texto">Estrutura organizacional</span>: pressupõe organização piramidal da Administração</li>
+            <li><span class="destaque-texto">Internalidade</span>: atua sobre órgãos e agentes da própria estrutura administrativa</li>
+            <li><span class="destaque-texto">Permanência</span>: é atributo inerente à organização administrativa</li>
+        </ul>
+
+        <h4>1.2. Distinção do Poder de Polícia</h4>
+        <p><span class="destaque-texto">Atenção!</span> O poder hierárquico frequentemente é confundido com o poder de polícia. A distinção é fundamental:</p>
+
+        <table class="tabela-moderna">
+            <thead>
+                <tr><th>Aspecto</th><th>Poder Hierárquico</th><th>Poder de Polícia</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Destinatário</td><td>Agentes e órgãos internos</td><td>Particulares (administrados)</td></tr>
+                <tr><td>Finalidade</td><td>Organizar a estrutura administrativa</td><td>Limitar direitos individuais em prol do interesse público</td></tr>
+                <tr><td>Manifestação</td><td>Ordens, delegação, avocação, revisão</td><td>Licenças, autorizações, fiscalização, sanções</td></tr>
+                <tr><td>Base legal</td><td>Art. 37, CF</td><td>Art. 78, CTN</td></tr>
+            </tbody>
+        </table>
+
+        <div class="citacao">
+            <strong>🔑 DEFINIÇÃO DO PODER DE POLÍCIA (ART. 78, CTN):</strong><br>
+            "Considera-se poder de polícia a atividade da administração pública que, limitando ou disciplinando direito, interesse ou liberdade, regula a prática de ato ou abstenção de fato, em razão do interesse público."
+        </div>
+
+        <div class="dica-box">
+            <span class="icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+            </span>
+            <div><strong>📌 DICA DE PROVA:</strong> A definição do art. 78 do CTN é frequentemente apresentada como definição de poder hierárquico. A banca FCC adora essa pegadinha! Quando a questão falar em "limitar direito, interesse ou liberdade" ou "regular a prática de ato", está se referindo a <span class="destaque-texto">poder de polícia</span>, não a poder hierárquico.</div>
+        </div>
+
+        <hr class="divider-light">
+
+        <h3>2. MANIFESTAÇÕES DO PODER HIERÁRQUICO</h3>
+
+        <h4>2.1. Ordens e Instruções</h4>
+        <p>A autoridade superior pode expedir ordens gerais ou específicas, determinando como os subordinados devem atuar no exercício de suas funções.</p>
+
+        <h4>2.2. Fiscalização e Controle</h4>
+        <p>O superior hierárquico exerce poder de fiscalização sobre os atos dos subordinados, podendo determinar a correção de irregularidades, anular atos ilegais ou revogar atos inconvenientes.</p>
+
+        <h4>2.3. Delegação de Competência</h4>
+        <p>A delegação de competência consiste na transferência de atribuições de um órgão ou agente superior para outro de hierarquia inferior.</p>
+
+        <div class="card-conceito">
+            <h4>Características da Delegação</h4>
+            <ul class="lista-organizada">
+                <li>"Desce" a competência (superior → subordinado)</li>
+                <li>Caráter temporário</li>
+                <li>Pode ocorrer com ou sem relação de hierarquia</li>
+                <li>Admite revogação a qualquer momento</li>
+            </ul>
+        </div>
+
+        <div class="card" style="border-left-color: #f7b731;">
+            <strong>Vedações à Delegação (MNEMÔNICO: CE NO RA):</strong>
+            <ul class="lista-organizada">
+                <li>Competência <span class="destaque-texto">E</span>xclusiva</li>
+                <li>Competência para edição de atos <span class="destaque-texto">NO</span>rmativos</li>
+                <li>Competência para decisão de <span class="destaque-texto">R</span>ecursos <span class="destaque-texto">A</span>dministrativos</li>
+            </ul>
+        </div>
+
+        <h4>2.4. Avocação de Competência</h4>
+        <p>A avocação consiste no chamamento, pela autoridade superior, de competência que originariamente pertence a um órgão ou agente subordinado.</p>
+
+        <div class="card-conceito">
+            <h4>Características da Avocação</h4>
+            <ul class="lista-organizada">
+                <li>"Sobe" a competência (subordinado → superior)</li>
+                <li>Caráter excepcional e temporário</li>
+                <li><span class="destaque-texto">Sempre</span> pressupõe relação de hierarquia</li>
+                <li>Deve ser justificada por razões de conveniência e oportunidade</li>
+            </ul>
+        </div>
+
+        <div class="comparativo-grid">
+            <div class="comparativo-item">
+                <h4>Delegação</h4>
+                <ul class="lista-organizada" style="font-size:0.95rem;">
+                    <li>Direção: <span class="destaque-texto">Descendente</span> (superior → subordinado)</li>
+                    <li>Hierarquia: Pode ocorrer com ou sem</li>
+                    <li>Natureza: Ordinária (regra)</li>
+                    <li>Temporariedade: Sim</li>
+                    <li>Vedações: CE, NO, RA</li>
+                </ul>
+            </div>
+            <div class="comparativo-item" style="border-top-color: #f7b731;">
+                <h4>Avocação</h4>
+                <ul class="lista-organizada" style="font-size:0.95rem;">
+                    <li>Direção: <span class="destaque-amarelo">Ascendente</span> (subordinado → superior)</li>
+                    <li>Hierarquia: <span class="destaque-amarelo">Sempre</span> pressupõe hierarquia</li>
+                    <li>Natureza: Excepcional (exceção)</li>
+                    <li>Temporariedade: Sim</li>
+                    <li>Vedações: Não há vedações expressas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card" style="border-left-color: #4ecdc4;">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="float:left; margin-right:0.6rem;">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16v-4M12 8h.01" />
+            </svg>
+            <strong>🌟 CASO PRÁTICO:</strong>
+            <p><strong>Situação 1:</strong> O Delegado de Polícia titular avoca a investigação que estava sendo conduzida por autoridade policial subordinada, para dar maior celeridade e efetividade ao procedimento. A avocação é legal?</p>
+            <p><span class="destaque-texto">✅ Sim.</span> A avocação é manifestação do poder hierárquico e permite que a autoridade superior assuma atribuição do subordinado em caráter excepcional e por tempo determinado.</p>
+            <hr class="divider-light">
+            <p><strong>Situação 2:</strong> O Secretário de Segurança Pública avoca investigação de um Delegado de Polícia, sob o argumento de que o caso envolve interesse público relevante. A avocação é legal?</p>
+            <p><span class="destaque-texto">✅ Sim,</span> desde que exista relação de hierarquia entre a autoridade que avoca e a que teve sua competência avocada.</p>
+            <hr class="divider-light">
+            <p><strong>Situação 3:</strong> O Juiz de Direito avoca investigação que estava sendo conduzida por um Delegado de Polícia. A avocação é legal?</p>
+            <p><span class="destaque-vermelho">❌ Não.</span> Não existe relação de hierarquia entre o Poder Judiciário e o Poder Executivo. A avocação só é cabível quando há vínculo hierárquico.</p>
+        </div>
+
+        <div class="observacao-box">
+            <span class="icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+            </span>
+            <div><strong>⚠️ ARMADILHA DE BANCA:</strong> A avocação, diferentemente da delegação, <span class="destaque-texto">sempre</span> pressupõe hierarquia. As bancas gostam de apresentar situações em que uma autoridade avoca atribuições de outra sem relação de subordinação, para testar se o candidato identifica a ilegalidade do ato.</div>
+        </div>
+
+        <hr class="divider-light">
+
+        <h3>3. CONTROLE HIERÁRQUICO E REVISÃO DE ATOS</h3>
+
+        <h4>3.1. Revisão de Atos no Âmbito Interno</h4>
+        <p>O poder hierárquico inclui a faculdade de a autoridade superior rever atos praticados por seus subordinados, seja para anular os ilegais, seja para revogar os inconvenientes ou inoportunos.</p>
+
+        <h4>3.2. Julgamento de Recursos Administrativos</h4>
+        <p>O julgamento de recursos administrativos interpostos contra decisões de órgãos inferiores constitui manifestação do poder hierárquico, representando o controle interno da Administração sobre seus próprios atos.</p>
+
+        <div class="dica-box">
+            <span class="icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+            </span>
+            <div><strong>📌 EXEMPLO:</strong> O servidor que recorre da decisão que lhe aplicou uma penalidade está exercendo seu direito de petição e provocando o exercício do controle hierárquico pela autoridade superior.</div>
+        </div>
+
+        <!-- FIM CAPÍTULO II -->
+        <hr class="divider">
+
+        <!-- ============================================ -->
+        <!-- CAPÍTULO III -->
+        <!-- ============================================ -->
+        <h2 class="anchor" id="cap3">CAPÍTULO III — DIREITOS E DEVERES DO ADMINISTRADO NA LEI 9.784/1999</h2>
+
+        <h3>1. INTRODUÇÃO À LEI DO PROCESSO ADMINISTRATIVO</h3>
+        <p>A Lei 9.784/1999 estabelece as normas gerais aplicáveis ao processo administrativo no âmbito da Administração Pública Federal, regulando os direitos e deveres dos administrados, os prazos, a tramitação procedimental e os princípios aplicáveis.</p>
+        <p>Esta lei representa um marco na democratização da Administração Pública, ao garantir aos administrados uma série de direitos fundamentais no âmbito dos processos administrativos.</p>
+
+        <hr class="divider-light">
+
+        <h3>2. DIREITOS DOS ADMINISTRADOS</h3>
+
+        <h4>2.1. Rol de Direitos (Art. 3º da Lei 9.784/1999)</h4>
+        <p>O art. 3º da Lei 9.784/1999 estabelece expressamente os direitos dos administrados no processo administrativo:</p>
+
+        <ol class="lista-ordenada">
+            <li><strong>Ser tratado com respeito</strong> pelas autoridades e servidores, com observância dos princípios da razoabilidade, proporcionalidade, moralidade e ampla defesa;</li>
+            <li><strong>Ter ciência da tramitação dos processos administrativos em que tenha qualidade de interessado</strong> (direito de acesso à informação);</li>
+            <li><strong>Formular alegações e apresentar documentos</strong> antes da decisão, bem como acompanhar o andamento do processo;</li>
+            <li><strong>Fazer-se assistir, facultativamente, por advogado;</strong></li>
+            <li><strong>Ser informado sobre os recursos cabíveis, prazos e órgãos competentes;</strong></li>
+            <li><strong>Ter vista dos autos, obter cópias e conhecer as decisões proferidas.</strong></li>
+        </ol>
+
+        <h4>2.2. Análise Detalhada dos Direitos</h4>
+        <div class="card">
+            <strong>Direito de Acesso à Informação (Inciso II)</strong>
+            <p>O administrado tem direito de, mesmo não sendo advogado, ter vista dos autos, obter cópias e conhecer as decisões proferidas. O processo administrativo não exige advogado, diferentemente do processo judicial.</p>
+        </div>
+
+        <div class="citacao">
+            <strong>⚖️ SÚMULA VINCULANTE 5 DO STF:</strong><br>
+            "A falta de defesa técnica por advogado no processo administrativo disciplinar não ofende a Constituição."
+        </div>
+
+        <div class="card" style="border-left-color: #4ecdc4;">
+            <strong>Assistência por Advogado (Inciso IV)</strong>
+            <p>A representação por advogado <span class="destaque-amarelo">não é obrigatória</span>, sendo facultativa. O administrado pode atuar pessoalmente, salvo quando a lei exigir representação técnica para determinados atos.</p>
+        </div>
+
+        <div class="dica-box">
+            <span class="icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+            </span>
+            <div><strong>📌 DICA DE PROVA:</strong> No processo judicial, salvo exceções (Juizados, HC, etc.), a representação por advogado é obrigatória. No processo administrativo, a regra é a <span class="destaque-texto">facultatividade</span>, aplicando-se o princípio do <span class="destaque-texto">informalismo</span> ou da <span class="destaque-texto">prescindibilidade do advogado</span>.</div>
+        </div>
+
+        <hr class="divider-light">
+
+        <h3>3. DEVERES DOS ADMINISTRADOS</h3>
+
+        <h4>3.1. Deveres Previstos no Art. 4º da Lei 9.784/1999</h4>
+        <p>O art. 4º da Lei 9.784/1999 estabelece os deveres dos administrados no âmbito do processo administrativo:</p>
+        <ol class="lista-ordenada">
+            <li><strong>Expor os fatos conforme a verdade;</strong></li>
+            <li><strong>Proceder com lealdade, urbanidade e boa-fé;</strong></li>
+            <li><strong>Não agir de modo temerário;</strong></li>
+            <li><strong>Prestar as informações que lhe forem solicitadas;</strong></li>
+            <li><strong>Colaborar com o órgão administrativo, fornecendo os dados e documentos necessários.</strong></li>
+        </ol>
+
+        <h4>3.2. Princípio da Boa-Fé e Lealdade Processual</h4>
+        <p>O dever de agir com lealdade e boa-fé no processo administrativo fundamenta-se no princípio da confiança legítima e visa garantir a efetividade do processo, evitando condutas procrastinatórias ou fraudulentas.</p>
+
+        <div class="card">
+            <strong>Exemplo prático:</strong> Se o administrado apresenta documento sabidamente falso para comprovar determinada situação, estará violando seu dever de expor os fatos conforme a verdade (inciso I) e de proceder com lealdade e boa-fé (inciso II), podendo responder pelas consequências de sua conduta.
+        </div>
+
+        <div class="comparativo-grid">
+            <div class="comparativo-item">
+                <h4>Direitos (Art. 3º)</h4>
+                <ul class="lista-organizada">
+                    <li>Ser tratado com respeito</li>
+                    <li>Ter ciência da tramitação</li>
+                    <li>Formular alegações e apresentar documentos</li>
+                    <li>Assistência facultativa por advogado</li>
+                    <li>Ser informado sobre recursos</li>
+                    <li>Vista dos autos e cópias</li>
+                </ul>
+            </div>
+            <div class="comparativo-item" style="border-top-color: #4ecdc4;">
+                <h4>Deveres (Art. 4º)</h4>
+                <ul class="lista-organizada">
+                    <li>Expor os fatos conforme a verdade</li>
+                    <li>Proceder com lealdade e boa-fé</li>
+                    <li>Não agir de modo temerário</li>
+                    <li>Prestar informações solicitadas</li>
+                    <li>Colaborar com o órgão administrativo</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="divider-light">
+
+        <h3>4. PRINCÍPIO DA EFICIÊNCIA</h3>
+
+        <h4>4.1. Previsão Constitucional</h4>
+        <p>O princípio da eficiência foi inserido no art. 37, caput da Constituição Federal pela Emenda Constitucional nº 19/1998, constituindo um dos vetores da atuação administrativa.</p>
+
+        <div class="citacao">
+            <strong>Redação do art. 37, caput, CF/88:</strong><br>
+            "A administração pública direta e indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência..."
+        </div>
+
+        <h4>4.2. Conceito e Dimensões</h4>
+        <p>O princípio da eficiência exige que a atuação administrativa seja desenvolvida com:</p>
+        <ul class="lista-organizada lista-asterisco">
+            <li><span class="destaque-texto">Produtividade</span>: realização das tarefas com o melhor emprego dos recursos disponíveis</li>
+            <li><span class="destaque-texto">Economicidade</span>: relação custo-benefício favorável</li>
+            <li><span class="destaque-texto">Qualidade</span>: prestação de serviços com padrões adequados</li>
+            <li><span class="destaque-texto">Celeridade</span>: prestação tempestiva dos serviços</li>
+        </ul>
+
+        <h4>4.3. Distinções Importantes</h4>
+        <div class="atencao-box">
+            <strong>EFICIÊNCIA ≠ EFETIVIDADE</strong>
+            <table class="tabela-moderna" style="margin-top:0.8rem;">
+                <thead>
+                    <tr><th>Conceito</th><th>Significado</th><th>Previsão</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><span class="destaque-texto">Eficiência</span></td><td>Melhor desempenho possível, produtividade, economicidade</td><td>Expressa no art. 37, caput, CF/88</td></tr>
+                    <tr><td><span class="destaque-amarelo">Efetividade</span></td><td>Impacto real das políticas públicas, efetiva satisfação do interesse público</td><td>Não é princípio expresso no art. 37</td></tr>
+                    <tr><td>Resolutividade</td><td>Capacidade de resolver os problemas apresentados</td><td>Não está no rol constitucional</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="dica-box">
+            <span class="icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+            </span>
+            <div><strong>📌 DICA DE PROVA:</strong> O princípio da eficiência exige que o servidor realize suas tarefas com o melhor desempenho possível para alcançar os melhores resultados. Não confundir com efetividade (que não é princípio expresso do art. 37) nem com resolutividade.</div>
+        </div>
+
+        <div class="mnemonico-box">
+            <strong>MNEMÔNICO LIMPE:</strong><br>
+            <span class="destaque-texto">L</span>egalidade<br>
+            <span class="destaque-texto">I</span>mpessoalidade<br>
+            <span class="destaque-texto">M</span>oralidade<br>
+            <span class="destaque-texto">P</span>ublicidade<br>
+            <span class="destaque-texto">E</span>ficiência
+        </div>
+
+        <!-- FIM CAPÍTULO III -->
+        <hr class="divider">
+
+        <!-- ============================================ -->
+        <!-- CAPÍTULO IV -->
+        <!-- ============================================ -->
+        <h2 class="anchor" id="cap4">CAPÍTULO IV — LEI DE ACESSO À INFORMAÇÃO</h2>
+
+        <h3>1. A LEI 12.527/2011 E O DIREITO À INFORMAÇÃO</h3>
+        <p>A Lei de Acesso à Informação (LAI) representa um marco na transparência pública, assegurando a todos os cidadãos o direito fundamental de acesso à informação pública, ressalvadas as hipóteses de sigilo legalmente previstas.</p>
+
+        <h4>1.1. Princípios Orientadores</h4>
+        <ul class="lista-organizada lista-asterisco">
+            <li><span class="destaque-texto">Transparência</span>: regra geral, amplo acesso às informações</li>
+            <li><span class="destaque-texto">Publicidade</span>: prevalência sobre o sigilo</li>
+            <li><span class="destaque-texto">Máxima divulgação</span>: dever de divulgar informações de ofício</li>
+            <li><span class="destaque-texto">Controle social</span>: participação da sociedade no controle da gestão pública</li>
+        </ul>
+
+        <hr class="divider-light">
+
+        <h3>2. PROCEDIMENTO DE ACESSO À INFORMAÇÃO</h3>
+
+        <h4>2.1. Regra Geral (Art. 11 da LAI)</h4>
+        <p>O art. 11 da Lei 12.527/2011 estabelece que o órgão ou entidade deverá autorizar ou conceder o acesso imediato à informação disponível.</p>
+
+        <div class="card">
+            <strong>📌 PRAZO:</strong>
+            <ul class="lista-organizada">
+                <li><span class="destaque-texto">Regra</span>: acesso imediato à informação disponível</li>
+                <li><span class="destaque-amarelo">Justificativa para demora</span>: prazo de até 10 dias para informações indisponíveis</li>
+                <li><span class="destaque-vermelho">Excepcionalmente</span>: prorrogação por mais 10 dias (justificada)</li>
+            </ul>
+        </div>
+
+        <h4>2.2. Pedidos Desproporcionais e Desarrazoados</h4>
+        <div class="citacao">
+            <strong>🔑 ART. 13 DO DECRETO 7.724/2012:</strong><br>
+            O Decreto 7.724/2012, que regulamenta a LAI, estabelece que <span class="destaque-texto">não serão atendidos pedidos:</span>
+            <ul class="lista-organizada" style="margin-top:0.6rem;">
+                <li><span class="destaque-vermelho">Desproporcionais ou desarrazoados</span></li>
+                <li>Que exijam <span class="destaque-vermelho">trabalhos adicionais de análise, interpretação ou consolidação de dados</span></li>
+                <li>Que demandem a produção de <span class="destaque-vermelho">nova informação</span></li>
+            </ul>
+        </div>
+
+        <div class="card" style="border-left-color: #4ecdc4;">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="float:left; margin-right:0.6rem;">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16v-4M12 8h.01" />
+            </svg>
+            <strong>🌟 CASO PRÁTICO:</strong>
+            <p>O cidadão pede informação que não está sistematizada pelo órgão, exigindo trabalho de consolidação de dados de três anos com recorte específico. O servidor responde que é impossível atender. A resposta é amparada pela LAI?</p>
+            <p><span class="destaque-texto">✅ Sim, está amparada.</span></p>
+            <p><strong>Justificativa:</strong> A LAI exige acesso imediato à informação disponível (art. 11). O Decreto 7.724/2012 (art. 13) estabelece que não serão atendidos pedidos que exijam trabalhos adicionais de análise, interpretação ou consolidação de dados. O órgão entrega o dado bruto como arquivado, não precisa fabricar estatística.</p>
+        </div>
+
+        <div class="observacao-box">
+            <span class="icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+            </span>
+            <div><strong>⚠️ IMPORTANTE:</strong> A Administração não tem o dever de criar nova informação para atender ao pedido do cidadão. Deve entregar os dados na forma em que se encontram arquivados.</div>
+        </div>
+
+        <!-- FIM CAPÍTULO IV -->
+        <hr class="divider">
+
+        <!-- ============================================ -->
+        <!-- CAPÍTULO V -->
+        <!-- ============================================ -->
+        <h2 class="anchor" id="cap5">CAPÍTULO V — REVOGAÇÃO E ANULAÇÃO DE ATOS ADMINISTRATIVOS</h2>
+
+        <h3>1. CONCEITOS FUNDAMENTAIS</h3>
+
+        <h4>1.1. Anulação</h4>
+        <p>A anulação é o ato pelo qual se declara a invalidade de um ato administrativo por vício de legalidade. Pode ser feita pela própria Administração (autotutela) ou pelo Poder Judiciário (controle de legalidade).</p>
+        <ul class="lista-organizada lista-asterisco">
+            <li><span class="destaque-texto">Fundamento</span>: ilegalidade do ato</li>
+            <li><span class="destaque-texto">Efeitos</span>: <span class="destaque-texto">ex tunc</span> (retroativo)</li>
+            <li><span class="destaque-texto">Competência</span>: Administração e Poder Judiciário</li>
+        </ul>
+
+        <h4>1.2. Revogação</h4>
+        <p>A revogação é o ato pelo qual se extingue um ato administrativo válido por razões de conveniência e oportunidade (mérito administrativo).</p>
+        <ul class="lista-organizada lista-asterisco">
+            <li><span class="destaque-amarelo">Fundamento</span>: conveniência e oportunidade</li>
+            <li><span class="destaque-amarelo">Efeitos</span>: <span class="destaque-amarelo">ex nunc</span> (não retroativo)</li>
+            <li><span class="destaque-amarelo">Competência</span>: apenas a Administração (Poder Judiciário não pode revogar)</li>
+        </ul>
+
+        <div class="citacao">
+            <strong>⚖️ Súmula 473 do STF:</strong><br>
+            "A Administração pode anular seus próprios atos, quando eivados de vícios que os tornam ilegais, porque deles não se originam direitos; ou revogá-los, por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos, e ressalvada, em todos os casos, a apreciação judicial."
+        </div>
+
+        <div class="card">
+            <strong>⚖️ JURISPRUDÊNCIA RELEVANTE:</strong>
+            <table class="tabela-moderna" style="margin-top:0.6rem;">
+                <thead>
+                    <tr><th>Súmula</th><th>Enunciado</th><th>Aplicação</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><span class="destaque-texto">STF 346</span></td><td>A Administração Pública pode declarar a nulidade dos seus próprios atos</td><td>Anulação de ofício</td></tr>
+                    <tr><td><span class="destaque-amarelo">STF 473</span></td><td>A Administração pode anular seus atos ilegais ou revogá-los por conveniência</td><td>Diferença entre anulação e revogação</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="divider-light">
+
+        <h3>2. QUADRO COMPARATIVO ENTRE ANULAÇÃO E REVOGAÇÃO</h3>
+        <table class="tabela-moderna">
+            <thead>
+                <tr><th>Aspecto</th><th>Anulação</th><th>Revogação</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Fundamento</td><td><span class="destaque-texto">Ilegalidade</span></td><td><span class="destaque-amarelo">Conveniência e oportunidade</span></td></tr>
+                <tr><td>Efeitos</td><td><span class="destaque-texto">Ex tunc</span> (retroativo)</td><td><span class="destaque-amarelo">Ex nunc</span> (não retroativo)</td></tr>
+                <tr><td>Competência</td><td>Administração e Judiciário</td><td><span class="destaque-amarelo">Somente Administração</span></td></tr>
+                <tr><td>Controle judicial</td><td>Sim (controle de legalidade)</td><td>Não (mérito administrativo)</td></tr>
+                <tr><td>Ato inválido</td><td>Sim</td><td>Não (ato válido)</td></tr>
+            </tbody>
+        </table>
+
+        <div class="mnemonico-box">
+            <strong>💡 MACETE DE MEMORIZAÇÃO:</strong><br>
+            <span class="destaque-texto">"Vogal com vogal: Ilegalidade leva a Anulação.</span><br>
+            <span class="destaque-amarelo">Consoante com consoante: Conveniência e Oportunidade leva a Revogação."</span><br><br>
+            <span class="destaque-texto">Anulação → A (vogal) + Ilegalidade (vogal)</span><br>
+            <span class="destaque-amarelo">Revogação → R (consoante) + Conveniência e Oportunidade (consoante)</span>
+        </div>
+
+        <div class="dica-box">
+            <span class="icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+            </span>
+            <div>
+                <strong>📌 DICA DE PROVA:</strong>
+                <ul class="lista-organizada" style="margin-top:0.4rem;">
+                    <li>A anulação pode ser feita pelo Judiciário (controle de legalidade)</li>
+                    <li>A revogação apenas pela Administração</li>
+                    <li>Efeitos: anulação ex tunc, revogação ex nunc</li>
+                    <li>A FCC adora cobrar quem pode fazer cada uma</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="divider-light">
+
+        <h3>3. APLICAÇÃO PRÁTICA</h3>
+
+        <h4>3.1. Casos Concretos</h4>
+        <div class="card" style="border-left-color: #ff6b6b;">
+            <strong>CASO 1:</strong> O Município de Fortaleza concede licença para funcionamento de uma casa noturna, mas verifica posteriormente que a licença foi concedida em desacordo com a lei municipal, que exige distância mínima de 200 metros de escolas.
+            <p><span class="destaque-texto">SOLUÇÃO:</span> O ato é ilegal e deve ser <span class="destaque-vermelho">anulado</span> pela Administração ou pelo Poder Judiciário, com efeitos ex tunc (retroativos).</p>
+        </div>
+
+        <div class="card" style="border-left-color: #f7b731;">
+            <strong>CASO 2:</strong> A União concede uma licença para exploração de serviço de radiodifusão, mas verifica posteriormente que a outorga, embora válida, deixou de considerar fatores de mercado que a tornam economicamente inviável.
+            <p><span class="destaque-amarelo">SOLUÇÃO:</span> O ato é válido, mas inconveniente. Pode ser <span class="destaque-amarelo">revogado</span> pela Administração, com efeitos ex nunc (não retroativos), respeitados os direitos adquiridos.</p>
+        </div>
+
+        <!-- FIM CAPÍTULO V -->
+        <hr class="divider">
+
+        <!-- ============================================ -->
+        <!-- CAPÍTULO VI -->
+        <!-- ============================================ -->
+        <h2 class="anchor" id="cap6">CAPÍTULO VI — MODALIDADES DE LICITAÇÃO NA LEI 14.133/2021</h2>
+
+        <h3>1. SISTEMA DE MODALIDADES</h3>
+
+        <h4>1.1. Modalidades Previstas (Art. 28, caput)</h4>
+        <p>A Lei 14.133/2021 estabeleceu as seguintes modalidades de licitação:</p>
+        <ol class="lista-ordenada">
+            <li><span class="destaque-texto">Pregão</span></li>
+            <li><span class="destaque-texto">Concorrência</span></li>
+            <li><span class="destaque-texto">Concurso</span></li>
+            <li><span class="destaque-texto">Leilão</span></li>
+            <li><span class="destaque-texto">Diálogo Competitivo</span></li>
+        </ol>
+
+        <h4>1.2. Extinção de Modalidades</h4>
+        <p>A Nova Lei de Licitações extinguiu as modalidades previstas na Lei 8.666/1993, quais sejam:</p>
+        <ul class="lista-organizada lista-check">
+            <li><span class="destaque-vermelho">Convite</span> (extinto)</li>
+            <li><span class="destaque-vermelho">Tomada de preços</span> (extinta)</li>
+            <li><span class="destaque-amarelo">Concorrência</span> (reformulada)</li>
+        </ul>
+
+        <hr class="divider-light">
+
+        <h3>2. VEDAÇÃO À CRIAÇÃO OU COMBINAÇÃO DE MODALIDADES</h3>
+
+        <h4>2.1. Previsão Legal (Art. 28, §2º)</h4>
+        <div class="citacao">
+            "É vedada a criação de outras modalidades de licitação ou a combinação das modalidades referidas no caput deste artigo."
+        </div>
+
+        <h4>2.2. Consequências Práticas</h4>
+        <div class="atencao-box">
+            <strong>🔑 REGRA:</strong> As modalidades são <span class="destaque-texto">exaustivas</span> (numerus clausus), não admitindo criação de novas nem combinação entre as existentes.
+        </div>
+
+        <div class="card" style="border-left-color: #4ecdc4;">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="float:left; margin-right:0.6rem;">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16v-4M12 8h.01" />
+            </svg>
+            <strong>🌟 CASO PRÁTICO:</strong>
+            <p>A Administração, sob o argumento de maior eficiência da disputa, decide combinar a modalidade pregão com a concorrência. A conduta é legal?</p>
+            <p><span class="destaque-vermelho">❌ Não, é ilegal.</span></p>
+            <p><strong>Justificativa:</strong> O art. 28, §2º da Lei 14.133/2021 veda expressamente a criação de outras modalidades ou a combinação daquelas previstas no caput. A eficiência não autoriza descumprir proibição legal.</p>
+        </div>
+
+        <div class="observacao-box">
+            <span class="icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                </svg>
+            </span>
+            <div><strong>⚠️ ARMADILHA DE BANCA:</strong> As bancas frequentemente apresentam situações em que a Administração, sob a justificativa da eficiência, combina modalidades ou cria novas formas de disputa. O candidato deve identificar a ilegalidade, pois a lei é expressa na vedação.</div>
+        </div>
+
+        <!-- FIM CAPÍTULO VI -->
+        <hr class="divider">
+
+        <!-- ============================================ -->
+        <!-- CAPÍTULO VII -->
+        <!-- ============================================ -->
+        <h2 class="anchor" id="cap7">CAPÍTULO VII — INTERVENÇÃO DO ESTADO NA PROPRIEDADE</h2>
+
+        <h3>1. FORMAS DE INTERVENÇÃO</h3>
+
+        <h4>1.1. Classificação das Formas Interventivas</h4>
+        <table class="tabela-moderna">
+            <thead>
+                <tr><th>Forma</th><th>Natureza</th><th>Característica</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><span class="destaque-texto">Desapropriação</span></td><td>Supressiva</td><td>Transferência da propriedade (perda do direito)</td></tr>
+                <tr><td><span class="destaque-amarelo">Servidão administrativa</span></td><td>Onerosa</td><td>Ônus real definitivo sobre o bem</td></tr>
+                <tr><td><span class="destaque-texto">Ocupação temporária</span></td><td>Transitória</td><td>Utilização por tempo determinado</td></tr>
+                <tr><td><span class="destaque-vermelho">Requisição</span></td><td>Excepcional</td><td>Utilização em situação de perigo público iminente</td></tr>
+                <tr><td>Limitação administrativa</td><td>Restritiva</td><td>Restrições gerais e abstratas ao direito de propriedade</td></tr>
+            </tbody>
+        </table>
+
+        <hr class="divider-light">
+
+        <h3>2. OCUPAÇÃO TEMPORÁRIA</h3>
+
+        <h4>2.1. Conceito</h4>
+        <p>A ocupação temporária consiste na utilização transitória, remunerada ou gratuita, de bem privado para apoio à execução de serviços públicos.</p>
+
+        <div class="card-conceito">
+            <h4>Características da Ocupação Temporária</h4>
+            <ul class="lista-organizada">
+                <li><span class="destaque-texto">Transitoriedade</span>: a ocupação é por tempo determinado</li>
+                <li><span class="destaque-texto">Finalidade</span>: apoio à execução de serviços públicos</li>
+                <li><span class="destaque-texto">Remuneração</span>: pode ser remunerada ou gratuita (dependendo da lei)</li>
+                <li><span class="destaque-texto">Não transfere propriedade</span>: o bem permanece com o proprietário</li>
+                <li><span class="destaque-texto">Não exige perigo iminente</span>: diferentemente da requisição</li>
+            </ul>
+        </div>
+
+        <h4>2.2. Distinção da Requisição</h4>
+        <table class="tabela-moderna">
+            <thead>
+                <tr><th>Aspecto</th><th>Ocupação Temporária</th><th>Requisição</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Fundamento</td><td>Execução de serviços públicos</td><td><span class="destaque-vermelho">Perigo público iminente</span></td></tr>
+                <tr><td>Base legal</td><td>Leis específicas</td><td><span class="destaque-vermelho">Art. 5º, XXV, CF/88</span></td></tr>
+                <tr><td>Caráter</td><td>Temporário</td><td>Emergencial</td></tr>
+                <tr><td>Remuneração</td><td>Pode ser ou não</td><td><span class="destaque-texto">Sempre indenizável</span></td></tr>
+            </tbody>
+        </table>
+
+        <div class="card" style="border-left-color: #4ecdc4;">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="float:left; margin-right:0.6rem;">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 16v-4M12 8h.01" />
+            </svg>
+            <strong>🌟 CASO PRÁTICO:</strong>
+            <p>Durante alta demanda de vacinação, a Prefeitura utilizou terrenos privados para montar tendas de atendimento. Trata-se de requisição, ocupação temporária, desapropriação, servidão administrativa ou limitação administrativa?</p>
+            <p><span class="destaque-texto">✅ Ocupação temporária.</span></p>
+            <p><strong>Justificativa:</strong></p>
+            <ul class="lista-organizada">
+                <li>A utilização foi <span class="destaque-texto">transitória</span> (enquanto durou a alta demanda)</li>
+                <li>A finalidade foi <span class="destaque-texto">apoio à execução de serviço público</span> (vacinação)</li>
+                <li>Não há transferência de propriedade (desapropriação)</li>
+                <li>Não há perigo público iminente (requisição)</li>
+                <li>Não há ônus real definitivo (servidão)</li>
+            </ul>
+        </div>
+
+        <div class="dica-box">
+            <span class="icon-box">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+            </span>
+            <div>
+                <strong>📌 DICA DE PROVA:</strong>
+                <ul class="lista-organizada" style="margin-top:0.4rem;">
+                    <li><span class="destaque-vermelho">Requisição</span>: exige situação de perigo público iminente (art. 5º, XXV, CF)</li>
+                    <li><span class="destaque-texto">Ocupação temporária</span>: não exige perigo iminente</li>
+                    <li><span class="destaque-texto">Desapropriação</span>: supressiva (transferência da propriedade)</li>
+                    <li><span class="destaque-amarelo">Servidão</span>: ônus real definitivo</li>
+                    <li>Limitação administrativa: restrições gerais e abstratas</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FIM CAPÍTULO VII -->
+        <hr class="divider">
+
+        <!-- ============================================ -->
+        <!-- CAPÍTULO VIII -->
+        <!-- ============================================ -->
+        <h2 class="anchor" id="cap8">CAPÍTULO VIII — SÍNTESE E MACETES DE MEMORIZAÇÃO</h2>
+
+        <h3>1. TABELA GERAL DE SANÇÕES ADMINISTRATIVAS</h3>
+        <table class="tabela-moderna">
+            <thead>
+                <tr><th>Infração</th><th>Sanção</th><th>Base Legal</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Inexecução parcial do contrato</td><td><span class="destaque-texto">Advertência (regra)</span></td><td>Art. 156, §2º</td></tr>
+                <tr><td>Infrações moderadas (II a VII)</td><td><span class="destaque-texto">Multa (regra)</span></td><td>Art. 156, §3º</td></tr>
+                <tr><td>Não celebrar contrato ou não entregar documentação</td><td><span class="destaque-amarelo">Impedimento (regra)</span></td><td>Art. 156, §4º</td></tr>
+                <tr><td>Infrações graves (VIII a XII)</td><td><span class="destaque-vermelho">Declaração de inidoneidade (regra)</span></td><td>Art. 156, §5º</td></tr>
+            </tbody>
+        </table>
+
+        <hr class="divider-light">
+
+        <h3>2. RESUMO DE CONCEITOS-CHAVE</h3>
+
+        <div class="comparativo-grid">
+            <div class="comparativo-item">
+                <h4>Poder Hierárquico vs. Poder de Polícia</h4>
+                <ul class="lista-organizada">
+                    <li><span class="destaque-texto">Hierárquico</span>: atua sobre órgãos e agentes</li>
+                    <li><span class="destaque-amarelo">Polícia</span>: atua sobre particulares</li>
+                    <li>Hierárquico: organiza a estrutura</li>
+                    <li>Polícia: limita direitos</li>
+                </ul>
+            </div>
+            <div class="comparativo-item" style="border-top-color: #f7b731;">
+                <h4>Delegação vs. Avocação</h4>
+                <ul class="lista-organizada">
+                    <li><span class="destaque-texto">Delegação</span>: desce competência</li>
+                    <li><span class="destaque-amarelo">Avocação</span>: sobe competência</li>
+                    <li>Delegação: pode ser sem hierarquia</li>
+                    <li>Avocação: sempre com hierarquia</li>
+                </ul>
+            </div>
+            <div class="comparativo-item" style="border-top-color: #4ecdc4;">
+                <h4>Anulação vs. Revogação</h4>
+                <ul class="lista-organizada">
+                    <li><span class="destaque-texto">Anulação</span>: ato ilegal</li>
+                    <li><span class="destaque-amarelo">Revogação</span>: ato válido</li>
+                    <li>Anulação: ex tunc</li>
+                    <li>Revogação: ex nunc</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="divider-light">
+
+        <h3>3. MNEMÔNICOS E MACETES</h3>
+
+        <div class="mnemonico-box" style="border-color: #4ecdc4;">
+            <strong>🔄 SANÇÕES ADMINISTRATIVAS</strong><br>
+            <span class="destaque-texto">"A MInha InDignação"</span><br>
+            <span class="destaque-texto">A</span>dvertência · <span class="destaque-texto">M</span>ulta · <span class="destaque-texto">I</span>mpedimento · <span class="destaque-texto">I</span>nidoneidade · <span class="destaque-texto">D</span>anos
+        </div>
+
+        <div class="mnemonico-box" style="border-color: #f7b731;">
+            <strong>🚫 VEDAÇÕES À DELEGAÇÃO</strong><br>
+            <span class="destaque-amarelo">"CE NO RA"</span><br>
+            Competência <span class="destaque-amarelo">E</span>xclusiva · Atos <span class="destaque-amarelo">NO</span>rmativos · <span class="destaque-amarelo">R</span>ecursos <span class="destaque-amarelo">A</span>dministrativos
+        </div>
+
+        <div class="mnemonico-box" style="border-color: #6c5ce7;">
+            <strong>📜 PRINCÍPIOS CONSTITUCIONAIS</strong><br>
+            <span class="destaque-texto">"LIMPE"</span><br>
+            <span class="destaque-texto">L</span>egalidade · <span class="destaque-texto">I</span>mpessoalidade · <span class="destaque-texto">M</span>oralidade · <span class="destaque-texto">P</span>ublicidade · <span class="destaque-texto">E</span>ficiência
+        </div>
+
+        <!-- FIM CAPÍTULO VIII -->
+        <hr class="divider">
+
+        <!-- ============================================ -->
+        <!-- CONCLUSÃO -->
+        <!-- ============================================ -->
+        <h2>CONCLUSÃO</h2>
+        <p>A presente apostila teve como objetivo sistematizar o conteúdo referente aos poderes administrativos, sanções na Lei 14.133/2021, direitos e deveres dos administrados na Lei 9.784/1999, Lei de Acesso à Informação, revogação e anulação de atos administrativos, modalidades de licitação e intervenção do Estado na propriedade.</p>
+        <p>Cada um desses temas representa um bloco de conhecimento fundamental para a aprovação em concursos públicos de alto nível, especialmente aqueles organizados pela FCC, FGV e Cebraspe. A profundidade da análise, os casos práticos, os exemplos e os macetes de memorização foram desenvolvidos para proporcionar ao candidato não apenas a compreensão do conteúdo, mas também a capacidade de aplicá-lo em situações concretas e de identificar as armadilhas frequentemente utilizadas pelas bancas examinadoras.</p>
+        <p>Lembre-se sempre de que o estudo para concursos públicos exige disciplina, constância e, acima de tudo, compreensão sistêmica do direito. Mais importante que memorizar dispositivos isolados é entender a lógica, os princípios e as interconexões que permeiam o ordenamento jurídico.</p>
+
+        <hr class="divider-light">
+
+        <h3>📋 REVISÃO FINAL: VERIFIQUE SE VOCÊ DOMINA</h3>
+        <div class="checklist">
+            <div class="checklist-item">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                A gradação das sanções na Lei 14.133/2021
+            </div>
+            <div class="checklist-item">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Distinção entre impedimento e declaração de inidoneidade
+            </div>
+            <div class="checklist-item">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Diferença entre sanções licitatórias e de improbidade
+            </div>
+            <div class="checklist-item">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Cabimento restrito da advertência
+            </div>
+            <div class="checklist-item">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Distinção entre poder hierárquico e poder de polícia
+            </div>
+            <div class="checklist-item">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Características da delegação e da avocação
+            </div>
+            <div class="checklist-item">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Direitos e deveres do administrado na Lei 9.784/1999
+            </div>
+            <div class="checklist-item">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Distinção entre eficiência, efetividade e resolutividade
+            </div>
+            <div class="checklist-item">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Tratamento dos pedidos desproporcionais na LAI
+            </div>
+            <div class="checklist-item">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Diferença entre anulação e revogação de atos administrativos
+            </div>
+            <div class="checklist-item">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Vedação à combinação de modalidades licitatórias
+            </div>
+            <div class="checklist-item">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Distinção entre ocupação temporária e requisição
+            </div>
+        </div>
+
+        <div style="text-align:center; margin:2.2rem 0 1rem;">
+            <p style="font-size:1.1rem; color:#b8b8d0; font-style:italic;">Bons estudos e sucesso na sua jornada rumo à aprovação!</p>
+            <p style="color:#8a7ae0; font-weight:300;">Professor Especialista em Concursos Públicos</p>
+        </div>
+
+        <!-- VOLTA AO TOPO -->
+        <div style="text-align:center; margin-top:1.5rem;">
+            <a href="#sumario" class="topo-link">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:1.2rem;height:1.2rem;">
+                    <polyline points="18 15 12 9 6 15" />
+                </svg>
+                Voltar ao sumário
+            </a>
+        </div>
+
+        <div class="footer-note">
+            Material didático — Direito Administrativo — Todos os direitos reservados
+        </div>
+
+    </div>
+    <!-- fim container -->
+</body>
+</html>

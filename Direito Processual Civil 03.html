@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>Direito Processual Civil - Apostila Premium</title>
+    <style>
+        /* ── RESET & BASE ── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-page: #121828;
+            --bg-card: #1a2340;
+            --bg-card-hover: #222d52;
+            --bg-elevated: #25305a;
+            --bg-code: #0e1322;
+            --text-primary: #eae8e4;
+            --text-secondary: #c5c2bc;
+            --text-muted: #9a9690;
+            --gold: #d4a574;
+            --gold-light: #e8c9a8;
+            --gold-dark: #b8895a;
+            --blue: #6b8fa7;
+            --blue-light: #8fb3cb;
+            --green: #7a9e7e;
+            --green-light: #a8c9ac;
+            --red: #c47a7a;
+            --red-light: #e0a0a0;
+            --border: #2f3d66;
+            --border-light: #3f507a;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            --radius: 14px;
+            --radius-sm: 8px;
+            --font-serif: Georgia, 'Times New Roman', Times, serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            --transition: 0.2s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 18px;
+        }
+
+        body {
+            background: var(--bg-page);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            padding: 2rem 1.5rem 4rem;
+            min-height: 100vh;
+        }
+
+        /* ── SCROLLBAR ── */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-page);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-dark);
+            border-radius: 6px;
+        }
+
+        /* ── CONTAINER ── */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 2.8rem 3rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        @media (max-width: 820px) {
+            body {
+                padding: 1rem 0.8rem 3rem;
+            }
+            .container {
+                padding: 1.8rem 1.5rem;
+                border-radius: 10px;
+            }
+            html {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.2rem 1rem;
+            }
+            html {
+                font-size: 15px;
+            }
+        }
+
+        /* ── TYPOGRAPHY ── */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-primary);
+            letter-spacing: 0.01em;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+            letter-spacing: 0.02em;
+        }
+
+        h1 .sub {
+            display: block;
+            font-size: 1.1rem;
+            font-family: var(--font-sans);
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-top: 0.4rem;
+            letter-spacing: 0.04em;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 2.8rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 3px solid var(--gold-dark);
+            color: var(--gold-light);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            color: var(--blue-light);
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-top: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        h5 {
+            font-size: 1.05rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        a:hover {
+            color: var(--gold-light);
+        }
+
+        strong,
+        b {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        em,
+        i {
+            color: var(--text-secondary);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+            margin: 2.5rem 0;
+        }
+
+        /* ── TOC ── */
+        .toc {
+            background: var(--bg-elevated);
+            border-radius: var(--radius);
+            padding: 1.8rem 2.2rem;
+            margin: 1.8rem 0 2.8rem;
+            border-left: 5px solid var(--gold);
+        }
+
+        .toc-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .toc-title svg {
+            flex-shrink: 0;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.3rem 1.5rem;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: baseline;
+            gap: 0.4rem;
+            padding: 0.25rem 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid transparent;
+            transition: border-color var(--transition);
+        }
+
+        .toc-item:hover {
+            border-bottom-color: var(--gold-dark);
+        }
+
+        .toc-item .num {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.85rem;
+            min-width: 1.8rem;
+        }
+
+        .toc-item a {
+            color: var(--text-secondary);
+            transition: color var(--transition);
+        }
+        .toc-item a:hover {
+            color: var(--gold-light);
+        }
+
+        @media (max-width: 700px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .toc {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+
+        /* ── CARDS / BOXES ── */
+        .card {
+            background: var(--bg-elevated);
+            border-radius: var(--radius-sm);
+            padding: 1.4rem 1.8rem;
+            margin: 1.4rem 0;
+            border-left: 4px solid var(--gold);
+            transition: background var(--transition);
+        }
+
+        .card-tip {
+            border-left-color: var(--green);
+            background: rgba(122, 158, 126, 0.08);
+        }
+
+        .card-tip .card-label {
+            color: var(--green-light);
+        }
+
+        .card-important {
+            border-left-color: var(--red);
+            background: rgba(196, 122, 122, 0.08);
+        }
+
+        .card-important .card-label {
+            color: var(--red-light);
+        }
+
+        .card-info {
+            border-left-color: var(--blue);
+            background: rgba(107, 143, 167, 0.08);
+        }
+
+        .card-info .card-label {
+            color: var(--blue-light);
+        }
+
+        .card-warning {
+            border-left-color: #d4a050;
+            background: rgba(212, 160, 80, 0.08);
+        }
+
+        .card-warning .card-label {
+            color: #e8c070;
+        }
+
+        .card-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.4rem;
+        }
+
+        .card-label svg {
+            flex-shrink: 0;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ── HIGHLIGHT (marca-texto) ── */
+        .highlight {
+            background: rgba(212, 165, 116, 0.25);
+            color: var(--gold-light);
+            padding: 0.1rem 0.35rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* ── QUOTES ── */
+        .quote {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            padding: 1.2rem 2rem 1.2rem 3rem;
+            margin: 1.6rem 0;
+            background: var(--bg-code);
+            border-radius: var(--radius-sm);
+            border-left: 5px solid var(--gold-dark);
+            position: relative;
+        }
+
+        .quote::before {
+            content: "“";
+            position: absolute;
+            left: 0.8rem;
+            top: 0.4rem;
+            font-size: 2.8rem;
+            line-height: 1;
+            color: var(--gold-dark);
+            font-family: var(--font-serif);
+        }
+
+        .quote .source {
+            display: block;
+            margin-top: 0.6rem;
+            font-size: 0.9rem;
+            font-style: normal;
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+        }
+
+        /* ── TABLES ── */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.6rem 0;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--bg-code);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 420px;
+        }
+
+        thead {
+            background: var(--bg-elevated);
+        }
+
+        th {
+            text-align: left;
+            padding: 0.9rem 1.2rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        td {
+            padding: 0.8rem 1.2rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .table-wrap .table-caption {
+            padding: 0.7rem 1.2rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: var(--bg-code);
+            border-top: 1px solid var(--border);
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            table {
+                font-size: 0.85rem;
+                min-width: 300px;
+            }
+            th,
+            td {
+                padding: 0.6rem 0.8rem;
+            }
+        }
+
+        /* ── LISTS ── */
+        ul,
+        ol {
+            margin: 0.8rem 0 1.2rem 1.6rem;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 0.3rem;
+        }
+
+        ul ul,
+        ol ol {
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .list-marker {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .list-marker li {
+            position: relative;
+            padding-left: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .list-marker li::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: var(--gold-dark);
+            font-size: 0.75rem;
+            top: 0.1rem;
+        }
+
+        .list-marker-gold li::before {
+            color: var(--gold);
+        }
+
+        /* ── DIVIDER ── */
+        .divider-elegant {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2.8rem 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .divider-elegant::before,
+        .divider-elegant::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+        }
+
+        .divider-elegant::after {
+            background: linear-gradient(90deg, var(--border-light), transparent);
+        }
+
+        .divider-elegant span {
+            padding: 0 0.6rem;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+        }
+
+        /* ── INLINE CODE / LEGAL REF ── */
+        .legal {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            background: var(--bg-code);
+            padding: 0.1rem 0.5rem;
+            border-radius: 4px;
+            color: var(--gold-light);
+            border: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        /* ── SVG DIAGRAMS ── */
+        .diagram-container {
+            background: var(--bg-code);
+            border-radius: var(--radius-sm);
+            padding: 1.8rem 1.2rem;
+            margin: 1.8rem 0;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .diagram-container svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .diagram-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* ── RESPONSIVE FINE-TUNE ── */
+        @media (max-width: 820px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+            .quote {
+                padding: 1rem 1.2rem 1rem 2.2rem;
+                font-size: 1rem;
+            }
+            .quote::before {
+                font-size: 2rem;
+                left: 0.4rem;
+                top: 0.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            h3 {
+                font-size: 1.1rem;
+            }
+            .card {
+                padding: 1rem 1.2rem;
+            }
+            .toc-item {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ── PRINT ── */
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+                padding: 0.5in;
+            }
+            .container {
+                background: #fff;
+                box-shadow: none;
+                border: 1px solid #ccc;
+                padding: 1.5rem;
+            }
+            :root {
+                --bg-page: #fff;
+                --bg-card: #fff;
+                --bg-elevated: #f5f5f5;
+                --bg-code: #f0f0f0;
+                --text-primary: #111;
+                --text-secondary: #222;
+                --text-muted: #555;
+                --gold: #b8895a;
+                --gold-light: #a07040;
+                --gold-dark: #8a6040;
+                --blue: #4a6a7a;
+                --blue-light: #5a8a9a;
+                --green: #5a7a5e;
+                --green-light: #6a8a6e;
+                --red: #a06060;
+                --red-light: #b07070;
+                --border: #ccc;
+                --border-light: #aaa;
+            }
+            .toc {
+                border-left-color: var(--gold);
+                background: #f5f5f5;
+            }
+            .card {
+                background: #f5f5f5;
+            }
+            .diagram-container {
+                background: #f5f5f5;
+            }
+            .quote {
+                background: #f5f5f5;
+            }
+            .table-wrap {
+                background: #f5f5f5;
+            }
+            thead {
+                background: #e0e0e0;
+            }
+            th {
+                color: #111;
+            }
+            .highlight {
+                background: #f0e0c0;
+                color: #111;
+            }
+            .legal {
+                background: #f0f0f0;
+                border-color: #ccc;
+                color: #111;
+            }
+            .divider-elegant::before,
+            .divider-elegant::after {
+                background: #ccc;
+            }
+            .divider-elegant span {
+                color: #555;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ====== TÍTULO PRINCIPAL ====== -->
+        <header style="text-align:center;margin-bottom:2rem;">
+            <h1>
+                Direito Processual Civil
+                <span class="sub">Teoria Geral do Processo Civil – Aprofundamento para Concursos</span>
+                <span class="sub" style="font-size:0.9rem;color:var(--text-muted);margin-top:0.2rem;">Técnico Judiciário – Área Judiciária</span>
+            </h1>
+            <div style="width:80px;height:3px;background:var(--gold-dark);margin:1.2rem auto 0;border-radius:4px;"></div>
+        </header>
+
+        <!-- ====== SUMÁRIO ====== -->
+        <nav class="toc" aria-label="Sumário">
+            <div class="toc-title">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h10"/>
+                </svg>
+                Sumário
+            </div>
+            <div class="toc-grid">
+                <div class="toc-item"><span class="num">01</span><a href="#cap1">Atos Processuais e Sujeitos</a></div>
+                <div class="toc-item"><span class="num">02</span><a href="#cap2">Julgamentos e Decisões</a></div>
+                <div class="toc-item"><span class="num">03</span><a href="#cap3">Das Provas</a></div>
+                <div class="toc-item"><span class="num">04</span><a href="#cap4">Dos Recursos</a></div>
+                <div class="toc-item"><span class="num">05</span><a href="#cap5">Jurisprudência e Precedentes</a></div>
+                <div class="toc-item"><span class="num">06</span><a href="#cap6">Estudos de Caso</a></div>
+                <div class="toc-item"><span class="num">07</span><a href="#cap7">Quadros-Resumo</a></div>
+                <div class="toc-item"><span class="num">08</span><a href="#cap8">Macetes de Memorização</a></div>
+                <div class="toc-item"><span class="num">09</span><a href="#cap9">Questões Comentadas</a></div>
+                <div class="toc-item"><span class="num">10</span><a href="#cap10">Síntese Final</a></div>
+                <div class="toc-item"><span class="num">A1</span><a href="#anexo1">Legislação Referenciada</a></div>
+                <div class="toc-item"><span class="num">A2</span><a href="#anexo2">Esquemas e Fluxos</a></div>
+                <div class="toc-item"><span class="num">A3</span><a href="#anexo3">Jurisprudência Relevante</a></div>
+                <div class="toc-item"><span class="num">—</span><a href="#consideracoes">Considerações Finais</a></div>
+            </div>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 1                                                   -->
+        <!-- ============================================================ -->
+        <section id="cap1">
+            <h2>Capítulo 1 – Atos Processuais e Sujeitos do Processo</h2>
+
+            <h3>1.1 Considerações Iniciais</h3>
+            <p>O Direito Processual Civil, para os concursos de Técnico Judiciário da área judiciária, especialmente no padrão de cobrança da FCC, FGV e Cebraspe, exige do candidato não apenas a memorização da literalidade da lei, mas a <strong>compreensão sistêmica</strong> do Código de Processo Civil (Lei nº 13.105/2015) e sua aplicação prática.</p>
+            <p>Nesta apostila, desenvolveremos os temas fundamentais que permeiam o processo civil, desde os atos processuais iniciais até os recursos, com ênfase na interpretação de casos concretos, na jurisprudência dominante e nas armadilhas mais comuns presentes nas provas de alto nível.</p>
+
+            <h3>1.2 A Propositura da Ação e Seus Efeitos</h3>
+
+            <h4>1.2.1 Conceito de propositura</h4>
+            <p>A <strong>propositura da ação</strong> é o ato processual pelo qual se dá início ao processo judicial. Representa o momento em que a relação jurídica processual se instaura perante o Poder Judiciário.</p>
+            <p>O art. 312 do CPC estabelece que:</p>
+            <div class="quote">
+                <strong>"Art. 312.</strong> Considera-se proposta a ação quando a petição inicial for protocolada."
+            </div>
+            <p>Este dispositivo merece especial atenção dos concurseiros, pois estabelece o <strong>marco temporal</strong> para a propositura da ação: o momento do protocolo da petição inicial.</p>
+
+            <h4>1.2.2 Efeitos da propositura em relação ao réu</h4>
+            <p>Aqui reside uma das <strong>pegadinhas mais recorrentes</strong> em provas da FCC e demais bancas. Muitos candidatos confundem o momento da propositura com o momento em que a ação produz efeitos em relação ao réu.</p>
+            <p>O art. 240 do CPC dispõe:</p>
+            <div class="quote">
+                <strong>"Art. 240.</strong> A citação válida, ainda quando ordenada por juízo incompetente, induz litispendência, torna litigiosa a coisa e constitui em mora o devedor, ressalvado o disposto nos arts. 397 e 398 da Lei nº 10.406, de 10 de janeiro de 2002 (Código Civil)."
+            </div>
+
+            <div class="card card-important">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    IMPORTANTE
+                </div>
+                <p>A propositura da ação <strong>produz efeitos apenas entre as partes após a citação válida</strong>.</p>
+            </div>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A FCC costuma explorar a seguinte distinção:</p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Momento</th><th>Efeito</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Protocolo da petição inicial</strong></td><td>Ação considerada proposta (art. 312)</td></tr>
+                            <tr><td><strong>Citação válida do réu</strong></td><td>Produção de efeitos em relação ao réu (art. 240)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><strong>Pegadinha comum</strong>: A banca afirma que a ação produz efeitos contra o réu a partir do protocolo da inicial ou da distribuição. <strong>ERRADO</strong>. Só após a citação válida.</p>
+            </div>
+
+            <h4>1.2.3 Exemplo prático</h4>
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Caso Hipotético
+                </div>
+                <p>João protocola petição inicial em 10/01/2024. O juiz determina a citação do réu em 15/01/2024, que é efetivada em 20/01/2024. Quando a ação produz efeitos em relação ao réu?</p>
+                <p><strong>Resposta</strong>: A partir de 20/01/2024 (data da citação válida), pois a propositura da ação só produz efeitos contra o réu depois de sua citação válida.</p>
+            </div>
+
+            <h3>1.3 Da Petição Inicial e Seus Requisitos</h3>
+
+            <h4>1.3.1 Elementos essenciais</h4>
+            <p>A petição inicial, prevista no art. 319 do CPC, deve conter os seguintes requisitos:</p>
+            <ol>
+                <li><strong>Órgão judiciário</strong> a que é dirigida (juízo competente);</li>
+                <li><strong>Nomes, prenomes, estado civil, profissão, CPF ou CNPJ e endereço</strong> das partes e de seus procuradores;</li>
+                <li><strong>Fatos e fundamentos jurídicos</strong> do pedido;</li>
+                <li><strong>Pedido</strong> com suas especificações;</li>
+                <li><strong>Valor da causa</strong>;</li>
+                <li><strong>Provas</strong> com que o autor pretende demonstrar a verdade dos fatos;</li>
+                <li><strong>Opção pela realização ou não de audiência de conciliação ou mediação</strong>.</li>
+            </ol>
+
+            <h4>1.3.2 Pedido de nova decisão na apelação (requisito obrigatório)</h4>
+            <p>Em sede de recurso de apelação, a petição deve observar os requisitos do art. 1.010 do CPC. O inciso IV estabelece que a apelação deve conter:</p>
+            <div class="quote">
+                <strong>"Art. 1.010, IV –</strong> o pedido de nova decisão".
+            </div>
+            <div class="card card-important">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    ATENÇÃO
+                </div>
+                <p>Este pedido é <strong>OBRIGATÓRIO</strong>, não sendo dispensado em nenhuma hipótese.</p>
+            </div>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A FCC costuma apresentar alternativas afirmando que o pedido de nova decisão na apelação pode ser dispensado por simplicidade da causa ou por economia processual.</p>
+                <p><strong>RESPOSTA CORRETA</strong>: O pedido de nova decisão é obrigatório, conforme literalidade do art. 1.010, IV. Qualquer alternativa que afirme dispensa está incorreta.</p>
+            </div>
+
+            <h3>1.4 Da Revelia</h3>
+
+            <h4>1.4.1 Conceito e efeitos</h4>
+            <p>A <strong>revelia</strong> é a situação processual que se configura quando o réu, regularmente citado, <strong>não contesta</strong> a ação no prazo legal (art. 344 do CPC).</p>
+            <p>O principal efeito da revelia é a <strong>presunção de veracidade dos fatos alegados pelo autor</strong>, ou seja, consideram-se verdadeiras as alegações de fato do autor.</p>
+
+            <h4>1.4.2 Exceções à presunção de veracidade (art. 345)</h4>
+            <div class="card card-important">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    ATENÇÃO
+                </div>
+                <p>A presunção de veracidade <strong>NÃO</strong> é absoluta. O art. 345 do CPC elenca hipóteses em que <strong>não se aplica</strong> a presunção:</p>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Inciso</th><th>Hipótese</th><th>Explicação</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>I</strong></td><td><strong>Pluralidade de réus</strong> com algum deles contestando</td><td>A defesa de um réu pode beneficiar os demais, afastando a presunção</td></tr>
+                        <tr><td><strong>II</strong></td><td><strong>Direitos indisponíveis</strong></td><td>O interesse público impede a presunção automática</td></tr>
+                        <tr><td><strong>III</strong></td><td><strong>Alegações inverossímeis</strong> ou contraditórias com prova constante dos autos</td><td>O juiz não pode acolher fatos manifestamente falsos</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A FCC frequentemente cobra essas exceções. A <strong>pegadinha clássica</strong> é apresentar uma alternativa que afirma que a revelia sempre produz a presunção de veracidade.</p>
+                <p><strong>RESPOSTA CORRETA</strong>: A presunção de veracidade decorrente da revelia não é absoluta, admitindo exceções previstas no art. 345 do CPC.</p>
+            </div>
+
+            <h4>1.4.3 Intervenção do revel (art. 346)</h4>
+            <p>O revel pode intervir no processo em qualquer fase, mas importante: <strong>NÃO ANULA OS ATOS PROCESSUAIS ANTERIORES</strong>.</p>
+            <div class="quote">
+                <strong>Art. 346, parágrafo único:</strong> "O revel poderá intervir no processo em qualquer fase, recebendo-o no estado em que se encontrar."
+            </div>
+            <p><strong>Efeito prático</strong>: O revel que intervém posteriormente não pode impugnar atos já praticados. Apenas os prazos contra o revel sem patrono fluem da data da publicação do ato decisório.</p>
+
+            <h3>1.5 Dos Sujeitos do Processo</h3>
+
+            <h4>1.5.1 Representação do espólio e inventariante dativo</h4>
+            <p>Questão importante sobre a representação do espólio:</p>
+            <div class="quote">
+                <strong>Art. 75, § 1º:</strong> "Os sucessores do falecido serão intimados no processo no qual o espólio seja parte."
+            </div>
+            <p>Isso ocorre quando o inventariante é <strong>dativo</strong> (nomeado pelo juiz, sem ser sucessor). Neste caso, os sucessores (herdeiros) devem ser intimados dos atos processuais.</p>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A FCC cobra especificamente a regra do art. 75, § 1º. A banca pergunta: "Quando o inventariante é dativo, quem deve ser intimado no processo em que o espólio é parte?"</p>
+                <p><strong>RESPOSTA</strong>: Os sucessores do falecido serão intimados.</p>
+            </div>
+
+            <h4>1.5.2 Deveres das partes (art. 77, VI)</h4>
+            <p>O art. 77, inciso VI do CPC estabelece como dever das partes e seus procuradores:</p>
+            <div class="quote">
+                <strong>"não praticar inovação ilegal no estado de fato de bem ou direito litigioso"</strong>.
+            </div>
+            <p><strong>Explicação prática</strong>: Durante o processo, as partes não podem modificar a situação fática do objeto da demanda sem autorização judicial. Exemplo: não vender o imóvel que está sendo discutido em juízo, a menos que haja autorização.</p>
+
+            <h4>1.5.3 Condutas ofensivas em audiência (art. 78)</h4>
+            <p>Em audiência, se a parte manifestar expressões ofensivas, o juiz deve:</p>
+            <ol>
+                <li><strong>Advertir</strong> o ofensor de que não deve repetir a conduta;</li>
+                <li>Casos persista, <strong>cassar-lhe a palavra</strong> (art. 78, § 1º).</li>
+            </ol>
+            <p><strong>PONTO CHAVE</strong>: O princípio da ampla defesa <strong>NÃO IMPEDE</strong> a cassação da palavra após advertência. A alternativa que afirmar que a ampla defesa impede a cassação está incorreta.</p>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A banca usa a expressão "solicitar" que se retire da sala de audiência. O correto é "ordenar" (art. 360, II). A FCC costuma utilizar verbos inadequados para criar a pegadinha.</p>
+            </div>
+
+            <h3>1.6 Do Litigante de Má-Fé</h3>
+
+            <h4>1.6.1 Definição legal</h4>
+            <p>O art. 80, inciso V do CPC define como litigante de má-fé aquele que procede de <strong>modo temerário</strong> em qualquer incidente ou ato do processo.</p>
+            <p><strong>O que caracteriza o procedimento temerário?</strong></p>
+            <ul>
+                <li>Agir com imprudência processual</li>
+                <li>Criar incidentes protelatórios</li>
+                <li>Distorcer os fatos</li>
+                <li>Utilizar o processo para fins ilícitos</li>
+            </ul>
+
+            <h4>1.6.2 Consequências</h4>
+            <p>O litigante de má-fé pode ser condenado:</p>
+            <ul>
+                <li>Ao pagamento de multa;</li>
+                <li>À indenização por perdas e danos;</li>
+                <li>Às custas processuais.</li>
+            </ul>
+
+            <h3>1.7 Da Suspensão e Extinção do Processo</h3>
+
+            <h4>1.7.1 Suspensão por convenção das partes (art. 313, II)</h4>
+            <p>O art. 313, inciso II prevê que o processo pode ser suspenso por <strong>convenção das partes</strong> (acordo entre os litigantes).</p>
+            <p><strong>Prazo</strong>: A suspensão convencional não pode exceder 6 (seis) meses, conforme o § 4º do art. 313.</p>
+
+            <h4>1.7.2 Suspensão por parto ou adoção da advogada (art. 313, IX)</h4>
+            <div class="quote">
+                <strong>Art. 313, IX:</strong> O processo será suspenso em razão do parto ou da concessão de adoção, quando a advogada responsável pelo processo constituir a única patrona da causa.
+            </div>
+            <div class="card card-important">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    ATENÇÃO
+                </div>
+                <p>A prerrogativa se aplica <strong>TANTO AO PARTO QUANTO À ADOÇÃO</strong>. A FCC costuma apresentar alternativa que exclui a adoção — está incorreta.</p>
+            </div>
+
+            <h4>1.7.3 Extinção do processo – sentença (art. 316)</h4>
+            <div class="quote">
+                <strong>Art. 316:</strong> "A extinção do processo dar-se-á por sentença."
+            </div>
+            <div class="card card-important">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--red-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    IMPORTANTE
+                </div>
+                <p>A extinção do processo NUNCA se dá por decisão interlocutória. Sempre por sentença.</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 2                                                   -->
+        <!-- ============================================================ -->
+        <section id="cap2">
+            <h2>Capítulo 2 – Julgamentos e Decisões Judiciais</h2>
+
+            <h3>2.1 Da Sentença</h3>
+
+            <h4>2.1.1 Elementos essenciais da sentença (art. 489)</h4>
+            <p>O art. 489 do CPC estabelece os <strong>três elementos obrigatórios</strong> da sentença:</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Elemento</th><th>Conteúdo</th><th>Fundamento</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>I – RELATÓRIO</strong></td><td>Nomes das partes, identificação do caso, suma do pedido e da contestação, principais ocorrências</td><td>Art. 489, I</td></tr>
+                        <tr><td><strong>II – FUNDAMENTOS</strong></td><td>Análise das questões de fato e de direito</td><td>Art. 489, II</td></tr>
+                        <tr><td><strong>III – DISPOSITIVO</strong></td><td>Resolução das questões principais</td><td>Art. 489, III</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>2.1.2 O dispositivo é dispensável?</h4>
+            <p><strong>NÃO</strong>. O dispositivo é elemento essencial e <strong>jamais pode ser dispensado</strong>, ainda que a causa seja de menor complexidade.</p>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A FCC adora cobrar a literalidade do art. 489. A alternativa correta costuma reproduzir fielmente o inciso I. Qualquer alternativa que mencione dispensa de qualquer elemento está incorreta.</p>
+            </div>
+
+            <h4>2.1.3 Fundamentação inadequada (art. 489, § 1º)</h4>
+            <p>O § 1º do art. 489 elenca hipóteses em que a decisão <strong>não é considerada fundamentada</strong>:</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Inciso</th><th>Hipótese</th><th>Explicação</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>I</strong></td><td>Limitar-se a indicar, reproduzir ou parafrasear ato normativo ou precedente</td><td>A mera reprodução da lei não justifica a aplicação ao caso concreto</td></tr>
+                        <tr><td><strong>II</strong></td><td>Empregar conceitos jurídicos indeterminados sem explicar a incidência no caso concreto</td><td>Ex: "agiu com culpa" sem explicar porque a conduta foi culposa</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>EXEMPLO PRÁTICO</strong>:</p>
+            <ul>
+                <li><strong>Decisão NÃO FUNDAMENTADA</strong>: "O réu agiu com negligência, conforme art. 186 do CC." (apenas invocou o conceito)</li>
+                <li><strong>Decisão FUNDAMENTADA</strong>: "O réu agiu com negligência porque, embora tivesse o dever de cuidado, deixou de sinalizar a obra, conforme se verifica pela prova testemunhal..."</li>
+            </ul>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A banca pergunta: "É considerada fundamentada a sentença que se limita a indicar, reproduzir ou parafrasear ato normativo ou precedente, invocando o princípio da celeridade?"</p>
+                <p><strong>RESPOSTA</strong>: Não. Tal decisão não é considerada fundamentada, nos termos do art. 489, § 1º, I. A celeridade não justifica a falta de fundamentação.</p>
+            </div>
+
+            <h3>2.2 Do Julgamento Conforme o Estado do Processo</h3>
+
+            <h4>2.2.1 Julgamento antecipado do pedido (art. 355)</h4>
+            <p>O juiz pode julgar antecipadamente o pedido com resolução de mérito quando <strong>não houver necessidade de produção de outras provas</strong>.</p>
+            <p><strong>Condição</strong>: Dispensa da fase instrutória.</p>
+            <p><strong>Exemplo prático</strong>: Ação de cobrança em que o réu não apresenta defesa ou os fatos já estão provados documentalmente.</p>
+
+            <h4>2.2.2 Julgamento antecipado parcial de mérito (art. 356)</h4>
+            <div class="quote">
+                <strong>Art. 356:</strong> O juiz pode julgar parcialmente o mérito quando um ou mais pedidos ou parcela deles for <strong>incontroversa</strong> ou estiver em <strong>condições de imediato julgamento</strong>.
+            </div>
+            <p><strong>Características</strong>:</p>
+            <ul>
+                <li>Pode reconhecer obrigação líquida ou ilíquida;</li>
+                <li>A decisão é impugnável por <strong>AGRAVO DE INSTRUMENTO</strong> (art. 356, § 5º c/c art. 1.015, II).</li>
+            </ul>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Fluxo do Julgamento Antecipado Parcial</div>
+                <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                    <defs>
+                        <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b8fa7"/>
+                        </marker>
+                        <style>
+                            .rect-flow { fill: #1a2340; stroke: #3f507a; stroke-width: 2; rx: 10; }
+                            .rect-flow-gold { fill: #1a2340; stroke: #d4a574; stroke-width: 2.5; rx: 10; }
+                            .flow-text { fill: #eae8e4; font-size: 15px; font-family: system-ui, sans-serif; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+                            .flow-text-sm { fill: #c5c2bc; font-size: 13px; font-family: system-ui, sans-serif; text-anchor: middle; dominant-baseline: central; }
+                            .flow-arrow { stroke: #6b8fa7; stroke-width: 2.5; fill: none; marker-end: url(#arrow2); }
+                            .flow-label { fill: #9a9690; font-size: 12px; font-family: system-ui, sans-serif; text-anchor: middle; }
+                        </style>
+                    </defs>
+
+                    <!-- Caixas -->
+                    <rect class="rect-flow" x="160" y="10" width="400" height="44"/>
+                    <text class="flow-text" x="360" y="32">Juiz verifica: pedidos incontroversos ou em condições</text>
+
+                    <rect class="rect-flow-gold" x="260" y="80" width="200" height="44"/>
+                    <text class="flow-text" x="360" y="102">JULGA PARCIALMENTE O MÉRITO</text>
+
+                    <rect class="rect-flow" x="230" y="150" width="260" height="44"/>
+                    <text class="flow-text" x="360" y="172">Reconhece obrigação líquida ou ilíquida</text>
+
+                    <rect class="rect-flow-gold" x="260" y="220" width="200" height="44"/>
+                    <text class="flow-text" x="360" y="242">Recurso cabível: Agravo de instrumento</text>
+
+                    <!-- Setas -->
+                    <path class="flow-arrow" d="M 360 54 L 360 80"/>
+                    <path class="flow-arrow" d="M 360 124 L 360 150"/>
+                    <path class="flow-arrow" d="M 360 194 L 360 220"/>
+                </svg>
+            </div>
+
+            <h3>2.3 Da Decisão de Saneamento (art. 357)</h3>
+            <p>Na decisão de saneamento e organização do processo, o juiz deve:</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Atribuição</th><th>Detalhamento</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>I – Resolver questões processuais pendentes</strong></td><td>Eliminar vícios ou irregularidades processuais</td></tr>
+                        <tr><td><strong>II – Delimitar questões de fato</strong></td><td>Especificar sobre quais pontos recairá a atividade probatória</td></tr>
+                        <tr><td><strong>III – Definir distribuição do ônus da prova</strong></td><td>Observado o art. 373 do CPC</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>2.4 Do Poder de Polícia do Juiz na Audiência</h3>
+
+            <h4>2.4.1 Medidas corretivas (art. 360)</h4>
+            <p>O juiz deve:</p>
+            <ul>
+                <li>Manter a ordem na audiência;</li>
+                <li><strong>Ordenar</strong> que se retirem da sala de audiência os que se comportarem inconvenientemente (art. 360, II);</li>
+                <li>Requisitar força policial, se necessário;</li>
+                <li>Registrar requerimentos em ata;</li>
+                <li>Tratar as partes com urbanidade.</li>
+            </ul>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A banca pode utilizar o termo "solicitar" em vez de "ordenar". O correto é ORDENAR, conforme art. 360, II.</p>
+                <p><strong>Pegadinha</strong>: "O juiz deve solicitar que se retirem da sala de audiência os que se comportarem inconvenientemente." → INCORRETO.</p>
+            </div>
+
+            <h3>2.5 Da Prescrição e Julgamento Liminar</h3>
+
+            <h4>2.5.1 Julgamento liminar de improcedência (art. 332)</h4>
+            <p>O art. 332 do CPC permite ao juiz, <strong>independentemente da citação do réu</strong>, julgar liminarmente improcedente o pedido se verificar desde logo:</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Hipótese</th><th>Exemplo</th></tr></thead>
+                    <tbody>
+                        <tr><td>Prescrição</td><td>O prazo prescricional já transcorreu</td></tr>
+                        <tr><td>Decadência</td><td>O direito já decaiu</td></tr>
+                        <tr><td>Matéria exclusivamente de direito</td><td>Súmula do STJ/TJ, direito local</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>2.5.2 Súmula do Tribunal de Justiça sobre direito local</h4>
+            <p>Se o pedido do autor for contrário a enunciado de súmula do Tribunal de Justiça sobre direito local:</p>
+            <p><strong>PROCEDIMENTO</strong>: O juiz deve julgar liminarmente improcedente o pedido, com fundamento no art. 332, inciso IV do CPC.</p>
+            <p><strong>NATUREZA</strong>: É julgamento de MÉRITO (improcedência), NÃO extinção sem resolução do mérito.</p>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 3                                                   -->
+        <!-- ============================================================ -->
+        <section id="cap3">
+            <h2>Capítulo 3 – Das Provas</h2>
+
+            <h3>3.1 Disposições Gerais</h3>
+
+            <h4>3.1.1 Meios de prova admitidos (art. 369)</h4>
+            <div class="quote">
+                <strong>Art. 369:</strong> "As partes têm o direito de empregar todos os meios legais, bem como os moralmente legítimos, ainda que não especificados neste Código, para provar a verdade dos fatos em que se funda o pedido ou a defesa e influir eficazmente na convicção do juiz."
+            </div>
+            <p><strong>INTERPRETAÇÃO</strong>: A lista do CPC é <strong>EXEMPLIFICATIVA</strong>, não exaustiva. As partes podem utilizar outros meios de prova, desde que legítimos.</p>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A banca pergunta: "As partes só podem usar os meios de prova especificamente listados no CPC?"</p>
+                <p><strong>RESPOSTA</strong>: Não. O art. 369 permite todos os meios legais e moralmente legítimos, ainda que não especificados. A afirmativa "quando especificados" está incorreta.</p>
+            </div>
+
+            <h4>3.1.2 Prova emprestada (art. 372)</h4>
+            <div class="quote">
+                <strong>Art. 372:</strong> "O juiz poderá admitir a utilização de prova produzida em outro processo, atribuindo-lhe o valor que considerar adequado, observado o contraditório."
+            </div>
+            <p><strong>REQUISITOS</strong>:</p>
+            <ol>
+                <li>Prova produzida em outro processo;</li>
+                <li>Observância do contraditório;</li>
+                <li>Valor probatório fixado pelo juiz.</li>
+            </ol>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A pegadinha da FCC é apresentar alternativa que menciona a prova emprestada sem a necessidade do contraditório.</p>
+                <p><strong>CORRETO</strong>: A prova emprestada é admitida, desde que observado o contraditório.</p>
+            </div>
+
+            <h4>3.1.3 Fatos que independem de prova (art. 374)</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Inciso</th><th>Fatos</th><th>Explicação</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>I</strong></td><td><strong>Fatos notórios</strong></td><td>Conhecidos pela sociedade em geral</td></tr>
+                        <tr><td><strong>II</strong></td><td><strong>Fatos confessados</strong></td><td>Afirmados por uma parte e confessados pela contrária</td></tr>
+                        <tr><td><strong>III</strong></td><td><strong>Fatos admitidos como incontroversos</strong></td><td>As partes concordam com o fato</td></tr>
+                        <tr><td><strong>IV</strong></td><td><strong>Presunção legal de existência ou veracidade</strong></td><td>Determinada pela lei</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>3.2 Do Ônus da Prova</h3>
+
+            <h4>3.2.1 Regra geral (art. 373)</h4>
+            <div class="quote">
+                <strong>Art. 373:</strong> "O ônus da prova incumbe:<br>
+                <strong>I – ao autor</strong>, quanto ao fato constitutivo de seu direito;<br>
+                <strong>II – ao réu</strong>, quanto à existência de fato impeditivo, modificativo ou extintivo do direito do autor."
+            </div>
+
+            <p><strong>EXEMPLO PRÁTICO</strong>:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Parte</th><th>O que deve provar</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>AUTOR</strong></td><td>Fato constitutivo do direito (ex: que emprestou dinheiro ao réu)</td></tr>
+                        <tr><td><strong>RÉU</strong></td><td>Fato impeditivo (ex: o empréstimo foi quitado)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>3.2.2 Inversão do ônus da prova (art. 373, § 1º)</h4>
+            <p>A inversão do ônus da prova NÃO ocorre por mera conveniência.</p>
+            <p><strong>REQUISITOS</strong>:</p>
+            <ol>
+                <li><strong>Decisão fundamentada</strong>; e</li>
+                <li><strong>Hipóteses</strong>:
+                    <ul>
+                        <li>Previstas em lei; ou</li>
+                        <li>Peculiaridades da causa (ex: impossibilidade ou excessiva dificuldade de cumprir o encargo; maior facilidade de obtenção da prova do fato contrário).</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A FCC pode cobrar a diferença entre as regras do art. 373 e o CDC (Código de Defesa do Consumidor). No CDC, a inversão do ônus da prova pode ser determinada pelo juiz de ofício, enquanto no CPC geralmente requer pedido da parte.</p>
+            </div>
+
+            <h3>3.3 Da Assistência Litisconsorcial (art. 124)</h3>
+
+            <h4>3.3.1 Conceito e distinção</h4>
+            <div class="quote">
+                <strong>Art. 124:</strong> "Considera-se litisconsorte da parte principal o assistente que, em razão de sua relação jurídica com o assistido, for atingido diretamente pelo resultado do processo."
+            </div>
+
+            <p><strong>DISTINÇÕES FUNDAMENTAIS</strong>:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Figura Processual</th><th>Característica</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Litisconsórcio necessário</strong></td><td>Presença obrigatória por lei ou natureza da relação (art. 114)</td></tr>
+                        <tr><td><strong>Assistência simples</strong></td><td>Terceiro com interesse jurídico, mas sem ser titular da relação</td></tr>
+                        <tr><td><strong>Assistência litisconsorcial</strong></td><td>Terceiro que é titular ou cotitular da relação jurídica discutida</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A banca costuma cobrar a distinção entre assistente litisconsorcial e litisconsórcio. O assistente litisconsorcial é titular ou cotitular da relação jurídica discutida.</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 4                                                   -->
+        <!-- ============================================================ -->
+        <section id="cap4">
+            <h2>Capítulo 4 – Dos Recursos</h2>
+
+            <h3>4.1 Da Apelação</h3>
+
+            <h4>4.1.1 Conceito e cabimento</h4>
+            <p>A apelação é o recurso cabível contra sentença. Tem por objetivo a reforma, invalidação ou anulação da decisão de primeiro grau.</p>
+
+            <h4>4.1.2 Questões de fato novas (art. 1.014)</h4>
+            <div class="quote">
+                <strong>Art. 1.014:</strong> "As questões de fato não propostas no juízo inferior poderão ser suscitadas na apelação se a parte provar que deixou de fazê-lo por motivo de força maior."
+            </div>
+            <p><strong>INTERPRETAÇÃO</strong>: É possível, SIM, suscitar na apelação questões de fato não propostas no juízo inferior, desde que:</p>
+            <ol>
+                <li>A parte comprove que deixou de fazê-lo por <strong>força maior</strong>;</li>
+                <li>Não seja mera inércia ou negligência.</li>
+            </ol>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A FCC cobra a literalidade do art. 1.014. A pergunta é: "É possível suscitar na apelação questões de fato não propostas no juízo inferior?"</p>
+                <p><strong>RESPOSTA</strong>: Sim, se a parte provar que deixou de fazê-lo por motivo de força maior.</p>
+            </div>
+
+            <h4>4.1.3 Devolução dos fundamentos (art. 1.013, § 2º)</h4>
+            <div class="quote">
+                <strong>Art. 1.013, § 2º:</strong> "Quando o pedido ou a defesa tiver mais de um fundamento e o juiz acolher apenas um deles, a apelação devolverá ao tribunal o conhecimento dos demais fundamentos."
+            </div>
+            <p><strong>IMPORTANTE</strong>: A devolução é <strong>AMPLA</strong>, não se limitando ao fundamento acolhido pelo juiz.</p>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A FCC costuma explorar a devolução ampla. A pergunta: "Quando o pedido ou defesa tem mais de um fundamento e o juiz acolhe apenas um, a apelação devolve apenas o fundamento acolhido?"</p>
+                <p><strong>RESPOSTA</strong>: Não. A apelação devolverá ao tribunal o conhecimento dos demais fundamentos.</p>
+            </div>
+
+            <h4>4.1.4 Questões preclusas e agravo (art. 1.009, § 1º)</h4>
+            <div class="quote">
+                <strong>Art. 1.009, § 1º:</strong> "As questões resolvidas na fase de conhecimento, se decididas por decisão interlocutória, ficarão sujeitas a agravo de instrumento, nos termos do art. 1.015."
+            </div>
+            <p><strong>PONTO FUNDAMENTAL</strong>: As decisões interlocutórias anteriores à sentença <strong>NÃO PRECLUEM</strong> e devem ser suscitadas em preliminar de apelação ou contrarrazões.</p>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A pegadinha da FCC é inserir requisitos não previstos em lei. A pergunta: "As decisões judiciais anteriores à sentença que não comportam agravo de instrumento exigem manifestação imediata e reiteração na apelação?"</p>
+                <p><strong>RESPOSTA</strong>: Não. Essas questões não precluem e devem ser suscitadas em preliminar de apelação ou contrarrazões, mas não há exigência de manifestação imediata.</p>
+            </div>
+
+            <h3>4.2 Do Agravo de Instrumento</h3>
+
+            <h4>4.2.1 Cabimento (art. 1.015)</h4>
+            <p>O agravo de instrumento é cabível contra decisões interlocutórias. O rol do art. 1.015 é <strong>TAXATIVO</strong> (são aquelas ali previstas).</p>
+
+            <h4>4.2.2 Agravo interno (art. 1.021)</h4>
+            <p>Contra decisão monocrática do relator cabe <strong>AGRAVO INTERNO</strong>.</p>
+            <p><strong>EXEMPLO</strong>: Se o relator indefere tutela provisória de urgência com fundamento contrário a dispositivo de lei federal, o recurso cabível é agravo interno (art. 1.021).</p>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    DICA DE PROVA – FCC
+                </div>
+                <p>A FCC costuma confundir com agravo de instrumento. A pergunta: "Contra decisão monocrática do relator que indefere tutela provisória de urgência com fundamento contrário a dispositivo de lei federal, qual recurso é cabível?"</p>
+                <p><strong>RESPOSTA</strong>: Agravo interno (art. 1.021). Não cabe agravo de instrumento, pois a decisão é monocrática de relator em tribunal.</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 5                                                   -->
+        <!-- ============================================================ -->
+        <section id="cap5">
+            <h2>Capítulo 5 – Jurisprudência e Precedentes</h2>
+
+            <h3>5.1 Hierarquia dos Precedentes</h3>
+            <p>A jurisprudência tem papel fundamental no processo civil brasileiro. A hierarquia dos precedentes é:</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Hierarquia</th><th>Exemplo</th><th>Efeito</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>1ª – STF</strong></td><td>Súmula vinculante</td><td>Obrigatória para todos os órgãos do Poder Judiciário e Administração</td></tr>
+                        <tr><td><strong>2ª – STJ</strong></td><td>Súmula</td><td>Orientação consolidada, mas não vinculante</td></tr>
+                        <tr><td><strong>3ª – TJ</strong></td><td>Súmula de direito local</td><td>Orientação para o âmbito do Tribunal de Justiça</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>IMPORTANTE</strong>: O art. 332, IV permite o julgamento liminar de improcedência quando o pedido contrariar súmula do TJ sobre direito local.</p>
+
+            <h3>5.2 Controle de Convencionalidade</h3>
+            <p>O controle de convencionalidade consiste na verificação da conformidade das leis e atos normativos com os tratados internacionais de direitos humanos.</p>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 6                                                   -->
+        <!-- ============================================================ -->
+        <section id="cap6">
+            <h2>Capítulo 6 – Estudos de Caso</h2>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Caso 1 – Revelia e Presunção de Veracidade
+                </div>
+                <p><strong>SITUAÇÃO</strong>: Em ação de cobrança, o réu foi regularmente citado, mas não apresentou contestação. O juiz aplicou a presunção de veracidade e julgou procedente o pedido.</p>
+                <p><strong>QUESTÃO</strong>: A decisão está correta?</p>
+                <p><strong>ANÁLISE</strong>: Depende. Se o caso envolver direitos disponíveis e os fatos alegados não forem inverossímeis, a decisão está correta. Porém, se houver:</p>
+                <ul>
+                    <li>Pluralidade de réus e algum contestar;</li>
+                    <li>Direitos indisponíveis;</li>
+                    <li>Alegações inverossímeis;</li>
+                </ul>
+                <p>A presunção não se aplica (art. 345).</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Caso 2 – Julgamento Liminar de Improcedência
+                </div>
+                <p><strong>SITUAÇÃO</strong>: O autor propõe ação contra o Estado do Ceará pleiteando indenização. O juiz verifica que a pretensão é contrária a súmula do TJCE sobre direito local.</p>
+                <p><strong>QUESTÃO</strong>: O juiz deve proceder como?</p>
+                <p><strong>ANÁLISE</strong>: O juiz deve julgar liminarmente improcedente o pedido, independentemente da citação do réu, com fundamento no art. 332, IV. É julgamento de mérito, não extinção sem resolução do mérito.</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Caso 3 – Apelação e Questões de Fato Novas
+                </div>
+                <p><strong>SITUAÇÃO</strong>: Em apelação, a parte pretende suscitar questão de fato que não foi proposta no juízo inferior. Alega que só descobriu a prova após a sentença.</p>
+                <p><strong>QUESTÃO</strong>: É possível?</p>
+                <p><strong>ANÁLISE</strong>: Sim, desde que comprove que deixou de fazê-lo por força maior (art. 1.014). Não basta negligência ou desídia.</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Caso 4 – Prova Emprestada
+                </div>
+                <p><strong>SITUAÇÃO</strong>: Em ação de execução, a parte pretende utilizar provas produzidas em outro processo, do qual não participou.</p>
+                <p><strong>QUESTÃO</strong>: É admitida a prova emprestada?</p>
+                <p><strong>ANÁLISE</strong>: Sim, desde que observado o contraditório. A parte que não participou do processo original deve ter oportunidade de se manifestar sobre a prova.</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 7                                                   -->
+        <!-- ============================================================ -->
+        <section id="cap7">
+            <h2>Capítulo 7 – Quadros-Resumo</h2>
+
+            <h3>7.1 Hipóteses de Julgamento Liminar de Improcedência</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Inciso</th><th>Hipótese</th><th>Base Legal</th></tr></thead>
+                    <tbody>
+                        <tr><td>I</td><td>Contrariedade a súmula do STF ou STJ</td><td>Art. 332, I</td></tr>
+                        <tr><td>II</td><td>Contrariedade a acórdão em IRDR ou IAC</td><td>Art. 332, II</td></tr>
+                        <tr><td>III</td><td>Contrariedade a enunciado de súmula do TJ sobre direito local</td><td>Art. 332, III</td></tr>
+                        <tr><td>IV</td><td>Prescrição ou decadência manifesta</td><td>Art. 332, § 1º</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>7.2 Comparativo de Recursos</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Recurso</th><th>Cabimento</th><th>Prazo</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Apelação</strong></td><td>Sentença</td><td>15 dias</td></tr>
+                        <tr><td><strong>Agravo de instrumento</strong></td><td>Decisão interlocutória (rol taxativo)</td><td>15 dias</td></tr>
+                        <tr><td><strong>Agravo interno</strong></td><td>Decisão monocrática do relator</td><td>15 dias</td></tr>
+                        <tr><td><strong>Embargos de declaração</strong></td><td>Omissão, contradição, obscuridade</td><td>5 dias</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>7.3 Efeitos da Revelia</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Efeito</th><th>Hipótese</th><th>Exceção</th></tr></thead>
+                    <tbody>
+                        <tr><td>Presunção de veracidade</td><td>Revelia do réu</td><td>Art. 345 (pluralidade, indisponíveis, inverossímeis)</td></tr>
+                        <tr><td>Intervenção do revel</td><td>Qualquer fase</td><td>Não anula atos anteriores</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>7.4 Ônus da Prova</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Parte</th><th>O que deve provar</th><th>Exceção</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Autor</strong></td><td>Fato constitutivo do direito</td><td>Inversão (art. 373, § 1º)</td></tr>
+                        <tr><td><strong>Réu</strong></td><td>Fato impeditivo, modificativo ou extintivo</td><td>Inversão (art. 373, § 1º)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>7.5 Sentença – Elementos Essenciais</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Elemento</th><th>Conteúdo</th><th>Dispensável?</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Relatório</strong></td><td>Partes, pedido, contestação, ocorrências</td><td>NÃO</td></tr>
+                        <tr><td><strong>Fundamentos</strong></td><td>Análise de fato e direito</td><td>NÃO (art. 489, § 1º)</td></tr>
+                        <tr><td><strong>Dispositivo</strong></td><td>Resolução das questões</td><td>NÃO</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 8                                                   -->
+        <!-- ============================================================ -->
+        <section id="cap8">
+            <h2>Capítulo 8 – Macetes de Memorização</h2>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    Macete 1 – "Proposta x Citação"
+                </div>
+                <p><strong>"Ação se propõe no protocolo, mas contra o réu só no despacho do citatório."</strong></p>
+                <p>Lembre-se: Protocolo da inicial = propositura; citação válida = efeitos contra o réu (art. 312 + 240).</p>
+            </div>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    Macete 2 – "Revelia tem exceção"
+                </div>
+                <p><strong>"REVELIA: Pluralidade, Indisponíveis e Inverossímeis" (PI²)</strong></p>
+                <ul>
+                    <li><strong>P</strong>luralidade de réus (algum contesta)</li>
+                    <li><strong>I</strong>ndisponíveis (direitos)</li>
+                    <li><strong>I</strong>nverossímeis (alegações)</li>
+                </ul>
+            </div>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    Macete 3 – "Sentença é tripé"
+                </div>
+                <p><strong>"TRIPÉ da sentença: Relatório + Fundamentos + Dispositivo"</strong></p>
+                <ul>
+                    <li><strong>R</strong>elatório</li>
+                    <li><strong>F</strong>undamentos</li>
+                    <li><strong>D</strong>ispositivo</li>
+                </ul>
+                <p><strong>Não esqueça</strong>: Todos são obrigatórios!</p>
+            </div>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    Macete 4 – "Apelação devolve tudo"
+                </div>
+                <p><strong>"Apelação não escolhe fundamento, devolve todos."</strong></p>
+                <p>Quando o juiz acolhe apenas um fundamento, a apelação devolve o conhecimento dos demais (art. 1.013, § 2º).</p>
+            </div>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    Macete 5 – "Prova emprestada precisa de contraditório"
+                </div>
+                <p><strong>"Prova emprestada: sem contraditório, não é admitida"</strong> (art. 372).</p>
+            </div>
+
+            <div class="card card-tip">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    Macete 6 – "Não fundamentada é ..."
+                </div>
+                <p><strong>"Se só copiou a lei, não fundamentou"</strong> (art. 489, § 1º, I).</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 9                                                   -->
+        <!-- ============================================================ -->
+        <section id="cap9">
+            <h2>Capítulo 9 – Questões Comentadas (Modo FCC)</h2>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Questão 1
+                </div>
+                <p><strong>"De acordo com o CPC, considere a propositura da ação. A ação considera-se proposta quando a petição inicial for protocolada, mas a propositura só produz efeitos em relação ao réu depois de sua citação válida."</strong></p>
+                <p>( ) Certo &nbsp;&nbsp; ( ) Errado</p>
+                <p><strong>RESPOSTA</strong>: Certo. É exatamente o que dispõem os arts. 312 e 240 do CPC.</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Questão 2
+                </div>
+                <p><strong>"O revel pode intervir no processo em qualquer fase, anulando os atos processuais anteriores."</strong></p>
+                <p>( ) Certo &nbsp;&nbsp; ( ) Errado</p>
+                <p><strong>RESPOSTA</strong>: Errado. O revel pode intervir, mas NÃO anula os atos anteriores (art. 346).</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Questão 3
+                </div>
+                <p><strong>"A sentença que se limita a reproduzir ato normativo, invocando a celeridade, é considerada fundamentada."</strong></p>
+                <p>( ) Certo &nbsp;&nbsp; ( ) Errado</p>
+                <p><strong>RESPOSTA</strong>: Errado. Tal decisão não é considerada fundamentada (art. 489, § 1º, I).</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Questão 4
+                </div>
+                <p><strong>"As questões de fato não propostas no juízo inferior não podem ser suscitadas na apelação."</strong></p>
+                <p>( ) Certo &nbsp;&nbsp; ( ) Errado</p>
+                <p><strong>RESPOSTA</strong>: Errado. Podem ser suscitadas se a parte provar que deixou de fazê-lo por força maior (art. 1.014).</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Questão 5
+                </div>
+                <p><strong>"Quando o pedido tem mais de um fundamento e o juiz acolhe apenas um, a apelação devolve ao tribunal apenas o fundamento acolhido."</strong></p>
+                <p>( ) Certo &nbsp;&nbsp; ( ) Errado</p>
+                <p><strong>RESPOSTA</strong>: Errado. A apelação devolve o conhecimento dos demais fundamentos (art. 1.013, § 2º).</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Questão 6
+                </div>
+                <p><strong>"O dispositivo é elemento essencial da sentença, não podendo ser dispensado."</strong></p>
+                <p>( ) Certo &nbsp;&nbsp; ( ) Errado</p>
+                <p><strong>RESPOSTA</strong>: Certo. O dispositivo é obrigatório (art. 489).</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Questão 7
+                </div>
+                <p><strong>"O juiz pode admitir prova emprestada de outro processo, ainda que não observado o contraditório."</strong></p>
+                <p>( ) Certo &nbsp;&nbsp; ( ) Errado</p>
+                <p><strong>RESPOSTA</strong>: Errado. A prova emprestada exige observância do contraditório (art. 372).</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Questão 8
+                </div>
+                <p><strong>"A revelia sempre produz a presunção de veracidade dos fatos alegados pelo autor, independentemente de qualquer exceção."</strong></p>
+                <p>( ) Certo &nbsp;&nbsp; ( ) Errado</p>
+                <p><strong>RESPOSTA</strong>: Errado. Existem exceções (art. 345).</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Questão 9
+                </div>
+                <p><strong>"Contra decisão monocrática do relator que indefere tutela provisória de urgência, cabe agravo de instrumento."</strong></p>
+                <p>( ) Certo &nbsp;&nbsp; ( ) Errado</p>
+                <p><strong>RESPOSTA</strong>: Errado. Cabe agravo interno (art. 1.021).</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Questão 10
+                </div>
+                <p><strong>"A extinção do processo pode ocorrer por decisão interlocutória."</strong></p>
+                <p>( ) Certo &nbsp;&nbsp; ( ) Errado</p>
+                <p><strong>RESPOSTA</strong>: Errado. A extinção do processo dá-se por sentença (art. 316).</p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 10                                                  -->
+        <!-- ============================================================ -->
+        <section id="cap10">
+            <h2>Capítulo 10 – Síntese Final</h2>
+
+            <h3>10.1 Pontos que Mais Caem em Prova</h3>
+            <ol>
+                <li><strong>Propositura da ação</strong>: protocolo (art. 312); efeitos contra réu só com citação (art. 240).</li>
+                <li><strong>Revelia</strong>: presunção de veracidade (art. 344), exceções (art. 345), intervenção sem anulação (art. 346).</li>
+                <li><strong>Sentença</strong>: elementos essenciais (art. 489), fundamentação (art. 489, § 1º).</li>
+                <li><strong>Apelação</strong>: questões de fato novas (art. 1.014), devolução de fundamentos (art. 1.013, § 2º), questões preclusas (art. 1.009, § 1º).</li>
+                <li><strong>Provas</strong>: meios admitidos (art. 369), prova emprestada (art. 372), fatos que independem de prova (art. 374), ônus da prova (art. 373).</li>
+                <li><strong>Recursos</strong>: agravo interno (art. 1.021), julgamento liminar de improcedência (art. 332).</li>
+                <li><strong>Suspensão e extinção</strong>: art. 313 e 316.</li>
+            </ol>
+
+            <h3>10.2 Dicas Finais para a Prova</h3>
+            <ol>
+                <li><strong>Leia a literalidade da lei</strong> – A FCC e Cebraspe costumam cobrar exatamente o texto legal.</li>
+                <li><strong>Cuidado com as palavras "sempre", "nunca", "apenas"</strong> – geralmente indicam pegadinhas.</li>
+                <li><strong>Decore as exceções</strong> – as bancas adoram cobrar o que não se aplica.</li>
+                <li><strong>Entenda o "porquê"</strong> – não decore, compreenda a lógica do instituto.</li>
+                <li><strong>Resolva muitas questões</strong> – a prática é fundamental para identificar os padrões de cobrança.</li>
+            </ol>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ANEXO I                                                      -->
+        <!-- ============================================================ -->
+        <section id="anexo1">
+            <h2>Anexo I – Legislação Referenciada</h2>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Dispositivo</th><th>Conteúdo</th><th>Folha</th></tr></thead>
+                    <tbody>
+                        <tr><td>Art. 75, § 1º</td><td>Representação do espólio – intimação dos sucessores</td><td>§ 1.5.1</td></tr>
+                        <tr><td>Art. 77, VI</td><td>Dever das partes – não inovar ilegalmente</td><td>§ 1.5.2</td></tr>
+                        <tr><td>Art. 78, § 1º</td><td>Cassação da palavra por ofensa</td><td>§ 1.5.3</td></tr>
+                        <tr><td>Art. 80, V</td><td>Litigante de má-fé – procedimento temerário</td><td>§ 1.6</td></tr>
+                        <tr><td>Art. 124</td><td>Assistência litisconsorcial</td><td>§ 3.3</td></tr>
+                        <tr><td>Art. 240</td><td>Efeitos da citação</td><td>§ 1.2.2</td></tr>
+                        <tr><td>Art. 312</td><td>Propositura da ação</td><td>§ 1.2.1</td></tr>
+                        <tr><td>Art. 313, II</td><td>Suspensão por convenção das partes</td><td>§ 1.7.1</td></tr>
+                        <tr><td>Art. 313, IX</td><td>Suspensão por parto/adoção da advogada</td><td>§ 1.7.2</td></tr>
+                        <tr><td>Art. 316</td><td>Extinção do processo por sentença</td><td>§ 1.7.3</td></tr>
+                        <tr><td>Art. 332</td><td>Julgamento liminar de improcedência</td><td>§ 2.5.1</td></tr>
+                        <tr><td>Art. 344</td><td>Revelia – presunção de veracidade</td><td>§ 1.4.1</td></tr>
+                        <tr><td>Art. 345</td><td>Exceções à presunção de veracidade</td><td>§ 1.4.2</td></tr>
+                        <tr><td>Art. 346</td><td>Intervenção do revel</td><td>§ 1.4.3</td></tr>
+                        <tr><td>Art. 355</td><td>Julgamento antecipado do pedido</td><td>§ 2.2.1</td></tr>
+                        <tr><td>Art. 356</td><td>Julgamento antecipado parcial</td><td>§ 2.2.2</td></tr>
+                        <tr><td>Art. 357</td><td>Decisão de saneamento</td><td>§ 2.3</td></tr>
+                        <tr><td>Art. 360, II</td><td>Ordem na audiência</td><td>§ 2.4.1</td></tr>
+                        <tr><td>Art. 369</td><td>Meios de prova admitidos</td><td>§ 3.1.1</td></tr>
+                        <tr><td>Art. 372</td><td>Prova emprestada</td><td>§ 3.1.2</td></tr>
+                        <tr><td>Art. 373</td><td>Ônus da prova</td><td>§ 3.2</td></tr>
+                        <tr><td>Art. 374</td><td>Fatos que independem de prova</td><td>§ 3.1.3</td></tr>
+                        <tr><td>Art. 489</td><td>Elementos da sentença</td><td>§ 2.1.1</td></tr>
+                        <tr><td>Art. 489, § 1º</td><td>Fundamentação adequada</td><td>§ 2.1.3</td></tr>
+                        <tr><td>Art. 1.009, § 1º</td><td>Questões preclusas</td><td>§ 4.1.4</td></tr>
+                        <tr><td>Art. 1.010, IV</td><td>Pedido de nova decisão na apelação</td><td>§ 1.3.2</td></tr>
+                        <tr><td>Art. 1.013, § 2º</td><td>Devolução dos fundamentos</td><td>§ 4.1.3</td></tr>
+                        <tr><td>Art. 1.014</td><td>Questões de fato novas na apelação</td><td>§ 4.1.2</td></tr>
+                        <tr><td>Art. 1.021</td><td>Agravo interno</td><td>§ 4.2.2</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ANEXO II                                                     -->
+        <!-- ============================================================ -->
+        <section id="anexo2">
+            <h2>Anexo II – Esquemas e Fluxos</h2>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Fluxo da Propositura da Ação</div>
+                <svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                    <defs>
+                        <marker id="arrowA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b8fa7"/>
+                        </marker>
+                        <style>
+                            .rect-flow { fill: #1a2340; stroke: #3f507a; stroke-width: 2; rx: 10; }
+                            .rect-flow-gold { fill: #1a2340; stroke: #d4a574; stroke-width: 2.5; rx: 10; }
+                            .flow-text { fill: #eae8e4; font-size: 15px; font-family: system-ui, sans-serif; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+                            .flow-arrow { stroke: #6b8fa7; stroke-width: 2.5; fill: none; marker-end: url(#arrowA); }
+                        </style>
+                    </defs>
+
+                    <rect class="rect-flow" x="210" y="10" width="300" height="44"/>
+                    <text class="flow-text" x="360" y="32">Protocolo da Petição Inicial</text>
+
+                    <rect class="rect-flow-gold" x="210" y="72" width="300" height="44"/>
+                    <text class="flow-text" x="360" y="94">Ação considerada proposta (art. 312)</text>
+
+                    <rect class="rect-flow" x="210" y="134" width="300" height="44"/>
+                    <text class="flow-text" x="360" y="156">Distribuição / Autuação</text>
+
+                    <rect class="rect-flow-gold" x="210" y="196" width="300" height="44"/>
+                    <text class="flow-text" x="360" y="218">Citação do réu (art. 240) → Efeitos contra o réu</text>
+
+                    <path class="flow-arrow" d="M 360 54 L 360 72"/>
+                    <path class="flow-arrow" d="M 360 116 L 360 134"/>
+                    <path class="flow-arrow" d="M 360 178 L 360 196"/>
+                </svg>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Fluxo da Revelia</div>
+                <svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                    <defs>
+                        <marker id="arrowR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b8fa7"/>
+                        </marker>
+                        <style>
+                            .rect-flow { fill: #1a2340; stroke: #3f507a; stroke-width: 2; rx: 10; }
+                            .rect-flow-gold { fill: #1a2340; stroke: #d4a574; stroke-width: 2.5; rx: 10; }
+                            .rect-flow-green { fill: #1a2340; stroke: #7a9e7e; stroke-width: 2.5; rx: 10; }
+                            .rect-flow-red { fill: #1a2340; stroke: #c47a7a; stroke-width: 2.5; rx: 10; }
+                            .flow-text { fill: #eae8e4; font-size: 14px; font-family: system-ui, sans-serif; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+                            .flow-text-sm { fill: #c5c2bc; font-size: 12px; font-family: system-ui, sans-serif; text-anchor: middle; dominant-baseline: central; }
+                            .flow-arrow { stroke: #6b8fa7; stroke-width: 2.5; fill: none; marker-end: url(#arrowR); }
+                        </style>
+                    </defs>
+
+                    <rect class="rect-flow" x="280" y="10" width="200" height="44"/>
+                    <text class="flow-text" x="380" y="32">Réu citado</text>
+
+                    <!-- Ramificação -->
+                    <path class="flow-arrow" d="M 380 54 L 380 78 L 180 78 L 180 100"/>
+                    <path class="flow-arrow" d="M 380 54 L 380 78 L 580 78 L 580 100"/>
+
+                    <rect class="rect-flow-green" x="60" y="100" width="240" height="44"/>
+                    <text class="flow-text" x="180" y="122">Contesta → Processo continua</text>
+
+                    <rect class="rect-flow-red" x="460" y="100" width="240" height="44"/>
+                    <text class="flow-text" x="580" y="122">NÃO contesta → REVELIA (art. 344)</text>
+
+                    <path class="flow-arrow" d="M 580 144 L 580 180"/>
+
+                    <rect class="rect-flow" x="460" y="180" width="240" height="44"/>
+                    <text class="flow-text" x="580" y="202">Presunção de veracidade</text>
+
+                    <path class="flow-arrow" d="M 580 224 L 580 260"/>
+
+                    <rect class="rect-flow-green" x="420" y="260" width="320" height="44"/>
+                    <text class="flow-text" x="580" y="282">Aplica-se → Art. 344</text>
+
+                    <path class="flow-arrow" d="M 460 282 L 200 282 L 200 100" style="stroke:#c47a7a;"/>
+
+                    <rect class="rect-flow-red" x="60" y="260" width="320" height="44"/>
+                    <text class="flow-text-sm" x="220" y="275">NÃO se aplica → Art. 345</text>
+                    <text class="flow-text-sm" x="220" y="293">(pluralidade, indisponíveis, inverossímeis)</text>
+
+                    <path class="flow-arrow" d="M 220 304 L 220 340 L 580 340 L 580 320" style="stroke:#c47a7a;"/>
+
+                    <rect class="rect-flow" x="420" y="340" width="320" height="44"/>
+                    <text class="flow-text" x="580" y="362">Intervenção do revel (art. 346) – não anula atos</text>
+                </svg>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Fluxo da Apelação</div>
+                <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                    <defs>
+                        <marker id="arrowAp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b8fa7"/>
+                        </marker>
+                        <style>
+                            .rect-flow { fill: #1a2340; stroke: #3f507a; stroke-width: 2; rx: 10; }
+                            .rect-flow-gold { fill: #1a2340; stroke: #d4a574; stroke-width: 2.5; rx: 10; }
+                            .flow-text { fill: #eae8e4; font-size: 14px; font-family: system-ui, sans-serif; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+                            .flow-text-sm { fill: #c5c2bc; font-size: 12px; font-family: system-ui, sans-serif; text-anchor: middle; dominant-baseline: central; }
+                            .flow-arrow { stroke: #6b8fa7; stroke-width: 2.5; fill: none; marker-end: url(#arrowAp); }
+                        </style>
+                    </defs>
+
+                    <rect class="rect-flow" x="260" y="10" width="200" height="44"/>
+                    <text class="flow-text" x="360" y="32">Sentença</text>
+
+                    <path class="flow-arrow" d="M 360 54 L 360 80"/>
+
+                    <rect class="rect-flow-gold" x="210" y="80" width="300" height="44"/>
+                    <text class="flow-text" x="360" y="102">Apelação (art. 1.009)</text>
+
+                    <path class="flow-arrow" d="M 360 124 L 360 155"/>
+
+                    <rect class="rect-flow" x="140" y="155" width="440" height="44"/>
+                    <text class="flow-text-sm" x="360" y="172">Requisitos: pedido de nova decisão (art. 1.010, IV)</text>
+
+                    <rect class="rect-flow" x="140" y="212" width="440" height="44"/>
+                    <text class="flow-text-sm" x="360" y="229">Pode suscitar questão de fato nova (art. 1.014) – se força maior</text>
+
+                    <rect class="rect-flow" x="140" y="269" width="440" height="44"/>
+                    <text class="flow-text-sm" x="360" y="286">Devolve todos os fundamentos (art. 1.013, § 2º)</text>
+
+                    <rect class="rect-flow-gold" x="140" y="326" width="440" height="34"/>
+                    <text class="flow-text-sm" x="360" y="343">Preliminarmente: suscita questões preclusas (art. 1.009, § 1º)</text>
+
+                    <path class="flow-arrow" d="M 360 124 L 360 155"/>
+                    <path class="flow-arrow" d="M 360 199 L 360 212"/>
+                    <path class="flow-arrow" d="M 360 256 L 360 269"/>
+                    <path class="flow-arrow" d="M 360 313 L 360 326"/>
+                </svg>
+            </div>
+
+            <div class="diagram-container">
+                <div class="diagram-title">Fluxo do Julgamento Liminar de Improcedência</div>
+                <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                    <defs>
+                        <marker id="arrowJ" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                            <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b8fa7"/>
+                        </marker>
+                        <style>
+                            .rect-flow { fill: #1a2340; stroke: #3f507a; stroke-width: 2; rx: 10; }
+                            .rect-flow-gold { fill: #1a2340; stroke: #d4a574; stroke-width: 2.5; rx: 10; }
+                            .flow-text { fill: #eae8e4; font-size: 14px; font-family: system-ui, sans-serif; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+                            .flow-text-sm { fill: #c5c2bc; font-size: 12px; font-family: system-ui, sans-serif; text-anchor: middle; dominant-baseline: central; }
+                            .flow-arrow { stroke: #6b8fa7; stroke-width: 2.5; fill: none; marker-end: url(#arrowJ); }
+                        </style>
+                    </defs>
+
+                    <rect class="rect-flow" x="210" y="10" width="300" height="44"/>
+                    <text class="flow-text" x="360" y="32">Petição inicial protocolada</text>
+
+                    <path class="flow-arrow" d="M 360 54 L 360 80"/>
+
+                    <rect class="rect-flow" x="160" y="80" width="400" height="44"/>
+                    <text class="flow-text-sm" x="360" y="102">Juiz verifica (antes da citação do réu)</text>
+
+                    <path class="flow-arrow" d="M 360 124 L 360 150"/>
+
+                    <rect class="rect-flow" x="120" y="150" width="480" height="44"/>
+                    <text class="flow-text-sm" x="360" y="172">Verifica prescrição, decadência ou contrariedade a súmula</text>
+
+                    <path class="flow-arrow" d="M 360 194 L 360 210"/>
+
+                    <rect class="rect-flow-gold" x="210" y="210" width="300" height="44"/>
+                    <text class="flow-text" x="360" y="232">Julgamento liminar de improcedência (art. 332)</text>
+
+                    <rect class="rect-flow" x="230" y="266" width="260" height="28"/>
+                    <text class="flow-text-sm" x="360" y="280">É julgamento de MÉRITO (improcedência)</text>
+
+                    <path class="flow-arrow" d="M 360 254 L 360 266"/>
+                </svg>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ANEXO III                                                    -->
+        <!-- ============================================================ -->
+        <section id="anexo3">
+            <h2>Anexo III – Jurisprudência Relevante</h2>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Súmula 479 do STJ (antiga)
+                </div>
+                <p><strong>"O prazo para interposição de recurso especial interrompe-se pela interposição de embargos de declaração, mesmo que protelatórios ou sem efeito infringente."</strong></p>
+                <p style="font-size:0.9rem;color:var(--text-muted);">(Atualizada conforme o novo CPC)</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Súmula 522 do STJ (antiga)
+                </div>
+                <p><strong>"A revelia não opera o efeito de presunção de veracidade das alegações do autor quando, havendo pluralidade de réus, um deles contestar."</strong></p>
+                <p style="font-size:0.9rem;color:var(--text-muted);">(Corresponde ao art. 345, I do CPC)</p>
+            </div>
+
+            <div class="card card-info">
+                <div class="card-label">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--blue-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Enunciado 118 do FPPC
+                </div>
+                <p><strong>"O julgamento liminar de improcedência previsto no art. 332 do CPC pode ser proferido independentemente de audiência de conciliação ou mediação."</strong></p>
+            </div>
+
+            <hr>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CONSIDERAÇÕES FINAIS                                         -->
+        <!-- ============================================================ -->
+        <section id="consideracoes">
+            <div class="divider-elegant"><span>✦</span></div>
+
+            <h2 style="border-bottom-color:var(--gold);color:var(--gold);text-align:center;border-bottom-width:2px;">Considerações Finais</h2>
+
+            <p style="font-size:1.1rem;line-height:1.8;text-align:center;color:var(--text-secondary);max-width:800px;margin:0 auto 1.5rem;">
+                Caro(a) concurseiro(a),
+            </p>
+            <p style="font-size:1.05rem;line-height:1.8;color:var(--text-secondary);">
+                Este material foi desenvolvido com base em profunda análise das bancas FCC, FGV e Cebraspe, especialmente no padrão de cobrança do TJCE. A abordagem aqui apresentada visa não apenas a memorização, mas a <strong>compreensão sistêmica</strong> do Direito Processual Civil.
+            </p>
+            <p style="font-size:1.05rem;line-height:1.8;color:var(--text-secondary);">
+                Lembre-se: o segredo para aprovação em concursos de alto nível não está apenas em saber o que a lei diz, mas em entender <strong>por que ela diz</strong>, <strong>como se aplica</strong> e <strong>quais são as exceções</strong>.
+            </p>
+            <div class="card card-tip" style="text-align:center;border-left-color:var(--gold);">
+                <div class="card-label" style="justify-content:center;color:var(--gold);">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                    Dica Final
+                </div>
+                <p style="font-size:1.1rem;color:var(--text-primary);font-weight:500;">
+                    Treine com muitas questões, identifique o padrão de cobrança de cada banca e sempre volte à literalidade da lei. Nos concursos da FCC, a resposta certa muitas vezes está exatamente no texto legal.
+                </p>
+            </div>
+            <p style="text-align:center;font-size:1.2rem;color:var(--gold-light);margin-top:2rem;font-family:var(--font-serif);">
+                Sucesso na sua jornada!
+            </p>
+        </section>
+
+        <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);text-align:center;font-size:0.85rem;color:var(--text-muted);">
+            <span style="display:inline-block;margin:0 0.5rem;">✦</span>
+            Material preparatório para concursos – Técnico Judiciário – Área Judiciária
+            <span style="display:inline-block;margin:0 0.5rem;">✦</span>
+        </div>
+
+    </div>
+    <!-- fim .container -->
+
+</body>
+</html>

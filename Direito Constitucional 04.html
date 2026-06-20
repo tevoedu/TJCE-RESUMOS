@@ -1,0 +1,2292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Administrativo e Constitucional Aplicado</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0e1219;
+            --bg-secondary: #151e2a;
+            --bg-card: #1a2636;
+            --bg-highlight: #1f2e42;
+            --bg-callout: #1a2a1f;
+            --bg-tip: #1a2538;
+            --bg-warning: #2a1f1a;
+            --bg-table-header: #1f2e42;
+            --bg-table-alt: #182232;
+            --border-color: #2a3a52;
+            --border-light: #3a4a62;
+            --text-primary: #e6edf5;
+            --text-secondary: #b8c9e0;
+            --text-muted: #8a9fb8;
+            --text-highlight: #f0c060;
+            --accent-gold: #d4a843;
+            --accent-blue: #5a8ec9;
+            --accent-green: #5baa7a;
+            --accent-coral: #d47a6a;
+            --accent-purple: #8a7ac9;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            --radius: 12px;
+            --radius-sm: 6px;
+            --font-serif: 'Georgia', 'Times New Roman', serif;
+            --font-sans: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            --font-mono: 'Consolas', 'Courier New', monospace;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 0 0 4rem 0;
+            min-height: 100vh;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--border-light);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== HEADER / COVER ===== */
+        .cover {
+            padding: 3rem 0 2.5rem 0;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .cover-badge {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--accent-gold);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .cover h1 {
+            font-family: var(--font-serif);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+
+        .cover h1 span {
+            color: var(--accent-gold);
+        }
+
+        .cover-sub {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .cover-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-blue));
+            margin: 1.25rem auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* ===== TOC ===== */
+        .toc {
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 2rem 2rem 1.8rem 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .toc-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .toc-title svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--accent-gold);
+            fill: none;
+            stroke-width: 2;
+            flex-shrink: 0;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.4rem 1.5rem;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.4rem 0;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s;
+        }
+
+        .toc-item:hover {
+            color: var(--text-primary);
+        }
+
+        .toc-item .num {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.8rem;
+            min-width: 24px;
+            opacity: 0.8;
+        }
+
+        .toc-item .label {
+            flex: 1;
+        }
+
+        @media (max-width: 600px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== CHAPTER ===== */
+        .chapter {
+            margin-bottom: 3.5rem;
+        }
+
+        .chapter-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            opacity: 0.7;
+            margin-bottom: 0.3rem;
+        }
+
+        .chapter-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1rem;
+        }
+
+        .chapter-sub {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .chapter-divider {
+            height: 1px;
+            background: linear-gradient(90deg, var(--border-color), transparent);
+            margin: 1.8rem 0 2rem 0;
+        }
+
+        /* ===== SECTION HEADINGS ===== */
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 2.2rem;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .subsection-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-top: 1.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .subsubsection-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-top: 1.4rem;
+            margin-bottom: 0.4rem;
+            padding-left: 0.5rem;
+            border-left: 3px solid var(--accent-blue);
+            padding-left: 0.8rem;
+        }
+
+        /* ===== PARAGRAPHS & TEXT ===== */
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        em {
+            color: var(--accent-gold);
+            font-style: italic;
+        }
+
+        /* ===== HIGHLIGHT (marker-like) ===== */
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, rgba(212, 168, 67, 0.25) 60%);
+            padding: 0 0.15rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* ===== QUOTE ===== */
+        .quote {
+            background: var(--bg-card);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.2rem 1.8rem;
+            margin: 1.5rem 0;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .quote strong {
+            color: var(--accent-gold);
+            font-style: normal;
+        }
+
+        .quote-source {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: var(--font-sans);
+        }
+
+        /* ===== CALLOUTS ===== */
+        .callout {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .callout-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .callout-title svg {
+            width: 18px;
+            height: 18px;
+            stroke-width: 2;
+            fill: none;
+            flex-shrink: 0;
+        }
+
+        .callout.important {
+            border-left: 4px solid var(--accent-coral);
+            background: var(--bg-warning);
+        }
+        .callout.important .callout-title {
+            color: var(--accent-coral);
+        }
+        .callout.important .callout-title svg {
+            stroke: var(--accent-coral);
+        }
+
+        .callout.tip {
+            border-left: 4px solid var(--accent-blue);
+            background: var(--bg-tip);
+        }
+        .callout.tip .callout-title {
+            color: var(--accent-blue);
+        }
+        .callout.tip .callout-title svg {
+            stroke: var(--accent-blue);
+        }
+
+        .callout.note {
+            border-left: 4px solid var(--accent-green);
+            background: var(--bg-callout);
+        }
+        .callout.note .callout-title {
+            color: var(--accent-green);
+        }
+        .callout.note .callout-title svg {
+            stroke: var(--accent-green);
+        }
+
+        .callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== CARDS ===== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--border-light);
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card-title svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--accent-gold);
+            fill: none;
+            stroke-width: 2;
+            flex-shrink: 0;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 600px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== TABLES ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+        }
+
+        table.modern {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        table.modern thead {
+            background: var(--bg-table-header);
+        }
+
+        table.modern th {
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        table.modern td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        table.modern tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        table.modern tbody tr:nth-child(even) {
+            background: var(--bg-table-alt);
+        }
+
+        table.modern tbody tr:hover {
+            background: var(--bg-highlight);
+        }
+
+        .table-caption {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 0.5rem 0 0 0;
+            font-style: italic;
+        }
+
+        /* ===== LISTS ===== */
+        ul,
+        ol {
+            margin: 0.8rem 0 1.2rem 1.8rem;
+            color: var(--text-secondary);
+        }
+
+        ul li,
+        ol li {
+            margin-bottom: 0.4rem;
+            line-height: 1.7;
+        }
+
+        ul.check-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.check-list li {
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        ul.check-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        ul.x-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.x-list li {
+            padding-left: 1.8rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        ul.x-list li::before {
+            content: "✕";
+            position: absolute;
+            left: 0;
+            color: var(--accent-coral);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* ===== SCHEMA / DIAGRAM CONTAINER ===== */
+        .diagram-container {
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            margin: 1.8rem 0;
+            border: 1px solid var(--border-color);
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .diagram-container svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .diagram-title {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== DIVIDER ===== */
+        .elegant-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2.5rem 0;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .elegant-divider::before,
+        .elegant-divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+        }
+
+        .elegant-divider .diamond {
+            color: var(--accent-gold);
+            font-size: 0.5rem;
+        }
+
+        /* ===== MARCATOR (visual marker) ===== */
+        .marker {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin-right: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .marker.gold {
+            background: var(--accent-gold);
+        }
+        .marker.blue {
+            background: var(--accent-blue);
+        }
+        .marker.green {
+            background: var(--accent-green);
+        }
+        .marker.coral {
+            background: var(--accent-coral);
+        }
+        .marker.purple {
+            background: var(--accent-purple);
+        }
+
+        /* ===== INLINE CODE / TERM ===== */
+        .term {
+            font-weight: 600;
+            color: var(--text-primary);
+            background: var(--bg-card);
+            padding: 0.05rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.95em;
+            border: 1px solid var(--border-color);
+        }
+
+        /* ===== EXERCISES ===== */
+        .exercise {
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            padding: 1.5rem 1.8rem;
+            margin: 1.2rem 0;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .exercise .q {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .exercise .q .num {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .exercise .options {
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            list-style: lower-alpha;
+        }
+
+        .exercise .options li {
+            margin-bottom: 0.15rem;
+        }
+
+        .exercise .answer {
+            margin-top: 0.8rem;
+            padding: 0.6rem 1rem;
+            background: var(--bg-card);
+            border-radius: var(--radius-sm);
+            border-left: 3px solid var(--accent-green);
+            font-size: 0.95rem;
+        }
+
+        .exercise .answer strong {
+            color: var(--accent-green);
+        }
+
+        /* ===== REFERENCES ===== */
+        .ref-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .ref-list li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .ref-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .cover h1 {
+                font-size: 1.8rem;
+            }
+
+            .cover-sub {
+                font-size: 0.95rem;
+            }
+
+            .chapter-title {
+                font-size: 1.6rem;
+                padding-left: 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .subsection-title {
+                font-size: 1.05rem;
+            }
+
+            .toc {
+                padding: 1.5rem;
+            }
+
+            .callout {
+                padding: 1rem 1.2rem;
+            }
+
+            .exercise {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .quote {
+                padding: 1rem 1.2rem;
+                font-size: 0.95rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cover h1 {
+                font-size: 1.5rem;
+            }
+
+            .chapter-title {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            table.modern {
+                font-size: 0.85rem;
+            }
+
+            table.modern th,
+            table.modern td {
+                padding: 0.5rem 0.6rem;
+            }
+
+            .exercise .options {
+                padding-left: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            body {
+                background: #fff;
+                color: #111;
+            }
+            .container {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+            .cover,
+            .toc,
+            .chapter,
+            .callout,
+            .card,
+            .quote,
+            .exercise,
+            .diagram-container,
+            .table-wrap {
+                break-inside: avoid;
+            }
+            .cover {
+                border-bottom-color: #ccc;
+            }
+            .chapter-title {
+                color: #111;
+                border-left-color: #666;
+            }
+            .section-title {
+                color: #111;
+                border-bottom-color: #ccc;
+            }
+            .subsection-title {
+                color: #222;
+            }
+            p,
+            li,
+            .card p,
+            .exercise .options {
+                color: #222;
+            }
+            .callout {
+                border-color: #ccc;
+                background: #f5f5f5;
+            }
+            .callout.important {
+                border-left-color: #c0392b;
+                background: #fdf2f2;
+            }
+            .callout.tip {
+                border-left-color: #2980b9;
+                background: #f0f7fc;
+            }
+            .callout.note {
+                border-left-color: #27ae60;
+                background: #f0faf4;
+            }
+            .card {
+                border-color: #ccc;
+                background: #fafafa;
+            }
+            .card-title {
+                color: #8a6d3b;
+            }
+            .quote {
+                border-left-color: #8a6d3b;
+                background: #f9f6f0;
+                color: #222;
+            }
+            .highlight {
+                background: #f9f0d0;
+            }
+            table.modern thead {
+                background: #ddd;
+            }
+            table.modern th {
+                color: #111;
+                border-bottom-color: #999;
+            }
+            table.modern td {
+                color: #222;
+                border-bottom-color: #ddd;
+            }
+            table.modern tbody tr:nth-child(even) {
+                background: #f5f5f5;
+            }
+            .exercise {
+                border-left-color: #2980b9;
+                background: #f5f9fc;
+            }
+            .exercise .answer {
+                background: #f0f0f0;
+                border-left-color: #27ae60;
+            }
+            .toc {
+                background: #f5f5f5;
+                border-color: #ccc;
+            }
+            .toc-title {
+                color: #8a6d3b;
+            }
+            .toc-item {
+                color: #222;
+            }
+            .diagram-container {
+                background: #fafafa;
+                border-color: #ccc;
+            }
+            .diagram-container svg text {
+                fill: #111 !important;
+            }
+            .diagram-container svg rect,
+            .diagram-container svg circle {
+                stroke: #444 !important;
+                fill: #f0f0f0 !important;
+            }
+            .term {
+                background: #f0f0f0;
+                border-color: #ccc;
+                color: #111;
+            }
+            .elegant-divider::before,
+            .elegant-divider::after {
+                background: linear-gradient(90deg, transparent, #ccc, transparent);
+            }
+            .marker {
+                border: 1px solid #999;
+            }
+            .chapter-divider {
+                background: linear-gradient(90deg, #ccc, transparent);
+            }
+            .cover-divider {
+                background: linear-gradient(90deg, #8a6d3b, #666);
+            }
+            .cover-badge {
+                border-color: #ccc;
+                color: #8a6d3b;
+                background: #f5f5f5;
+            }
+            .ref-list li {
+                border-bottom-color: #ddd;
+                color: #222;
+            }
+            .table-caption {
+                color: #555;
+            }
+        }
+
+        /* ===== UTILITY ===== */
+        .mt-0 {
+            margin-top: 0;
+        }
+        .mb-0 {
+            margin-bottom: 0;
+        }
+        .mt-1 {
+            margin-top: 1rem;
+        }
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-muted {
+            color: var(--text-muted);
+        }
+        .text-gold {
+            color: var(--accent-gold);
+        }
+        .flex {
+            display: flex;
+        }
+        .flex-center {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .gap-1 {
+            gap: 0.5rem;
+        }
+        .gap-2 {
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== COVER ===== -->
+        <header class="cover">
+            <div class="cover-badge">📘 Apostila Digital</div>
+            <h1>Direito Administrativo <span>&amp;</span> Constitucional Aplicado</h1>
+            <p class="cover-sub">Técnico Judiciário · Concursos Públicos</p>
+            <div class="cover-divider"></div>
+        </header>
+
+        <!-- ===== TOC ===== -->
+        <nav class="toc" id="sumario">
+            <div class="toc-title">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6h16M4 12h16M4 18h10"/>
+                </svg>
+                Sumário
+            </div>
+            <div class="toc-grid">
+                <a href="#cap1" class="toc-item"><span class="num">01</span><span class="label">Servidor Público e Mandato Eletivo</span></a>
+                <a href="#cap2" class="toc-item"><span class="num">02</span><span class="label">Remédios Constitucionais e Recursos</span></a>
+                <a href="#cap3" class="toc-item"><span class="num">03</span><span class="label">Princípio da Simetria</span></a>
+                <a href="#cap4" class="toc-item"><span class="num">04</span><span class="label">Repartição de Competências</span></a>
+                <a href="#cap5" class="toc-item"><span class="num">05</span><span class="label">Direito de Reunião</span></a>
+                <a href="#cap6" class="toc-item"><span class="num">06</span><span class="label">Estado de Defesa</span></a>
+                <a href="#cap7" class="toc-item"><span class="num">07</span><span class="label">Inimputabilidade Penal</span></a>
+                <a href="#cap8" class="toc-item"><span class="num">08</span><span class="label">Direitos Políticos e Eleições</span></a>
+                <a href="#cap9" class="toc-item"><span class="num">09</span><span class="label">Resumo Esquemático</span></a>
+                <a href="#exercicios" class="toc-item"><span class="num">10</span><span class="label">Exercícios de Fixação</span></a>
+                <a href="#referencias" class="toc-item"><span class="num">11</span><span class="label">Referências</span></a>
+            </div>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 1 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap1">
+            <div class="chapter-number">Capítulo 1</div>
+            <h2 class="chapter-title">Servidor Público e Mandato Eletivo</h2>
+            <p class="chapter-sub">A compatibilização entre o exercício de cargo público e a participação democrática.</p>
+
+            <h3 class="section-title">1.1 Introdução à Sistemática Constitucional</h3>
+            <p>A Constituição Federal de 1988 estabelece um sistema complexo de regras para compatibilizar o exercício de cargo, emprego ou função pública com o mandato eletivo. Esta compatibilização é essencial para garantir tanto a continuidade da prestação de serviços públicos quanto a participação democrática dos servidores na vida política do país.</p>
+            <p>O tema é recorrente em provas de concursos públicos, especialmente da FCC, que costuma explorar as sutilezas do art. 38 da CF/88 com pegadinhas bastante elaboradas. O candidato precisa dominar não apenas a literalidade do dispositivo, mas também sua interpretação sistemática e as consequências práticas de cada situação.</p>
+
+            <h4 class="subsection-title">1.1.1 Fundamento Constitucional</h4>
+            <p>O art. 38 da Constituição Federal é o diploma normativo que regula a matéria, estabelecendo regras diferenciadas conforme o cargo ocupado pelo servidor (servidor público em sentido amplo, militar, etc.) e o mandato eletivo pretendido ou exercido (vereador, prefeito, deputado, etc.).</p>
+            <p>A sistemática adotada pelo constituinte busca equilibrar dois valores fundamentais:</p>
+            <ul>
+                <li><strong>O direito do servidor à participação política</strong> — que não pode ser cerceado de forma absoluta;</li>
+                <li><strong>O interesse público na continuidade dos serviços</strong> — que não pode ser prejudicado pelo afastamento ou acúmulo indevido.</li>
+            </ul>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">1.2 Vereador com Compatibilidade de Horários</h3>
+
+            <h4 class="subsection-title">1.2.1 A Regra Geral</h4>
+            <p>O art. 38, III, primeira parte, da CF/88 estabelece que o servidor público da administração direta, autárquica e fundacional, no exercício de mandato de vereador, <strong>havendo compatibilidade de horários</strong>, perceberá as vantagens de seu cargo, emprego ou função, <strong>sem prejuízo da remuneração do mandato eletivo</strong>.</p>
+            <div class="quote">
+                "Traduzindo: O professor universitário concursado que for eleito vereador e conseguir conciliar os horários da universidade com as sessões legislativas e demais atividades do mandato poderá receber <strong>ambas as remunerações</strong> — a de professor e a de vereador — simultaneamente."
+            </div>
+
+            <h4 class="subsection-title">1.2.2 Exemplo Prático</h4>
+            <div class="callout note">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                    Caso Hipotético
+                </div>
+                <p><strong>João</strong> é professor efetivo de Direito Constitucional na Universidade Federal do Ceará (UFC), com carga horária de 20 horas semanais, ministrando aulas apenas no período matutino. É eleito vereador de Fortaleza, com atividades legislativas concentradas no período vespertino e noturno.</p>
+                <p><strong>Solução:</strong> Há compatibilidade de horários, pois as atividades não se sobrepõem. João poderá acumular a remuneração de professor universitário com a de vereador, nos termos do art. 38, III, primeira parte, da CF/88.</p>
+            </div>
+
+            <h4 class="subsection-title">1.2.3 Análise da Compatibilidade</h4>
+            <p>A verificação da compatibilidade de horários não é meramente formal. Exige-se análise concreta da possibilidade efetiva de exercício simultâneo das duas atividades. A banca FCC costuma apresentar situações em que, aparentemente, há compatibilidade, mas na verdade a jornada de trabalho do servidor é incompatível com os compromissos do mandato.</p>
+            <p><strong>Elementos a serem considerados:</strong></p>
+            <ul>
+                <li>Horário das sessões legislativas;</li>
+                <li>Horário de expediente do cargo público;</li>
+                <li>Deslocamentos necessários entre os locais de trabalho;</li>
+                <li>Compromissos extraordinários de ambas as atividades;</li>
+                <li>Possibilidade real de cumprimento integral das atribuições.</li>
+            </ul>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">1.3 Vereador sem Compatibilidade de Horários</h3>
+
+            <h4 class="subsection-title">1.3.1 A Regra da Opção</h4>
+            <p>Quando não há compatibilidade de horários, aplica-se o art. 38, III, segunda parte, em conjunto com o art. 38, II, da CF/88, determinando que o servidor:</p>
+            <div class="quote">
+                "será afastado do cargo, emprego ou função, sendo-lhe facultado optar pela sua remuneração."
+            </div>
+            <p><strong>Traduzindo:</strong> O servidor que não consegue conciliar os horários deve se afastar do cargo público para exercer o mandato, mas não perde seu cargo. Durante o afastamento, ele pode <strong>optar</strong> por receber a remuneração do cargo público ou a do mandato eletivo — <strong>nunca ambas</strong>.</p>
+
+            <h4 class="subsection-title">1.3.2 A Distinção Fundamental</h4>
+            <p>A FCC adora explorar esta distinção:</p>
+
+            <div class="table-wrap">
+                <table class="modern">
+                    <thead>
+                        <tr>
+                            <th>Situação</th>
+                            <th>Compatibilidade</th>
+                            <th>Acumulação</th>
+                            <th>Regra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Vereador com compatibilidade</td>
+                            <td><span class="highlight">SIM</span></td>
+                            <td><span class="highlight">PODE acumular ambas</span></td>
+                            <td>Art. 38, III, 1ª parte</td>
+                        </tr>
+                        <tr>
+                            <td>Vereador sem compatibilidade</td>
+                            <td><span class="highlight">NÃO</span></td>
+                            <td><span class="highlight">NÃO PODE acumular</span></td>
+                            <td>Art. 38, III, 2ª parte + II</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-caption">Comparação entre as situações de compatibilidade e incompatibilidade de horários para vereadores.</div>
+            </div>
+
+            <div class="callout important">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 18v4M4.93 4.93l5.66 5.66M13.41 9.17l5.66-5.66M4.93 19.07l5.66-5.66M13.41 14.83l5.66 5.66"/></svg>
+                    Pegadinha Clássica
+                </div>
+                <p>Afirmar que o vereador sem compatibilidade de horários <strong>perde</strong> o cargo público. A CF não prevê perda do cargo, mas sim <strong>afastamento</strong> com <strong>opção</strong> pela remuneração.</p>
+            </div>
+
+            <h4 class="subsection-title">1.3.3 Exemplo Prático</h4>
+            <div class="callout note">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                    Caso Hipotético
+                </div>
+                <p><strong>Maria</strong> é técnica judiciária do Tribunal Regional do Trabalho da 7ª Região, com jornada de 8 horas diárias no período da tarde (13h às 21h). É eleita vereadora, com sessões legislativas ocorrendo no mesmo horário (14h às 20h).</p>
+                <p><strong>Solução:</strong> Inexistindo compatibilidade de horários, Maria deverá ser afastada do cargo de técnica judiciária. Durante o afastamento, poderá optar por receber a remuneração do cargo público ou a de vereadora, mas não ambas.</p>
+            </div>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">1.4 Aspectos Específicos do Afastamento</h3>
+
+            <h4 class="subsection-title">1.4.1 A Regra da Promoção por Merecimento</h4>
+            <p>O art. 38, IV, da CF/88 estabelece uma das pegadinhas mais frequentes em provas:</p>
+            <div class="quote">
+                "o tempo de serviço será contado para todos os efeitos legais, exceto para promoção por merecimento."
+            </div>
+            <p><strong>Análise detida:</strong></p>
+            <ul>
+                <li><strong>Regra geral:</strong> O tempo de serviço do servidor afastado para exercício de mandato eletivo <strong>conta</strong> para todos os efeitos legais — aposentadoria, disponibilidade, adicional por tempo de serviço, etc.</li>
+                <li><strong>Exceção expressa:</strong> O mesmo tempo <strong>NÃO CONTA</strong> para promoção por <strong>merecimento</strong>.</li>
+            </ul>
+            <div class="callout important">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 18v4M4.93 4.93l5.66 5.66M13.41 9.17l5.66-5.66M4.93 19.07l5.66-5.66M13.41 14.83l5.66 5.66"/></svg>
+                    Atenção
+                </div>
+                <p>A promoção por antiguidade (também chamada de "promoção por antigüidade" ou "progressão funcional automática") <strong>é contada</strong>, porque a CF fala expressamente em "promoção por merecimento". A banca pode tentar confundir com a expressão "promoção funcional" ou "promoção", mas é essencial atentar para o adjetivo <strong>"por merecimento"</strong>.</p>
+            </div>
+
+            <h4 class="subsection-title">1.4.2 Esquema Resumo</h4>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-title">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        CONTA PARA
+                    </div>
+                    <ul style="margin:0.5rem 0 0 1.2rem;font-size:0.95rem;">
+                        <li>Aposentadoria</li>
+                        <li>Disponibilidade</li>
+                        <li>Adicional por tempo de serviço</li>
+                        <li>Promoção por antiguidade</li>
+                        <li>Quaisquer outras vantagens baseadas em tempo</li>
+                    </ul>
+                </div>
+                <div class="card" style="border-color:var(--accent-coral);">
+                    <div class="card-title" style="color:var(--accent-coral);">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                        NÃO CONTA PARA
+                    </div>
+                    <ul style="margin:0.5rem 0 0 1.2rem;font-size:0.95rem;">
+                        <li><strong>Promoção por merecimento</strong> (única exceção!)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">1.5 Mandato Eletivo de Prefeito e Outros Cargos</h3>
+            <p>Embora o foco dos flashcards seja o cargo de vereador, é fundamental compreender a sistemática completa do art. 38 para evitar confusões em provas.</p>
+
+            <h4 class="subsection-title">1.5.1 Prefeito (art. 38, I, CF)</h4>
+            <p>O servidor público que assume o mandato de Prefeito <strong>é afastado do cargo</strong>, sendo-lhe facultado optar pela remuneração do cargo público ou pela do mandato eletivo.</p>
+            <ul>
+                <li>Afastamento obrigatório (não há análise de compatibilidade, pois o cargo de Prefeito é de tempo integral);</li>
+                <li>Opção pela remuneração (uma ou outra, nunca ambas);</li>
+                <li>Vedação ao acúmulo de remunerações.</li>
+            </ul>
+
+            <h4 class="subsection-title">1.5.2 Deputado Federal, Estadual/Distrital e Senador (art. 38, II, CF)</h4>
+            <p>Aplica-se a mesma regra do Prefeito:</p>
+            <div class="quote">
+                "será afastado do cargo, emprego ou função, sendo-lhe facultado optar por sua remuneração."
+            </div>
+            <p><strong>Observação importante:</strong> Para os servidores que não pertencem à administração direta, autárquica ou fundacional (ex.: empregados públicos), aplicam-se regras específicas da legislação trabalhista, mas a sistemática constitucional inspira a interpretação.</p>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">1.6 Tabela Comparativa Completa</h3>
+
+            <div class="table-wrap">
+                <table class="modern">
+                    <thead>
+                        <tr>
+                            <th>Mandato Eletivo</th>
+                            <th>Afastamento</th>
+                            <th>Acumulação de Remunerações</th>
+                            <th>Opção</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Vereador (compatibilidade)</td>
+                            <td>NÃO</td>
+                            <td><span class="highlight">SIM</span> (pode acumular)</td>
+                            <td>Não se aplica</td>
+                        </tr>
+                        <tr>
+                            <td>Vereador (incompatibilidade)</td>
+                            <td>SIM</td>
+                            <td>NÃO</td>
+                            <td>Pode optar</td>
+                        </tr>
+                        <tr>
+                            <td>Prefeito</td>
+                            <td>SIM</td>
+                            <td>NÃO</td>
+                            <td>Pode optar</td>
+                        </tr>
+                        <tr>
+                            <td>Deputado/Senador</td>
+                            <td>SIM</td>
+                            <td>NÃO</td>
+                            <td>Pode optar</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-caption">Visão geral das regras para cada tipo de mandato eletivo.</div>
+            </div>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">1.7 Armadilhas de Banca — FCC</h3>
+
+            <h4 class="subsection-title">1.7.1 Pegadinhas Frequentes</h4>
+            <ul class="x-list">
+                <li><strong>"O servidor que se afasta para exercer mandato de vereador perde o cargo"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> O servidor é afastado, não perde o cargo.</li>
+                <li><strong>"O tempo de serviço do vereador afastado não conta para nada"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> Conta para todos os efeitos, exceto promoção por merecimento.</li>
+                <li><strong>"O vereador com compatibilidade de horários pode optar pela remuneração que lhe for mais vantajosa"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> A opção só existe para casos de incompatibilidade.</li>
+                <li><strong>"O prefeito, assim como o vereador com compatibilidade, pode acumular remunerações"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> O prefeito sempre se afasta.</li>
+                <li><strong>"Para exercer mandato de vereador, o servidor precisa pedir licença"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> A CF fala em "afastamento", e a própria lei estabelece que não se trata de licença, mas sim de uma situação especial.</li>
+            </ul>
+
+            <h4 class="subsection-title">1.7.2 Dica de Memorização</h4>
+            <div class="callout tip">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 22v-4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M22 12h-4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    Macete para a FCC
+                </div>
+                <p><em>"VEREADOR PODE JUNTAR, SE HORÁRIO AJUNTAR; SE NÃO, É UM OU OUTRO".</em></p>
+                <p><em>"PREFEITO E DEPUTADO: UM OU OUTRO, NEM PENSAR EM JUNTAR".</em></p>
+                <p><em>"TEMPO CONTA, MAS MÉRITO NÃO CONTA".</em></p>
+            </div>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">1.8 Estudo de Caso Integrado</h3>
+
+            <div class="callout note">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                    Caso Concreto
+                </div>
+                <p>O Estado do Ceará possui uma autarquia responsável pela gestão de recursos hídricos. Um servidor efetivo dessa autarquia, com jornada de 30 horas semanais (segunda a sexta, das 8h às 14h), é eleito vereador de um município cearense cujas sessões legislativas ocorrem às terças e quintas, das 19h às 23h.</p>
+                <p><strong>Questões:</strong></p>
+                <ol style="margin:0.5rem 0 0 1.5rem;">
+                    <li>Há compatibilidade de horários?</li>
+                    <li>O servidor pode acumular as duas remunerações?</li>
+                    <li>Se for afastado, o tempo de serviço contará para progressão funcional?</li>
+                </ol>
+                <p style="margin-top:0.8rem;"><strong>Solução:</strong></p>
+                <ol style="margin:0 0 0 1.5rem;">
+                    <li><strong>Há compatibilidade de horários?</strong> Sim, pois a jornada de trabalho da autarquia (8h-14h) não coincide com as sessões legislativas (19h-23h). Além disso, o servidor trabalha de segunda a sexta, enquanto as sessões ocorrem apenas em dois dias da semana.</li>
+                    <li><strong>Pode acumular as duas remunerações?</strong> Sim, nos termos do art. 38, III, primeira parte, da CF/88, pois existe compatibilidade de horários. Receberá tanto a remuneração da autarquia quanto a de vereador.</li>
+                    <li><strong>Se for afastado (supondo que não houvesse compatibilidade), o tempo contaria para progressão funcional?</strong> Sim, desde que a progressão seja por antiguidade. Se for por merecimento, não contaria. A CF exclui expressamente apenas a promoção por merecimento.</li>
+                </ol>
+            </div>
+
+            <div class="chapter-divider"></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 2 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap2">
+            <div class="chapter-number">Capítulo 2</div>
+            <h2 class="chapter-title">Remédios Constitucionais e Recursos</h2>
+            <p class="chapter-sub">Mandado de Segurança, Recurso Ordinário Constitucional e Habeas Corpus.</p>
+
+            <h3 class="section-title">2.1 Mandado de Segurança e Recurso Ordinário Constitucional</h3>
+
+            <h4 class="subsection-title">2.1.1 O Recurso Ordinário Constitucional (ROC)</h4>
+            <p>O Recurso Ordinário Constitucional é um recurso de natureza constitucional previsto expressamente na Constituição Federal, com competência definida para o Superior Tribunal de Justiça e para o Supremo Tribunal Federal.</p>
+            <p><strong>Fundamento:</strong> Art. 105, II, "b" da CF/88.</p>
+
+            <h4 class="subsection-title">2.1.2 Regra Fundamental</h4>
+            <div class="quote">
+                "Cabe recurso ordinário para o STJ das decisões denegatórias de mandado de segurança decididas em única instância pelos Tribunais Regionais Federais ou pelos Tribunais de Justiça dos Estados."
+            </div>
+            <p><strong>Tradução da regra:</strong> Quando um Tribunal (TRF ou TJ) julga um mandado de segurança em única instância (ou seja, não há possibilidade de recurso ordinário dentro do próprio tribunal) e <strong>nega</strong> a segurança (denega), o impetrante pode interpor recurso ordinário constitucional ao STJ.</p>
+
+            <h4 class="subsection-title">2.1.3 Esquema do Fluxo</h4>
+
+            <div class="diagram-container">
+                <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                    <!-- Caixas -->
+                    <rect x="180" y="10" width="240" height="48" rx="8" fill="#1f2e42" stroke="#3a4a62" stroke-width="1.5"/>
+                    <text x="300" y="39" text-anchor="middle" fill="#e6edf5" font-size="14" font-weight="600">MANDADO DE SEGURANÇA</text>
+                    <text x="300" y="58" text-anchor="middle" fill="#8a9fb8" font-size="11">Impetrado no TRF ou TJ</text>
+
+                    <line x1="300" y1="58" x2="300" y2="82" stroke="#3a4a62" stroke-width="2"/>
+                    <polygon points="295,80 300,90 305,80" fill="#3a4a62"/>
+
+                    <rect x="200" y="92" width="200" height="40" rx="8" fill="#1f2e42" stroke="#3a4a62" stroke-width="1.5"/>
+                    <text x="300" y="117" text-anchor="middle" fill="#e6edf5" font-size="13" font-weight="600">JULGADO EM ÚNICA INSTÂNCIA</text>
+
+                    <line x1="300" y1="132" x2="300" y2="156" stroke="#3a4a62" stroke-width="2"/>
+                    <polygon points="295,154 300,164 305,154" fill="#3a4a62"/>
+
+                    <rect x="220" y="166" width="160" height="40" rx="8" fill="#2a1f1a" stroke="#d47a6a" stroke-width="1.5"/>
+                    <text x="300" y="191" text-anchor="middle" fill="#d47a6a" font-size="13" font-weight="600">DENEGAÇÃO DA SEGURANÇA</text>
+
+                    <line x1="300" y1="206" x2="300" y2="230" stroke="#3a4a62" stroke-width="2"/>
+                    <polygon points="295,228 300,238 305,228" fill="#3a4a62"/>
+
+                    <rect x="140" y="240" width="320" height="48" rx="8" fill="#1a2a1f" stroke="#5baa7a" stroke-width="2"/>
+                    <text x="300" y="261" text-anchor="middle" fill="#5baa7a" font-size="14" font-weight="700">⇒ RECURSO ORDINÁRIO CONSTITUCIONAL (ROC)</text>
+                    <text x="300" y="281" text-anchor="middle" fill="#8a9fb8" font-size="12">PARA O SUPERIOR TRIBUNAL DE JUSTIÇA</text>
+                </svg>
+                <div class="diagram-title">Fluxo do Recurso Ordinário Constitucional contra MS denegado pelo TRF ou TJ</div>
+            </div>
+
+            <h4 class="subsection-title">2.1.4 A Regra Complementar para o STF</h4>
+            <p>O art. 102, II, "a", da CF/88, estabelece que cabe recurso ordinário ao STF:</p>
+            <div class="quote">
+                "das decisões denegatórias de habeas corpus, mandado de segurança, habeas data e mandado de injunção decididas em única instância pelos Tribunais Superiores."
+            </div>
+            <p><strong>Regra específica para mandado de segurança:</strong> Se o mandado de segurança for julgado em única instância por um dos Tribunais Superiores (STJ, TST, TSE, STM) e for <strong>denegado</strong>, caberá recurso ordinário constitucional ao <strong>STF</strong>.</p>
+
+            <h4 class="subsection-title">2.1.5 Síntese Comparativa</h4>
+
+            <div class="table-wrap">
+                <table class="modern">
+                    <thead>
+                        <tr>
+                            <th>Tribunal que denegou MS em única instância</th>
+                            <th>Recurso cabível</th>
+                            <th>Tribunal de destino</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TRF ou TJ</td>
+                            <td>Recurso Ordinário Constitucional</td>
+                            <td><span class="highlight">STJ</span></td>
+                        </tr>
+                        <tr>
+                            <td>STJ, TST, TSE, STM</td>
+                            <td>Recurso Ordinário Constitucional</td>
+                            <td><span class="highlight">STF</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-caption">Comparação dos recursos cabíveis conforme o tribunal que denegou o MS.</div>
+            </div>
+
+            <h4 class="subsection-title">2.1.6 Pegadinhas da FCC</h4>
+            <ul class="x-list">
+                <li><strong>"Todo recurso contra decisão denegatória de mandado de segurança vai para o STJ"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> Depende de qual tribunal denegou a segurança. Se for Tribunal Superior, o recurso vai para o STF.</li>
+                <li><strong>"Cabe recurso ordinário contra decisão concessiva de mandado de segurança"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> O recurso ordinário constitucional só é cabível contra decisões <strong>denegatórias</strong>.</li>
+                <li><strong>"O recurso ordinário contra MS denegado pelo TJ é julgado pelo STF"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> É julgado pelo STJ (art. 105, II, "b").</li>
+            </ul>
+
+            <div class="callout tip">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 22v-4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M22 12h-4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    Macete
+                </div>
+                <p><em>"MS no TRF/TJ, negado → STJ (regra geral)"</em></p>
+                <p><em>"MS no Superior, negado → STF (exceção)"</em></p>
+            </div>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">2.2 Mandado de Segurança e Atos Judiciais</h3>
+
+            <h4 class="subsection-title">2.2.1 Cabimento Contra Ato Judicial</h4>
+            <p>O mandado de segurança é, tradicionalmente, um remédio constitucional destinado a proteger direito líquido e certo contra ilegalidade ou abuso de poder praticado por autoridade pública. Entre essas autoridades, incluem-se as autoridades judiciárias.</p>
+            <p><strong>Fundamento:</strong> Art. 5º, II, da Lei 12.016/2009.</p>
+
+            <h4 class="subsection-title">2.2.2 Requisito para Cabimento</h4>
+            <div class="quote">
+                "Cabe mandado de segurança contra ato judicial quando não couber recurso com efeito suspensivo apto a evitar lesão."
+            </div>
+            <p><strong>Análise dos requisitos:</strong></p>
+            <ol>
+                <li><strong>Ato judicial:</strong> Decisão proferida por juiz ou tribunal no exercício da jurisdição.</li>
+                <li><strong>Não cabe recurso com efeito suspensivo:</strong> O recurso existente não tem o poder de suspender os efeitos da decisão.</li>
+                <li><strong>Apto a evitar lesão:</strong> Mesmo que exista recurso, ele não é capaz de prevenir o dano iminente.</li>
+            </ol>
+
+            <h4 class="subsection-title">2.2.3 Distinção Fundamental</h4>
+            <p>A Lei 12.016/2009 não admite MS contra decisão judicial de forma ampla. A regra é a <strong>irrecorribilidade</strong> da decisão judicial por meio de MS. A exceção ocorre apenas quando:</p>
+            <ul>
+                <li>Há direito líquido e certo; e</li>
+                <li>Não há recurso eficaz para proteger esse direito.</li>
+            </ul>
+
+            <div class="callout important">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 18v4M4.93 4.93l5.66 5.66M13.41 9.17l5.66-5.66M4.93 19.07l5.66-5.66M13.41 14.83l5.66 5.66"/></svg>
+                    Atenção
+                </div>
+                <p>A Lei 12.016/2009 não admite MS contra decisão judicial de forma ampla. A regra é a <strong>irrecorribilidade</strong> da decisão judicial por meio de MS.</p>
+            </div>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">2.3 Habeas Corpus</h3>
+
+            <h4 class="subsection-title">2.3.1 Legitimidade Universal</h4>
+            <p>O habeas corpus é o remédio constitucional destinado a proteger a liberdade de locomoção contra ilegalidade ou abuso de poder. Sua característica mais marcante é a <strong>legitimidade universal</strong>.</p>
+            <p><strong>Fundamento:</strong> Art. 5º, LXVIII, da CF/88; art. 654 do CPP.</p>
+
+            <h4 class="subsection-title">2.3.2 Quem Pode Impetrar?</h4>
+            <ul>
+                <li><strong>Qualquer pessoa:</strong> Física ou jurídica, nacional ou estrangeira.</li>
+                <li><strong>Em favor próprio:</strong> A pessoa cuja liberdade está sendo ameaçada ou violada.</li>
+                <li><strong>Em favor de terceiro:</strong> Qualquer pessoa pode impetrar HC em benefício de outrem, independentemente de parentesco ou relação jurídica.</li>
+            </ul>
+
+            <h4 class="subsection-title">2.3.3 Capacidade Postulatória</h4>
+            <div class="quote">
+                <strong>Regra fundamental:</strong> Não é necessária a assistência de advogado para impetrar habeas corpus.
+            </div>
+            <p><strong>Consequências:</strong></p>
+            <ul class="check-list">
+                <li>O impetrante não precisa ser advogado.</li>
+                <li>O impetrante pode ser analfabeto.</li>
+                <li>O impetrante pode ser menor de idade.</li>
+                <li>O impetrante pode estar preso.</li>
+            </ul>
+
+            <div class="callout tip">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 22v-4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M22 12h-4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    Macete
+                </div>
+                <p><em>"HC É DE GRAÇA E PARA TODOS: qualquer um, por qualquer um, sem advogado."</em></p>
+            </div>
+
+            <div class="chapter-divider"></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 3 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap3">
+            <div class="chapter-number">Capítulo 3</div>
+            <h2 class="chapter-title">Princípio da Simetria</h2>
+            <p class="chapter-sub">Conceito, limites e a vedação às medidas provisórias nos Estados.</p>
+
+            <h3 class="section-title">3.1 Conceito e Limites</h3>
+
+            <h4 class="subsection-title">3.1.1 Definição</h4>
+            <p>O princípio da simetria (ou paralelismo) é um princípio constitucional implícito que determina que as Constituições Estaduais devem reproduzir, em seu âmbito, as regras fundamentais da Constituição Federal que dizem respeito à organização do Poder Executivo, Legislativo e Judiciário, bem como os direitos e garantias fundamentais.</p>
+
+            <h4 class="subsection-title">3.1.2 Fundamento</h4>
+            <p>O princípio decorre do art. 25 da CF/88, que estabelece que os Estados se organizam por suas Constituições, mas "respeitando os princípios" da Constituição Federal.</p>
+
+            <h4 class="subsection-title">3.1.3 Limitação Fundamental</h4>
+            <div class="callout important">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 18v4M4.93 4.93l5.66 5.66M13.41 9.17l5.66-5.66M4.93 19.07l5.66-5.66M13.41 14.83l5.66 5.66"/></svg>
+                    Regra Fundamental
+                </div>
+                <p>O princípio da simetria <strong>não autoriza</strong> os Estados a:</p>
+                <ol>
+                    <li>Criarem competências que a CF não lhes conferiu; ou</li>
+                    <li>Exercerem competências que a CF atribuiu exclusivamente à União.</li>
+                </ol>
+            </div>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">3.2 Medidas Provisórias nos Estados</h3>
+
+            <h4 class="subsection-title">3.2.1 A Regra Constitucional</h4>
+            <p>O art. 62 da CF/88 prevê:</p>
+            <div class="quote">
+                "Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional."
+            </div>
+            <p><strong>Características:</strong></p>
+            <ul>
+                <li>Competência privativa do Presidente da República;</li>
+                <li>Natureza excepcional;</li>
+                <li>Controle posterior pelo Congresso Nacional.</li>
+            </ul>
+
+            <h4 class="subsection-title">3.2.2 Aplicação aos Estados</h4>
+            <p>A Constituição Federal <strong>não</strong> estende a competência para editar medidas provisórias aos Governadores de Estado.</p>
+            <p><strong>Consequência:</strong> Os Estados:</p>
+            <ul class="x-list">
+                <li><strong>Não podem</strong> prever em suas Constituições a adoção de medidas provisórias pelo Governador;</li>
+                <li><strong>Não podem</strong> editar leis com efeitos idênticos aos de medidas provisórias;</li>
+                <li><strong>Não podem</strong> utilizar o mecanismo como forma de legislar de forma urgente.</li>
+            </ul>
+
+            <h4 class="subsection-title">3.2.3 Violação do Princípio da Simetria?</h4>
+            <p><strong>Questão:</strong> Se a Constituição de um Estado-membro prevê que o Governador pode adotar medidas provisórias em caso de relevância e urgência, isso viola o princípio da simetria?</p>
+            <p><strong>Resposta:</strong> <span class="highlight">SIM.</span> A medida provisória é um instrumento típico do Poder Executivo federal, não se aplicando aos Estados por força da repartição de competências. Prever tal instrumento na Constituição Estadual viola a repartição de competências estabelecida pela CF.</p>
+
+            <div class="callout important">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 18v4M4.93 4.93l5.66 5.66M13.41 9.17l5.66-5.66M4.93 19.07l5.66-5.66M13.41 14.83l5.66 5.66"/></svg>
+                    Pegadinha FCC
+                </div>
+                <p><strong>"O princípio da simetria autoriza os Estados a preverem medidas provisórias"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> Não autoriza, pois a competência é privativa da União.</p>
+            </div>
+
+            <div class="chapter-divider"></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 4 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap4">
+            <div class="chapter-number">Capítulo 4</div>
+            <h2 class="chapter-title">Repartição de Competências</h2>
+            <p class="chapter-sub">Competência concorrente, normas gerais e específicas, e a dinâmica da superveniência de lei federal.</p>
+
+            <h3 class="section-title">4.1 Competência Concorrente (Art. 24, CF)</h3>
+
+            <h4 class="subsection-title">4.1.1 Conceito</h4>
+            <p>A competência concorrente é aquela em que a União, os Estados e o Distrito Federal podem legislar sobre a mesma matéria, mas com graus de atuação distintos.</p>
+            <p><strong>Fundamento:</strong> Art. 24 da CF/88.</p>
+
+            <h4 class="subsection-title">4.1.2 Matérias Abrangidas</h4>
+            <p>O art. 24 elenca um rol de 16 matérias, entre as quais:</p>
+            <ul>
+                <li>Direito tributário, financeiro, penitenciário, econômico, urbanístico, agrário, ambiental, etc.;</li>
+                <li>Produção e consumo;</li>
+                <li>Educação, cultura, ensino e desporto;</li>
+                <li>Previdência social, proteção e defesa da saúde;</li>
+                <li>Proteção à infância e à juventude;</li>
+                <li>Procedimentos em matéria processual.</li>
+            </ul>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">4.2 Distribuição de Competências</h3>
+
+            <h4 class="subsection-title">4.2.1 A Regra Básica</h4>
+
+            <div class="table-wrap">
+                <table class="modern">
+                    <thead>
+                        <tr>
+                            <th>Ente Federativo</th>
+                            <th>Competência na Legislação Concorrente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>União</td>
+                            <td><span class="highlight">Normas gerais</span> (art. 24, §1º)</td>
+                        </tr>
+                        <tr>
+                            <td>Estados e DF</td>
+                            <td><span class="highlight">Normas específicas</span> (art. 24, §2º)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-caption">Distribuição básica de competências na legislação concorrente.</div>
+            </div>
+
+            <h4 class="subsection-title">4.2.2 Competência Suplementar dos Estados</h4>
+            <p>O art. 24, §2º, estabelece:</p>
+            <div class="quote">
+                "A competência da União para legislar sobre normas gerais não exclui a competência suplementar dos Estados."
+            </div>
+            <p><strong>Conceito de competência suplementar:</strong> Os Estados e o DF podem:</p>
+            <ol>
+                <li><strong>Suprir</strong> as lacunas deixadas pela lei federal (legislação suplementar propriamente dita);</li>
+                <li><strong>Especificar</strong> as regras gerais (legislação específica).</li>
+            </ol>
+
+            <div class="callout important">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 18v4M4.93 4.93l5.66 5.66M13.41 9.17l5.66-5.66M4.93 19.07l5.66-5.66M13.41 14.83l5.66 5.66"/></svg>
+                    Atenção
+                </div>
+                <p>A União <strong>NÃO</strong> exerce competência suplementar. Essa é uma competência exclusiva dos Estados e do Distrito Federal.</p>
+            </div>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">4.3 Ausência de Lei Federal</h3>
+
+            <h4 class="subsection-title">4.3.1 A Regra de Transição</h4>
+            <p>O art. 24, §3º, estabelece:</p>
+            <div class="quote">
+                "Inexistindo lei federal sobre normas gerais, os Estados exercerão competência legislativa plena, para atender a suas peculiaridades."
+            </div>
+            <p><strong>Consequências da regra:</strong></p>
+            <ol>
+                <li>Os Estados podem legislar sobre toda a matéria, não se limitando a normas específicas ou suplementares;</li>
+                <li>A lei estadual é plena (abrange todo o conteúdo da matéria);</li>
+                <li>A lei estadual atende às peculiaridades de cada Estado.</li>
+            </ol>
+
+            <h4 class="subsection-title">4.3.2 A Superveniência de Lei Federal</h4>
+            <p>O art. 24, §4º, estabelece:</p>
+            <div class="quote">
+                "A superveniência de lei federal sobre normas gerais suspende a eficácia da lei estadual, no que lhe for contrário."
+            </div>
+            <p><strong>Análise da regra:</strong></p>
+            <ol>
+                <li><strong>Suspensão:</strong> A lei federal não revoga a lei estadual, mas suspende sua eficácia naquilo que for contrário;</li>
+                <li><strong>Limitação da suspensão:</strong> Apenas na parte contrária à lei federal;</li>
+                <li><strong>Convalidação possível:</strong> Se a lei federal for revogada, a lei estadual volta a ter eficácia (se ainda estiver em vigor).</li>
+            </ol>
+
+            <h4 class="subsection-title">4.3.3 Distinção Fundamental</h4>
+
+            <div class="table-wrap">
+                <table class="modern">
+                    <thead>
+                        <tr>
+                            <th>Situação</th>
+                            <th>Competência Estadual</th>
+                            <th>Efeito da Lei Federal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inexistência de lei federal</td>
+                            <td><span class="highlight">Legislativa plena</span></td>
+                            <td>Não há lei para conflitar</td>
+                        </tr>
+                        <tr>
+                            <td>Existência de lei federal</td>
+                            <td>Específica/suplementar</td>
+                            <td>A lei federal prevalece no que for contrário</td>
+                        </tr>
+                        <tr>
+                            <td>Superveniência de lei federal</td>
+                            <td>Específica/suplementar</td>
+                            <td><span class="highlight">Suspende</span> a lei estadual no que for contrário</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-caption">Dinâmica da competência concorrente conforme a existência ou superveniência de lei federal.</div>
+            </div>
+
+            <div class="callout tip">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 22v-4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M22 12h-4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    Pegadinha FCC
+                </div>
+                <p><strong>"A lei federal revoga a lei estadual existente"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> Suspende a eficácia no que for contrário.</p>
+                <p><strong>"A superveniência de lei federal extingue a lei estadual"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> Suspende, não extingue.</p>
+            </div>
+
+            <div class="chapter-divider"></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 5 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap5">
+            <div class="chapter-number">Capítulo 5</div>
+            <h2 class="chapter-title">Direito de Reunião</h2>
+            <p class="chapter-sub">Fundamento constitucional, condições de exercício e a natureza do aviso prévio.</p>
+
+            <h3 class="section-title">5.1 Fundamento Constitucional</h3>
+
+            <h4 class="subsection-title">5.1.1 A Regra do Art. 5º, XVI</h4>
+            <div class="quote">
+                "Todos podem reunir-se pacificamente, sem armas, em locais abertos ao público, independentemente de autorização, desde que não frustrem outra reunião anteriormente convocada para o mesmo local, sendo apenas exigido prévio aviso à autoridade competente."
+            </div>
+
+            <h4 class="subsection-title">5.1.2 Elementos do Direito</h4>
+            <ul>
+                <li><strong>Titulares:</strong> Todos (pessoas físicas ou jurídicas, nacionais ou estrangeiras).</li>
+                <li><strong>Natureza:</strong> Direito fundamental de primeira geração (liberdade).</li>
+                <li><strong>Condições de exercício:</strong>
+                    <ul>
+                        <li>Pacificamente (sem violência ou ameaça);</li>
+                        <li>Sem armas (qualquer tipo de arma, inclusive branca);</li>
+                        <li>Em locais abertos ao público (vias, praças, parques, etc.);</li>
+                        <li>Independentemente de autorização (não precisa pedir licença);</li>
+                        <li>Não frustrar reunião anterior no mesmo local (vedação);</li>
+                        <li>Prévio aviso à autoridade competente (exigência).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">5.2 A Natureza do Aviso</h3>
+
+            <h4 class="subsection-title">5.2.1 O Aviso é Prévio</h4>
+            <p>O aviso deve ser feito <strong>antes</strong> da realização da reunião. A lei não estabelece prazo mínimo, mas a doutrina e a jurisprudência entendem que deve ser um prazo razoável para que a autoridade possa tomar providências.</p>
+
+            <h4 class="subsection-title">5.2.2 O Aviso Não é Autorização</h4>
+            <p><strong>Distinção fundamental:</strong></p>
+            <ul>
+                <li><strong>Autorização:</strong> Ato administrativo que permite a realização da reunião. A autoridade pode negar (ex.: incompetência, perigo, etc.).</li>
+                <li><strong>Aviso:</strong> Comunicação à autoridade sobre a realização da reunião. Não cabe à autoridade negar, mas apenas tomar ciência.</li>
+            </ul>
+            <p><strong>Consequência:</strong> A falta de aviso não torna a reunião ilegal, mas pode caracterizar abuso ou desobediência.</p>
+
+            <div class="callout important">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 18v4M4.93 4.93l5.66 5.66M13.41 9.17l5.66-5.66M4.93 19.07l5.66-5.66M13.41 14.83l5.66 5.66"/></svg>
+                    Pegadinha FCC
+                </div>
+                <p><strong>"A reunião em local aberto ao público depende de autorização prévia"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> Independe de autorização, basta o aviso.</p>
+                <p><strong>"O aviso prévio é facultativo"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> É exigido constitucionalmente.</p>
+            </div>
+
+            <div class="chapter-divider"></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 6 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap6">
+            <div class="chapter-number">Capítulo 6</div>
+            <h2 class="chapter-title">Estado de Defesa</h2>
+            <p class="chapter-sub">Decreto, controle, prazos e prisão por crime contra o Estado.</p>
+
+            <h3 class="section-title">6.1 Decreto e Controle</h3>
+
+            <h4 class="subsection-title">6.1.1 Autoridades a Serem Ouvidas</h4>
+            <p>O art. 136, <em>caput</em>, da CF/88 estabelece que o Presidente da República:</p>
+            <div class="quote">
+                "poderá decretar o estado de defesa para preservar ou prontamente restabelecer, em locais restritos e determinados, a ordem pública ou a paz social ameaçadas por grave e iminente instabilidade institucional ou atingidas por calamidades de grandes proporções na natureza."
+            </div>
+            <p><strong>Requisito:</strong> O Presidente deve ouvir previamente:</p>
+            <ol>
+                <li><strong>Conselho da República</strong>; e</li>
+                <li><strong>Conselho de Defesa Nacional</strong>.</li>
+            </ol>
+
+            <h4 class="subsection-title">6.1.2 Quem Não é Ouvido Previamente</h4>
+            <p><strong>O Congresso Nacional não é ouvido previamente.</strong> O Congresso Nacional:</p>
+            <ul>
+                <li>É informado <strong>em até 24 horas</strong> após o decreto (art. 136, §1º);</li>
+                <li>Exerce controle <strong>posterior</strong> (art. 136, §1º, última parte).</li>
+            </ul>
+
+            <h4 class="subsection-title">6.1.3 Esquema do Procedimento</h4>
+
+            <div class="diagram-container">
+                <svg viewBox="0 0 540 380" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                    <rect x="140" y="10" width="260" height="44" rx="8" fill="#1f2e42" stroke="#3a4a62" stroke-width="1.5"/>
+                    <text x="270" y="37" text-anchor="middle" fill="#e6edf5" font-size="14" font-weight="600">PRESIDENTE DA REPÚBLICA</text>
+
+                    <line x1="270" y1="54" x2="270" y2="74" stroke="#3a4a62" stroke-width="2"/>
+                    <polygon points="265,72 270,82 275,72" fill="#3a4a62"/>
+
+                    <rect x="70" y="84" width="400" height="44" rx="8" fill="#1a2a1f" stroke="#5baa7a" stroke-width="1.5"/>
+                    <text x="270" y="111" text-anchor="middle" fill="#5baa7a" font-size="13" font-weight="600">OUVE PREVIAMENTE:</text>
+                    <text x="270" y="126" text-anchor="middle" fill="#b8c9e0" font-size="11">Conselho da República · Conselho de Defesa Nacional</text>
+
+                    <line x1="270" y1="128" x2="270" y2="148" stroke="#3a4a62" stroke-width="2"/>
+                    <polygon points="265,146 270,156 275,146" fill="#3a4a62"/>
+
+                    <rect x="150" y="158" width="240" height="40" rx="8" fill="#2a1f1a" stroke="#d47a6a" stroke-width="1.5"/>
+                    <text x="270" y="183" text-anchor="middle" fill="#d47a6a" font-size="13" font-weight="600">DECRETA O ESTADO DE DEFESA</text>
+
+                    <line x1="270" y1="198" x2="270" y2="218" stroke="#3a4a62" stroke-width="2"/>
+                    <polygon points="265,216 270,226 275,216" fill="#3a4a62"/>
+
+                    <rect x="90" y="228" width="360" height="40" rx="8" fill="#1f2e42" stroke="#3a4a62" stroke-width="1.5"/>
+                    <text x="270" y="253" text-anchor="middle" fill="#e6edf5" font-size="13" font-weight="600">ENVIA AO CONGRESSO NACIONAL EM ATÉ 24 HORAS</text>
+
+                    <line x1="270" y1="268" x2="270" y2="288" stroke="#3a4a62" stroke-width="2"/>
+                    <polygon points="265,286 270,296 275,286" fill="#3a4a62"/>
+
+                    <rect x="120" y="298" width="300" height="44" rx="8" fill="#1a2a1f" stroke="#5baa7a" stroke-width="2"/>
+                    <text x="270" y="318" text-anchor="middle" fill="#5baa7a" font-size="13" font-weight="700">CONGRESSO NACIONAL DECIDE</text>
+                    <text x="270" y="335" text-anchor="middle" fill="#b8c9e0" font-size="11">(por maioria absoluta)</text>
+                </svg>
+                <div class="diagram-title">Procedimento para decretação do estado de defesa</div>
+            </div>
+
+            <div class="callout important">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 18v4M4.93 4.93l5.66 5.66M13.41 9.17l5.66-5.66M4.93 19.07l5.66-5.66M13.41 14.83l5.66 5.66"/></svg>
+                    Pegadinha FCC
+                </div>
+                <p><strong>"O Presidente deve ouvir previamente o Congresso Nacional"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> O Congresso é ouvido posteriormente.</p>
+                <p><strong>"O estado de defesa só pode ser decretado com autorização prévia do Congresso"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> A autorização do Congresso é posterior.</p>
+            </div>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">6.2 Prazo Máximo</h3>
+
+            <h4 class="subsection-title">6.2.1 A Regra Constitucional</h4>
+            <p>O art. 136, §2º, estabelece:</p>
+            <div class="quote">
+                "O estado de defesa não poderá ser superior a trinta dias, e será prorrogado, uma única vez, por igual período."
+            </div>
+
+            <h4 class="subsection-title">6.2.2 Análise do Prazo</h4>
+
+            <div class="table-wrap">
+                <table class="modern">
+                    <thead>
+                        <tr>
+                            <th>Aspecto</th>
+                            <th>Regra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Duração inicial</td>
+                            <td><span class="highlight">30 dias</span></td>
+                        </tr>
+                        <tr>
+                            <td>Prorrogação</td>
+                            <td>Uma única vez</td>
+                        </tr>
+                        <tr>
+                            <td>Período da prorrogação</td>
+                            <td><span class="highlight">30 dias</span></td>
+                        </tr>
+                        <tr>
+                            <td>Duração máxima total</td>
+                            <td><span class="highlight">60 dias</span></td>
+                        </tr>
+                        <tr>
+                            <td>Prorrogação por tempo indeterminado</td>
+                            <td>Não é permitida</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-caption">Prazos e limites do estado de defesa.</div>
+            </div>
+
+            <div class="callout tip">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 22v-4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M22 12h-4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    Macete
+                </div>
+                <p><em>"DEFESA: DEFINE-SE (30+30), OUVE DOIS CONSELHOS, DEPOIS COMUNICA AO CONGRESSO."</em></p>
+            </div>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">6.3 Prisão por Crime Contra o Estado</h3>
+
+            <h4 class="subsection-title">6.3.1 A Regra Constitucional</h4>
+            <p>O art. 136, §3º, I, estabelece:</p>
+            <div class="quote">
+                "Na vigência do estado de defesa, a prisão por crime contra o Estado, determinada pelo executor da medida, será por este comunicada imediatamente ao juiz competente, que a relaxará se ilegal; é facultado ao preso requerer exame de corpo de delito à autoridade policial."
+            </div>
+
+            <h4 class="subsection-title">6.3.2 Análise dos Requisitos</h4>
+            <ol>
+                <li><strong>Prisão:</strong> Restrição da liberdade de locomoção.</li>
+                <li><strong>Crime contra o Estado:</strong> Crime previsto na legislação penal (ex.: lei de segurança nacional) que atente contra a ordem pública ou a paz social.</li>
+                <li><strong>Determinada pelo executor da medida:</strong> A prisão é decretada pela autoridade executora das medidas (não necessariamente juiz), mas <strong>não</strong> é uma prisão arbitrária.</li>
+                <li><strong>Comunicação imediata:</strong> A prisão deve ser comunicada imediatamente ao juiz competente.</li>
+                <li><strong>Controle judicial:</strong> O juiz pode relaxar a prisão se a considerar ilegal.</li>
+                <li><strong>Exame de corpo de delito:</strong> O preso pode requerer exame de corpo de delito à autoridade policial para comprovar eventuais lesões.</li>
+            </ol>
+
+            <div class="callout important">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 18v4M4.93 4.93l5.66 5.66M13.41 9.17l5.66-5.66M4.93 19.07l5.66-5.66M13.41 14.83l5.66 5.66"/></svg>
+                    Atenção
+                </div>
+                <p>Há controle judicial da prisão, mesmo durante o estado de defesa. O juiz não está afastado. A prisão é comunicada e ele pode relaxá-la.</p>
+            </div>
+
+            <div class="chapter-divider"></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 7 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap7">
+            <div class="chapter-number">Capítulo 7</div>
+            <h2 class="chapter-title">Inimputabilidade Penal</h2>
+            <p class="chapter-sub">A regra do art. 228 e a possibilidade de redução da maioridade penal.</p>
+
+            <h3 class="section-title">7.1 Fundamento Constitucional</h3>
+
+            <h4 class="subsection-title">7.1.1 A Regra do Art. 228</h4>
+            <div class="quote">
+                "São penalmente inimputáveis os menores de dezoito anos, sujeitos às normas da legislação especial."
+            </div>
+
+            <h4 class="subsection-title">7.1.2 Natureza Jurídica</h4>
+            <p>A inimputabilidade penal dos menores de 18 anos é:</p>
+            <ol>
+                <li><strong>Norma de direito individual fundamental:</strong> Imunidade penal absoluta;</li>
+                <li><strong>Cláusula pétrea:</strong> Não pode ser alterada por emenda constitucional que a suprima ou reduza (art. 60, §4º, IV, CF — direitos individuais);</li>
+                <li><strong>Norma de eficácia plena e aplicabilidade imediata:</strong> Não depende de regulamentação.</li>
+            </ol>
+
+            <h4 class="subsection-title">7.1.3 Sujeitos da Regra</h4>
+            <ul>
+                <li><strong>Menores de 18 anos:</strong> Não podem ser processados ou condenados pela justiça penal comum.</li>
+                <li><strong>Menores de 18 anos:</strong> Submetem-se à legislação especial (ECA — Estatuto da Criança e do Adolescente), podendo sofrer medidas socioeducativas.</li>
+            </ul>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">7.2 Possibilidade de Redução da Maioridade Penal</h3>
+
+            <h4 class="subsection-title">7.2.1 A Regra Constitucional</h4>
+            <p>A redução da maioridade penal de 18 para 16 anos exigiria:</p>
+            <ol>
+                <li><strong>Emenda Constitucional</strong> (PEC), e não lei ordinária.</li>
+                <li>Aprovação por 3/5 dos membros das duas Casas do Congresso Nacional (art. 60, §2º).</li>
+                <li>Promulgação pela Mesa do Congresso Nacional.</li>
+            </ol>
+
+            <h4 class="subsection-title">7.2.2 O Debate sobre a Possibilidade</h4>
+            <p>Há duas posições principais:</p>
+            <ol>
+                <li><strong>Possibilidade de redução por EC:</strong> Os direitos individuais (art. 5º) são cláusulas pétreas, mas o art. 228 está fora do art. 5º, portanto poderia ser alterado por EC.</li>
+                <li><strong>Impossibilidade de redução por EC:</strong> O art. 228 é cláusula pétrea indireta, pois integra o sistema de direitos individuais, sendo, portanto, imune a alterações.</li>
+            </ol>
+            <p><strong>Posição majoritária do STF:</strong> A redução da maioridade penal por EC seria possível (STF, Plenário, na ADI 3.959/DF, do ano de 2014, mas a decisão não foi unânime). Contudo, a EC depende de quórum qualificado e não pode ser por lei ordinária.</p>
+
+            <h4 class="subsection-title">7.2.3 A Lei Ordinária é Inconstitucional</h4>
+            <p>Uma <strong>lei ordinária</strong> que reduzisse a maioridade penal de 18 para 16 anos seria:</p>
+            <ol>
+                <li><strong>Inconstitucional formal:</strong> Matéria de emenda constitucional, não de lei ordinária;</li>
+                <li><strong>Inconstitucional material:</strong> Violaria a garantia fundamental do art. 228.</li>
+            </ol>
+
+            <div class="callout important">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 18v4M4.93 4.93l5.66 5.66M13.41 9.17l5.66-5.66M4.93 19.07l5.66-5.66M13.41 14.83l5.66 5.66"/></svg>
+                    Pegadinha FCC
+                </div>
+                <p><strong>"Lei ordinária pode reduzir a maioridade penal"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> Exigiria emenda constitucional.</p>
+                <p><strong>"A redução da maioridade penal é matéria de lei complementar"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> É matéria de emenda constitucional.</p>
+            </div>
+
+            <div class="callout tip">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 22v-4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M22 12h-4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    Macete
+                </div>
+                <p><em>"MENOR DE 18: INIMPUTÁVEL POR FORÇA DA CF. ALTERAR? SÓ POR EMENDA, E AINDA ASSIM É CONTROVERSO. LEI ORDINÁRIA NUNCA!"</em></p>
+            </div>
+
+            <div class="chapter-divider"></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 8 -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap8">
+            <div class="chapter-number">Capítulo 8</div>
+            <h2 class="chapter-title">Direitos Políticos e Eleições</h2>
+            <p class="chapter-sub">Suspensão dos direitos políticos, capacidade eleitoral e efeitos da condenação criminal.</p>
+
+            <h3 class="section-title">8.1 Suspensão dos Direitos Políticos</h3>
+
+            <h4 class="subsection-title">8.1.1 Fundamento</h4>
+            <p>O art. 15, III, da CF/88 estabelece que:</p>
+            <div class="quote">
+                "É vedada a cassação de direitos políticos, cuja perda ou suspensão só se dará nos casos de [...] condenação criminal transitada em julgado, enquanto durarem seus efeitos."
+            </div>
+
+            <h4 class="subsection-title">8.1.2 Natureza da Sanção</h4>
+            <ul>
+                <li>A condenação criminal transitada em julgado <strong>suspende</strong> os direitos políticos (não os perde).</li>
+                <li>Os direitos políticos são <strong>suspensos</strong> enquanto durarem os efeitos da condenação.</li>
+                <li>A suspensão é <strong>automática</strong> (não depende de decisão judicial específica).</li>
+            </ul>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">8.2 Capacidade Eleitoral Passiva (Candidatura)</h3>
+
+            <h4 class="subsection-title">8.2.1 Requisitos para Candidatura</h4>
+            <p>Para ser candidato a cargo eletivo, o cidadão deve ter:</p>
+            <ol>
+                <li><strong>Capacidade eleitoral ativa</strong> (pode votar); e</li>
+                <li><strong>Capacidade eleitoral passiva</strong> (pode ser votado).</li>
+            </ol>
+
+            <h4 class="subsection-title">8.2.2 Efeito da Suspensão</h4>
+            <p>O cidadão com condenação criminal transitada em julgado:</p>
+            <ol>
+                <li><strong>Perde a capacidade eleitoral passiva:</strong> Não pode candidatar-se a cargo eletivo.</li>
+                <li><strong>Perde a capacidade eleitoral ativa:</strong> Não pode votar.</li>
+            </ol>
+
+            <h4 class="subsection-title">8.2.3 A Suspensão Independe do Regime</h4>
+            <div class="callout important">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M12 18v4M4.93 4.93l5.66 5.66M13.41 9.17l5.66-5.66M4.93 19.07l5.66-5.66M13.41 14.83l5.66 5.66"/></svg>
+                    Regra Fundamental
+                </div>
+                <p>A suspensão dos direitos políticos <strong>independe</strong> do regime de cumprimento da pena.</p>
+            </div>
+
+            <div class="callout tip">
+                <div class="callout-title">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 22v-4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M22 12h-4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    Pegadinha FCC
+                </div>
+                <p><strong>"A condenação criminal transitada em julgado não suspende os direitos políticos se cumprida em regime aberto"</strong> → <span class="highlight" style="color:var(--accent-coral);">FALSO.</span> A suspensão independe do regime.</p>
+            </div>
+
+            <div class="elegant-divider"><span class="diamond">◆</span></div>
+
+            <h3 class="section-title">8.3 Capacidade Eleitoral Ativa (Voto)</h3>
+
+            <h4 class="subsection-title">8.3.1 A Regra Geral</h4>
+            <p>O direito ao voto também é suspenso para os condenados criminalmente com sentença transitada em julgado.</p>
+
+            <h4 class="subsection-title">8.3.2 Presos e Voto</h4>
+
+            <div class="table-wrap">
+                <table class="modern">
+                    <thead>
+                        <tr>
+                            <th>Situação</th>
+                            <th>Pode votar?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Preso provisório (sem condenação definitiva)</td>
+                            <td><span class="highlight" style="color:var(--accent-green);">SIM</span> (mantém direitos políticos)</td>
+                        </tr>
+                        <tr>
+                            <td>Condenado com sentença transitada em julgado</td>
+                            <td><span class="highlight" style="color:var(--accent-coral);">NÃO</span> (direitos políticos suspensos)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-caption">Direito ao voto conforme a situação processual do preso.</div>
+            </div>
+
+            <div class="chapter-divider"></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 9 — RESUMO ESQUEMÁTICO -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="cap9">
+            <div class="chapter-number">Capítulo 9</div>
+            <h2 class="chapter-title">Resumo Esquemático dos Pontos Principais</h2>
+            <p class="chapter-sub">Visão consolidada dos temas abordados para revisão rápida.</p>
+
+            <div class="card-grid" style="grid-template-columns:1fr;">
+                <div class="card">
+                    <div class="card-title">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><polyline points="20 10 12 18 8 14"/></svg>
+                        Servidor Público e Mandato Eletivo
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 1rem;font-size:0.92rem;margin-top:0.3rem;">
+                        <div><span class="marker gold"></span> <strong>Vereador c/ compat.</strong> → acumula ambas</div>
+                        <div><span class="marker coral"></span> <strong>Vereador s/ compat.</strong> → afasta e opta</div>
+                        <div><span class="marker blue"></span> <strong>Prefeito/Deputado</strong> → afasta e opta</div>
+                        <div><span class="marker green"></span> <strong>Tempo conta</strong> → exceto mérito</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        Remédios Constitucionais
+                    </div>
+                    <div style="font-size:0.92rem;margin-top:0.3rem;">
+                        <div><span class="marker gold"></span> <strong>MS no TRF/TJ negado</strong> → ROC ao STJ</div>
+                        <div><span class="marker blue"></span> <strong>MS no Superior negado</strong> → ROC ao STF</div>
+                        <div><span class="marker green"></span> <strong>HC</strong> → qualquer um, sem advogado</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 7v10M12 7v10M6 7v10"/></svg>
+                        Competência Concorrente (art. 24)
+                    </div>
+                    <div style="font-size:0.92rem;margin-top:0.3rem;">
+                        <div><span class="marker gold"></span> <strong>União</strong> → normas gerais</div>
+                        <div><span class="marker blue"></span> <strong>Estados</strong> → normas específicas/suplementares</div>
+                        <div><span class="marker green"></span> <strong>Sem lei federal</strong> → Estados exercem competência plena</div>
+                        <div><span class="marker coral"></span> <strong>Com lei federal</strong> → lei estadual suspensa no que for contrário</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                        Estado de Defesa
+                    </div>
+                    <div style="font-size:0.92rem;margin-top:0.3rem;">
+                        <div><span class="marker gold"></span> <strong>Duração:</strong> 30 + 30 dias (máx. 60)</div>
+                        <div><span class="marker blue"></span> <strong>Ouvidos previamente:</strong> Conselho da República + Conselho de Defesa Nacional</div>
+                        <div><span class="marker green"></span> <strong>Congresso:</strong> comunicado em 24h (controle posterior)</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-title">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 22v-4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M22 12h-4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                        Direitos Políticos
+                    </div>
+                    <div style="font-size:0.92rem;margin-top:0.3rem;">
+                        <div><span class="marker gold"></span> <strong>Condenação transitada em julgado</strong> → suspensão</div>
+                        <div><span class="marker blue"></span> <strong>Independe do regime</strong> de cumprimento da pena</div>
+                        <div><span class="marker green"></span> <strong>Presos provisórios</strong> → mantêm direitos políticos</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chapter-divider"></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- EXERCÍCIOS -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="exercicios">
+            <div class="chapter-number">Capítulo 10</div>
+            <h2 class="chapter-title">Exercícios de Fixação</h2>
+            <p class="chapter-sub">Questões estilo FCC para consolidar o aprendizado.</p>
+
+            <!-- Q1 -->
+            <div class="exercise">
+                <div class="q"><span class="num">1.</span> Um servidor público estadual, ocupante de cargo efetivo na administração direta, é eleito vereador. Verificada a compatibilidade de horários, ele:</div>
+                <ol class="options">
+                    <li>Será afastado do cargo e poderá optar pela remuneração do mandato ou do cargo.</li>
+                    <li>Será afastado do cargo, mas continuará recebendo a remuneração do cargo.</li>
+                    <li><strong>Poderá acumular as duas remunerações.</strong></li>
+                    <li>Deverá optar pela remuneração do cargo ou do mandato.</li>
+                    <li>Perderá o cargo público.</li>
+                </ol>
+                <div class="answer"><strong>Resposta: C</strong> — Art. 38, III, primeira parte, CF/88: havendo compatibilidade de horários, o vereador perceberá as vantagens de seu cargo sem prejuízo da remuneração do mandato eletivo, podendo acumular ambas.</div>
+            </div>
+
+            <!-- Q2 -->
+            <div class="exercise">
+                <div class="q"><span class="num">2.</span> Durante o afastamento para exercício de mandato eletivo, o tempo de serviço do servidor:</div>
+                <ol class="options">
+                    <li>Não conta para nenhum efeito legal.</li>
+                    <li>Conta para todos os efeitos legais, inclusive promoção por merecimento.</li>
+                    <li><strong>Conta para todos os efeitos legais, exceto promoção por merecimento.</strong></li>
+                    <li>Conta apenas para aposentadoria.</li>
+                    <li>Conta apenas para promoção por antiguidade.</li>
+                </ol>
+                <div class="answer"><strong>Resposta: C</strong> — Art. 38, IV, CF/88: "o tempo de serviço será contado para todos os efeitos legais, exceto para promoção por merecimento."</div>
+            </div>
+
+            <!-- Q3 -->
+            <div class="exercise">
+                <div class="q"><span class="num">3.</span> Um mandado de segurança é impetrado originariamente em Tribunal Regional Federal, que o denega. O recurso cabível e o tribunal de destino são, respectivamente:</div>
+                <ol class="options">
+                    <li><strong>Recurso Ordinário Constitucional e Superior Tribunal de Justiça.</strong></li>
+                    <li>Recurso Especial e Superior Tribunal de Justiça.</li>
+                    <li>Recurso Extraordinário e Supremo Tribunal Federal.</li>
+                    <li>Recurso Ordinário Constitucional e Supremo Tribunal Federal.</li>
+                    <li>Agravo Regimental e o próprio Tribunal Regional Federal.</li>
+                </ol>
+                <div class="answer"><strong>Resposta: A</strong> — Art. 105, II, "b", CF/88: recurso ordinário ao STJ contra decisão denegatória de MS em única instância por TRF ou TJ.</div>
+            </div>
+
+            <!-- Q4 -->
+            <div class="exercise">
+                <div class="q"><span class="num">4.</span> A Constituição de um Estado-membro prevê que o Governador possa adotar medidas provisórias em caso de relevância e urgência. Essa previsão:</div>
+                <ol class="options">
+                    <li>É constitucional, por força do princípio da simetria.</li>
+                    <li>É constitucional, desde que os requisitos sejam idênticos aos do art. 62 da CF.</li>
+                    <li><strong>É inconstitucional, pois a medida provisória é competência privativa do Presidente da República.</strong></li>
+                    <li>É constitucional, pois a CF permite que os Estados adotem o sistema federal.</li>
+                    <li>É inconstitucional, pois a medida provisória ofende o princípio da separação dos Poderes.</li>
+                </ol>
+                <div class="answer"><strong>Resposta: C</strong> — A medida provisória é competência privativa do Presidente da República (art. 62, CF/88), não sendo extensível aos Estados por simetria.</div>
+            </div>
+
+            <!-- Q5 -->
+            <div class="exercise">
+                <div class="q"><span class="num">5.</span> Na competência concorrente (art. 24 da CF), a União exerce:</div>
+                <ol class="options">
+                    <li>Competência plena e suplementar.</li>
+                    <li>Apenas competência suplementar.</li>
+                    <li><strong>Competência para estabelecer normas gerais.</strong></li>
+                    <li>Competência exclusiva.</li>
+                    <li>Competência concorrente plena.</li>
+                </ol>
+                <div class="answer"><strong>Resposta: C</strong> — Art. 24, §1º, CF/88: a competência da União limitar-se-á a estabelecer normas gerais.</div>
+            </div>
+
+            <!-- Q6 -->
+            <div class="exercise">
+                <div class="q"><span class="num">6.</span> Inexistindo lei federal sobre normas gerais na competência concorrente:</div>
+                <ol class="options">
+                    <li>Os Estados perdem a competência para legislar.</li>
+                    <li><strong>Os Estados exercem competência legislativa plena.</strong></li>
+                    <li>A União exerce competência suplementar.</li>
+                    <li>Apenas o Distrito Federal pode legislar.</li>
+                    <li>O Supremo Tribunal Federal deve editar a lei federal.</li>
+                </ol>
+                <div class="answer"><strong>Resposta: B</strong> — Art. 24, §3º, CF/88: inexistindo lei federal sobre normas gerais, os Estados exercerão competência legislativa plena.</div>
+            </div>
+
+            <!-- Q7 -->
+            <div class="exercise">
+                <div class="q"><span class="num">7.</span> O direito de reunião em locais abertos ao público (art. 5º, XVI, CF):</div>
+                <ol class="options">
+                    <li>Depende de autorização prévia da autoridade competente.</li>
+                    <li><strong>Depende de aviso prévio à autoridade competente, independentemente de autorização.</strong></li>
+                    <li>Independe de aviso prévio ou autorização.</li>
+                    <li>Depende de autorização judicial.</li>
+                    <li>Depende de aviso prévio e autorização da autoridade competente.</li>
+                </ol>
+                <div class="answer"><strong>Resposta: B</strong> — Art. 5º, XVI, CF/88: "independentemente de autorização, sendo apenas exigido prévio aviso à autoridade competente".</div>
+            </div>
+
+            <!-- Q8 -->
+            <div class="exercise">
+                <div class="q"><span class="num">8.</span> A Constituição Federal permite a redução da maioridade penal de 18 para 16 anos por meio de:</div>
+                <ol class="options">
+                    <li>Lei ordinária que altere o Estatuto da Criança e do Adolescente.</li>
+                    <li>Lei complementar aprovada por maioria absoluta.</li>
+                    <li><strong>Emenda constitucional aprovada por 3/5 dos membros do Congresso.</strong></li>
+                    <li>Decreto do Presidente da República.</li>
+                    <li>Resolução do Conselho Nacional de Justiça.</li>
+                </ol>
+                <div class="answer"><strong>Resposta: C</strong> — A alteração do art. 228 da CF/88 exigiria emenda constitucional (art. 60, CF/88). Lei ordinária seria inconstitucional.</div>
+            </div>
+
+            <!-- Q9 -->
+            <div class="exercise">
+                <div class="q"><span class="num">9.</span> Durante a vigência do estado de defesa, a prisão por crime contra o Estado:</div>
+                <ol class="options">
+                    <li>Dispensa comunicação ao juiz competente.</li>
+                    <li><strong>Deve ser comunicada imediatamente ao juiz competente.</strong></li>
+                    <li>Não pode ser relaxada pelo juiz.</li>
+                    <li>Impede o preso de requerer exame de corpo de delito.</li>
+                    <li>Pode ser decretada pelo juiz competente, com autorização prévia do Presidente.</li>
+                </ol>
+                <div class="answer"><strong>Resposta: B</strong> — Art. 136, §3º, I, CF/88: a prisão deve ser comunicada imediatamente ao juiz competente.</div>
+            </div>
+
+            <!-- Q10 -->
+            <div class="exercise">
+                <div class="q"><span class="num">10.</span> Um cidadão condenado criminalmente com sentença transitada em julgado, em cumprimento de pena em regime aberto:</div>
+                <ol class="options">
+                    <li>Pode votar e ser votado, pois o regime aberto não suspende direitos políticos.</li>
+                    <li>Não pode votar, mas pode ser votado.</li>
+                    <li>Pode votar, mas não pode ser votado.</li>
+                    <li><strong>Não pode votar nem ser votado.</strong></li>
+                    <li>Mantém todos os direitos políticos, pois a suspensão só ocorre em regime fechado.</li>
+                </ol>
+                <div class="answer"><strong>Resposta: D</strong> — Art. 15, III, CF/88: a condenação criminal transitada em julgado suspende os direitos políticos enquanto durarem seus efeitos. A suspensão independe do regime de cumprimento da pena.</div>
+            </div>
+
+            <div class="chapter-divider"></div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- REFERÊNCIAS -->
+        <!-- ============================================================ -->
+        <section class="chapter" id="referencias">
+            <div class="chapter-number">Referências</div>
+            <h2 class="chapter-title">Referências Bibliográficas</h2>
+            <ul class="ref-list">
+                <li>Constituição da República Federativa do Brasil de 1988.</li>
+                <li>Lei 12.016/2009 (Lei do Mandado de Segurança).</li>
+                <li>Código de Processo Penal.</li>
+                <li>Estatuto da Criança e do Adolescente (Lei 8.069/1990).</li>
+                <li>Doutrina de Direito Constitucional e Administrativo.</li>
+            </ul>
+
+            <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border-color);text-align:center;font-size:0.85rem;color:var(--text-muted);">
+                <p><em>Esta apostila foi elaborada com base nos flashcards do usuário, sendo desenvolvida para fins de estudo para concursos públicos. Todo o conteúdo foi expandido e aprofundado para proporcionar compreensão completa dos temas abordados.</em></p>
+                <p style="margin-top:0.5rem;letter-spacing:1px;">✦ Direito Administrativo e Constitucional Aplicado ✦</p>
+            </div>
+        </section>
+
+    </div>
+    <!-- end container -->
+
+</body>
+</html>

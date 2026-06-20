@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direito Processual Penal – Tribunal do Júri</title>
+    <style>
+        /* ── Reset & base ── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #0f0e1a;
+            color: #dedee8;
+            font-family: 'Segoe UI', 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.5rem 4rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: #161524;
+            border-radius: 36px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+            transition: padding 0.2s;
+        }
+
+        /* ── Tipografia ── */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #f0edff;
+            font-weight: 600;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #f0edff 0%, #b7a9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.25rem;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #a8a0c8;
+            margin-bottom: 2rem;
+            border-left: 4px solid #6c5ce7;
+            padding-left: 1.2rem;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            margin: 2.2rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #2e2a44;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        h2 .chapter-badge {
+            font-size: 0.8rem;
+            background: #3d3570;
+            color: #d6ceff;
+            padding: 0.1rem 0.9rem;
+            border-radius: 40px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            -webkit-text-fill-color: #d6ceff;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin: 1.8rem 0 0.8rem;
+            color: #d6ceff;
+        }
+
+        h4 {
+            font-size: 1.15rem;
+            margin: 1.4rem 0 0.5rem;
+            color: #c2b8f0;
+        }
+
+        p {
+            margin: 0 0 1rem;
+            color: #d2cee0;
+        }
+
+        a {
+            color: #a28eff;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        a:hover {
+            color: #c7baff;
+        }
+
+        strong,
+        b {
+            color: #f0edff;
+            font-weight: 600;
+        }
+
+        em,
+        i {
+            color: #c8c0e8;
+        }
+
+        /* ── Sumário ── */
+        .toc {
+            background: #1d1b30;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            margin: 1.8rem 0 2.8rem;
+            border: 1px solid #2e2a44;
+        }
+        .toc-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #e8e0ff;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.4rem 1.2rem;
+        }
+        .toc-grid a {
+            display: block;
+            padding: 0.3rem 0;
+            color: #b8b0d8;
+            font-size: 0.95rem;
+            border-bottom: 1px solid transparent;
+            transition: border 0.15s, color 0.15s;
+        }
+        .toc-grid a:hover {
+            color: #e0d8ff;
+            border-bottom-color: #6c5ce7;
+        }
+        .toc-grid .toc-chapter {
+            color: #9a8ec8;
+            font-size: 0.8rem;
+            margin-right: 0.4rem;
+        }
+
+        /* ── Cards / Boxes ── */
+        .card {
+            background: #1d1b30;
+            border-radius: 20px;
+            padding: 1.5rem 1.8rem;
+            margin: 1.5rem 0;
+            border: 1px solid #2e2a44;
+            transition: background 0.2s;
+        }
+        .card-soft {
+            background: #1a182b;
+        }
+
+        .tip {
+            background: #1e2638;
+            border-left: 5px solid #4ecdc4;
+            padding: 1.2rem 1.6rem;
+            border-radius: 16px;
+            margin: 1.2rem 0;
+        }
+        .tip::before {
+            content: "💡 ";
+            font-size: 1.2rem;
+            color: #4ecdc4;
+        }
+
+        .important {
+            background: #2a1f30;
+            border-left: 5px solid #e94560;
+            padding: 1.2rem 1.6rem;
+            border-radius: 16px;
+            margin: 1.2rem 0;
+        }
+        .important::before {
+            content: "⚠️ ";
+            font-size: 1.2rem;
+            color: #e94560;
+        }
+
+        .note {
+            background: #1f2238;
+            border-left: 5px solid #f5a623;
+            padding: 1.2rem 1.6rem;
+            border-radius: 16px;
+            margin: 1.2rem 0;
+        }
+        .note::before {
+            content: "📌 ";
+            font-size: 1.2rem;
+            color: #f5a623;
+        }
+
+        .highlight {
+            background: rgba(108, 92, 231, 0.25);
+            color: #e0d8ff;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .mark {
+            background: rgba(245, 166, 35, 0.2);
+            color: #f5d98a;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        /* ── Citações ── */
+        blockquote {
+            background: #1b1930;
+            border-left: 4px solid #6c5ce7;
+            padding: 1rem 1.8rem;
+            margin: 1.2rem 0;
+            border-radius: 0 16px 16px 0;
+            font-style: italic;
+            color: #c8c0e8;
+        }
+        blockquote footer {
+            margin-top: 0.4rem;
+            font-style: normal;
+            font-size: 0.9rem;
+            color: #9a8ec8;
+        }
+
+        /* ── Tabelas ── */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.4rem 0;
+            border-radius: 16px;
+            border: 1px solid #2e2a44;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            background: #161524;
+        }
+        th {
+            background: #23203b;
+            color: #f0edff;
+            font-weight: 600;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid #3d3570;
+        }
+        td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #282544;
+            color: #d2cee0;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover td {
+            background: #1d1b30;
+        }
+
+        /* ── Listas ── */
+        ul,
+        ol {
+            padding-left: 1.6rem;
+            margin: 0.8rem 0 1.2rem;
+            color: #d2cee0;
+        }
+        li {
+            margin: 0.3rem 0;
+        }
+        ul ul,
+        ol ol {
+            margin: 0.2rem 0 0.4rem;
+        }
+
+        /* ── Divisórias ── */
+        .divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, #2e2a44, #6c5ce7, #2e2a44);
+            margin: 2.2rem 0;
+            opacity: 0.5;
+        }
+        .divider-light {
+            height: 1px;
+            background: #2e2a44;
+            margin: 1.8rem 0;
+        }
+
+        /* ── Cards de conceito ── */
+        .concept-card {
+            background: #1f1d36;
+            border-radius: 20px;
+            padding: 1.4rem 1.8rem;
+            margin: 1.2rem 0;
+            border: 1px solid #3d3570;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .concept-card h4 {
+            margin-top: 0;
+            color: #e8e0ff;
+        }
+
+        /* ── SVGs / Diagramas ── */
+        .diagram-container {
+            background: #12101f;
+            border-radius: 24px;
+            padding: 1.5rem 1rem 1.5rem 1rem; /* padding-bottom extra para evitar corte */
+            margin: 1.8rem 0;
+            border: 1px solid #2e2a44;
+            overflow-x: auto;
+            overflow-y: visible; /* garante que não haja corte vertical */
+            display: flex;
+            justify-content: center;
+            height: auto; /* altura automática conforme conteúdo */
+            min-height: 0; /* remove altura mínima fixa */
+        }
+        .diagram-container svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            /* garante que o SVG não force overflow */
+        }
+
+        /* ── Responsivo ── */
+        @media (max-width: 820px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .container {
+                padding: 1.5rem 1.2rem;
+                border-radius: 24px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .card,
+            .tip,
+            .important,
+            .note,
+            .concept-card {
+                padding: 1rem 1.2rem;
+            }
+            blockquote {
+                padding: 0.8rem 1.2rem;
+            }
+            .table-wrap {
+                font-size: 0.85rem;
+            }
+            th,
+            td {
+                padding: 0.5rem 0.7rem;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .container {
+                padding: 1rem 0.8rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .subhead {
+                font-size: 0.95rem;
+                padding-left: 0.8rem;
+            }
+            body {
+                padding: 0.6rem 0.4rem;
+            }
+        }
+
+        /* ── Scroll suave ── */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ── Macete visual ── */
+        .macete-box {
+            background: #1d1b30;
+            border-radius: 20px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.4rem 0;
+            border: 2px dashed #6c5ce7;
+            color: #d6ceff;
+        }
+        .macete-box strong {
+            color: #f0edff;
+        }
+
+        /* ── Callout inline ── */
+        .callout-inline {
+            display: inline-block;
+            background: #2a2645;
+            padding: 0.1rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #d6ceff;
+            letter-spacing: 0.02em;
+        }
+
+        /* ── Grid para comparativos ── */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1rem 0;
+        }
+        @media (max-width: 640px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .grid-item {
+            background: #1a182b;
+            border-radius: 16px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #2e2a44;
+        }
+        .grid-item h5 {
+            color: #c2b8f0;
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ====== CABEÇALHO ====== -->
+        <header>
+            <h1>Direito Processual Penal</h1>
+            <div style="font-size:1.8rem; font-weight:700; color:#d6ceff; margin-top:-0.2rem;">Tribunal do Júri</div>
+            <div class="subhead">Apostila completa para concursos públicos · atualizada conforme Lei 11.689/2008</div>
+        </header>
+
+        <!-- ====== SUMÁRIO ====== -->
+        <nav class="toc" aria-label="Sumário">
+            <div class="toc-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a28eff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+                Sumário
+            </div>
+            <div class="toc-grid">
+                <a href="#cap1"><span class="toc-chapter">CAP. 1</span> Introdução ao Rito do Júri</a>
+                <a href="#cap2"><span class="toc-chapter">CAP. 2</span> Instrução Preliminar</a>
+                <a href="#cap3"><span class="toc-chapter">CAP. 3</span> Desaforamento</a>
+                <a href="#cap4"><span class="toc-chapter">CAP. 4</span> Absolvição Sumária</a>
+                <a href="#cap5"><span class="toc-chapter">CAP. 5</span> Pronúncia</a>
+                <a href="#cap6"><span class="toc-chapter">CAP. 6</span> Comunicação de Atos</a>
+                <a href="#cap7"><span class="toc-chapter">CAP. 7</span> JECRIM</a>
+                <a href="#cap8"><span class="toc-chapter">CAP. 8</span> Ação Penal</a>
+                <a href="#cap9"><span class="toc-chapter">CAP. 9</span> Arquivamento do IP</a>
+                <a href="#cap10"><span class="toc-chapter">CAP. 10</span> Recursos</a>
+                <a href="#cap11"><span class="toc-chapter">CAP. 11</span> Liberdade Provisória</a>
+                <a href="#cap12"><span class="toc-chapter">CAP. 12</span> Flagrante</a>
+                <a href="#cap13"><span class="toc-chapter">CAP. 13</span> Síntese para Revisão</a>
+                <a href="#cap14"><span class="toc-chapter">CAP. 14</span> Questões Comentadas</a>
+            </div>
+        </nav>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 1                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap1">
+            <h2><span class="chapter-badge">CAP. 1</span> Introdução ao Rito do Tribunal do Júri</h2>
+
+            <h3>1.1. Fundamentos Constitucionais</h3>
+            <p>O Tribunal do Júri representa uma das mais importantes instituições do sistema processual penal brasileiro, com previsão constitucional no art. 5º, inciso XXXVIII, da Constituição Federal, que assegura o reconhecimento da instituição do júri, com a organização que lhe der a lei, assegurados:</p>
+            <ul>
+                <li><strong>Plenitude de defesa</strong> – garantia que permite ao acusado apresentar todas as teses defensivas cabíveis, sem restrições</li>
+                <li><strong>Sigilo das votações</strong> – os jurados votam em segredo, resguardando sua independência</li>
+                <li><strong>Soberania dos vereditos</strong> – as decisões do Júri não podem ser desconstituídas pelo Poder Judiciário, salvo nas hipóteses legais de recurso</li>
+                <li><strong>Competência para julgamento dos crimes dolosos contra a vida</strong></li>
+            </ul>
+            <p>A competência do Tribunal do Júri abrange os crimes dolosos contra a vida, consumados ou tentados, conforme disciplina o art. 74, §1º, do Código Penal. Isso inclui:</p>
+            <ul>
+                <li><strong>Homicídio</strong> (art. 121, CP) – simples, privilegiado, qualificado e suas formas</li>
+                <li><strong>Infanticídio</strong> (art. 123, CP) – embora haja controvérsia doutrinária sobre sua inclusão</li>
+                <li><strong>Aborto</strong> (art. 124 a 126, CP) – nas modalidades dolosas</li>
+                <li><strong>Instigação, auxílio ou induzimento ao suicídio com resultado morte</strong> (art. 122, CP – quando resulta em morte)</li>
+            </ul>
+
+            <h3>1.2. Estrutura do Rito do Júri</h3>
+            <p>O procedimento do Tribunal do Júri é bifásico, dividindo-se em duas etapas bem distintas:</p>
+
+            <h4>Fase 1: Instrução Preliminar (Judicium Accusationis)</h4>
+            <p>Também chamada de <strong>fase de cognição sumária</strong> ou de <strong>plenitude da instrução</strong>, compreende:</p>
+            <ul>
+                <li>Oferecimento e recebimento da denúncia/queixa</li>
+                <li>Defesa preliminar</li>
+                <li>Instrução probatória (oitiva de testemunhas e interrogatório do réu)</li>
+                <li>Alegações finais (em forma de memoriais escritos)</li>
+                <li>Decisão de pronúncia, impronúncia ou absolvição sumária</li>
+            </ul>
+            <p><strong>Natureza jurídica</strong>: Juízo de admissibilidade, em que se verifica a existência de indícios suficientes de autoria e prova da materialidade para submeter o acusado ao julgamento popular.</p>
+
+            <h4>Fase 2: Julgamento em Plenário (Judicium Causae)</h4>
+            <p><strong>Tem início com o trânsito em julgado da pronúncia</strong> e compreende:</p>
+            <ul>
+                <li>Preparação do processo para o plenário</li>
+                <li>Sorteio dos jurados</li>
+                <li>Sessão de julgamento</li>
+                <li>Debates orais</li>
+                <li>Votação</li>
+                <li>Sentença (absolutória ou condenatória)</li>
+            </ul>
+
+            <div class="macete-box">
+                <strong>MACETE PARA MEMORIZAR AS FASES:</strong><br>
+                <span style="font-size:1.1rem;">“FASE 1 = INVESTIGAÇÃO DO JUIZ (INDÍCIOS) · FASE 2 = JULGAMENTO DO POVO (PLENÁRIO)”</span>
+            </div>
+
+            <!-- Diagrama SVG: fluxo do rito do Júri -->
+            <div class="diagram-container">
+                <svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto;">
+                    <!-- Linhas de conexão -->
+                    <line x1="380" y1="40" x2="380" y2="80" stroke="#6c5ce7" stroke-width="2"/>
+                    <line x1="200" y1="120" x2="200" y2="160" stroke="#6c5ce7" stroke-width="2"/>
+                    <line x1="560" y1="120" x2="560" y2="160" stroke="#6c5ce7" stroke-width="2"/>
+                    <line x1="200" y1="200" x2="200" y2="240" stroke="#6c5ce7" stroke-width="2"/>
+                    <line x1="560" y1="200" x2="560" y2="240" stroke="#6c5ce7" stroke-width="2"/>
+                    <line x1="200" y1="280" x2="200" y2="310" stroke="#6c5ce7" stroke-width="2"/>
+                    <line x1="560" y1="280" x2="560" y2="310" stroke="#6c5ce7" stroke-width="2"/>
+
+                    <!-- Caixas -->
+                    <rect x="260" y="10" width="240" height="36" rx="18" fill="#2e2a44" stroke="#6c5ce7" stroke-width="1.5"/>
+                    <text x="380" y="34" fill="#f0edff" font-size="15" font-weight="600" text-anchor="middle">RITO DO TRIBUNAL DO JÚRI</text>
+
+                    <rect x="80" y="80" width="240" height="44" rx="12" fill="#1f1d36" stroke="#4ecdc4" stroke-width="1.5"/>
+                    <text x="200" y="107" fill="#e0d8ff" font-size="14" font-weight="500" text-anchor="middle">FASE 1 · INSTRUÇÃO PRELIMINAR</text>
+
+                    <rect x="440" y="80" width="240" height="44" rx="12" fill="#1f1d36" stroke="#e94560" stroke-width="1.5"/>
+                    <text x="560" y="107" fill="#e0d8ff" font-size="14" font-weight="500" text-anchor="middle">FASE 2 · JULGAMENTO EM PLENÁRIO</text>
+
+                    <rect x="80" y="160" width="240" height="44" rx="10" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="200" y="186" fill="#c2b8f0" font-size="12" text-anchor="middle">Denúncia / Defesa preliminar</text>
+
+                    <rect x="80" y="240" width="240" height="44" rx="10" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="200" y="266" fill="#c2b8f0" font-size="12" text-anchor="middle">Instrução probatória · Alegações finais</text>
+
+                    <rect x="80" y="310" width="240" height="44" rx="10" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="200" y="336" fill="#c2b8f0" font-size="12" text-anchor="middle">Pronúncia / Impronúncia / Absolvição sumária</text>
+
+                    <rect x="440" y="160" width="240" height="44" rx="10" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="560" y="186" fill="#c2b8f0" font-size="12" text-anchor="middle">Preparação · Sorteio dos jurados</text>
+
+                    <rect x="440" y="240" width="240" height="44" rx="10" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="560" y="266" fill="#c2b8f0" font-size="12" text-anchor="middle">Sessão · Debates orais · Votação</text>
+
+                    <rect x="440" y="310" width="240" height="44" rx="10" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="560" y="336" fill="#c2b8f0" font-size="12" text-anchor="middle">Sentença (absolutória ou condenatória)</text>
+                </svg>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 2                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap2">
+            <h2><span class="chapter-badge">CAP. 2</span> Instrução Preliminar</h2>
+
+            <h3>2.1. Testemunhas na Instrução Preliminar</h3>
+
+            <h4>2.1.1. Número Máximo de Testemunhas por Parte</h4>
+            <p>Em relação às testemunhas na instrução preliminar dos crimes dolosos contra a vida, a regra é clara:</p>
+            <blockquote>
+                <strong>Art. 406, §2º, CPP:</strong> “A acusação e a defesa poderão arrolar até <strong>8 (oito) testemunhas</strong>”.
+            </blockquote>
+            <div class="important">
+                <strong>IMPORTANTE:</strong> A banca FGV frequentemente cobra a literalidade do dispositivo. Atenção: o número máximo é 8 (oito), e não 5 (cinco) testemunhas, como muitos candidatos erroneamente recordam do rito comum.
+            </div>
+
+            <h4>2.1.2. Ordem das Perguntas às Testemunhas</h4>
+            <p>Durante a audiência de instrução, a ordem de formulação de perguntas às testemunhas obedece ao <strong>sistema de cross examination</strong> (exame direto e contrainterrogatório), previsto no art. 212 do CPP:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>QUEM PERGUNTA PRIMEIRO</th><th>QUEM PERGUNTA DEPOIS</th></tr></thead>
+                    <tbody>
+                        <tr><td>A parte que arrolou a testemunha</td><td>A parte contrária</td></tr>
+                        <tr><td colspan="2">O juiz pode complementar após as perguntas das partes</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>Fundamento:</strong> O art. 212, CPP estabelece que as perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz que a testemunha os responda por escrito, exceto em casos específicos.</p>
+            <div class="important">
+                <strong>PEGADINHA DE BANCA:</strong> Está ERRADO afirmar que o juiz pergunta primeiro. O juiz apenas complementa a inquirição, após as partes, com perguntas que visem esclarecer pontos obscuros.
+            </div>
+
+            <div class="concept-card">
+                <h4>🔎 CASO PRÁTICO – ORDEM DE PERGUNTAS</h4>
+                <p><strong>Situação hipotética:</strong> Em uma audiência de instrução do Tribunal do Júri, a defesa arrola uma testemunha. O juiz, imediatamente, começa a fazer perguntas antes de a defesa se manifestar.</p>
+                <p><strong>Questão:</strong> O procedimento está correto?</p>
+                <p><strong>Resposta:</strong> NÃO. O juiz violou o art. 212 do CPP, que estabelece que as perguntas devem ser formuladas primeiro pela parte que arrolou a testemunha. O juiz só pode complementar após as partes.</p>
+            </div>
+
+            <h3>2.2. Carta Precatória na Instrução Preliminar</h3>
+
+            <h4>2.2.1. Oitiva de Testemunhas de Defesa por Carta Precatória</h4>
+            <p>Quando deprecada a oitiva de testemunhas de defesa por carta precatória, uma questão fundamental surge: <strong>podem ser ouvidas no juízo deprecante todas as testemunhas presentes?</strong></p>
+            <p><strong>RESPOSTA: SIM</strong></p>
+            <p><strong>Fundamentos:</strong></p>
+            <ol>
+                <li><strong>Art. 222, §1º, CPP:</strong> “A expedição da precatória não suspende a instrução criminal”.</li>
+                <li><strong>Art. 411, §2º, CPP</strong> (aplicável ao Júri por analogia): “As testemunhas de defesa que residirem fora da comarca serão ouvidas por carta precatória, <strong>salvo se comparecerem perante o juízo deprecante</strong>, caso em que serão ouvidas independentemente da carta”.</li>
+            </ol>
+            <p><strong>Raciocínio jurídico:</strong> A carta precatória não é um fim em si mesma, mas um instrumento de cooperação judiciária. Se a testemunha comparece espontaneamente no juízo deprecante, não há razão para protelar a oitiva, sobretudo considerando-se que a instrução não fica suspensa.</p>
+            <div class="tip">
+                <strong>Efeito prático:</strong> A defesa pode trazer testemunhas que residem em outras comarcas para serem ouvidas diretamente no juízo deprecante, independentemente de estarem arroladas na carta precatória. Isso agiliza a instrução e garante a ampla defesa.
+            </div>
+
+            <h4>2.2.2. Interrogatório do Réu por Carta Precatória</h4>
+            <p><strong>QUESTÃO CRUCIAL:</strong> O interrogatório do réu pode ser realizado por carta precatória no juízo deprecante?</p>
+            <p><strong>RESPOSTA: NÃO</strong></p>
+            <blockquote>
+                <strong>Art. 185, CPP:</strong> “O acusado que comparecer perante a autoridade judiciária, no curso do processo penal, será qualificado e interrogado, <strong>na presença de seu defensor</strong>, constituído ou nomeado”.
+            </blockquote>
+            <p><strong>Interpretação sistemática:</strong></p>
+            <ol>
+                <li>O interrogatório é ato <strong>personalíssimo</strong> do juiz do processo</li>
+                <li>É essencial à formação do <strong>convencimento do juiz</strong> (art. 185, parágrafo único, CPP)</li>
+                <li>O juiz deve formar sua convicção a partir da percepção direta da defesa do réu</li>
+            </ol>
+            <div class="important">
+                <strong>PEGADINHA DE BANCA:</strong> Cuidado para não confundir com a oitiva de testemunhas, que pode sim ser realizada por carta precatória! O interrogatório do réu é ato que exige a presença do juiz natural da causa.
+            </div>
+
+            <h4>Quadro Comparativo – Oitiva por Carta Precatória</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>ATO</th><th>PODE SER REALIZADO POR PRECATÓRIA?</th><th>FUNDAMENTO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Oitiva de testemunha</td><td>SIM (mas pode ser ouvida no juízo deprecante se presente)</td><td>Art. 222, §1º e 411, §2º</td></tr>
+                        <tr><td>Interrogatório do réu</td><td>NÃO</td><td>Art. 185 CPP (ato personalíssimo)</td></tr>
+                        <tr><td>Declarações da vítima</td><td>SIM</td><td>Art. 222 CPP</td></tr>
+                        <tr><td>Perícia</td><td>SIM</td><td>Art. 222 CPP</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>2.3. Assistente de Acusação nas Alegações Finais</h3>
+
+            <h4>2.3.1. Manifestação do Assistente nas Alegações Finais</h4>
+            <p>O assistente de acusação, figura prevista no art. 268 do CPP, tem direito a se manifestar nas alegações finais, mas <strong>com prazo próprio</strong>:</p>
+            <blockquote>
+                <strong>Art. 403, §2º, CPP:</strong> “O assistente de acusação falará após o Ministério Público, dispondo de <strong>20 (vinte) minutos</strong> para suas alegações finais”.
+            </blockquote>
+            <p><strong>Pontos fundamentais:</strong></p>
+            <ol>
+                <li><strong>Não utiliza o tempo não utilizado pelo MP:</strong> O prazo do assistente é autônomo e independente</li>
+                <li><strong>Fala após o MP:</strong> A ordem é: MP → Assistente → Defesa</li>
+                <li><strong>Prazo fixo:</strong> 20 minutos, independentemente do tempo usado pelo Ministério Público</li>
+            </ol>
+            <div class="important">
+                <strong>ERRADO afirmar que:</strong> O assistente fala junto com o MP, ou que utiliza o tempo restante do MP, ou que tem prazo reduzido em razão do tempo gasto pelo MP.
+            </div>
+            <p><strong>DIFERENÇA PARA O RITO COMUM:</strong> No rito comum, o assistente também fala após o MP, com prazo de 15 minutos (art. 406, §2º, CPP). No Júri, são 20 minutos.</p>
+
+            <div class="concept-card">
+                <h4>🔎 CASO PRÁTICO – ASSISTENTE DE ACUSAÇÃO</h4>
+                <p><strong>Situação hipotética:</strong> Em um processo do Tribunal do Júri, o Ministério Público utiliza apenas 15 minutos de seus 1h30 de prazo para alegações finais. O assistente de acusação requer utilizar o tempo restante do MP, totalizando 1h15, para suas alegações.</p>
+                <p><strong>Questão:</strong> O pedido do assistente é procedente?</p>
+                <p><strong>Resposta:</strong> NÃO. O assistente tem prazo próprio de 20 minutos, previsto no art. 403, §2º, CPP, que não se comunica com o prazo do MP. O tempo não utilizado pelo MP não pode ser aproveitado pelo assistente.</p>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 3                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap3">
+            <h2><span class="chapter-badge">CAP. 3</span> Desaforamento</h2>
+
+            <h3>3.1. Conceito e Fundamentos</h3>
+            <p>O desaforamento é a transferência do julgamento do Tribunal do Júri para outra comarca, medida excepcional prevista no art. 427 do CPP.</p>
+
+            <h4>3.1.1. Hipóteses de Cabimento (Art. 427, CPP)</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>HIPÓTESE</th><th>EXPLICAÇÃO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Interesse da ordem pública o reclamar</td><td>Quando a presença do réu ou a realização do julgamento na comarca puder causar perturbação social grave</td></tr>
+                        <tr><td>Dúvida sobre a imparcialidade do júri</td><td>Quando houver fundado receio de que os jurados locais não possam julgar com isenção</td></tr>
+                        <tr><td>Dúvida sobre a segurança pessoal do acusado</td><td>Quando a permanência do acusado na comarca colocar em risco sua integridade física</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>3.1.2. Legitimados para Requerer</h4>
+            <blockquote>
+                <strong>Art. 427, caput, CPP:</strong> “O Tribunal, a requerimento do Ministério Público, do assistente, do querelante ou do acusado, ou <strong>mediante representação do juiz competente</strong>, poderá determinar o desaforamento”.
+            </blockquote>
+            <p><strong>LEGITIMADOS ATIVOS:</strong></p>
+            <ol>
+                <li>Ministério Público</li>
+                <li>Assistente de Acusação</li>
+                <li>Querelante (na ação penal privada)</li>
+                <li>Acusado</li>
+                <li><strong>Juiz competente</strong> (por representação – de ofício)</li>
+            </ol>
+            <div class="important">
+                <strong>PEGADINHA DE BANCA:</strong> O juiz pode representar <strong>de ofício</strong> pelo desaforamento, sem necessidade de provocação das partes (ex officio). Esse é um ponto frequentemente cobrado em provas!
+            </div>
+
+            <h4>3.1.3. Momento para Requerer o Desaforamento</h4>
+            <p><strong>QUESTÃO CRUCIAL:</strong> O desaforamento só pode ser requerido após o processo estar preparado para o julgamento pelo Júri?</p>
+            <p><strong>RESPOSTA: NÃO</strong></p>
+            <p>O desaforamento pode ser requerido <strong>antes</strong> de o processo estar preparado para julgamento, especialmente se:</p>
+            <ul>
+                <li>Houver razões para acreditar na <strong>parcialidade dos jurados</strong></li>
+                <li>Existir <strong>risco à segurança do acusado</strong></li>
+                <li>As circunstâncias <strong>já estiverem configuradas</strong> antes da preparação para o plenário</li>
+            </ul>
+            <div class="tip">
+                <strong>Importante:</strong> Não há previsão legal que condicione o desaforamento à prévia preparação do processo para o plenário. O requisito é a <strong>existência dos fundamentos legais</strong>, não o momento processual.
+            </div>
+
+            <h4>Quadro Síntese – Desaforamento</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>ASPECTO</th><th>DETALHAMENTO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Previsão legal</td><td>Art. 427, CPP</td></tr>
+                        <tr><td>Fundamentos</td><td>Ordem pública, imparcialidade do júri ou segurança do acusado</td></tr>
+                        <tr><td>Legitimados</td><td>MP, assistente, querelante, acusado e juiz (representação)</td></tr>
+                        <tr><td>Momento</td><td>Antes ou depois de preparado para julgamento</td></tr>
+                        <tr><td>Natureza</td><td>Medida excepcional</td></tr>
+                        <tr><td>Decisão</td><td>Tribunal (não o juiz singular)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="concept-card">
+                <h4>🔎 CASO PRÁTICO – DESAFORAMENTO</h4>
+                <p><strong>Situação hipotética:</strong> João responde por homicídio qualificado na Comarca de Mossoró/RN. A cidade é pequena e o crime teve grande repercussão local. A família da vítima é influente na região, e João teme pela sua segurança. O processo ainda está na fase de instrução preliminar, mas a defesa já requer o desaforamento.</p>
+                <p><strong>Questão:</strong> O pedido é cabível no momento processual?</p>
+                <p><strong>Resposta:</strong> SIM. O desaforamento pode ser requerido antes de o processo estar preparado para julgamento, desde que presentes os fundamentos legais (no caso, dúvida sobre a imparcialidade do júri e segurança pessoal do acusado). O art. 427 do CPP não exige que o processo esteja pronto para o plenário.</p>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 4                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap4">
+            <h2><span class="chapter-badge">CAP. 4</span> Absolvição Sumária</h2>
+
+            <h3>4.1. Conceito e Hipóteses</h3>
+            <p>A absolvição sumária é a decisão judicial que, <strong>sem adentrar no mérito da culpabilidade</strong>, absolve o acusado de plano, por entender que não há justa causa para a submissão ao Júri.</p>
+
+            <h4>4.1.1. Hipóteses de Absolvição Sumária (Art. 415, CPP)</h4>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>INCISO</th><th>HIPÓTESE</th><th>EXPLICAÇÃO</th></tr></thead>
+                    <tbody>
+                        <tr><td>I</td><td>Provada a inexistência do fato</td><td>O crime não ocorreu</td></tr>
+                        <tr><td>II</td><td>Provada a inexistência de indícios de autoria</td><td>Não há prova suficiente que vincule o acusado ao fato</td></tr>
+                        <tr><td>III</td><td>O fato não constituir crime</td><td>Atipicidade ou descriminante absoluta</td></tr>
+                        <tr><td>IV</td><td>Demonstrada causa de isenção de pena</td><td>Excludentes de culpabilidade ou ilicitude</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>4.1.2. Absolvição Sumária por Inimputabilidade (Absolvição Imprópria)</h4>
+            <p>É possível a absolvição sumária por <strong>inimputabilidade</strong> (absolvição imprópria) no rito do Júri?</p>
+            <p><strong>RESPOSTA: SIM, MAS COM RESTRIÇÃO</strong></p>
+            <blockquote>
+                <strong>Art. 415, parágrafo único, CPP:</strong> “Se o juiz se convencer, em decisão fundamentada, da existência de causa de isenção de pena, poderá absolver sumariamente o acusado, <strong>desde que essa seja a única tese defensiva</strong>”.
+            </blockquote>
+            <p><strong>IMPORTANTE:</strong></p>
+            <ul>
+                <li>A inimputabilidade do réu <strong>deve ser a única tese defensiva</strong></li>
+                <li>Se houver <strong>outras teses</strong> defensivas (ex.: negativa de autoria, legítima defesa, etc.), <strong>NÃO cabe absolvição sumária</strong> por essa causa</li>
+                <li>A semi-imputabilidade <strong>NÃO</strong> é causa de absolvição sumária</li>
+            </ul>
+
+            <h4>4.1.3. Semi-imputabilidade e Absolvição Sumária</h4>
+            <p><strong>QUESTÃO CRUCIAL:</strong> O acusado semi-imputável pode ser absolvido sumariamente com aplicação de medida de segurança?</p>
+            <p><strong>RESPOSTA: NÃO</strong></p>
+            <p><strong>Fundamento:</strong> A semi-imputabilidade é causa de <strong>diminuição de pena</strong> (art. 26, parágrafo único, CP), não causa de <strong>isenção de pena</strong>.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>CONDIÇÃO</th><th>EFEITO</th><th>CABE ABSOLVIÇÃO SUMÁRIA?</th></tr></thead>
+                    <tbody>
+                        <tr><td>Inimputabilidade (art. 26, caput, CP)</td><td>Isenção de pena (medida de segurança)</td><td>SIM, se for a única tese</td></tr>
+                        <tr><td>Semi-imputabilidade (art. 26, parágrafo único, CP)</td><td>Diminuição de pena</td><td>NÃO</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>4.2. Recurso Contra a Absolvição Sumária</h3>
+
+            <h4>4.2.1. Recurso de Ofício?</h4>
+            <p><strong>QUESTÃO CRUCIAL:</strong> Há previsão de recurso de ofício contra a sentença de absolvição sumária no rito do Júri?</p>
+            <p><strong>RESPOSTA: NÃO</strong></p>
+            <p><strong>Fundamento:</strong> A <strong>Lei 11.689/2008</strong> (que alterou a sistemática do Tribunal do Júri) revogou tacitamente o art. 574, II do CPP, que previa recurso de ofício nos casos de absolvição sumária.</p>
+            <p>O art. 574, II do CPP previa: “Os recursos serão voluntários, excetuando-se os seguintes casos: (…) II – da sentença que absolver sumariamente o réu nos crimes de competência do júri”.</p>
+            <p>Contudo, com a edição da Lei 11.689/2008, que deu nova redação ao art. 416 do CPP, a absolvição sumária passou a ser impugnável por <strong>apelação</strong> (e não por recurso de ofício).</p>
+            <blockquote>
+                <strong>Art. 416, CPP:</strong> “Contra a decisão de impronúncia ou de absolvição sumária caberá <strong>apelação</strong>”.
+            </blockquote>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>DECISÃO</th><th>RECURSO CABÍVEL</th><th>RECURSO DE OFÍCIO?</th></tr></thead>
+                    <tbody>
+                        <tr><td>Pronúncia</td><td>Rese (art. 581, IV, CPP)</td><td>NÃO</td></tr>
+                        <tr><td>Impronúncia</td><td>Apelação (art. 416, CPP)</td><td>NÃO</td></tr>
+                        <tr><td>Absolvição sumária</td><td>Apelação (art. 416, CPP)</td><td>NÃO (revogação tácita do art. 574, II)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="concept-card">
+                <h4>🔎 CASO PRÁTICO – ABSOLVIÇÃO SUMÁRIA E INIMPUTABILIDADE</h4>
+                <p><strong>Situação hipotética:</strong> Mário, com esquizofrenia grave diagnosticada, matou a namorada. A defesa apresenta laudo pericial atestando a inimputabilidade de Mário e, alternativamente, alega legítima defesa.</p>
+                <p><strong>Questão:</strong> O juiz pode absolver sumariamente Mário por inimputabilidade?</p>
+                <p><strong>Resposta:</strong> NÃO. Embora a inimputabilidade seja causa de isenção de pena, o art. 415, parágrafo único, do CPP exige que essa seja a <strong>única tese defensiva</strong>. Como a defesa também alegou legítima defesa (tese alternativa), não cabe absolvição sumária por inimputabilidade. O caso deve ser submetido ao Júri.</p>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 5                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap5">
+            <h2><span class="chapter-badge">CAP. 5</span> Pronúncia</h2>
+
+            <h3>5.1. Conceito e Natureza Jurídica</h3>
+            <p>A pronúncia é a decisão judicial que <strong>reconhece a existência de indícios suficientes de autoria e prova da materialidade</strong>, submetendo o acusado a julgamento pelo Tribunal do Júri.</p>
+            <p><strong>Natureza jurídica:</strong> Juízo de admissibilidade (cognição sumária). O juiz não analisa o mérito da culpabilidade, mas apenas a existência de elementos que justifiquem a submissão do réu ao julgamento popular.</p>
+            <blockquote>
+                <strong>Art. 413, CPP:</strong> “O juiz, fundamentadamente, pronunciará o acusado, se convencido da <strong>materialidade do fato</strong> e da existência de <strong>indícios suficientes de autoria</strong> ou de participação”.
+            </blockquote>
+
+            <h3>5.2. Conteúdo da Decisão de Pronúncia</h3>
+
+            <h4>5.2.1. Não pode tecer considerações aprofundadas sobre o mérito</h4>
+            <p><strong>REGRA FUNDAMENTAL:</strong> Por se tratar de mero juízo de admissibilidade, é <strong>vedado ao magistrado tecer considerações aprofundadas ou definitivas</strong> sobre o mérito da causa, sob pena de ofensa ao princípio da soberania dos vereditos.</p>
+            <p><strong>Fundamento:</strong> STJ, HC 23.810/RJ – “A pronúncia é mero juízo de admissibilidade, não podendo o magistrado adentrar no mérito da causa, sob pena de violar a soberania do veredito do Júri”.</p>
+            <div class="tip">
+                <strong>Efeito:</strong> Se o juiz faz considerações aprofundadas (ex.: afirma a culpabilidade do réu), a decisão pode ser anulada.
+            </div>
+
+            <h4>5.2.2. Especificação das questões na pronúncia</h4>
+            <blockquote>
+                <strong>Art. 413, §1º, CPP:</strong> “A pronúncia indicará o dispositivo legal em que o juiz se fundar, a qualificadora ou as circunstâncias agravantes e as causas de aumento de pena, <strong>sem prejuízo de outras circunstâncias que o juiz possa considerar no julgamento</strong>”.
+            </blockquote>
+            <p><strong>LIMITAÇÃO DA PRONÚNCIA:</strong></p>
+            <ul>
+                <li>A fundamentação limita-se à indicação da <strong>materialidade</strong> e dos <strong>indícios suficientes de autoria</strong></li>
+                <li>Deve declarar o <strong>dispositivo legal</strong></li>
+                <li>Deve declarar as <strong>qualificadoras</strong> e <strong>causas de aumento</strong> que serão submetidas ao Júri</li>
+                <li><strong>NÃO</strong> deve especificar todas as questões relativas à pena (agravantes, atenuantes, etc.)</li>
+            </ul>
+            <p><strong>Questões de pena são reservadas ao Júri:</strong> O juiz não pode, na pronúncia, analisar atenuantes, agravantes, causas de diminuição de pena ou outros aspectos relacionados à fixação da pena. Essas questões serão decididas pelos jurados quando da aplicação da pena.</p>
+
+            <h4>5.2.3. Excessos de Linguagem na Pronúncia</h4>
+            <p><strong>QUESTÃO CRUCIAL:</strong> A decisão de pronúncia com excesso de linguagem pode ser sanada pelo desentranhamento das palavras excessivas?</p>
+            <p><strong>RESPOSTA: NÃO</strong></p>
+            <p><strong>Fundamento:</strong> O STJ entende que o excesso de linguagem (eloquência acusatória) <strong>anula a decisão</strong>, não bastando o desentranhamento.</p>
+            <p><strong>Razão:</strong> A lei determina que a pronúncia seja distribuída aos jurados (art. 472, parágrafo único, CPP). Se o juiz usou linguagem excessivamente acusatória, isso pode contaminar a formação da convicção dos jurados. A simples retirada das palavras não é suficiente para afastar o prejuízo.</p>
+            <div class="important">
+                <strong>Consequência:</strong> É necessária <strong>nova pronúncia</strong>, sem o excesso de linguagem.
+            </div>
+
+            <div class="concept-card">
+                <h4>🔎 CASO PRÁTICO – EXCESSO DE LINGUAGEM</h4>
+                <p><strong>Situação hipotética:</strong> O juiz, ao proferir a pronúncia, afirmou: “O réu, frio e calculista, executou a vítima a sangue-frio, demonstrando total desprezo pela vida humana. Não há dúvidas de que é um criminoso perigoso.”</p>
+                <p><strong>Questão:</strong> Essa decisão é válida?</p>
+                <p><strong>Resposta:</strong> NÃO. A pronúncia contém excesso de linguagem (eloquência acusatória), que viola o princípio da soberania dos vereditos e contamina os jurados. A decisão deve ser anulada, com determinação de nova pronúncia, conforme entendimento do STJ.</p>
+            </div>
+
+            <h3>5.3. Qualificadoras na Pronúncia</h3>
+
+            <h4>5.3.1. Inclusão de Qualificadora não Contida na Denúncia</h4>
+            <p><strong>QUESTÃO:</strong> Para incluir qualificadora não contida na denúncia, é necessário aditamento pelo MP?</p>
+            <p><strong>RESPOSTA: NÃO</strong></p>
+            <p><strong>Fundamento:</strong> É possível a inclusão da qualificadora por <strong>emendatio libelli</strong> (art. 383 c/c art. 418 do CPP), independentemente de aditamento.</p>
+            <blockquote>
+                <strong>Art. 383, CPP:</strong> “O juiz, sem modificar a descrição do fato contida na denúncia ou queixa, poderá atribuir-lhe definição jurídica diversa, ainda que, em consequência, tenha de aplicar pena mais grave”.
+            </blockquote>
+            <blockquote>
+                <strong>Art. 418, CPP:</strong> “Não havendo modificação da descrição do fato, o juiz, ao pronunciar o acusado, poderá reconhecer a presença de qualificadoras e circunstâncias agravantes ou causas de aumento de pena, <strong>ainda que não alegadas na denúncia</strong>”.
+            </blockquote>
+            <p><strong>Condição:</strong> Não pode haver <strong>alteração fática</strong>. A qualificadora deve decorrer dos mesmos fatos descritos na denúncia.</p>
+
+            <h4>5.3.2. Exclusão de Qualificadoras na Pronúncia</h4>
+            <p><strong>QUESTÃO:</strong> É possível excluir qualificadoras na decisão de pronúncia?</p>
+            <p><strong>RESPOSTA: SIM, COM RESTRIÇÃO</strong></p>
+            <p>O STJ admite a exclusão de qualificadoras quando se revelarem <strong>manifestamente improcedentes</strong>.</p>
+            <p><strong>Não é possível excluir de forma geral:</strong> A exclusão deve ser fundamentada na ausência de indícios suficientes da qualificadora, não podendo ser feita de modo arbitrário ou genérico.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>ASPECTO</th><th>REGRA</th><th>FUNDAMENTO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Inclusão de qualificadora não contida na denúncia</td><td>POSSÍVEL (emendatio libelli)</td><td>Art. 383 c/c 418, CPP</td></tr>
+                        <tr><td>Condição para inclusão</td><td>Sem alteração fática</td><td>Art. 383, CPP</td></tr>
+                        <tr><td>Exclusão de qualificadora</td><td>POSSÍVEL (se manifestamente improcedente)</td><td>STJ</td></tr>
+                        <tr><td>Exclusão sem comprovação</td><td>NÃO POSSÍVEL</td><td>–</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="concept-card">
+                <h4>🔎 CASO PRÁTICO – INCLUSÃO DE QUALIFICADORA</h4>
+                <p><strong>Situação hipotética:</strong> O Ministério Público denunciou José por homicídio simples. A instrução provou que José utilizou uma emboscada para matar a vítima (qualificadora do art. 121, §2º, IV, CP). Na pronúncia, o juiz inclui a qualificadora, sem que o MP tenha aditado a denúncia.</p>
+                <p><strong>Questão:</strong> O procedimento está correto?</p>
+                <p><strong>Resposta:</strong> SIM. Trata-se de emendatio libelli (art. 383 c/c 418, CPP). Como não houve alteração fática (o fato da emboscada já estava descrito na denúncia), o juiz pode reconhecer a qualificadora independentemente de aditamento. A tese é pacífica no STJ.</p>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 6                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap6">
+            <h2><span class="chapter-badge">CAP. 6</span> Comunicação de Atos Processuais</h2>
+
+            <h3>6.1. Intimação do Defensor Dativo</h3>
+            <p><strong>REGRA:</strong> O defensor dativo (nomeado) deve ser intimado <strong>pessoalmente</strong>.</p>
+            <blockquote>
+                <strong>Art. 370, §4º, CPP:</strong> “O defensor nomeado ou o curador especial será <strong>intimado pessoalmente</strong>”.
+            </blockquote>
+            <p><strong>NÃO é admitida intimação pela imprensa</strong> para o defensor dativo.</p>
+            <p><strong>Razão:</strong> O defensor dativo não tem relação profissional estável com o processo e pode não acompanhar regularmente as publicações oficiais. A intimação pessoal garante a ampla defesa.</p>
+
+            <h3>6.2. Intimação do Defensor Constituído</h3>
+            <p><strong>REGRA:</strong> A intimação do defensor constituído far-se-á por <strong>publicação no órgão oficial</strong>.</p>
+            <blockquote>
+                <strong>Art. 370, §1º, CPP:</strong> “A intimação do defensor constituído, do advogado do querelante e do assistente de acusação, de qualquer ato do processo, será feita <strong>por publicação no órgão oficial</strong>, incluindo o nome do acusado”.
+            </blockquote>
+            <p><strong>NÃO é necessária intimação pessoal</strong> do defensor constituído.</p>
+            <div class="important">
+                <strong>PEGADINHA DE BANCA:</strong> Cuidado para não confundir:<br>
+                • Defensor <strong>DATIVO</strong> (nomeado) → intimação <strong>PESSOAL</strong><br>
+                • Defensor <strong>CONSTITUÍDO</strong> → intimação por <strong>PUBLICAÇÃO</strong>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>SUJEITO</th><th>FORMA DE INTIMAÇÃO</th><th>FUNDAMENTO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Defensor dativo</td><td>Pessoal</td><td>Art. 370, §4º, CPP</td></tr>
+                        <tr><td>Defensor constituído</td><td>Publicação no órgão oficial</td><td>Art. 370, §1º, CPP</td></tr>
+                        <tr><td>Advogado do querelante</td><td>Publicação no órgão oficial</td><td>Art. 370, §1º, CPP</td></tr>
+                        <tr><td>Assistente de acusação</td><td>Publicação no órgão oficial</td><td>Art. 370, §1º, CPP</td></tr>
+                        <tr><td>Acusado (pessoalmente)</td><td>Pessoal (quando necessário)</td><td>Art. 370, caput, CPP</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="concept-card">
+                <h4>🔎 CASO PRÁTICO – INTIMAÇÃO</h4>
+                <p><strong>Situação hipotética:</strong> Em um processo do Tribunal do Júri, a defesa técnica é exercida por defensor dativo, nomeado pelo juízo. O cartório intima o defensor por publicação no Diário da Justiça.</p>
+                <p><strong>Questão:</strong> A intimação é válida?</p>
+                <p><strong>Resposta:</strong> NÃO. O defensor dativo (nomeado) deve ser intimado pessoalmente, conforme art. 370, §4º, CPP. A intimação por publicação no órgão oficial é inválida, podendo gerar nulidade processual.</p>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 7                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap7">
+            <h2><span class="chapter-badge">CAP. 7</span> Juizado Especial Criminal (JECRIM)</h2>
+
+            <h3>7.1. Hipóteses de Encaminhamento ao Juízo Comum</h3>
+
+            <h4>7.1.1. Hipóteses do Art. 77, §2º e Art. 66, parágrafo único, da Lei 9.099/95</h4>
+            <p>A Lei 9.099/95, que instituiu os Juizados Especiais Criminais, prevê duas hipóteses específicas em que o fato é <strong>encaminhado ao Juízo Criminal Comum</strong> (rito sumário do art. 538 do CPP):</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>HIPÓTESE</th><th>PREVISÃO LEGAL</th><th>EFEITO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Complexidade ou circunstâncias do caso não permitirem a formulação da denúncia</td><td>Art. 77, §2º</td><td>Segue o rito sumário (art. 538, CPP)</td></tr>
+                        <tr><td>Acusado não ser encontrado para citação pessoal</td><td>Art. 66, parágrafo único</td><td>Segue o rito sumário (art. 538, CPP)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tip">
+                <strong>Importante:</strong> A Lei 9.099/95 (JECRIM) exige a citação pessoal do acusado para a realização da audiência preliminar. Se o acusado não é encontrado, o processo é remetido ao Juízo Comum, onde será citado por edital.
+            </div>
+
+            <h4>7.1.2. Rito Sumário (Art. 538, CPP)</h4>
+            <p>Quando o fato é encaminhado ao Juízo Criminal Comum, <strong>segue o rito sumário</strong> previsto no art. 538 do CPP:</p>
+            <blockquote>
+                <strong>Art. 538, CPP:</strong> “Nos processos de competência do Tribunal do Júri e nos de competência do juiz singular, quando a lei não determinar procedimento especial, observar-se-á o procedimento comum, <strong>que será ordinário, sumário ou sumaríssimo</strong>”.
+            </blockquote>
+            <p><strong>Características do rito sumário:</strong></p>
+            <ul>
+                <li>Prazo para conclusão da instrução: 30 dias</li>
+                <li>Número máximo de testemunhas: 5 (cinco)</li>
+                <li>Sentença proferida em até 10 dias após as alegações finais</li>
+            </ul>
+
+            <div class="concept-card">
+                <h4>🔎 CASO PRÁTICO – JECRIM</h4>
+                <p><strong>Situação hipotética:</strong> Carlos é denunciado por lesão corporal leve no Juizado Especial Criminal. O juiz, após análise, constata que o fato é complexo e exige dilação probatória incompatível com o rito sumaríssimo.</p>
+                <p><strong>Questão:</strong> Qual procedimento deve ser adotado?</p>
+                <p><strong>Resposta:</strong> O juiz deve encaminhar o processo ao Juízo Criminal Comum, onde o feito seguirá o rito sumário (art. 538, CPP), conforme art. 77, §2º, da Lei 9.099/95.</p>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 8                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap8">
+            <h2><span class="chapter-badge">CAP. 8</span> Ação Penal</h2>
+
+            <h3>8.1. Ação Penal Pública Incondicionada</h3>
+            <p><strong>REGRA:</strong> A ação penal pública incondicionada é promovida por <strong>denúncia do Ministério Público</strong>.</p>
+            <blockquote>
+                <strong>Art. 24, caput, CPP:</strong> “Nos crimes de ação pública, esta será promovida por <strong>denúncia do Ministério Público</strong>”.
+            </blockquote>
+            <p><strong>Titularidade:</strong> O MP é o titular da ação penal pública incondicionada (art. 129, I, CF).</p>
+            <p><strong>Características:</strong></p>
+            <ul>
+                <li>Independe de manifestação da vítima</li>
+                <li>O MP tem legitimidade exclusiva para oferecer denúncia</li>
+                <li>Não se sujeita à representação ou requisição</li>
+            </ul>
+
+            <h3>8.2. Ação Penal Pública Condicionada</h3>
+
+            <h4>8.2.1. Crime de Lesão Corporal Leve</h4>
+            <p><strong>QUESTÃO:</strong> O crime de lesão corporal leve (art. 129, caput, CP) exige representação do ofendido para o início da ação penal?</p>
+            <p><strong>RESPOSTA: SIM, EM REGRA</strong></p>
+            <blockquote>
+                <strong>Art. 88, Lei 9.099/95:</strong> “Os crimes de lesão corporal leve e os de lesão culposa dependem de <strong>representação</strong>”.
+            </blockquote>
+            <p><strong>Exceção:</strong> Quando praticado em <strong>contexto de violência doméstica e familiar</strong>, a ação penal é <strong>pública incondicionada</strong> (art. 41, Lei 11.340/06 – Lei Maria da Penha).</p>
+            <p><strong>Consequência:</strong> O MP não pode oferecer denúncia sem a manifestação de vontade da vítima (representação), salvo na exceção mencionada.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>CRIME</th><th>AÇÃO PENAL</th><th>FUNDAMENTO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Lesão corporal leve</td><td>Pública condicionada à representação</td><td>Art. 88, Lei 9.099/95</td></tr>
+                        <tr><td>Lesão corporal leve (violência doméstica)</td><td>Pública incondicionada</td><td>Art. 41, Lei 11.340/06</td></tr>
+                        <tr><td>Furto simples</td><td>Pública incondicionada</td><td>Art. 24, CPP</td></tr>
+                        <tr><td>Homicídio doloso</td><td>Pública incondicionada</td><td>Art. 24, CPP</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>8.3. Ação Penal Privada</h3>
+
+            <h4>8.3.1. Indivisibilidade da Ação Penal Privada</h4>
+            <p><strong>QUESTÃO:</strong> Se o ofendido renuncia ao direito de queixa em relação a apenas um dos coautores, a renúncia aproveita aos demais?</p>
+            <p><strong>RESPOSTA: SIM</strong></p>
+            <p><strong>Fundamento:</strong> Princípio da <strong>indivisibilidade da ação penal privada</strong> (art. 49 do CPP e art. 49 do CP).</p>
+            <blockquote>
+                <strong>Art. 49, CP:</strong> “A renúncia ao exercício do direito de queixa, em relação a um dos autores do crime, a todos se estenderá”.
+            </blockquote>
+            <blockquote>
+                <strong>Art. 49, CPP:</strong> “A renúncia ao direito de queixa, em relação a um dos autores do crime, a todos se estende”.
+            </blockquote>
+            <p><strong>Características da renúncia:</strong></p>
+            <ul>
+                <li>Ato unilateral do ofendido</li>
+                <li>Não depende de aceitação do querelado</li>
+                <li>Deve ser feita <strong>antes da citação</strong> do querelado</li>
+                <li>Estende-se automaticamente a <strong>todos os autores do fato</strong></li>
+            </ul>
+            <p><strong>Irretratabilidade:</strong> A renúncia é irrevogável e não pode ser retratada, mesmo que o ofendido mude de ideia posteriormente.</p>
+
+            <div class="concept-card">
+                <h4>🔎 CASO PRÁTICO – INDIVISIBILIDADE</h4>
+                <p><strong>Situação hipotética:</strong> Maria sofre agressão de João e Pedro, ambos coautores. Maria, antes da citação, renuncia ao direito de queixa apenas contra João, mantendo a ação contra Pedro.</p>
+                <p><strong>Questão:</strong> A renúncia é válida?</p>
+                <p><strong>Resposta:</strong> NÃO. Pelo princípio da indivisibilidade da ação penal privada (art. 49, CP e CPP), a renúncia em relação a um dos coautores estende-se a todos. Portanto, a renúncia contra João aproveita a Pedro, extinguindo a punibilidade de ambos.</p>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 9                                                     -->
+        <!-- ============================================================ -->
+        <section id="cap9">
+            <h2><span class="chapter-badge">CAP. 9</span> Arquivamento do Inquérito Policial</h2>
+
+            <h3>9.1. Revisão Ministerial pela Vítima</h3>
+            <p><strong>QUESTÃO:</strong> A vítima que não concorda com o arquivamento do inquérito policial pode submeter a matéria à revisão ministerial em qual prazo?</p>
+            <p><strong>RESPOSTA:</strong> No prazo de <strong>30 (trinta) dias</strong> do recebimento da comunicação do arquivamento.</p>
+            <blockquote>
+                <strong>Art. 28, §1º, CPP:</strong> “No prazo de <strong>30 (trinta) dias</strong> do recebimento da comunicação do arquivamento, a vítima ou seu representante legal poderá submeter a matéria à revisão da instância competente do órgão ministerial, conforme a lei orgânica do MP”.
+            </blockquote>
+            <p><strong>Procedimento:</strong></p>
+            <ol>
+                <li>O arquivamento do inquérito é comunicado à vítima</li>
+                <li>A vítima, em 30 dias, pode pedir revisão da decisão</li>
+                <li>A revisão é feita perante a instância competente do MP (ex.: Procurador-Geral de Justiça, Câmara de Coordenação, etc.)</li>
+            </ol>
+            <div class="important">
+                <strong>Importante:</strong> A vítima não pode recorrer diretamente ao Poder Judiciário contra o arquivamento, apenas provocar a revisão no âmbito do MP.
+            </div>
+
+            <!-- Esquema SVG para arquivamento -->
+            <div class="diagram-container">
+                <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto;">
+                    <line x1="320" y1="20" x2="320" y2="55" stroke="#6c5ce7" stroke-width="2"/>
+                    <line x1="320" y1="85" x2="320" y2="120" stroke="#6c5ce7" stroke-width="2"/>
+                    <line x1="320" y1="150" x2="320" y2="175" stroke="#6c5ce7" stroke-width="2"/>
+
+                    <rect x="190" y="55" width="260" height="34" rx="12" fill="#1f1d36" stroke="#4ecdc4" stroke-width="1.5"/>
+                    <text x="320" y="78" fill="#e0d8ff" font-size="13" font-weight="500" text-anchor="middle">INQUÉRITO POLICIAL</text>
+
+                    <rect x="140" y="120" width="360" height="34" rx="12" fill="#1f1d36" stroke="#e94560" stroke-width="1.5"/>
+                    <text x="320" y="143" fill="#e0d8ff" font-size="13" font-weight="500" text-anchor="middle">MP REQUER ARQUIVAMENTO → JUIZ DETERMINA ARQUIVAMENTO</text>
+
+                    <rect x="190" y="10" width="260" height="34" rx="12" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="320" y="33" fill="#c2b8f0" font-size="13" text-anchor="middle">COMUNICAÇÃO À VÍTIMA</text>
+
+                    <rect x="140" y="175" width="360" height="34" rx="12" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="320" y="198" fill="#c2b8f0" font-size="13" text-anchor="middle">PRAZO DE 30 DIAS PARA REVISÃO MINISTERIAL</text>
+                </svg>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 10                                                    -->
+        <!-- ============================================================ -->
+        <section id="cap10">
+            <h2><span class="chapter-badge">CAP. 10</span> Recursos</h2>
+
+            <h3>10.1. Recurso em Sentido Estrito Contra Incidente de Falsidade</h3>
+            <p><strong>QUESTÃO:</strong> Qual recurso é cabível contra a decisão que resolve o incidente de falsidade?</p>
+            <p><strong>RESPOSTA:</strong> <strong>Recurso em sentido estrito (RESE)</strong></p>
+            <blockquote>
+                <strong>Art. 581, X, CPP:</strong> “Cabível recurso, no sentido estrito, da decisão que resolver o <strong>incidente de falsidade</strong>”.
+            </blockquote>
+            <p><strong>Prazo:</strong> 5 (cinco) dias (art. 586, CPP)</p>
+            <p><strong>NÃO cabe:</strong></p>
+            <ul>
+                <li>Apelação (pois não é sentença definitiva)</li>
+                <li>Agravo de instrumento (não previsto no processo penal comum)</li>
+            </ul>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>DECISÃO</th><th>RECURSO CABÍVEL</th><th>PRAZO</th><th>FUNDAMENTO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Incidente de falsidade</td><td>RESE</td><td>5 dias</td><td>Art. 581, X</td></tr>
+                        <tr><td>Pronúncia</td><td>RESE</td><td>5 dias</td><td>Art. 581, IV</td></tr>
+                        <tr><td>Impronúncia</td><td>Apelação</td><td>5 dias</td><td>Art. 416</td></tr>
+                        <tr><td>Absolvição sumária</td><td>Apelação</td><td>5 dias</td><td>Art. 416</td></tr>
+                        <tr><td>Sentença condenatória</td><td>Apelação</td><td>5 dias</td><td>Art. 593</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 11                                                    -->
+        <!-- ============================================================ -->
+        <section id="cap11">
+            <h2><span class="chapter-badge">CAP. 11</span> Liberdade Provisória</h2>
+
+            <h3>11.1. Fundamentos da Prisão Preventiva</h3>
+
+            <h4>11.1.1. Gravidade Abstrata do Delito e Repercussão Social</h4>
+            <p><strong>QUESTÃO:</strong> A gravidade abstrata do delito e a repercussão social justificam a prisão preventiva?</p>
+            <p><strong>RESPOSTA: NÃO</strong></p>
+            <p><strong>Fundamento:</strong> Esses fundamentos <strong>não são idôneos por si sós</strong> para a decretação da prisão preventiva. A prisão preventiva exige requisitos <strong>concretos</strong>:</p>
+            <blockquote>
+                <strong>Art. 312, CPP:</strong> “A prisão preventiva poderá ser decretada como garantia da ordem pública, da ordem econômica, por conveniência da instrução criminal ou para assegurar a aplicação da lei penal”.
+            </blockquote>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>FUNDAMENTO</th><th>EXPLICAÇÃO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Garantia da ordem pública</td><td>Periculosidade concreta do agente (não apenas gravidade abstrata)</td></tr>
+                        <tr><td>Garantia da ordem econômica</td><td>Prejuízo à economia (ex.: crimes financeiros)</td></tr>
+                        <tr><td>Conveniência da instrução</td><td>Risco de interferência na colheita de provas</td></tr>
+                        <tr><td>Assegurar a aplicação da lei penal</td><td>Risco de fuga concreto</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="important">
+                <strong>PEGADINHA DE BANCA:</strong> A mera gravidade abstrata do delito (ex.: homicídio, tráfico) ou a repercussão social do crime não autorizam a prisão preventiva. É necessária a demonstração de requisitos concretos.
+            </div>
+
+            <h4>11.1.2. Primariedade, Residência Fixa e Emprego Lícito</h4>
+            <p>A <strong>primariedade, residência fixa e emprego lícito</strong>, sem violência, <strong>afastam a prisão preventiva</strong> quando não há outros fundamentos concretos.</p>
+            <ul>
+                <li>Essas circunstâncias indicam que o réu não apresenta risco à ordem pública</li>
+                <li>Não são impedimentos absolutos à prisão preventiva (se houver outros fundamentos, a prisão pode ser decretada)</li>
+            </ul>
+
+            <div class="concept-card">
+                <h4>🔎 CASO PRÁTICO – PRISÃO PREVENTIVA</h4>
+                <p><strong>Situação hipotética:</strong> Carlos, primário, com residência fixa e emprego lícito, é denunciado por homicídio doloso. O juiz decreta sua prisão preventiva com base na “gravidade do delito e na comoção social causada”.</p>
+                <p><strong>Questão:</strong> A decisão está correta?</p>
+                <p><strong>Resposta:</strong> NÃO. A gravidade abstrata do delito e a repercussão social não são fundamentos idôneos para a prisão preventiva (art. 312, CPP). Considerando que Carlos é primário, tem residência fixa e emprego lícito, não há elementos concretos que justifiquem a preventiva.</p>
+            </div>
+
+            <h3>11.2. Liberdade Provisória no Furto Simples</h3>
+            <p><strong>QUESTÃO:</strong> No furto simples (art. 155, caput, CP), a liberdade provisória pode ser concedida sem fiança?</p>
+            <p><strong>RESPOSTA: SIM</strong></p>
+            <p><strong>Fundamento:</strong> O furto simples tem <strong>pena máxima inferior a 4 anos</strong> (art. 155, caput, CP: reclusão de 1 a 4 anos e multa).</p>
+            <blockquote>
+                <strong>Art. 313, I, CPP:</strong> “Nos crimes punidos com reclusão, a prisão preventiva poderá ser decretada quando a pena privativa de liberdade máxima for igual ou superior a <strong>4 (quatro) anos</strong>”.
+            </blockquote>
+            <p><strong>Raciocínio:</strong></p>
+            <ul>
+                <li>O furto simples tem pena máxima de 4 anos</li>
+                <li>Não atinge o patamar de 4 anos (é exatamente 4 anos)</li>
+                <li>Portanto, <strong>não cabe prisão preventiva</strong> (art. 313, I, CPP)</li>
+                <li>A liberdade provisória pode ser concedida com ou sem fiança, conforme o caso concreto</li>
+            </ul>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>CRIME</th><th>PENA MÁXIMA</th><th>CABE PRISÃO PREVENTIVA?</th><th>LIBERDADE PROVISÓRIA</th></tr></thead>
+                    <tbody>
+                        <tr><td>Furto simples</td><td>4 anos</td><td>NÃO (art. 313, I, CPP)</td><td>PODE SER CONCEDIDA</td></tr>
+                        <tr><td>Furto qualificado</td><td>8 anos</td><td>SIM</td><td>PODE SER CONCEDIDA (com ou sem fiança)</td></tr>
+                        <tr><td>Homicídio simples</td><td>12 anos</td><td>SIM</td><td>PODE SER CONCEDIDA (com ou sem fiança)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 12                                                    -->
+        <!-- ============================================================ -->
+        <section id="cap12">
+            <h2><span class="chapter-badge">CAP. 12</span> Flagrante</h2>
+
+            <h3>12.1. Modalidades de Flagrante</h3>
+
+            <h4>12.1.1. Flagrante Próprio</h4>
+            <blockquote>
+                <strong>Art. 302, I e II, CPP:</strong> “Considera-se em flagrante delito quem: I – está cometendo a infração penal; II – acaba de cometê-la”.
+            </blockquote>
+            <p><strong>Características:</strong></p>
+            <ul>
+                <li>O agente é surpreendido <strong>no momento da ação criminosa</strong> (cometendo)</li>
+                <li>O agente é surpreendido <strong>imediatamente após a ação</strong> (acabou de cometer)</li>
+            </ul>
+
+            <h4>12.1.2. Flagrante Impróprio</h4>
+            <blockquote>
+                <strong>Art. 302, III, CPP:</strong> “Considera-se em flagrante delito quem: III – é perseguido, logo após, pela autoridade, pelo ofendido ou por qualquer pessoa, em situação que faça presumir ser autor da infração”.
+            </blockquote>
+            <p><strong>Características:</strong></p>
+            <ul>
+                <li>O agente <strong>não é mais encontrado no local</strong></li>
+                <li>Há <strong>perseguição</strong> logo após o crime</li>
+                <li>A situação faz presumir que o perseguido é o autor</li>
+            </ul>
+
+            <h4>12.1.3. Flagrante Ficto, Presumido ou Assimilado</h4>
+            <p><strong>QUESTÃO:</strong> Em qual modalidade de flagrante se enquadra a situação em que o agente é encontrado, logo depois do crime, na posse de objetos que o vinculam à infração?</p>
+            <p><strong>RESPOSTA:</strong> <strong>Flagrante ficto, presumido ou assimilado</strong></p>
+            <blockquote>
+                <strong>Art. 302, IV, CPP:</strong> “Considera-se em flagrante delito quem: IV – é encontrado, logo depois, com instrumentos, armas, objetos ou papéis que façam presumir ser ele autor da infração”.
+            </blockquote>
+            <p><strong>Características:</strong></p>
+            <ul>
+                <li>O agente <strong>não foi visto cometendo o crime</strong></li>
+                <li>Não houve <strong>perseguição</strong></li>
+                <li>O agente é <strong>encontrado</strong> com objetos que o vinculam ao crime</li>
+            </ul>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>MODALIDADE</th><th>PREVISÃO LEGAL</th><th>CARACTERÍSTICA</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Próprio</strong></td><td>Art. 302, I e II</td><td>Surpreendido cometendo ou acabou de cometer</td></tr>
+                        <tr><td><strong>Impróprio</strong></td><td>Art. 302, III</td><td>Perseguido logo após, fazendo presumir autoria</td></tr>
+                        <tr><td><strong>Ficto/Presumido</strong></td><td>Art. 302, IV</td><td>Encontrado logo depois com objetos que o vinculam</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="macete-box">
+                <strong>MACETE PARA MEMORIZAR AS MODALIDADES:</strong><br>
+                <span style="font-size:1.1rem;">“P. I. F. – Próprio, Impróprio, Ficto”</span><br>
+                <span style="color:#b8b0d8;">• <strong>P</strong> = Próprio (cometendo ou acabou de cometer)<br>
+                • <strong>I</strong> = Impróprio (perseguido após)<br>
+                • <strong>F</strong> = Ficto/Presumido (encontrado com objetos)</span>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 13                                                    -->
+        <!-- ============================================================ -->
+        <section id="cap13">
+            <h2><span class="chapter-badge">CAP. 13</span> Síntese para Revisão</h2>
+
+            <h3>13.1. Mapa Mental do Rito do Júri</h3>
+
+            <!-- SVG Mapa Mental simplificado -->
+            <div class="diagram-container">
+                <svg viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" style="max-width:100%; height:auto;">
+                    <!-- Eixo central -->
+                    <line x1="400" y1="20" x2="400" y2="500" stroke="#6c5ce7" stroke-width="2" stroke-dasharray="6 6"/>
+
+                    <!-- Nó principal -->
+                    <rect x="310" y="10" width="180" height="44" rx="22" fill="#2e2a44" stroke="#6c5ce7" stroke-width="2"/>
+                    <text x="400" y="38" fill="#f0edff" font-size="16" font-weight="700" text-anchor="middle">RITO DO JÚRI</text>
+
+                    <!-- FASE 1 -->
+                    <line x1="400" y1="54" x2="400" y2="80" stroke="#6c5ce7" stroke-width="2"/>
+                    <rect x="250" y="80" width="300" height="38" rx="14" fill="#1f1d36" stroke="#4ecdc4" stroke-width="1.5"/>
+                    <text x="400" y="105" fill="#e0d8ff" font-size="14" font-weight="600" text-anchor="middle">FASE 1 – INSTRUÇÃO PRELIMINAR</text>
+
+                    <!-- Subitens F1 -->
+                    <line x1="400" y1="118" x2="400" y2="140" stroke="#4ecdc4" stroke-width="1.5"/>
+                    <rect x="140" y="140" width="520" height="30" rx="8" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="400" y="160" fill="#c2b8f0" font-size="12" text-anchor="middle">Oferecimento da denúncia → Defesa preliminar → Instrução probatória → Alegações finais</text>
+
+                    <line x1="400" y1="170" x2="400" y2="190" stroke="#4ecdc4" stroke-width="1.5"/>
+                    <rect x="220" y="190" width="360" height="30" rx="8" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="400" y="210" fill="#c2b8f0" font-size="12" text-anchor="middle">Testemunhas: até 8 · Ordem: parte que arrolou → Juiz</text>
+
+                    <line x1="400" y1="220" x2="400" y2="240" stroke="#4ecdc4" stroke-width="1.5"/>
+                    <rect x="200" y="240" width="400" height="30" rx="8" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="400" y="260" fill="#c2b8f0" font-size="12" text-anchor="middle">Precatória: testemunhas SIM · interrogatório NÃO</text>
+
+                    <line x1="400" y1="270" x2="400" y2="290" stroke="#4ecdc4" stroke-width="1.5"/>
+                    <rect x="150" y="290" width="500" height="30" rx="8" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="400" y="310" fill="#c2b8f0" font-size="12" text-anchor="middle">Alegações: MP → Assistente (20 min) → Defesa · Assistente não usa tempo do MP</text>
+
+                    <line x1="400" y1="320" x2="400" y2="340" stroke="#4ecdc4" stroke-width="1.5"/>
+                    <rect x="160" y="340" width="480" height="30" rx="8" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="400" y="360" fill="#c2b8f0" font-size="12" text-anchor="middle">Decisão: Pronúncia (indícios) · Impronúncia · Absolvição sumária</text>
+
+                    <!-- FASE 2 -->
+                    <line x1="400" y1="375" x2="400" y2="400" stroke="#e94560" stroke-width="2"/>
+                    <rect x="250" y="400" width="300" height="38" rx="14" fill="#1f1d36" stroke="#e94560" stroke-width="1.5"/>
+                    <text x="400" y="425" fill="#e0d8ff" font-size="14" font-weight="600" text-anchor="middle">FASE 2 – JULGAMENTO EM PLENÁRIO</text>
+
+                    <line x1="400" y1="438" x2="400" y2="460" stroke="#e94560" stroke-width="1.5"/>
+                    <rect x="170" y="460" width="460" height="28" rx="8" fill="#1a182b" stroke="#3d3570" stroke-width="1"/>
+                    <text x="400" y="480" fill="#c2b8f0" font-size="11" text-anchor="middle">Preparação · Sorteio · Sessão · Debates · Votação · Sentença</text>
+                </svg>
+            </div>
+
+            <h3>13.2. Quadro Síntese – Principais Pontos</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>TEMA</th><th>REGRA</th><th>FUNDAMENTO</th></tr></thead>
+                    <tbody>
+                        <tr><td>Testemunhas (Júri)</td><td>Até 8 por parte</td><td>Art. 406, §2º, CPP</td></tr>
+                        <tr><td>Ordem de perguntas</td><td>Parte que arrolou → Juiz</td><td>Art. 212, CPP</td></tr>
+                        <tr><td>Precatória – testemunhas</td><td>Possível</td><td>Art. 222, §1º; 411, §2º</td></tr>
+                        <tr><td>Precatória – interrogatório</td><td>NÃO</td><td>Art. 185, CPP</td></tr>
+                        <tr><td>Assistente – alegações finais</td><td>20 min (não usa tempo do MP)</td><td>Art. 403, §2º, CPP</td></tr>
+                        <tr><td>Desaforamento</td><td>Ordem pública, imparcialidade ou segurança</td><td>Art. 427, CPP</td></tr>
+                        <tr><td>Desaforamento – juiz</td><td>Pode representar de ofício</td><td>Art. 427, caput, CPP</td></tr>
+                        <tr><td>Desaforamento – momento</td><td>Antes ou depois de preparado</td><td>Art. 427, CPP</td></tr>
+                        <tr><td>Absolvição sumária – recurso</td><td>Apelação (sem recurso de ofício)</td><td>Art. 416, CPP</td></tr>
+                        <tr><td>Absolvição sumária – inimputabilidade</td><td>Só se for a única tese</td><td>Art. 415, parágrafo único, CPP</td></tr>
+                        <tr><td>Semi-imputabilidade</td><td>NÃO cabe absolvição sumária</td><td>Art. 26, parágrafo único, CP</td></tr>
+                        <tr><td>Pronúncia – conteúdo</td><td>Indícios suficientes (sem mérito)</td><td>Art. 413, CPP</td></tr>
+                        <tr><td>Pronúncia – excesso de linguagem</td><td>Anula a decisão</td><td>STJ</td></tr>
+                        <tr><td>Qualificadoras – inclusão</td><td>Possível (emendatio libelli)</td><td>Art. 383 c/c 418, CPP</td></tr>
+                        <tr><td>Intimação – defensor dativo</td><td>Pessoal</td><td>Art. 370, §4º, CPP</td></tr>
+                        <tr><td>Intimação – defensor constituído</td><td>Publicação</td><td>Art. 370, §1º, CPP</td></tr>
+                        <tr><td>JECRIM – complexidade</td><td>Encaminha ao rito sumário</td><td>Art. 77, §2º, Lei 9.099/95</td></tr>
+                        <tr><td>JECRIM – não encontrado</td><td>Encaminha ao rito sumário</td><td>Art. 66, parágrafo único</td></tr>
+                        <tr><td>Flagrante ficto</td><td>Encontrado com objetos</td><td>Art. 302, IV, CPP</td></tr>
+                        <tr><td>Prisão preventiva – fundamentos</td><td>Requisitos concretos</td><td>Art. 312, CPP</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>13.3. Dicas de Prova – Bancas</h3>
+            <div class="grid-2">
+                <div class="grid-item">
+                    <h5>BANCA FCC</h5>
+                    <ul>
+                        <li>Cobra detalhadamente a literalidade dos dispositivos</li>
+                        <li>Ênfase em prazos e números (ex.: 8 testemunhas, 20 minutos do assistente)</li>
+                        <li>Cuidado com a distinção entre defensor dativo e constituído</li>
+                    </ul>
+                </div>
+                <div class="grid-item">
+                    <h5>BANCA FGV</h5>
+                    <ul>
+                        <li>Cobra a aplicação prática dos institutos</li>
+                        <li>Atente para a revogação tácita do art. 574, II (recurso de ofício na absolvição sumária)</li>
+                        <li>Cuidado com pegadinhas: “O juiz pergunta primeiro” (ERRADO!)</li>
+                    </ul>
+                </div>
+                <div class="grid-item">
+                    <h5>BANCA CEBRASPE/CESPE</h5>
+                    <ul>
+                        <li>Cobra interpretação sistemática</li>
+                        <li>Ênfase nos princípios (soberania dos vereditos, plenitude de defesa)</li>
+                        <li>Questões sobre excesso de linguagem na pronúncia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>13.4. Macetes Finais</h3>
+            <div class="macete-box">
+                <strong>MACETE 1 – “DIVIDA”</strong><br>
+                • <strong>D</strong> = Defensor <strong>DATIVO</strong> → intimação <strong>PESSOAL</strong><br>
+                • <strong>C</strong> = Defensor <strong>CONSTITUÍDO</strong> → intimação por <strong>PUBLICAÇÃO</strong>
+            </div>
+            <div class="macete-box">
+                <strong>MACETE 2 – “8”</strong><br>
+                Testemunhas no Júri: <strong>8</strong> (art. 406, §2º)
+            </div>
+            <div class="macete-box">
+                <strong>MACETE 3 – “20”</strong><br>
+                Assistente de acusação: <strong>20</strong> minutos (art. 403, §2º)
+            </div>
+            <div class="macete-box">
+                <strong>MACETE 4 – “PIF”</strong><br>
+                Flagrante: <strong>P</strong>róprio, <strong>I</strong>mpróprio, <strong>F</strong>icto
+            </div>
+            <div class="macete-box">
+                <strong>MACETE 5 – “SEM RECURSO DE OFÍCIO”</strong><br>
+                Absolvição sumária: <strong>apelação</strong> (não há recurso de ofício)
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- CAPÍTULO 14                                                    -->
+        <!-- ============================================================ -->
+        <section id="cap14">
+            <h2><span class="chapter-badge">CAP. 14</span> Questões Comentadas</h2>
+
+            <h3>14.1. Questões de Fixação</h3>
+
+            <div class="concept-card">
+                <h4>Questão 1 (FCC – Adaptada)</h4>
+                <p>Na instrução preliminar dos crimes dolosos contra a vida, a acusação pode arrolar até:</p>
+                <p>a) 5 testemunhas<br>
+                b) 6 testemunhas<br>
+                c) 7 testemunhas<br>
+                d) 8 testemunhas<br>
+                e) 10 testemunhas</p>
+                <p><strong>Gabarito:</strong> D</p>
+                <p><strong>Comentário:</strong> O art. 406, §2º, CPP estabelece que a acusação e a defesa poderão arrolar até 8 testemunhas. A alternativa “a” (5 testemunhas) seria correta para o rito comum, mas não para o Júri.</p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Questão 2 (FGV – Adaptada)</h4>
+                <p>Em relação à ordem de formulação de perguntas à testemunha na audiência de instrução do Tribunal do Júri, assinale a alternativa correta:</p>
+                <p>a) O juiz pergunta primeiro, seguido da parte que arrolou a testemunha<br>
+                b) A parte que arrolou a testemunha pergunta primeiro, e o juiz pode complementar após<br>
+                c) Ambas as partes perguntam simultaneamente<br>
+                d) A defesa pergunta primeiro, independentemente de quem arrolou<br>
+                e) O Ministério Público pergunta primeiro, independentemente de quem arrolou</p>
+                <p><strong>Gabarito:</strong> B</p>
+                <p><strong>Comentário:</strong> O art. 212 do CPP estabelece que as perguntas são formuladas primeiro pela parte que arrolou a testemunha (sistema de cross examination). O juiz pode complementar após as partes.</p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Questão 3 (Cebraspe – Adaptada)</h4>
+                <p>A decisão de pronúncia com excesso de linguagem pode ser sanada pelo desentranhamento das palavras excessivas, não havendo necessidade de nova pronúncia.<br>
+                ( ) Certo &nbsp; ( ) Errado</p>
+                <p><strong>Gabarito:</strong> Errado</p>
+                <p><strong>Comentário:</strong> O STJ entende que o excesso de linguagem anula a decisão, não bastando o desentranhamento. É necessária nova pronúncia, pois a pronúncia será lida aos jurados (art. 472, parágrafo único, CPP), e o excesso de linguagem pode contaminar sua formação de convicção.</p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Questão 4 (FCC – Adaptada)</h4>
+                <p>Contra a sentença de absolvição sumária no rito do Júri:</p>
+                <p>a) Cabe recurso de ofício, independentemente de apelação<br>
+                b) Cabe apenas recurso de ofício<br>
+                c) Cabe apelação, sendo incabível recurso de ofício<br>
+                d) Não cabe recurso<br>
+                e) Cabe recurso em sentido estrito</p>
+                <p><strong>Gabarito:</strong> C</p>
+                <p><strong>Comentário:</strong> A Lei 11.689/2008 revogou tacitamente o art. 574, II do CPP, que previa recurso de ofício na absolvição sumária. Atualmente, contra a absolvição sumária cabe apelação (art. 416, CPP), sendo incabível recurso de ofício.</p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Questão 5 (FGV – Adaptada)</h4>
+                <p>O interrogatório do réu pode ser realizado por carta precatória no juízo deprecante?</p>
+                <p>a) Sim, em qualquer hipótese<br>
+                b) Sim, se houver concordância do réu<br>
+                c) Não, pois é ato personalíssimo do juiz do processo<br>
+                d) Sim, apenas para réus presos<br>
+                e) Sim, se a defesa concordar</p>
+                <p><strong>Gabarito:</strong> C</p>
+                <p><strong>Comentário:</strong> O interrogatório é ato personalíssimo do juiz do processo (art. 185, CPP), essencial à formação de seu convencimento. Não pode ser realizado por carta precatória.</p>
+            </div>
+
+            <h3>14.2. Questões Desafiadoras</h3>
+
+            <div class="concept-card">
+                <h4>Questão 6 (Elaborada)</h4>
+                <p>João responde por homicídio qualificado no Tribunal do Júri. Na fase de instrução preliminar, o juiz, ao proferir a pronúncia, faz considerações detalhadas sobre a culpa de João, afirmando que “não há dúvida de que João é o autor do crime” e que “deve ser condenado pelos jurados”. A defesa impugna a decisão.</p>
+                <p><strong>Pergunta:</strong> Qual a consequência da decisão?</p>
+                <p><strong>Resposta:</strong> A decisão deve ser anulada. O juiz, na pronúncia, não pode tecer considerações aprofundadas ou definitivas sobre o mérito da causa (STJ, HC 23.810/RJ). A pronúncia deve limitar-se à indicação da materialidade e dos indícios suficientes de autoria (art. 413, CPP). O excesso de linguagem (eloquência acusatória) contamina a decisão, exigindo nova pronúncia.</p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Questão 7 (Elaborada)</h4>
+                <p>Em um processo do Tribunal do Júri, a defesa técnica é exercida por advogado dativo nomeado pelo juízo. O cartório intima o defensor por publicação no Diário da Justiça para a realização da audiência de instrução.</p>
+                <p><strong>Pergunta:</strong> A intimação é válida? Qual o fundamento?</p>
+                <p><strong>Resposta:</strong> NÃO. O defensor dativo (nomeado) deve ser intimado pessoalmente, conforme art. 370, §4º, CPP. A intimação por publicação no órgão oficial é inválida, podendo gerar nulidade processual.</p>
+            </div>
+
+            <div class="concept-card">
+                <h4>Questão 8 (Elaborada)</h4>
+                <p>Maria é vítima de lesão corporal leve praticada por seu marido, em contexto de violência doméstica. O Ministério Público oferece denúncia sem representação da vítima.</p>
+                <p><strong>Pergunta:</strong> A denúncia é válida?</p>
+                <p><strong>Resposta:</strong> SIM. A lesão corporal leve praticada em contexto de violência doméstica e familiar é de ação penal pública incondicionada (art. 41, Lei 11.340/06 – Lei Maria da Penha). Portanto, dispensa a representação da vítima.</p>
+            </div>
+
+            <hr class="divider">
+        </section>
+
+        <!-- ====== CONCLUSÃO ====== -->
+        <section style="margin-top:2.5rem; padding-top:1rem; border-top:2px solid #2e2a44;">
+            <h2 style="border-bottom:none; margin-top:0;">Conclusão</h2>
+            <p>O Tribunal do Júri representa um dos institutos mais complexos e cobrados em concursos públicos para a área jurídica. O entendimento profundo de suas fases, prazos, legitimidades e procedimentos é essencial para o sucesso em provas de alto nível.</p>
+            <p><strong>Lembre-se sempre:</strong></p>
+            <ol>
+                <li>A pronúncia é juízo de admissibilidade, não de mérito</li>
+                <li>A absolvição sumária não comporta recurso de ofício</li>
+                <li>O desaforamento é medida excepcional, cabível mesmo antes da preparação para o plenário</li>
+                <li>O interrogatório do réu é ato personalíssimo do juiz</li>
+                <li>As testemunhas no Júri são até 8 por parte</li>
+                <li>O assistente de acusação tem prazo próprio de 20 minutos</li>
+            </ol>
+
+            <div style="background:#1d1b30; border-radius:20px; padding:1.5rem 2rem; margin:1.8rem 0; text-align:center; border:1px solid #3d3570;">
+                <p style="font-size:1.1rem; color:#d6ceff; margin:0;">
+                    <strong>APOSTILA ELABORADA COM BASE NO CONTEÚDO DOS FLASHCARDS E NA LEGISLAÇÃO APLICÁVEL</strong><br>
+                    <span style="font-size:0.95rem; color:#a8a0c8;">ATUALIZAÇÃO: Lei 11.689/2008 e demais legislações vigentes</span>
+                </p>
+                <p style="font-size:1.3rem; font-weight:600; color:#f0edff; margin:0.6rem 0 0;">BONS ESTUDOS E SUCESSO NA SUA APROVAÇÃO!</p>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>
