@@ -857,48 +857,75 @@
     <script>
         (function() {
             // ============================================================
-            // CONFIGURAÇÃO: Array de Decks (estrutura preparada para
-            // múltiplos decks — basta adicionar objetos neste array)
+            // CONFIGURAÇÃO: NOVA ESTRUTURA DE DISCIPLINAS
+            // Agora temos um único deck ("Matérias") com cada disciplina
+            // como uma categoria, e seus respectivos arquivos .html como itens.
             // ============================================================
             const DECKS = [{
-                id: 'deck-1',
-                name: 'Deck 1',
+                id: 'materias',
+                name: 'Matérias',
                 icon: 'book',
                 categories: [{
-                    name: 'Direito',
+                    name: 'Direito Administrativo',
                     icon: 'folder',
                     items: [
-                        { name: 'Direito Constitucional', file: 'DIREITO CONSTITUCIONAL.html' },
-                        { name: 'Direito Administrativo', file: 'Direito Administrativo.html' },
-                        { name: 'Direito Civil', file: 'DIREITO CIVIL.html' },
-                        { name: 'Direito Penal', file: 'DIREITO PENAL.html' },
-                        { name: 'Direito Processual Penal', file: 'direito processual penal.html' },
+                        { name: 'Direito Administrativo 01', file: 'Direito Administrativo 01.html' },
+                        { name: 'Direito Administrativo 02', file: 'Direito Administrativo 02.html' },
+                        { name: 'Direito Administrativo 03', file: 'Direito Administrativo 03.html' },
+                        { name: 'Direito Administrativo 04', file: 'Direito Administrativo 04.html' },
+                        { name: 'Direito Administrativo 05', file: 'Direito Administrativo 05.html' },
+                        { name: 'Direito Administrativo 06', file: 'Direito Administrativo 06.html' },
+                        { name: 'Direito Administrativo 07', file: 'Direito Administrativo 07.html' },
                     ],
                 }, {
-                    name: 'Administração',
+                    name: 'Direito Civil',
                     icon: 'folder',
                     items: [
-                        { name: 'Administração Pública e Gestão Pública',
-                            file: 'Administração_Gestão Pública.html' },
-                        { name: 'Administração Financeira e Orçamentária (AFO)',
-                            file: 'Administração Financeira e Orçamentária.html' },
+                        { name: 'Direito Civil 01', file: 'Direito Civil 01.html' },
+                        { name: 'Direito Civil 02', file: 'Direito Civil 02.html' },
+                        { name: 'Direito Civil 03', file: 'Direito Civil 03.html' },
                     ],
                 }, {
-                    name: 'Complementar',
+                    name: 'Direito Constitucional',
                     icon: 'folder',
                     items: [
-                        { name: 'Direito Administrativo Complementar', file: 'Direito adm.html' },
+                        { name: 'Direito Constitucional 01', file: 'Direito Constitucional 01.html' },
+                        { name: 'Direito Constitucional 02', file: 'Direito Constitucional 02.html' },
+                        { name: 'Direito Constitucional 03', file: 'Direito Constitucional 03.html' },
+                        { name: 'Direito Constitucional 04', file: 'Direito Constitucional 04.html' },
+                        { name: 'Direito Constitucional 05', file: 'Direito Constitucional 05.html' },
+                        { name: 'Direito Constitucional 06', file: 'Direito Constitucional 06.html' },
+                    ],
+                }, {
+                    name: 'Direito Penal',
+                    icon: 'folder',
+                    items: [
+                        { name: 'Direito Penal 01', file: 'Direito Penal 01.html' },
+                        { name: 'Direito Penal 02', file: 'Direito Penal 02.html' },
+                        { name: 'Direito Penal 03', file: 'Direito Penal 03.html' },
+                        { name: 'Direito Penal 04', file: 'Direito Penal 04.html' },
+                    ],
+                }, {
+                    name: 'Direito Processual Civil',
+                    icon: 'folder',
+                    items: [
+                        { name: 'Direito Processual Civil', file: 'Direito Processual Civil.html' },
+                        { name: 'Direito Processual Civil 01', file: 'Direito Processual Civil 01.html' },
+                        { name: 'Direito Processual Civil 02', file: 'Direito Processual Civil 02.html' },
+                        { name: 'Direito Processual Civil 03', file: 'Direito Processual Civil 03.html' },
+                        { name: 'Direito Processual Civil 04', file: 'Direito Processual Civil 04.html' },
+                        { name: 'Direito Processual Civil 05', file: 'Direito Processual Civil 05.html' },
+                    ],
+                }, {
+                    name: 'Direito Processual Penal',
+                    icon: 'folder',
+                    items: [
+                        { name: 'Direito Processual Penal 01', file: 'Direito Processual Penal 01.html' },
+                        { name: 'Direito Processual Penal 02', file: 'Direito Processual Penal 02.html' },
+                        { name: 'Direito Processual Penal 03', file: 'Direito Processual Penal 03.html' },
                     ],
                 }, ],
-            },
-            // Para adicionar Deck 2, Deck 3 etc., basta inserir mais objetos aqui:
-            // {
-            //   id: 'deck-2',
-            //   name: 'Deck 2',
-            //   icon: 'book',
-            //   categories: [ ... ]
-            // },
-            ];
+            }, ];
 
             // ============================================================
             // ÍCONES SVG INLINE (funções que retornam strings SVG)
@@ -921,7 +948,7 @@
             // ============================================================
             const state = {
                 sidebarVisible: true,
-                expandedDecks: new Set(['deck-1']), // IDs dos decks expandidos
+                expandedDecks: new Set(['materias']), // IDs dos decks expandidos
                 expandedCategories: new Set(), // "deckId|catIndex" strings
                 activeResume: null, // { deckId, categoryIndex, itemIndex, deckName, categoryName, itemName, fileName }
                 isFullscreen: false,
@@ -990,7 +1017,7 @@
 
             function loadState() {
                 state.sidebarVisible = loadFromStorage(STORAGE_KEYS.sidebarVisible, true);
-                state.expandedDecks = loadFromStorage(STORAGE_KEYS.expandedDecks, new Set(['deck-1']));
+                state.expandedDecks = loadFromStorage(STORAGE_KEYS.expandedDecks, new Set(['materias']));
                 state.expandedCategories = loadFromStorage(STORAGE_KEYS.expandedCategories, new Set());
                 const lastResume = loadFromStorage(STORAGE_KEYS.lastResume, null);
                 if (lastResume && lastResume.deckId && lastResume.fileName) {
@@ -1276,7 +1303,7 @@
                     </div>
                     <div class="welcome-stat">
                         <div class="welcome-stat-value">${totalCategories}</div>
-                        <div class="welcome-stat-label">Categorias</div>
+                        <div class="welcome-stat-label">Disciplinas</div>
                     </div>
                     <div class="welcome-stat">
                         <div class="welcome-stat-value">${totalItems}</div>
@@ -1529,9 +1556,8 @@
 
                 console.log('%c🚀 Hub de Estudos inicializado com sucesso!',
                     'color: #a78bfa; font-size: 1.1rem; font-weight: bold;');
-                console.log('%c📚 Decks: ' + DECKS.length + ' | Categorias: ' + DECKS.reduce((acc, d) => acc + d
-                    .categories.length, 0) + ' | Resumos: ' + DECKS.reduce((acc, d) => acc + d.categories.reduce(
-                        (a, c) => a + c.items.length, 0), 0),
+                console.log('%c📚 Disciplinas: ' + DECKS[0].categories.length + ' | Resumos: ' + DECKS[0]
+                    .categories.reduce((acc, c) => acc + c.items.length, 0),
                     'color: #b0b0c8;');
                 console.log('%c💡 Dica: Use Ctrl+B para alternar a sidebar, / para pesquisar.',
                     'color: #7878a0; font-style: italic;');
@@ -1556,9 +1582,8 @@
                 openResume,
                 getStats: () => ({
                     decks: DECKS.length,
-                    categories: DECKS.reduce((acc, d) => acc + d.categories.length, 0),
-                    items: DECKS.reduce((acc, d) => acc + d.categories.reduce((a, c) => a + c.items
-                        .length, 0), 0),
+                    categories: DECKS[0].categories.length,
+                    items: DECKS[0].categories.reduce((acc, c) => acc + c.items.length, 0),
                 }),
             };
 
